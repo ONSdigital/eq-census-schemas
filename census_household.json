@@ -578,7 +578,6 @@
                     "questions": [{
                         "id": "central-heating-question",
                         "title": "What type of central heating does <em>{{answers.address_line_1}}</em> have?",
-                        "description": "<p>Central heating is a central system that generates heat for multiple rooms.</p><p>Select all that apply, whether or not you use it.</p>",
                         "type": "General",
                         "answers": [{
                             "id": "central-heating-answer",
@@ -748,11 +747,6 @@
                     "questions": [{
                         "id": "number-of-vehicles-question",
                         "title": "How many cars or vans are owned, or available for use, by members of this household?",
-                        "guidance": {
-                            "content": [{
-                                "description": "Include any company cars or vans available for private use"
-                            }]
-                        },
                         "type": "General",
                         "answers": [{
                             "id": "number-of-vehicles-answer",
