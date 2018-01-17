@@ -139,26 +139,10 @@
                     "questions": [{
                         "id": "permanent-or-family-home-question",
                         "title": "Does anyone live at <em>{{answers.address_line_1}}</em> as their permanent or family home?",
-                        "guidance": {
-                            "content": [{
-                                "title": "Include",
-                                "list": [
-                                    "yourself, if this is your permanent or family home",
-                                    "family members including partners, children and babies born on or before 9 April 2017",
-                                    "students and, or school children who live away from home during term time",
-                                    "housemates tenants or lodgers"
-                                ]
-                            }]
-                        },
                         "type": "General",
                         "answers": [{
                             "id": "permanent-or-family-home-answer",
                             "mandatory": true,
-                            "guidance": {
-                                "content": [{
-                                    "description": "For most people, their permanent home will be the address where they spend the most time."
-                                }]
-                            },
                             "options": [{
                                     "label": "Yes",
                                     "value": "Yes"
