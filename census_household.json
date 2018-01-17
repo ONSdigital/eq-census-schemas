@@ -983,7 +983,6 @@
                     "questions": [{
                         "id": "date-of-birth-question",
                         "title": "What is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em> date of birth?",
-                        "description": "For example 20 March 1980",
                         "type": "General",
                         "answers": [{
                             "id": "date-of-birth-answer",
