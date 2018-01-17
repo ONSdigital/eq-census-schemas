@@ -228,18 +228,6 @@
                     "questions": [{
                         "id": "household-composition-question",
                         "title": "What are the names of everyone who live at <em>{{answers.address_line_1}}</em>?",
-                        "guidance": {
-                            "content": [{
-                                "title": "Include",
-                                "list": [
-                                    "Yourself, if this is your permanent or family home",
-                                    "Family members including partners, children and babies born on or before 9 April 2017",
-                                    "Students and, or school children who live away from home during term time",
-                                    "Housemates tenants or lodgers",
-                                    "Household members who have requested a personal form"
-                                ]
-                            }]
-                        },
                         "type": "RepeatingAnswer",
                         "answers": [{
                                 "alias": "first_name",
