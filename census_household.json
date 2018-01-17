@@ -265,7 +265,6 @@
                     "questions": [{
                         "id": "everyone-at-address-confirmation-question",
                         "title": "Is this everyone for whom this is their permanent or family home?",
-                        "description": "Please note that you will need to ensure that everyone is included because you will be unable to make changes later",
                         "type": "General",
                         "answers": [{
                             "id": "everyone-at-address-confirmation-answer",
