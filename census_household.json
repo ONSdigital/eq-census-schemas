@@ -1049,16 +1049,6 @@
                         "id": "another-address-question",
                         "title": "Does <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> stay at another address for more than 30 days a year?",
                         "type": "General",
-                        "guidance": {
-                            "content": [{
-                                "title": "Include:",
-                                "list": [
-                                    "another parent’s address, an armed forces base, a holiday home, or term-time address.",
-                                    "the days you stay at the address do not have to be in a row. They can be at any time during the year."
-                                ],
-                                "description": ""
-                            }]
-                        },
                         "answers": [{
                                 "id": "another-address-answer",
                                 "mandatory": false,
