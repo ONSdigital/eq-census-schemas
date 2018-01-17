@@ -155,8 +155,6 @@
                             "id": "permanent-or-family-home-answer",
                             "mandatory": true,
                             "guidance": {
-                                "show_guidance": "Show further guidance",
-                                "hide_guidance": "Hide further guidance",
                                 "content": [{
                                     "description": "For most people, their permanent home will be the address where they spend the most time."
                                 }]
