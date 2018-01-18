@@ -3334,7 +3334,6 @@
                     "description": "",
                     "questions": [{
                         "title": "How does <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> usually travel to work?",
-                        "description": "Select the option for the longest part, in distance, of your journey. For example, you travel by bus and by car. Your bus journey is 5 miles, and the car journey is 8 miles. You should select car as your answer.",
                         "id": "work-travel-question",
                         "type": "General",
                         "answers": [{
