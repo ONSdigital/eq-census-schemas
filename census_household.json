@@ -3484,7 +3484,6 @@
                     "questions": [{
                         "id": "employers-business-question",
                         "title": "What is the main activity of <em>{{answers.company_name}}</em>?",
-                        "description": "<p>Enter the main activity of your employer or business.</p><p>Another way of describing main activity is the industry that your employer or business works in.</p><p>If you are not sure of the main activity of your employer or business please give the best information you can.</p><p>If you are employed through an agency please enter the main activity of the business you are working for, not the agency.</p><p>For example, <b>primary education, repairing cars, contract catering, computer servicing</b></p>",
                         "type": "General",
                         "answers": [{
                             "id": "employers-business-answer",
