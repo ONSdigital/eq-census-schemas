@@ -1715,7 +1715,6 @@
                     "questions": [{
                             "id": "ethnic-group-england-question",
                             "title": "What is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive}}</em> ethnic group?",
-                            "description": "It is for you to choose your ethnic group. For example this could be your family or cultural background, or it could be how you would describe yourself.",
                             "type": "General",
                             "answers": [{
                                 "id": "ethnic-group-england-answer",
