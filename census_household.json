@@ -3228,15 +3228,6 @@
                         "id": "ever-worked-question",
                         "title": "Has <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> ever worked?",
                         "type": "General",
-                        "guidance": {
-                            "content": [{
-                                "title": "Include:",
-                                "list": [
-                                    "work outside of the United Kingdom.",
-                                    "even if you are now retired."
-                                ]
-                            }]
-                        },
                         "answers": [{
                             "id": "ever-worked-answer",
                             "mandatory": false,
@@ -3284,11 +3275,6 @@
                     "questions": [{
                         "id": "main-job-question",
                         "title": "What is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em> employment status?",
-                        "guidance": {
-                            "content": [{
-                                "description": "<p>If you are not working answer the remaining questions about your last main job.</p><p>Your main job is the job which you usually work (worked) the most hours</p>"
-                            }]
-                        },
                         "type": "General",
                         "answers": [{
                             "id": "main-job-answer",
