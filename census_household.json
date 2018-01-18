@@ -2841,7 +2841,7 @@
                     "questions": [{
                             "id": "qualifications-england-question",
                             "title": "Thinking of any studies, exams or qualifications, which of the following does <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> have?",
-                            "description": "Select every option that applies (whether UK or foreign equivalent) if you have any of the qualifications listed",
+                            "description": "Select every option that applies",
                             "type": "General",
                             "answers": [{
                                 "id": "qualifications-england-answer",
