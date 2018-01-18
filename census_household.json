@@ -1758,7 +1758,6 @@
                         {
                             "id": "ethnic-group-wales-question",
                             "title": "What is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive}}</em> ethnic group?",
-                            "description": "It is for you to choose your ethnic group. For example this could be your family or cultural background, or it could be how you would describe yourself.",
                             "type": "General",
                             "answers": [{
                                 "id": "ethnic-group-wales-answer",
@@ -2630,18 +2629,10 @@
                     "questions": [{
                         "id": "past-usual-address-question",
                         "title": "One year ago, what was your usual address?",
-                        "description": "If you had no usual address one year ago, state the address where you were staying",
                         "type": "General",
                         "answers": [{
                                 "id": "past-usual-address-answer",
                                 "mandatory": false,
-                                "guidance": {
-                                    "show_guidance": "Show further guidance",
-                                    "hide_guidance": "Hide further guidance",
-                                    "content": [{
-                                        "description": "In most cases your usual address will be the permanent or family home that you were living in."
-                                    }]
-                                },
                                 "options": [{
                                         "label": "This address",
                                         "value": "This address"
