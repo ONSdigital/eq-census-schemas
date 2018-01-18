@@ -1502,11 +1502,6 @@
                     "questions": [{
                         "id": "arrive-in-uk-question",
                         "title": "If you were not born in the United Kingdom, when did <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> most recently arrive to live here?",
-                        "guidance": {
-                            "content": [{
-                                "description": "Exclude short visits away from the UK"
-                            }]
-                        },
                         "type": "General",
                         "answers": [{
                             "id": "arrive-in-uk-answer",
@@ -1580,22 +1575,6 @@
                         "id": "carer-question",
                         "title": "Does <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> look after, or give any help or support to family members, friends, neighbours or others?",
                         "description": "",
-                        "guidance": {
-                            "content": [{
-                                    "title": "Include",
-                                    "list": [
-                                        "long-term physical or mental ill-health/disability",
-                                        "problems related to old age"
-                                    ]
-                                },
-                                {
-                                    "title": "Exclude",
-                                    "list": [
-                                        "anything you do as part of your paid employment"
-                                    ]
-                                }
-                            ]
-                        },
                         "type": "General",
                         "answers": [{
                             "id": "carer-answer",
