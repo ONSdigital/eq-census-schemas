@@ -3468,7 +3468,6 @@
                     "questions": [{
                         "id": "business-name-question",
                         "title": "What is the name of the organisation of business that <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> work for?",
-                        "description": "<p>If you were self-employed in your own organisation or business, enter the name</p><p>This question is asking for the name of the organisation or business that you work (or worked) for in your main job.</p><p>If you can’t remember the name of the organisation, please give the best information you can.</p><p>If you are employed through an agency please enter the name of the business you are working for, not the agency.</p>",
                         "type": "General",
                         "answers": [{
                             "id": "business-name-answer",
