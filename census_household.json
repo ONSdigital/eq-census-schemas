@@ -3394,7 +3394,6 @@
                     "questions": [{
                         "id": "job-title-question",
                         "title": "What is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em> full job title?",
-                        "description": "<p>For example, <b>primary school teacher, car mechanic, district nurse, structural engineer</b></p><p>Do not state your grade or pay band</p><p>Please enter your job title in the space provided.</p><p>Do not state your grade or pay band.</p><p>If you are not sure of your job title please give the best information you can.</p>",
                         "type": "General",
                         "answers": [{
                             "id": "job-title-answer",
