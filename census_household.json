@@ -2798,11 +2798,6 @@
                     "questions": [{
                         "id": "disability-question",
                         "title": "Are <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive}}</em> day-to-day activities limited because of a health problem or disability which has lasted, or is expected to last, at least 12 months?",
-                        "guidance": {
-                            "content": [{
-                                "description": "<strong>Include</strong> problems related to old age"
-                            }]
-                        },
                         "type": "General",
                         "answers": [{
                             "id": "disability-answer",
