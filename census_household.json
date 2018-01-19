@@ -3594,7 +3594,6 @@
                     "questions": [{
                         "id": "visitor-date-of-birth-question",
                         "title": "What is this person’s date of birth?",
-                        "description": "For example 20 March 1980",
                         "type": "General",
                         "answers": [{
                             "id": "visitor-date-of-birth-answer",
