@@ -3195,7 +3195,7 @@
                         "type": "General",
                         "answers": [{
                             "id": "occupation-answer",
-                            "mandatory": true,
+                            "mandatory": false,
                             "options": [{
                                     "label": "retired (whether receiving a pension or not)",
                                     "value": "retired (whether receiving a pension or not)"
@@ -3217,7 +3217,7 @@
                                     "value": "other"
                                 }
                             ],
-                            "type": "Checkbox"
+                            "type": "Radio"
                         }]
                     }]
                 },
