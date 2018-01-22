@@ -3045,7 +3045,7 @@
                                     "value": "none of the above"
                                 }
                             ],
-                            "type": "Checkbox",
+                            "type": "Radio",
                             "label": "Select all that apply"
                         }]
                     }],
@@ -3201,8 +3201,8 @@
                                     "value": "retired (whether receiving a pension or not)"
                                 },
                                 {
-                                    "label": "a student kitten",
-                                    "value": "a student kitten"
+                                    "label": "a student",
+                                    "value": "a student"
                                 },
                                 {
                                     "label": "looking after home or family",
@@ -3217,7 +3217,7 @@
                                     "value": "other"
                                 }
                             ],
-                            "type": "Radio"
+                            "type": "Checkbox"
                         }]
                     }]
                 },
