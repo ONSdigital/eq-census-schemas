@@ -3016,11 +3016,7 @@
                         "answers": [{
                             "id": "employment-type-answer",
                             "mandatory": false,
-                            "options": [{
-                                    "label": "working as an employee",
-                                    "value": "working as an employee"
-                                },
-                                {
+                            "options":[{
                                     "label": "Yes",
                                     "value": "Yes"
                                 },
@@ -3030,66 +3026,16 @@
                                 },
                             ],
                             "type": "Radio",
-                            "label": "Select all that apply"
+                            "label": ""
                         }]
                     }],
                     "routing_rules": [{
                             "goto": {
-                                "block": "main-job",
+                                "block": "employedselfemployed",
                                 "when": [{
-                                    "id": "employment-type-answer",
+                                    "id": "employedselfemployed",
                                     "condition": "contains",
-                                    "value": "working as an employee"
-                                }]
-                            }
-                        },
-                        {
-                            "goto": {
-                                "block": "main-job",
-                                "when": [{
-                                    "id": "employment-type-answer",
-                                    "condition": "contains",
-                                    "value": "on a government sponsored training scheme"
-                                }]
-                            }
-                        },
-                        {
-                            "goto": {
-                                "block": "main-job",
-                                "when": [{
-                                    "id": "employment-type-answer",
-                                    "condition": "contains",
-                                    "value": "self-employed or freelance"
-                                }]
-                            }
-                        },
-                        {
-                            "goto": {
-                                "block": "main-job",
-                                "when": [{
-                                    "id": "employment-type-answer",
-                                    "condition": "contains",
-                                    "value": "working paid or unpaid for you own or your family’s business"
-                                }]
-                            }
-                        },
-                        {
-                            "goto": {
-                                "block": "main-job",
-                                "when": [{
-                                    "id": "employment-type-answer",
-                                    "condition": "contains",
-                                    "value": "away from work ill, on maternity leave, on holiday or temporarily laid off"
-                                }]
-                            }
-                        },
-                        {
-                            "goto": {
-                                "block": "main-job",
-                                "when": [{
-                                    "id": "employment-type-answer",
-                                    "condition": "contains",
-                                    "value": "doing any other kind of paid work"
+                                    "value": "Yes"
                                 }]
                             }
                         },
@@ -3099,6 +3045,29 @@
                             }
                         }
                     ]
+                },
+                {
+                    "type": "Question",
+                    "id": "employedselfemployed",
+                    "questions": [{
+                        "id": "employedselfemployed",
+                        "title": "Last week kitten <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> actively looking for any kind of paid work during the last four weeks?",
+                        "type": "General",
+                        "answers": [{
+                            "id": "jobseeker-answer",
+                            "mandatory": false,
+                            "options": [{
+                                    "label": "Yes",
+                                    "value": "Yes"
+                                },
+                                {
+                                    "label": "No",
+                                    "value": "No"
+                                }
+                            ],
+                            "type": "Radio"
+                        }]
+                    }]
                 },
                 {
                     "type": "Question",
