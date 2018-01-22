@@ -3008,6 +3008,54 @@
                 },
                 {
                     "type": "Question",
+                    "id": "ever-worked",
+                    "questions": [{
+                        "id": "ever-worked-question",
+                        "title": "Has <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> ever worked?",
+                        "type": "General",
+                        "answers": [{
+                            "id": "ever-worked-answer",
+                            "mandatory": false,
+                            "options": [{
+                                    "label": "Yes",
+                                    "value": "Yes"
+                                },
+                                {
+                                    "label": "No",
+                                    "value": "No"
+                                }
+                            ],
+                            "type": "Radio"
+                        }]
+                    }],
+                    "routing_rules": [{
+                            "goto": {
+                                "block": "household-member-completed",
+                                "when": [{
+                                    "id": "ever-worked-answer",
+                                    "condition": "equals",
+                                    "value": "No"
+                                }]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "household-member-completed",
+                                "when": [{
+                                    "id": "ever-worked-answer",
+                                    "condition": "not set"
+                                }]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "main-job"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
                     "id": "employment-type",
                     "questions": [{
                         "id": "employment-type-question",
