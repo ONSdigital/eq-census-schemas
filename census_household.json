@@ -3042,7 +3042,7 @@
                             "goto": {
                                 "block": "household-member-completed",
                                 "when": [{
-                                    "id": "ever-worked-answer",
+                                    "id": "jobseeker-question",
                                     "condition": "not set"
                                 }]
                             }
