@@ -3021,29 +3021,13 @@
                                     "value": "working as an employee"
                                 },
                                 {
-                                    "label": "on a government sponsored training scheme",
-                                    "value": "on a government sponsored training scheme"
+                                    "label": "Yes",
+                                    "value": "Yes"
                                 },
                                 {
-                                    "label": "self-employed or freelance",
-                                    "value": "self-employed or freelance"
+                                    "label": "No",
+                                    "value": "No"
                                 },
-                                {
-                                    "label": "working paid or unpaid for you own or your family’s business",
-                                    "value": "working paid or unpaid for you own or your family’s business"
-                                },
-                                {
-                                    "label": "away from work ill, on maternity leave, on holiday or temporarily laid off",
-                                    "value": "away from work ill, on maternity leave, on holiday or temporarily laid off"
-                                },
-                                {
-                                    "label": "doing any other kind of paid work",
-                                    "value": "doing any other kind of paid work"
-                                },
-                                {
-                                    "label": "none of the above",
-                                    "value": "none of the above"
-                                }
                             ],
                             "type": "Radio",
                             "label": "Select all that apply"
