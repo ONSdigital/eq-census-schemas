@@ -867,7 +867,7 @@
                                 "when": [{
                                     "id": "details-correct-answer",
                                     "condition": "equals",
-                                    "value": "No, I need to change my name"
+                                    "value": "No, I need to change the name"
                                 }]
                             }
                         },
@@ -883,7 +883,7 @@
                     "id": "details-correct1",
                     "questions": [{
                         "id": "details-correct-question1",
-                        "title": "Is the name {{ [answers.first_name[group_instance], answers.middle_names[group_instance], answers.last_name[group_instance]] | format_household_name }} correct, including any middle name(s)? kitty",
+                        "title": "Is the name {{ [answers.first_name[group_instance], answers.middle_names[group_instance], answers.last_name[group_instance]] | format_household_name }} correct, including any middle name(s)?",
                         "type": "General",
                         "answers": [{
                             "id": "details-correct-answer1",
@@ -902,7 +902,7 @@
                     }],
                     "routing_rules": [{
                             "goto": {
-                                "block": "correct-name",
+                                "block": "correct-name1",
                                 "when": [{
                                     "id": "details-correct-answer",
                                     "condition": "equals",
@@ -920,6 +920,34 @@
                 {
                     "type": "Question",
                     "id": "correct-name",
+                    "questions": [{
+                        "id": "correct-name-question",
+                        "title": "What is {{ [answers.first_name[group_instance], answers.middle_names[group_instance], answers.last_name[group_instance]] | format_household_name }} correct name?",
+                        "type": "General",
+                        "answers": [{
+                                "id": "correct-first-name",
+                                "label": "First name",
+                                "mandatory": false,
+                                "type": "TextField"
+                            },
+                            {
+                                "id": "correct-middle-names",
+                                "label": "Middle names",
+                                "mandatory": false,
+                                "type": "TextField"
+                            },
+                            {
+                                "id": "correct-last-name",
+                                "label": "Last name",
+                                "mandatory": false,
+                                "type": "TextField"
+                            }
+                        ]
+                    }]
+                },
+                {
+                    "type": "Question",
+                    "id": "correct-name1",
                     "questions": [{
                         "id": "correct-name-question",
                         "title": "What is your correct name?",
