@@ -827,7 +827,7 @@
                             "goto": {
                                 "block": "details-correct1",
                                 "when": [{
-                                    "id": "proxy-answer-answer",
+                                    "id": "proxy-answer",
                                     "condition": "Yes, im completing the Census myself"
                                 }]
                             }
@@ -854,8 +854,8 @@
                                     "value": "Yes, this is my full name"
                                 },
                                 {
-                                    "label": "No, I need to change my name",
-                                    "value": "No, I need to change my name"
+                                    "label": "No, I need to change the name",
+                                    "value": "No, I need to change the name"
                                 }
                             ],
                             "type": "Radio"
