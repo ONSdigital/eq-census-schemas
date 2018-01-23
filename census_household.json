@@ -922,7 +922,7 @@
                     "id": "correct-name",
                     "questions": [{
                         "id": "correct-name-question",
-                        "title": "What is {{ [answers.first_name[group_instance], answers.middle_names[group_instance], answers.last_name[group_instance]] | format_household_name }} correct name?",
+                        "title": "What is {{ [answers.first_name[group_instance], answers.middle_names[group_instance], answers.last_name[group_instance]] | format_household_name }}'s' correct name?",
                         "type": "General",
                         "answers": [{
                                 "id": "correct-first-name",
