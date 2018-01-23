@@ -912,7 +912,7 @@
                         },
                         {
                             "goto": {
-                                "block": "over-16"
+                                "block": "over-161"
                             }
                         }
                     ]
@@ -978,7 +978,7 @@
                     "id": "over-16",
                     "questions": [{
                         "id": "over-16-question",
-                        "title": "Are you aged 16 or over?",
+                        "title": "Is {{ [answers.first_name[group_instance], answers.middle_names[group_instance], answers.last_name[group_instance]] | format_household_name }} aged 16 or over?",
                         "type": "General",
                         "answers": [{
                             "id": "over-16-answer",
@@ -1008,6 +1008,45 @@
                         {
                             "goto": {
                                 "block": "sex"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "over-161",
+                    "questions": [{
+                        "id": "over-16-question1",
+                        "title": "Are you aged 16 or over?",
+                        "type": "General",
+                        "answers": [{
+                            "id": "over-16-answer1",
+                            "mandatory": true,
+                            "options": [{
+                                    "label": "Yes",
+                                    "value": "Yes"
+                                },
+                                {
+                                    "label": "No",
+                                    "value": "No"
+                                }
+                            ],
+                            "type": "Radio"
+                        }]
+                    }],
+                    "routing_rules": [{
+                            "goto": {
+                                "block": "private-response",
+                                "when": [{
+                                    "id": "over-16-answer1",
+                                    "condition": "equals",
+                                    "value": "Yes"
+                                }]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "sex1"
                             }
                         }
                     ]
