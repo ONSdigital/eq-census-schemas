@@ -819,7 +819,7 @@
                                 "when": [{
                                     "id": "proxy-answer",
                                     "condition": "equals",
-                                    "value": "Yes, im completing the Census myself"
+                                    "value": "No, someone is completing the Census on my behalf"
                                 }]
                             }
                         },
