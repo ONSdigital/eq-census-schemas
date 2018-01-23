@@ -1187,6 +1187,36 @@
                 },
                 {
                     "type": "Question",
+                    "id": "date-of-birth1",
+                    "questions": [{
+                        "id": "date-of-birth-question1",
+                        "title": "What is your date of birth?",
+                        "type": "General",
+                        "answers": [{
+                            "id": "date-of-birth-answer1",
+                            "mandatory": false,
+                            "type": "Date"
+                        }]
+                    }],
+                    "routing_rules": [{
+                            "goto": {
+                                "block": "marital-status1",
+                                "when": [{
+                                    "id": "date-of-birth-answer1",
+                                    "condition": "equals",
+                                    "value": "Male"
+                                }]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "marital-status1"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
                     "id": "marital-status",
                     "questions": [{
                         "id": "marital-status-question",
