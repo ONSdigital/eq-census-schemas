@@ -1134,6 +1134,45 @@
                 },
                 {
                     "type": "Question",
+                    "id": "sex1",
+                    "questions": [{
+                        "id": "sex-question1",
+                        "title": "What is your sex?",
+                        "type": "General",
+                        "answers": [{
+                            "id": "sex-answer1",
+                            "mandatory": true,
+                            "options": [{
+                                    "label": "Male",
+                                    "value": "Male"
+                                },
+                                {
+                                    "label": "Female",
+                                    "value": "Female"
+                                }
+                            ],
+                            "type": "Radio"
+                        }]
+                    }],
+                    "routing_rules": [{
+                            "goto": {
+                                "block": "date-of-birth1",
+                                "when": [{
+                                    "id": "sex-answer1",
+                                    "condition": "equals",
+                                    "value": "Male"
+                                }]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "date-of-birth1"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
                     "id": "date-of-birth",
                     "questions": [{
                         "id": "date-of-birth-question",
