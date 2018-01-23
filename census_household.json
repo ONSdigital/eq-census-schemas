@@ -850,8 +850,8 @@
                             "id": "details-correct-answer",
                             "mandatory": false,
                             "options": [{
-                                    "label": "Yes, this is my full name",
-                                    "value": "Yes, this is my full name"
+                                    "label": "Yes, this is their full name",
+                                    "value": "Yes, this is their full name"
                                 },
                                 {
                                     "label": "No, I need to change the name",
@@ -997,7 +997,7 @@
                     }],
                     "routing_rules": [{
                             "goto": {
-                                "block": "private-response",
+                                "block": "sex",
                                 "when": [{
                                     "id": "over-16-answer",
                                     "condition": "equals",
