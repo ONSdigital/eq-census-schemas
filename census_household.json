@@ -3008,54 +3008,6 @@
                 },
                 {
                     "type": "Question",
-                    "id": "paid-job",
-                    "questions": [{
-                        "id": "paid-job-question",
-                        "title": "Last week, did <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> have a paid job either as an employee or self employed?",
-                        "type": "General",
-                        "answers": [{
-                            "id": "paid-job-answer",
-                            "mandatory": false,
-                            "options": [{
-                                    "label": "Yes",
-                                    "value": "Yes"
-                                },
-                                {
-                                    "label": "No",
-                                    "value": "No"
-                                }
-                            ],
-                            "type": "Radio"
-                        }]
-                    }],
-                    "routing_rules": [{
-                            "goto": {
-                                "block": "jobseeker-question",
-                                "when": [{
-                                    "id": "paid-job-answer",
-                                    "condition": "equals",
-                                    "value": "No"
-                                }]
-                            }
-                        },
-                        {
-                            "goto": {
-                                "block": "household-member-completed",
-                                "when": [{
-                                    "id": "jobseeker-question",
-                                    "condition": "not set"
-                                }]
-                            }
-                        },
-                        {
-                            "goto": {
-                                "block": "main-job"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "type": "Question",
                     "id": "employment-type",
                     "questions": [{
                         "id": "employment-type-question",
@@ -3265,7 +3217,7 @@
                                     "value": "other"
                                 }
                             ],
-                            "type": "Checkbox"
+                            "type": "Radio"
                         }]
                     }]
                 },
