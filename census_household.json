@@ -815,11 +815,11 @@
                     }],
                     "routing_rules": [{
                             "goto": {
-                                "block": "household-member-completed",
+                                "block": "details-correct",
                                 "when": [{
-                                    "id": "ever-worked-answer",
+                                    "id": "proxy-answer",
                                     "condition": "equals",
-                                    "value": "No"
+                                    "value": "Yes, im completing the Census myself"
                                 }]
                             }
                         },
