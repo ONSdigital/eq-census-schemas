@@ -796,17 +796,18 @@
                     "questions": [{
                         "id": "proxy-question",
                         "title": "<em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em>, Can you confirm if you are completing the Census yourself?",
+                        "description": "A responsible adult should respond on behalf of a child under the age of 15",
                         "type": "General",
                         "answers": [{
                             "id": "proxy-answer",
                             "mandatory": false,
                             "options": [{
-                                    "label": "Yes, Im completing the Census myself",
-                                    "value": "Yes, Im completing the Census myself"
+                                    "label": "Yes, im completing the Census myself",
+                                    "value": "Yes, im completing the Census myself"
                                 },
                                 {
-                                    "label": "No, Someone is completing the Census on my behalf",
-                                    "value": "No, Someone is completing the Census on my behalf"
+                                    "label": "No, someone is completing the Census on my behalf",
+                                    "value": "No, someone is completing the Census on my behalf"
                                 }
                             ],
                             "type": "Radio"
