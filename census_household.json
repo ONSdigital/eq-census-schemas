@@ -904,7 +904,7 @@
                             "goto": {
                                 "block": "correct-name1",
                                 "when": [{
-                                    "id": "details-correct-answer",
+                                    "id": "details-correct-answer1",
                                     "condition": "equals",
                                     "value": "No, I need to change my name"
                                 }]
