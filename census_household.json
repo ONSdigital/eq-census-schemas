@@ -825,16 +825,16 @@
                         },
                         {
                             "goto": {
-                                "block": "household-member-completed",
+                                "block": "details-correct1",
                                 "when": [{
-                                    "id": "ever-worked-answer",
-                                    "condition": "not set"
+                                    "id": "proxy-answer-answer",
+                                    "condition": "Yes, im completing the Census myself"
                                 }]
                             }
                         },
                         {
                             "goto": {
-                                "block": "main-job"
+                                "block": "details-correct1"
                             }
                         }
                     ]
@@ -848,6 +848,45 @@
                         "type": "General",
                         "answers": [{
                             "id": "details-correct-answer",
+                            "mandatory": false,
+                            "options": [{
+                                    "label": "Yes, this is my full name",
+                                    "value": "Yes, this is my full name"
+                                },
+                                {
+                                    "label": "No, I need to change my name",
+                                    "value": "No, I need to change my name"
+                                }
+                            ],
+                            "type": "Radio"
+                        }]
+                    }],
+                    "routing_rules": [{
+                            "goto": {
+                                "block": "correct-name",
+                                "when": [{
+                                    "id": "details-correct-answer",
+                                    "condition": "equals",
+                                    "value": "No, I need to change my name"
+                                }]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "over-16"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "details-correct1",
+                    "questions": [{
+                        "id": "details-correct-question1",
+                        "title": "Is the name {{ [answers.first_name[group_instance], answers.middle_names[group_instance], answers.last_name[group_instance]] | format_household_name }} correct, including any middle name(s)? kitty",
+                        "type": "General",
+                        "answers": [{
+                            "id": "details-correct-answer1",
                             "mandatory": false,
                             "options": [{
                                     "label": "Yes, this is my full name",
