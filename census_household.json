@@ -1252,7 +1252,7 @@
                     "id": "marital-status",
                     "questions": [{
                         "id": "marital-status-question",
-                        "title": "On 9 April 2017, what was <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em> legal marital or same-sex civil partnership status?",
+                        "title": "Last week, what was <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em> legal marital or same-sex civil partnership status?",
                         "type": "General",
                         "answers": [{
                             "id": "marital-status-answer",
