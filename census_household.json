@@ -1165,7 +1165,7 @@
                                 {
                                     "label": "Female",
                                     "value": "Female"
-                                }
+                                },
                                 {
                                     "label": "Other",
                                     "value": "Other",
@@ -1180,8 +1180,7 @@
                                 "type": "TextField",
                                 "mandatory": false,
                                 "label": "Please specify"
-                        }
-                    ]
+                        }, 
                     }],
                     "routing_rules": [{
                             "goto": {
