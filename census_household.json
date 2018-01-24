@@ -1220,7 +1220,7 @@
                     "id": "marital-status",
                     "questions": [{
                         "id": "marital-status-question",
-                        "title": "On 9 April 2017, what is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em> legal marital or same-sex civil partnership status?",
+                        "title": "On 9 April 2017, what was <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em> legal marital or same-sex civil partnership status?",
                         "type": "General",
                         "answers": [{
                             "id": "marital-status-answer",
@@ -1259,7 +1259,7 @@
                     "id": "marital-status1",
                     "questions": [{
                         "id": "marital-status-question1",
-                        "title": "Last week, what is your legal marital or same-sex civil partnership status?",
+                        "title": "Last week, what was your legal marital or same-sex civil partnership status?",
                         "type": "General",
                         "answers": [{
                             "id": "marital-status-answer1",
@@ -1294,9 +1294,52 @@
                     }],
                     "routing_rules": [{
                             "goto": {
-                                "block": "another-address1",
+                                "block": "marital-type1",
                                 "when": [{
                                     "id": "marital-status-answer1",
+                                    "condition": "equals",
+                                    "value": "Never married and never registered a same-sex civil partnership"
+                                }]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "marital-type1"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "marital-type1",
+                    "questions": [{
+                        "id": "marital-type-question1",
+                        "title": "What type of partnership was this?",
+                        "type": "General",
+                        "answers": [{
+                            "id": "marital-type-answer1",
+                            "mandatory": false,
+                            "options": [{
+                                    "label": "Marriage to a partner of the opposite sex",
+                                    "value": "Marriage to a partner of the opposite sex"
+                                },
+                                {
+                                    "label": "Marriage to a partner of the same sex",
+                                    "value": "Marriage to a partner of the same sex"
+                                },
+                                {
+                                    "label": "Same-sex civil partnership",
+                                    "value": "Same-sex civil partnership"
+                                }
+                            ],
+                            "type": "Radio"
+                        }]
+                    }],
+                    "routing_rules": [{
+                            "goto": {
+                                "block": "another-address1",
+                                "when": [{
+                                    "id": "marital-type-answer1",
                                     "condition": "equals",
                                     "value": "Never married and never registered a same-sex civil partnership"
                                 }]
