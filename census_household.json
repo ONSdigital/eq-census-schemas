@@ -1130,7 +1130,23 @@
                             ],
                             "type": "Radio"
                         }]
-                    }]
+                    }],
+                    "routing_rules": [{
+                            "goto": {
+                                "block": "date-of-birth",
+                                "when": [{
+                                    "id": "sex-answer",
+                                    "condition": "equals",
+                                    "value": "Male"
+                                }]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "date-of-birth"
+                            }
+                        }
+                    ]
                 },
                 {
                     "type": "Question",
@@ -1183,7 +1199,23 @@
                             "mandatory": false,
                             "type": "Date"
                         }]
-                    }]
+                    }],
+                    "routing_rules": [{
+                            "goto": {
+                                "block": "marital-status",
+                                "when": [{
+                                    "id": "date-of-birth",
+                                    "condition": "equals",
+                                    "value": "Male"
+                                }]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "marital-status"
+                            }
+                        }
+                    ]
                 },
                 {
                     "type": "Question",
@@ -1252,7 +1284,23 @@
                             ],
                             "type": "Radio"
                         }]
-                    }]
+                    }],
+                    "routing_rules": [{
+                            "goto": {
+                                "block": "marital-type",
+                                "when": [{
+                                    "id": "marital-status-answer",
+                                    "condition": "equals",
+                                    "value": "Never married and never registered a same-sex civil partnership"
+                                }]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "marital-type"
+                            }
+                        }
+                    ]
                 },
                 {
                     "type": "Question",
@@ -1305,6 +1353,49 @@
                         {
                             "goto": {
                                 "block": "marital-type1"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "marital-type",
+                    "questions": [{
+                        "id": "marital-type-question",
+                        "title": "What type of partnership was this?",
+                        "type": "General",
+                        "answers": [{
+                            "id": "marital-type-answer",
+                            "mandatory": false,
+                            "options": [{
+                                    "label": "Marriage to a partner of the opposite sex",
+                                    "value": "Marriage to a partner of the opposite sex"
+                                },
+                                {
+                                    "label": "Marriage to a partner of the same sex",
+                                    "value": "Marriage to a partner of the same sex"
+                                },
+                                {
+                                    "label": "Same-sex civil partnership",
+                                    "value": "Same-sex civil partnership"
+                                }
+                            ],
+                            "type": "Radio"
+                        }]
+                    }],
+                    "routing_rules": [{
+                            "goto": {
+                                "block": "another-address",
+                                "when": [{
+                                    "id": "marital-type-answer",
+                                    "condition": "equals",
+                                    "value": "Never married and never registered a same-sex civil partnership"
+                                }]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "another-address"
                             }
                         }
                     ]
