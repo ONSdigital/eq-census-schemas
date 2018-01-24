@@ -1036,7 +1036,7 @@
                     }],
                     "routing_rules": [{
                             "goto": {
-                                "block": "private-response",
+                                "block": "sex1",
                                 "when": [{
                                     "id": "over-16-answer1",
                                     "condition": "equals",
@@ -1539,7 +1539,7 @@
                     "id": "another-address1",
                     "questions": [{
                         "id": "another-address-question1",
-                        "title": "Does you stay at another address for more than 30 days a year?",
+                        "title": "Do you stay at another address for more than 30 days a year?",
                         "type": "General",
                         "answers": [{
                                 "id": "another-address-answer1",
@@ -1561,8 +1561,8 @@
                                 "type": "Radio"
                             },
                             {
-                                "id": "another-address-answer-other",
-                                "parent_answer_id": "another-address-answer",
+                                "id": "another-address-answer-other1",
+                                "parent_answer_id": "another-address-answer1",
                                 "type": "TextField",
                                 "mandatory": false,
                                 "label": "Please specify a country"
@@ -1571,9 +1571,9 @@
                     }],
                     "routing_rules": [{
                             "goto": {
-                                "block": "in-education",
+                                "block": "in-education1",
                                 "when": [{
-                                    "id": "another-address-answer",
+                                    "id": "another-address-answer1",
                                     "condition": "equals",
                                     "value": "No"
                                 }]
@@ -1581,9 +1581,9 @@
                         },
                         {
                             "goto": {
-                                "block": "other-address",
+                                "block": "other-address1",
                                 "when": [{
-                                    "id": "another-address-answer",
+                                    "id": "another-address-answer1",
                                     "condition": "equals",
                                     "value": "Yes, an address within the UK"
                                 }]
@@ -1591,9 +1591,9 @@
                         },
                         {
                             "goto": {
-                                "block": "address-type",
+                                "block": "address-type1",
                                 "when": [{
-                                    "id": "another-address-answer",
+                                    "id": "another-address-answer1",
                                     "condition": "equals",
                                     "value": "Other"
                                 }]
@@ -1601,18 +1601,18 @@
                         },
                         {
                             "goto": {
-                                "block": "in-education",
+                                "block": "in-education1",
                                 "when": [{
-                                    "id": "another-address-answer",
+                                    "id": "another-address-answer1",
                                     "condition": "not set"
                                 }]
                             }
                         },
                         {
                             "goto": {
-                                "block": "address-type",
+                                "block": "address-type1",
                                 "when": [{
-                                    "id": "another-address-answer",
+                                    "id": "another-address-answer1",
                                     "condition": "not equals",
                                     "value": "Other"
                                 }]
@@ -1620,7 +1620,7 @@
                         },
                         {
                             "goto": {
-                                "block": "in-education"
+                                "block": "in-education1"
                             }
                         }
                     ]
@@ -1631,6 +1631,46 @@
                     "questions": [{
                         "id": "other-address-question",
                         "title": "Enter details of the other UK address where <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> stay more than 30 days a year",
+                        "type": "General",
+                        "answers": [{
+                                "id": "other-address-answer-building",
+                                "label": "Building",
+                                "mandatory": false,
+                                "type": "TextField"
+                            },
+                            {
+                                "id": "other-address-answer-street",
+                                "label": "Street",
+                                "mandatory": false,
+                                "type": "TextField"
+                            },
+                            {
+                                "id": "other-address-answer-city",
+                                "label": "Town or city",
+                                "mandatory": false,
+                                "type": "TextField"
+                            },
+                            {
+                                "id": "other-address-answer-county",
+                                "label": "County (optional)",
+                                "mandatory": false,
+                                "type": "TextField"
+                            },
+                            {
+                                "id": "other-address-answer-postcode",
+                                "label": "Postcode",
+                                "mandatory": false,
+                                "type": "TextField"
+                            }
+                        ]
+                    }]
+                },
+                {
+                    "type": "Question",
+                    "id": "other-address1",
+                    "questions": [{
+                        "id": "other-address-question1",
+                        "title": "Enter details of the other UK address where you stay more than 30 days a year",
                         "type": "General",
                         "answers": [{
                                 "id": "other-address-answer-building",
