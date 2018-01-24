@@ -1166,9 +1166,22 @@
                                     "label": "Female",
                                     "value": "Female"
                                 }
+                                {
+                                    "label": "Other",
+                                    "value": "Other",
+                                    "child_answer_id": "another-gender-answer"
+                                }
                             ],
                             "type": "Radio"
-                        }]
+                        },
+                        {
+                            "id": "another-gender-answer",
+                                "parent_answer_id": "sex-answer1",
+                                "type": "TextField",
+                                "mandatory": false,
+                                "label": "Please specify"
+                        }
+                    ]
                     }],
                     "routing_rules": [{
                             "goto": {
