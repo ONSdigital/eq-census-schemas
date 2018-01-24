@@ -1114,7 +1114,7 @@
                     "id": "sex",
                     "questions": [{
                         "id": "sex-question",
-                        "title": "What is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive}}</em> gender?",
+                        "title": "What is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive}}</em> sex?",
                         "type": "General",
                         "answers": [{
                             "id": "sex-answer",
@@ -1153,7 +1153,7 @@
                     "id": "sex1",
                     "questions": [{
                         "id": "sex-question1",
-                        "title": "What is your gender?",
+                        "title": "What is your sex?",
                         "type": "General",
                         "answers": [{
                             "id": "sex-answer1",
@@ -1165,21 +1165,10 @@
                                 {
                                     "label": "Female",
                                     "value": "Female"
-                                },
-                                {
-                                    "label": "Other",
-                                    "value": "Other",
-                                    "child_answer_id": "another-gender-answer"
                                 }
                             ],
                             "type": "Radio"
-                        },
-                        {
-                            "id": "another-gender-answer",
-                                "parent_answer_id": "sex-answer1",
-                                "type": "TextField",
-                                "mandatory": false,
-                                "label": "Please specify"
+                        }]
                     }],
                     "routing_rules": [{
                             "goto": {
