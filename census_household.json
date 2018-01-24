@@ -1180,7 +1180,6 @@
                                 "type": "TextField",
                                 "mandatory": false,
                                 "label": "Please specify"
-                        }, 
                     }],
                     "routing_rules": [{
                             "goto": {
