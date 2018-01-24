@@ -1798,6 +1798,45 @@
                 },
                 {
                     "type": "Question",
+                    "id": "in-education1",
+                    "questions": [{
+                        "id": "in-education-question1",
+                        "title": "Is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> in full-time education?",
+                        "type": "General",
+                        "answers": [{
+                            "id": "in-education-answer1",
+                            "mandatory": false,
+                            "options": [{
+                                    "label": "Yes",
+                                    "value": "Yes"
+                                },
+                                {
+                                    "label": "No",
+                                    "value": "No"
+                                }
+                            ],
+                            "type": "Radio"
+                        }]
+                    }],
+                    "routing_rules": [{
+                            "goto": {
+                                "block": "term-time-location",
+                                "when": [{
+                                    "id": "in-education-answer",
+                                    "condition": "equals",
+                                    "value": "Yes"
+                                }]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "country-of-birth"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
                     "id": "term-time-location",
                     "questions": [{
                         "id": "term-time-location-question",
