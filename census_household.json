@@ -1114,7 +1114,7 @@
                     "id": "sex",
                     "questions": [{
                         "id": "sex-question",
-                        "title": "What is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive}}</em> sex?",
+                        "title": "What is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive}}</em> gender?",
                         "type": "General",
                         "answers": [{
                             "id": "sex-answer",
@@ -1153,7 +1153,7 @@
                     "id": "sex1",
                     "questions": [{
                         "id": "sex-question1",
-                        "title": "What is your sex?",
+                        "title": "What is your gender?",
                         "type": "General",
                         "answers": [{
                             "id": "sex-answer1",
@@ -1389,7 +1389,7 @@
                                 "when": [{
                                     "id": "marital-type-answer",
                                     "condition": "equals",
-                                    "value": "Never married and never registered a same-sex civil partnership"
+                                    "value": "Marriage to a partner of the opposite sex"
                                 }]
                             }
                         },
@@ -1432,7 +1432,7 @@
                                 "when": [{
                                     "id": "marital-type-answer1",
                                     "condition": "equals",
-                                    "value": "Never married and never registered a same-sex civil partnership"
+                                    "value": "Marriage to a partner of the opposite sex"
                                 }]
                             }
                         },
@@ -1452,6 +1452,97 @@
                         "type": "General",
                         "answers": [{
                                 "id": "another-address-answer",
+                                "mandatory": false,
+                                "options": [{
+                                        "label": "No",
+                                        "value": "No"
+                                    },
+                                    {
+                                        "label": "Yes, an address within the UK",
+                                        "value": "Yes, an address within the UK"
+                                    },
+                                    {
+                                        "label": "Yes, an address outside the UK",
+                                        "value": "Other",
+                                        "child_answer_id": "another-address-answer-other"
+                                    }
+                                ],
+                                "type": "Radio"
+                            },
+                            {
+                                "id": "another-address-answer-other",
+                                "parent_answer_id": "another-address-answer",
+                                "type": "TextField",
+                                "mandatory": false,
+                                "label": "Please specify a country"
+                            }
+                        ]
+                    }],
+                    "routing_rules": [{
+                            "goto": {
+                                "block": "in-education",
+                                "when": [{
+                                    "id": "another-address-answer",
+                                    "condition": "equals",
+                                    "value": "No"
+                                }]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "other-address",
+                                "when": [{
+                                    "id": "another-address-answer",
+                                    "condition": "equals",
+                                    "value": "Yes, an address within the UK"
+                                }]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "address-type",
+                                "when": [{
+                                    "id": "another-address-answer",
+                                    "condition": "equals",
+                                    "value": "Other"
+                                }]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "in-education",
+                                "when": [{
+                                    "id": "another-address-answer",
+                                    "condition": "not set"
+                                }]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "address-type",
+                                "when": [{
+                                    "id": "another-address-answer",
+                                    "condition": "not equals",
+                                    "value": "Other"
+                                }]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "in-education"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "another-address1",
+                    "questions": [{
+                        "id": "another-address-question1",
+                        "title": "Does you stay at another address for more than 30 days a year?",
+                        "type": "General",
+                        "answers": [{
+                                "id": "another-address-answer1",
                                 "mandatory": false,
                                 "options": [{
                                         "label": "No",
