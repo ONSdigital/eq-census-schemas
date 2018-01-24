@@ -1412,15 +1412,15 @@
                             "mandatory": false,
                             "options": [{
                                     "label": "Marriage to a partner of the opposite sex",
-                                    "value": "Marriage to a partner of the opposite sex"
+                                    "value": "Marriage to a partner of the opposite sex",
                                 },
                                 {
                                     "label": "Marriage to a partner of the same sex",
-                                    "value": "Marriage to a partner of the same sex"
+                                    "value": "Marriage to a partner of the same sex",
                                 },
                                 {
                                     "label": "Same-sex civil partnership",
-                                    "value": "Same-sex civil partnership"
+                                    "value": "Same-sex civil partnership",
                                 }
                             ],
                             "type": "Radio"
@@ -1459,7 +1459,7 @@
                                     },
                                     {
                                         "label": "Yes, an address within the UK",
-                                        "value": "Yes, an address within the UK"
+                                        "value": "Yes, an address within the UK",
                                     },
                                     {
                                         "label": "Yes, an address outside the UK",
