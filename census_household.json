@@ -1287,7 +1287,7 @@
                     }],
                     "routing_rules": [{
                             "goto": {
-                                "block": "marital-type",
+                                "block": "another-address",
                                 "when": [{
                                     "id": "marital-status-answer",
                                     "condition": "equals",
@@ -1342,7 +1342,7 @@
                     }],
                     "routing_rules": [{
                             "goto": {
-                                "block": "marital-type1",
+                                "block": "another-address1",
                                 "when": [{
                                     "id": "marital-status-answer1",
                                     "condition": "equals",
