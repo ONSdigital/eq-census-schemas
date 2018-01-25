@@ -1150,7 +1150,7 @@
                                 "when": [{
                                     "id": "over-16-answer",
                                     "condition": "equals",
-                                    "value": "NO"
+                                    "value": "No"
                                 }]
                             }
                         },
@@ -2123,20 +2123,23 @@
                                 }]
                             }]
                         }]},
-                    {
-                            "id": "country-of-birth1",
+                        {
+                    "type": "Question",
+                    "id": "country-of-birth1",
+                    "questions": [{
+                            "id": "country-of-birth-england-question1",
                             "title": "What is your country of birth?",
                             "type": "General",
                             "answers": [{
-                                    "id": "country-of-birth-answer1",
+                                    "id": "country-of-birth-england-answer1",
                                     "mandatory": false,
                                     "options": [{
-                                            "label": "Wales",
-                                            "value": "Wales"
-                                        },
-                                        {
                                             "label": "England",
                                             "value": "England"
+                                        },
+                                        {
+                                            "label": "Wales",
+                                            "value": "Wales"
                                         },
                                         {
                                             "label": "Scotland",
@@ -2153,14 +2156,14 @@
                                         {
                                             "label": "Elsewhere",
                                             "value": "Other",
-                                            "child_answer_id": "country-of-birth-wales-answer-other"
+                                            "child_answer_id": "country-of-birth-england-answer-other1"
                                         }
                                     ],
                                     "type": "Radio"
                                 },
                                 {
-                                    "id": "country-of-birth-wales-answer-other1",
-                                    "parent_answer_id": "country-of-birth-wales-answer",
+                                    "id": "country-of-birth-england-answer-other1",
+                                    "parent_answer_id": "country-of-birth-england-answer1",
                                     "type": "TextField",
                                     "mandatory": false,
                                     "label": "Please specify current name of country"
@@ -2169,99 +2172,11 @@
                             "skip_conditions": [{
                                 "when": [{
                                     "meta": "region_code",
-                                    "condition": "not equals",
+                                    "condition": "equals",
                                     "value": "GB-WLS"
                                 }]
                             }]
-                        }
-                    ],
-                    "routing_rules": [{
-                            "goto": {
-                                "block": "carer",
-                                "when": [{
-                                    "id": "country-of-birth-england-answer",
-                                    "condition": "equals",
-                                    "value": "England"
-                                }]
-                            }
                         },
-                        {
-                            "goto": {
-                                "block": "carer",
-                                "when": [{
-                                    "id": "country-of-birth-england-answer",
-                                    "condition": "equals",
-                                    "value": "Wales"
-                                }]
-                            }
-                        },
-                        {
-                            "goto": {
-                                "block": "carer",
-                                "when": [{
-                                    "id": "country-of-birth-england-answer",
-                                    "condition": "equals",
-                                    "value": "Scotland"
-                                }]
-                            }
-                        },
-                        {
-                            "goto": {
-                                "block": "carer",
-                                "when": [{
-                                    "id": "country-of-birth-england-answer",
-                                    "condition": "equals",
-                                    "value": "Northern Ireland"
-                                }]
-                            }
-                        },
-                        {
-                            "goto": {
-                                "block": "carer",
-                                "when": [{
-                                    "id": "country-of-birth-wales-answer",
-                                    "condition": "equals",
-                                    "value": "Wales"
-                                }]
-                            }
-                        },
-                        {
-                            "goto": {
-                                "block": "carer",
-                                "when": [{
-                                    "id": "country-of-birth-wales-answer",
-                                    "condition": "equals",
-                                    "value": "England"
-                                }]
-                            }
-                        },
-                        {
-                            "goto": {
-                                "block": "carer",
-                                "when": [{
-                                    "id": "country-of-birth-wales-answer",
-                                    "condition": "equals",
-                                    "value": "Scotland"
-                                }]
-                            }
-                        },
-                        {
-                            "goto": {
-                                "block": "carer",
-                                "when": [{
-                                    "id": "country-of-birth-wales-answer",
-                                    "condition": "equals",
-                                    "value": "Northern Ireland"
-                                }]
-                            }
-                        },
-                        {
-                            "goto": {
-                                "block": "arrive-in-uk"
-                            }
-                        }
-                    ]
-                },
                         {
                             "id": "country-of-birth-wales-question",
                             "title": "What is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive}}</em> country of birth?",
