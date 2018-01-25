@@ -1746,6 +1746,8 @@
                                     }
                                 ],
                                 "type": "Radio"
+                            }]
+                            }]
                             },
                             {
                     "type": "Question",
