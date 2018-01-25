@@ -1742,7 +1742,7 @@
                     "id": "other-address",
                     "questions": [{
                         "id": "other-address-question",
-                        "title": "Enter details of the other UK address where <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> stay more than 30 days a year kitty",
+                        "title": "Enter details of the other UK address where <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> stay more than 30 days a year",
                         "type": "General",
                         "answers": [{
                                 "id": "other-address-answer-building",
@@ -1782,7 +1782,7 @@
                     "id": "other-address1",
                     "questions": [{
                         "id": "other-address-question1",
-                        "title": "Enter details of the other UK address where you stay more than 30 days a year kitty",
+                        "title": "Enter details of the other UK address where you stay more than 30 days a year",
                         "type": "General",
                         "answers": [{
                                 "id": "other-address-answer-building",
@@ -1976,9 +1976,9 @@
                     }],
                     "routing_rules": [{
                             "goto": {
-                                "block": "term-time-location",
+                                "block": "term-time-location1",
                                 "when": [{
-                                    "id": "in-education-answer",
+                                    "id": "in-education-answer1",
                                     "condition": "equals",
                                     "value": "Yes"
                                 }]
@@ -1986,7 +1986,7 @@
                         },
                         {
                             "goto": {
-                                "block": "country-of-birth"
+                                "block": "country-of-birth1"
                             }
                         }
                     ]
@@ -2032,6 +2032,45 @@
                 },
                 {
                     "type": "Question",
+                    "id": "term-time-location1",
+                    "questions": [{
+                        "id": "term-time-location-question1",
+                        "title": "During term time, do you live at <em>{{answers.address_line_1}}</em> ?",
+                        "type": "General",
+                        "answers": [{
+                            "id": "term-time-location-answer1",
+                            "mandatory": false,
+                            "options": [{
+                                    "label": "Yes",
+                                    "value": "Yes"
+                                },
+                                {
+                                    "label": "No",
+                                    "value": "No"
+                                }
+                            ],
+                            "type": "Radio"
+                        }]
+                    }],
+                    "routing_rules": [{
+                            "goto": {
+                                "block": "household-member-completed1",
+                                "when": [{
+                                    "id": "term-time-location-answer1",
+                                    "condition": "equals",
+                                    "value": "No"
+                                }]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "country-of-birth1"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
                     "id": "country-of-birth",
                     "questions": [{
                             "id": "country-of-birth-england-question",
@@ -2071,6 +2110,60 @@
                                 {
                                     "id": "country-of-birth-england-answer-other",
                                     "parent_answer_id": "country-of-birth-england-answer",
+                                    "type": "TextField",
+                                    "mandatory": false,
+                                    "label": "Please specify current name of country"
+                                }
+                            ],
+                            "skip_conditions": [{
+                                "when": [{
+                                    "meta": "region_code",
+                                    "condition": "equals",
+                                    "value": "GB-WLS"
+                                }]
+                            }]
+                        },
+                        {
+                    "type": "Question",
+                    "id": "country-of-birth1",
+                    "questions": [{
+                            "id": "country-of-birth-england-question1",
+                            "title": "What is your country of birth?",
+                            "type": "General",
+                            "answers": [{
+                                    "id": "country-of-birth-england-answer1",
+                                    "mandatory": false,
+                                    "options": [{
+                                            "label": "England",
+                                            "value": "England"
+                                        },
+                                        {
+                                            "label": "Wales",
+                                            "value": "Wales"
+                                        },
+                                        {
+                                            "label": "Scotland",
+                                            "value": "Scotland"
+                                        },
+                                        {
+                                            "label": "Northern Ireland",
+                                            "value": "Northern Ireland"
+                                        },
+                                        {
+                                            "label": "Republic of Ireland",
+                                            "value": "Republic of Ireland"
+                                        },
+                                        {
+                                            "label": "Elsewhere",
+                                            "value": "Other",
+                                            "child_answer_id": "country-of-birth-england-answer-other1"
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                },
+                                {
+                                    "id": "country-of-birth-england-answer-other1",
+                                    "parent_answer_id": "country-of-birth-england-answer1",
                                     "type": "TextField",
                                     "mandatory": false,
                                     "label": "Please specify current name of country"
