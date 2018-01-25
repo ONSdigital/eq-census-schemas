@@ -2846,7 +2846,7 @@
                         },
                         {
                             "goto": {
-                                "block": "arrive-in-uk"
+                                "block": "arrive-in-uk1"
                             }
                         }
                     ]
@@ -2866,6 +2866,31 @@
                                     "type": "MonthYearDate"
                                 }
                             ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "arrive-in-uk1",
+                    "questions": [
+                        {
+                            "id": "arrive-in-uk-question1",
+                            "title": "If you were not born in the United Kingdom, when did <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> most recently arrive to live here?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "arrive-in-uk-answer1",
+                                    "mandatory": false,
+                                    "type": "MonthYearDate"
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "length-of-stay"
+                            }
                         }
                     ]
                 },
