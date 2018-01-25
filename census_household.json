@@ -2122,7 +2122,7 @@
                                     "value": "GB-WLS"
                                 }]
                             }]
-                        },
+                        }]},
                         {
                     "type": "Question",
                     "id": "country-of-birth1",
