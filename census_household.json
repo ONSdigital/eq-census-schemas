@@ -1198,11 +1198,11 @@
                     }],
                     "routing_rules": [{
                             "goto": {
-                                "block": "birth-gender1",
+                                "block": "date-of-birth1",
                                 "when": [{
-                                    "id": "sex-answer1",
+                                    "id": "over-161",
                                     "condition": "equals",
-                                    "value": "Female"
+                                    "value": "No"
                                 }]
                             }
                         },
