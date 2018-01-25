@@ -1667,7 +1667,7 @@
                                     {
                                         "label": "Yes, an address outside the UK",
                                         "value": "Other",
-                                        "child_answer_id": "another-address-answer-other"
+                                        "child_answer_id": "another-address-answer-other1"
                                     }
                                 ],
                                 "type": "Radio"
