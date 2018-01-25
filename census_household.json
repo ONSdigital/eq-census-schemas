@@ -1114,22 +1114,35 @@
                     "id": "sex",
                     "questions": [{
                         "id": "sex-question",
-                        "title": "What is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive}}</em> sex?",
+                        "title": "What is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> gender?",
                         "type": "General",
                         "answers": [{
-                            "id": "sex-answer",
-                            "mandatory": false,
-                            "options": [{
-                                    "label": "Male",
-                                    "value": "Male"
-                                },
-                                {
-                                    "label": "Female",
-                                    "value": "Female"
-                                }
-                            ],
-                            "type": "Radio"
-                        }]
+                                "id": "sex-answer",
+                                "mandatory": false,
+                                "options": [{
+                                        "label": "Female",
+                                        "value": "Female"
+                                    },
+                                    {   
+                                        "label": "Male",
+                                        "value": "Male"
+                                    }
+                                    {
+                                        "label": "Any other gender",
+                                        "value": "Other",
+                                        "child_answer_id": "sex-answer-other"
+                                    }
+                                ],
+                                "type": "Radio"
+                            },
+                            {
+                                "id": "sex-answer-other",
+                                "parent_answer_id": "sex-answer",
+                                "type": "TextField",
+                                "mandatory": false,
+                                "label": "Please specify a gender"
+                            }
+                        ]
                     }],
                     "routing_rules": [{
                             "goto": {
@@ -1137,7 +1150,7 @@
                                 "when": [{
                                     "id": "sex-answer",
                                     "condition": "equals",
-                                    "value": "Male"
+                                    "value": "Female"
                                 }]
                             }
                         },
