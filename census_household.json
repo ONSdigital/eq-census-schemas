@@ -2857,7 +2857,7 @@
                     "questions": [
                         {
                             "id": "arrive-in-uk-question",
-                            "title": "If you were not born in the United Kingdom, when did <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> most recently arrive to live here?",
+                            "title": "If <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> was not born in the United Kingdom, when did they most recently arrive to live here?",
                             "type": "General",
                             "answers": [
                                 {
@@ -2875,7 +2875,7 @@
                     "questions": [
                         {
                             "id": "arrive-in-uk-question1",
-                            "title": "If you were not born in the United Kingdom, when did <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> most recently arrive to live here?",
+                            "title": "If you were not born in the United Kingdom, when did you most recently arrive to live here?",
                             "type": "General",
                             "answers": [
                                 {
@@ -2928,7 +2928,7 @@
                     "questions": [
                         {
                             "id": "length-of-stay-question1",
-                            "title": "Including the time already spent here, how long does <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> intend to stay in the United Kingdom?",
+                            "title": "Including the time already spent here, how long do you intend to stay in the United Kingdom?",
                             "type": "General",
                             "answers": [
                                 {
@@ -3003,7 +3003,7 @@
                     "questions": [
                         {
                             "id": "health-question1",
-                            "title": "How is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive}}</em> health in general?",
+                            "title": "How is your health in general?",
                             "type": "General",
                             "answers": [
                                 {
