@@ -1198,9 +1198,9 @@
                     }],
                     "routing_rules": [{
                             "goto": {
-                                "block": "date-of-birth1",
+                                "block": "birth-gender1",
                                 "when": [{
-                                    "id": "sex-answer",
+                                    "id": "sex-answer1",
                                     "condition": "equals",
                                     "value": "Female"
                                 }]
@@ -1208,7 +1208,7 @@
                         },
                         {
                             "goto": {
-                                "block": "date-of-birth1"
+                                "block": "birth-gender1"
                             }
                         }
                     ]
@@ -1218,7 +1218,7 @@
                     "id": "birth-gender",
                     "questions": [{
                         "id": "birth-gender-question",
-                        "title": "Is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em>'s' gender the same as the sex you were assigned at birth?",
+                        "title": "Is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em>'s gender the same as the sex you were assigned at birth?",
                         "type": "General",
                         "answers": [{
                                 "id": "birth-gender-answer",
@@ -1252,6 +1252,49 @@
                         {
                             "goto": {
                                 "block": "date-of-birth"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "birth-gender1",
+                    "questions": [{
+                        "id": "birth-gender-question1",
+                        "title": "Is your gender the same as the sex you were assigned at birth?",
+                        "type": "General",
+                        "answers": [{
+                                "id": "birth-gender-answer1",
+                                "mandatory": false,
+                                "options": [{
+                                        "label": "Yes",
+                                        "value": "Yes"
+                                    },
+                                    {   
+                                        "label": "No",
+                                        "value": "No"
+                                    },
+                                    {
+                                        "label": "Prefer not to say",
+                                        "value": "Prefer not to say"
+                                    }
+                                ],
+                                "type": "Radio"
+                            }]
+                        }],
+                    "routing_rules": [{
+                            "goto": {
+                                "block": "date-of-birth1",
+                                "when": [{
+                                    "id": "sex-answer1",
+                                    "condition": "equals",
+                                    "value": "Female"
+                                }]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "date-of-birth1"
                             }
                         }
                     ]
