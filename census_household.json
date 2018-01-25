@@ -1742,7 +1742,7 @@
                     "id": "other-address",
                     "questions": [{
                         "id": "other-address-question",
-                        "title": "Enter details of the other UK address where <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> stay more than 30 days a year",
+                        "title": "Enter details of the other UK address where <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> stay more than 30 days a year kitty",
                         "type": "General",
                         "answers": [{
                                 "id": "other-address-answer-building",
@@ -1782,7 +1782,7 @@
                     "id": "other-address1",
                     "questions": [{
                         "id": "other-address-question1",
-                        "title": "Enter details of the other UK address where you stay more than 30 days a year",
+                        "title": "Enter details of the other UK address where you stay more than 30 days a year kitty",
                         "type": "General",
                         "answers": [{
                                 "id": "other-address-answer-building",
