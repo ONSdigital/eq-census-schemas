@@ -3116,8 +3116,77 @@
                                 }
                             ]
                         }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "national-identity1"
+                            }
+                        }
                     ]
                 },
+                {
+                    "type": "Question",
+                    "id": "national-identity1",
+                    "questions": [
+                        {
+                            "id": "national-identity-england-question1",
+                            "title": "How would you describe <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive}}</em> national identity?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "national-identity-england-answer1",
+                                    "label": "Select all that apply",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "English",
+                                            "value": "English"
+                                        },
+                                        {
+                                            "label": "Welsh",
+                                            "value": "Welsh"
+                                        },
+                                        {
+                                            "label": "Scottish",
+                                            "value": "Scottish"
+                                        },
+                                        {
+                                            "label": "Northern Irish",
+                                            "value": "Northern Irish"
+                                        },
+                                        {
+                                            "label": "British",
+                                            "value": "British"
+                                        },
+                                        {
+                                            "label": "Other",
+                                            "value": "Other",
+                                            "child_answer_id": "national-identity-england-answer-other1"
+                                        }
+                                    ],
+                                    "type": "Checkbox"
+                                },
+                                {
+                                    "id": "national-identity-england-answer-other1",
+                                    "parent_answer_id": "national-identity-england-answer1",
+                                    "type": "TextField",
+                                    "mandatory": false,
+                                    "label": "Please describe your national identity"
+                                }
+                            ],
+                            "skip_conditions": [
+                                {
+                                    "when": [
+                                        {
+                                            "meta": "region_code",
+                                            "condition": "equals",
+                                            "value": "GB-WLS"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
                 {
                     "type": "Question",
                     "id": "national-identity",
