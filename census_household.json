@@ -3258,7 +3258,6 @@
                             "answers": [
                                 {
                                     "id": "national-identity-england-answer1",
-                                    "label": "Select all that apply",
                                     "mandatory": false,
                                     "options": [
                                         {
