@@ -675,8 +675,12 @@
                                     "mandatory": false,
                                     "options": [
                                         {
-                                            "label": "Gas",
-                                            "value": "Gas"
+                                            "label": "Mains gas",
+                                            "value": "Mains gas"
+                                        },
+                                        {
+                                            "label": "Other gas (inlcuding liquid petroleum, gas and biogas)",
+                                            "value": "Other gas (inlcuding liquid petroleum, gas and biogas)"
                                         },
                                         {
                                             "label": "Electric (include storage heaters)",
@@ -687,12 +691,16 @@
                                             "value": "Oil"
                                         },
                                         {
-                                            "label": "Solid fuel (for example wood, coal)",
-                                            "value": "Solid fuel (for example wood, coal)"
+                                            "label": "Wood or biomass",
+                                            "value": "Wood or biomass"
                                         },
                                         {
-                                            "label": "Renewable (for example solar panels)",
-                                            "value": "Renewable (for example solar panels)"
+                                            "label": "Other solid fuel (coal, coke)",
+                                            "value": "Other solid fuel (coal, coke)"
+                                        },
+                                        {
+                                            "label": "Other renewable heating systems (including solar panels, electric and air heat pump systems)",
+                                            "value": "Other renewable heating systems (including solar panels, electric and air heat pump systems)"
                                         },
                                         {
                                             "label": "Other central heating",
