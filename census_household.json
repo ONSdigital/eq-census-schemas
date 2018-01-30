@@ -3366,6 +3366,13 @@
                                 }
                             ]
                         }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "national-identity1"
+                            }
+                        }
                     ]
                 },
                 {
