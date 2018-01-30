@@ -3370,7 +3370,7 @@
                     "routing_rules": [
                         {
                             "goto": {
-                                "block": "national-identity1"
+                                "block": "ethnic-group1"
                             }
                         }
                     ]
@@ -3621,6 +3621,268 @@
                         {
                             "goto": {
                                 "block": "understand-welsh",
+                                "when": [
+                                    {
+                                        "meta": "region_code",
+                                        "condition": "equals",
+                                        "value": "GB-WLS"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "language"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "ethnic-group1",
+                    "questions": [
+                        {
+                            "id": "ethnic-group-england-question1",
+                            "title": "What is your ethnic group?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "ethnic-group-england-answer1",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "White",
+                                            "value": "White",
+                                            "description": "Including English, Welsh, Scottish, Northern Irish, British, Irish, Gypsy, Irish Traveller or any other White background"
+                                        },
+                                        {
+                                            "label": "Mixed or multiple ethnic groups",
+                                            "value": "Mixed or multiple ethnic groups",
+                                            "description": "Including White and Black Caribbean, White and Black African, White and Asian or any other Mixed or multiple ethnic background"
+                                        },
+                                        {
+                                            "label": "Asian or Asian British",
+                                            "value": "Asian or Asian British",
+                                            "description": "Including Indian, Pakistani, Bangladeshi, Chinese or any other Asian background"
+                                        },
+                                        {
+                                            "label": "Black, African, Caribbean or Black British",
+                                            "value": "Black, African, Caribbean or Black British",
+                                            "description": "Including African, Caribbean or any other Black, African or Caribbean background"
+                                        },
+                                        {
+                                            "label": "Other ethnic group",
+                                            "value": "Other ethnic group",
+                                            "description": "Including Arab or any other ethnic group"
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                }
+                            ],
+                            "skip_conditions": [
+                                {
+                                    "when": [
+                                        {
+                                            "meta": "region_code",
+                                            "condition": "equals",
+                                            "value": "GB-WLS"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "ethnic-group-wales-question1",
+                            "title": "What is your ethnic group?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "ethnic-group-wales-answer1",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "White",
+                                            "value": "White",
+                                            "description": "Including Welsh, English, Scottish, Northern Irish, British, Irish, Gypsy, Irish Traveller or any other White background"
+                                        },
+                                        {
+                                            "label": "Mixed or multiple ethnic groups",
+                                            "value": "Mixed or multiple ethnic groups",
+                                            "description": "Including White and Black Caribbean, White and Black African, White and Asian or any other Mixed or multiple ethnic background"
+                                        },
+                                        {
+                                            "label": "Asian or Asian British",
+                                            "value": "Asian or Asian British",
+                                            "description": "Including Indian, Pakistani, Bangladeshi, Chinese or any other Asian background"
+                                        },
+                                        {
+                                            "label": "Black, African, Caribbean or Black British",
+                                            "value": "Black, African, Caribbean or Black British",
+                                            "description": "Including African, Caribbean or any other Black, African or Caribbean background"
+                                        },
+                                        {
+                                            "label": "Other ethnic group",
+                                            "value": "Other ethnic group",
+                                            "description": "Including Arab or any other ethnic group"
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                }
+                            ],
+                            "skip_conditions": [
+                                {
+                                    "when": [
+                                        {
+                                            "meta": "region_code",
+                                            "condition": "not equals",
+                                            "value": "GB-WLS"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "white-ethnic-group1",
+                                "when": [
+                                    {
+                                        "id": "ethnic-group-england-answer1",
+                                        "condition": "equals",
+                                        "value": "White"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "mixed-ethnic-group1",
+                                "when": [
+                                    {
+                                        "id": "ethnic-group-england-answer1",
+                                        "condition": "equals",
+                                        "value": "Mixed or multiple ethnic groups"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "asian-ethnic-group1",
+                                "when": [
+                                    {
+                                        "id": "ethnic-group-england-answer1",
+                                        "condition": "equals",
+                                        "value": "Asian or Asian British"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "black-ethnic-group1",
+                                "when": [
+                                    {
+                                        "id": "ethnic-group-england-answer1",
+                                        "condition": "equals",
+                                        "value": "Black, African, Caribbean or Black British"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "other-ethnic-group1",
+                                "when": [
+                                    {
+                                        "id": "ethnic-group-england-answer1",
+                                        "condition": "equals",
+                                        "value": "Other ethnic group"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "white-ethnic-group1",
+                                "when": [
+                                    {
+                                        "id": "ethnic-group-wales-answer1",
+                                        "condition": "equals",
+                                        "value": "White"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "mixed-ethnic-group1",
+                                "when": [
+                                    {
+                                        "id": "ethnic-group-wales-answer1",
+                                        "condition": "equals",
+                                        "value": "Mixed or multiple ethnic groups"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "asian-ethnic-group1",
+                                "when": [
+                                    {
+                                        "id": "ethnic-group-wales-answer1",
+                                        "condition": "equals",
+                                        "value": "Asian or Asian British"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "black-ethnic-group1",
+                                "when": [
+                                    {
+                                        "id": "ethnic-group-wales-answer1",
+                                        "condition": "equals",
+                                        "value": "Black, African, Caribbean or Black British"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "other-ethnic-group1",
+                                "when": [
+                                    {
+                                        "id": "ethnic-group-wales-answer1",
+                                        "condition": "equals",
+                                        "value": "Other ethnic group"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "sexual-identity1",
+                                "when": [
+                                    {
+                                        "id": "over-16-answer1",
+                                        "condition": "equals",
+                                        "value": "Yes"
+                                    },
+                                    {
+                                        "meta": "variant_flags.sexual_identity",
+                                        "condition": "equals",
+                                        "value": true
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "understand-welsh1",
                                 "when": [
                                     {
                                         "meta": "region_code",
