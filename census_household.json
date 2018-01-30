@@ -2750,7 +2750,7 @@
                     "routing_rules": [
                         {
                             "goto": {
-                                "block": "carer",
+                                "block": "carer1",
                                 "when": [
                                     {
                                         "id": "country-of-birth-england-answer1",
@@ -2762,7 +2762,7 @@
                         },
                         {
                             "goto": {
-                                "block": "carer",
+                                "block": "carer1",
                                 "when": [
                                     {
                                         "id": "country-of-birth-england-answer1",
@@ -2774,7 +2774,7 @@
                         },
                         {
                             "goto": {
-                                "block": "carer",
+                                "block": "carer1",
                                 "when": [
                                     {
                                         "id": "country-of-birth-england-answer1",
@@ -2786,7 +2786,7 @@
                         },
                         {
                             "goto": {
-                                "block": "carer",
+                                "block": "carer1",
                                 "when": [
                                     {
                                         "id": "country-of-birth-england-answer1",
@@ -2798,7 +2798,7 @@
                         },
                         {
                             "goto": {
-                                "block": "carer",
+                                "block": "carer1",
                                 "when": [
                                     {
                                         "id": "country-of-birth-wales-answer1",
@@ -2810,7 +2810,7 @@
                         },
                         {
                             "goto": {
-                                "block": "carer",
+                                "block": "carer1",
                                 "when": [
                                     {
                                         "id": "country-of-birth-wales-answer1",
@@ -2822,7 +2822,7 @@
                         },
                         {
                             "goto": {
-                                "block": "carer",
+                                "block": "carer1",
                                 "when": [
                                     {
                                         "id": "country-of-birth-wales-answer1",
@@ -2834,7 +2834,7 @@
                         },
                         {
                             "goto": {
-                                "block": "carer",
+                                "block": "carer1",
                                 "when": [
                                     {
                                         "id": "country-of-birth-wales-answer1",
@@ -3056,6 +3056,43 @@
                             "answers": [
                                 {
                                     "id": "carer-answer",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "No",
+                                            "value": "No"
+                                        },
+                                        {
+                                            "label": "Yes, 1 -19 hours a week",
+                                            "value": "Yes, 1 -19 hours a week"
+                                        },
+                                        {
+                                            "label": "Yes, 20 - 49 hours a week",
+                                            "value": "Yes, 20 - 49 hours a week"
+                                        },
+                                        {
+                                            "label": "Yes, 50 or more hours a week",
+                                            "value": "Yes, 50 or more hours a week"
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "carer1",
+                    "questions": [
+                        {
+                            "id": "carer-question1",
+                            "title": "Do you look after, or give any help or support to family members, friends, neighbours or others?",
+                            "description": "",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "carer-answer1",
                                     "mandatory": false,
                                     "options": [
                                         {
