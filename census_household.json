@@ -4489,7 +4489,7 @@
                                         "value": "Yes"
                                     },
                                     {
-                                        "meta": "variant_flags.sexual_identity",
+                                        "meta": "variant_flags.sexual_identity1",
                                         "condition": "equals",
                                         "value": true
                                     }
@@ -4785,7 +4785,7 @@
                                         "value": "Yes"
                                     },
                                     {
-                                        "meta": "variant_flags.sexual_identity",
+                                        "meta": "variant_flags.sexual_identity1",
                                         "condition": "equals",
                                         "value": true
                                     }
@@ -4884,7 +4884,7 @@
                     "questions": [
                         {
                             "id": "sexual-identity-question1",
-                            "title": "Which of the following options best describes how you think of yourself?",
+                            "title": "Which of the following options best describes how you thinks of yourself?",
                             "type": "General",
                             "answers": [
                                 {
