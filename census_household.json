@@ -4880,6 +4880,73 @@
                 },
                 {
                     "type": "Question",
+                    "id": "sexual-identity1",
+                    "questions": [
+                        {
+                            "id": "sexual-identity-question1",
+                            "title": "Which of the following options best describes how <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> thinks of themselves?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "sexual-identity-answer1",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "Heterosexual or Straight",
+                                            "value": "Heterosexual or Straight"
+                                        },
+                                        {
+                                            "label": "Gay or Lesbian",
+                                            "value": "Gay or Lesbian"
+                                        },
+                                        {
+                                            "label": "Bisexual",
+                                            "value": "Bisexual"
+                                        },
+                                        {
+                                            "label": "Other",
+                                            "value": "Other",
+                                            "child_answer_id": "sexual-identity-answer-other"
+                                        },
+                                        {
+                                            "label": "Prefer not to say",
+                                            "value": "Prefer not to say"
+                                        }
+                                    ],
+                                    "type": "Checkbox"
+                                },
+                                {
+                                    "id": "sexual-identity-answer-other1",
+                                    "parent_answer_id": "sexual-identity-answer1",
+                                    "type": "TextField",
+                                    "mandatory": false,
+                                    "label": "Please specify"
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "understand-welsh1",
+                                "when": [
+                                    {
+                                        "meta": "region_code",
+                                        "condition": "equals",
+                                        "value": "GB-WLS"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "language1"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
                     "id": "understand-welsh",
                     "questions": [
                         {
