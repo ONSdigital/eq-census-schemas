@@ -4433,6 +4433,90 @@
                 },
                 {
                     "type": "Question",
+                    "id": "asian-ethnic-group1",
+                    "questions": [
+                        {
+                            "id": "asian-ethnic-group-question1",
+                            "title": "Which one best describes your Asian, Asian British ethnic group or background?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "asian-ethnic-group-answer1",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "Indian",
+                                            "value": "Indian"
+                                        },
+                                        {
+                                            "label": "Pakistani",
+                                            "value": "Pakistani"
+                                        },
+                                        {
+                                            "label": "Bangladeshi",
+                                            "value": "Bangladeshi"
+                                        },
+                                        {
+                                            "label": "Chinese",
+                                            "value": "Chinese"
+                                        },
+                                        {
+                                            "label": "Any other Asian background",
+                                            "value": "Other",
+                                            "child_answer_id": "asian-ethnic-group-answer-other1"
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                },
+                                {
+                                    "id": "asian-ethnic-group-answer-other1",
+                                    "parent_answer_id": "asian-ethnic-group-answer1",
+                                    "type": "TextField",
+                                    "mandatory": false,
+                                    "label": "Please specify other Asian background"
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "sexual-identity1",
+                                "when": [
+                                    {
+                                        "id": "over-16-answer1",
+                                        "condition": "equals",
+                                        "value": "Yes"
+                                    },
+                                    {
+                                        "meta": "variant_flags.sexual_identity1",
+                                        "condition": "equals",
+                                        "value": true
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "understand-welsh1",
+                                "when": [
+                                    {
+                                        "meta": "region_code",
+                                        "condition": "equals",
+                                        "value": "GB-WLS"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "language1"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
                     "id": "black-ethnic-group",
                     "questions": [
                         {
