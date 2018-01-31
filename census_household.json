@@ -4489,7 +4489,7 @@
                                         "value": "Yes"
                                     },
                                     {
-                                        "meta": "variant_flags.sexual_identity1",
+                                        "meta": "variant_flags.sexual_identity",
                                         "condition": "equals",
                                         "value": true
                                     }
