@@ -4665,6 +4665,154 @@
                 },
                 {
                     "type": "Question",
+                    "id": "black-ethnic-group1",
+                    "questions": [
+                        {
+                            "id": "black-ethnic-group-question1",
+                            "title": "Which one best describes <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive}}</em> Black, African, Caribbean, Black British ethnic group or background?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "black-ethnic-group-answer1",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "African",
+                                            "value": "African"
+                                        },
+                                        {
+                                            "label": "Caribbean",
+                                            "value": "Caribbean"
+                                        },
+                                        {
+                                            "label": "Any other Black, African or Caribbean background",
+                                            "value": "Other",
+                                            "child_answer_id": "black-ethnic-group-answer-other1"
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                },
+                                {
+                                    "id": "black-ethnic-group-answer-other1",
+                                    "parent_answer_id": "black-ethnic-group-answer1",
+                                    "type": "TextField",
+                                    "mandatory": false,
+                                    "label": "Please specify other Black, African or Caribbean background"
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "sexual-identity1",
+                                "when": [
+                                    {
+                                        "id": "over-16-answer1",
+                                        "condition": "equals",
+                                        "value": "Yes"
+                                    },
+                                    {
+                                        "meta": "variant_flags.sexual_identity",
+                                        "condition": "equals",
+                                        "value": true
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "understand-welsh1",
+                                "when": [
+                                    {
+                                        "meta": "region_code",
+                                        "condition": "equals",
+                                        "value": "GB-WLS"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "language1"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "other-ethnic-group1",
+                    "questions": [
+                        {
+                            "id": "other-ethnic-group-question1",
+                            "title": "Which one best describes your Other ethnic group or background?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "other-ethnic-group-answer1",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "Arab",
+                                            "value": "Arab"
+                                        },
+                                        {
+                                            "label": "Any other ethnic group",
+                                            "value": "Other",
+                                            "child_answer_id": "other-ethnic-group-answer-other1"
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                },
+                                {
+                                    "id": "other-ethnic-group-answer-other1",
+                                    "parent_answer_id": "other-ethnic-group-answer1",
+                                    "type": "TextField",
+                                    "mandatory": false,
+                                    "label": "Please specify Other ethnic group"
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "sexual-identity1",
+                                "when": [
+                                    {
+                                        "id": "over-16-answer1",
+                                        "condition": "equals",
+                                        "value": "Yes"
+                                    },
+                                    {
+                                        "meta": "variant_flags.sexual_identity1",
+                                        "condition": "equals",
+                                        "value": true
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "understand-welsh1",
+                                "when": [
+                                    {
+                                        "meta": "region_code",
+                                        "condition": "equals",
+                                        "value": "GB-WLS"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "language1"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
                     "id": "sexual-identity",
                     "questions": [
                         {
