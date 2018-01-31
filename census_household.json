@@ -957,7 +957,7 @@
                                     {
                                         "id": "proxy-answer",
                                         "condition": "equals",
-                                        "value": "No, someone is completing the Census on my behalf"
+                                        "value": "Yes, I am answering on behalf of someone else"
                                     }
                                 ]
                             }
@@ -968,7 +968,7 @@
                                 "when": [
                                     {
                                         "id": "proxy-answer",
-                                        "condition": "Yes, I’m completing the Census myself"
+                                        "condition": "No, I’m answering the Census myself"
                                     }
                                 ]
                             }
