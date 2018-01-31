@@ -4049,6 +4049,146 @@
                 },
                 {
                     "type": "Question",
+                    "id": "white-ethnic-group1",
+                    "questions": [
+                        {
+                            "id": "white-ethnic-group-england-question1",
+                            "title": "Which one best describes your White ethnic group or background?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "white-ethnic-group-england-answer1",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "English, Welsh, Scottish, Northern Irish or British",
+                                            "value": "English, Welsh, Scottish, Northern Irish or British"
+                                        },
+                                        {
+                                            "label": "Irish",
+                                            "value": "Irish"
+                                        },
+                                        {
+                                            "label": "Gypsy or Irish Traveller",
+                                            "value": "Gypsy or Irish Traveller"
+                                        },
+                                        {
+                                            "label": "Any other White background",
+                                            "value": "Other",
+                                            "child_answer_id": "white-ethnic-group-england-answer-other1"
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                },
+                                {
+                                    "id": "white-ethnic-group-england-answer-other1",
+                                    "parent_answer_id": "white-ethnic-group-england-answer1",
+                                    "type": "TextField",
+                                    "mandatory": false,
+                                    "label": "Please specify other White background"
+                                }
+                            ],
+                            "skip_conditions": [
+                                {
+                                    "when": [
+                                        {
+                                            "meta": "region_code",
+                                            "condition": "equals",
+                                            "value": "GB-WLS"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "white-ethnic-group-wales-question1",
+                            "title": "Which one best describes your White ethnic group or background?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "white-ethnic-group-wales-answer1",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "Welsh, English, Scottish, Northern Irish or British",
+                                            "value": "Welsh, English, Scottish, Northern Irish or British"
+                                        },
+                                        {
+                                            "label": "Irish",
+                                            "value": "Irish"
+                                        },
+                                        {
+                                            "label": "Gypsy or Irish Traveller",
+                                            "value": "Gypsy or Irish Traveller"
+                                        },
+                                        {
+                                            "label": "Any other White background",
+                                            "value": "Other",
+                                            "child_answer_id": "white-ethnic-group-wales-question-other1"
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                },
+                                {
+                                    "id": "white-ethnic-group-wales-question-other1",
+                                    "parent_answer_id": "white-ethnic-group-wales-answer1",
+                                    "type": "TextField",
+                                    "mandatory": false,
+                                    "label": "Please specify other White background"
+                                }
+                            ],
+                            "skip_conditions": [
+                                {
+                                    "when": [
+                                        {
+                                            "meta": "region_code",
+                                            "condition": "not equals",
+                                            "value": "GB-WLS"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "sexual-identity1",
+                                "when": [
+                                    {
+                                        "id": "over-16-answer1",
+                                        "condition": "equals",
+                                        "value": "Yes"
+                                    },
+                                    {
+                                        "meta": "variant_flags.sexual_identity",
+                                        "condition": "equals",
+                                        "value": true
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "understand-welsh",
+                                "when": [
+                                    {
+                                        "meta": "region_code",
+                                        "condition": "equals",
+                                        "value": "GB-WLS"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "language"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
                     "id": "mixed-ethnic-group",
                     "questions": [
                         {
