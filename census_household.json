@@ -4269,6 +4269,86 @@
                 },
                 {
                     "type": "Question",
+                    "id": "mixed-ethnic-group1",
+                    "questions": [
+                        {
+                            "id": "mixed-ethnic-group-question1",
+                            "title": "Which one best describes your Mixed, multiple ethnic group or background?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "mixed-ethnic-group-answer1",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "White and Black Caribbean",
+                                            "value": "White and Black Caribbean"
+                                        },
+                                        {
+                                            "label": "White and Black African",
+                                            "value": "White and Black African"
+                                        },
+                                        {
+                                            "label": "White and Asian",
+                                            "value": "White and Asian"
+                                        },
+                                        {
+                                            "label": "Any other Mixed or multiple ethnic background",
+                                            "value": "Other",
+                                            "child_answer_id": "mixed-ethnic-group-answer-other1"
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                },
+                                {
+                                    "id": "mixed-ethnic-group-answer-other1",
+                                    "parent_answer_id": "mixed-ethnic-group-answer1",
+                                    "type": "TextField",
+                                    "mandatory": false,
+                                    "label": "Please specify other Mixed or multiple ethnic background"
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "sexual-identity1",
+                                "when": [
+                                    {
+                                        "id": "over-16-answer1",
+                                        "condition": "equals",
+                                        "value": "Yes"
+                                    },
+                                    {
+                                        "meta": "variant_flags.sexual_identity",
+                                        "condition": "equals",
+                                        "value": true
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "understand-welsh1",
+                                "when": [
+                                    {
+                                        "meta": "region_code",
+                                        "condition": "equals",
+                                        "value": "GB-WLS"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "language1"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
                     "id": "asian-ethnic-group",
                     "questions": [
                         {
