@@ -1306,7 +1306,7 @@
                     "questions": [
                         {
                             "id": "sex-question",
-                            "title": "What is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em>'s gender?",
+                            "title": "What is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em> gender?",
                             "type": "General",
                             "answers": [
                                 {
