@@ -1424,7 +1424,7 @@
                     "questions": [
                         {
                             "id": "birth-gender-question",
-                            "title": "Is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em>'s gender the same as the sex you were assigned at birth?",
+                            "title": "Is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em>'s gender the same as the sex they were assigned at birth?",
                             "type": "General",
                             "answers": [
                                 {
