@@ -3003,6 +3003,13 @@
                                 }
                             ]
                         }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "carer"
+                            }
+                        }
                     ]
                 },
                 {
