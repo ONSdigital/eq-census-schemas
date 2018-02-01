@@ -3267,6 +3267,13 @@
                                 }
                             ]
                         }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "ethnic-group"
+                            }
+                        }
                     ]
                 },
                 {
