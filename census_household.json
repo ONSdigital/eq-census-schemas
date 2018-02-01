@@ -1306,7 +1306,7 @@
                     "questions": [
                         {
                             "id": "sex-question",
-                            "title": "What is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em> gender?",
+                            "title": "What is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em>'s gender?",
                             "type": "General",
                             "answers": [
                                 {
@@ -3093,6 +3093,13 @@
                                     "type": "Radio"
                                 }
                             ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "national-identity"
+                            }
                         }
                     ]
                 },
