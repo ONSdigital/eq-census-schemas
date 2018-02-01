@@ -1306,7 +1306,7 @@
                     "questions": [
                         {
                             "id": "sex-question",
-                            "title": "What is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> gender?",
+                            "title": "What is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em> gender?",
                             "type": "General",
                             "answers": [
                                 {
@@ -1424,7 +1424,7 @@
                     "questions": [
                         {
                             "id": "birth-gender-question",
-                            "title": "Is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em>'s gender the same as the sex they were assigned at birth?",
+                            "title": "Is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em> gender the same as the sex they were assigned at birth?",
                             "type": "General",
                             "answers": [
                                 {
