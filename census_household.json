@@ -5463,6 +5463,13 @@
                                 }
                             ]
                         }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "past-usual-address"
+                            }
+                        }
                     ]
                 },
                 {
@@ -5523,6 +5530,13 @@
                                     "label": "Please specify other religion"
                                 }
                             ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "past-usual-address1"
+                            }
                         }
                     ]
                 },
@@ -5597,6 +5611,81 @@
                         {
                             "goto": {
                                 "block": "passports"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "past-usual-address1",
+                    "questions": [
+                        {
+                            "id": "past-usual-address-question1",
+                            "title": "One year ago, what was your usual address?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "past-usual-address-answer1",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "This address",
+                                            "value": "This address"
+                                        },
+                                        {
+                                            "label": "Student term time or boarding school address in the UK",
+                                            "value": "Student term time or boarding school address in the UK"
+                                        },
+                                        {
+                                            "label": "Another address in the UK",
+                                            "value": "Another address in the UK"
+                                        },
+                                        {
+                                            "label": "An address outside the UK",
+                                            "value": "Other",
+                                            "child_answer_id": "past-usual-address-answer-other1"
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                },
+                                {
+                                    "id": "past-usual-address-answer-other1",
+                                    "parent_answer_id": "past-usual-address-answer1",
+                                    "type": "TextField",
+                                    "mandatory": false,
+                                    "label": "Please enter the country"
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "last-year-address1",
+                                "when": [
+                                    {
+                                        "id": "past-usual-address-answer1",
+                                        "condition": "equals",
+                                        "value": "Student term time or boarding school address in the UK"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "last-year-address1",
+                                "when": [
+                                    {
+                                        "id": "past-usual-address-answer1",
+                                        "condition": "equals",
+                                        "value": "Another address in the UK"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "passports1"
                             }
                         }
                     ]
