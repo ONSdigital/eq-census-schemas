@@ -6240,6 +6240,13 @@
                                 }
                             ]
                         }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "employment-type"
+                            }
+                        }
                     ]
                 },
                 {
@@ -6426,6 +6433,13 @@
                                 }
                             ]
                         }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "employment-type1"
+                            }
+                        }
                     ]
                 },
                 {
@@ -6552,6 +6566,134 @@
                         {
                             "goto": {
                                 "block": "jobseeker"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "employment-type1",
+                    "questions": [
+                        {
+                            "id": "employment-type-question1",
+                            "title": "Which of the following best describes what you were doing last week?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "employment-type-answer1",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "working as an employee",
+                                            "value": "working as an employee"
+                                        },
+                                        {
+                                            "label": "on a government sponsored training scheme",
+                                            "value": "on a government sponsored training scheme"
+                                        },
+                                        {
+                                            "label": "self-employed or freelance",
+                                            "value": "self-employed or freelance"
+                                        },
+                                        {
+                                            "label": "working paid or unpaid for you own or your family’s business",
+                                            "value": "working paid or unpaid for you own or your family’s business"
+                                        },
+                                        {
+                                            "label": "away from work ill, on maternity leave, on holiday or temporarily laid off",
+                                            "value": "away from work ill, on maternity leave, on holiday or temporarily laid off"
+                                        },
+                                        {
+                                            "label": "doing any other kind of paid work",
+                                            "value": "doing any other kind of paid work"
+                                        },
+                                        {
+                                            "label": "none of the above",
+                                            "value": "none of the above"
+                                        }
+                                    ],
+                                    "type": "Checkbox",
+                                    "label": "Select all that apply"
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "main-job",
+                                "when": [
+                                    {
+                                        "id": "employment-type-answer1",
+                                        "condition": "contains",
+                                        "value": "working as an employee"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "main-job1",
+                                "when": [
+                                    {
+                                        "id": "employment-type-answer1",
+                                        "condition": "contains",
+                                        "value": "on a government sponsored training scheme"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "main-job1",
+                                "when": [
+                                    {
+                                        "id": "employment-type-answer1",
+                                        "condition": "contains",
+                                        "value": "self-employed or freelance"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "main-job1",
+                                "when": [
+                                    {
+                                        "id": "employment-type-answer1",
+                                        "condition": "contains",
+                                        "value": "working paid or unpaid for you own or your family’s business"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "main-job1",
+                                "when": [
+                                    {
+                                        "id": "employment-type-answer1",
+                                        "condition": "contains",
+                                        "value": "away from work ill, on maternity leave, on holiday or temporarily laid off"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "main-job1",
+                                "when": [
+                                    {
+                                        "id": "employment-type-answer1",
+                                        "condition": "contains",
+                                        "value": "doing any other kind of paid work"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "jobseeker1"
                             }
                         }
                     ]
