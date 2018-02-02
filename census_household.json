@@ -6724,6 +6724,48 @@
                                 }
                             ]
                         }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "job-availability"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "jobseeker1",
+                    "questions": [
+                        {
+                            "id": "jobseeker-question",
+                            "title": "Were you actively looking for any kind of paid work during the last four weeks?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "jobseeker-answer1",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "Yes",
+                                            "value": "Yes"
+                                        },
+                                        {
+                                            "label": "No",
+                                            "value": "No"
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "job-availability1"
+                            }
+                        }
                     ]
                 },
                 {
@@ -6737,6 +6779,34 @@
                             "answers": [
                                 {
                                     "id": "job-availability-answer",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "Yes",
+                                            "value": "Yes"
+                                        },
+                                        {
+                                            "label": "No",
+                                            "value": "No"
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "job-availability1",
+                    "questions": [
+                        {
+                            "id": "job-availability-question1",
+                            "title": "If a job had been offered to you last week, could you have started it within 2 weeks?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "job-availability-answer1",
                                     "mandatory": false,
                                     "options": [
                                         {
