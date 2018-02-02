@@ -6244,6 +6244,192 @@
                 },
                 {
                     "type": "Question",
+                    "id": "qualifications1",
+                    "questions": [
+                        {
+                            "id": "qualifications-england-question1",
+                            "title": "Thinking of any studies, exams or qualifications, which of the following do you have?",
+                            "description": "Select every option that applies",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "qualifications-england-answer1",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "5 or more  GCSEs (grades A-Star to C) or O-Levels (passes) or CSEs (grade 1), School Certificate, One A-Level, 2 to 3 AS-Levels or VCEs, Higher Diploma",
+                                            "value": "5 or more  GCSEs (grades A-Star to C) or O-Levels (passes) or CSEs (grade 1), School Certificate, One A-Level, 2 to 3 AS-Levels or VCEs, Higher Diploma"
+                                        },
+                                        {
+                                            "label": "1 to 4 GCSEs or O-Levels or CSEs (any grades), Entry level, Foundation Diploma",
+                                            "value": "1 to 4 GCSEs or O-Levels or CSEs (any grades), Entry level, Foundation Diploma"
+                                        },
+                                        {
+                                            "label": "2 or more  A-Levels, 4 or more  AS-levels or VCEs, Higher School Certificate, Advanced Diploma",
+                                            "value": "2 or more  A-Levels, 4 or more  AS-levels or VCEs, Higher School Certificate, Advanced Diploma"
+                                        },
+                                        {
+                                            "label": "Apprenticeship (trade, advanced, foundation or modern)",
+                                            "value": "Apprenticeship (trade, advanced, foundation or modern)"
+                                        },
+                                        {
+                                            "label": "NVQ level one, Foundation GNVQ, Basic Skills",
+                                            "value": "NVQ level one, Foundation GNVQ, Basic Skills"
+                                        },
+                                        {
+                                            "label": "NVQ level two, Intermediate GNVQ, City and Guilds Craft, BTEC First, RSA Diploma",
+                                            "value": "NVQ level two, Intermediate GNVQ, City and Guilds Craft, BTEC First, RSA Diploma"
+                                        },
+                                        {
+                                            "label": "NVQ Level three, Advanced GNVQ, City and Guilds Advanced Craft, ONC, OND, BTEC National, RSA Advanced Diploma",
+                                            "value": "NVQ Level three, Advanced GNVQ, City and Guilds Advanced Craft, ONC, OND, BTEC National, RSA Advanced Diploma"
+                                        },
+                                        {
+                                            "label": "NVQ Level four to five, HNC, HND, RSA Higher Diploma, BTEC Higher, Foundation degree",
+                                            "value": "NVQ Level four to five, HNC, HND, RSA Higher Diploma, BTEC Higher, Foundation degree"
+                                        },
+                                        {
+                                            "label": "Other vocational or work-related qualifications",
+                                            "value": "Other vocational or work-related qualifications"
+                                        },
+                                        {
+                                            "label": "Undergraduate Degree",
+                                            "value": "Undergraduate Degree"
+                                        },
+                                        {
+                                            "label": "Postgraduate Certificate / Diploma",
+                                            "value": "Postgraduate Certificate / Diploma"
+                                        },
+                                        {
+                                            "label": "Masters Degree",
+                                            "value": "Masters Degree"
+                                        },
+                                        {
+                                            "label": "Doctorate Degree (for example PhD)",
+                                            "value": "Doctorate Degree (for example PhD)"
+                                        },
+                                        {
+                                            "label": "Professional qualification (for example teaching, nursing, accountancy)",
+                                            "value": "Professional qualification (for example teaching, nursing, accountancy)"
+                                        },
+                                        {
+                                            "label": "Foreign qualifications (UK equivalent not known)",
+                                            "value": "Foreign qualifications (UK equivalent not known)"
+                                        },
+                                        {
+                                            "label": "No qualifications",
+                                            "value": "No qualifications"
+                                        }
+                                    ],
+                                    "type": "Checkbox"
+                                }
+                            ],
+                            "skip_conditions": [
+                                {
+                                    "when": [
+                                        {
+                                            "meta": "region_code",
+                                            "condition": "equals",
+                                            "value": "GB-WLS"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "qualifications-welsh-question1",
+                            "title": "Thinking of any studies, exams or qualifications, which of the following do you have?",
+                            "description": "Select every option that applies",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "qualifications-welsh-answer1",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "5 or more GCSEs (grades A-Star to C) or O Levels (passes) or CSEs (grade 1), School Certificate, One A-Level, 2 to 3 AS-Levels or VCEs,  Intermediate or National Welsh Baccalaureate (Level two)",
+                                            "value": "5 or more GCSEs (grades A-Star to C) or O Levels (passes) or CSEs (grade 1), School Certificate, One A-Level, 2 to 3 AS-Levels or VCEs,  Intermediate or National Welsh Baccalaureate (Level two)"
+                                        },
+                                        {
+                                            "label": "1 to 4  GCSEs or O Levels or CSEs (any grades), Entry level, Foundation Welsh Baccalaureate (level one)",
+                                            "value": "1 to 4  GCSEs or O Levels or CSEs (any grades), Entry level, Foundation Welsh Baccalaureate (level one)"
+                                        },
+                                        {
+                                            "label": "More than 2 A-Levels, more than 4 AS-levels or VCEs, Higher School Certificate, Advanced Welsh Baccalaureate (level three)",
+                                            "value": "More than 2 A-Levels, more than 4 AS-levels or VCEs, Higher School Certificate, Advanced Welsh Baccalaureate (level three)"
+                                        },
+                                        {
+                                            "label": "Apprenticeship (foundation, modern or higher)",
+                                            "value": "Apprenticeship (foundation, modern or higher)"
+                                        },
+                                        {
+                                            "label": "NVQ level one, Foundation GNVQ, Essential or Key  Skills",
+                                            "value": "NVQ level one, Foundation GNVQ, Essential or Key  Skills"
+                                        },
+                                        {
+                                            "label": "NVQ level two, Intermediate GNVQ, City and Guilds Craft, BTEC First, RSA Diploma",
+                                            "value": "NVQ level two, Intermediate GNVQ, City and Guilds Craft, BTEC First, RSA Diploma"
+                                        },
+                                        {
+                                            "label": "NVQ Level three, Advanced GNVQ, City and Guilds Advanced Craft, ONC, OND, BTEC National, RSA Advanced Diploma",
+                                            "value": "NVQ Level three, Advanced GNVQ, City and Guilds Advanced Craft, ONC, OND, BTEC National, RSA Advanced Diploma"
+                                        },
+                                        {
+                                            "label": "NVQ Level four to five, HNC, HND, RSA Higher Diploma, BTEC Higher",
+                                            "value": "NVQ Level four to five, HNC, HND, RSA Higher Diploma, BTEC Higher"
+                                        },
+                                        {
+                                            "label": "Other vocational or work-related qualifications",
+                                            "value": "Other vocational or work-related qualifications"
+                                        },
+                                        {
+                                            "label": "Undergraduate Degree",
+                                            "value": "Undergraduate Degree"
+                                        },
+                                        {
+                                            "label": "Postgraduate Certificate / Diploma",
+                                            "value": "Postgraduate Certificate / Diploma"
+                                        },
+                                        {
+                                            "label": "Masters Degree",
+                                            "value": "Masters Degree"
+                                        },
+                                        {
+                                            "label": "Doctorate Degree (for example PhD)",
+                                            "value": "Doctorate Degree (for example PhD)"
+                                        },
+                                        {
+                                            "label": "Professional qualification (for example teaching, nursing, accountancy)",
+                                            "value": "Professional qualification (for example teaching, nursing, accountancy)"
+                                        },
+                                        {
+                                            "label": "Foreign qualifications (UK equivalent not known)",
+                                            "value": "Foreign qualifications (UK equivalent not known)"
+                                        },
+                                        {
+                                            "label": "No qualifications",
+                                            "value": "No qualifications"
+                                        }
+                                    ],
+                                    "type": "Checkbox"
+                                }
+                            ],
+                            "skip_conditions": [
+                                {
+                                    "when": [
+                                        {
+                                            "meta": "region_code",
+                                            "condition": "not equals",
+                                            "value": "GB-WLS"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
                     "id": "employment-type",
                     "questions": [
                         {
