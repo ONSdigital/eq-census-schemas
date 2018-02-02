@@ -5008,6 +5008,47 @@
                 },
                 {
                     "type": "Question",
+                    "id": "understand-welsh1",
+                    "questions": [
+                        {
+                            "id": "understand-welsh-question1",
+                            "title": "Can you understand, speak, read or write Welsh",
+                            "description": "Select all that apply",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "understand-welsh-answer1",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "Understand spoken Welsh",
+                                            "value": "Understand spoken Welsh"
+                                        },
+                                        {
+                                            "label": "Speak Welsh",
+                                            "value": "Speak Welsh"
+                                        },
+                                        {
+                                            "label": "Read Welsh",
+                                            "value": "Read Welsh"
+                                        },
+                                        {
+                                            "label": "Write Welsh",
+                                            "value": "Write Welsh"
+                                        },
+                                        {
+                                            "label": "None of the above",
+                                            "value": "None of the above"
+                                        }
+                                    ],
+                                    "type": "Checkbox"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
                     "id": "language",
                     "questions": [
                         {
@@ -5123,6 +5164,163 @@
                         {
                             "goto": {
                                 "block": "english"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "english",
+                    "questions": [
+                        {
+                            "id": "english-question",
+                            "title": "How well can <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> speak English?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "english-answer",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "Very well",
+                                            "value": "Very well"
+                                        },
+                                        {
+                                            "label": "Well",
+                                            "value": "Well"
+                                        },
+                                        {
+                                            "label": "Not well",
+                                            "value": "Not well"
+                                        },
+                                        {
+                                            "label": "Not at all",
+                                            "value": "Not at all"
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "language1",
+                    "questions": [
+                        {
+                            "id": "language-england-question1",
+                            "title": "What is your main language?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "language-england-answer1",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "English",
+                                            "value": "English"
+                                        },
+                                        {
+                                            "label": "Other",
+                                            "value": "Other",
+                                            "description": "Including British Sign Language",
+                                            "child_answer_id": "language-england-answer-other1"
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                },
+                                {
+                                    "id": "language-england-answer-other1",
+                                    "parent_answer_id": "language-england-answer1",
+                                    "type": "TextField",
+                                    "mandatory": false,
+                                    "label": "Please specify main language"
+                                }
+                            ],
+                            "skip_conditions": [
+                                {
+                                    "when": [
+                                        {
+                                            "meta": "region_code",
+                                            "condition": "equals",
+                                            "value": "GB-WLS"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "language-welsh-question1",
+                            "title": "What is your main language?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "language-welsh-answer1",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "English or Welsh",
+                                            "value": "English or Welsh"
+                                        },
+                                        {
+                                            "label": "Other",
+                                            "value": "Other",
+                                            "description": "Including British Sign Language",
+                                            "child_answer_id": "language-welsh-answer-other1"
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                },
+                                {
+                                    "id": "language-welsh-answer-other1",
+                                    "parent_answer_id": "language-welsh-answer1",
+                                    "type": "TextField",
+                                    "mandatory": false,
+                                    "label": "Please specify main language"
+                                }
+                            ],
+                            "skip_conditions": [
+                                {
+                                    "when": [
+                                        {
+                                            "meta": "region_code",
+                                            "condition": "not equals",
+                                            "value": "GB-WLS"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "religion1",
+                                "when": [
+                                    {
+                                        "id": "language-england-answer1",
+                                        "condition": "equals",
+                                        "value": "English"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "religion1",
+                                "when": [
+                                    {
+                                        "id": "language-welsh-answer1",
+                                        "condition": "equals",
+                                        "value": "English or Welsh"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "english1"
                             }
                         }
                     ]
