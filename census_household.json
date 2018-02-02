@@ -5897,7 +5897,7 @@
                         },
                         {
                             "goto": {
-                                "block": "disability"
+                                "block": "disability1"
                             }
                         }
                     ]
@@ -5918,6 +5918,39 @@
                                     "type": "TextField"
                                 }
                             ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "disability"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "other-passports1",
+                    "questions": [
+                        {
+                            "id": "other-passports-question1",
+                            "title": "Please specify other passports held",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "other-passports-answer1",
+                                    "label": "Passports held",
+                                    "mandatory": false,
+                                    "type": "TextField"
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "disability1"
+                            }
                         }
                     ]
                 },
@@ -5968,6 +6001,57 @@
                         {
                             "goto": {
                                 "block": "qualifications"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "disability1",
+                    "questions": [
+                        {
+                            "id": "disability-question1",
+                            "title": "Is your day-to-day activities limited because of a health problem or disability which has lasted, or is expected to last, at least 12 months?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "disability-answer1",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "Yes, limited a lot",
+                                            "value": "Yes, limited a lot"
+                                        },
+                                        {
+                                            "label": "Yes, limited a little",
+                                            "value": "Yes, limited a little"
+                                        },
+                                        {
+                                            "label": "No",
+                                            "value": "No"
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "household-member-completed1",
+                                "when": [
+                                    {
+                                        "id": "over-16-answer1",
+                                        "condition": "equals",
+                                        "value": "No"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "qualifications1"
                             }
                         }
                     ]
