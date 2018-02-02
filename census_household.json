@@ -6794,6 +6794,13 @@
                                 }
                             ]
                         }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "job-pending"
+                            }
+                        }
                     ]
                 },
                 {
@@ -6821,6 +6828,13 @@
                                     "type": "Radio"
                                 }
                             ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "job-pending1"
+                            }
                         }
                     ]
                 },
@@ -6850,6 +6864,48 @@
                                 }
                             ]
                         }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "occupation"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "job-pending1",
+                    "questions": [
+                        {
+                            "id": "job-pending-question",
+                            "title": "Last week, were you waiting to start a job already accepted?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "job-pending-answer1",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "Yes",
+                                            "value": "Yes"
+                                        },
+                                        {
+                                            "label": "No",
+                                            "value": "No"
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "occupation1"
+                            }
+                        }
                     ]
                 },
                 {
@@ -6864,6 +6920,47 @@
                             "answers": [
                                 {
                                     "id": "occupation-answer",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "retired (whether receiving a pension or not)",
+                                            "value": "retired (whether receiving a pension or not)"
+                                        },
+                                        {
+                                            "label": "a student",
+                                            "value": "a student"
+                                        },
+                                        {
+                                            "label": "looking after home or family",
+                                            "value": "looking after home or family"
+                                        },
+                                        {
+                                            "label": "long-term sick or disabled",
+                                            "value": "long-term sick or disabled"
+                                        },
+                                        {
+                                            "label": "other",
+                                            "value": "other"
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "occupation1",
+                    "questions": [
+                        {
+                            "id": "occupation-question1",
+                            "title": "Which of the following best describes what you was doing last week?",
+                            "description": "Select all that apply",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "occupation-answer1",
                                     "mandatory": false,
                                     "options": [
                                         {
