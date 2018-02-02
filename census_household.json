@@ -5731,6 +5731,63 @@
                                 }
                             ]
                         }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "passports"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "last-year-address1",
+                    "questions": [
+                        {
+                            "id": "last-year-address-question1",
+                            "title": "Enter details of your address one year ago",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "last-year-address-answer-building1",
+                                    "label": "Building",
+                                    "mandatory": false,
+                                    "type": "TextField"
+                                },
+                                {
+                                    "id": "last-year-address-answer-street1",
+                                    "label": "Street",
+                                    "mandatory": false,
+                                    "type": "TextField"
+                                },
+                                {
+                                    "id": "last-year-address-answer-city1",
+                                    "label": "Town or city",
+                                    "mandatory": false,
+                                    "type": "TextField"
+                                },
+                                {
+                                    "id": "last-year-address-answer-county1",
+                                    "label": "County (optional)",
+                                    "mandatory": false,
+                                    "type": "TextField"
+                                },
+                                {
+                                    "id": "last-year-address-answer-postcode1",
+                                    "label": "Postcode",
+                                    "mandatory": false,
+                                    "type": "TextField"
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "passports1"
+                            }
+                        }
                     ]
                 },
                 {
@@ -5776,6 +5833,62 @@
                                 "when": [
                                     {
                                         "id": "passports-answer",
+                                        "condition": "contains",
+                                        "value": "Other"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "disability"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "passports1",
+                    "questions": [
+                        {
+                            "id": "passports-question1",
+                            "title": "What passports do you hold?",
+                            "description": "Select all that apply",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "passports-answer1",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "United Kingdom",
+                                            "value": "United Kingdom"
+                                        },
+                                        {
+                                            "label": "Irish",
+                                            "value": "Irish"
+                                        },
+                                        {
+                                            "label": "Other",
+                                            "value": "Other"
+                                        },
+                                        {
+                                            "label": "None",
+                                            "value": "None"
+                                        }
+                                    ],
+                                    "type": "Checkbox"
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "other-passports1",
+                                "when": [
+                                    {
+                                        "id": "passports-answer1",
                                         "condition": "contains",
                                         "value": "Other"
                                     }
