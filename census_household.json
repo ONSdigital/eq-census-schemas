@@ -2875,6 +2875,13 @@
                                 }
                             ]
                         }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "length-of-stay"
+                            }
+                        }
                     ]
                 },
                 {
