@@ -7563,6 +7563,13 @@
                                 }
                             ]
                         }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "main-job-type"
+                            }
+                        }
                     ]
                 },
                 {
@@ -7582,6 +7589,13 @@
                                 }
                             ]
                         }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "main-job-type1"
+                            }
+                        }
                     ]
                 },
                 {
@@ -7600,6 +7614,13 @@
                                     "type": "TextArea"
                                 }
                             ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "main-job-type2"
+                            }
                         }
                     ]
                 },
