@@ -6914,7 +6914,7 @@
                         {
                             "id": "occupation-question",
                             "title": "Which of the following best describes what <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> was doing last week?",
-                            "description": "",
+                            "description": "Select all that apply",
                             "type": "General",
                             "answers": [
                                 {
@@ -6942,7 +6942,7 @@
                                             "value": "other"
                                         }
                                     ],
-                                    "type": "Radio"
+                                    "type": "Checkbox"
                                 }
                             ]
                         }
@@ -6962,7 +6962,7 @@
                         {
                             "id": "occupation-question1",
                             "title": "Which of the following best describes what you was doing last week?",
-                            "description": "",
+                            "description": "Select all that apply",
                             "type": "General",
                             "answers": [
                                 {
@@ -6990,7 +6990,7 @@
                                             "value": "other"
                                         }
                                     ],
-                                    "type": "Radio"
+                                    "type": "Checkbox"
                                 }
                             ]
                         }
@@ -7149,6 +7149,13 @@
                                 }
                             ]
                         }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "ever-worked1"
+                            }
+                        }
                     ]
                 },
                 {
@@ -7181,6 +7188,13 @@
                                 }
                             ]
                         }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "ever-worked1"
+                            }
+                        }
                     ]
                 },
                 {
@@ -7212,6 +7226,13 @@
                                     "type": "Radio"
                                 }
                             ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "ever-worked1"
+                            }
                         }
                     ]
                 },
