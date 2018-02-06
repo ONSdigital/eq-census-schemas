@@ -6612,7 +6612,6 @@
                                         }
                                     ],
                                     "type": "Checkbox",
-                                    "label": "Select all that apply"
                                 }
                             ]
                         }
