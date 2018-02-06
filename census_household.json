@@ -7878,6 +7878,13 @@
                                 }
                             ]
                         }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "employer-address"
+                            }
+                        }
                     ]
                 },
                 {
@@ -7915,6 +7922,56 @@
                                     "type": "TextArea"
                                 }
                             ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "employer-address",
+                    "questions": [
+                        {
+                            "id": "employer-address-question",
+                            "title": "What is the address of<em>{{answers.company_name}}</em>?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "employer-address-answer-building",
+                                    "label": "Building",
+                                    "mandatory": false,
+                                    "type": "TextField"
+                                },
+                                {
+                                    "id": "employer-address-answer-street",
+                                    "label": "Street",
+                                    "mandatory": false,
+                                    "type": "TextField"
+                                },
+                                {
+                                    "id": "employer-address-answer-city",
+                                    "label": "Town or city",
+                                    "mandatory": false,
+                                    "type": "TextField"
+                                },
+                                {
+                                    "id": "employer-address-answer-county",
+                                    "label": "County (optional)",
+                                    "mandatory": false,
+                                    "type": "TextField"
+                                },
+                                {
+                                    "id": "employer-adress-answer-postcode",
+                                    "label": "Postcode",
+                                    "mandatory": false,
+                                    "type": "TextField"
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "household-member-completed"
+                            }
                         }
                     ]
                 },
