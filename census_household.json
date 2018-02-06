@@ -7567,6 +7567,44 @@
                 },
                 {
                     "type": "Question",
+                    "id": "job-description1",
+                    "questions": [
+                        {
+                            "id": "job-description-question1",
+                            "title": "What do you do in your main job?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "job-description-answer1",
+                                    "label": "Description",
+                                    "mandatory": false,
+                                    "type": "TextArea"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "job-description2",
+                    "questions": [
+                        {
+                            "id": "job-description-question2",
+                            "title": "What did you do in your main job?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "job-description-answer2",
+                                    "label": "Description",
+                                    "mandatory": false,
+                                    "type": "TextArea"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
                     "id": "main-job-type",
                     "questions": [
                         {
