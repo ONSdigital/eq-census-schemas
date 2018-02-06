@@ -5216,6 +5216,13 @@
                                 }
                             ]
                         }
+                    ],
+                     "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "religion"
+                            }
+                        }
                     ]
                 },
                 {
