@@ -6620,7 +6620,7 @@
                     "routing_rules": [
                         {
                             "goto": {
-                                "block": "main-job",
+                                "block": "main-job1",
                                 "when": [
                                     {
                                         "id": "employment-type-answer1",
