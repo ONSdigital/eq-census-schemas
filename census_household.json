@@ -7798,6 +7798,13 @@
                                 }
                             ]
                         }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "employers-business"
+                            }
+                        }
                     ]
                 },
                 {
@@ -7817,6 +7824,13 @@
                                     "alias": "company_name1"
                                 }
                             ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "employers-business1"
+                            }
                         }
                     ]
                 },
@@ -7838,6 +7852,13 @@
                                 }
                             ]
                         }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "employers-business2"
+                            }
+                        }
                     ]
                 },
                 {
@@ -7851,6 +7872,44 @@
                             "answers": [
                                 {
                                     "id": "employers-business-answer",
+                                    "label": "Description",
+                                    "mandatory": false,
+                                    "type": "TextArea"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "employers-business1",
+                    "questions": [
+                        {
+                            "id": "employers-business-question1",
+                            "title": "What is the main activity of <em>{{answers.company_name1}}</em>?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "employers-business-answer1",
+                                    "label": "Description",
+                                    "mandatory": false,
+                                    "type": "TextArea"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "employers-business2",
+                    "questions": [
+                        {
+                            "id": "employers-business-question2",
+                            "title": "What is the main activity of <em>{{answers.company_name2}}</em>?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "employers-business-answer2",
                                     "label": "Description",
                                     "mandatory": false,
                                     "type": "TextArea"
