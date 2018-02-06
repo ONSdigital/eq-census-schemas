@@ -7463,7 +7463,7 @@
                     "routing_rules": [
                         {
                             "goto": {
-                                "block": "job-title1"
+                                "block": "job-title"
                             }
                         }
                     ]
@@ -7485,6 +7485,13 @@
                                 }
                             ]
                         }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "job-description"
+                            }
+                        }
                     ]
                 },
                 {
@@ -7504,6 +7511,13 @@
                                 }
                             ]
                         }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "job-description1"
+                            }
+                        }
                     ]
                 },
                 {
@@ -7522,6 +7536,13 @@
                                     "type": "TextField"
                                 }
                             ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "job-description2"
+                            }
                         }
                     ]
                 },
