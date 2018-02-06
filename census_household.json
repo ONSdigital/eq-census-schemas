@@ -7114,7 +7114,7 @@
                         },
                         {
                             "goto": {
-                                "block": "main-job1"
+                                "block": "main-job2"
                             }
                         }
                     ]
@@ -7130,6 +7130,70 @@
                             "answers": [
                                 {
                                     "id": "main-job-answer",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "an employee",
+                                            "value": "an employee"
+                                        },
+                                        {
+                                            "label": "self-employed or freelance without employees",
+                                            "value": "self-employed or freelance without employees"
+                                        },
+                                        {
+                                            "label": "self-employed with employees",
+                                            "value": "self-employed with employees"
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "main-job1",
+                    "questions": [
+                        {
+                            "id": "main-job-question1",
+                            "title": "What is your employment status?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "main-job-answer1",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "an employee",
+                                            "value": "an employee"
+                                        },
+                                        {
+                                            "label": "self-employed or freelance without employees",
+                                            "value": "self-employed or freelance without employees"
+                                        },
+                                        {
+                                            "label": "self-employed with employees",
+                                            "value": "self-employed with employees"
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "main-job2",
+                    "questions": [
+                        {
+                            "id": "main-job-question2",
+                            "title": "What was your employment status?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "main-job-answer2",
                                     "mandatory": false,
                                     "options": [
                                         {
