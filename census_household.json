@@ -6946,6 +6946,13 @@
                                 }
                             ]
                         }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "ever-worked"
+                            }
+                        }
                     ]
                 },
                 {
@@ -6986,6 +6993,13 @@
                                     "type": "Radio"
                                 }
                             ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "ever-worked1"
+                            }
                         }
                     ]
                 },
@@ -7043,6 +7057,64 @@
                         {
                             "goto": {
                                 "block": "main-job"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "ever-worked1",
+                    "questions": [
+                        {
+                            "id": "ever-worked-question1",
+                            "title": "Have you ever worked?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "ever-worked-answer1",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "Yes",
+                                            "value": "Yes"
+                                        },
+                                        {
+                                            "label": "No",
+                                            "value": "No"
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "household-member-completed1",
+                                "when": [
+                                    {
+                                        "id": "ever-worked-answer1",
+                                        "condition": "equals",
+                                        "value": "No"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "household-member-completed1",
+                                "when": [
+                                    {
+                                        "id": "ever-worked-answer1",
+                                        "condition": "not set"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "main-job1"
                             }
                         }
                     ]
