@@ -2935,6 +2935,13 @@
                                 }
                             ]
                         }
+                    ],
+                     "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "health"
+                            }
+                        }
                     ]
                 },
                 {
