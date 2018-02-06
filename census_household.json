@@ -7231,7 +7231,7 @@
                     "routing_rules": [
                         {
                             "goto": {
-                                "block": "Job-title2"
+                                "block": "job-title2"
                             }
                         }
                     ]
@@ -7336,6 +7336,71 @@
                             "answers": [
                                 {
                                     "id": "work-travel-answer",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "Work mainly at or from home",
+                                            "value": "Work mainly at or from home"
+                                        },
+                                        {
+                                            "label": "Underground, metro, light rail or tram",
+                                            "value": "Underground, metro, light rail or tram"
+                                        },
+                                        {
+                                            "label": "Train",
+                                            "value": "Train"
+                                        },
+                                        {
+                                            "label": "Bus, minibus or coach",
+                                            "value": "Bus, minibus or coach "
+                                        },
+                                        {
+                                            "label": "Taxi",
+                                            "value": "Taxi "
+                                        },
+                                        {
+                                            "label": "Motorcycle, scooter or moped",
+                                            "value": "Motorcycle, scooter or moped"
+                                        },
+                                        {
+                                            "label": "Driving a car or van",
+                                            "value": "Driving a car or van"
+                                        },
+                                        {
+                                            "label": "Passenger in a car or van",
+                                            "value": "Passenger in a car or van"
+                                        },
+                                        {
+                                            "label": "Bicycle",
+                                            "value": "Bicycle"
+                                        },
+                                        {
+                                            "label": "On foot",
+                                            "value": "On foot"
+                                        },
+                                        {
+                                            "label": "Other",
+                                            "value": "Other"
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "work-travel1",
+                    "description": "",
+                    "questions": [
+                        {
+                            "title": "How do you usually travel to work?",
+                            "id": "work-travel-question1",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "work-travel-answer1",
                                     "mandatory": false,
                                     "options": [
                                         {
