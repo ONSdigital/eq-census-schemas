@@ -7091,7 +7091,7 @@
                     "routing_rules": [
                         {
                             "goto": {
-                                "block": "household-member-completed1",
+                                "block": "household-member-completed",
                                 "when": [
                                     {
                                         "id": "ever-worked-answer1",
@@ -7103,7 +7103,7 @@
                         },
                         {
                             "goto": {
-                                "block": "household-member-completed1",
+                                "block": "household-member-completed",
                                 "when": [
                                     {
                                         "id": "ever-worked-answer1",
