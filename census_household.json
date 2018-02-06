@@ -5853,7 +5853,6 @@
                         {
                             "id": "passports-question1",
                             "title": "What passports do you hold?",
-                            "description": "Select all that apply",
                             "type": "General",
                             "answers": [
                                 {
