@@ -7723,7 +7723,7 @@
                         },
                         {
                             "goto": {
-                                "block": "business-name"
+                                "block": "business-name1"
                             }
                         }
                     ]
@@ -7802,11 +7802,31 @@
                 },
                 {
                     "type": "Question",
+                    "id": "business-name1",
+                    "questions": [
+                        {
+                            "id": "business-name-question1",
+                            "title": "What is the name of the organisation of business that you work for?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "business-name-answer1",
+                                    "label": "Organisation or business name",
+                                    "mandatory": false,
+                                    "type": "TextField",
+                                    "alias": "company_name1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
                     "id": "business-name2",
                     "questions": [
                         {
                             "id": "business-name-question2",
-                            "title": "What is the name of the organisation of business that you work for?",
+                            "title": "What is the name of the organisation of business that you worked for?",
                             "type": "General",
                             "answers": [
                                 {
