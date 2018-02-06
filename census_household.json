@@ -7387,6 +7387,13 @@
                                 }
                             ]
                         }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "job-title"
+                            }
+                        }
                     ]
                 },
                 {
@@ -7451,6 +7458,13 @@
                                     "type": "Radio"
                                 }
                             ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "job-title1"
+                            }
                         }
                     ]
                 },
