@@ -7738,7 +7738,7 @@
                             "type": "General",
                             "answers": [
                                 {
-                                    "id": "main-job-type-answer",
+                                    "id": "main-job-type-answer2",
                                     "mandatory": false,
                                     "options": [
                                         {
