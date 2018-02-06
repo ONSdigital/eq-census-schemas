@@ -7775,7 +7775,7 @@
                         },
                         {
                             "goto": {
-                                "block": "business-name"
+                                "block": "business-name2"
                             }
                         }
                     ]
@@ -7791,6 +7791,26 @@
                             "answers": [
                                 {
                                     "id": "business-name-answer",
+                                    "label": "Organisation or business name",
+                                    "mandatory": false,
+                                    "type": "TextField",
+                                    "alias": "company_name"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "business-name2",
+                    "questions": [
+                        {
+                            "id": "business-name-question2",
+                            "title": "What is the name of the organisation of business that you work for?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "business-name-answer2",
                                     "label": "Organisation or business name",
                                     "mandatory": false,
                                     "type": "TextField",
