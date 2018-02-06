@@ -6914,7 +6914,7 @@
                         {
                             "id": "occupation-question",
                             "title": "Which of the following best describes what <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> was doing last week?",
-                            "description": "Select all that apply",
+                            "description": "",
                             "type": "General",
                             "answers": [
                                 {
@@ -6955,7 +6955,7 @@
                         {
                             "id": "occupation-question1",
                             "title": "Which of the following best describes what you was doing last week?",
-                            "description": "Select all that apply",
+                            "description": "",
                             "type": "General",
                             "answers": [
                                 {
