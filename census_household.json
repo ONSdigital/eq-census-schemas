@@ -7925,6 +7925,13 @@
                                 }
                             ]
                         }
+                    ],
+                     "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "employer-address1"
+                            }
+                        }
                     ]
                 },
                 {
@@ -7944,6 +7951,13 @@
                                 }
                             ]
                         }
+                    ],
+                     "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "household-member-completed"
+                            }
+                        }
                     ]
                 },
                 {
@@ -7952,7 +7966,7 @@
                     "questions": [
                         {
                             "id": "employer-address-question",
-                            "title": "What is the address of<em>{{answers.company_name}}</em>?",
+                            "title": "What is the address of <em>{{answers.company_name}}</em>?",
                             "type": "General",
                             "answers": [
                                 {
@@ -7981,6 +7995,56 @@
                                 },
                                 {
                                     "id": "employer-adress-answer-postcode",
+                                    "label": "Postcode",
+                                    "mandatory": false,
+                                    "type": "TextField"
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "household-member-completed"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "employer-address1",
+                    "questions": [
+                        {
+                            "id": "employer-address-question1",
+                            "title": "What is the address of <em>{{answers.company_name1}}</em>?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "employer-address-answer-building1",
+                                    "label": "Building",
+                                    "mandatory": false,
+                                    "type": "TextField"
+                                },
+                                {
+                                    "id": "employer-address-answer-street1",
+                                    "label": "Street",
+                                    "mandatory": false,
+                                    "type": "TextField"
+                                },
+                                {
+                                    "id": "employer-address-answer-city1",
+                                    "label": "Town or city",
+                                    "mandatory": false,
+                                    "type": "TextField"
+                                },
+                                {
+                                    "id": "employer-address-answer-county1",
+                                    "label": "County (optional)",
+                                    "mandatory": false,
+                                    "type": "TextField"
+                                },
+                                {
+                                    "id": "employer-adress-answer-postcode1",
                                     "label": "Postcode",
                                     "mandatory": false,
                                     "type": "TextField"
