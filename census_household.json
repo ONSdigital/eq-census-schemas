@@ -7410,6 +7410,44 @@
                 },
                 {
                     "type": "Question",
+                    "id": "job-title1",
+                    "questions": [
+                        {
+                            "id": "job-title-question1",
+                            "title": "What is your full job title?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "job-title-answer1",
+                                    "label": "Job title",
+                                    "mandatory": false,
+                                    "type": "TextField"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "job-title2",
+                    "questions": [
+                        {
+                            "id": "job-title-question2",
+                            "title": "What is your full job title?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "job-title-answer2",
+                                    "label": "Job title",
+                                    "mandatory": false,
+                                    "type": "TextField"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
                     "id": "job-description",
                     "questions": [
                         {
