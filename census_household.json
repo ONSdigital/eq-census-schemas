@@ -7174,7 +7174,7 @@
                     "routing_rules": [
                         {
                             "goto": {
-                                "block": "hours-worked"
+                                "block": "job-title"
                             }
                         }
                     ]
@@ -7213,7 +7213,7 @@
                     "routing_rules": [
                         {
                             "goto": {
-                                "block": "hours-worked1"
+                                "block": "job-title1"
                             }
                         }
                     ]
@@ -7253,238 +7253,6 @@
                         {
                             "goto": {
                                 "block": "job-title2"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "type": "Question",
-                    "id": "hours-worked",
-                    "description": "",
-                    "questions": [
-                        {
-                            "title": "In <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em> main job, how many hours a week do they usually work?",
-                            "id": "hours-worked-question",
-                            "type": "General",
-                            "answers": [
-                                {
-                                    "id": "hours-worked-answer",
-                                    "mandatory": false,
-                                    "options": [
-                                        {
-                                            "label": "15 or less",
-                                            "value": "15 or less"
-                                        },
-                                        {
-                                            "label": "16 - 30",
-                                            "value": "16 - 30"
-                                        },
-                                        {
-                                            "label": "31 - 48",
-                                            "value": "31 - 48"
-                                        },
-                                        {
-                                            "label": "49 or more",
-                                            "value": "49 or more "
-                                        }
-                                    ],
-                                    "type": "Radio"
-                                }
-                            ]
-                        }
-                    ],
-                    "routing_rules": [
-                        {
-                            "goto": {
-                                "block": "work-travel"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "type": "Question",
-                    "id": "hours-worked1",
-                    "description": "",
-                    "questions": [
-                        {
-                            "title": "In your main job, how many hours a week do you usually work?",
-                            "id": "hours-worked-question1",
-                            "type": "General",
-                            "answers": [
-                                {
-                                    "id": "hours-worked-answer1",
-                                    "mandatory": false,
-                                    "options": [
-                                        {
-                                            "label": "15 or less",
-                                            "value": "15 or less"
-                                        },
-                                        {
-                                            "label": "16 - 30",
-                                            "value": "16 - 30"
-                                        },
-                                        {
-                                            "label": "31 - 48",
-                                            "value": "31 - 48"
-                                        },
-                                        {
-                                            "label": "49 or more",
-                                            "value": "49 or more "
-                                        }
-                                    ],
-                                    "type": "Radio"
-                                }
-                            ]
-                        }
-                    ],
-                    "routing_rules": [
-                        {
-                            "goto": {
-                                "block": "work-travel1"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "type": "Question",
-                    "id": "work-travel",
-                    "description": "",
-                    "questions": [
-                        {
-                            "title": "How does <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> usually travel to work?",
-                            "id": "work-travel-question",
-                            "type": "General",
-                            "answers": [
-                                {
-                                    "id": "work-travel-answer",
-                                    "mandatory": false,
-                                    "options": [
-                                        {
-                                            "label": "Work mainly at or from home",
-                                            "value": "Work mainly at or from home"
-                                        },
-                                        {
-                                            "label": "Underground, metro, light rail or tram",
-                                            "value": "Underground, metro, light rail or tram"
-                                        },
-                                        {
-                                            "label": "Train",
-                                            "value": "Train"
-                                        },
-                                        {
-                                            "label": "Bus, minibus or coach",
-                                            "value": "Bus, minibus or coach "
-                                        },
-                                        {
-                                            "label": "Taxi",
-                                            "value": "Taxi "
-                                        },
-                                        {
-                                            "label": "Motorcycle, scooter or moped",
-                                            "value": "Motorcycle, scooter or moped"
-                                        },
-                                        {
-                                            "label": "Driving a car or van",
-                                            "value": "Driving a car or van"
-                                        },
-                                        {
-                                            "label": "Passenger in a car or van",
-                                            "value": "Passenger in a car or van"
-                                        },
-                                        {
-                                            "label": "Bicycle",
-                                            "value": "Bicycle"
-                                        },
-                                        {
-                                            "label": "On foot",
-                                            "value": "On foot"
-                                        },
-                                        {
-                                            "label": "Other",
-                                            "value": "Other"
-                                        }
-                                    ],
-                                    "type": "Radio"
-                                }
-                            ]
-                        }
-                    ],
-                    "routing_rules": [
-                        {
-                            "goto": {
-                                "block": "job-title"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "type": "Question",
-                    "id": "work-travel1",
-                    "description": "",
-                    "questions": [
-                        {
-                            "title": "How do you usually travel to work?",
-                            "id": "work-travel-question1",
-                            "type": "General",
-                            "answers": [
-                                {
-                                    "id": "work-travel-answer1",
-                                    "mandatory": false,
-                                    "options": [
-                                        {
-                                            "label": "Work mainly at or from home",
-                                            "value": "Work mainly at or from home"
-                                        },
-                                        {
-                                            "label": "Underground, metro, light rail or tram",
-                                            "value": "Underground, metro, light rail or tram"
-                                        },
-                                        {
-                                            "label": "Train",
-                                            "value": "Train"
-                                        },
-                                        {
-                                            "label": "Bus, minibus or coach",
-                                            "value": "Bus, minibus or coach "
-                                        },
-                                        {
-                                            "label": "Taxi",
-                                            "value": "Taxi "
-                                        },
-                                        {
-                                            "label": "Motorcycle, scooter or moped",
-                                            "value": "Motorcycle, scooter or moped"
-                                        },
-                                        {
-                                            "label": "Driving a car or van",
-                                            "value": "Driving a car or van"
-                                        },
-                                        {
-                                            "label": "Passenger in a car or van",
-                                            "value": "Passenger in a car or van"
-                                        },
-                                        {
-                                            "label": "Bicycle",
-                                            "value": "Bicycle"
-                                        },
-                                        {
-                                            "label": "On foot",
-                                            "value": "On foot"
-                                        },
-                                        {
-                                            "label": "Other",
-                                            "value": "Other"
-                                        }
-                                    ],
-                                    "type": "Radio"
-                                }
-                            ]
-                        }
-                    ],
-                    "routing_rules": [
-                        {
-                            "goto": {
-                                "block": "job-title1"
                             }
                         }
                     ]
@@ -8005,7 +7773,7 @@
                     "routing_rules": [
                         {
                             "goto": {
-                                "block": "household-member-completed"
+                                "block": "hours-worked"
                             }
                         }
                     ]
@@ -8048,6 +7816,238 @@
                                     "label": "Postcode",
                                     "mandatory": false,
                                     "type": "TextField"
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "hours-worked1"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "hours-worked",
+                    "description": "",
+                    "questions": [
+                        {
+                            "title": "In <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em> main job, how many hours a week do they usually work?",
+                            "id": "hours-worked-question",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "hours-worked-answer",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "15 or less",
+                                            "value": "15 or less"
+                                        },
+                                        {
+                                            "label": "16 - 30",
+                                            "value": "16 - 30"
+                                        },
+                                        {
+                                            "label": "31 - 48",
+                                            "value": "31 - 48"
+                                        },
+                                        {
+                                            "label": "49 or more",
+                                            "value": "49 or more "
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "work-travel"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "hours-worked1",
+                    "description": "",
+                    "questions": [
+                        {
+                            "title": "In your main job, how many hours a week do you usually work?",
+                            "id": "hours-worked-question1",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "hours-worked-answer1",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "15 or less",
+                                            "value": "15 or less"
+                                        },
+                                        {
+                                            "label": "16 - 30",
+                                            "value": "16 - 30"
+                                        },
+                                        {
+                                            "label": "31 - 48",
+                                            "value": "31 - 48"
+                                        },
+                                        {
+                                            "label": "49 or more",
+                                            "value": "49 or more "
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "work-travel1"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "work-travel",
+                    "description": "",
+                    "questions": [
+                        {
+                            "title": "How does <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> usually travel to work?",
+                            "id": "work-travel-question",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "work-travel-answer",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "Work mainly at or from home",
+                                            "value": "Work mainly at or from home"
+                                        },
+                                        {
+                                            "label": "Underground, metro, light rail or tram",
+                                            "value": "Underground, metro, light rail or tram"
+                                        },
+                                        {
+                                            "label": "Train",
+                                            "value": "Train"
+                                        },
+                                        {
+                                            "label": "Bus, minibus or coach",
+                                            "value": "Bus, minibus or coach "
+                                        },
+                                        {
+                                            "label": "Taxi",
+                                            "value": "Taxi "
+                                        },
+                                        {
+                                            "label": "Motorcycle, scooter or moped",
+                                            "value": "Motorcycle, scooter or moped"
+                                        },
+                                        {
+                                            "label": "Driving a car or van",
+                                            "value": "Driving a car or van"
+                                        },
+                                        {
+                                            "label": "Passenger in a car or van",
+                                            "value": "Passenger in a car or van"
+                                        },
+                                        {
+                                            "label": "Bicycle",
+                                            "value": "Bicycle"
+                                        },
+                                        {
+                                            "label": "On foot",
+                                            "value": "On foot"
+                                        },
+                                        {
+                                            "label": "Other",
+                                            "value": "Other"
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "household-member-completed"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "work-travel1",
+                    "description": "",
+                    "questions": [
+                        {
+                            "title": "How do you usually travel to work?",
+                            "id": "work-travel-question1",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "work-travel-answer1",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "Work mainly at or from home",
+                                            "value": "Work mainly at or from home"
+                                        },
+                                        {
+                                            "label": "Underground, metro, light rail or tram",
+                                            "value": "Underground, metro, light rail or tram"
+                                        },
+                                        {
+                                            "label": "Train",
+                                            "value": "Train"
+                                        },
+                                        {
+                                            "label": "Bus, minibus or coach",
+                                            "value": "Bus, minibus or coach "
+                                        },
+                                        {
+                                            "label": "Taxi",
+                                            "value": "Taxi "
+                                        },
+                                        {
+                                            "label": "Motorcycle, scooter or moped",
+                                            "value": "Motorcycle, scooter or moped"
+                                        },
+                                        {
+                                            "label": "Driving a car or van",
+                                            "value": "Driving a car or van"
+                                        },
+                                        {
+                                            "label": "Passenger in a car or van",
+                                            "value": "Passenger in a car or van"
+                                        },
+                                        {
+                                            "label": "Bicycle",
+                                            "value": "Bicycle"
+                                        },
+                                        {
+                                            "label": "On foot",
+                                            "value": "On foot"
+                                        },
+                                        {
+                                            "label": "Other",
+                                            "value": "Other"
+                                        }
+                                    ],
+                                    "type": "Radio"
                                 }
                             ]
                         }
