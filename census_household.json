@@ -2093,6 +2093,13 @@
                                 }
                             ]
                         }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "in-education"
+                            }
+                        }
                     ]
                 },
                 {
@@ -2135,6 +2142,13 @@
                                     "type": "TextField"
                                 }
                             ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "in-education1"
+                            }
                         }
                     ]
                 },
