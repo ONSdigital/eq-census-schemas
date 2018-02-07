@@ -1744,7 +1744,7 @@
                     "questions": [
                         {
                             "id": "marital-type-question",
-                            "title": "What type of partnership was this?",
+                            "title": "What type of partnership is (was) this?",
                             "type": "General",
                             "answers": [
                                 {
@@ -1795,7 +1795,7 @@
                     "questions": [
                         {
                             "id": "marital-type-question1",
-                            "title": "What type of partnership is this?",
+                            "title": "What type of partnership is (was) this?",
                             "type": "General",
                             "answers": [
                                 {
