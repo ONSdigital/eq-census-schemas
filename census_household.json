@@ -5857,7 +5857,7 @@
                         {
                             "id": "passports-question",
                             "title": "What passports do you hold?",
-                            "description": "Select all that apply",
+                            "description": "",
                             "type": "General",
                             "answers": [
                                 {
@@ -6544,7 +6544,7 @@
                                         }
                                     ],
                                     "type": "Checkbox",
-                                    "label": "Select all that apply"
+                                    "label": ""
                                 }
                             ]
                         }
