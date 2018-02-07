@@ -7095,7 +7095,7 @@
                         },
                         {
                             "goto": {
-                                "block": "main-job"
+                                "block": "main-job3"
                             }
                         }
                     ]
@@ -7271,6 +7271,45 @@
                         {
                             "goto": {
                                 "block": "job-title2"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "main-job3",
+                    "questions": [
+                        {
+                            "id": "main-job-question3",
+                            "title": "What was <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em> employment status?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "main-job-answer3",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "an employee",
+                                            "value": "an employee"
+                                        },
+                                        {
+                                            "label": "self-employed or freelance without employees",
+                                            "value": "self-employed or freelance without employees"
+                                        },
+                                        {
+                                            "label": "self-employed with employees",
+                                            "value": "self-employed with employees"
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "job-title1"
                             }
                         }
                     ]
