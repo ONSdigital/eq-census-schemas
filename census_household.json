@@ -2152,56 +2152,7 @@
                         }
                     ]
                 },
-                {
-                    "type": "Question",
-                    "id": "address-type",
-                    "questions": [
-                        {
-                            "id": "address-type-question",
-                            "title": "What is that address?",
-                            "type": "General",
-                            "answers": [
-                                {
-                                    "id": "address-type-answer",
-                                    "mandatory": false,
-                                    "options": [
-                                        {
-                                            "label": "Armed forces base address",
-                                            "value": "Armed forces base address"
-                                        },
-                                        {
-                                            "label": "Another address when working away from home",
-                                            "value": "Another address when working away from home"
-                                        },
-                                        {
-                                            "label": "Student’s home address",
-                                            "value": "Student’s home address"
-                                        },
-                                        {
-                                            "label": "Student’s term time address",
-                                            "value": "Student’s term time address"
-                                        },
-                                        {
-                                            "label": "Another parent or guardian’s address",
-                                            "value": "Another parent or guardian’s address"
-                                        },
-                                        {
-                                            "label": "Holiday home",
-                                            "value": "Holiday home"
-                                        },
-                                        {
-                                            "label": "Other (please specify)",
-                                            "value": "Other",
-                                            "child_answer_id": "address-type-answer-other"
-                                        }
-                                    ],
-                                    "type": "Radio"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
+                             {
                     "type": "Question",
                     "id": "address-type1",
                     "questions": [
@@ -2249,6 +2200,62 @@
                                 {
                                     "id": "address-type-answer-other1",
                                     "parent_answer_id": "address-type-answer1",
+                                    "type": "TextField",
+                                    "mandatory": false,
+                                    "label": "Please specify type of address"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "address-type",
+                    "questions": [
+                        {
+                            "id": "address-type-question",
+                            "title": "What is that address?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "address-type-answer",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "Armed forces base address",
+                                            "value": "Armed forces base address"
+                                        },
+                                        {
+                                            "label": "Another address when working away from home",
+                                            "value": "Another address when working away from home"
+                                        },
+                                        {
+                                            "label": "Student’s home address",
+                                            "value": "Student’s home address"
+                                        },
+                                        {
+                                            "label": "Student’s term time address",
+                                            "value": "Student’s term time address"
+                                        },
+                                        {
+                                            "label": "Another parent or guardian’s address",
+                                            "value": "Another parent or guardian’s address"
+                                        },
+                                        {
+                                            "label": "Holiday home",
+                                            "value": "Holiday home"
+                                        },
+                                        {
+                                            "label": "Other (please specify)",
+                                            "value": "Other",
+                                            "child_answer_id": "address-type-answer-other"
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                },
+                                {
+                                    "id": "address-type-answer-other",
+                                    "parent_answer_id": "address-type-answer",
                                     "type": "TextField",
                                     "mandatory": false,
                                     "label": "Please specify type of address"
