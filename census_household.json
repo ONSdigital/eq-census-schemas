@@ -7309,7 +7309,7 @@
                     "routing_rules": [
                         {
                             "goto": {
-                                "block": "job-title1"
+                                "block": "job-title3"
                             }
                         }
                     ]
@@ -7377,6 +7377,32 @@
                             "answers": [
                                 {
                                     "id": "job-title-answer2",
+                                    "label": "Job title",
+                                    "mandatory": false,
+                                    "type": "TextField"
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "job-description2"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "job-title3",
+                    "questions": [
+                        {
+                            "id": "job-title-question3",
+                            "title": "What was <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em> full job title?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "job-title-answer3",
                                     "label": "Job title",
                                     "mandatory": false,
                                     "type": "TextField"
