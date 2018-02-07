@@ -7636,7 +7636,7 @@
                             "type": "General",
                             "answers": [
                                 {
-                                    "id": "main-job-type-answer",
+                                    "id": "main-job-type-answer2",
                                     "mandatory": false,
                                     "options": [
                                         {
@@ -7674,6 +7674,58 @@
                         {
                             "goto": {
                                 "block": "business-name2"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "main-job-type3",
+                    "questions": [
+                        {
+                            "id": "main-job-type-question3",
+                            "title": "What was <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> employment status?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "main-job-type-answer3",
+                                    "mandatory": false,
+                                    "options": [
+                                        {
+                                            "label": "Employed by an organisation or business",
+                                            "value": "Employed by an organisation or business"
+                                        },
+                                        {
+                                            "label": "Self-employed in your own organisation or business",
+                                            "value": "Self-employed in your own organisation or business"
+                                        },
+                                        {
+                                            "label": "Not working for an organisation or business",
+                                            "value": "Not working for an organisation or business",
+                                            "description": "For example self-employed freelance or work (worked) for a private individual"
+                                        }
+                                    ],
+                                    "type": "Radio"
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "household-member-completed",
+                                "when": [
+                                    {
+                                        "id": "main-job-type-answer3",
+                                        "condition": "equals",
+                                        "value": "Not working for an organisation or business"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "goto": {
+                                "block": "business-name3"
                             }
                         }
                     ]
@@ -7755,6 +7807,33 @@
                         {
                             "goto": {
                                 "block": "employers-business2"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "business-name3",
+                    "questions": [
+                        {
+                            "id": "business-name-question3",
+                            "title": "What was the name of the organisation of business that <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> worked for?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "business-name-answer3",
+                                    "label": "Organisation or business name",
+                                    "mandatory": false,
+                                    "type": "TextField",
+                                    "alias": "company_name3"
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "employers-business3"
                             }
                         }
                     ]
