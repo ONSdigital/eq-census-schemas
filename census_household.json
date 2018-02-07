@@ -6527,8 +6527,8 @@
                                             "value": "self-employed or freelance"
                                         },
                                         {
-                                            "label": "working paid or unpaid for you own or your family’s business",
-                                            "value": "working paid or unpaid for you own or your family’s business"
+                                            "label": "working paid or unpaid for your own or your family’s business",
+                                            "value": "working paid or unpaid for your own or your family’s business"
                                         },
                                         {
                                             "label": "away from work ill, on maternity leave, on holiday or temporarily laid off",
@@ -6655,8 +6655,8 @@
                                             "value": "self-employed or freelance"
                                         },
                                         {
-                                            "label": "working paid or unpaid for you own or your family’s business",
-                                            "value": "working paid or unpaid for you own or your family’s business"
+                                            "label": "working paid or unpaid for your own or your family’s business",
+                                            "value": "working paid or unpaid for your own or your family’s business"
                                         },
                                         {
                                             "label": "away from work ill, on maternity leave, on holiday or temporarily laid off",
@@ -6974,7 +6974,7 @@
                         {
                             "id": "occupation-question",
                             "title": "Which of the following best describes what <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> was doing last week?",
-                            "description": "Select all that apply",
+                            "description": "",
                             "type": "General",
                             "answers": [
                                 {
@@ -7022,7 +7022,7 @@
                         {
                             "id": "occupation-question1",
                             "title": "Which of the following best describes what you was doing last week?",
-                            "description": "Select all that apply",
+                            "description": "",
                             "type": "General",
                             "answers": [
                                 {
@@ -7445,7 +7445,7 @@
                     "questions": [
                         {
                             "id": "job-description-question",
-                            "title": "What <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> does in their main job?",
+                            "title": "What does <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> do in their main job?",
                             "type": "General",
                             "answers": [
                                 {
@@ -7549,7 +7549,7 @@
                     "questions": [
                         {
                             "id": "main-job-type-question",
-                            "title": "What is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> employment status?",
+                            "title": "What is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em> employment status?",
                             "type": "General",
                             "answers": [
                                 {
@@ -7757,7 +7757,7 @@
                     "questions": [
                         {
                             "id": "business-name-question",
-                            "title": "What is the name of the organisation of business that <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> work for?",
+                            "title": "What is the name of the organisation of business that <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> works for?",
                             "type": "General",
                             "answers": [
                                 {
