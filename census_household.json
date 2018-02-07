@@ -378,7 +378,7 @@
                     "questions": [
                         {
                             "id": "household-relationships-question",
-                            "title": "How are the following people related?",
+                            "title": "How are members <em>{{answers.address_line_1}}</em> related to eachother?",
                             "type": "Relationship",
                             "answers": [
                                 {
