@@ -7413,7 +7413,7 @@
                     "routing_rules": [
                         {
                             "goto": {
-                                "block": "job-description2"
+                                "block": "job-description3"
                             }
                         }
                     ]
@@ -7492,6 +7492,32 @@
                         {
                             "goto": {
                                 "block": "main-job-type2"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
+                    "id": "job-description3",
+                    "questions": [
+                        {
+                            "id": "job-description-question3",
+                            "title": "What did <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em> do in their main job?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "job-description-answer3",
+                                    "label": "Description",
+                                    "mandatory": false,
+                                    "type": "TextArea"
+                                }
+                            ]
+                        }
+                    ],
+                    "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "main-job-type3"
                             }
                         }
                     ]
