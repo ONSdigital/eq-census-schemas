@@ -7502,7 +7502,7 @@
                     "questions": [
                         {
                             "id": "job-description-question3",
-                            "title": "What did <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em> do in their main job?",
+                            "title": "What did <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> do in their main job?",
                             "type": "General",
                             "answers": [
                                 {
@@ -7684,7 +7684,7 @@
                     "questions": [
                         {
                             "id": "main-job-type-question3",
-                            "title": "What was <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> employment status?",
+                            "title": "What was <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em> employment status?",
                             "type": "General",
                             "answers": [
                                 {
