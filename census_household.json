@@ -2097,7 +2097,7 @@
                     "routing_rules": [
                         {
                             "goto": {
-                                "block": "in-education"
+                                "block": "address-type"
                             }
                         }
                     ]
@@ -2147,7 +2147,7 @@
                     "routing_rules": [
                         {
                             "goto": {
-                                "block": "in-education1"
+                                "block": "address-type1"
                             }
                         }
                     ]
