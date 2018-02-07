@@ -7918,6 +7918,32 @@
                 },
                 {
                     "type": "Question",
+                    "id": "employers-business3",
+                    "questions": [
+                        {
+                            "id": "employers-business-question3",
+                            "title": "What is the main activity of <em>{{answers.company_name3}}</em>?",
+                            "type": "General",
+                            "answers": [
+                                {
+                                    "id": "employers-business-answer3",
+                                    "label": "Description",
+                                    "mandatory": false,
+                                    "type": "TextArea"
+                                }
+                            ]
+                        }
+                    ],
+                     "routing_rules": [
+                        {
+                            "goto": {
+                                "block": "household-member-completed"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Question",
                     "id": "employer-address",
                     "questions": [
                         {
