@@ -5610,7 +5610,7 @@
                     "questions": [
                         {
                             "id": "past-usual-address-question",
-                            "title": "One year ago, what was your usual address?",
+                            "title": "One year ago, what was <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive}}</em> usual address?",
                             "type": "General",
                             "answers": [
                                 {
@@ -5860,7 +5860,7 @@
                     "questions": [
                         {
                             "id": "passports-question",
-                            "title": "What passports do you hold?",
+                            "title": "What passports does <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> hold?",
                             "description": "",
                             "type": "General",
                             "answers": [
