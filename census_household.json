@@ -8073,7 +8073,7 @@
                     "description": "",
                     "questions": [
                         {
-                            "title": "In <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em> main job, how many hours a week do they usually work?",
+                            "title": "How many hours does <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em> usually work in a week?",
                             "id": "hours-worked-question",
                             "guidance": {
                             "content": [{
@@ -8126,7 +8126,7 @@
                     "description": "",
                     "questions": [
                         {
-                            "title": "In your main job, how many hours a week do you usually work?",
+                            "title": "How many hours do you usually work in a week?",
                             "id": "hours-worked-question1",
                             "type": "General",
                             "answers": [
