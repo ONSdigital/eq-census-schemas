@@ -8073,7 +8073,7 @@
                     "description": "",
                     "questions": [
                         {
-                            "title": "How many hours does <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em> usually work in a week?",
+                            "title": "How many hours does <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> usually work in a week?",
                             "id": "hours-worked-question",
                             "guidance": {
                             "content": [{
@@ -8091,20 +8091,20 @@
                                     "mandatory": false,
                                     "options": [
                                         {
-                                            "label": "15 or less",
-                                            "value": "15 or less"
+                                            "label": "15 hours or less",
+                                            "value": "15 hours or less"
                                         },
                                         {
-                                            "label": "16 - 30",
-                                            "value": "16 - 30"
+                                            "label": "16 to 30 hours",
+                                            "value": "16 to 30 hours"
                                         },
                                         {
-                                            "label": "31 - 48",
-                                            "value": "31 - 48"
+                                            "label": "31 to 48 hours",
+                                            "value": "31 to 48 hours"
                                         },
                                         {
-                                            "label": "49 or more",
-                                            "value": "49 or more "
+                                            "label": "49 hours or more",
+                                            "value": "49 hours or more "
                                         }
                                     ],
                                     "type": "Radio"
@@ -8128,6 +8128,15 @@
                         {
                             "title": "How many hours do you usually work in a week?",
                             "id": "hours-worked-question1",
+                            "guidance": {
+                            "content": [{
+                                    "title": "Include",
+                                    "list": [
+                                        "paid or unpaid overtime"
+                                    ]
+                                }
+                            ]
+                        },
                             "type": "General",
                             "answers": [
                                 {
@@ -8135,20 +8144,20 @@
                                     "mandatory": false,
                                     "options": [
                                         {
-                                            "label": "15 or less",
-                                            "value": "15 or less"
+                                            "label": "15 hours or less",
+                                            "value": "15 hours or less"
                                         },
                                         {
-                                            "label": "16 - 30",
-                                            "value": "16 - 30"
+                                            "label": "16 to 30 hours",
+                                            "value": "16 to 30 hours"
                                         },
                                         {
-                                            "label": "31 - 48",
-                                            "value": "31 - 48"
+                                            "label": "31 to 48 hours",
+                                            "value": "31 to 48 hours"
                                         },
                                         {
-                                            "label": "49 or more",
-                                            "value": "49 or more "
+                                            "label": "49 hours or more",
+                                            "value": "49 hours or more "
                                         }
                                     ],
                                     "type": "Radio"
