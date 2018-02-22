@@ -8161,7 +8161,7 @@
                     "description": "",
                     "questions": [
                         {
-                            "title": "How does <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> usually travel to work?",
+                            "title": "Thinking about the longest distance of the journey, how does <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> travel to work?",
                             "id": "work-travel-question",
                             "type": "General",
                             "answers": [
@@ -8233,7 +8233,7 @@
                     "description": "",
                     "questions": [
                         {
-                            "title": "How do you usually travel to work?",
+                            "title": "Thinking about the longest distance of your journey, how do you travel to work?",
                             "id": "work-travel-question1",
                             "type": "General",
                             "answers": [
