@@ -3210,7 +3210,7 @@
                     "questions": [
                         {
                             "id": "national-identity-england-question",
-                            "title": "How would you describe <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive}}</em> national identity?",
+                            "title": "How would <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> describe their national identity?",
                             "type": "General",
                             "answers": [
                                 {
