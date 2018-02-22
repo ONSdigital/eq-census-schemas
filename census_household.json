@@ -8079,13 +8079,7 @@
                             "content": [{
                                     "title": "Include",
                                     "list": [
-                                     "Paid or unpaid overtime"
-                                    ]
-                                },
-                                {
-                                    "title": "Exclude",
-                                    "list": [
-                                        "anything you do as part of your paid employment"
+                                        "paid or unpaid overtime"
                                     ]
                                 }
                             ]
@@ -8248,7 +8242,7 @@
                     "description": "",
                     "questions": [
                         {
-                            "title": "Thinking about the longest distance of your journey, how do you travel to work?",
+                            "title": "How do you usually travel to work?",
                             "id": "work-travel-question1",
                             "type": "General",
                             "answers": [
