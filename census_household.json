@@ -949,7 +949,7 @@
                     "questions": [
                         {
                             "id": "proxy-question",
-                            "title": "<em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em>, are you answering the questions on behalf of someone else?",
+                            "title": "Are you answering the questions on behalf of <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em>?",
                             "description": "A responsible adult should respond on behalf of a child under the age of 15",
                             "type": "General",
                             "answers": [
@@ -958,12 +958,12 @@
                                     "mandatory": false,
                                     "options": [
                                         {
-                                            "label": "No, I’m answering the Census myself",
-                                            "value": "No, I’m answering the Census myself"
+                                            "label": "No, I’m <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em>",
+                                            "value": "No, I’m <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em>"
                                         },
                                         {
-                                            "label": "Yes, I am answering on behalf of someone else",
-                                            "value": "Yes, I am answering on behalf of someone else"
+                                            "label": "Yes, I am answering on behalf of <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em>",
+                                            "value": "Yes, I am answering on behalf of <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em>"
                                         }
                                     ],
                                     "type": "Radio"
