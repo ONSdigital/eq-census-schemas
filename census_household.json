@@ -8075,6 +8075,21 @@
                         {
                             "title": "In <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em> main job, how many hours a week do they usually work?",
                             "id": "hours-worked-question",
+                            "guidance": {
+                            "content": [{
+                                    "title": "Include",
+                                    "list": [
+                                     "Paid or unpaid overtime"
+                                    ]
+                                },
+                                {
+                                    "title": "Exclude",
+                                    "list": [
+                                        "anything you do as part of your paid employment"
+                                    ]
+                                }
+                            ]
+                        },
                             "type": "General",
                             "answers": [
                                 {
