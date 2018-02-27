@@ -958,12 +958,12 @@
                                     "mandatory": false,
                                     "options": [
                                         {
-                                            "label": "Yes, I’m <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em>",
-                                            "value": "Yes, I’m <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em>"
+                                            "label": "Yes, I am",
+                                            "value": "Yes, I am"
                                         },
                                         {
-                                            "label": "No, I am answering on behalf of <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em>",
-                                            "value": "No, I am answering on behalf of <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em>"
+                                            "label": "No, I am answering on their behalf",
+                                            "value": "No, I am answering on their behalf"
                                         }
                                     ],
                                     "type": "Radio"
@@ -979,7 +979,7 @@
                                     {
                                         "id": "proxy-answer",
                                         "condition": "equals",
-                                        "value": "Yes, I’m <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em>"
+                                        "value": "Yes, I am"
                                     }
                                 ]
                             }
@@ -990,7 +990,7 @@
                                 "when": [
                                     {
                                         "id": "proxy-answer",
-                                        "condition": "No, I am answering on behalf of <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em>"
+                                        "condition": "No, I am answering on their behalf"
                                     }
                                 ]
                             }
