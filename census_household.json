@@ -979,7 +979,7 @@
                                     {
                                         "id": "proxy-answer",
                                         "condition": "equals",
-                                        "value": "Yes, I am answering on behalf of someone else"
+                                        "value": "Yes, I’m <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em>"
                                     }
                                 ]
                             }
@@ -990,7 +990,7 @@
                                 "when": [
                                     {
                                         "id": "proxy-answer",
-                                        "condition": "No, I’m answering the Census myself"
+                                        "condition": "No, I am answering on behalf of <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em>"
                                     }
                                 ]
                             }
