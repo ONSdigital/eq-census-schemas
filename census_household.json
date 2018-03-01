@@ -960,7 +960,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "details-correct",
+                                        "block": "details-correct1",
                                         "when": [
                                             {
                                                 "id": "proxy-answer",
@@ -972,7 +972,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "details-correct1",
+                                        "block": "details-correct",
                                         "when": [
                                             {
                                                 "id": "proxy-answer",
@@ -8078,8 +8078,8 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "15 hours or less",
-                                                    "value": "15 hours or less"
+                                                    "label": "0 to 15 hours",
+                                                    "value": "0 to 15 hours"
                                                 },
                                                 {
                                                     "label": "16 to 30 hours",
@@ -8132,8 +8132,8 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "15 hours or less",
-                                                    "value": "15 hours or less"
+                                                    "label": "0 to 15 hours",
+                                                    "value": "0 to 15 hours"
                                                 },
                                                 {
                                                     "label": "16 to 30 hours",
