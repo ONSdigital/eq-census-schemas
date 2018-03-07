@@ -370,18 +370,6 @@
                                                     "value": "Partner"
                                                 },
                                                 {
-                                                    "label": "Grandparent",
-                                                    "value": "Grandparent"
-                                                },
-                                                {
-                                                    "label": "Mother or father",
-                                                    "value": "Mother or father"
-                                                },
-                                                {
-                                                    "label": "Step-mother or step-father",
-                                                    "value": "Step-mother or step-father"
-                                                },
-                                                {
                                                     "label": "Son or daughter",
                                                     "value": "Son or daughter"
                                                 },
@@ -398,8 +386,20 @@
                                                     "value": "Step–brother or step–sister"
                                                 },
                                                 {
+                                                    "label": "Mother or father",
+                                                    "value": "Mother or father"
+                                                },
+                                                {
+                                                    "label": "Step-mother or step-father",
+                                                    "value": "Step-mother or step-father"
+                                                },
+                                                {
                                                     "label": "Grandchild",
                                                     "value": "Grandchild"
+                                                },
+                                                {
+                                                    "label": "Grandparent",
+                                                    "value": "Grandparent"
                                                 },
                                                 {
                                                     "label": "Relation - other",
