@@ -1636,7 +1636,7 @@
                                         "block": "date-of-birth",
                                         "when": [
                                             {
-                                                "id": "details-correct-answer1",
+                                                "id": "confirm-date-of-birth-answer",
                                                 "condition": "equals",
                                                 "value": "No"
                                             }
