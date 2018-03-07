@@ -935,7 +935,7 @@
                             "questions": [
                                 {
                                     "id": "proxy-question",
-                                    "title": "Are you <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em>?",
+                                    "title": "Are you {{ [answers.first_name[group_instance], answers.middle_names[group_instance], answers.last_name[group_instance]] | format_household_name }}?",
                                     "description": "A responsible adult should respond on behalf of a child under the age of 15",
                                     "type": "General",
                                     "answers": [
