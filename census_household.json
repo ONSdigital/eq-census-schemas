@@ -1609,7 +1609,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-date-of-birth",
-                                    "title": "<em>{{ [answers.first_name[group_instance], answers.middle_names[group_instance], answers.last_name[group_instance]] | format_household_name }}<em> date of birth is <em>{{answers.date-of-birth-answer|format_date}}<em> is this correct?",
+                                    "title": "<em>{{ [answers.first_name[group_instance], answers.middle_names[group_instance], answers.last_name[group_instance]] | format_household_name }}<em> date of birth is {{answers.date-of-birth-answer|format_date}} is this correct?",
                                     "type": "General",
                                     "answers": [
                                         {
