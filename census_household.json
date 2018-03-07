@@ -1116,7 +1116,7 @@
                         },
                         {
                             "type": "Question",
-                            "id": "correct-name1",
+                            "id": "correct-name",
                             "questions": [
                                 {
                                     "id": "correct-name-question",
@@ -1609,7 +1609,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-date-of-birth",
-                                    "title": "{{ [answers.first_name[group_instance], answers.middle_names[group_instance], answers.last_name[group_instance]] | format_household_name }} date of birth is <em>{{answers.date-of-birth-answer|format_date}}<em> is this correct?",
+                                    "title": "<em>{{ [answers.first_name[group_instance], answers.middle_names[group_instance], answers.last_name[group_instance]] | format_household_name }}<em> date of birth is <em>{{answers.date-of-birth-answer|format_date}}<em> is this correct?",
                                     "type": "General",
                                     "answers": [
                                         {
