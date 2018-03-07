@@ -976,7 +976,8 @@
                                         "when": [
                                             {
                                                 "id": "proxy-answer",
-                                                "condition": "No, I am answering on their behalf"
+                                                "condition": "equals",
+                                                "value": "No, I am answering on their behalf"
                                             }
                                         ]
                                     }
