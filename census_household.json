@@ -1610,7 +1610,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-date-of-birth",
-                                    "title": "{{ [answers.first_name[group_instance], answers.middle_names[group_instance], answers.last_name[group_instance]] | format_household_name }}<em> date of birth is {{answers.date_of_birth_answer|format_date}}, which makes them 18. Is this correct?",
+                                    "title": "{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }} date of birth is {{answers.date_of_birth_answer|format_date}}, which makes them 18. Is this correct?",
                                     "type": "General",
                                     "answers": [
                                         {
