@@ -1574,11 +1574,11 @@
                                 {
                                     "id": "date-of-birth-question1",
                                     "title": "What is your date of birth?",
-                                    "alias": "date_of_birth_answer1",
                                     "type": "General",
                                     "answers": [
                                         {
                                             "id": "date-of-birth-answer1",
+                                            "alias": "date_of_birth_answer1",
                                             "mandatory": false,
                                             "type": "Date"
                                         }
@@ -1586,18 +1586,6 @@
                                 }
                             ],
                             "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "confirm-dob1",
-                                        "when": [
-                                            {
-                                                "id": "date-of-birth-answer1",
-                                                "condition": "equals",
-                                                "value": "Male"
-                                            }
-                                        ]
-                                    }
-                                },
                                 {
                                     "goto": {
                                         "block": "confirm-dob1"
