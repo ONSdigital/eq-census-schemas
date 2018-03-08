@@ -1622,8 +1622,8 @@
                                                     "value": "Yes, <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> is 18 years old"
                                                 },
                                                 {
-                                                    "label": "No",
-                                                    "value": "No"
+                                                    "label": "No, I need to amend this date",
+                                                    "value": "No, I need to amend this date"
                                                 }
                                             ],
                                             "type": "Radio"
