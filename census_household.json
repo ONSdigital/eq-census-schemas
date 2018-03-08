@@ -1618,7 +1618,7 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Yes, {{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }} is 18 years old",
+                                                    "label": "Yes, {{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}} is 18 years old",
                                                     "value": "Yes"
                                                 },
                                                 {
