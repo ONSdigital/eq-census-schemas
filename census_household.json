@@ -1657,7 +1657,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-date-of-birth1",
-                                    "title": "Your date of birth is {{answers.date_of_birth_answer|format_date}}. Is this correct?",
+                                    "title": "Your date of birth is {{answers.date_of_birth_answer1|format_date}}. Is this correct?",
                                     "type": "General",
                                     "answers": [
                                         {
