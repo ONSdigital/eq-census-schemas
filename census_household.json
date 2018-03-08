@@ -1574,6 +1574,7 @@
                                 {
                                     "id": "date-of-birth-question1",
                                     "title": "What is your date of birth?",
+                                    "alias": "date_of_birth_answer1",
                                     "type": "General",
                                     "answers": [
                                         {
