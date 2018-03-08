@@ -1618,12 +1618,12 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Yes, <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> is 18 years old",
-                                                    "value": "Yes, <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> is 18 years old"
+                                                    "label": "Yes, this is correct",
+                                                    "value": "Yes, this is correct"
                                                 },
                                                 {
-                                                    "label": "No, I need to amend this date",
-                                                    "value": "No, I need to amend this date"
+                                                    "label": "No, I need to change this date",
+                                                    "value": "No, I need to change this date"
                                                 }
                                             ],
                                             "type": "Radio"
