@@ -354,7 +354,7 @@
                                     "answers": [
                                         {
                                             "id": "household-relationships-answer",
-                                            "label": "%(other_person)s is %(current_person)s",
+                                            "label": "%(other_person) is %(current_person)'s",
                                             "mandatory": false,
                                             "options": [
                                                 {
