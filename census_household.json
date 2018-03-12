@@ -1717,10 +1717,6 @@
                                                     "value": "Divorced, or dissolved same-sex civil partnership"
                                                 },
                                                 {
-                                                    "label": "Formerly in a same-sex civil partnership which is now legally dissolved",
-                                                    "value": "Formerly in a same-sex civil partnership which is now legally dissolved"
-                                                },
-                                                {
                                                     "label": "Widowed, or surviving same-sex civil partner",
                                                     "value": "Widowed, or surviving same-sex civil partner"
                                                 }
@@ -1778,10 +1774,6 @@
                                                 {
                                                     "label": "Divorced, or dissolved same-sex civil partnership",
                                                     "value": "Divorced, or dissolved same-sex civil partnership"
-                                                },
-                                                {
-                                                    "label": "Formerly in a same-sex civil partnership which is now legally dissolved",
-                                                    "value": "Formerly in a same-sex civil partnership which is now legally dissolved"
                                                 },
                                                 {
                                                     "label": "Widowed, or surviving same-sex civil partner",
