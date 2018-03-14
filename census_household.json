@@ -8136,7 +8136,7 @@
                             "description": "",
                             "questions": [
                                 {
-                                    "title": "How many hours does <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> usually work in a week?",
+                                    "title": "How many hours a week does <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> usually work?",
                                     "id": "hours-worked-question",
                                     "guidance": {
                                         "content": [
@@ -8190,7 +8190,7 @@
                             "description": "",
                             "questions": [
                                 {
-                                    "title": "How many hours do you usually work in a week?",
+                                    "title": "How many hours a week do you usually work?",
                                     "id": "hours-worked-question1",
                                     "guidance": {
                                         "content": [
