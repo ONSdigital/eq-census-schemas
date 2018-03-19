@@ -4957,7 +4957,7 @@
                             "questions": [
                                 {
                                     "id": "sexual-identity-question",
-                                    "title": "Which of the following options best describes how <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> thinks of themselves?",
+                                    "title": "Which of the following options best describes how <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> thinks of their sexual orientation?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -4993,7 +4993,7 @@
                                             "parent_answer_id": "sexual-identity-answer",
                                             "type": "TextField",
                                             "mandatory": false,
-                                            "label": "Please specify"
+                                            "label": "Please specify their sexual orientation"
                                         }
                                     ]
                                 }
@@ -5024,7 +5024,7 @@
                             "questions": [
                                 {
                                     "id": "sexual-identity-question1",
-                                    "title": "Which of the following options best describes how you think of yourself?",
+                                    "title": "Which of the following options best describes how you think of your sexual orientation?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -5060,7 +5060,7 @@
                                             "parent_answer_id": "sexual-identity-answer1",
                                             "type": "TextField",
                                             "mandatory": false,
-                                            "label": "Please specify"
+                                            "label": "Please specify your sexual orientation"
                                         }
                                     ]
                                 }
