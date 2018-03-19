@@ -4986,7 +4986,7 @@
                                                     "value": "Prefer not to say"
                                                 }
                                             ],
-                                            "type": "Checkbox"
+                                            "type": "Radio"
                                         },
                                         {
                                             "id": "sexual-identity-answer-other",
@@ -5053,7 +5053,7 @@
                                                     "value": "Prefer not to say"
                                                 }
                                             ],
-                                            "type": "Checkbox"
+                                            "type": "Radio"
                                         },
                                         {
                                             "id": "sexual-identity-answer-other1",
