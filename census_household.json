@@ -6087,18 +6087,6 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "other-passports",
-                                        "when": [
-                                            {
-                                                "id": "passports-answer",
-                                                "condition": "contains",
-                                                "value": "Other"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
                                         "block": "disability"
                                     }
                                 }
@@ -6135,70 +6123,6 @@
                                                 }
                                             ],
                                             "type": "Checkbox"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "other-passports1",
-                                        "when": [
-                                            {
-                                                "id": "passports-answer1",
-                                                "condition": "contains",
-                                                "value": "Other"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "disability1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "other-passports",
-                            "questions": [
-                                {
-                                    "id": "other-passports-question",
-                                    "title": "Please specify other passports held",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "other-passports-answer",
-                                            "label": "Passports held",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "disability"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "other-passports1",
-                            "questions": [
-                                {
-                                    "id": "other-passports-question1",
-                                    "title": "Please specify other passports held",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "other-passports-answer1",
-                                            "label": "Passports held",
-                                            "mandatory": false,
-                                            "type": "TextField"
                                         }
                                     ]
                                 }
