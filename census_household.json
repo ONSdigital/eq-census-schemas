@@ -1832,16 +1832,16 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Registered civil partnership",
-                                                    "value": "Registered civil partnership"
+                                                    "label": "Registered",
+                                                    "value": "Registered"
                                                 },
                                                 {
-                                                    "label": "Separated, but still in a civil partnership",
-                                                    "value": "Separated, but still in a civil partnership"
+                                                    "label": "Separated",
+                                                    "value": "Separated"
                                                 },
                                                 {
-                                                    "label": "Dissolved civil partnership",
-                                                    "value": "Dissolved civil partnership"
+                                                    "label": "Dissolved",
+                                                    "value": "Dissolved"
                                                 },
                                                 {
                                                     "label": "Surviving civil partner",
@@ -2007,16 +2007,16 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Registered civil partnership",
-                                                    "value": "Registered civil partnership"
+                                                    "label": "Registered",
+                                                    "value": "Registered"
                                                 },
                                                 {
-                                                    "label": "Separated, but still in a civil partnership",
-                                                    "value": "Separated, but still in a civil partnership"
+                                                    "label": "Separated",
+                                                    "value": "Separated"
                                                 },
                                                 {
-                                                    "label": "Dissolved civil partnership",
-                                                    "value": "Dissolved civil partnership"
+                                                    "label": "Dissolved",
+                                                    "value": "Dissolved"
                                                 },
                                                 {
                                                     "label": "Surviving civil partner",
