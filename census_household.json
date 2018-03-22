@@ -6072,7 +6072,8 @@
                                                 },
                                                 {
                                                     "label": "Other",
-                                                    "value": "Other"
+                                                    "value": "Other",
+						    "child-answer-id": "passport-answer-other"
                                                 },
                                                 {
                                                     "label": "None",
@@ -6080,6 +6081,13 @@
                                                 }
                                             ],
                                             "type": "Checkbox"
+                                        },
+					    {
+                                            "id": "passport-answer-other",
+                                            "parent_answer_id": "passports-answer",
+                                            "type": "TextField",
+                                            "mandatory": false,
+                                            "label": "Please specify the passport held"
                                         }
                                     ]
                                 }
@@ -6115,7 +6123,9 @@
                                                 },
                                                 {
                                                     "label": "Other",
-                                                    "value": "Other"
+                                                    "value": "Other",
+						    "child-answer-id": "passport-answer-other1"
+						    
                                                 },
                                                 {
                                                     "label": "None",
@@ -6123,6 +6133,13 @@
                                                 }
                                             ],
                                             "type": "Checkbox"
+                                        },
+					 {
+                                            "id": "passport-answer-other1",
+                                            "parent_answer_id": "passports-answer1",
+                                            "type": "TextField",
+                                            "mandatory": false,
+                                            "label": "Please specify the passport you hold"
                                         }
                                     ]
                                 }
