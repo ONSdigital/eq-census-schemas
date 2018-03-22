@@ -1635,7 +1635,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "ever_married"
+                                        "block": "ever_married-proxy"
                                     }
                                 }
                             ]
@@ -1682,17 +1682,192 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "marital-status1"
+                                        "block": "ever-married"
                                     }
                                 }
                             ]
                         },
                         {
 	                        "type": "Question",
+	                        "id": "ever-married-proxy",
+	                        "questions": [{
+	                        	"id": "ever-married-proxy",
+		                        "title": "Has {{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name }} ever been married or in a same sex marriage?",
+		                        "type": "General",
+		                        "answers": [{
+		                        	"id": "confirm-ever-married-answer-proxy",
+			                        "mandatory": false,
+			                        "options": [{
+				                    	"label": "Yes",
+				                    	"value": "Yes"
+				                    },
+				                    {
+				                    	"label": "No",
+				                    	"value": "No"
+				                    }
+			                    ],
+			                    "type": "Radio"
+		                     }
+                          ]
+	                    }
+                    ],
+	                    "routing_rules": [{
+			            "goto": {
+				                "block": "another-address",
+				                "when": [{
+				                	"id": "confirm-ever-married-answer-proxy",
+				                	"condition": "equals",
+					                "value": "No"
+				                }]
+			                    }
+		                            },
+		                            {
+		                        	    "goto": {
+			                        	    "block": "marriage-type"
+		                        	}
+	                        	}
+	                        ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "marriage-type-proxy",
+                            "questions": [
+                                {
+                                    "id": "confirm-marriage-type-proxy",
+                                    "title": "What type of marriage was {{answers.date_of_birth_answer1|format_date}}. in",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "confirm-marriage-type-answer-proxy",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Opposite sex marriage",
+                                                    "value": "Opposite sex marriage"
+                                                },
+                                                {
+                                                    "label": "Same sex marriage",
+                                                    "value": "Same sex marriage"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "same-sex-marriage-status-proxy",
+                                        "when": [
+                                            {
+                                                "id": "confirm-marriage-type-answer-proxy",
+                                                "condition": "equals",
+                                                "value": "Same sex marriage"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "opposite-sex-marriage-status-proxy"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "opposite-sex-marriage-status-proxy",
+                            "questions": [
+                                {
+                                    "id": "opposite-sex-marriage-status-question-proxy",
+                                    "title": "Last week, what was <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em> legal marital status?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "opposite-sex-marriage-status-answer-proxy",
+                                            "mandatory": false,
+                                            "options": [ 
+                                                {
+                                                    "label": "Married",
+                                                    "value": "Married"
+                                                },
+                                                {
+                                                    "label": "Separated, but still legally married",
+                                                    "value": "Separated, but still legally married"
+                                                },
+                                                {
+                                                    "label": "Divorced",
+                                                    "value": "Divorced"
+                                                },
+                                                {
+                                                    "label": "Widowed",
+                                                    "value": "Widowed"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "another-address"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "same-sex-marriage-status-proxy",
+                            "questions": [
+                                {
+                                    "id": "same-sex-marriage-status-question-proxy",
+                                    "title": "Last week, what was <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em> civil partnership status?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "same-sex-marriage-status-answer-proxy",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Registered civil partnership",
+                                                    "value": "Registered civil partnership"
+                                                },
+                                                {
+                                                    "label": "Separated, but still in a civil partnership",
+                                                    "value": "Separated, but still in a civil partnership"
+                                                },
+                                                {
+                                                    "label": "Dissolved civil partnership",
+                                                    "value": "Dissolved civil partnership"
+                                                },
+                                                {
+                                                    "label": "Surviving civil partner",
+                                                    "value": "Surviving civil partner"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "another-address"
+                                        
+                                    }
+                                }
+                            ]
+                        },
+			{
+	                        "type": "Question",
 	                        "id": "ever-married",
 	                        "questions": [{
 	                        	"id": "ever-married",
-		                        "title": "Has {{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name }} ever been married or in a same sex marriage?",
+		                        "title": "Have you ever been married or in a same sex marriage?",
 		                        "type": "General",
 		                        "answers": [{
 		                        	"id": "confirm-ever-married-answer",
@@ -1734,7 +1909,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-marriage-type",
-                                    "title": "What type of marriage was {{answers.date_of_birth_answer1|format_date}}. in",
+                                    "title": "What type of marriage were you in",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1781,7 +1956,7 @@
                             "questions": [
                                 {
                                     "id": "opposite-sex-marriage-status-question",
-                                    "title": "Last week, what was <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em> legal marital status?",
+                                    "title": "Last week, what was your legal marital status?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1824,7 +1999,7 @@
                             "questions": [
                                 {
                                     "id": "same-sex-marriage-status-question",
-                                    "title": "Last week, what was <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em> civil partnership status?",
+                                    "title": "Last week, what was your civil partnership status?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1861,168 +2036,8 @@
                                     }
                                 }
                             ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "marital-status1",
-                            "questions": [
-                                {
-                                    "id": "marital-status-question1",
-                                    "title": "Last week, what was your legal marital or same-sex civil partnership status?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "marital-status-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Never married and never registered a same-sex civil partnership",
-                                                    "value": "Never married and never registered a same-sex civil partnership"
-                                                },
-                                                {
-                                                    "label": "Married or in a registered same-sex civil partnership",
-                                                    "value": "Married or in a registered same-sex civil partnership"
-                                                },
-                                                {
-                                                    "label": "Separated, but still legally married or in a same-sex civil partnership",
-                                                    "value": "Separated, but still legally married or in a same-sex civil partnership"
-                                                },
-                                                {
-                                                    "label": "Divorced, or dissolved same-sex civil partnership",
-                                                    "value": "Divorced, or dissolved same-sex civil partnership"
-                                                },
-                                                {
-                                                    "label": "Widowed, or surviving same-sex civil partner",
-                                                    "value": "Widowed, or surviving same-sex civil partner"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "another-address1",
-                                        "when": [
-                                            {
-                                                "id": "marital-status-answer1",
-                                                "condition": "equals",
-                                                "value": "Never married and never registered a same-sex civil partnership"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "marital-type1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "marital-type",
-                            "questions": [
-                                {
-                                    "id": "marital-type-question",
-                                    "title": "What type of partnership is (was) this?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "marital-type-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Marriage to a partner of the opposite sex",
-                                                    "value": "Marriage to a partner of the opposite sex"
-                                                },
-                                                {
-                                                    "label": "Marriage to a partner of the same sex",
-                                                    "value": "Marriage to a partner of the same sex"
-                                                },
-                                                {
-                                                    "label": "Same-sex civil partnership",
-                                                    "value": "Same-sex civil partnership"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "another-address",
-                                        "when": [
-                                            {
-                                                "id": "marital-type-answer",
-                                                "condition": "equals",
-                                                "value": "Marriage to a partner of the opposite sex"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "another-address"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "marital-type1",
-                            "questions": [
-                                {
-                                    "id": "marital-type-question1",
-                                    "title": "What type of partnership is (was) this?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "marital-type-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Marriage to a partner of the opposite sex",
-                                                    "value": "Marriage to a partner of the opposite sex"
-                                                },
-                                                {
-                                                    "label": "Marriage to a partner of the same sex",
-                                                    "value": "Marriage to a partner of the same sex"
-                                                },
-                                                {
-                                                    "label": "Same-sex civil partnership",
-                                                    "value": "Same-sex civil partnership"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "another-address1",
-                                        "when": [
-                                            {
-                                                "id": "marital-type-answer1",
-                                                "condition": "equals",
-                                                "value": "Marriage to a partner of the opposite sex"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "another-address1"
-                                    }
-                                }
-                            ]
-                        },
+                        },    
+                        
                         {
                             "type": "Question",
                             "id": "another-address",
