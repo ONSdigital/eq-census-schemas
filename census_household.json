@@ -1635,7 +1635,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "ever_married-proxy"
+                                        "block": "ever-married-proxy"
                                     }
                                 }
                             ]
