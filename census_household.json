@@ -1909,7 +1909,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-marriage-type",
-                                    "title": "Was the marriage an opposite sex marriage or same sex marriageupdat",
+                                    "title": "Was the marriage an opposite sex marriage or same sex marriage",
                                     "type": "General",
                                     "answers": [
                                         {
