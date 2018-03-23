@@ -1734,7 +1734,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-marriage-type-proxy",
-                                    "title": "What type of marriage was {{answers.date_of_birth_answer1|format_date}}. in",
+                                    "title": "Was the marriage an opposite sex marriage or same sex marriage",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1909,7 +1909,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-marriage-type",
-                                    "title": "What type of marriage were you in",
+                                    "title": "Was the marriage an opposite sex marriage or same sex marriageupdat",
                                     "type": "General",
                                     "answers": [
                                         {
