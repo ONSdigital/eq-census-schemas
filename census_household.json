@@ -6073,7 +6073,7 @@
                                                 {
                                                     "label": "Other",
                                                     "value": "Other",
-						    "child-answer-id": "passport-answer-other"
+						    "child_answer_id": "passport-answer-other"
                                                 },
                                                 {
                                                     "label": "None",
@@ -6124,7 +6124,7 @@
                                                 {
                                                     "label": "Other",
                                                     "value": "Other",
-						    "child-answer-id": "passport-answer-other1"
+						    "child_answer_id": "passport-answer-other1"
 						    
                                                 },
                                                 {
