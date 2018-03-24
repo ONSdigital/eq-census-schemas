@@ -1220,18 +1220,6 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "sex1",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
                                         "block": "sex1"
                                     }
                                 }
