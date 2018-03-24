@@ -6680,7 +6680,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "employment-type1"
+                                        "block": "employment-status-answer1"
                                     }
                                 }
                             ]
@@ -6988,7 +6988,7 @@
                             "questions": [
                                 {
                                     "id": "job-availability-question1",
-                                    "title": "If a job became available now, could you start it within two weeks??",
+                                    "title": "If a job became available now, could you start it within two weeks?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -7280,7 +7280,7 @@
                                             {
                                                 "id": "ever-worked-answer1",
                                                 "condition": "equals",
-                                                "value": "No"
+                                                "value": "No, I have never worked"
                                             }
                                         ]
                                     }
