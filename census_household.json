@@ -6633,11 +6633,58 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "employment-type1"
+                                        "block": "employment-status1"
                                     }
                                 }
                             ]
                         },
+			{
+                            "type": "Question",
+                            "id": "employment-status1",
+                            "questions": [
+                                {
+                                    "id": "employment-status-question1",
+                                    "title": "Last week were you doing any paid work, even if it was only for one hour?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "employment-status-answer1",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Yes",
+                                                    "value": "Yes"
+                                                },           
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "employment-type1",
+                                        "when": [
+                                            {
+                                                "id": "employment-status-answer1",
+                                                "condition": "equals",
+                                                "value": "No"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "qualifications1"
+                                    }
+                                }
+                            ]
+                        },    
                         {
                             "type": "Question",
                             "id": "employment-type",
@@ -6772,7 +6819,7 @@
                             "questions": [
                                 {
                                     "id": "employment-type-question1",
-                                    "title": "Which of the following best describes what you were doing last week?",
+                                    "title": "Which of the following were doing last week?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -6780,32 +6827,16 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "working as an employee",
-                                                    "value": "working as an employee"
-                                                },
-                                                {
-                                                    "label": "on a government sponsored training scheme",
-                                                    "value": "on a government sponsored training scheme"
-                                                },
-                                                {
-                                                    "label": "self-employed or freelance",
-                                                    "value": "self-employed or freelance"
-                                                },
-                                                {
-                                                    "label": "working paid or unpaid for your own or your family’s business",
-                                                    "value": "working paid or unpaid for your own or your family’s business"
-                                                },
-                                                {
-                                                    "label": "away from work ill, on maternity leave, on holiday or temporarily laid off",
+                                                    "label": "Away from work ill, on maternity leave, on holiday or temporarily laid off",
                                                     "value": "away from work ill, on maternity leave, on holiday or temporarily laid off"
                                                 },
                                                 {
-                                                    "label": "doing any other kind of paid work",
+                                                    "label": "Working unpaid for your own or your family’s business ",
                                                     "value": "doing any other kind of paid work"
                                                 },
                                                 {
-                                                    "label": "none of the above",
-                                                    "value": "none of the above"
+                                                    "label": "Other including retired",
+                                                    "value": "Other including retired"
                                                 }
                                             ],
                                             "type": "Checkbox",
@@ -6822,7 +6853,7 @@
                                             {
                                                 "id": "employment-type-answer1",
                                                 "condition": "contains",
-                                                "value": "working as an employee"
+                                                "value": "Working unpaid for you own or your family’s business"
                                             }
                                         ]
                                     }
@@ -6834,55 +6865,7 @@
                                             {
                                                 "id": "employment-type-answer1",
                                                 "condition": "contains",
-                                                "value": "on a government sponsored training scheme"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "main-job1",
-                                        "when": [
-                                            {
-                                                "id": "employment-type-answer1",
-                                                "condition": "contains",
-                                                "value": "self-employed or freelance"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "main-job1",
-                                        "when": [
-                                            {
-                                                "id": "employment-type-answer1",
-                                                "condition": "contains",
-                                                "value": "working paid or unpaid for you own or your family’s business"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "main-job1",
-                                        "when": [
-                                            {
-                                                "id": "employment-type-answer1",
-                                                "condition": "contains",
-                                                "value": "away from work ill, on maternity leave, on holiday or temporarily laid off"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "main-job1",
-                                        "when": [
-                                            {
-                                                "id": "employment-type-answer1",
-                                                "condition": "contains",
-                                                "value": "doing any other kind of paid work"
+                                                "value": "Away from work ill, on maternity leave, on holiday or temporarily laid off"
                                             }
                                         ]
                                     }
@@ -6935,7 +6918,7 @@
                             "questions": [
                                 {
                                     "id": "jobseeker-question",
-                                    "title": "Were you actively looking for any kind of paid work during the last four weeks?",
+                                    "title": "In the last four weeks were you actively looking for any kind of paid work?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -7005,7 +6988,7 @@
                             "questions": [
                                 {
                                     "id": "job-availability-question1",
-                                    "title": "If a job had been offered to you last week, could you have started it within 2 weeks?",
+                                    "title": "If a job became available now, could you start it within two weeks??",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -7264,7 +7247,7 @@
                             "questions": [
                                 {
                                     "id": "ever-worked-question1",
-                                    "title": "Have you ever worked?",
+                                    "title": "Have you ever done any paid work?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -7272,12 +7255,16 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Yes",
+                                                    "label": "Yes, in the last 12 months",
+                                                    "value": "Yes"
+                                                },
+						{
+                                                    "label": "Yes, but not in the last 12 months",
                                                     "value": "Yes"
                                                 },
                                                 {
-                                                    "label": "No",
-                                                    "value": "No"
+                                                    "label": "No, I have never worked",
+                                                    "value": "No, I have never worked"
                                                 }
                                             ],
                                             "type": "Radio"
