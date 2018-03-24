@@ -1218,6 +1218,18 @@
                                 }
                             ],
                             "routing_rules": [
+			        {
+                                    "goto": {
+                                        "block": "sex1",
+                                        "when": [
+                                            {
+                                                "id": "over-16-answer1",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
                                 {
                                     "goto": {
                                         "block": "sex1"
@@ -6668,7 +6680,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "qualifications1"
+                                        "block": "employment-type1"
                                     }
                                 }
                             ]
@@ -7045,7 +7057,7 @@
                             "id": "job-pending1",
                             "questions": [
                                 {
-                                    "id": "job-pending-question",
+                                    "id": "job-pending-question1",
                                     "title": "Last week, were you waiting to start a job already accepted?",
                                     "type": "General",
                                     "answers": [
