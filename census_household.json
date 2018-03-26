@@ -6715,7 +6715,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "employment-type1",
+                                        "block": "job-title1",
                                         "when": [
                                             {
                                                 "id": "org-or-business-answer1",
@@ -6727,7 +6727,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "business-name-question1"
+                                        "block": "business-name1"
                                     }
                                 }
                             ]
