@@ -6680,22 +6680,22 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "org_or_business1"
+                                        "block": "org-or-business1"
                                     }
                                 }
                             ]
                         },   
 			{
                             "type": "Question",
-                            "id": "org_or_business1",
+                            "id": "org-or-business1",
                             "questions": [
                                 {
-                                    "id": "org_or_business-question1",
+                                    "id": "org-or-business-question1",
                                     "title": "Are you working for an organisation or business?",
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "org_or_business-answer1",
+                                            "id": "org-or-business-answer1",
                                             "mandatory": false,
                                             "options": [
                                                 {
@@ -6718,7 +6718,7 @@
                                         "block": "employment-type1",
                                         "when": [
                                             {
-                                                "id": "org_or_business-answer",
+                                                "id": "org-or-business-answer1",
                                                 "condition": "equals",
                                                 "value": "No"
                                             }
