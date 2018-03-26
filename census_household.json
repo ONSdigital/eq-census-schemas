@@ -7255,7 +7255,7 @@
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "employer-type-of-address-answer",
+                                            "id": "employer-type-of-address-answer1",
                                             "mandatory": false,
                                             "options": [
                                                 {
