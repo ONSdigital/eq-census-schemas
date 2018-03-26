@@ -6624,14 +6624,14 @@
                                 }
                             ],
                             "routing_rules": [
-                                {
+				 {
                                     "goto": {
                                         "block": "org-or-business1",
                                         "when": [
                                             {
                                                 "id": "employment-type-answer1",
                                                 "condition": "equals",
-                                                "value": "Working unpaid for you own or your family’s business"
+                                                "value": "Away from work ill, on maternity leave, on holiday or temporarily laid off"
                                             }
                                         ]
                                     }
@@ -6643,7 +6643,7 @@
                                             {
                                                 "id": "employment-type-answer1",
                                                 "condition": "equals",
-                                                "value": "Away from work ill, on maternity leave, on holiday or temporarily laid off"
+                                                "value": "Working unpaid for your own or your family’s business"
                                             }
                                         ]
                                     }
