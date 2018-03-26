@@ -6691,11 +6691,11 @@
                             "questions": [
                                 {
                                     "id": "org_or_business-question1",
-                                    "title": "Are (were) you working for an organisation or business?",
+                                    "title": "Are you working for an organisation or business?",
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "employment-status-answer1",
+                                            "id": "org_or_business-question-answer1",
                                             "mandatory": false,
                                             "options": [
                                                 {
@@ -6718,7 +6718,7 @@
                                         "block": "employment-type1",
                                         "when": [
                                             {
-                                                "id": "employment-status-answer1",
+                                                "id": "org_or_business-question1",
                                                 "condition": "equals",
                                                 "value": "No"
                                             }
