@@ -6695,7 +6695,7 @@
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "org_or_business-question-answer1",
+                                            "id": "org_or_business-answer1",
                                             "mandatory": false,
                                             "options": [
                                                 {
@@ -6718,7 +6718,7 @@
                                         "block": "employment-type1",
                                         "when": [
                                             {
-                                                "id": "org_or_business-question1",
+                                                "id": "org_or_business-answer",
                                                 "condition": "equals",
                                                 "value": "No"
                                             }
