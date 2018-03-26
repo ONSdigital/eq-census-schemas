@@ -6807,9 +6807,26 @@
                             "routing_rules": [
                                 {
                                     "goto": {
+                                        "block": "ever-worked1",
+                                        "when": [
+                                            {
+                                                "id": "job-availability-answer1",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            },
+					    {
+						"id": "job-pending-answer1",
+                                                "condition": "equals",
+                                                "value": "Yes"    
+					    }
+                                        ]
+                                    }
+                                },
+				{
+				    "goto": {
                                         "block": "occupation1"
                                     }
-                                }
+				}
                             ]
                         },
                         {
