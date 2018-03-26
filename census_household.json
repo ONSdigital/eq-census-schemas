@@ -6590,8 +6590,72 @@
                                     }
                                 }
                             ]
-                        },   
-			{
+                        },  
+                        {
+                            "type": "Question",
+                            "id": "employment-type1",
+                            "questions": [
+                                {
+                                    "id": "employment-type-question1",
+                                    "title": "Which of the following were doing last week?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "employment-type-answer1",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Away from work ill, on maternity leave, on holiday or temporarily laid off",
+                                                    "value": "Away from work ill, on maternity leave, on holiday or temporarily laid off"
+                                                },
+                                                {
+                                                    "label": "Working unpaid for your own or your family’s business",
+                                                    "value": "Working unpaid for your own or your family’s business"
+                                                },
+                                                {
+                                                    "label": "Other including retired",
+                                                    "value": "Other including retired"
+                                                }
+                                            ],
+                                            "type": "Checkbox",
+                                            "label": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "org-or-business1",
+                                        "when": [
+                                            {
+                                                "id": "employment-type-answer1",
+                                                "condition": "equals",
+                                                "value": "Working unpaid for you own or your family’s business"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "org-or-business1",
+                                        "when": [
+                                            {
+                                                "id": "employment-type-answer1",
+                                                "condition": "equals",
+                                                "value": "Away from work ill, on maternity leave, on holiday or temporarily laid off"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "jobseeker1"
+                                    }
+                                }
+                            ]
+                        },
+		        {
                             "type": "Question",
                             "id": "org-or-business1",
                             "questions": [
@@ -6638,70 +6702,6 @@
                                 }
                             ]
                         }, 
-                        {
-                            "type": "Question",
-                            "id": "employment-type1",
-                            "questions": [
-                                {
-                                    "id": "employment-type-question1",
-                                    "title": "Which of the following were doing last week?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "employment-type-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Away from work ill, on maternity leave, on holiday or temporarily laid off",
-                                                    "value": "away from work ill, on maternity leave, on holiday or temporarily laid off"
-                                                },
-                                                {
-                                                    "label": "Working unpaid for your own or your family’s business ",
-                                                    "value": "doing any other kind of paid work"
-                                                },
-                                                {
-                                                    "label": "Other including retired",
-                                                    "value": "Other including retired"
-                                                }
-                                            ],
-                                            "type": "Checkbox",
-                                            "label": ""
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "org-or-business1",
-                                        "when": [
-                                            {
-                                                "id": "employment-type-answer1",
-                                                "condition": "contains",
-                                                "value": "Working unpaid for you own or your family’s business"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "org-or-business1",
-                                        "when": [
-                                            {
-                                                "id": "employment-type-answer1",
-                                                "condition": "contains",
-                                                "value": "Away from work ill, on maternity leave, on holiday or temporarily laid off"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "jobseeker1"
-                                    }
-                                }
-                            ]
-                        },
                         {
                             "type": "Question",
                             "id": "jobseeker1",
