@@ -6346,7 +6346,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "employment-status1"
+                                        "block": "employment-status-proxy"
                                     }
                                 }
                             ]
