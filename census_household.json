@@ -1351,7 +1351,7 @@
                             "questions": [
                                 {
                                     "id": "birth-gender-question1",
-                                    "title": "Do you consider yourself to trans?",
+                                    "title": "Do you consider yourself to be trans?",
                                     "type": "General",
 				    "description": "Trans is an umbrella term used to describe people whose gender is not the same as the sex they were assigned at birth",
                                     "answers": [
