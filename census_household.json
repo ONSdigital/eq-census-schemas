@@ -7377,7 +7377,7 @@
                                             "label": "Organisation or business name",
                                             "mandatory": false,
                                             "type": "TextField",
-                                            "alias": "company_name-proxy"
+                                            "alias": "company_name_proxy"
                                         }
                                     ]
                                 }
@@ -7423,7 +7423,7 @@
                             "questions": [
                                 {
                                     "id": "employers-business-question-proxy",
-                                    "title": "What is the main activity of <em>{{answers.company_name-proxy}}</em>?",
+                                    "title": "What is the main activity of <em>{{answers.company_name_proxy}}</em>?",
 				    "description": "Describe how the company makes profit by what it does or produces",
                                     "type": "General",
                                     "answers": [
