@@ -1328,7 +1328,7 @@
                                             "type": "Radio"
                                         },
                                         {
-                                            "id": "birth-genders-answer-other",
+                                            "id": "birth-gender-answer-other",
                                             "parent_answer_id": "birth-gender-answer",
                                             "type": "TextField",
                                             "mandatory": false,
@@ -1376,7 +1376,7 @@
                                             "type": "Radio"
                                         },
                                         {
-                                            "id": "birth-genders-answer-other1",
+                                            "id": "birth-gender-answer-other1",
                                             "parent_answer_id": "birth-gender-answer1",
                                             "type": "TextField",
                                             "mandatory": false,
