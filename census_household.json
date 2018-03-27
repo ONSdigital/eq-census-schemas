@@ -939,7 +939,7 @@
                                     "answers": [
                                         {
                                             "id": "proxy-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Yes, I am",
@@ -970,19 +970,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "details-correct",
-                                        "when": [
-                                            {
-                                                "id": "proxy-answer",
-                                                "condition": "equals",
-                                                "value": "No, I am answering on their behalf"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "details-correct1"
+                                        "block": "details-correct"
                                     }
                                 }
                             ]
