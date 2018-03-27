@@ -929,7 +929,7 @@
                         },
                         {
                             "type": "Question",
-                            "id": "Proxy",
+                            "id": "proxy",
                             "questions": [
                                 {
                                     "id": "proxy-question",
