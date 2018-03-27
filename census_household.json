@@ -8146,7 +8146,7 @@
                             "questions": [
                                 {
                                     "id": "employer-address-question-proxy",
-                                    "title": "What is the address of <em>{{answers.company_name1}}</em>?",
+                                    "title": "What is the address of <em>{{answers.company_name_proxy}}</em>?",
                                     "type": "General",
                                     "answers": [
                                         {
