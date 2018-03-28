@@ -1405,7 +1405,7 @@
                                         {
                                             "id": "date-of-birth-answer",
                                             "alias": "date_of_birth_answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "type": "Date"
                                         }
                                     ]
@@ -1443,7 +1443,7 @@
                                         {
                                             "id": "date-of-birth-answer1",
                                             "alias": "date_of_birth_answer1",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "type": "Date"
                                         }
                                     ]
