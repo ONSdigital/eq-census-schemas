@@ -977,162 +977,6 @@
                         },
                         {
                             "type": "Question",
-                            "id": "details-correct",
-                            "questions": [
-                                {
-                                    "id": "details-correct-question",
-                                    "title": "Is the name {{ [answers.first_name[group_instance], answers.middle_names[group_instance], answers.last_name[group_instance]] | format_household_name }} correct, including any middle name(s)?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "details-correct-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Yes, this is their full name",
-                                                    "value": "Yes, this is their full name"
-                                                },
-                                                {
-                                                    "label": "No, I need to change the name",
-                                                    "value": "No, I need to change the name"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "correct-name",
-                                        "when": [
-                                            {
-                                                "id": "details-correct-answer",
-                                                "condition": "equals",
-                                                "value": "No, I need to change the name"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "over-16"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "details-correct1",
-                            "questions": [
-                                {
-                                    "id": "details-correct-question1",
-                                    "title": "Is the name {{ [answers.first_name[group_instance], answers.middle_names[group_instance], answers.last_name[group_instance]] | format_household_name }} correct, including any middle name(s)?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "details-correct-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Yes, this is my full name",
-                                                    "value": "Yes, this is my full name"
-                                                },
-                                                {
-                                                    "label": "No, I need to change my name",
-                                                    "value": "No, I need to change my name"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "correct-name1",
-                                        "when": [
-                                            {
-                                                "id": "details-correct-answer1",
-                                                "condition": "equals",
-                                                "value": "No, I need to change my name"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "over-161"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "correct-name",
-                            "questions": [
-                                {
-                                    "id": "correct-name-question",
-                                    "title": "What is {{ [answers.first_name[group_instance], answers.middle_names[group_instance], answers.last_name[group_instance]] | format_household_name }}'s' correct name?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "correct-first-name",
-                                            "label": "First name",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "correct-middle-names",
-                                            "label": "Middle names",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "correct-last-name",
-                                            "label": "Last name",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "correct-name",
-                            "questions": [
-                                {
-                                    "id": "correct-name-question",
-                                    "title": "What is your correct name?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "correct-first-name",
-                                            "label": "First name",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "correct-middle-names",
-                                            "label": "Middle names",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "correct-last-name",
-                                            "label": "Last name",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
                             "id": "over-16",
                             "questions": [
                                 {
@@ -2497,7 +2341,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "household-member-completed1",
+                                        "block": "household-member-completed",
                                         "when": [
                                             {
                                                 "id": "term-time-location-answer1",
@@ -6101,7 +5945,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "household-member-completed1",
+                                        "block": "household-member-completed",
                                         "when": [
                                             {
                                                 "id": "over-16-answer1",
@@ -7596,7 +7440,7 @@
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "supervise-answer",
+                                            "id": "supervise-answer1",
                                             "mandatory": false,
                                             "options": [
                                                 {
@@ -7637,7 +7481,12 @@
                                             }
                                         ]
                                     }
-                                }
+                                },
+				{
+				    "goto": {
+                                        "block": "hours-worked1"
+                                    }
+				}
                             ]
                         },
 			{
@@ -7691,7 +7540,12 @@
                                             }
                                         ]
                                     }
-                                }
+                                },
+				{
+				    "goto": {
+                                        "block": "hours-worked-proxy"
+                                    }
+				}
                             ]
                         },
                         {
