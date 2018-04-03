@@ -6993,11 +6993,11 @@
                                             "options": [
                                                 {
                                                     "label": "Yes, in the last 12 months",
-                                                    "value": "Yes"
+                                                    "value": "Yes, in the last 12 months"
                                                 },
 						{
                                                     "label": "Yes, but not in the last 12 months",
-                                                    "value": "Yes"
+                                                    "value": "Yes, but not in the last 12 months"
                                                 },
                                                 {
                                                     "label": "No, I have never worked",
@@ -7055,11 +7055,11 @@
                                             "options": [
                                                 {
                                                     "label": "Yes, in the last 12 months",
-                                                    "value": "Yes"
+                                                    "value": "Yes, in the last 12 months"
                                                 },
 						{
                                                     "label": "Yes, but not in the last 12 months",
-                                                    "value": "Yes"
+                                                    "value": "Yes, but not in the last 12 months"
                                                 },
                                                 {
                                                     "label": "No, I have never worked",
