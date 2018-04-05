@@ -845,7 +845,7 @@
                             "questions": [
                                 {
                                     "id": "number-of-vehicles-question",
-                                    "title": "How many cars or vans are available for use, by members of this household?",
+                                    "title": "How many cars or vans are available for use by members of this household?",
                                     "type": "General",
                                     "answers": [
                                         {
