@@ -6113,17 +6113,17 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "armed-forces-proxy",
+                                        "block": "employment-status-proxy",
 					 "when": [
                                             {
                                                 "id": "over-16-answer",
                                                 "condition": "equals",
-                                                "value": "Yes"
+                                                "value": "No"
                                             }
                                         ]
                                     },
 				    "goto": {
-                                        "block": "employment-status-proxy"
+                                        "block": "armed-forces-proxy"
                                     }
                                 }
                             ]
@@ -6316,17 +6316,17 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "armed-forces",
+                                        "block": "employment-status1",
 					 "when": [
                                             {
                                                 "id": "over-16-answer1",
                                                 "condition": "equals",
-                                                "value": "Yes"
+                                                "value": "No"
                                             }
                                         ]
                                     },
 				    "goto": {
-                                        "block": "employment-status1"
+                                        "block": "armed-forces"
                                     }
                                 }
                             ]
