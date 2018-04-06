@@ -934,7 +934,6 @@
                                 {
                                     "id": "proxy-question",
                                     "title": "Are you <em>{{ [answers.first_name[group_instance], answers.middle_names[group_instance], answers.last_name[group_instance]] | format_household_name }}<em>?",
-                                    "description": "A responsible adult should respond on behalf of a child under the age of 15",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -6114,7 +6113,14 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "employment-status-proxy"
+                                        "block": "armed-forces-proxy",
+					 "when": [
+                                            {
+                                                "id": "over-16-answer",
+                                                "condition": "equals",
+                                                "value": "No"
+                                            }
+                                        ]
                                     }
                                 }
                             ]
@@ -6307,11 +6313,104 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "employment-status1"
+                                        "block": "armed-forces",
+					 "when": [
+                                            {
+                                                "id": "over-16-answer1",
+                                                "condition": "equals",
+                                                "value": "No"
+                                            }
+                                        ]
                                     }
                                 }
                             ]
                         },
+			{
+                            "type": "Question",
+                            "id": "armed-forces",
+                            "questions": [
+                                {
+                                    "id": "armed-forces-question",
+                                    "title": "Have you ever served in the UK armed forces?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "armed-forces-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Yes, currently serving",
+                                                    "value": "Yes, currently serving"
+                                                },           
+                                                {
+                                                    "label": "Yes, previously served, regular armed forces",
+                                                    "value": "Yes, previously served, regular armed forces"
+                                                },           
+                                                {
+                                                    "label": "Yes, previously served, reserve armed forces",
+                                                    "value": "Yes, previously served, reserve armed forces"
+                                                },           
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                }
+                                            ],
+                                            "type": "Checkbox"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "employment-status1"
+                                    }
+                                }
+                            ]
+                        }, 
+			{
+                            "type": "Question",
+                            "id": "armed-forces-proxy",
+                            "questions": [
+                                {
+                                    "id": "armed-forces-question-proxy",
+                                    "title": "Has <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> ever served in the UK armed forces?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "armed-forces-answer-proxy",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Yes, currently serving",
+                                                    "value": "Yes, currently serving"
+                                                },           
+                                                {
+                                                    "label": "Yes, previously served, regular armed forces",
+                                                    "value": "Yes, previously served, regular armed forces"
+                                                },           
+                                                {
+                                                    "label": "Yes, previously served, reserve armed forces",
+                                                    "value": "Yes, previously served, reserve armed forces"
+                                                },           
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                }
+                                            ],
+                                            "type": "Checkbox"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "employment-status-proxy"
+                                    }
+                                }
+                            ]
+                        }, 
 			{
                             "type": "Question",
                             "id": "employment-status1",
@@ -6420,8 +6519,8 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Away from work ill, on maternity leave, on holiday or temporarily laid off",
-                                                    "value": "Away from work ill, on maternity leave, on holiday or temporarily laid off"
+                                                    "label": "Away from work ill, on maternity or paternity leave, on holiday or temporarily laid off",
+                                                    "value": "Away from work ill, on maternity or paternity leave, on holiday or temporarily laid off"
                                                 },
                                                 {
                                                     "label": "Working unpaid for your own or your family’s business",
@@ -6472,8 +6571,8 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Away from work ill, on maternity leave, on holiday or temporarily laid off",
-                                                    "value": "Away from work ill, on maternity leave, on holiday or temporarily laid off"
+                                                    "label": "Away from work ill, on maternity or paternity leave, on holiday or temporarily laid off",
+                                                    "value": "Away from work ill, on maternity or paternity leave, on holiday or temporarily laid off"
                                                 },
                                                 {
                                                     "label": "Working unpaid for your own or your family’s business",
