@@ -7715,7 +7715,7 @@
                                         "when": [
                                             {
                                                 "id": "work-travel-answer1",
-                                                "condition": "contains",
+                                                "condition": "equals",
 						"value": "Work mainly at or from home"
                                             }
                                         ]
@@ -7799,7 +7799,7 @@
                                         "when": [
                                             {
                                                 "id": "work-travel-answer",
-                                                "condition": "contains",
+                                                "condition": "equals",
 						"value": "Work mainly at or from home"
                                             }
                                         ]
