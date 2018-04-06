@@ -2809,8 +2809,9 @@
                             "questions": [
                                 {
                                     "id": "arrive-in-uk-question",
-                                    "title": "If <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> was not born in the United Kingdom, when did they most recently arrive to live here?",
+                                    "title": "When did <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> most recently arrive to live in the United Kingdom?",
                                     "type": "General",
+				    "description":"Do not count short visits away from the United Kingdom",
                                     "answers": [
                                         {
                                             "id": "arrive-in-uk-answer",
@@ -2834,8 +2835,9 @@
                             "questions": [
                                 {
                                     "id": "arrive-in-uk-question1",
-                                    "title": "If you were not born in the United Kingdom, when did you most recently arrive to live here?",
+                                    "title": "When did you most recently arrive to live in the United Kingdom?",
                                     "type": "General",
+				    "description":"Do not count short visits away from the United Kingdom",
                                     "answers": [
                                         {
                                             "id": "arrive-in-uk-answer1",
