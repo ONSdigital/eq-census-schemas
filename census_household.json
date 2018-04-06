@@ -2811,7 +2811,7 @@
                                     "id": "arrive-in-uk-question",
                                     "title": "When did <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> most recently arrive to live in the United Kingdom?",
                                     "type": "General",
-				    "description":"Do not count short visits away from the United Kingdom",
+				    "description":"Do not count short visits away from the UK",
                                     "answers": [
                                         {
                                             "id": "arrive-in-uk-answer",
@@ -2837,7 +2837,7 @@
                                     "id": "arrive-in-uk-question1",
                                     "title": "When did you most recently arrive to live in the United Kingdom?",
                                     "type": "General",
-				    "description":"Do not count short visits away from the United Kingdom",
+				    "description":"Do not count short visits away from the UK",
                                     "answers": [
                                         {
                                             "id": "arrive-in-uk-answer1",
