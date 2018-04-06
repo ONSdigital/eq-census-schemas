@@ -6889,7 +6889,7 @@
                                 },
 				{
                                     "goto": {
-                                        "block": "ever-worked",
+                                        "block": "ever-worked-proxy",
                                         "when": [
                                             {
                                                 "id": "in-education-answer",
