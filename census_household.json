@@ -6823,6 +6823,18 @@
                                         ]
                                     }
                                 },
+                                {
+                                    "goto": {
+                                        "block": "ever-worked1",
+                                        "when": [
+                                            {
+                                                "id": "in-education-answer1",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
 				{
 				    "goto": {
                                         "block": "occupation1"
@@ -6872,6 +6884,18 @@
                                                 "condition": "equals",
                                                 "value": "Yes"    
 					    }
+                                        ]
+                                    }
+                                },
+				{
+                                    "goto": {
+                                        "block": "ever-worked",
+                                        "when": [
+                                            {
+                                                "id": "in-education-answer",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            }
                                         ]
                                     }
                                 },
