@@ -6121,6 +6121,9 @@
                                                 "value": "No"
                                             }
                                         ]
+                                    },
+				    "goto": {
+                                        "block": "employment-status-proxy"
                                     }
                                 }
                             ]
@@ -6321,6 +6324,9 @@
                                                 "value": "No"
                                             }
                                         ]
+                                    },
+				    "goto": {
+                                        "block": "employment-status"
                                     }
                                 }
                             ]
