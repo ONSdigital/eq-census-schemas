@@ -6061,10 +6061,13 @@
                                                 "value": "No"
                                             }
                                         ]
-                                    },
-				    "goto": {
-                                        "block": "armed-forces-proxy"
                                     }
+				},
+		             {
+				    "goto": {
+                                      	  "block": "armed-forces-proxy"
+                                     }
+			      
                                 }
                             ]
                         },
@@ -6254,7 +6257,7 @@
                                 }
                             ],
                             "routing_rules": [
-                                {
+                             {
                                     "goto": {
                                         "block": "employment-status1",
 					 "when": [
@@ -6264,11 +6267,14 @@
                                                 "value": "No"
                                             }
                                         ]
-                                    },
+				    }
+			     },
+		             {
 				    "goto": {
-                                        "block": "armed-forces"
-                                    }
-                                }
+                                      	  "block": "armed-forces"
+                                     }
+			      } 
+				   
                             ]
                         },
 			{
