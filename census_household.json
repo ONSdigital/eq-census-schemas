@@ -7711,6 +7711,18 @@
                             "routing_rules": [
                                 {
                                     "goto": {
+                                        "block": "household-member-completed",
+                                        "when": [
+                                            {
+                                                "id": "work-travel-answer1",
+                                                "condition": "contains",
+						"value": "Work mainly at or from home"
+                                            }
+                                        ]
+                                    }
+                                },
+				{
+                                    "goto": {
                                         "block": "employer-type-of-address1"
                                     }
                                 }
@@ -7782,6 +7794,18 @@
                             ],
                             "routing_rules": [
                                 {
+                                    "goto": {
+                                        "block": "household-member-completed",
+                                        "when": [
+                                            {
+                                                "id": "work-travel-answer",
+                                                "condition": "contains",
+						"value": "Work mainly at or from home"
+                                            }
+                                        ]
+                                    }
+                                },
+			        {
                                     "goto": {
                                         "block": "employer-type-of-address-proxy"
                                     }
