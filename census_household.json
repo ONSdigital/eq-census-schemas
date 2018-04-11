@@ -3042,8 +3042,12 @@
                                                     "value": "Yes, 1 to 19 hours a week"
                                                 },
                                                 {
-                                                    "label": "Yes, 20 to 49 hours a week",
-                                                    "value": "Yes, 20 to 49 hours a week"
+                                                    "label": "Yes, 20 to 34 hours a week",
+                                                    "value": "Yes, 20 to 34 hours a week"
+                                                },
+                                                {
+                                                    "label": "Yes, 35 to 49 hours a week",
+                                                    "value": "Yes, 35 to 49 hours a week"
                                                 },
                                                 {
                                                     "label": "Yes, 50 or more hours a week",
@@ -3086,8 +3090,12 @@
                                                     "value": "Yes, 1 to 19 hours a week"
                                                 },
                                                 {
-                                                    "label": "Yes, 20 to 49 hours a week",
-                                                    "value": "Yes, 20 to 49 hours a week"
+                                                    "label": "Yes, 20 to 34 hours a week",
+                                                    "value": "Yes, 20 to 34 hours a week"
+                                                },
+                                                {
+                                                    "label": "Yes, 35 to 49 hours a week",
+                                                    "value": "Yes, 35 to 49 hours a week"
                                                 },
                                                 {
                                                     "label": "Yes, 50 or more hours a week",
