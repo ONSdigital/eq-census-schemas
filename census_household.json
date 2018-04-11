@@ -6379,8 +6379,9 @@
                             "questions": [
                                 {
                                     "id": "employment-status-question1",
-                                    "title": "Last week were you doing any paid work, even if it was only for one hour?",
+                                    "title": "Last week were you doing any paid work?",
                                     "type": "General",
+				    "description":" Include casual or temporary work, even if only for one hour",
                                     "answers": [
                                         {
                                             "id": "employment-status-answer1",
@@ -6426,8 +6427,9 @@
                             "questions": [
                                 {
                                     "id": "employment-status-question-proxy",
-                                    "title": "Last week was <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> doing any paid work, even if it was only for one hour?",
+                                    "title": "Last week was <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}}</em> doing any paid work?",
                                     "type": "General",
+				    "description":" Include casual or temporary work, even if only for one hour",
                                     "answers": [
                                         {
                                             "id": "employment-status-answer-proxy",
