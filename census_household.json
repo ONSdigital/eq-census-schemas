@@ -5779,11 +5779,117 @@
                             "questions": [
                                 {
                                     "id": "disability-question",
-                                    "title": "Are <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive}}</em> day-to-day activities limited because of a health problem or disability which has lasted, or is expected to last, at least 12 months?",
+                                    "title": "Does <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive}}</em> have a health problem or disability which has lasted, or is expected to last, at least 12 months?",
                                     "type": "General",
+				     "guidance": {
+                              		  "content": [{
+                                       		 "title": "Include problems related to old age"
+                                           }
+                                	]
+                            	     },
                                     "answers": [
                                         {
                                             "id": "disability-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Yes",
+                                                    "value": "Yes"
+                                                },
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "disability-limitation",
+                                        "when": [
+                                            {
+						"id": "disability-answer",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "qualifications"
+                                    }
+                                }
+                            ]
+                        },
+			{
+                            "type": "Question",
+                            "id": "disability1",
+                            "questions": [
+                                {
+                                    "id": "disability-question1",
+                                    "title": "Do you have a health problem or disability which has lasted, or is expected to last, at least 12 months?",
+                                    "type": "General",
+				     "guidance": {
+                              		  "content": [{
+                                       		 "title": "Include problems related to old age"
+                                           }
+                                	]
+                            	     },
+                                    "answers": [
+                                        {
+                                            "id": "disability-answer1",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Yes",
+                                                    "value": "Yes"
+                                                },
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "disability-limitation1",
+                                        "when": [
+                                            {
+						"id": "disability-answer1",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "qualifications1"
+                                    }
+                                }
+                            ]
+                        },
+			{
+                            "type": "Question",
+                            "id": "disability-limitation",
+                            "questions": [
+                                {
+                                    "id": "disability-limitation-question",
+                                    "title": "Does <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive}}</em> health problem or disabilty limit their day to day activities?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "disability-limitation-answer",
                                             "mandatory": false,
                                             "options": [
                                                 {
@@ -5826,15 +5932,15 @@
                         },
                         {
                             "type": "Question",
-                            "id": "disability1",
+                            "id": "disability-limitation1",
                             "questions": [
                                 {
-                                    "id": "disability-question1",
-                                    "title": "Is your day-to-day activities limited because of a health problem or disability which has lasted, or is expected to last, at least 12 months?",
+                                    "id": "disability-limitation-question1",
+                                    "title": "Does your health problem or disability limit your day to day activities?",
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "disability-answer1",
+                                            "id": "disability-limitation-answer1",
                                             "mandatory": false,
                                             "options": [
                                                 {
