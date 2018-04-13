@@ -3121,7 +3121,7 @@
                             "questions": [
                                 {
                                     "id": "disability-question",
-                                    "title": "Does <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive}}</em> have a health problem or disability which has lasted, or is expected to last, at least 12 months?",
+                                    "title": "Does <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name }}</em> have a health problem or disability which has lasted, or is expected to last, at least 12 months?",
                                     "type": "General",
 				     "guidance": {
                               		  "content": [{
