@@ -1306,7 +1306,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-date-of-birth",
-                                    "title": "{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }} date of birth is {{ calculate_years_difference (answers.date_of_birth_answer, 'now') }}. Is this correct?",
+                                    "title": "{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }} date of birth is {{ calculate_years_difference (answers.date_of_birth_answer, 'now') }} old. Is this correct?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1314,7 +1314,7 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Yes, {{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}} is {{ calculate_years_difference (answers.date_of_birth_answer, 'now') }} years old",
+                                                    "label": "Yes, {{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name}} is {{ calculate_years_difference (answers.date_of_birth_answer, 'now') }} old",
                                                     "value": "Yes"
                                                 },
                                                 {
@@ -1353,7 +1353,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-date-of-birth1",
-                                    "title": "Your date of birth is {{ calculate_years_difference (answers.date_of_birth_answer1, 'now') }}. Is this correct?",
+                                    "title": "Your date of birth is {{ calculate_years_difference (answers.date_of_birth_answer1, 'now') }} old. Is this correct?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1361,8 +1361,8 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Yes, I am {{ calculate_years_difference (answers.date_of_birth_answer1, 'now') }} years old",
-                                                    "value": "Yes, I am 18 years old"
+                                                    "label": "Yes, I am {{ calculate_years_difference (answers.date_of_birth_answer1, 'now') }} old",
+                                                    "value": "Yes"
                                                 },
                                                 {
                                                     "label": "No, I need to change this date",
