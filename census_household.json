@@ -1430,7 +1430,7 @@
 		                            },
 		                            {
 		                        	    "goto": {
-			                        	    "block": "marriage-type"
+			                        	    "block": "marriage-type-proxy"
 		                        	}
 	                        	}
 	                        ]
