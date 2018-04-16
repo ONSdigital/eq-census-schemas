@@ -1453,15 +1453,15 @@
                                                     "value": "Married or in a registered same-sex civil partnership"
                                                 },
                                                 {
-                                                    "label": "Separated, but still legally married or in a same-sex civil partnership",
+                                                    "label": "Separated, but still legally married <b>or</b> in a same-sex civil partnership",
                                                     "value": "Separated, but still legally married or in a same-sex civil partnership"
                                                 },
                                                 {
-                                                    "label": "Divorced or dissolved same-sex civil partnership",
+                                                    "label": "Divorced <b>or</b> dissolved same-sex civil partnership",
                                                     "value": "Divorced or dissolved same-sex civil partnership"
                                                 },
                                                 {
-                                                    "label": "Widowed or surviving same-sex civil partner",
+                                                    "label": "Widowed <b>or</b> surviving same-sex civil partner",
                                                     "value": "Widowed or surviving same-sex civil partner"
                                                 }
                                             ],
@@ -1623,19 +1623,19 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Married or in a registered same-sex civil partnership",
+                                                    "label": "Married <b>or</b> in a registered same-sex civil partnership",
                                                     "value": "Married or in a registered same-sex civil partnership"
                                                 },
                                                 {
-                                                    "label": "Separated, but still legally married or in a same-sex civil partnership",
+                                                    "label": "Separated, but still legally married <b>or</b> in a same-sex civil partnership",
                                                     "value": "Separated, but still legally married or in a same-sex civil partnership"
                                                 },
                                                 {
-                                                    "label": "Divorced or dissolved same-sex civil partnership",
+                                                    "label": "Divorced <b>or</b> dissolved same-sex civil partnership",
                                                     "value": "Divorced or dissolved same-sex civil partnership"
                                                 },
                                                 {
-                                                    "label": "Widowed or surviving same-sex civil partner",
+                                                    "label": "Widowed <b>or</b> surviving same-sex civil partner",
                                                     "value": "Widowed or surviving same-sex civil partner"
                                                 }
                                             ],
