@@ -7088,7 +7088,7 @@
                             "questions": [
                                 {
                                     "id": "occupation-question1",
-                                    "title": "Which of the following best describes what you was doing last week?",
+                                    "title": "Which of the following best describes what you were doing last week?",
                                     "description": "",
                                     "type": "General",
                                     "answers": [
