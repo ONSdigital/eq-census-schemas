@@ -1441,7 +1441,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-marriage-type-proxy",
-                                    "title": "On 27 April 2019, what is {{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name }} legal marital or same-sex civil partnership status?",
+                                    "title": "On 27 April 2019, what is {{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }} legal marital or same-sex civil partnership status?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1449,7 +1449,7 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Married or in a registered same-sex civil partnership",
+                                                    "label": "Married <b>or</b> in a registered same-sex civil partnership",
                                                     "value": "Married or in a registered same-sex civil partnership"
                                                 },
                                                 {
