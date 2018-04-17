@@ -1306,7 +1306,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-date-of-birth",
-                                    "title": "{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }} date of birth is {{ calculate_years_difference (answers.date_of_birth_answer, 'now') }} old. Is this correct?",
+                                    "title": "{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }} is {{ calculate_years_difference (answers.date_of_birth_answer, 'now') }} old. Is this correct?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1353,7 +1353,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-date-of-birth1",
-                                    "title": "Your date of birth is {{ calculate_years_difference (answers.date_of_birth_answer1, 'now') }} old. Is this correct?",
+                                    "title": "You are {{ calculate_years_difference (answers.date_of_birth_answer1, 'now') }} old. Is this correct?",
                                     "type": "General",
                                     "answers": [
                                         {
