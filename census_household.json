@@ -1004,6 +1004,18 @@
                             "routing_rules": [
                                 {
                                     "goto": {
+                                        "block": "sex-under16",
+                                        "when": [
+                                            {
+                                                "id": "over-16-answer",
+                                                "condition": "equals",
+                                                "value": "No"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
                                         "block": "sex"
                                     }
                                 }
@@ -1037,6 +1049,18 @@
                                 }
                             ],
                             "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "sex-under161",
+                                        "when": [
+                                            {
+                                                "id": "over-16-answer1",
+                                                "condition": "equals",
+                                                "value": "No"
+                                            }
+                                        ]
+                                    }
+                                },
                                 {
                                     "goto": {
                                         "block": "sex1"
@@ -1104,6 +1128,100 @@
                                     "answers": [
                                         {
                                             "id": "sex-answer1",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Female",
+                                                    "value": "Female"
+                                                },
+                                                {
+                                                    "label": "Male",
+                                                    "value": "Male"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "date-of-birth1",
+                                        "when": [
+                                            {
+                                                "id": "over-16-answer1",
+                                                "condition": "equals",
+                                                "value": "No"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "birth-gender1"
+                                    }
+                                }
+                            ]
+                        },
+			{
+                            "type": "Question",
+                            "id": "sex-under16",
+                            "questions": [
+                                {
+                                    "id": "sex-under16-question",
+                                    "title": "What is <em>{{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }}</em> sex?",
+                                    "type": "General",
+				    "answers": [
+                                        {
+                                            "id": "sex-under16-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Female",
+                                                    "value": "Female"
+                                                },
+                                                {
+                                                    "label": "Male",
+                                                    "value": "Male"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "date-of-birth",
+                                        "when": [
+                                            {
+                                                "id": "over-16-answer",
+                                                "condition": "equals",
+                                                "value": "No"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "birth-gender"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "sex-under161",
+                            "questions": [
+                                {
+                                    "id": "sex-under16-question1",
+                                    "title": "What is your sex?",
+				    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "sex-under16-answer1",
                                             "mandatory": false,
                                             "options": [
                                                 {
