@@ -1538,7 +1538,7 @@
                     ],
 	                    "routing_rules": [{
 			            "goto": {
-				                "block": "another-address1",
+				                "block": "another-address",
 				                "when": [{
 				                	"id": "confirm-ever-married-answer-proxy",
 				                	"condition": "equals",
@@ -1642,7 +1642,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "another-address1"
+                                        "block": "another-address"
                                     }
                                 }
                             ]
@@ -1670,7 +1670,7 @@
                                                 },
                                                 {
                                                     "label": "Same-sex civil partnership",
-                                                    "value": "Same-sex civil partnershi"
+                                                    "value": "Same-sex civil partnership"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -1681,7 +1681,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "another-address1"
+                                        "block": "another-address"
                                     }
                                 }
                             ]
@@ -1712,7 +1712,7 @@
                     ],
 	                    "routing_rules": [{
 			            "goto": {
-				                "block": "another-address",
+				                "block": "another-address1",
 				                "when": [{
 				                	"id": "confirm-ever-married-answer",
 				                	"condition": "equals",
@@ -1816,7 +1816,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "another-address"
+                                        "block": "another-address1"
                                     }
                                 }
                             ]
@@ -1844,7 +1844,7 @@
                                                 },
                                                 {
                                                     "label": "Same-sex civil partnership",
-                                                    "value": "Same-sex civil partnershi"
+                                                    "value": "Same-sex civil partnership"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -1855,7 +1855,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "another-address"
+                                        "block": "another-address1"
                                     }
                                 }
                             ]
