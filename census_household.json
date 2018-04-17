@@ -1399,7 +1399,7 @@
 	                        "id": "ever-married-proxy",
 	                        "questions": [{
 	                        	"id": "ever-married-question-proxy",
-		                        "title": "Has {{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name }} ever been married or in a same sex marriage?",
+		                        "title": "Has {{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name }} ever been legally married or in a same-sex civil partnership?",
 		                        "type": "General",
 		                        "answers": [{
 		                        	"id": "confirm-ever-married-answer-proxy",
@@ -1573,7 +1573,7 @@
 	                        "id": "ever-married",
 	                        "questions": [{
 	                        	"id": "ever-married-question",
-		                        "title": "Have you ever been married or in a same sex marriage?",
+		                        "title": "Have you ever been legally married or in a same-sex civil partnership?",
 		                        "type": "General",
 		                        "answers": [{
 		                        	"id": "confirm-ever-married-answer",
