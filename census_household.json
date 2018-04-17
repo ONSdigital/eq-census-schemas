@@ -7483,7 +7483,7 @@
                                 {
                                     "id": "employers-business-question1",
                                     "title": "What is the main activity of <em>{{answers.company_name1}}</em>?",
-				    "description": "Describe how your company makes profit by what it does or produces",
+				    "description": "Describe how your employer, business or freelance work makes profit by what it does or produces. For example, clothing retail, primary education or general hospital.",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -7510,7 +7510,7 @@
                                 {
                                     "id": "employers-business-question-proxy",
                                     "title": "What is the main activity of <em>{{answers.company_name_proxy}}</em>?",
-				    "description": "Describe how the company makes profit by what it does or produces",
+				    "description": "Describe how your employer, business or freelance work makes profit by what it does or produces. For example, clothing retail, primary education or general hospital.",
                                     "type": "General",
                                     "answers": [
                                         {
