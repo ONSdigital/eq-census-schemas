@@ -1538,7 +1538,7 @@
                     ],
 	                    "routing_rules": [{
 			            "goto": {
-				                "block": "another-address-proxy",
+				                "block": "another-address1",
 				                "when": [{
 				                	"id": "confirm-ever-married-answer-proxy",
 				                	"condition": "equals",
@@ -1642,7 +1642,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "another-address"
+                                        "block": "another-address1"
                                     }
                                 }
                             ]
@@ -1681,7 +1681,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "another-address"
+                                        "block": "another-address1"
                                     }
                                 }
                             ]
