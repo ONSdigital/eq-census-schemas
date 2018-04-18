@@ -2306,7 +2306,7 @@
                                                     "value": "No"
                                                 }
                                             ],
-                                            "typthatse": "Radio"
+                                            "type": "Radio"
                                         }
                                     ]
                                 }
