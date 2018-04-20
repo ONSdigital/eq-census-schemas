@@ -1559,7 +1559,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-marriage-type-proxy",
-                                    "title": "Last week, what is {{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }} legal marital or same-sex civil partnership status?",
+                                    "title": "On the {{ get_current_date() }}, what is {{[answers.first_name[group_instance], answers.last_name[group_instance]] | format_household_name_possessive }} legal marital or same-sex civil partnership status?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1733,7 +1733,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-marriage-type",
-                                    "title": "Last week, what is your legal marital or same-sex civil partnership status?",
+                                    "title": "On the {{ get_current_date() }}, what is your legal marital or same-sex civil partnership status?",
                                     "type": "General",
                                     "answers": [
                                         {
