@@ -1465,7 +1465,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-date-of-birth1",
-                                    "title": "You are {{ calculate_years_difference (answers['date-of-birth-answer1'], 'now') }} old. Is this correct?",
+                                    "title": "You are {{ calculate_years_difference (answers['date-of-birth-answer1'][group_instance], 'now') }} old. Is this correct?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1473,7 +1473,7 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Yes, I am {{ calculate_years_difference (answers['date-of-birth-answer1'], 'now') }}s old",
+                                                    "label": "Yes, I am {{ calculate_years_difference (answers['date-of-birth-answer1'][group_instance], 'now') }}s old",
                                                     "value": "Yes"
                                                 },
                                                 {
