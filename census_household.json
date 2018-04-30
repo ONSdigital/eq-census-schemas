@@ -1426,7 +1426,7 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Yes, {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}} is {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }}s old",
+                                                    "label": "Yes, {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}} is {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old",
                                                     "value": "Yes"
                                                 },
                                                 {
@@ -1473,7 +1473,7 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Yes, I am {{ calculate_years_difference (answers['date-of-birth-answer1'][group_instance], 'now') }}s old",
+                                                    "label": "Yes, I am {{ calculate_years_difference (answers['date-of-birth-answer1'][group_instance], 'now') }} old",
                                                     "value": "Yes"
                                                 },
                                                 {
