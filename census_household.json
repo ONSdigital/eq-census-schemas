@@ -1625,11 +1625,30 @@
                                                 "id": "confirm-marriage-type-answer-proxy",
                                                 "condition": "equals",
                                                 "value": "Divorced"
-                                            },
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "previous-marriage-status-proxy",
+                                        "when": [
                                             {
                                                 "id": "confirm-marriage-type-answer-proxy",
                                                 "condition": "equals",
                                                 "value": "Widowed"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "previous-marriage-status-proxy",
+                                        "when": [
+                                            {
+                                                "id": "confirm-marriage-type-answer-proxy",
+                                                "condition": "equals",
+                                                "value": "Separated, but still legally married"
                                             }
                                         ]
                                     }
@@ -1830,11 +1849,30 @@
                                                 "id": "confirm-marriage-type-answer",
                                                 "condition": "equals",
                                                 "value": "Divorced"
-                                            },
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "previous-marriage-status",
+                                        "when": [
                                             {
                                                 "id": "confirm-marriage-type-answer",
                                                 "condition": "equals",
                                                 "value": "Widowed"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "previous-marriage-status",
+                                        "when": [
+                                            {
+                                                "id": "confirm-marriage-type-answer",
+                                                "condition": "equals",
+                                                "value": "Separated, but still legally married"
                                             }
                                         ]
                                     }
