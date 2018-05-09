@@ -1567,20 +1567,36 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Married <b>or</b> in a registered same-sex civil partnership",
-                                                    "value": "Married or in a registered same-sex civil partnership"
+                                                    "label": "Married",
+                                                    "value": "Married"
+                                                },
+                                                 {
+                                                    "label": "In a registered same-sex civil partnership",
+                                                    "value": "In a registered same-sex civil partnership"
                                                 },
                                                 {
-                                                    "label": "Separated, but still legally married <b>or</b> in a same-sex civil partnership",
-                                                    "value": "Separated, but still legally married or in a same-sex civil partnership"
+                                                    "label": "Separated, but still legally married",
+                                                    "value": "Separated, but still legally married"
+                                                },
+                                                 {
+                                                    "label": "Separated, but still legally in a same-sex civil partnership",
+                                                    "value": "Separated, but still legally in a same-sex civil partnership"
                                                 },
                                                 {
-                                                    "label": "Divorced <b>or</b> dissolved same-sex civil partnership",
-                                                    "value": "Divorced or dissolved same-sex civil partnership"
+                                                    "label": "Divorced",
+                                                    "value": "Divorced"
                                                 },
                                                 {
-                                                    "label": "Widowed <b>or</b> surviving same-sex civil partner",
-                                                    "value": "Widowed or surviving same-sex civil partner"
+                                                    "label": "Same sex civil partnership which is now legally dissolved",
+                                                    "value": "Same sex civil partnership which is now legally dissolved"
+                                                },
+                                                {
+                                                    "label": "Widowed",
+                                                    "value": "Widowed"
+                                                },
+                                                {
+                                                    "label": "Surviving partner from a same-sex civil partnership",
+                                                    "value": "Surviving partner from a same-sex civil partnership"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -1596,14 +1612,31 @@
                                             {
                                                 "id": "confirm-marriage-type-answer-proxy",
                                                 "condition": "equals",
-                                                "value": "Married or in a registered same-sex civil partnership"
+                                                "value": "Married"
                                             }
                                         ]
                                     }
                                 },
                                 {
                                     "goto": {
-                                        "block": "previous-marriage-status"
+                                        "block": "previous-marriage-status-proxy",
+                                        "when": [
+                                            {
+                                                "id": "confirm-marriage-type-answer-proxy",
+                                                "condition": "equals",
+                                                "value": "Divorced"
+                                            },
+                                            {
+                                                "id": "confirm-marriage-type-answer-proxy",
+                                                "condition": "equals",
+                                                "value": "Widowed"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "another-address"
                                     }
                                 }
                             ]
@@ -1628,10 +1661,6 @@
                                                 {
                                                     "label": "Marriage to a partner of the same sex",
                                                     "value": "Marriage to a partner of the same sex"
-                                                },
-                                                {
-                                                    "label": "Same-sex civil partnership",
-                                                    "value": "Same-sex civil partnershi"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -1667,10 +1696,6 @@
                                                 {
                                                     "label": "Marriage to a partner of the same sex",
                                                     "value": "Marriage to a partner of the same sex"
-                                                },
-                                                {
-                                                    "label": "Same-sex civil partnership",
-                                                    "value": "Same-sex civil partnership"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -1747,20 +1772,36 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Married <b>or</b> in a registered same-sex civil partnership",
-                                                    "value": "Married or in a registered same-sex civil partnership"
+                                                    "label": "Married",
+                                                    "value": "Married"
                                                 },
                                                 {
-                                                    "label": "Separated, but still legally married <b>or</b> in a same-sex civil partnership",
-                                                    "value": "Separated, but still legally married or in a same-sex civil partnership"
+                                                    "label": "In a registered same-sex civil partnership",
+                                                    "value": "In a registered same-sex civil partnership"
                                                 },
                                                 {
-                                                    "label": "Divorced <b>or</b> dissolved same-sex civil partnership",
-                                                    "value": "Divorced or dissolved same-sex civil partnership"
+                                                    "label": "Separated, but still legally married",
+                                                    "value": "Separated, but still legally married"
                                                 },
                                                 {
-                                                    "label": "Widowed <b>or</b> surviving same-sex civil partner",
-                                                    "value": "Widowed or surviving same-sex civil partner"
+                                                    "label": "Separated, but still legally in a same-sex civil partnership",
+                                                    "value": "Separated, but still legally in a same-sex civil partnership"
+                                                },
+                                                {
+                                                    "label": "Divorced",
+                                                    "value": "Divorced"
+                                                },
+                                                {
+                                                    "label": "Same sex civil partnership which is now legally dissolved",
+                                                    "value": "Same sex civil partnership which is now legally dissolved"
+                                                },
+                                                {
+                                                    "label": "Widowed",
+                                                    "value": "Widowed"
+                                                },
+                                                {
+                                                    "label": "Surviving partner from a same-sex civil partnership",
+                                                    "value": "Surviving partner from a same-sex civil partnership"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -1776,14 +1817,31 @@
                                             {
                                                 "id": "confirm-marriage-type-answer",
                                                 "condition": "equals",
-                                                "value": "Married or in a registered same-sex civil partnership"
+                                                "value": "Married"
                                             }
                                         ]
                                     }
                                 },
                                 {
                                     "goto": {
-                                        "block": "previous-marriage-status"
+                                        "block": "previous-marriage-status",
+                                        "when": [
+                                            {
+                                                "id": "confirm-marriage-type-answer",
+                                                "condition": "equals",
+                                                "value": "Divorced"
+                                            },
+                                            {
+                                                "id": "confirm-marriage-type-answer",
+                                                "condition": "equals",
+                                                "value": "Widowed"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "another-address1"
                                     }
                                 }
                             ]
@@ -1808,10 +1866,6 @@
                                                 {
                                                     "label": "Marriage to a partner of the same sex",
                                                     "value": "Marriage to a partner of the same sex"
-                                                },
-                                                {
-                                                    "label": "Same-sex civil partnership",
-                                                    "value": "Same-sex civil partnershi"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -1847,10 +1901,6 @@
                                                 {
                                                     "label": "Marriage to a partner of the same sex",
                                                     "value": "Marriage to a partner of the same sex"
-                                                },
-                                                {
-                                                    "label": "Same-sex civil partnership",
-                                                    "value": "Same-sex civil partnership"
                                                 }
                                             ],
                                             "type": "Radio"
