@@ -7947,7 +7947,7 @@
                             "description": "",
                             "questions": [
                                 {
-                                    "title": "Thinking about the longest distance of the journey, how do you travel to work?",
+                                    "title": "What transport do you use for the furthest part of your usual journey to work?",
                                     "id": "work-travel-question1",
                                     "type": "General",
                                     "answers": [
@@ -8031,7 +8031,7 @@
                             "description": "",
                             "questions": [
                                 {
-                                    "title": "Thinking about the longest distance of the journey, how does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> travel to work?",
+                                    "title": "What transport does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> use for the furthest part of their usual journey to work?",
                                     "id": "work-travel-question-proxy",
                                     "type": "General",
                                     "answers": [
