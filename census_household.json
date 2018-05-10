@@ -1666,7 +1666,7 @@
                             "questions": [
                                 {
                                     "id": "currrent-marriage-status-question-proxy",
-                                    "title": "What type of partnership is this?",
+                                    "title": "Is the marriage opposite sex or same sex?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1674,12 +1674,12 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Marriage to a partner of the opposite sex",
-                                                    "value": "Marriage to a partner of the opposite sex"
+                                                    "label": "Opposite sex marriage",
+                                                    "value": "Opposite sex marriage"
                                                 },
                                                 {
-                                                    "label": "Marriage to a partner of the same sex",
-                                                    "value": "Marriage to a partner of the same sex"
+                                                    "label": "Same sex marriage",
+                                                    "value": "Same sex marriage"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -1701,7 +1701,7 @@
                             "questions": [
                                 {
                                     "id": "previous-marriage-status-question-proxy",
-                                    "title": "What type of partnership was this?",
+                                    "title": "Was the marriage opposite sex or same sex?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1709,12 +1709,12 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Marriage to a partner of the opposite sex",
-                                                    "value": "Marriage to a partner of the opposite sex"
+                                                    "label": "Opposite sex marriage",
+                                                    "value": "Opposite sex marriage"
                                                 },
                                                 {
-                                                    "label": "Marriage to a partner of the same sex",
-                                                    "value": "Marriage to a partner of the same sex"
+                                                    "label": "Same sex marriage",
+                                                    "value": "Same sex marriage"
                                                 }
                                             ],
                                             "type": "Radio"
