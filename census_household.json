@@ -7934,7 +7934,7 @@
                                             {
                                                 "title": "Include",
                                                 "list": [
-                                                    "paid or unpaid overtime"
+                                                    "paid and unpaid overtime"
                                                 ]
                                             }
                                         ]
@@ -7988,7 +7988,7 @@
                                             {
                                                 "title": "Include",
                                                 "list": [
-                                                    "paid or unpaid overtime"
+                                                    "paid and unpaid overtime"
                                                 ]
                                             }
                                         ]
