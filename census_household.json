@@ -1260,7 +1260,7 @@
                             "questions": [
                                 {
                                     "id": "birth-gender-question",
-                                    "title": "Doess <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> consider themselves being trans or have a trans history?",
+                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> consider themselves being trans or have a trans history?",
                                     "type": "General",
                                     "description": "Trans is an umbrella term used to describe people whose gender is not the same as the sex they were assigned at birth",
                                     "answers": [
@@ -7473,8 +7473,8 @@
                                                     "value": "Yes, but not in the last 12 months"
                                                 },
                                                 {
-                                                    "label": "No, I have never worked",
-                                                    "value": "No, I have never worked"
+                                                    "label": "No, they have never worked",
+                                                    "value": "No, they have never worked"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -7490,7 +7490,7 @@
                                             {
                                                 "id": "ever-worked-answer-proxy",
                                                 "condition": "equals",
-                                                "value": "No, I have never worked"
+                                                "value": "No, they have never worked"
                                             }
                                         ]
                                     }
@@ -7546,7 +7546,7 @@
                             "questions": [
                                 {
                                     "id": "business-name-question-proxy",
-                                    "title": "What is the name of the organisation or business that <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> work for?",
+                                    "title": "What is the name of the organisation or business that <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> works for?",
                                     "description": "If you are self-employed in your own organisation, give the business name.",
                                     "type": "General",
                                     "answers": [
@@ -7653,7 +7653,7 @@
                             "questions": [
                                 {
                                     "id": "job-title-question-proxy",
-                                    "title": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> full job title?",
+                                    "title": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> full job title?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -7770,7 +7770,7 @@
                             "questions": [
                                 {
                                     "id": "main-job-type-question-proxy",
-                                    "title": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> employment status?",
+                                    "title": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> employment status?",
                                     "type": "General",
                                     "answers": [
                                         {
