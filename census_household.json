@@ -6619,7 +6619,7 @@
                             "questions": [
                                 {
                                     "id": "armed-forces-question",
-                                    "title": "Have you ever served in the UK armed forces?",
+                                    "title": "Have you ever served in the UK Armed Forces?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -6631,16 +6631,16 @@
                                                     "value": "Yes, currently serving"
                                                 },
                                                 {
-                                                    "label": "Yes, previously served, regular armed forces",
-                                                    "value": "Yes, previously served, regular armed forces"
+                                                    "label": "Yes, previously served, Regular Armed Forces",
+                                                    "value": "Yes, previously served, Regular Armed Forces"
                                                 },
                                                 {
-                                                    "label": "Yes, previously served, reserve armed forces",
-                                                    "value": "Yes, previously served, reserve armed forces"
+                                                    "label": "Yes, previously served, Reserve Armed Forces",
+                                                    "value": "Yes, previously served, Reserve Armed Forces"
                                                 },
                                                 {
-                                                    "label": "No",
-                                                    "value": "No"
+                                                    "label": "No, I have never served",
+                                                    "value": "No, I have never served"
                                                 }
                                             ],
                                             "type": "Checkbox"
