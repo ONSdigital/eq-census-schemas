@@ -470,8 +470,9 @@
                                                     "value": "Whole house or bungalow"
                                                 },
                                                 {
-                                                    "label": "Flat, maisonette or apartment (including bedsits)",
-                                                    "value": "Flat, maisonette or apartment (including bedsits)"
+                                                    "label": "Flat, maisonette or apartment",
+                                                    "value": "Flat, maisonette or apartment",
+                                                    "description": "Including bedsits"
                                                 },
                                                 {
                                                     "label": "Caravan or other mobile or temporary structure",
@@ -503,7 +504,7 @@
                                             {
                                                 "id": "type-of-accommodation-answer",
                                                 "condition": "equals",
-                                                "value": "Flat, maisonette or apartment (including bedsits)"
+                                                "value": "Flat, maisonette or apartment"
                                             }
                                         ]
                                     }
