@@ -593,7 +593,7 @@
                             "questions": [
                                 {
                                     "id": "self-contained-accommodation-question",
-                                    "title": "Is the accommodation of <em>{{answers['address-line-1']}}</em> self-contained?",
+                                    "title": "Are all the rooms at <em>{{answers['address-line-1']}}</em> behind a door that only this household can use?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -601,8 +601,8 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Yes, all the rooms are behind a door that only this household can use",
-                                                    "value": "Yes, all the rooms are behind a door that only this household can use"
+                                                    "label": "Yes",
+                                                    "value": "Yes"
                                                 },
                                                 {
                                                     "label": "No",
