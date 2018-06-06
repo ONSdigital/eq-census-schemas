@@ -323,6 +323,14 @@
                                     "type": "General",
                                     "answers": [
                                         {
+                                            "guidance": {
+                                                "show_guidance": "Why your answer is important",
+                                                "hide_guidance": "Why your answer is important",
+                                                "content": [{
+                                                   "description": "Visitor information is collected to ensure that everyone is counted, in order to produce accurate estimates of the population, to facilitate effective planning and funding decisions."
+                                                    }
+                                                 ]
+                                            },
                                             "id": "overnight-visitors-answer",
                                             "label": "Number of visitors (enter 0 if no visitors)",
                                             "mandatory": true,
