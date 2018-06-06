@@ -18,6 +18,12 @@
         },
         "period_id": {
             "validator": "string"
+        },
+        "region_code": {
+            "validator": "string"
+        },
+        "variant_flags": {
+            "validator": "object"
         }
     },
     "sections": [
