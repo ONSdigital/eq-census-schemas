@@ -21,9 +21,6 @@
         },
         "region_code": {
             "validator": "string"
-        },
-        "variant_flags": {
-            "validator": "object"
         }
     },
     "sections": [
