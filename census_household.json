@@ -8200,7 +8200,7 @@
                                         "block": "household-member-completed",
                                         "when": [
                                             {
-                                                "id": "work-travel-answer",
+                                                "id": "work-travel-answer-proxy",
                                                 "condition": "equals",
                                                 "value": "Work mainly at or from home"
                                             }
