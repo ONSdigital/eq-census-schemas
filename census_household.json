@@ -5632,8 +5632,8 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "This address",
-                                                    "value": "This address"
+                                                     "label": "{{[answers['address-line-1'], answers['address-line-2'], answers['address-line-3'], answers['town-city'], answers['postcode']] | concatenated_list}}",
+                                                    "value": "household address"
                                                 },
                                                 {
                                                     "label": "Student term time or boarding school address in the UK",
@@ -5719,8 +5719,8 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "This address",
-                                                    "value": "This address"
+                                                     "label": "{{[answers['address-line-1'], answers['address-line-2'], answers['address-line-3'], answers['town-city'], answers['postcode']] | concatenated_list}}",
+                                                    "value": "household address"
                                                 },
                                                 {
                                                     "label": "Student term time or boarding school address in the UK",
