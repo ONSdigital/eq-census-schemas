@@ -5464,8 +5464,8 @@
                                                     "value": "No religion"
                                                 },
                                                 {
-                                                    "label": "Christianity",
-                                                    "value": "Christianity"
+                                                    "label": "Christian",
+                                                    "value": "Christian"
                                                 },
                                                 {
                                                     "label": "Buddhism",
@@ -5493,7 +5493,7 @@
                                                     "child_answer_id": "religion-answer-other1"
                                                 }
                                             ],
-                                            "type": "Checkbox"
+                                            "type": "Radio"
                                         },
                                         {
                                             "id": "religion-answer-other1",
