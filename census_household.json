@@ -1208,19 +1208,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "date-of-birth",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "birth-gender"
+                                        "block": "date-of-birth"
                                     }
                                 }
                             ]
@@ -1248,114 +1236,6 @@
                                                 }
                                             ],
                                             "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "date-of-birth1",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer1",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "birth-gender1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "birth-gender",
-                            "questions": [
-                                {
-                                    "id": "birth-gender-question",
-                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> consider themselves being trans or have a trans history?",
-                                    "type": "General",
-                                    "description": "Trans is an umbrella term used to describe people whose gender is not the same as the sex they were assigned at birth",
-                                    "answers": [
-                                        {
-                                            "id": "birth-gender-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes",
-                                                    "child_answer_id": "birth-gender-answer-other"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                },
-                                                {
-                                                    "label": "Prefer not to say",
-                                                    "value": "Prefer not to say"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        },
-                                        {
-                                            "id": "birth-gender-answer-other",
-                                            "parent_answer_id": "birth-gender-answer",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please specify gender"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "date-of-birth"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "birth-gender1",
-                            "questions": [
-                                {
-                                    "id": "birth-gender-question1",
-                                    "title": "Do you consider yourself to be trans or have a trans history?",
-                                    "type": "General",
-                                    "description": "Trans is an umbrella term used to describe people whose gender is not the same as the sex they were assigned at birth",
-                                    "answers": [
-                                        {
-                                            "id": "birth-gender-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes",
-                                                    "child_answer_id": "birth-gender-answer-other1"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                },
-                                                {
-                                                    "label": "Prefer not to say",
-                                                    "value": "Prefer not to say"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        },
-                                        {
-                                            "id": "birth-gender-answer-other1",
-                                            "parent_answer_id": "birth-gender-answer1",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please specify gender"
                                         }
                                     ]
                                 }
@@ -5214,6 +5094,18 @@
                             "routing_rules": [
                                 {
                                     "goto": {
+                                        "block": "birth_gender",
+                                        "when": [
+                                            {
+                                                "id": "over-16-answer",
+                                                "condition": "equals",
+                                                "value": "No"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
                                         "block": "understand-welsh",
                                         "when": [
                                             {
@@ -5274,6 +5166,138 @@
                                             "type": "TextField",
                                             "mandatory": false,
                                             "label": "Please specify your sexual orientation"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "birth_gender1",
+                                        "when": [
+                                            {
+                                                "id": "over-16-answer1",
+                                                "condition": "equals",
+                                                "value": "No"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "understand-welsh1",
+                                        "when": [
+                                            {
+                                                "meta": "region_code",
+                                                "condition": "equals",
+                                                "value": "GB-WLS"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "language1"
+                                    }
+                                }
+                            ]
+                        },
+                         {
+                            "type": "Question",
+                            "id": "birth-gender",
+                            "questions": [
+                                {
+                                    "id": "birth-gender-question",
+                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> consider themselves being trans?",
+                                    "type": "General",
+                                    "description": "Trans means your gender is different from the sex you were registered at birth",
+                                    "answers": [
+                                        {
+                                            "id": "birth-gender-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                },
+                                                {
+                                                    "label": "Yes",
+                                                    "value": "Yes",
+                                                    "child_answer_id": "birth-gender-answer-other"
+                                                },
+                                                {
+                                                    "label": "Prefer not to say",
+                                                    "value": "Prefer not to say"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        },
+                                        {
+                                            "id": "birth-gender-answer-other",
+                                            "parent_answer_id": "birth-gender-answer",
+                                            "type": "TextField",
+                                            "mandatory": false,
+                                            "label": "Please specify gender"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "understand-welsh",
+                                        "when": [
+                                            {
+                                                "meta": "region_code",
+                                                "condition": "equals",
+                                                "value": "GB-WLS"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "language"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "birth-gender1",
+                            "questions": [
+                                {
+                                    "id": "birth-gender-question1",
+                                    "title": "Do you consider yourself to be trans or have a trans history?",
+                                    "type": "General",
+                                    "description": "Trans is an umbrella term used to describe people whose gender is not the same as the sex they were assigned at birth",
+                                    "answers": [
+                                        {
+                                            "id": "birth-gender-answer1",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Yes",
+                                                    "value": "Yes",
+                                                    "child_answer_id": "birth-gender-answer-other1"
+                                                },
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                },
+                                                {
+                                                    "label": "Prefer not to say",
+                                                    "value": "Prefer not to say"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        },
+                                        {
+                                            "id": "birth-gender-answer-other1",
+                                            "parent_answer_id": "birth-gender-answer1",
+                                            "type": "TextField",
+                                            "mandatory": false,
+                                            "label": "Please specify gender"
                                         }
                                     ]
                                 }
