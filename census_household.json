@@ -3966,18 +3966,6 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "sexual-identity",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
                                         "block": "understand-welsh",
                                         "when": [
                                             {
@@ -4223,18 +4211,6 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "sexual-identity1",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
                                         "block": "understand-welsh1",
                                         "when": [
                                             {
@@ -4356,18 +4332,6 @@
                                 }
                             ],
                             "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "sexual-identity",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
                                 {
                                     "goto": {
                                         "block": "understand-welsh",
@@ -4493,18 +4457,6 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "sexual-identity1",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
                                         "block": "understand-welsh1",
                                         "when": [
                                             {
@@ -4568,18 +4520,6 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "sexual-identity",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
                                         "block": "understand-welsh",
                                         "when": [
                                             {
@@ -4641,18 +4581,6 @@
                                 }
                             ],
                             "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "sexual-identity1",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
                                 {
                                     "goto": {
                                         "block": "understand-welsh1",
@@ -4722,18 +4650,6 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "sexual-identity",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
                                         "block": "understand-welsh",
                                         "when": [
                                             {
@@ -4801,18 +4717,6 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "sexual-identity1",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
                                         "block": "understand-welsh1",
                                         "when": [
                                             {
@@ -4876,18 +4780,6 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "sexual-identity",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
                                         "block": "understand-welsh",
                                         "when": [
                                             {
@@ -4941,18 +4833,6 @@
                                 }
                             ],
                             "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "sexual-identity",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
                                 {
                                     "goto": {
                                         "block": "understand-welsh",
@@ -5014,18 +4894,6 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "sexual-identity1",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
                                         "block": "understand-welsh1",
                                         "when": [
                                             {
@@ -5081,18 +4949,6 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "sexual-identity1",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
                                         "block": "understand-welsh1",
                                         "when": [
                                             {
@@ -5110,238 +4966,7 @@
                                 }
                             ]
                         },
-                        {
-                            "type": "Question",
-                            "id": "sexual-identity",
-                            "questions": [
-                                {
-                                    "id": "sexual-identity-question",
-                                    "title": "Which of the following options best describes how <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> thinks of their sexual orientation?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "sexual-identity-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Heterosexual or Straight",
-                                                    "value": "Heterosexual or Straight"
-                                                },
-                                                {
-                                                    "label": "Gay or Lesbian",
-                                                    "value": "Gay or Lesbian"
-                                                },
-                                                {
-                                                    "label": "Bisexual",
-                                                    "value": "Bisexual"
-                                                },
-                                                {
-                                                    "label": "Other",
-                                                    "value": "Other",
-                                                    "child_answer_id": "sexual-identity-answer-other"
-                                                },
-                                                {
-                                                    "label": "Prefer not to say",
-                                                    "value": "Prefer not to say"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        },
-                                        {
-                                            "id": "sexual-identity-answer-other",
-                                            "parent_answer_id": "sexual-identity-answer",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please specify their sexual orientation"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                
-                                {
-                                    "goto": {
-                                        "block": "birth-gender"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "sexual-identity1",
-                            "questions": [
-                                {
-                                    "id": "sexual-identity-question1",
-                                    "title": "Which of the following options best describes how you think of your sexual orientation?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "sexual-identity-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Heterosexual or Straight",
-                                                    "value": "Heterosexual or Straight"
-                                                },
-                                                {
-                                                    "label": "Gay or Lesbian",
-                                                    "value": "Gay or Lesbian"
-                                                },
-                                                {
-                                                    "label": "Bisexual",
-                                                    "value": "Bisexual"
-                                                },
-                                                {
-                                                    "label": "Other",
-                                                    "value": "Other",
-                                                    "child_answer_id": "sexual-identity-answer-other1"
-                                                },
-                                                {
-                                                    "label": "Prefer not to say",
-                                                    "value": "Prefer not to say"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        },
-                                        {
-                                            "id": "sexual-identity-answer-other1",
-                                            "parent_answer_id": "sexual-identity-answer1",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please specify your sexual orientation"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                
-                                {
-                                    "goto": {
-                                        "block": "birth-gender1"
-                                    }
-                                }
-                            ]
-                        },
-                         {
-                            "type": "Question",
-                            "id": "birth-gender",
-                            "questions": [
-                                {
-                                    "id": "birth-gender-question",
-                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> consider themselves being trans?",
-                                    "type": "General",
-                                    "description": "Trans means your gender is different from the sex you were registered at birth",
-                                    "answers": [
-                                        {
-                                            "id": "birth-gender-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                },
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes",
-                                                    "child_answer_id": "birth-gender-answer-other"
-                                                },
-                                                {
-                                                    "label": "Prefer not to say",
-                                                    "value": "Prefer not to say"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        },
-                                        {
-                                            "id": "birth-gender-answer-other",
-                                            "parent_answer_id": "birth-gender-answer",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please specify gender"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "understand-welsh",
-                                        "when": [
-                                            {
-                                                "meta": "region_code",
-                                                "condition": "equals",
-                                                "value": "GB-WLS"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "language"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "birth-gender1",
-                            "questions": [
-                                {
-                                    "id": "birth-gender-question1",
-                                    "title": "Do you consider yourself to be trans or have a trans history?",
-                                    "type": "General",
-                                    "description": "Trans means your gender is different from the sex you were registered at birth",
-                                    "answers": [
-                                        {
-                                            "id": "birth-gender-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                },
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes",
-                                                    "child_answer_id": "birth-gender-answer-other1"
-                                                },
-                                                {
-                                                    "label": "Prefer not to say",
-                                                    "value": "Prefer not to say"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        },
-                                        {
-                                            "id": "birth-gender-answer-other1",
-                                            "parent_answer_id": "birth-gender-answer1",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please specify gender"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "understand-welsh1",
-                                        "when": [
-                                            {
-                                                "meta": "region_code",
-                                                "condition": "equals",
-                                                "value": "GB-WLS"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "language1"
-                                    }
-                                }
-                            ]
-                        },
+                        
                         {
                             "type": "Question",
                             "id": "understand-welsh",
@@ -5771,8 +5396,8 @@
                                                     "value": "No religion"
                                                 },
                                                 {
-                                                    "label": "Christianity",
-                                                    "value": "Christianity"
+                                                    "label": "Christian",
+                                                    "value": "Christian"
                                                 },
                                                 {
                                                     "label": "Buddhism",
@@ -5800,7 +5425,7 @@
                                                     "child_answer_id": "religion-answer-other"
                                                 }
                                             ],
-                                            "type": "Checkbox"
+                                            "type": "Radio"
                                         },
                                         {
                                             "id": "religion-answer-other",
@@ -5815,7 +5440,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "past-usual-address"
+                                        "block": "passports"
                                     }
                                 }
                             ]
@@ -5883,256 +5508,6 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "past-usual-address1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "past-usual-address",
-                            "questions": [
-                                {
-                                    "id": "past-usual-address-question",
-                                    "title": "One year ago, what was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> usual address?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "past-usual-address-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "This address",
-                                                    "value": "This address"
-                                                },
-                                                {
-                                                    "label": "Student term time or boarding school address in the UK",
-                                                    "value": "Student term time or boarding school address in the UK"
-                                                },
-                                                {
-                                                    "label": "Another address in the UK",
-                                                    "value": "Another address in the UK"
-                                                },
-                                                {
-                                                    "label": "An address outside the UK",
-                                                    "value": "Other",
-                                                    "child_answer_id": "past-usual-address-answer-other"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        },
-                                        {
-                                            "id": "past-usual-address-answer-other",
-                                            "parent_answer_id": "past-usual-address-answer",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please enter the country"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "last-year-address",
-                                        "when": [
-                                            {
-                                                "id": "past-usual-address-answer",
-                                                "condition": "equals",
-                                                "value": "Student term time or boarding school address in the UK"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "last-year-address",
-                                        "when": [
-                                            {
-                                                "id": "past-usual-address-answer",
-                                                "condition": "equals",
-                                                "value": "Another address in the UK"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "passports"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "past-usual-address1",
-                            "questions": [
-                                {
-                                    "id": "past-usual-address-question1",
-                                    "title": "One year ago, what was your usual address?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "past-usual-address-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "This address",
-                                                    "value": "This address"
-                                                },
-                                                {
-                                                    "label": "Student term time or boarding school address in the UK",
-                                                    "value": "Student term time or boarding school address in the UK"
-                                                },
-                                                {
-                                                    "label": "Another address in the UK",
-                                                    "value": "Another address in the UK"
-                                                },
-                                                {
-                                                    "label": "An address outside the UK",
-                                                    "value": "Other",
-                                                    "child_answer_id": "past-usual-address-answer-other1"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        },
-                                        {
-                                            "id": "past-usual-address-answer-other1",
-                                            "parent_answer_id": "past-usual-address-answer1",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please enter the country"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "last-year-address1",
-                                        "when": [
-                                            {
-                                                "id": "past-usual-address-answer1",
-                                                "condition": "equals",
-                                                "value": "Student term time or boarding school address in the UK"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "last-year-address1",
-                                        "when": [
-                                            {
-                                                "id": "past-usual-address-answer1",
-                                                "condition": "equals",
-                                                "value": "Another address in the UK"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "passports1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "last-year-address",
-                            "questions": [
-                                {
-                                    "id": "last-year-address-question",
-                                    "title": "Enter details of your address one year ago",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "last-year-address-answer-building",
-                                            "label": "Building",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "last-year-address-answer-street",
-                                            "label": "Street",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "last-year-address-answer-city",
-                                            "label": "Town or city",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "last-year-address-answer-county",
-                                            "label": "County (optional)",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "last-year-address-answer-postcode",
-                                            "label": "Postcode",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "passports"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "last-year-address1",
-                            "questions": [
-                                {
-                                    "id": "last-year-address-question1",
-                                    "title": "Enter details of your address one year ago",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "last-year-address-answer-building1",
-                                            "label": "Building",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "last-year-address-answer-street1",
-                                            "label": "Street",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "last-year-address-answer-city1",
-                                            "label": "Town or city",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "last-year-address-answer-county1",
-                                            "label": "County (optional)",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "last-year-address-answer-postcode1",
-                                            "label": "Postcode",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
                                         "block": "passports1"
                                     }
                                 }
@@ -6185,19 +5560,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "household-member-completed",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "qualifications"
+                                        "block": "past-usual-address"
                                     }
                                 }
                             ]
@@ -6248,204 +5611,52 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "household-member-completed",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer1",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "qualifications1"
+                                        "block": "past-usual-address1"
+                                        
                                     }
                                 }
                             ]
                         },
+                        
                         {
                             "type": "Question",
-                            "id": "qualifications",
+                            "id": "past-usual-address",
                             "questions": [
                                 {
-                                    "id": "qualifications-england-question",
-                                    "title": "Thinking of any studies, exams or qualifications, which of the following does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> have?",
-                                    "description": "Select every option that applies",
+                                    "id": "past-usual-address-question",
+                                    "title": "One year ago, what was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> usual address?",
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "qualifications-england-answer",
+                                            "id": "past-usual-address-answer",
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "5 or more  GCSEs (grades A-Star to C) or O-Levels (passes) or CSEs (grade 1), School Certificate, One A-Level, 2 to 3 AS-Levels or VCEs, Higher Diploma",
-                                                    "value": "5 or more  GCSEs (grades A-Star to C) or O-Levels (passes) or CSEs (grade 1), School Certificate, One A-Level, 2 to 3 AS-Levels or VCEs, Higher Diploma"
+                                                    "label": "This address",
+                                                    "value": "This address"
                                                 },
                                                 {
-                                                    "label": "1 to 4 GCSEs or O-Levels or CSEs (any grades), Entry level, Foundation Diploma",
-                                                    "value": "1 to 4 GCSEs or O-Levels or CSEs (any grades), Entry level, Foundation Diploma"
+                                                    "label": "Student term time or boarding school address in the UK",
+                                                    "value": "Student term time or boarding school address in the UK"
                                                 },
                                                 {
-                                                    "label": "2 or more  A-Levels, 4 or more  AS-levels or VCEs, Higher School Certificate, Advanced Diploma",
-                                                    "value": "2 or more  A-Levels, 4 or more  AS-levels or VCEs, Higher School Certificate, Advanced Diploma"
+                                                    "label": "Another address in the UK",
+                                                    "value": "Another address in the UK"
                                                 },
                                                 {
-                                                    "label": "Apprenticeship (trade, advanced, foundation or modern)",
-                                                    "value": "Apprenticeship (trade, advanced, foundation or modern)"
-                                                },
-                                                {
-                                                    "label": "NVQ level one, Foundation GNVQ, Basic Skills",
-                                                    "value": "NVQ level one, Foundation GNVQ, Basic Skills"
-                                                },
-                                                {
-                                                    "label": "NVQ level two, Intermediate GNVQ, City and Guilds Craft, BTEC First, RSA Diploma",
-                                                    "value": "NVQ level two, Intermediate GNVQ, City and Guilds Craft, BTEC First, RSA Diploma"
-                                                },
-                                                {
-                                                    "label": "NVQ Level three, Advanced GNVQ, City and Guilds Advanced Craft, ONC, OND, BTEC National, RSA Advanced Diploma",
-                                                    "value": "NVQ Level three, Advanced GNVQ, City and Guilds Advanced Craft, ONC, OND, BTEC National, RSA Advanced Diploma"
-                                                },
-                                                {
-                                                    "label": "NVQ Level four to five, HNC, HND, RSA Higher Diploma, BTEC Higher, Foundation degree",
-                                                    "value": "NVQ Level four to five, HNC, HND, RSA Higher Diploma, BTEC Higher, Foundation degree"
-                                                },
-                                                {
-                                                    "label": "Other vocational or work-related qualifications",
-                                                    "value": "Other vocational or work-related qualifications"
-                                                },
-                                                {
-                                                    "label": "Undergraduate Degree",
-                                                    "value": "Undergraduate Degree"
-                                                },
-                                                {
-                                                    "label": "Postgraduate Certificate / Diploma",
-                                                    "value": "Postgraduate Certificate / Diploma"
-                                                },
-                                                {
-                                                    "label": "Masters Degree",
-                                                    "value": "Masters Degree"
-                                                },
-                                                {
-                                                    "label": "Doctorate Degree (for example PhD)",
-                                                    "value": "Doctorate Degree (for example PhD)"
-                                                },
-                                                {
-                                                    "label": "Professional qualification (for example teaching, nursing, accountancy)",
-                                                    "value": "Professional qualification (for example teaching, nursing, accountancy)"
-                                                },
-                                                {
-                                                    "label": "Foreign qualifications (UK equivalent not known)",
-                                                    "value": "Foreign qualifications (UK equivalent not known)"
-                                                },
-                                                {
-                                                    "label": "No qualifications",
-                                                    "value": "No qualifications"
+                                                    "label": "An address outside the UK",
+                                                    "value": "Other",
+                                                    "child_answer_id": "past-usual-address-answer-other"
                                                 }
                                             ],
-                                            "type": "Checkbox"
-                                        }
-                                    ],
-                                    "skip_conditions": [
+                                            "type": "Radio"
+                                        },
                                         {
-                                            "when": [
-                                                {
-                                                    "meta": "region_code",
-                                                    "condition": "equals",
-                                                    "value": "GB-WLS"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "id": "qualifications-welsh-question",
-                                    "title": "Thinking of any studies, exams or qualifications, which of the following does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> have?",
-                                    "description": "Select every option that applies",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "qualifications-welsh-answer",
+                                            "id": "past-usual-address-answer-other",
+                                            "parent_answer_id": "past-usual-address-answer",
+                                            "type": "TextField",
                                             "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "5 or more GCSEs (grades A-Star to C) or O Levels (passes) or CSEs (grade 1), School Certificate, One A-Level, 2 to 3 AS-Levels or VCEs,  Intermediate or National Welsh Baccalaureate (Level two)",
-                                                    "value": "5 or more GCSEs (grades A-Star to C) or O Levels (passes) or CSEs (grade 1), School Certificate, One A-Level, 2 to 3 AS-Levels or VCEs,  Intermediate or National Welsh Baccalaureate (Level two)"
-                                                },
-                                                {
-                                                    "label": "1 to 4  GCSEs or O Levels or CSEs (any grades), Entry level, Foundation Welsh Baccalaureate (level one)",
-                                                    "value": "1 to 4  GCSEs or O Levels or CSEs (any grades), Entry level, Foundation Welsh Baccalaureate (level one)"
-                                                },
-                                                {
-                                                    "label": "More than 2 A-Levels, more than 4 AS-levels or VCEs, Higher School Certificate, Advanced Welsh Baccalaureate (level three)",
-                                                    "value": "More than 2 A-Levels, more than 4 AS-levels or VCEs, Higher School Certificate, Advanced Welsh Baccalaureate (level three)"
-                                                },
-                                                {
-                                                    "label": "Apprenticeship (foundation, modern or higher)",
-                                                    "value": "Apprenticeship (foundation, modern or higher)"
-                                                },
-                                                {
-                                                    "label": "NVQ level one, Foundation GNVQ, Essential or Key  Skills",
-                                                    "value": "NVQ level one, Foundation GNVQ, Essential or Key  Skills"
-                                                },
-                                                {
-                                                    "label": "NVQ level two, Intermediate GNVQ, City and Guilds Craft, BTEC First, RSA Diploma",
-                                                    "value": "NVQ level two, Intermediate GNVQ, City and Guilds Craft, BTEC First, RSA Diploma"
-                                                },
-                                                {
-                                                    "label": "NVQ Level three, Advanced GNVQ, City and Guilds Advanced Craft, ONC, OND, BTEC National, RSA Advanced Diploma",
-                                                    "value": "NVQ Level three, Advanced GNVQ, City and Guilds Advanced Craft, ONC, OND, BTEC National, RSA Advanced Diploma"
-                                                },
-                                                {
-                                                    "label": "NVQ Level four to five, HNC, HND, RSA Higher Diploma, BTEC Higher",
-                                                    "value": "NVQ Level four to five, HNC, HND, RSA Higher Diploma, BTEC Higher"
-                                                },
-                                                {
-                                                    "label": "Other vocational or work-related qualifications",
-                                                    "value": "Other vocational or work-related qualifications"
-                                                },
-                                                {
-                                                    "label": "Undergraduate Degree",
-                                                    "value": "Undergraduate Degree"
-                                                },
-                                                {
-                                                    "label": "Postgraduate Certificate / Diploma",
-                                                    "value": "Postgraduate Certificate / Diploma"
-                                                },
-                                                {
-                                                    "label": "Masters Degree",
-                                                    "value": "Masters Degree"
-                                                },
-                                                {
-                                                    "label": "Doctorate Degree (for example PhD)",
-                                                    "value": "Doctorate Degree (for example PhD)"
-                                                },
-                                                {
-                                                    "label": "Professional qualification (for example teaching, nursing, accountancy)",
-                                                    "value": "Professional qualification (for example teaching, nursing, accountancy)"
-                                                },
-                                                {
-                                                    "label": "Foreign qualifications (UK equivalent not known)",
-                                                    "value": "Foreign qualifications (UK equivalent not known)"
-                                                },
-                                                {
-                                                    "label": "No qualifications",
-                                                    "value": "No qualifications"
-                                                }
-                                            ],
-                                            "type": "Checkbox"
-                                        }
-                                    ],
-                                    "skip_conditions": [
-                                        {
-                                            "when": [
-                                                {
-                                                    "meta": "region_code",
-                                                    "condition": "not equals",
-                                                    "value": "GB-WLS"
-                                                }
-                                            ]
+                                            "label": "Please enter the current name of country"
                                         }
                                     ]
                                 }
@@ -6453,204 +5664,86 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "employment-status-proxy",
+                                        "block": "last-year-address",
+                                        "when": [
+                                            {
+                                                "id": "past-usual-address-answer",
+                                                "condition": "equals",
+                                                "value": "Student term time or boarding school address in the UK"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "last-year-address",
+                                        "when": [
+                                            {
+                                                "id": "past-usual-address-answer",
+                                                "condition": "equals",
+                                                "value": "Another address in the UK"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "sexual-identity",
                                         "when": [
                                             {
                                                 "id": "over-16-answer",
                                                 "condition": "equals",
-                                                "value": "No"
+                                                "value": "Yes"
                                             }
                                         ]
                                     }
                                 },
                                 {
                                     "goto": {
-                                        "block": "armed-forces-proxy"
+                                        "block": "household-member-completed"
                                     }
                                 }
                             ]
                         },
                         {
                             "type": "Question",
-                            "id": "qualifications1",
+                            "id": "past-usual-address1",
                             "questions": [
                                 {
-                                    "id": "qualifications-england-question1",
-                                    "title": "Thinking of any studies, exams or qualifications, which of the following do you have?",
-                                    "description": "Select every option that applies",
+                                    "id": "past-usual-address-question1",
+                                    "title": "One year ago, what was your usual address?",
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "qualifications-england-answer1",
+                                            "id": "past-usual-address-answer1",
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "5 or more  GCSEs (grades A-Star to C) or O-Levels (passes) or CSEs (grade 1), School Certificate, One A-Level, 2 to 3 AS-Levels or VCEs, Higher Diploma",
-                                                    "value": "5 or more  GCSEs (grades A-Star to C) or O-Levels (passes) or CSEs (grade 1), School Certificate, One A-Level, 2 to 3 AS-Levels or VCEs, Higher Diploma"
+                                                    "label": "This address",
+                                                    "value": "This address"
                                                 },
                                                 {
-                                                    "label": "1 to 4 GCSEs or O-Levels or CSEs (any grades), Entry level, Foundation Diploma",
-                                                    "value": "1 to 4 GCSEs or O-Levels or CSEs (any grades), Entry level, Foundation Diploma"
+                                                    "label": "Student term time or boarding school address in the UK",
+                                                    "value": "Student term time or boarding school address in the UK"
                                                 },
                                                 {
-                                                    "label": "2 or more  A-Levels, 4 or more  AS-levels or VCEs, Higher School Certificate, Advanced Diploma",
-                                                    "value": "2 or more  A-Levels, 4 or more  AS-levels or VCEs, Higher School Certificate, Advanced Diploma"
+                                                    "label": "Another address in the UK",
+                                                    "value": "Another address in the UK"
                                                 },
                                                 {
-                                                    "label": "Apprenticeship (trade, advanced, foundation or modern)",
-                                                    "value": "Apprenticeship (trade, advanced, foundation or modern)"
-                                                },
-                                                {
-                                                    "label": "NVQ level one, Foundation GNVQ, Basic Skills",
-                                                    "value": "NVQ level one, Foundation GNVQ, Basic Skills"
-                                                },
-                                                {
-                                                    "label": "NVQ level two, Intermediate GNVQ, City and Guilds Craft, BTEC First, RSA Diploma",
-                                                    "value": "NVQ level two, Intermediate GNVQ, City and Guilds Craft, BTEC First, RSA Diploma"
-                                                },
-                                                {
-                                                    "label": "NVQ Level three, Advanced GNVQ, City and Guilds Advanced Craft, ONC, OND, BTEC National, RSA Advanced Diploma",
-                                                    "value": "NVQ Level three, Advanced GNVQ, City and Guilds Advanced Craft, ONC, OND, BTEC National, RSA Advanced Diploma"
-                                                },
-                                                {
-                                                    "label": "NVQ Level four to five, HNC, HND, RSA Higher Diploma, BTEC Higher, Foundation degree",
-                                                    "value": "NVQ Level four to five, HNC, HND, RSA Higher Diploma, BTEC Higher, Foundation degree"
-                                                },
-                                                {
-                                                    "label": "Other vocational or work-related qualifications",
-                                                    "value": "Other vocational or work-related qualifications"
-                                                },
-                                                {
-                                                    "label": "Undergraduate Degree",
-                                                    "value": "Undergraduate Degree"
-                                                },
-                                                {
-                                                    "label": "Postgraduate Certificate / Diploma",
-                                                    "value": "Postgraduate Certificate / Diploma"
-                                                },
-                                                {
-                                                    "label": "Masters Degree",
-                                                    "value": "Masters Degree"
-                                                },
-                                                {
-                                                    "label": "Doctorate Degree (for example PhD)",
-                                                    "value": "Doctorate Degree (for example PhD)"
-                                                },
-                                                {
-                                                    "label": "Professional qualification (for example teaching, nursing, accountancy)",
-                                                    "value": "Professional qualification (for example teaching, nursing, accountancy)"
-                                                },
-                                                {
-                                                    "label": "Foreign qualifications (UK equivalent not known)",
-                                                    "value": "Foreign qualifications (UK equivalent not known)"
-                                                },
-                                                {
-                                                    "label": "No qualifications",
-                                                    "value": "No qualifications"
+                                                    "label": "An address outside the UK",
+                                                    "value": "Other",
+                                                    "child_answer_id": "past-usual-address-answer-other1"
                                                 }
                                             ],
-                                            "type": "Checkbox"
-                                        }
-                                    ],
-                                    "skip_conditions": [
+                                            "type": "Radio"
+                                        },
                                         {
-                                            "when": [
-                                                {
-                                                    "meta": "region_code",
-                                                    "condition": "equals",
-                                                    "value": "GB-WLS"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "id": "qualifications-welsh-question1",
-                                    "title": "Thinking of any studies, exams or qualifications, which of the following do you have?",
-                                    "description": "Select every option that applies",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "qualifications-welsh-answer1",
+                                            "id": "past-usual-address-answer-other1",
+                                            "parent_answer_id": "past-usual-address-answer1",
+                                            "type": "TextField",
                                             "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "5 or more GCSEs (grades A-Star to C) or O Levels (passes) or CSEs (grade 1), School Certificate, One A-Level, 2 to 3 AS-Levels or VCEs,  Intermediate or National Welsh Baccalaureate (Level two)",
-                                                    "value": "5 or more GCSEs (grades A-Star to C) or O Levels (passes) or CSEs (grade 1), School Certificate, One A-Level, 2 to 3 AS-Levels or VCEs,  Intermediate or National Welsh Baccalaureate (Level two)"
-                                                },
-                                                {
-                                                    "label": "1 to 4  GCSEs or O Levels or CSEs (any grades), Entry level, Foundation Welsh Baccalaureate (level one)",
-                                                    "value": "1 to 4  GCSEs or O Levels or CSEs (any grades), Entry level, Foundation Welsh Baccalaureate (level one)"
-                                                },
-                                                {
-                                                    "label": "More than 2 A-Levels, more than 4 AS-levels or VCEs, Higher School Certificate, Advanced Welsh Baccalaureate (level three)",
-                                                    "value": "More than 2 A-Levels, more than 4 AS-levels or VCEs, Higher School Certificate, Advanced Welsh Baccalaureate (level three)"
-                                                },
-                                                {
-                                                    "label": "Apprenticeship (foundation, modern or higher)",
-                                                    "value": "Apprenticeship (foundation, modern or higher)"
-                                                },
-                                                {
-                                                    "label": "NVQ level one, Foundation GNVQ, Essential or Key  Skills",
-                                                    "value": "NVQ level one, Foundation GNVQ, Essential or Key  Skills"
-                                                },
-                                                {
-                                                    "label": "NVQ level two, Intermediate GNVQ, City and Guilds Craft, BTEC First, RSA Diploma",
-                                                    "value": "NVQ level two, Intermediate GNVQ, City and Guilds Craft, BTEC First, RSA Diploma"
-                                                },
-                                                {
-                                                    "label": "NVQ Level three, Advanced GNVQ, City and Guilds Advanced Craft, ONC, OND, BTEC National, RSA Advanced Diploma",
-                                                    "value": "NVQ Level three, Advanced GNVQ, City and Guilds Advanced Craft, ONC, OND, BTEC National, RSA Advanced Diploma"
-                                                },
-                                                {
-                                                    "label": "NVQ Level four to five, HNC, HND, RSA Higher Diploma, BTEC Higher",
-                                                    "value": "NVQ Level four to five, HNC, HND, RSA Higher Diploma, BTEC Higher"
-                                                },
-                                                {
-                                                    "label": "Other vocational or work-related qualifications",
-                                                    "value": "Other vocational or work-related qualifications"
-                                                },
-                                                {
-                                                    "label": "Undergraduate Degree",
-                                                    "value": "Undergraduate Degree"
-                                                },
-                                                {
-                                                    "label": "Postgraduate Certificate / Diploma",
-                                                    "value": "Postgraduate Certificate / Diploma"
-                                                },
-                                                {
-                                                    "label": "Masters Degree",
-                                                    "value": "Masters Degree"
-                                                },
-                                                {
-                                                    "label": "Doctorate Degree (for example PhD)",
-                                                    "value": "Doctorate Degree (for example PhD)"
-                                                },
-                                                {
-                                                    "label": "Professional qualification (for example teaching, nursing, accountancy)",
-                                                    "value": "Professional qualification (for example teaching, nursing, accountancy)"
-                                                },
-                                                {
-                                                    "label": "Foreign qualifications (UK equivalent not known)",
-                                                    "value": "Foreign qualifications (UK equivalent not known)"
-                                                },
-                                                {
-                                                    "label": "No qualifications",
-                                                    "value": "No qualifications"
-                                                }
-                                            ],
-                                            "type": "Checkbox"
-                                        }
-                                    ],
-                                    "skip_conditions": [
-                                        {
-                                            "when": [
-                                                {
-                                                    "meta": "region_code",
-                                                    "condition": "not equals",
-                                                    "value": "GB-WLS"
-                                                }
-                                            ]
+                                            "label": "Please enter the current name of country"
                                         }
                                     ]
                                 }
@@ -6658,1647 +5751,36 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "employment-status1",
+                                        "block": "last-year-address1",
+                                        "when": [
+                                            {
+                                                "id": "past-usual-address-answer1",
+                                                "condition": "equals",
+                                                "value": "Student term time or boarding school address in the UK"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "last-year-address1",
+                                        "when": [
+                                            {
+                                                "id": "past-usual-address-answer1",
+                                                "condition": "equals",
+                                                "value": "Another address in the UK"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "sexual-identity1",
                                         "when": [
                                             {
                                                 "id": "over-16-answer1",
                                                 "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "armed-forces"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "armed-forces",
-                            "questions": [
-                                {
-                                    "id": "armed-forces-question",
-                                    "title": "Have you ever served in the UK Armed Forces?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "armed-forces-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Yes, currently serving",
-                                                    "value": "Yes, currently serving"
-                                                },
-                                                {
-                                                    "label": "Yes, previously served, Regular Armed Forces",
-                                                    "value": "Yes, previously served, Regular Armed Forces"
-                                                },
-                                                {
-                                                    "label": "Yes, previously served, Reserve Armed Forces",
-                                                    "value": "Yes, previously served, Reserve Armed Forces"
-                                                },
-                                                {
-                                                    "label": "No, I have never served",
-                                                    "value": "No, I have never served"
-                                                }
-                                            ],
-                                            "type": "Checkbox"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "employment-status1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "armed-forces-proxy",
-                            "questions": [
-                                {
-                                    "id": "armed-forces-question-proxy",
-                                    "title": "Has <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> ever served in the UK armed forces?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "armed-forces-answer-proxy",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Yes, currently serving",
-                                                    "value": "Yes, currently serving"
-                                                },
-                                                {
-                                                    "label": "Yes, previously served, regular armed forces",
-                                                    "value": "Yes, previously served, regular armed forces"
-                                                },
-                                                {
-                                                    "label": "Yes, previously served, reserve armed forces",
-                                                    "value": "Yes, previously served, reserve armed forces"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                }
-                                            ],
-                                            "type": "Checkbox"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "employment-status-proxy"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "employment-status1",
-                            "questions": [
-                                {
-                                    "id": "employment-status-question1",
-                                    "title": "Last week were you doing any paid work?",
-                                    "type": "General",
-                                    "description": " Include casual or temporary work, even if only for one hour",
-                                    "answers": [
-                                        {
-                                            "id": "employment-status-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "employment-type1",
-                                        "when": [
-                                            {
-                                                "id": "employment-status-answer1",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "org-or-business1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "employment-status-proxy",
-                            "questions": [
-                                {
-                                    "id": "employment-status-question-proxy",
-                                    "title": "Last week was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> doing any paid work?",
-                                    "type": "General",
-                                    "description": " Include casual or temporary work, even if only for one hour",
-                                    "answers": [
-                                        {
-                                            "id": "employment-status-answer-proxy",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "employment-type-proxy",
-                                        "when": [
-                                            {
-                                                "id": "employment-status-answer-proxy",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "org-or-business-proxy"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "employment-type1",
-                            "questions": [
-                                {
-                                    "id": "employment-type-question1",
-                                    "title": "Which of the following were you doing last week?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "employment-type-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Away from work ill, on maternity or paternity leave, on holiday or temporarily laid off",
-                                                    "value": "Away from work ill, on maternity or paternity leave, on holiday or temporarily laid off"
-                                                },
-                                                {
-                                                    "label": "Working unpaid for your own or your family’s business",
-                                                    "value": "Working unpaid for your own or your family’s business"
-                                                },
-                                                {
-                                                    "label": "Other including retired",
-                                                    "value": "Other including retired"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "jobseeker1",
-                                        "when": [
-                                            {
-                                                "id": "employment-type-answer1",
-                                                "condition": "equals",
-                                                "value": "Other including retired"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "org-or-business1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "employment-type-proxy",
-                            "questions": [
-                                {
-                                    "id": "employment-type-question-proxy",
-                                    "title": "Which of the following was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> doing last week?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "employment-type-answer-proxy",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Away from work ill, on maternity or paternity leave, on holiday or temporarily laid off",
-                                                    "value": "Away from work ill, on maternity or paternity leave, on holiday or temporarily laid off"
-                                                },
-                                                {
-                                                    "label": "Working unpaid for your own or your family’s business",
-                                                    "value": "Working unpaid for your own or your family’s business"
-                                                },
-                                                {
-                                                    "label": "Other including retired",
-                                                    "value": "Other including retired"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "jobseeker-proxy",
-                                        "when": [
-                                            {
-                                                "id": "employment-type-answer-proxy",
-                                                "condition": "equals",
-                                                "value": "Other including retired"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "org-or-business-proxy"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "org-or-business1",
-                            "questions": [
-                                {
-                                    "id": "org-or-business-question1",
-                                    "title": "Are you working for an organisation or business?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "org-or-business-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "job-title1",
-                                        "when": [
-                                            {
-                                                "id": "org-or-business-answer1",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "business-name1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "org-or-business-proxy",
-                            "questions": [
-                                {
-                                    "id": "org-or-business-question-proxy",
-                                    "title": "Is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> working for an organisation or business?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "org-or-business-answer-proxy",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "job-title-proxy",
-                                        "when": [
-                                            {
-                                                "id": "org-or-business-answer-proxy",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "business-name-proxy"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "jobseeker1",
-                            "questions": [
-                                {
-                                    "id": "jobseeker-question",
-                                    "title": "In the last four weeks were you actively looking for any kind of paid work?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "jobseeker-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "job-availability1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "jobseeker-proxy",
-                            "questions": [
-                                {
-                                    "id": "jobseeker-question-proxy",
-                                    "title": "In the last four weeks was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> actively looking for any kind of paid work?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "jobseeker-answer-proxy",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "job-availability-proxy"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "job-availability1",
-                            "questions": [
-                                {
-                                    "id": "job-availability-question1",
-                                    "title": "If a job became available now, could you start it within two weeks?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "job-availability-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "ever-worked1",
-                                        "when": [
-                                            {
-                                                "id": "job-availability-answer1",
-                                                "condition": "equals",
                                                 "value": "Yes"
-                                            },
-                                            {
-                                                "id": "jobseeker-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "job-pending1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "job-availability-proxy",
-                            "questions": [
-                                {
-                                    "id": "job-availability-question-proxy",
-                                    "title": "If a job became available now, could <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> start it within two weeks?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "job-availability-answer-proxy",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "ever-worked-proxy",
-                                        "when": [
-                                            {
-                                                "id": "job-availability-answer-proxy",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            },
-                                            {
-                                                "id": "jobseeker-answer-proxy",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "job-pending-proxy"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "job-pending1",
-                            "questions": [
-                                {
-                                    "id": "job-pending-question1",
-                                    "title": "Last week, were you waiting to start a job already accepted?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "job-pending-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "ever-worked1",
-                                        "when": [
-                                            {
-                                                "id": "job-availability-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            },
-                                            {
-                                                "id": "job-pending-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "ever-worked1",
-                                        "when": [
-                                            {
-                                                "id": "in-education-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "occupation1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "job-pending-proxy",
-                            "questions": [
-                                {
-                                    "id": "job-pending-question-proxy",
-                                    "title": "Last week, was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> waiting to start a job already accepted?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "job-pending-answer-proxy",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "ever-worked-proxy",
-                                        "when": [
-                                            {
-                                                "id": "job-availability-answer-proxy",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            },
-                                            {
-                                                "id": "job-pending-answer-proxy",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "ever-worked-proxy",
-                                        "when": [
-                                            {
-                                                "id": "in-education-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "occupation-proxy"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "occupation1",
-                            "questions": [
-                                {
-                                    "id": "occupation-question1",
-                                    "title": "Which of the following best describes what you were doing last week?",
-                                    "description": "",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "occupation-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "retired (whether receiving a pension or not)",
-                                                    "value": "retired (whether receiving a pension or not)"
-                                                },
-                                                {
-                                                    "label": "a student",
-                                                    "value": "a student"
-                                                },
-                                                {
-                                                    "label": "looking after home or family",
-                                                    "value": "looking after home or family"
-                                                },
-                                                {
-                                                    "label": "long-term sick or disabled",
-                                                    "value": "long-term sick or disabled"
-                                                },
-                                                {
-                                                    "label": "other",
-                                                    "value": "other"
-                                                }
-                                            ],
-                                            "type": "Checkbox"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "ever-worked1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "occupation-proxy",
-                            "questions": [
-                                {
-                                    "id": "occupation-question-proxy",
-                                    "title": "Which of the following best describes what <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> was doing last week?",
-                                    "description": "",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "occupation-answer-proxy",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "retired (whether receiving a pension or not)",
-                                                    "value": "retired (whether receiving a pension or not)"
-                                                },
-                                                {
-                                                    "label": "a student",
-                                                    "value": "a student"
-                                                },
-                                                {
-                                                    "label": "looking after home or family",
-                                                    "value": "looking after home or family"
-                                                },
-                                                {
-                                                    "label": "long-term sick or disabled",
-                                                    "value": "long-term sick or disabled"
-                                                },
-                                                {
-                                                    "label": "other",
-                                                    "value": "other"
-                                                }
-                                            ],
-                                            "type": "Checkbox"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "ever-worked-proxy"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "ever-worked1",
-                            "questions": [
-                                {
-                                    "id": "ever-worked-question1",
-                                    "title": "Have you ever done any paid work?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "ever-worked-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Yes, in the last 12 months",
-                                                    "value": "Yes, in the last 12 months"
-                                                },
-                                                {
-                                                    "label": "Yes, but not in the last 12 months",
-                                                    "value": "Yes, but not in the last 12 months"
-                                                },
-                                                {
-                                                    "label": "No, I have never worked",
-                                                    "value": "No, I have never worked"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "household-member-completed",
-                                        "when": [
-                                            {
-                                                "id": "ever-worked-answer1",
-                                                "condition": "equals",
-                                                "value": "No, I have never worked"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "household-member-completed",
-                                        "when": [
-                                            {
-                                                "id": "ever-worked-answer1",
-                                                "condition": "not set"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "org-or-business1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "ever-worked-proxy",
-                            "questions": [
-                                {
-                                    "id": "ever-worked-question-proxy",
-                                    "title": "Has <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> ever done any paid work?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "ever-worked-answer-proxy",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Yes, in the last 12 months",
-                                                    "value": "Yes, in the last 12 months"
-                                                },
-                                                {
-                                                    "label": "Yes, but not in the last 12 months",
-                                                    "value": "Yes, but not in the last 12 months"
-                                                },
-                                                {
-                                                    "label": "No, they have never worked",
-                                                    "value": "No, they have never worked"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "household-member-completed",
-                                        "when": [
-                                            {
-                                                "id": "ever-worked-answer-proxy",
-                                                "condition": "equals",
-                                                "value": "No, they have never worked"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "household-member-completed",
-                                        "when": [
-                                            {
-                                                "id": "ever-worked-answer-proxy",
-                                                "condition": "not set"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "org-or-business-proxy"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "business-name1",
-                            "questions": [
-                                {
-                                    "id": "business-name-question1",
-                                    "title": "What is the name of the organisation or business that you work for?",
-                                    "description": "If you are self-employed in your own organisation, give the business name.",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "business-name-answer1",
-                                            "label": "Organisation or business name",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "employers-business1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "business-name-proxy",
-                            "questions": [
-                                {
-                                    "id": "business-name-question-proxy",
-                                    "title": "What is the name of the organisation or business that <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> works for?",
-                                    "description": "If you are self-employed in your own organisation, give the business name.",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "business-name-answer-proxy",
-                                            "label": "Organisation or business name",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "employers-business-proxy"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "employers-business1",
-                            "questions": [
-                                {
-                                    "id": "employers-business-question1",
-                                    "title": "What is the main activity of <em>{{answers['business-name-answer1']}}</em>?",
-                                    "description": "Describe how your employer, business or freelance work makes profit by what it does or produces. For example, clothing retail, primary education or general hospital.",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "employers-business-answer1",
-                                            "label": "Description",
-                                            "mandatory": false,
-                                            "type": "TextArea"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "job-title1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "employers-business-proxy",
-                            "questions": [
-                                {
-                                    "id": "employers-business-question-proxy",
-                                    "title": "What is the main activity of <em>{{answers['business-name-answer-proxy']}}</em>?",
-                                    "description": "Describe how your employer, business or freelance work makes profit by what it does or produces. For example, clothing retail, primary education or general hospital.",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "employers-business-answer-proxy",
-                                            "label": "Description",
-                                            "mandatory": false,
-                                            "type": "TextArea"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "job-title-proxy"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "job-title1",
-                            "questions": [
-                                {
-                                    "id": "job-title-question1",
-                                    "title": "What is your full job title?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "job-title-answer1",
-                                            "label": "Job title",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "job-description1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "job-title-proxy",
-                            "questions": [
-                                {
-                                    "id": "job-title-question-proxy",
-                                    "title": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> full job title?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "job-title-answer-proxy",
-                                            "label": "Job title",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "job-description-proxy"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "job-description1",
-                            "questions": [
-                                {
-                                    "id": "job-description-question1",
-                                    "title": "Briefly describe what you do in your main job?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "job-description-answer1",
-                                            "label": "Description",
-                                            "mandatory": false,
-                                            "type": "TextArea"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "main-job-type1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "job-description-proxy",
-                            "questions": [
-                                {
-                                    "id": "job-description-question-proxy",
-                                    "title": "Briefly describe what <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> does in their main job?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "job-description-answer-proxy",
-                                            "label": "Description",
-                                            "mandatory": false,
-                                            "type": "TextArea"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "main-job-type-proxy"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "main-job-type1",
-                            "questions": [
-                                {
-                                    "id": "main-job-type-question1",
-                                    "title": "What is your employment status?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "main-job-type-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "An employee",
-                                                    "value": "An employee"
-                                                },
-                                                {
-                                                    "label": "Self-employed or freelance without employees",
-                                                    "value": "Self-employed or freelance without employees"
-                                                },
-                                                {
-                                                    "label": "Self-employed or freelance with employees",
-                                                    "value": "Self-employed or freelance with employees"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "supervise1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "main-job-type-proxy",
-                            "questions": [
-                                {
-                                    "id": "main-job-type-question-proxy",
-                                    "title": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> employment status?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "main-job-type-answer-proxy",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "An employee",
-                                                    "value": "An employee"
-                                                },
-                                                {
-                                                    "label": "Self-employed or freelance without employees",
-                                                    "value": "Self-employed or freelance without employees"
-                                                },
-                                                {
-                                                    "label": "Self-employed or freelance with employees",
-                                                    "value": "Self-employed or freelance with employees"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "supervise-proxy"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "supervise1",
-                            "questions": [
-                                {
-                                    "id": "supervise-question1",
-                                    "title": "Do you supervise or oversee the work of other employees on a day to day basis?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "supervise-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "hours-worked1",
-                                        "when": [
-                                            {
-                                                "id": "employment-status-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "household-member-completed",
-                                        "when": [
-                                            {
-                                                "id": "employment-status-answer1",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "hours-worked1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "supervise-proxy",
-                            "questions": [
-                                {
-                                    "id": "supervise-question-proxy",
-                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> supervise or oversee the work of other employees on a day to day basis?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "supervise-answer-proxy",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "hours-worked-proxy",
-                                        "when": [
-                                            {
-                                                "id": "employment-status-answer-proxy",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "household-member-completed",
-                                        "when": [
-                                            {
-                                                "id": "employment-status-answer-proxy",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "hours-worked-proxy"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "hours-worked1",
-                            "description": "",
-                            "questions": [
-                                {
-                                    "title": "In your main job, how many hours a week do you usually work?",
-                                    "id": "hours-worked-question1",
-                                    "guidance": {
-                                        "content": [
-                                            {
-                                                "title": "Include",
-                                                "list": [
-                                                    "paid and unpaid overtime"
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "hours-worked-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "0 to 15 hours",
-                                                    "value": "0 to 15 hours"
-                                                },
-                                                {
-                                                    "label": "16 to 30 hours",
-                                                    "value": "16 to 30 hours"
-                                                },
-                                                {
-                                                    "label": "31 to 48 hours",
-                                                    "value": "31 to 48 hours"
-                                                },
-                                                {
-                                                    "label": "49 hours or more",
-                                                    "value": "49 hours or more "
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "work-travel1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "hours-worked-proxy",
-                            "description": "",
-                            "questions": [
-                                {
-                                    "title": "In <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> main job, how many hours a week do they usually work?",
-                                    "id": "hours-worked-question-proxy",
-                                    "guidance": {
-                                        "content": [
-                                            {
-                                                "title": "Include",
-                                                "list": [
-                                                    "paid and unpaid overtime"
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "hours-worked-answer-proxy",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "0 to 15 hours",
-                                                    "value": "0 to 15 hours"
-                                                },
-                                                {
-                                                    "label": "16 to 30 hours",
-                                                    "value": "16 to 30 hours"
-                                                },
-                                                {
-                                                    "label": "31 to 48 hours",
-                                                    "value": "31 to 48 hours"
-                                                },
-                                                {
-                                                    "label": "49 hours or more",
-                                                    "value": "49 hours or more "
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "work-travel-proxy"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "work-travel1",
-                            "description": "",
-                            "questions": [
-                                {
-                                    "title": "What transport do you use for the furthest part of your usual journey to work?",
-                                    "id": "work-travel-question1",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "work-travel-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Work mainly at or from home",
-                                                    "value": "Work mainly at or from home"
-                                                },
-                                                {
-                                                    "label": "Underground, metro, light rail or tram",
-                                                    "value": "Underground, metro, light rail or tram"
-                                                },
-                                                {
-                                                    "label": "Train",
-                                                    "value": "Train"
-                                                },
-                                                {
-                                                    "label": "Bus, minibus or coach",
-                                                    "value": "Bus, minibus or coach "
-                                                },
-                                                {
-                                                    "label": "Taxi",
-                                                    "value": "Taxi "
-                                                },
-                                                {
-                                                    "label": "Motorcycle, scooter or moped",
-                                                    "value": "Motorcycle, scooter or moped"
-                                                },
-                                                {
-                                                    "label": "Driving a car or van",
-                                                    "value": "Driving a car or van"
-                                                },
-                                                {
-                                                    "label": "Passenger in a car or van",
-                                                    "value": "Passenger in a car or van"
-                                                },
-                                                {
-                                                    "label": "Bicycle",
-                                                    "value": "Bicycle"
-                                                },
-                                                {
-                                                    "label": "On foot",
-                                                    "value": "On foot"
-                                                },
-                                                {
-                                                    "label": "Other",
-                                                    "value": "Other"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "household-member-completed",
-                                        "when": [
-                                            {
-                                                "id": "work-travel-answer1",
-                                                "condition": "equals",
-                                                "value": "Work mainly at or from home"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "employer-type-of-address1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "work-travel-proxy",
-                            "description": "",
-                            "questions": [
-                                {
-                                    "title": "What transport does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> use for the furthest part of their usual journey to work?",
-                                    "id": "work-travel-question-proxy",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "work-travel-answer-proxy",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Work mainly at or from home",
-                                                    "value": "Work mainly at or from home"
-                                                },
-                                                {
-                                                    "label": "Underground, metro, light rail or tram",
-                                                    "value": "Underground, metro, light rail or tram"
-                                                },
-                                                {
-                                                    "label": "Train",
-                                                    "value": "Train"
-                                                },
-                                                {
-                                                    "label": "Bus, minibus or coach",
-                                                    "value": "Bus, minibus or coach "
-                                                },
-                                                {
-                                                    "label": "Taxi",
-                                                    "value": "Taxi "
-                                                },
-                                                {
-                                                    "label": "Motorcycle, scooter or moped",
-                                                    "value": "Motorcycle, scooter or moped"
-                                                },
-                                                {
-                                                    "label": "Driving a car or van",
-                                                    "value": "Driving a car or van"
-                                                },
-                                                {
-                                                    "label": "Passenger in a car or van",
-                                                    "value": "Passenger in a car or van"
-                                                },
-                                                {
-                                                    "label": "Bicycle",
-                                                    "value": "Bicycle"
-                                                },
-                                                {
-                                                    "label": "On foot",
-                                                    "value": "On foot"
-                                                },
-                                                {
-                                                    "label": "Other",
-                                                    "value": "Other"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "household-member-completed",
-                                        "when": [
-                                            {
-                                                "id": "work-travel-answer-proxy",
-                                                "condition": "equals",
-                                                "value": "Work mainly at or from home"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "employer-type-of-address-proxy"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "employer-type-of-address1",
-                            "questions": [
-                                {
-                                    "id": "employer-type-of-address-question1",
-                                    "title": "Where do you work?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "employer-type-of-address-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "At a workplace or report to a depot",
-                                                    "value": "At a workplace or report to a depot"
-                                                },
-                                                {
-                                                    "label": "An offshore installation",
-                                                    "value": "An offshore installation"
-                                                },
-                                                {
-                                                    "label": "No fixed place",
-                                                    "value": "No fixed place"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "employer-address1",
-                                        "when": [
-                                            {
-                                                "id": "employer-type-of-address-answer1",
-                                                "condition": "equals",
-                                                "value": "At a workplace or report to a depot"
                                             }
                                         ]
                                     }
@@ -8312,90 +5794,39 @@
                         },
                         {
                             "type": "Question",
-                            "id": "employer-type-of-address-proxy",
+                            "id": "last-year-address",
                             "questions": [
                                 {
-                                    "id": "employer-type-of-address-question-proxy",
-                                    "title": "Where does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> work?",
+                                    "id": "last-year-address-question",
+                                    "title": "What was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> address one year ago?",
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "employer-type-of-address-answer-proxy",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "At a workplace or report to a depot",
-                                                    "value": "At a workplace or report to a depot"
-                                                },
-                                                {
-                                                    "label": "An offshore installation",
-                                                    "value": "An offshore installation"
-                                                },
-                                                {
-                                                    "label": "No fixed place",
-                                                    "value": "No fixed place"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "employer-address-proxy",
-                                        "when": [
-                                            {
-                                                "id": "employer-type-of-address-answer-proxy",
-                                                "condition": "equals",
-                                                "value": "At a workplace or report to a depot"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "household-member-completed"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "employer-address1",
-                            "questions": [
-                                {
-                                    "id": "employer-address-question1",
-                                    "title": "What is the address of <em>{{answers['business-name-answer1']}}</em>?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "employer-address-answer-building1",
+                                            "id": "last-year-address-answer-building",
                                             "label": "Building",
                                             "mandatory": false,
                                             "type": "TextField"
                                         },
                                         {
-                                            "id": "employer-address-answer-street1",
+                                            "id": "last-year-address-answer-street",
                                             "label": "Street",
                                             "mandatory": false,
                                             "type": "TextField"
                                         },
                                         {
-                                            "id": "employer-address-answer-city1",
+                                            "id": "last-year-address-answer-city",
                                             "label": "Town or city",
                                             "mandatory": false,
                                             "type": "TextField"
                                         },
                                         {
-                                            "id": "employer-address-answer-county1",
+                                            "id": "last-year-address-answer-county",
                                             "label": "County (optional)",
                                             "mandatory": false,
                                             "type": "TextField"
                                         },
                                         {
-                                            "id": "employer-adress-answer-postcode1",
+                                            "id": "last-year-address-answer-postcode",
                                             "label": "Postcode",
                                             "mandatory": false,
                                             "type": "TextField"
@@ -8406,6 +5837,216 @@
                             "routing_rules": [
                                 {
                                     "goto": {
+                                        "block": "passports"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "last-year-address1",
+                            "questions": [
+                                {
+                                    "id": "last-year-address-question1",
+                                    "title": "What was your address one year ago?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "last-year-address-answer-building1",
+                                            "label": "Building",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "last-year-address-answer-street1",
+                                            "label": "Street",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "last-year-address-answer-city1",
+                                            "label": "Town or city",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "last-year-address-answer-county1",
+                                            "label": "County (optional)",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "last-year-address-answer-postcode1",
+                                            "label": "Postcode",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "passports1"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "sexual-identity",
+                            "questions": [
+                                {
+                                    "id": "sexual-identity-question",
+                                    "title": "Which of the following options best describes how <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> thinks of their sexual orientation?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "sexual-identity-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Heterosexual or Straight",
+                                                    "value": "Heterosexual or Straight"
+                                                },
+                                                {
+                                                    "label": "Gay or Lesbian",
+                                                    "value": "Gay or Lesbian"
+                                                },
+                                                {
+                                                    "label": "Bisexual",
+                                                    "value": "Bisexual"
+                                                },
+                                                {
+                                                    "label": "Other",
+                                                    "value": "Other",
+                                                    "child_answer_id": "sexual-identity-answer-other"
+                                                },
+                                                {
+                                                    "label": "Prefer not to say",
+                                                    "value": "Prefer not to say"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        },
+                                        {
+                                            "id": "sexual-identity-answer-other",
+                                            "parent_answer_id": "sexual-identity-answer",
+                                            "type": "TextField",
+                                            "mandatory": false,
+                                            "label": "Please specify their sexual orientation"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                
+                                {
+                                    "goto": {
+                                        "block": "birth-gender"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "sexual-identity1",
+                            "questions": [
+                                {
+                                    "id": "sexual-identity-question1",
+                                    "title": "Which of the following options best describes how you think of your sexual orientation?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "sexual-identity-answer1",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Heterosexual or Straight",
+                                                    "value": "Heterosexual or Straight"
+                                                },
+                                                {
+                                                    "label": "Gay or Lesbian",
+                                                    "value": "Gay or Lesbian"
+                                                },
+                                                {
+                                                    "label": "Bisexual",
+                                                    "value": "Bisexual"
+                                                },
+                                                {
+                                                    "label": "Other",
+                                                    "value": "Other",
+                                                    "child_answer_id": "sexual-identity-answer-other1"
+                                                },
+                                                {
+                                                    "label": "Prefer not to say",
+                                                    "value": "Prefer not to say"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        },
+                                        {
+                                            "id": "sexual-identity-answer-other1",
+                                            "parent_answer_id": "sexual-identity-answer1",
+                                            "type": "TextField",
+                                            "mandatory": false,
+                                            "label": "Please specify your sexual orientation"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                
+                                {
+                                    "goto": {
+                                        "block": "birth-gender1"
+                                    }
+                                }
+                            ]
+                        },
+                         {
+                            "type": "Question",
+                            "id": "birth-gender",
+                            "questions": [
+                                {
+                                    "id": "birth-gender-question",
+                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> consider themselves being trans?",
+                                    "type": "General",
+                                    "description": "Trans means your gender is different from the sex you were registered at birth",
+                                    "answers": [
+                                        {
+                                            "id": "birth-gender-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                },
+                                                {
+                                                    "label": "Yes",
+                                                    "value": "Yes",
+                                                    "child_answer_id": "birth-gender-answer-other"
+                                                },
+                                                {
+                                                    "label": "Prefer not to say",
+                                                    "value": "Prefer not to say"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        },
+                                        {
+                                            "id": "birth-gender-answer-other",
+                                            "parent_answer_id": "birth-gender-answer",
+                                            "type": "TextField",
+                                            "mandatory": false,
+                                            "label": "Please specify gender"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
                                         "block": "household-member-completed"
                                     }
                                 }
@@ -8413,42 +6054,40 @@
                         },
                         {
                             "type": "Question",
-                            "id": "employer-address-proxy",
+                            "id": "birth-gender1",
                             "questions": [
                                 {
-                                    "id": "employer-address-question-proxy",
-                                    "title": "What is the address of <em>{{answers['business-name-answer-proxy']}}</em>?",
+                                    "id": "birth-gender-question1",
+                                    "title": "Do you consider yourself to be trans or have a trans history?",
                                     "type": "General",
+                                    "description": "Trans means your gender is different from the sex you were registered at birth",
                                     "answers": [
                                         {
-                                            "id": "employer-address-answer-building-proxy",
-                                            "label": "Building",
+                                            "id": "birth-gender-answer1",
                                             "mandatory": false,
-                                            "type": "TextField"
+                                            "options": [
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                },
+                                                {
+                                                    "label": "Yes",
+                                                    "value": "Yes",
+                                                    "child_answer_id": "birth-gender-answer-other1"
+                                                },
+                                                {
+                                                    "label": "Prefer not to say",
+                                                    "value": "Prefer not to say"
+                                                }
+                                            ],
+                                            "type": "Radio"
                                         },
                                         {
-                                            "id": "employer-address-answer-street-proxy",
-                                            "label": "Street",
+                                            "id": "birth-gender-answer-other1",
+                                            "parent_answer_id": "birth-gender-answer1",
+                                            "type": "TextField",
                                             "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "employer-address-answer-city-proxy",
-                                            "label": "Town or city",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "employer-address-answer-county-proxy",
-                                            "label": "County (optional)",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "employer-adress-answer-postcode-proxy",
-                                            "label": "Postcode",
-                                            "mandatory": false,
-                                            "type": "TextField"
+                                            "label": "Please specify gender"
                                         }
                                     ]
                                 }
