@@ -5837,7 +5837,19 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "passports"
+                                        "block": "sexual-identity",
+                                        "when": [
+                                            {
+                                                "id": "over-16-answer",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "household-member-completed"
                                     }
                                 }
                             ]
@@ -5887,7 +5899,19 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "passports1"
+                                        "block": "sexual-identity1",
+                                        "when": [
+                                            {
+                                                "id": "over-16-answer1",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "household-member-completed"
                                     }
                                 }
                             ]
