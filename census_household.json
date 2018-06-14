@@ -5090,37 +5090,6 @@
                                         }
                                     ]
                                 }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "birth_gender",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "understand-welsh",
-                                        "when": [
-                                            {
-                                                "meta": "region_code",
-                                                "condition": "equals",
-                                                "value": "GB-WLS"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "language"
-                                    }
-                                }
                             ]
                         },
                         {
@@ -5168,37 +5137,6 @@
                                             "label": "Please specify your sexual orientation"
                                         }
                                     ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "birth_gender1",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "understand-welsh1",
-                                        "when": [
-                                            {
-                                                "meta": "region_code",
-                                                "condition": "equals",
-                                                "value": "GB-WLS"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "language1"
-                                    }
                                 }
                             ]
                         },
