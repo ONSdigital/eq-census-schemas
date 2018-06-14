@@ -3754,13 +3754,11 @@
                                                 {
                                                     "label": "White",
                                                     "value": "White",
-                                                    "description": "Including English, Welsh, Scottish, Northern Irish, British, Irish, Gypsy, Irish Traveller or any other White background"
+                                                    "description": "Including British, Roma or any other White background"
                                                 },
                                                 {
                                                     "label": "Mixed or multiple ethnic groups",
-                                                    "value": "Mixed or multiple ethnic groups",
-                                                    "description": "Including White and Black Caribbean, White and Black African, White and Asian or any other Mixed or multiple ethnic background"
-                                                },
+                                                    "value": "Mixed or multiple ethnic groups"},
                                                 {
                                                     "label": "Asian or Asian British",
                                                     "value": "Asian or Asian British",
@@ -3804,13 +3802,11 @@
                                                 {
                                                     "label": "White",
                                                     "value": "White",
-                                                    "description": "Including Welsh, English, Scottish, Northern Irish, British, Irish, Gypsy, Irish Traveller or any other White background"
+                                                    "description": "Including British, Roma or any other White background"
                                                 },
                                                 {
                                                     "label": "Mixed or multiple ethnic groups",
-                                                    "value": "Mixed or multiple ethnic groups",
-                                                    "description": "Including White and Black Caribbean, White and Black African, White and Asian or any other Mixed or multiple ethnic background"
-                                                },
+                                                    "value": "Mixed or multiple ethnic groups"},
                                                 {
                                                     "label": "Asian or Asian British",
                                                     "value": "Asian or Asian British",
@@ -3998,8 +3994,7 @@
                                             "options": [
                                                 {
                                                     "label": "White",
-                                                    "value": "White",
-                                                    "description": "Including English, Welsh, Scottish, Northern Irish, British, Irish, Gypsy, Irish Traveller or any other White background"
+                                                    "value": "White"
                                                 },
                                                 {
                                                     "label": "Mixed or multiple ethnic groups",
@@ -4049,13 +4044,11 @@
                                                 {
                                                     "label": "White",
                                                     "value": "White",
-                                                    "description": "Including Welsh, English, Scottish, Northern Irish, British, Irish, Gypsy, Irish Traveller or any other White background"
+                                                    "description": "Including British, Roma or any other White background"
                                                 },
                                                 {
                                                     "label": "Mixed or multiple ethnic groups",
-                                                    "value": "Mixed or multiple ethnic groups",
-                                                    "description": "Including White and Black Caribbean, White and Black African, White and Asian or any other Mixed or multiple ethnic background"
-                                                },
+                                                    "value": "Mixed or multiple ethnic groups"},
                                                 {
                                                     "label": "Asian or Asian British",
                                                     "value": "Asian or Asian British",
