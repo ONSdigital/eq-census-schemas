@@ -2614,6 +2614,13 @@
                                         }
                                     ]
                                 }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "in-education1"
+                                    }
+                                }
                             ]
                         },
                         {
@@ -2677,6 +2684,13 @@
                                             "label": "Please specify type of address"
                                         }
                                     ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "in-education"
+                                    }
                                 }
                             ]
                         },
