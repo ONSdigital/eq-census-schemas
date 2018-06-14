@@ -5224,20 +5224,20 @@
                                     "id": "birth-gender-question1",
                                     "title": "Do you consider yourself to be trans or have a trans history?",
                                     "type": "General",
-                                    "description": "Trans is an umbrella term used to describe people whose gender is not the same as the sex they were assigned at birth",
+                                    "description": "Trans means your gender is different from the sex you were registered at birth",
                                     "answers": [
                                         {
                                             "id": "birth-gender-answer1",
                                             "mandatory": false,
                                             "options": [
                                                 {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                },
+                                                {
                                                     "label": "Yes",
                                                     "value": "Yes",
                                                     "child_answer_id": "birth-gender-answer-other1"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
                                                 },
                                                 {
                                                     "label": "Prefer not to say",
