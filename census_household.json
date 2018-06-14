@@ -5099,7 +5099,7 @@
                                             {
                                                 "id": "over-16-answer",
                                                 "condition": "equals",
-                                                "value": "No"
+                                                "value": "Yes"
                                             }
                                         ]
                                     }
@@ -5178,7 +5178,7 @@
                                             {
                                                 "id": "over-16-answer1",
                                                 "condition": "equals",
-                                                "value": "No"
+                                                "value": "Yes"
                                             }
                                         ]
                                     }
