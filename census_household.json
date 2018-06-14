@@ -4274,8 +4274,8 @@
                                                     "value": "Irish"
                                                 },
                                                 {
-                                                    "label": "Gypsy or Irish Traveller",
-                                                    "value": "Gypsy or Irish Traveller"
+                                                    "label": "Gypsy, Irish Traveller or Roma",
+                                                    "value": "Gypsy, Irish Traveller or Roma"
                                                 },
                                                 {
                                                     "label": "Any other White background",
@@ -4323,8 +4323,8 @@
                                                     "value": "Irish"
                                                 },
                                                 {
-                                                    "label": "Gypsy or Irish Traveller",
-                                                    "value": "Gypsy or Irish Traveller"
+                                                    "label": "Gypsy, Irish Traveller or Roma",
+                                                    "value": "Gypsy, Irish Traveller or Roma"
                                                 },
                                                 {
                                                     "label": "Any other White background",
@@ -4409,8 +4409,8 @@
                                                     "value": "Irish"
                                                 },
                                                 {
-                                                    "label": "Gypsy or Irish Traveller",
-                                                    "value": "Gypsy or Irish Traveller"
+                                                    "label": "Gypsy, Irish Traveller or Roma",
+                                                    "value": "Gypsy, Irish Traveller or Roma"
                                                 },
                                                 {
                                                     "label": "Any other White background",
@@ -4458,8 +4458,8 @@
                                                     "value": "Irish"
                                                 },
                                                 {
-                                                    "label": "Gypsy or Irish Traveller",
-                                                    "value": "Gypsy or Irish Traveller"
+                                                    "label": "Gypsy, Irish Traveller or Roma",
+                                                    "value": "Gypsy, Irish Traveller or Roma"
                                                 },
                                                 {
                                                     "label": "Any other White background",
@@ -4528,7 +4528,7 @@
                             "questions": [
                                 {
                                     "id": "mixed-ethnic-group-question",
-                                    "title": "Which one best describes <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> Mixed, multiple ethnic group or background?",
+                                    "title": "Which one best describes <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> Mixed or Multiple ethnic group or background?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -4603,7 +4603,7 @@
                             "questions": [
                                 {
                                     "id": "mixed-ethnic-group-question1",
-                                    "title": "Which one best describes your Mixed, multiple ethnic group or background?",
+                                    "title": "Which one best describes your Mixed or Multiple ethnic group or background?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -4678,7 +4678,7 @@
                             "questions": [
                                 {
                                     "id": "asian-ethnic-group-question",
-                                    "title": "Which one best describes <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> Asian, Asian British ethnic group or background?",
+                                    "title": "Which one best describes <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> Asian or Asian British ethnic group or background?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -4757,7 +4757,7 @@
                             "questions": [
                                 {
                                     "id": "asian-ethnic-group-question1",
-                                    "title": "Which one best describes your Asian, Asian British ethnic group or background?",
+                                    "title": "Which one best describes your Asian or Asian British ethnic group or background?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -4844,27 +4844,31 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "African",
-                                                    "value": "African"
+                                                    "label": "Any African background",
+                                                    "value": "African",
+                                                    "child_answer_id": "black-african-group-answer-other"
                                                 },
                                                 {
-                                                    "label": "Caribbean",
-                                                    "value": "Caribbean"
-                                                },
-                                                {
-                                                    "label": "Any other Black, African or Caribbean background",
-                                                    "value": "Other",
-                                                    "child_answer_id": "black-ethnic-group-answer-other"
+                                                    "label": "Any Caribbean background",
+                                                    "value": "Caribbean",
+                                                    "child_answer_id": "black-caribbean-group-answer-other"
                                                 }
                                             ],
                                             "type": "Radio"
                                         },
                                         {
-                                            "id": "black-ethnic-group-answer-other",
+                                            "id": "black-african-group-answer-other",
                                             "parent_answer_id": "black-ethnic-group-answer",
                                             "type": "TextField",
                                             "mandatory": false,
-                                            "label": "Please specify other Black, African or Caribbean background"
+                                            "label": "Please specify African background"
+                                        },
+                                        {
+                                            "id": "black-caribbean-group-answer-other",
+                                            "parent_answer_id": "black-ethnic-group-answer",
+                                            "type": "TextField",
+                                            "mandatory": false,
+                                            "label": "Please specify Caribbean background"
                                         }
                                     ]
                                 }
