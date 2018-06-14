@@ -5090,6 +5090,14 @@
                                         }
                                     ]
                                 }
+                            ],
+                            "routing_rules": [
+                                
+                                {
+                                    "goto": {
+                                        "block": "birth_gender"
+                                    }
+                                }
                             ]
                         },
                         {
@@ -5137,6 +5145,14 @@
                                             "label": "Please specify your sexual orientation"
                                         }
                                     ]
+                                }
+                            ],
+                            "routing_rules": [
+                                
+                                {
+                                    "goto": {
+                                        "block": "birth_gender1"
+                                    }
                                 }
                             ]
                         },
