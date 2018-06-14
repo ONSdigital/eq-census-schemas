@@ -118,7 +118,7 @@
                                     "title": "Information you need",
                                     "list": [
                                         "Names of the people living in household and how they are related",
-                                        "The number of visitors staying in the household on 29 November 2017"
+                                        "The number of visitors staying in the household on {{ get_current_date() }}"
                                     ]
                                 }
                             ]
