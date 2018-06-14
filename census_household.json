@@ -1952,7 +1952,7 @@
                             "questions": [
                                 {
                                     "id": "carer-question",
-                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> look after, give help or support to anyone because of either long-term physical, mental ill-health, disablity or problems related to old age?",
+                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> look after, give help or support to family members, friends, neighbours or others because of either long-term physical, mental ill-health, disablity or problems related to old age?",
                                     "guidance": {
                                         "content": [
                                             {
@@ -2006,7 +2006,7 @@
                             "questions": [
                                 {
                                     "id": "carer-question1",
-                                    "title": "Do you look after, give help or support to anyone because of either long-term physical, mental ill-health, disability, or problems relating to old age?",
+                                    "title": "Do you look after, give help or support to family members, friends, neighbours or others because of either long-term physical, mental ill-health, disability, or problems relating to old age?",
                                     "guidance": {
                                         "content": [
                                             {
@@ -2458,7 +2458,7 @@
                             "questions": [
                                 {
                                     "id": "other-address-question",
-                                    "title": "Enter details of the other UK address where <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> stay more than 30 days a year",
+                                    "title": "What is the UK address where <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> stays for more than 30 days a year",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -2508,7 +2508,7 @@
                             "questions": [
                                 {
                                     "id": "other-address-question1",
-                                    "title": "Enter details of the other UK address where you stay more than 30 days a year",
+                                    "title": "What is the UK address where you stay for more than 30 days a year",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -2586,11 +2586,19 @@
                                                     "value": "Another parent or guardian’s address"
                                                 },
                                                 {
+                                                    "label": "Partner's address",
+                                                    "value": "Partner's address"
+                                                },
+                                                {
+                                                    "label": "Another relative's address",
+                                                    "value": "Another relative's address"
+                                                },
+                                                {
                                                     "label": "Holiday home",
                                                     "value": "Holiday home"
                                                 },
                                                 {
-                                                    "label": "Other (please specify)",
+                                                    "label": "Other",
                                                     "value": "Other",
                                                     "child_answer_id": "address-type-answer-other1"
                                                 }
@@ -2642,11 +2650,19 @@
                                                     "value": "Another parent or guardian’s address"
                                                 },
                                                 {
+                                                    "label": "Partner's address",
+                                                    "value": "Partner's address"
+                                                },
+                                                {
+                                                    "label": "Another relative's address",
+                                                    "value": "Another relative's address"
+                                                },
+                                                {
                                                     "label": "Holiday home",
                                                     "value": "Holiday home"
                                                 },
                                                 {
-                                                    "label": "Other (please specify)",
+                                                    "label": "Other",
                                                     "value": "Other",
                                                     "child_answer_id": "address-type-answer-other"
                                                 }
