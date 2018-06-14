@@ -5095,7 +5095,7 @@
                                 
                                 {
                                     "goto": {
-                                        "block": "birth_gender"
+                                        "block": "birth-gender"
                                     }
                                 }
                             ]
@@ -5151,7 +5151,7 @@
                                 
                                 {
                                     "goto": {
-                                        "block": "birth_gender1"
+                                        "block": "birth-gender1"
                                     }
                                 }
                             ]
