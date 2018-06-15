@@ -1564,7 +1564,7 @@
                             "questions": [
                                 {
                                     "id": "currrent-marriage-status-question-proxy",
-                                    "title": "Is the marriage opposite sex or same sex?",
+                                    "title": "What type of partnership is this?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1599,7 +1599,7 @@
                             "questions": [
                                 {
                                     "id": "previous-marriage-status-question-proxy",
-                                    "title": "Was the marriage opposite sex or same sex?",
+                                    "title": "What type of partnership was this?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1634,7 +1634,7 @@
                             "questions": [
                                 {
                                     "id": "ever-married-question",
-                                    "title": "Have you ever been legally married or in a registered civil partnership?",
+                                    "title": "Are you, or have you ever been legally married or in a registered civil partnership?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -2263,18 +2263,10 @@
                                                 },
                                                 {
                                                     "label": "Yes, an address outside the UK",
-                                                    "value": "Other",
-                                                    "child_answer_id": "another-address-answer-other"
+                                                    "value": "Other"
                                                 }
                                             ],
                                             "type": "Radio"
-                                        },
-                                        {
-                                            "id": "another-address-answer-other",
-                                            "parent_answer_id": "another-address-answer",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please specify a country"
                                         }
                                     ]
                                 }
@@ -2369,18 +2361,10 @@
                                                 },
                                                 {
                                                     "label": "Yes, an address outside the UK",
-                                                    "value": "Other",
-                                                    "child_answer_id": "another-address-answer-other1"
+                                                    "value": "Other"
                                                 }
                                             ],
                                             "type": "Radio"
-                                        },
-                                        {
-                                            "id": "another-address-answer-other1",
-                                            "parent_answer_id": "another-address-answer1",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please specify a country"
                                         }
                                     ]
                                 }
@@ -6164,7 +6148,7 @@
                                     "title": "Information you need",
                                     "list": [
                                         "Name of visitor",
-                                        "Gender of visitor",
+                                        "Sex of visitor",
                                         "Date of birth of visitor",
                                         "Address of visitor"
                                     ]
