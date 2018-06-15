@@ -1952,7 +1952,7 @@
                             "questions": [
                                 {
                                     "id": "carer-question",
-                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> look after, give help or support to family members, friends, neighbours or others because of either long-term physical, mental ill-health, disablity or problems related to old age?",
+                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> look after, give any help or support to family members, friends, neighbours or others because of either long-term physical, mental ill-health, disablity or problems related to old age?",
                                     "guidance": {
                                         "content": [
                                             {
@@ -5923,8 +5923,8 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Heterosexual or Straight",
-                                                    "value": "Heterosexual or Straight"
+                                                    "label": "Straight or Heterosexual",
+                                                    "value": "Straight or Heterosexual"
                                                 },
                                                 {
                                                     "label": "Gay or Lesbian",
@@ -5979,8 +5979,8 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Heterosexual or Straight",
-                                                    "value": "Heterosexual or Straight"
+                                                    "label": "Straight or Heterosexual",
+                                                    "value": "Straight or Heterosexual "
                                                 },
                                                 {
                                                     "label": "Gay or Lesbian",
