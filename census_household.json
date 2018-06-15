@@ -6027,7 +6027,7 @@
                             "questions": [
                                 {
                                     "id": "birth-gender-question",
-                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> consider themselves being trans?",
+                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> consider themselves to be trans?",
                                     "type": "General",
                                     "description": "Trans means your gender is different from the sex you were registered at birth",
                                     "answers": [
@@ -6075,7 +6075,7 @@
                             "questions": [
                                 {
                                     "id": "birth-gender-question1",
-                                    "title": "Do you consider yourself to be trans or have a trans history?",
+                                    "title": "Do you consider yourself to be trans?",
                                     "type": "General",
                                     "description": "Trans means your gender is different from the sex you were registered at birth",
                                     "answers": [
