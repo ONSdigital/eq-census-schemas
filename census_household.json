@@ -2807,10 +2807,6 @@
                                                     "value": "household address"
                                                 },
                                                 {
-                                                    "label": "Address stayed at over 30 days a year",
-                                                    "value": "Address stayed at over 30 days a year"
-                                                }, 
-                                                {
                                                     "label": "Another address",
                                                     "value": "Another address"
                                                 }
@@ -2822,17 +2818,6 @@
                             ],
                             "routing_rules": [
                                 {
-                                    "goto": {
-                                        "block": "household-member-completed",
-                                        "when": [
-                                            {
-                                                "id": "term-time-location-answer",
-                                                "condition": "equals",
-                                                "value": "Address stayed at over 30 days a year"
-                                            }
-                                        ]
-                                    }
-                                },{
                                     "goto": {
                                         "block": "household-member-completed",
                                         "when": [
@@ -2869,10 +2854,6 @@
                                                     "value": "household address"
                                                 },
                                                 {
-                                                    "label": "Address stayed at over 30 days a year",
-                                                    "value": "Address stayed at over 30 days a year"
-                                                },
-                                                {
                                                     "label": "Another address",
                                                     "value": "Another address"
                                                 }
@@ -2883,18 +2864,6 @@
                                 }
                             ],
                             "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "household-member-completed",
-                                        "when": [
-                                            {
-                                                "id": "term-time-location-answer1",
-                                                "condition": "equals",
-                                                "value": "Address stayed at over 30 days a year"
-                                            }
-                                        ]
-                                    }
-                                },
                                 {
                                     "goto": {
                                         "block": "household-member-completed",
