@@ -5363,24 +5363,24 @@
                                                     "value": "Christian"
                                                 },
                                                 {
-                                                    "label": "Buddhism",
-                                                    "value": "Buddhism"
+                                                    "label": "Buddhist",
+                                                    "value": "Buddhist"
                                                 },
                                                 {
-                                                    "label": "Hinduism",
-                                                    "value": "Hinduism"
+                                                    "label": "Hindu",
+                                                    "value": "Hindu"
                                                 },
                                                 {
-                                                    "label": "Judaism",
-                                                    "value": "Judaism"
+                                                    "label": "Jewish",
+                                                    "value": "Jewish"
                                                 },
                                                 {
-                                                    "label": "Islam",
-                                                    "value": "Islam"
+                                                    "label": "Muslim",
+                                                    "value": "Muslim"
                                                 },
                                                 {
-                                                    "label": "Sikhism",
-                                                    "value": "Sikhism"
+                                                    "label": "Sikh",
+                                                    "value": "Sikh"
                                                 },
                                                 {
                                                     "label": "Any other religion",
@@ -5431,24 +5431,24 @@
                                                     "value": "Christian"
                                                 },
                                                 {
-                                                    "label": "Buddhism",
-                                                    "value": "Buddhism"
+                                                    "label": "Buddhist",
+                                                    "value": "Buddhist"
                                                 },
                                                 {
-                                                    "label": "Hinduism",
-                                                    "value": "Hinduism"
+                                                    "label": "Hindu",
+                                                    "value": "Hindu"
                                                 },
                                                 {
-                                                    "label": "Judaism",
-                                                    "value": "Judaism"
+                                                    "label": "Jewish",
+                                                    "value": "Jewish"
                                                 },
                                                 {
-                                                    "label": "Islam",
-                                                    "value": "Islam"
+                                                    "label": "Muslim",
+                                                    "value": "Muslim"
                                                 },
                                                 {
-                                                    "label": "Sikhism",
-                                                    "value": "Sikhism"
+                                                    "label": "Sikh",
+                                                    "value": "Sikh"
                                                 },
                                                 {
                                                     "label": "Any other religion",
@@ -5495,8 +5495,8 @@
                                                     "value": "United Kingdom"
                                                 },
                                                 {
-                                                    "label": "Irish",
-                                                    "value": "Irish"
+                                                    "label": "Ireland",
+                                                    "value": "Ireland"
                                                 },
                                                 {
                                                     "label": "Other",
@@ -5546,8 +5546,8 @@
                                                     "value": "United Kingdom"
                                                 },
                                                 {
-                                                    "label": "Irish",
-                                                    "value": "Irish"
+                                                    "label": "Ireland",
+                                                    "value": "Ireland"
                                                 },
                                                 {
                                                     "label": "Other",
@@ -5589,6 +5589,7 @@
                                     "id": "past-usual-address-question",
                                     "title": "One year ago, what was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> usual address?",
                                     "type": "General",
+                                     "description": "If you had no usual address one year ago, state the address where you were staying",
                                     "answers": [
                                         {
                                             "id": "past-usual-address-answer",
@@ -5607,6 +5608,10 @@
                                                     "value": "Another address in the UK"
                                                 },
                                                 {
+                                                    "label": "Born after 25th June 2018",
+                                                    "value": "Born after 25th June 2018"
+                                                },
+                                                {
                                                     "label": "An address outside the UK",
                                                     "value": "Other",
                                                     "child_answer_id": "past-usual-address-answer-other"
@@ -5619,7 +5624,7 @@
                                             "parent_answer_id": "past-usual-address-answer",
                                             "type": "TextField",
                                             "mandatory": false,
-                                            "label": "Please enter the current name of country"
+                                            "label": "Please specify the current name of country"
                                         }
                                     ]
                                 }
@@ -5676,6 +5681,7 @@
                                     "id": "past-usual-address-question1",
                                     "title": "One year ago, what was your usual address?",
                                     "type": "General",
+                                     "description": "If you had no usual address one year ago, state the address where you were staying",
                                     "answers": [
                                         {
                                             "id": "past-usual-address-answer1",
@@ -5694,6 +5700,10 @@
                                                     "value": "Another address in the UK"
                                                 },
                                                 {
+                                                    "label": "Born after 25th June 2018",
+                                                    "value": "Born after 25th June 2018"
+                                                },
+                                                {
                                                     "label": "An address outside the UK",
                                                     "value": "Other",
                                                     "child_answer_id": "past-usual-address-answer-other1"
@@ -5706,7 +5716,7 @@
                                             "parent_answer_id": "past-usual-address-answer1",
                                             "type": "TextField",
                                             "mandatory": false,
-                                            "label": "Please enter the current name of country"
+                                            "label": "Please specify the current name of country"
                                         }
                                     ]
                                 }
