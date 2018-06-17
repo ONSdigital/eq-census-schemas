@@ -1090,7 +1090,7 @@
                                     "id": "sex-question",
                                     "title": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> sex?",
                                     "type": "General",
-                                    "description": "A gender identity question will follow for people over 16 years old",
+                                    "description": "A question about gender will follow later if you are aged 16 or over",
                                     "answers": [
                                         {
                                             "id": "sex-answer",
@@ -1137,7 +1137,7 @@
                                 {
                                     "id": "sex-question1",
                                     "title": "What is your sex?",
-                                    "description": "A gender identity question will follow for people over 16 years old",
+                                    "description": "A question about gender will follow later if you are aged 16 or ove",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1434,7 +1434,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "health",
+                                        "block": "carer",
                                         "when": [
                                             {
                                                 "id": "confirm-ever-married-answer-proxy",
@@ -1457,7 +1457,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-marriage-type-proxy",
-                                    "title": "On the {{ get_current_date() }}, what is {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }} legal marital or registered civil partnership status?",
+                                    "title": "On {{ get_current_date() }}, what is {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }} legal marital or registered civil partnership status?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1553,7 +1553,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "health"
+                                        "block": "carer"
                                     }
                                 }
                             ]
@@ -1588,7 +1588,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "health"
+                                        "block": "carer"
                                     }
                                 }
                             ]
@@ -1623,7 +1623,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "health"
+                                        "block": "carer"
                                     }
                                 }
                             ]
@@ -1658,7 +1658,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "health1",
+                                        "block": "carer1",
                                         "when": [
                                             {
                                                 "id": "confirm-ever-married-answer",
@@ -1681,7 +1681,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-marriage-type",
-                                    "title": "On the {{ get_current_date() }}, what is your legal marital or registered civil partnership status?",
+                                    "title": "On {{ get_current_date() }}, what is your legal marital or registered civil partnership status?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1777,7 +1777,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "health1"
+                                        "block": "carer1"
                                     }
                                 }
                             ]
@@ -1812,7 +1812,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "health1"
+                                        "block": "carer1"
                                     }
                                 }
                             ]
@@ -1837,100 +1837,6 @@
                                                 {
                                                     "label": "Marriage to a partner of the same sex",
                                                     "value": "Marriage to a partner of the same sex"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "health"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "health",
-                            "questions": [
-                                {
-                                    "id": "health-question",
-                                    "title": "How is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> health in general?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "health-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Very good",
-                                                    "value": "Very good"
-                                                },
-                                                {
-                                                    "label": "Good",
-                                                    "value": "Good"
-                                                },
-                                                {
-                                                    "label": "Fair",
-                                                    "value": "Fair"
-                                                },
-                                                {
-                                                    "label": "Bad",
-                                                    "value": "Bad"
-                                                },
-                                                {
-                                                    "label": "Very bad",
-                                                    "value": "Very bad"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "carer"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "health1",
-                            "questions": [
-                                {
-                                    "id": "health-question1",
-                                    "title": "How is your health in general?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "health-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Very good",
-                                                    "value": "Very good"
-                                                },
-                                                {
-                                                    "label": "Good",
-                                                    "value": "Good"
-                                                },
-                                                {
-                                                    "label": "Fair",
-                                                    "value": "Fair"
-                                                },
-                                                {
-                                                    "label": "Bad",
-                                                    "value": "Bad"
-                                                },
-                                                {
-                                                    "label": "Very bad",
-                                                    "value": "Very bad"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -1995,7 +1901,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "disability"
+                                        "block": "health"
                                     }
                                 }
                             ]
@@ -2049,11 +1955,106 @@
                             "routing_rules": [
                                 {
                                     "goto": {
+                                        "block": "health1"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "health",
+                            "questions": [
+                                {
+                                    "id": "health-question",
+                                    "title": "How is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> health in general?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "health-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Very good",
+                                                    "value": "Very good"
+                                                },
+                                                {
+                                                    "label": "Good",
+                                                    "value": "Good"
+                                                },
+                                                {
+                                                    "label": "Fair",
+                                                    "value": "Fair"
+                                                },
+                                                {
+                                                    "label": "Bad",
+                                                    "value": "Bad"
+                                                },
+                                                {
+                                                    "label": "Very bad",
+                                                    "value": "Very bad"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "disability"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "health1",
+                            "questions": [
+                                {
+                                    "id": "health-question1",
+                                    "title": "How is your health in general?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "health-answer1",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Very good",
+                                                    "value": "Very good"
+                                                },
+                                                {
+                                                    "label": "Good",
+                                                    "value": "Good"
+                                                },
+                                                {
+                                                    "label": "Fair",
+                                                    "value": "Fair"
+                                                },
+                                                {
+                                                    "label": "Bad",
+                                                    "value": "Bad"
+                                                },
+                                                {
+                                                    "label": "Very bad",
+                                                    "value": "Very bad"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
                                         "block": "disability1"
                                     }
                                 }
                             ]
                         },
+                        
                         {
                             "type": "Question",
                             "id": "disability",
@@ -5907,8 +5908,8 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Straight or Heterosexual",
-                                                    "value": "Straight or Heterosexual"
+                                                    "label": "Heterosexual or Straight",
+                                                    "value": "Heterosexual or Straight"
                                                 },
                                                 {
                                                     "label": "Gay or Lesbian",
@@ -5963,8 +5964,8 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Straight or Heterosexual",
-                                                    "value": "Straight or Heterosexual "
+                                                    "label": "Heterosexual or Straight",
+                                                    "value": "Heterosexual or Straight "
                                                 },
                                                 {
                                                     "label": "Gay or Lesbian",
