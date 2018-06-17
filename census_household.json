@@ -3727,8 +3727,8 @@
                                                     "description": "Including British, Roma or any other White background"
                                                 },
                                                 {
-                                                    "label": "Mixed or multiple ethnic groups",
-                                                    "value": "Mixed or multiple ethnic groups"},
+                                                    "label": "Mixed or Multiple ethnic groups",
+                                                    "value": "Mixed or Multiple ethnic groups"},
                                                 {
                                                     "label": "Asian or Asian British",
                                                     "value": "Asian or Asian British",
@@ -3775,8 +3775,8 @@
                                                     "description": "Including British, Roma or any other White background"
                                                 },
                                                 {
-                                                    "label": "Mixed or multiple ethnic groups",
-                                                    "value": "Mixed or multiple ethnic groups"},
+                                                    "label": "Mixed or Multiple ethnic groups",
+                                                    "value": "Mixed or Multiple ethnic groups"},
                                                 {
                                                     "label": "Asian or Asian British",
                                                     "value": "Asian or Asian British",
@@ -3829,7 +3829,7 @@
                                             {
                                                 "id": "ethnic-group-england-answer",
                                                 "condition": "equals",
-                                                "value": "Mixed or multiple ethnic groups"
+                                                "value": "Mixed or Multiple ethnic groups"
                                             }
                                         ]
                                     }
@@ -3889,7 +3889,7 @@
                                             {
                                                 "id": "ethnic-group-wales-answer",
                                                 "condition": "equals",
-                                                "value": "Mixed or multiple ethnic groups"
+                                                "value": "Mixed or Multiple ethnic groups"
                                             }
                                         ]
                                     }
@@ -3967,8 +3967,8 @@
                                                     "value": "White"
                                                 },
                                                 {
-                                                    "label": "Mixed or multiple ethnic groups",
-                                                    "value": "Mixed or multiple ethnic groups",
+                                                    "label": "Mixed or Multiple ethnic groups",
+                                                    "value": "Mixed or Multiple ethnic groups",
                                                     "description": "Including White and Black Caribbean, White and Black African, White and Asian or any other Mixed or multiple ethnic background"
                                                 },
                                                 {
@@ -4017,8 +4017,8 @@
                                                     "description": "Including British, Roma or any other White background"
                                                 },
                                                 {
-                                                    "label": "Mixed or multiple ethnic groups",
-                                                    "value": "Mixed or multiple ethnic groups"},
+                                                    "label": "Mixed or Multiple ethnic groups",
+                                                    "value": "Mixed or Multiple ethnic groups"},
                                                 {
                                                     "label": "Asian or Asian British",
                                                     "value": "Asian or Asian British",
@@ -4071,7 +4071,7 @@
                                             {
                                                 "id": "ethnic-group-england-answer1",
                                                 "condition": "equals",
-                                                "value": "Mixed or multiple ethnic groups"
+                                                "value": "Mixed or Multiple ethnic groups"
                                             }
                                         ]
                                     }
@@ -4131,7 +4131,7 @@
                                             {
                                                 "id": "ethnic-group-wales-answer1",
                                                 "condition": "equals",
-                                                "value": "Mixed or multiple ethnic groups"
+                                                "value": "Mixed or Multiple ethnic groups"
                                             }
                                         ]
                                     }
@@ -4213,8 +4213,8 @@
                                                     "value": "Irish"
                                                 },
                                                 {
-                                                    "label": "Gypsy, Irish Traveller or Roma",
-                                                    "value": "Gypsy, Irish Traveller or Roma"
+                                                    "label": "Gypsy or Irish Traveller or Roma",
+                                                    "value": "Gypsy or Irish Traveller or Roma"
                                                 },
                                                 {
                                                     "label": "Any other White background",
@@ -4262,8 +4262,8 @@
                                                     "value": "Irish"
                                                 },
                                                 {
-                                                    "label": "Gypsy, Irish Traveller or Roma",
-                                                    "value": "Gypsy, Irish Traveller or Roma"
+                                                    "label": "Gypsy or Irish Traveller or Roma",
+                                                    "value": "Gypsy or Irish Traveller or Roma"
                                                 },
                                                 {
                                                     "label": "Any other White background",
@@ -4336,8 +4336,8 @@
                                                     "value": "Irish"
                                                 },
                                                 {
-                                                    "label": "Gypsy, Irish Traveller or Roma",
-                                                    "value": "Gypsy, Irish Traveller or Roma"
+                                                    "label": "Gypsy or Irish Traveller or Roma",
+                                                    "value": "Gypsy or Irish Traveller or Roma"
                                                 },
                                                 {
                                                     "label": "Any other White background",
@@ -4385,8 +4385,8 @@
                                                     "value": "Irish"
                                                 },
                                                 {
-                                                    "label": "Gypsy, Irish Traveller or Roma",
-                                                    "value": "Gypsy, Irish Traveller or Roma"
+                                                    "label": "Gypsy or Irish Traveller or Roma",
+                                                    "value": "Gypsy or Irish Traveller or Roma"
                                                 },
                                                 {
                                                     "label": "Any other White background",
@@ -4463,7 +4463,7 @@
                                                     "value": "White and Asian"
                                                 },
                                                 {
-                                                    "label": "Any other Mixed or multiple ethnic background",
+                                                    "label": "Any other Mixed or Multiple ethnic background",
                                                     "value": "Other",
                                                     "child_answer_id": "mixed-ethnic-group-answer-other"
                                                 }
@@ -4475,7 +4475,7 @@
                                             "parent_answer_id": "mixed-ethnic-group-answer",
                                             "type": "TextField",
                                             "mandatory": false,
-                                            "label": "Please specify other Mixed or multiple ethnic background"
+                                            "label": "Please specify other Mixed or Multiple ethnic background"
                                         }
                                     ]
                                 }
@@ -4526,7 +4526,7 @@
                                                     "value": "White and Asian"
                                                 },
                                                 {
-                                                    "label": "Any other Mixed or multiple ethnic background",
+                                                    "label": "Any other Mixed or Multiple ethnic background",
                                                     "value": "Other",
                                                     "child_answer_id": "mixed-ethnic-group-answer-other1"
                                                 }
@@ -4538,7 +4538,7 @@
                                             "parent_answer_id": "mixed-ethnic-group-answer1",
                                             "type": "TextField",
                                             "mandatory": false,
-                                            "label": "Please specify other Mixed or multiple ethnic background"
+                                            "label": "Please specify other Mixed or Multiple ethnic background"
                                         }
                                     ]
                                 }
