@@ -5604,12 +5604,12 @@
                                                     "value": "Student term time or boarding school address in the UK"
                                                 },
                                                 {
-                                                    "label": "Another address in the UK",
-                                                    "value": "Another address in the UK"
-                                                },
-                                                {
                                                     "label": "Born after 25th June 2018",
                                                     "value": "Born after 25th June 2018"
+                                                },
+                                                {
+                                                    "label": "Another address in the UK",
+                                                    "value": "Another address in the UK"
                                                 },
                                                 {
                                                     "label": "An address outside the UK",
@@ -5696,12 +5696,12 @@
                                                     "value": "Student term time or boarding school address in the UK"
                                                 },
                                                 {
-                                                    "label": "Another address in the UK",
-                                                    "value": "Another address in the UK"
-                                                },
-                                                {
                                                     "label": "Born after 25th June 2018",
                                                     "value": "Born after 25th June 2018"
+                                                },
+                                                {
+                                                    "label": "Another address in the UK",
+                                                    "value": "Another address in the UK"
                                                 },
                                                 {
                                                     "label": "An address outside the UK",
