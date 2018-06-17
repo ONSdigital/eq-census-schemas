@@ -5180,8 +5180,8 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Heterosexual or Straight",
-                                                    "value": "Heterosexual or Straight"
+                                                    "label": "Straight or Heterosexual",
+                                                    "value": "Straight or Heterosexual"
                                                 },
                                                 {
                                                     "label": "Gay or Lesbian",
@@ -5247,8 +5247,8 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Heterosexual or Straight",
-                                                    "value": "Heterosexual or Straight"
+                                                    "label": "Straight or Heterosexual",
+                                                    "value": "Straight or Heterosexual"
                                                 },
                                                 {
                                                     "label": "Gay or Lesbian",
