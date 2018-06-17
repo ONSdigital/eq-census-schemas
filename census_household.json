@@ -2264,10 +2264,18 @@
                                                 },
                                                 {
                                                     "label": "Yes, an address outside the UK",
-                                                    "value": "Other"
+                                                    "value": "Other",
+                                                    "child_answer_id": "another-address-answer-other"
                                                 }
                                             ],
                                             "type": "Radio"
+                                        },
+                                        {
+                                            "id": "another-address-answer-other",
+                                            "parent_answer_id": "another-address-answer",
+                                            "type": "TextField",
+                                            "mandatory": false,
+                                            "label": "Please specify a country"
                                         }
                                     ]
                                 }
@@ -2362,10 +2370,18 @@
                                                 },
                                                 {
                                                     "label": "Yes, an address outside the UK",
-                                                    "value": "Other"
+                                                    "value": "Other",
+                                                    "child_answer_id": "another-address-answer-other1"
                                                 }
                                             ],
                                             "type": "Radio"
+                                        },
+                                        {
+                                            "id": "another-address-answer-other1",
+                                            "parent_answer_id": "another-address-answer1",
+                                            "type": "TextField",
+                                            "mandatory": false,
+                                            "label": "Please specify a country"
                                         }
                                     ]
                                 }
