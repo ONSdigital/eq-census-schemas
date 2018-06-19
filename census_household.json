@@ -3520,7 +3520,6 @@
                                     "answers": [
                                         {
                                             "id": "national-identity-wales-answer",
-                                            "label": "Select all that apply",
                                             "mandatory": false,
                                             "options": [
                                                 {
@@ -3648,7 +3647,6 @@
                                     "answers": [
                                         {
                                             "id": "national-identity-wales-answer1",
-                                            "label": "Select all that apply",
                                             "mandatory": false,
                                             "options": [
                                                 {
@@ -4937,7 +4935,6 @@
                                 {
                                     "id": "understand-welsh-question",
                                     "title": "Can <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> understand, speak, read or write Welsh",
-                                    "description": "Select all that apply",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -4978,7 +4975,6 @@
                                 {
                                     "id": "understand-welsh-question1",
                                     "title": "Can you understand, speak, read or write Welsh",
-                                    "description": "Select all that apply",
                                     "type": "General",
                                     "answers": [
                                         {
