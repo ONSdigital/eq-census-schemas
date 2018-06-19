@@ -1847,7 +1847,16 @@
                                 {
                                     "id": "armed-forces-question",
                                     "title": "Have you ever served in the UK Armed Forces?",
-                                    "description": " Include National Service",
+                                    "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Include",
+                                                "list": [
+                                                    "National Service"
+                                                ]
+                                            }
+                                        ]
+                                    },
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1888,7 +1897,16 @@
                                     "id": "armed-forces-question-proxy",
                                     "title": "Has <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> ever served in the UK armed forces?",
                                     "type": "General",
-                                     "description": " Include National Service",
+                                    "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Include",
+                                                "list": [
+                                                    "National Service"
+                                                ]
+                                            }
+                                        ]
+                                    },
                                     "answers": [
                                         {
                                             "id": "armed-forces-answer-proxy",
