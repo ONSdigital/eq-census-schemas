@@ -117,8 +117,8 @@
                                 {
                                     "title": "Information you need",
                                     "list": [
-                                        "Names of the people living in household and how they are related",
-                                        "The number of visitors staying in the household on {{ get_current_date() }}"
+                                        "Names of the people living in household and how they are related"
+                                       
                                     ]
                                 }
                             ]
@@ -933,10 +933,10 @@
                                 {
                                     "title": "Information you need",
                                     "list": [
-                                        "Personal details such as date of birth, country of birth, religion etc.",
+                                        "Personal details such as date of birth",
                                         "Second or holiday homes",
-                                        "Unpaid care, health and well-being",
-                                        "Languages"
+                                        "Armed forces service",
+                                        "Employment"
                                     ]
                                 }
                             ]
@@ -1090,7 +1090,6 @@
                                     "id": "sex-question",
                                     "title": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> sex?",
                                     "type": "General",
-                                    "description": "A question about gender will follow later if you are aged 16 or over",
                                     "answers": [
                                         {
                                             "id": "sex-answer",
@@ -1137,7 +1136,6 @@
                                 {
                                     "id": "sex-question1",
                                     "title": "What is your sex?",
-                                    "description": "A question about gender will follow later if you are aged 16 or ove",
                                     "type": "General",
                                     "answers": [
                                         {
