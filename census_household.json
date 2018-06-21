@@ -1993,7 +1993,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "org-or-business1"
+                                        "block": "main-job-type1"
                                     }
                                 }
                             ]
@@ -2053,7 +2053,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "org-or-business-proxy"
+                                        "block": "main-job-type-proxy"
                                     }
                                 }
                             ]
@@ -2148,100 +2148,6 @@
                                 {
                                     "goto": {
                                         "block": "jobseeker1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "org-or-business1",
-                            "questions": [
-                                {
-                                    "id": "org-or-business-question1",
-                                    "title": "Are you working for an organisation or business?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "org-or-business-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "job-title1",
-                                        "when": [
-                                            {
-                                                "id": "org-or-business-answer1",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "business-name1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "org-or-business-proxy",
-                            "questions": [
-                                {
-                                    "id": "org-or-business-question-proxy",
-                                    "title": "Is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> working for an organisation or business?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "org-or-business-answer-proxy",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "job-title-proxy",
-                                        "when": [
-                                            {
-                                                "id": "org-or-business-answer-proxy",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "business-name-proxy"
                                     }
                                 }
                             ]
@@ -2718,7 +2624,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "org-or-business1"
+                                        "block": "main-job-type1"
                                     }
                                 }
                             ]
@@ -2780,7 +2686,199 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "org-or-business-proxy"
+                                        "block": "main-job-type-proxy"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "main-job-type1",
+                            "questions": [
+                                {
+                                    "id": "main-job-type-question1",
+                                    "title": "In your main job, what is your employment status?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "main-job-type-answer1",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "An employee",
+                                                    "value": "An employee"
+                                                },
+                                                {
+                                                    "label": "Self-employed or freelance without employees",
+                                                    "value": "Self-employed or freelance without employees"
+                                                },
+                                                {
+                                                    "label": "Self-employed with employees",
+                                                    "value": "Self-employed with employees"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                 {
+                                    "goto": {
+                                        "block": "business-name1",
+                                        "when": [
+                                            {
+                                                "id": "main-job-type-answer1",
+                                                "condition": "An employee"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "self-employed"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "main-job-type-proxy",
+                            "questions": [
+                                {
+                                    "id": "main-job-type-question-proxy",
+                                    "title": "In their main job, what is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> employment status?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "main-job-type-answer-proxy",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "An employee",
+                                                    "value": "An employee"
+                                                },
+                                                {
+                                                    "label": "Self-employed or freelance without employees",
+                                                    "value": "Self-employed or freelance without employees"
+                                                },
+                                                {
+                                                    "label": "Self-employed with employees",
+                                                    "value": "Self-employed with employees"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                 {
+                                    "goto": {
+                                        "block": "business-name-proxy",
+                                        "when": [
+                                            {
+                                                "id": "main-job-type-answer-proxy",
+                                                "condition": "An employee"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "self-employed-proxy"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "self-employed-proxy",
+                            "questions": [
+                                {
+                                    "id": "self-employed-question-proxy",
+                                    "title": "Is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] }}</em> self-employed in their own registered business?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "self-employed-answer-proxy",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Yes",
+                                                    "value": "Yes"
+                                                },
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                 {
+                                    "goto": {
+                                        "block": "business-name-proxy",
+                                        "when": [
+                                            {
+                                                "id": "self-employed-answer-proxy",
+                                                "condition": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "job-title"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "self-employed",
+                            "questions": [
+                                {
+                                    "id": "self-employed-question",
+                                    "title": "Are you self-employed in your own registered business?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "self-employed-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Yes",
+                                                    "value": "Yes"
+                                                },
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                 {
+                                    "goto": {
+                                        "block": "business-name1",
+                                        "when": [
+                                            {
+                                                "id": "self-employed-answer",
+                                                "condition": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "job-title1"
                                     }
                                 }
                             ]
@@ -2791,8 +2889,8 @@
                             "questions": [
                                 {
                                     "id": "business-name-question1",
-                                    "title": "What is the name of the organisation or business that you work for?",
-                                    "description": "If you are self-employed in your own organisation, give the business name.",
+                                    "title": "What is the name of the organisation or business you work for?",
+                                    "description": "If you are self-employed in your own business, give the business name.",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -2807,7 +2905,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "employers-business1"
+                                        "block": "job-title1"
                                     }
                                 }
                             ]
@@ -2818,8 +2916,8 @@
                             "questions": [
                                 {
                                     "id": "business-name-question-proxy",
-                                    "title": "What is the name of the organisation or business that <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> works for?",
-                                    "description": "If you are self-employed in your own organisation, give the business name.",
+                                    "title": "What is the name of the organisation or business <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> works for?",
+                                    "description": "If you are self-employed in your own business, give the business name.",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -2827,60 +2925,6 @@
                                             "label": "Organisation or business name",
                                             "mandatory": false,
                                             "type": "TextField"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "employers-business-proxy"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "employers-business1",
-                            "questions": [
-                                {
-                                    "id": "employers-business-question1",
-                                    "title": "What is the main activity of <em>{{answers['business-name-answer1']}}</em>?",
-                                    "description": "Describe how your employer, business or freelance work makes profit by what it does or produces. For example, clothing retail, primary education or general hospital.",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "employers-business-answer1",
-                                            "label": "Description",
-                                            "mandatory": false,
-                                            "type": "TextArea"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "job-title1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "employers-business-proxy",
-                            "questions": [
-                                {
-                                    "id": "employers-business-question-proxy",
-                                    "title": "What is the main activity of <em>{{answers['business-name-answer-proxy']}}</em>?",
-                                    "description": "Describe how your employer, business or freelance work makes profit by what it does or produces. For example, clothing retail, primary education or general hospital.",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "employers-business-answer-proxy",
-                                            "label": "Description",
-                                            "mandatory": false,
-                                            "type": "TextArea"
                                         }
                                     ]
                                 }
@@ -2964,9 +3008,33 @@
                                 }
                             ],
                             "routing_rules": [
+                                 {
+                                    "goto": {
+                                        "block": "employers-business1",
+                                        "when": [
+                                            {
+                                                "id": "main-job-type-answer1",
+                                                "condition": "equals",
+                                                "value": "An employee"
+                                            }
+                                        ]
+                                    }
+                                },
                                 {
                                     "goto": {
-                                        "block": "main-job-type1"
+                                        "block": "employers-business1",
+                                        "when": [
+                                            {
+                                                "id": "self-employed-answer1",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "professional_quals"
                                     }
                                 }
                             ]
@@ -2992,35 +3060,109 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "main-job-type-proxy"
+                                        "block": "employers-business-proxy",
+                                        "when": [
+                                            {
+                                                "id": "main-job-type-answer-proxy",
+                                                "condition": "equals",
+                                                "value": "An employee"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "employers-business-proxy",
+                                        "when": [
+                                            {
+                                                "id": "self-employed-answer-proxy",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "professional_quals-proxy"
                                     }
                                 }
                             ]
                         },
                         {
                             "type": "Question",
-                            "id": "main-job-type1",
+                            "id": "employers-business1",
                             "questions": [
                                 {
-                                    "id": "main-job-type-question1",
-                                    "title": "What is your employment status?",
+                                    "id": "employers-business-question1",
+                                    "title": "What is the main activity of <em>{{answers['business-name-answer1']}}</em>?",
+                                    "description": "For example, clothing retail, primary education or general hospital.",
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "main-job-type-answer",
+                                            "id": "employers-business-answer1",
+                                            "label": "Description",
+                                            "mandatory": false,
+                                            "type": "TextArea"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "professional_quals"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "employers-business-proxy",
+                            "questions": [
+                                {
+                                    "id": "employers-business-question-proxy",
+                                    "title": "What is the main activity of <em>{{answers['business-name-answer-proxy']}}</em>?",
+                                    "description": "For example, clothing retail, primary education or general hospital.",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "employers-business-answer-proxy",
+                                            "label": "Description",
+                                            "mandatory": false,
+                                            "type": "TextArea"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "professional_quals-proxy"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "professional_quals",
+                            "questions": [
+                                {
+                                    "id": "professional_quals-question",
+                                    "title": "For your main job, do you hold a qualification awarded or accredited by a professional body?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "professional_quals-answer",
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "An employee",
-                                                    "value": "An employee"
+                                                    "label": "Yes",
+                                                    "value": "Yes"
                                                 },
                                                 {
-                                                    "label": "Self-employed or freelance without employees",
-                                                    "value": "Self-employed or freelance without employees"
-                                                },
-                                                {
-                                                    "label": "Self-employed or freelance with employees",
-                                                    "value": "Self-employed or freelance with employees"
+                                                    "label": "No",
+                                                    "value": "No"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -3038,28 +3180,24 @@
                         },
                         {
                             "type": "Question",
-                            "id": "main-job-type-proxy",
+                            "id": "professional_quals-proxy",
                             "questions": [
                                 {
-                                    "id": "main-job-type-question-proxy",
-                                    "title": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> employment status?",
+                                    "id": "professional_quals-question-proxy",
+                                    "title": "For their main job, does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> hold a qualification awarded or accredited by a professional body?",
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "main-job-type-answer-proxy",
+                                            "id": "professional_quals-answer-proxy",
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "An employee",
-                                                    "value": "An employee"
+                                                    "label": "Yes",
+                                                    "value": "Yes"
                                                 },
                                                 {
-                                                    "label": "Self-employed or freelance without employees",
-                                                    "value": "Self-employed or freelance without employees"
-                                                },
-                                                {
-                                                    "label": "Self-employed or freelance with employees",
-                                                    "value": "Self-employed or freelance with employees"
+                                                    "label": "No",
+                                                    "value": "No"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -3105,31 +3243,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "hours-worked1",
-                                        "when": [
-                                            {
-                                                "id": "employment-status-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "household-member-completed",
-                                        "when": [
-                                            {
-                                                "id": "employment-status-answer1",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "hours-worked1"
+                                        "block": "household-member-completed"
                                     }
                                 }
                             ]
@@ -3157,508 +3271,6 @@
                                                 }
                                             ],
                                             "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "hours-worked-proxy",
-                                        "when": [
-                                            {
-                                                "id": "employment-status-answer-proxy",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "household-member-completed",
-                                        "when": [
-                                            {
-                                                "id": "employment-status-answer-proxy",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "hours-worked-proxy"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "hours-worked1",
-                            "description": "",
-                            "questions": [
-                                {
-                                    "title": "In your main job, how many hours a week do you usually work?",
-                                    "id": "hours-worked-question1",
-                                    "guidance": {
-                                        "content": [
-                                            {
-                                                "title": "Include",
-                                                "list": [
-                                                    "paid and unpaid overtime"
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "hours-worked-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "0 to 15 hours",
-                                                    "value": "0 to 15 hours"
-                                                },
-                                                {
-                                                    "label": "16 to 30 hours",
-                                                    "value": "16 to 30 hours"
-                                                },
-                                                {
-                                                    "label": "31 to 48 hours",
-                                                    "value": "31 to 48 hours"
-                                                },
-                                                {
-                                                    "label": "49 hours or more",
-                                                    "value": "49 hours or more "
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "work-travel1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "hours-worked-proxy",
-                            "description": "",
-                            "questions": [
-                                {
-                                    "title": "In <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> main job, how many hours a week do they usually work?",
-                                    "id": "hours-worked-question-proxy",
-                                    "guidance": {
-                                        "content": [
-                                            {
-                                                "title": "Include",
-                                                "list": [
-                                                    "paid and unpaid overtime"
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "hours-worked-answer-proxy",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "0 to 15 hours",
-                                                    "value": "0 to 15 hours"
-                                                },
-                                                {
-                                                    "label": "16 to 30 hours",
-                                                    "value": "16 to 30 hours"
-                                                },
-                                                {
-                                                    "label": "31 to 48 hours",
-                                                    "value": "31 to 48 hours"
-                                                },
-                                                {
-                                                    "label": "49 hours or more",
-                                                    "value": "49 hours or more "
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "work-travel-proxy"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "work-travel1",
-                            "description": "",
-                            "questions": [
-                                {
-                                    "title": "What transport do you use for the furthest part of your usual journey to work?",
-                                    "id": "work-travel-question1",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "work-travel-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Work mainly at or from home",
-                                                    "value": "Work mainly at or from home"
-                                                },
-                                                {
-                                                    "label": "Underground, metro, light rail or tram",
-                                                    "value": "Underground, metro, light rail or tram"
-                                                },
-                                                {
-                                                    "label": "Train",
-                                                    "value": "Train"
-                                                },
-                                                {
-                                                    "label": "Bus, minibus or coach",
-                                                    "value": "Bus, minibus or coach "
-                                                },
-                                                {
-                                                    "label": "Taxi",
-                                                    "value": "Taxi "
-                                                },
-                                                {
-                                                    "label": "Motorcycle, scooter or moped",
-                                                    "value": "Motorcycle, scooter or moped"
-                                                },
-                                                {
-                                                    "label": "Driving a car or van",
-                                                    "value": "Driving a car or van"
-                                                },
-                                                {
-                                                    "label": "Passenger in a car or van",
-                                                    "value": "Passenger in a car or van"
-                                                },
-                                                {
-                                                    "label": "Bicycle",
-                                                    "value": "Bicycle"
-                                                },
-                                                {
-                                                    "label": "On foot",
-                                                    "value": "On foot"
-                                                },
-                                                {
-                                                    "label": "Other",
-                                                    "value": "Other"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "household-member-completed",
-                                        "when": [
-                                            {
-                                                "id": "work-travel-answer1",
-                                                "condition": "equals",
-                                                "value": "Work mainly at or from home"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "employer-type-of-address1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "work-travel-proxy",
-                            "description": "",
-                            "questions": [
-                                {
-                                    "title": "What transport does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> use for the furthest part of their usual journey to work?",
-                                    "id": "work-travel-question-proxy",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "work-travel-answer-proxy",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Work mainly at or from home",
-                                                    "value": "Work mainly at or from home"
-                                                },
-                                                {
-                                                    "label": "Underground, metro, light rail or tram",
-                                                    "value": "Underground, metro, light rail or tram"
-                                                },
-                                                {
-                                                    "label": "Train",
-                                                    "value": "Train"
-                                                },
-                                                {
-                                                    "label": "Bus, minibus or coach",
-                                                    "value": "Bus, minibus or coach "
-                                                },
-                                                {
-                                                    "label": "Taxi",
-                                                    "value": "Taxi "
-                                                },
-                                                {
-                                                    "label": "Motorcycle, scooter or moped",
-                                                    "value": "Motorcycle, scooter or moped"
-                                                },
-                                                {
-                                                    "label": "Driving a car or van",
-                                                    "value": "Driving a car or van"
-                                                },
-                                                {
-                                                    "label": "Passenger in a car or van",
-                                                    "value": "Passenger in a car or van"
-                                                },
-                                                {
-                                                    "label": "Bicycle",
-                                                    "value": "Bicycle"
-                                                },
-                                                {
-                                                    "label": "On foot",
-                                                    "value": "On foot"
-                                                },
-                                                {
-                                                    "label": "Other",
-                                                    "value": "Other"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "household-member-completed",
-                                        "when": [
-                                            {
-                                                "id": "work-travel-answer-proxy",
-                                                "condition": "equals",
-                                                "value": "Work mainly at or from home"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "employer-type-of-address-proxy"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "employer-type-of-address1",
-                            "questions": [
-                                {
-                                    "id": "employer-type-of-address-question1",
-                                    "title": "Where do you work?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "employer-type-of-address-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "At a workplace or report to a depot",
-                                                    "value": "At a workplace or report to a depot"
-                                                },
-                                                {
-                                                    "label": "An offshore installation",
-                                                    "value": "An offshore installation"
-                                                },
-                                                {
-                                                    "label": "No fixed place",
-                                                    "value": "No fixed place"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "employer-address1",
-                                        "when": [
-                                            {
-                                                "id": "employer-type-of-address-answer1",
-                                                "condition": "equals",
-                                                "value": "At a workplace or report to a depot"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "household-member-completed"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "employer-type-of-address-proxy",
-                            "questions": [
-                                {
-                                    "id": "employer-type-of-address-question-proxy",
-                                    "title": "Where does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> work?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "employer-type-of-address-answer-proxy",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "At a workplace or report to a depot",
-                                                    "value": "At a workplace or report to a depot"
-                                                },
-                                                {
-                                                    "label": "An offshore installation",
-                                                    "value": "An offshore installation"
-                                                },
-                                                {
-                                                    "label": "No fixed place",
-                                                    "value": "No fixed place"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "employer-address-proxy",
-                                        "when": [
-                                            {
-                                                "id": "employer-type-of-address-answer-proxy",
-                                                "condition": "equals",
-                                                "value": "At a workplace or report to a depot"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "household-member-completed"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "employer-address1",
-                            "questions": [
-                                {
-                                    "id": "employer-address-question1",
-                                    "title": "What is the address of <em>{{answers['business-name-answer1']}}</em>?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "employer-address-answer-building1",
-                                            "label": "Building",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "employer-address-answer-street1",
-                                            "label": "Street",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "employer-address-answer-city1",
-                                            "label": "Town or city",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "employer-address-answer-county1",
-                                            "label": "County (optional)",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "employer-adress-answer-postcode1",
-                                            "label": "Postcode",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "household-member-completed"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "employer-address-proxy",
-                            "questions": [
-                                {
-                                    "id": "employer-address-question-proxy",
-                                    "title": "What is the address of <em>{{answers['business-name-answer-proxy']}}</em>?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "employer-address-answer-building-proxy",
-                                            "label": "Building",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "employer-address-answer-street-proxy",
-                                            "label": "Street",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "employer-address-answer-city-proxy",
-                                            "label": "Town or city",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "employer-address-answer-county-proxy",
-                                            "label": "County (optional)",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "employer-adress-answer-postcode-proxy",
-                                            "label": "Postcode",
-                                            "mandatory": false,
-                                            "type": "TextField"
                                         }
                                     ]
                                 }
