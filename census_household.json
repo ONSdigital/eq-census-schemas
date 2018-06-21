@@ -1944,7 +1944,7 @@
                             "questions": [
                                 {
                                     "id": "employment-status-question1",
-                                    "title": "Last week were you doing any paid work?",
+                                    "title": "In the last seven days, were you doing any of the following?",
                                     "type": "General",
                                     "description": " Include casual or temporary work, even if only for one hour",
                                     "answers": [
@@ -1953,15 +1953,27 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
+                                                    "label": "Working as an employee",
+                                                    "value": "Working as an employee"
                                                 },
                                                 {
-                                                    "label": "No",
-                                                    "value": "No"
+                                                    "label": "Self employed or freelance",
+                                                    "value": "Self employed or freelance"
+                                                },
+                                                {
+                                                    "label": "Temporarily away from work ill, on maternity or paternity leave, on holiday or temporarily laid off",
+                                                    "value": "Temporarily away from work ill, on maternity or paternity leave, on holiday or temporarily laid off"
+                                                },
+                                                {
+                                                    "label": "Doing any other kind of paid work",
+                                                    "value": "Doing any other kind of paid work"
+                                                },
+                                                {
+                                                    "label": "None of these apply",
+                                                    "value": "None of these apply"
                                                 }
                                             ],
-                                            "type": "Radio"
+                                            "type": "Checkbox"
                                         }
                                     ]
                                 }
@@ -1974,7 +1986,7 @@
                                             {
                                                 "id": "employment-status-answer1",
                                                 "condition": "equals",
-                                                "value": "No"
+                                                "value": "None of these apply"
                                             }
                                         ]
                                     }
@@ -1992,7 +2004,7 @@
                             "questions": [
                                 {
                                     "id": "employment-status-question-proxy",
-                                    "title": "Last week was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> doing any paid work?",
+                                    "title": "In the last seven days, was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> doing any of the following?",
                                     "type": "General",
                                     "description": " Include casual or temporary work, even if only for one hour",
                                     "answers": [
@@ -2001,15 +2013,27 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
+                                                    "label": "Working as an employee",
+                                                    "value": "Working as an employee"
                                                 },
                                                 {
-                                                    "label": "No",
-                                                    "value": "No"
+                                                    "label": "Self employed or freelance",
+                                                    "value": "Self employed or freelance"
+                                                },
+                                                {
+                                                    "label": "Temporarily away from work ill, on maternity or paternity leave, on holiday or temporarily laid off",
+                                                    "value": "Temporarily away from work ill, on maternity or paternity leave, on holiday or temporarily laid off"
+                                                },
+                                                {
+                                                    "label": "Doing any other kind of paid work",
+                                                    "value": "Doing any other kind of paid work"
+                                                },
+                                                {
+                                                    "label": "None of these apply",
+                                                    "value": "None of these apply"
                                                 }
                                             ],
-                                            "type": "Radio"
+                                            "type": "Checkbox"
                                         }
                                     ]
                                 }
@@ -2022,7 +2046,7 @@
                                             {
                                                 "id": "employment-status-answer-proxy",
                                                 "condition": "equals",
-                                                "value": "No"
+                                                "value": "None of these apply"
                                             }
                                         ]
                                     }
@@ -2040,7 +2064,7 @@
                             "questions": [
                                 {
                                     "id": "employment-type-question1",
-                                    "title": "Which of the following were you doing last week?",
+                                    "title": "Which of the following describes whare you were doing in the last seven days?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -2048,19 +2072,27 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Away from work ill, on maternity or paternity leave, on holiday or temporarily laid off",
-                                                    "value": "Away from work ill, on maternity or paternity leave, on holiday or temporarily laid off"
+                                                    "label": "Retired (whether receiving a pension or not)",
+                                                    "value": "Retired (whether receiving a pension or not)"
                                                 },
                                                 {
-                                                    "label": "Working unpaid for your own or your family’s business",
-                                                    "value": "Working unpaid for your own or your family’s business"
+                                                    "label": "Student",
+                                                    "value": "Student"
                                                 },
                                                 {
-                                                    "label": "Other including retired",
-                                                    "value": "Other including retired"
+                                                    "label": "Looking after home or family",
+                                                    "value": "Looking after home or family"
+                                                },
+                                                {
+                                                    "label": "Long term sick or disabled",
+                                                    "value": "Long term sick or disabled"
+                                                },
+                                                {
+                                                    "label": "Other",
+                                                    "value": "Other"
                                                 }
                                             ],
-                                            "type": "Radio"
+                                            "type": "Checkbox"
                                         }
                                     ]
                                 }
@@ -2068,19 +2100,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "jobseeker1",
-                                        "when": [
-                                            {
-                                                "id": "employment-type-answer1",
-                                                "condition": "equals",
-                                                "value": "Other including retired"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "org-or-business1"
+                                        "block": "jobseeker"
                                     }
                                 }
                             ]
@@ -2091,27 +2111,35 @@
                             "questions": [
                                 {
                                     "id": "employment-type-question-proxy",
-                                    "title": "Which of the following was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> doing last week?",
+                                    "title": "Which of the following describes what <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> was doing in the last seven days?",
                                     "type": "General",
                                     "answers": [
                                         {
                                             "id": "employment-type-answer-proxy",
                                             "mandatory": false,
                                             "options": [
-                                                {
-                                                    "label": "Away from work ill, on maternity or paternity leave, on holiday or temporarily laid off",
-                                                    "value": "Away from work ill, on maternity or paternity leave, on holiday or temporarily laid off"
+                                               {
+                                                    "label": "Retired (whether receiving a pension or not)",
+                                                    "value": "Retired (whether receiving a pension or not)"
                                                 },
                                                 {
-                                                    "label": "Working unpaid for your own or your family’s business",
-                                                    "value": "Working unpaid for your own or your family’s business"
+                                                    "label": "Student",
+                                                    "value": "Student"
                                                 },
                                                 {
-                                                    "label": "Other including retired",
-                                                    "value": "Other including retired"
+                                                    "label": "Looking after home or family",
+                                                    "value": "Looking after home or family"
+                                                },
+                                                {
+                                                    "label": "Long term sick or disabled",
+                                                    "value": "Long term sick or disabled"
+                                                },
+                                                {
+                                                    "label": "Other",
+                                                    "value": "Other"
                                                 }
                                             ],
-                                            "type": "Radio"
+                                            "type": "Checkbox"
                                         }
                                     ]
                                 }
@@ -2119,19 +2147,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "jobseeker-proxy",
-                                        "when": [
-                                            {
-                                                "id": "employment-type-answer-proxy",
-                                                "condition": "equals",
-                                                "value": "Other including retired"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "org-or-business-proxy"
+                                        "block": "jobseeker1"
                                     }
                                 }
                             ]
@@ -2236,10 +2252,18 @@
                             "questions": [
                                 {
                                     "id": "jobseeker-question",
-                                    "title": "In the last four weeks were you actively looking for any kind of paid work?",
+                                    "title": "In the last four weeks, were you actively looking for any kind of paid work?",
                                     "type": "General",
                                     "answers": [
                                         {
+                                            "guidance": {
+                                                "show_guidance": "Why do I need to answer if I am retired or long term sick or disabled?",
+                                                "hide_guidance": "Why do I need to answer if I am retired or long term sick or disabled",
+                                                "content": [{
+                                                   "description": "To get a true picture of the UK working population we ask this question to everyone. We ask people who are retired because the number of people continuing to work after retirement age is increasing. We ask people who are long-term sick or disabled because some intend to go back to work."
+                                                    }
+                                                 ]
+                                            },
                                             "id": "jobseeker-answer1",
                                             "mandatory": false,
                                             "options": [
@@ -2254,6 +2278,7 @@
                                             ],
                                             "type": "Radio"
                                         }
+
                                     ]
                                 }
                             ],
@@ -2271,10 +2296,18 @@
                             "questions": [
                                 {
                                     "id": "jobseeker-question-proxy",
-                                    "title": "In the last four weeks was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> actively looking for any kind of paid work?",
+                                    "title": "In the last four weeks, was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> actively looking for any kind of paid work?",
                                     "type": "General",
                                     "answers": [
                                         {
+                                            "guidance": {
+                                                "show_guidance": "Why do I need to answer if I am retired or long term sick or disabled?",
+                                                "hide_guidance": "Why do I need to answer if I am retired or long term sick or disabled",
+                                                "content": [{
+                                                   "description": "To get a true picture of the UK working population we ask this question to everyone. We ask people who are retired because the number of people continuing to work after retirement age is increasing. We ask people who are long-term sick or disabled because some intend to go back to work."
+                                                    }
+                                                 ]
+                                            },
                                             "id": "jobseeker-answer-proxy",
                                             "mandatory": false,
                                             "options": [
@@ -2306,7 +2339,7 @@
                             "questions": [
                                 {
                                     "id": "job-availability-question1",
-                                    "title": "If a job became available now, could you start it within two weeks?",
+                                    "title": "Are you available to start work in the next two weeks?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -2358,7 +2391,7 @@
                             "questions": [
                                 {
                                     "id": "job-availability-question-proxy",
-                                    "title": "If a job became available now, could <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> start it within two weeks?",
+                                    "title": "Is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> available to start work in the next two weeks?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -2410,7 +2443,7 @@
                             "questions": [
                                 {
                                     "id": "job-pending-question1",
-                                    "title": "Last week, were you waiting to start a job already accepted?",
+                                    "title": "In the last seven days, were you waiting to start a job already accepted?",
                                     "type": "General",
                                     "answers": [
                                         {
