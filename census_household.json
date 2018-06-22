@@ -2729,7 +2729,8 @@
                                         "when": [
                                             {
                                                 "id": "main-job-type-answer1",
-                                                "condition": "An employee"
+                                                "condition": "equals",
+                                                "value": "An employee"
                                             }
                                         ]
                                     }
@@ -2779,7 +2780,8 @@
                                         "when": [
                                             {
                                                 "id": "main-job-type-answer-proxy",
-                                                "condition": "An employee"
+                                                "condition": "equals",
+                                                "value": "An employee"
                                             }
                                         ]
                                     }
@@ -2825,7 +2827,8 @@
                                         "when": [
                                             {
                                                 "id": "self-employed-answer-proxy",
-                                                "condition": "Yes"
+                                                "condition": "equals",
+                                                "value": "Yes"
                                             }
                                         ]
                                     }
@@ -2871,7 +2874,8 @@
                                         "when": [
                                             {
                                                 "id": "self-employed-answer",
-                                                "condition": "Yes"
+                                                "condition": "equals",
+                                                "value": "Yes"
                                             }
                                         ]
                                     }
