@@ -3115,7 +3115,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "professional_quals"
+                                        "block": "professional-quals"
                                     }
                                 }
                             ]
@@ -3142,22 +3142,22 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "professional_quals-proxy"
+                                        "block": "professional-quals-proxy"
                                     }
                                 }
                             ]
                         },
                         {
                             "type": "Question",
-                            "id": "professional_quals",
+                            "id": "professional-quals",
                             "questions": [
                                 {
-                                    "id": "professional_quals-question",
+                                    "id": "professional-quals-question",
                                     "title": "For your main job, do you hold a qualification awarded or accredited by a professional body?",
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "professional_quals-answer",
+                                            "id": "professional-quals-answer",
                                             "mandatory": false,
                                             "options": [
                                                 {
@@ -3182,17 +3182,18 @@
                                 }
                             ]
                         },
+                        
                         {
                             "type": "Question",
-                            "id": "professional_quals-proxy",
+                            "id": "professional-quals-proxy",
                             "questions": [
                                 {
-                                    "id": "professional_quals-question-proxy",
+                                    "id": "professional-quals-question-proxy",
                                     "title": "For their main job, does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> hold a qualification awarded or accredited by a professional body?",
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "professional_quals-answer-proxy",
+                                            "id": "professional-quals-answer-proxy",
                                             "mandatory": false,
                                             "options": [
                                                 {
