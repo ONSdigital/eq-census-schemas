@@ -18,9 +18,6 @@
         },
         "period_id": {
             "validator": "string"
-        },
-        "region_code": {
-            "validator": "string"
         }
     },
     "sections": [
