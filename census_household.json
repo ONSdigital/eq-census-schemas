@@ -2100,7 +2100,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "jobseeker"
+                                        "block": "jobseeker1"
                                     }
                                 }
                             ]
@@ -2390,18 +2390,6 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "ever-worked1",
-                                        "when": [
-                                            {
-                                                "id": "in-education-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
                                         "block": "occupation1"
                                     }
                                 }
@@ -2446,18 +2434,6 @@
                                             },
                                             {
                                                 "id": "job-pending-answer-proxy",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "ever-worked-proxy",
-                                        "when": [
-                                            {
-                                                "id": "in-education-answer",
                                                 "condition": "equals",
                                                 "value": "Yes"
                                             }
@@ -2835,7 +2811,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "job-title"
+                                        "block": "job-title-proxy"
                                     }
                                 }
                             ]
@@ -3038,7 +3014,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "professional_quals"
+                                        "block": "professional-quals"
                                     }
                                 }
                             ]
@@ -3088,7 +3064,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "professional_quals-proxy"
+                                        "block": "professional-quals-proxy"
                                     }
                                 }
                             ]
