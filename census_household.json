@@ -3019,7 +3019,7 @@
                             "id": "business-name-past1",
                             "questions": [
                                 {
-                                    "id": "business-name-question1",
+                                    "id": "business-name-past-question1",
                                     "title": "What was the name of the organisation or business you worked for?",
                                     "description": "If you were self-employed in your own business, give the business name.",
                                     "type": "General",
