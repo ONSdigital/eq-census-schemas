@@ -3378,7 +3378,7 @@
                             "questions": [
                                 {
                                     "id": "employers-business-question1",
-                                    "title": "What is the main activity of <em>{{answers['business-name-answer1']}}</em>?",
+                                    "title": "What is the main activity of <em>{{answers['business-name-answer1']| format_household_name}}</em>?",
                                     "description": "For example, clothing retail, primary education or general hospital.",
                                     "type": "General",
                                     "answers": [
