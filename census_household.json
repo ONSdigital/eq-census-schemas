@@ -1982,7 +1982,7 @@
                                         "when": [
                                             {
                                                 "id": "employment-status-answer1",
-                                                "condition": "equals",
+                                                "condition": "contains",
                                                 "value": "None of these apply"
                                             }
                                         ]
@@ -2042,7 +2042,7 @@
                                         "when": [
                                             {
                                                 "id": "employment-status-answer-proxy",
-                                                "condition": "equals",
+                                                "condition": "contains",
                                                 "value": "None of these apply"
                                             }
                                         ]
