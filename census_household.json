@@ -2501,7 +2501,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "main-job-type1"
+                                        "block": "main-job-type-past1"
                                     }
                                 }
                             ]
@@ -2563,7 +2563,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "main-job-type-proxy"
+                                        "block": "main-job-type-past-proxy"
                                     }
                                 }
                             ]
@@ -2672,6 +2672,108 @@
                         },
                         {
                             "type": "Question",
+                            "id": "main-job-type-past1",
+                            "questions": [
+                                {
+                                    "id": "main-job-type-past-question1",
+                                    "title": "In your main job, what was your employment status?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "main-job-type-past-answer1",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "An employee",
+                                                    "value": "An employee"
+                                                },
+                                                {
+                                                    "label": "Self-employed or freelance without employees",
+                                                    "value": "Self-employed or freelance without employees"
+                                                },
+                                                {
+                                                    "label": "Self-employed with employees",
+                                                    "value": "Self-employed with employees"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                 {
+                                    "goto": {
+                                        "block": "business-name-past1",
+                                        "when": [
+                                            {
+                                                "id": "main-job-type-past-answer1",
+                                                "condition": "equals",
+                                                "value": "An employee"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "self-employed-past"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "main-job-type-past-proxy",
+                            "questions": [
+                                {
+                                    "id": "main-job-type-past-question-proxy",
+                                    "title": "In their main job, what was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> employment status?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "main-job-type-past-answer-proxy",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "An employee",
+                                                    "value": "An employee"
+                                                },
+                                                {
+                                                    "label": "Self-employed or freelance without employees",
+                                                    "value": "Self-employed or freelance without employees"
+                                                },
+                                                {
+                                                    "label": "Self-employed with employees",
+                                                    "value": "Self-employed with employees"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                 {
+                                    "goto": {
+                                        "block": "business-name-past-proxy",
+                                        "when": [
+                                            {
+                                                "id": "main-job-type-past-answer-proxy",
+                                                "condition": "equals",
+                                                "value": "An employee"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "self-employed-past-proxy"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
                             "id": "self-employed-proxy",
                             "questions": [
                                 {
@@ -2766,6 +2868,100 @@
                         },
                         {
                             "type": "Question",
+                            "id": "self-employed-past-proxy",
+                            "questions": [
+                                {
+                                    "id": "self-employed-past-question-proxy",
+                                    "title": "Was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] }}</em> self-employed in their own registered business?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "self-employed-past-answer-proxy",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Yes",
+                                                    "value": "Yes"
+                                                },
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                 {
+                                    "goto": {
+                                        "block": "business-name-past-proxy",
+                                        "when": [
+                                            {
+                                                "id": "self-employed-past-answer-proxy",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "job-title-past-proxy"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "self-employed-past",
+                            "questions": [
+                                {
+                                    "id": "self-employed-past-question",
+                                    "title": "Were you self-employed in your own registered business?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "self-employed-past-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Yes",
+                                                    "value": "Yes"
+                                                },
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                 {
+                                    "goto": {
+                                        "block": "business-name-past1",
+                                        "when": [
+                                            {
+                                                "id": "self-employed-past-answer",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "job-title-past1"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
                             "id": "business-name1",
                             "questions": [
                                 {
@@ -2820,6 +3016,60 @@
                         },
                         {
                             "type": "Question",
+                            "id": "business-name-past1",
+                            "questions": [
+                                {
+                                    "id": "business-name-question1",
+                                    "title": "What was the name of the organisation or business you worked for?",
+                                    "description": "If you were self-employed in your own business, give the business name.",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "business-name-past-answer1",
+                                            "label": "Organisation or business name",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "job-title-past1"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "business-name-past-proxy",
+                            "questions": [
+                                {
+                                    "id": "business-name-past-question-proxy",
+                                    "title": "What was the name of the organisation or business <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> worked for?",
+                                    "description": "If you were self-employed in your own business, give the business name.",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "business-name-past-answer-proxy",
+                                            "label": "Organisation or business name",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "job-title-past-proxy"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
                             "id": "job-title1",
                             "questions": [
                                 {
@@ -2866,6 +3116,58 @@
                                 {
                                     "goto": {
                                         "block": "job-description-proxy"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "job-title-past1",
+                            "questions": [
+                                {
+                                    "id": "job-title-past-question1",
+                                    "title": "What was your full job title?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "job-title-past-answer1",
+                                            "label": "Job title",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "job-description-past1"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "job-title-past-proxy",
+                            "questions": [
+                                {
+                                    "id": "job-title-past-question-proxy",
+                                    "title": "What was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> full job title?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "job-title-past-answer-proxy",
+                                            "label": "Job title",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "job-description-past-proxy"
                                     }
                                 }
                             ]
@@ -2972,6 +3274,106 @@
                         },
                         {
                             "type": "Question",
+                            "id": "job-description-past1",
+                            "questions": [
+                                {
+                                    "id": "job-description-past-question1",
+                                    "title": "Briefly describe what you did in your main job?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "job-description-past-answer1",
+                                            "label": "Description",
+                                            "mandatory": false,
+                                            "type": "TextArea"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                 {
+                                    "goto": {
+                                        "block": "employers-business-past1",
+                                        "when": [
+                                            {
+                                                "id": "main-job-type-past-answer1",
+                                                "condition": "equals",
+                                                "value": "An employee"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "employers-business-past1",
+                                        "when": [
+                                            {
+                                                "id": "self-employed-past-answer1",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "professional-quals-past"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "job-description-past-proxy",
+                            "questions": [
+                                {
+                                    "id": "job-description-past-question-proxy",
+                                    "title": "Briefly describe what <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> did in their main job?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "job-description-past-answer-proxy",
+                                            "label": "Description",
+                                            "mandatory": false,
+                                            "type": "TextArea"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "employers-business-past-proxy",
+                                        "when": [
+                                            {
+                                                "id": "main-job-type-past-answer-proxy",
+                                                "condition": "equals",
+                                                "value": "An employee"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "employers-business-past-proxy",
+                                        "when": [
+                                            {
+                                                "id": "self-employed-past-answer-proxy",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "professional-quals-past-proxy"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
                             "id": "employers-business1",
                             "questions": [
                                 {
@@ -3020,6 +3422,60 @@
                                 {
                                     "goto": {
                                         "block": "professional-quals-proxy"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "employers-business-past1",
+                            "questions": [
+                                {
+                                    "id": "employers-business-past-question1",
+                                    "title": "What was the main activity of <em>{{answers['business-name-answer1']}}</em>?",
+                                    "description": "For example, clothing retail, primary education or general hospital.",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "employers-business-past-answer1",
+                                            "label": "Description",
+                                            "mandatory": false,
+                                            "type": "TextArea"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "professional-quals-past"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "employers-business-past-proxy",
+                            "questions": [
+                                {
+                                    "id": "employers-business-past-question-proxy",
+                                    "title": "What was the main activity of <em>{{answers['business-name-answer-proxy']}}</em>?",
+                                    "description": "For example, clothing retail, primary education or general hospital.",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "employers-business-past-answer-proxy",
+                                            "label": "Description",
+                                            "mandatory": false,
+                                            "type": "TextArea"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "professional-quals-past-proxy"
                                     }
                                 }
                             ]
@@ -3095,6 +3551,76 @@
                                 }
                             ]
                         },
+                         {
+                            "type": "Question",
+                            "id": "professional-quals-past",
+                            "questions": [
+                                {
+                                    "id": "professional-quals-past-question",
+                                    "title": "For your main job, did you hold a qualification awarded or accredited by a professional body?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "professional-quals-past-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Yes",
+                                                    "value": "Yes"
+                                                },
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "supervise-past1"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "professional-quals-past-proxy",
+                            "questions": [
+                                {
+                                    "id": "professional-quals-question-past-proxy",
+                                    "title": "For their main job, did <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> hold a qualification awarded or accredited by a professional body?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "professional-quals-past-answer-proxy",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Yes",
+                                                    "value": "Yes"
+                                                },
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "supervise-past-proxy"
+                                    }
+                                }
+                            ]
+                        },
                         {
                             "type": "Question",
                             "id": "supervise1",
@@ -3141,6 +3667,76 @@
                                     "answers": [
                                         {
                                             "id": "supervise-answer-proxy",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Yes",
+                                                    "value": "Yes"
+                                                },
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "household-member-completed"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "supervise-past1",
+                            "questions": [
+                                {
+                                    "id": "supervise-past-question1",
+                                    "title": "Did you supervise or oversee the work of other employees on a day to day basis?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "supervise-past-answer1",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Yes",
+                                                    "value": "Yes"
+                                                },
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "household-member-completed"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "supervise-past-proxy",
+                            "questions": [
+                                {
+                                    "id": "supervise-past-question-proxy",
+                                    "title": "Did <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> supervise or oversee the work of other employees on a day to day basis?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "supervise-past-answer-proxy",
                                             "mandatory": false,
                                             "options": [
                                                 {
