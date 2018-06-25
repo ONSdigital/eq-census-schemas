@@ -2387,7 +2387,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "occupation1"
+                                        "block": "main-job-type1"
                                     }
                                 }
                             ]
@@ -2439,7 +2439,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "occupation-proxy"
+                                        "block": "main-job-type-proxy"
                                     }
                                 }
                             ]
