@@ -1452,7 +1452,16 @@
                                     "id": "employment-status-question1",
                                     "title": "In the last seven days, were you doing any of the following?",
                                     "type": "General",
-                                    "description": " Include casual or temporary work, even if only for one hour",
+                                    "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Include",
+                                                "list": [
+                                                    "casual or temporary work, even if only for one hour"
+                                                ]
+                                            }
+                                        ]
+                                    },
                                     "answers": [
                                         {
                                             "id": "employment-status-answer1",
@@ -1512,7 +1521,16 @@
                                     "id": "employment-status-question-proxy",
                                     "title": "In the last seven days, was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> doing any of the following?",
                                     "type": "General",
-                                    "description": " Include casual or temporary work, even if only for one hour",
+                                   "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Include",
+                                                "list": [
+                                                    "casual or temporary work, even if only for one hour"
+                                                ]
+                                            }
+                                        ]
+                                    },
                                     "answers": [
                                         {
                                             "id": "employment-status-answer-proxy",
@@ -2085,6 +2103,7 @@
                                     "id": "main-job-type-question1",
                                     "title": "In your main job, what is your employment status?",
                                     "type": "General",
+                                    "description": "Answer the remaining questions for you main job",
                                     "answers": [
                                         {
                                             "id": "main-job-type-answer1",
@@ -2136,6 +2155,7 @@
                                     "id": "main-job-type-question-proxy",
                                     "title": "In their main job, what is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> employment status?",
                                     "type": "General",
+                                    "description": "Answer the remaining questions for their main job",
                                     "answers": [
                                         {
                                             "id": "main-job-type-answer-proxy",
@@ -2186,6 +2206,7 @@
                                 {
                                     "id": "main-job-type-past-question1",
                                     "title": "In your main job, what was your employment status?",
+                                    "description": "Answer the remaining questions for your last main job",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -2237,6 +2258,7 @@
                                 {
                                     "id": "main-job-type-past-question-proxy",
                                     "title": "In their main job, what was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> employment status?",
+                                    "description": "Answer the remaining questions for their last main job",
                                     "type": "General",
                                     "answers": [
                                         {
