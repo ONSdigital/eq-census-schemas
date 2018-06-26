@@ -1126,7 +1126,7 @@
                             "questions": [
                                 {
                                     "id": "other-address-question",
-                                    "title": "What is the UK address where <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> stays for more than 30 days a year",
+                                    "title": "What is the UK address where <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> stays for more than 30 days a year?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1176,7 +1176,7 @@
                             "questions": [
                                 {
                                     "id": "other-address-question1",
-                                    "title": "What is the UK address where you stay for more than 30 days a year",
+                                    "title": "What is the UK address where you stay for more than 30 days a year?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1374,12 +1374,12 @@
                                                     "value": "No, or currently serving"
                                                 },
                                                 {
-                                                    "label": "Yes, previously served, Regular Armed Forces",
-                                                    "value": "Yes, previously served, Regular Armed Forces"
+                                                    "label": "Yes, previously served in Regular Armed Forces",
+                                                    "value": "Yes, previously served in Regular Armed Forces"
                                                 },
                                                 {
-                                                    "label": "Yes, previously served, Reserve Armed Forces",
-                                                    "value": "Yes, previously served, Reserve Armed Forces"
+                                                    "label": "Yes, previously served in Reserve Armed Forces",
+                                                    "value": "Yes, previously served in Reserve Armed Forces"
                                                 }
                                             ],
                                             "type": "Checkbox"
@@ -1423,12 +1423,12 @@
                                                     "value": "No, or currently serving"
                                                 },
                                                 {
-                                                    "label": "Yes, previously served, regular armed forces",
-                                                    "value": "Yes, previously served, regular armed forces"
+                                                    "label": "Yes, previously served in Regular Armed Forces",
+                                                    "value": "Yes, previously served in Regular Armed Forces"
                                                 },
                                                 {
-                                                    "label": "Yes, previously served, reserve armed forces",
-                                                    "value": "Yes, previously served, reserve armed forces"
+                                                    "label": "Yes, previously served in Reserve Armed Forces",
+                                                    "value": "Yes, previously served in Reserve Armed Forces"
                                                 }
                                             ],
                                             "type": "Checkbox"
@@ -1653,7 +1653,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "jobseeker1"
+                                        "block": "jobseeker-proxy"
                                     }
                                 }
                             ]
