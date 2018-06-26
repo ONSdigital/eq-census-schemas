@@ -2061,7 +2061,7 @@
                             "questions": [
                                 {
                                     "id": "employment-type-question1",
-                                    "title": "Which of the following describes whare you were doing in the last seven days?",
+                                    "title": "Which of the following describes where you were doing in the last seven days?",
                                     "type": "General",
                                     "answers": [
                                         {
