@@ -217,7 +217,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "who-lives-here-interstitial"
+                                        "block": "who-lives-here-completed"
                                     }
                                 }
                             ]
@@ -301,7 +301,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "who-lives-here-interstitial"
+                                        "block": "who-lives-here-completed"
                                     }
                                 }
                             ]
