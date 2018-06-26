@@ -1914,7 +1914,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "main-job-type1"
+                                        "block": "ever-worked1"
                                     }
                                 }
                             ]
@@ -1966,7 +1966,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "main-job-type-proxy"
+                                        "block": "ever-worked-proxy"
                                     }
                                 }
                             ]
