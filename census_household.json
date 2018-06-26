@@ -2153,7 +2153,7 @@
                             "questions": [
                                 {
                                     "id": "main-job-type-question-proxy",
-                                    "title": "In their main job, what is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> employment status?",
+                                    "title": "In their main job, what is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> employment status?",
                                     "type": "General",
                                     "description": "Answer the remaining questions for their main job",
                                     "answers": [
@@ -2257,7 +2257,7 @@
                             "questions": [
                                 {
                                     "id": "main-job-type-past-question-proxy",
-                                    "title": "In their main job, what was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> employment status?",
+                                    "title": "In their main job, what was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> employment status?",
                                     "description": "Answer the remaining questions for their last main job",
                                     "type": "General",
                                     "answers": [
