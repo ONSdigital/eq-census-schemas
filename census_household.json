@@ -2936,7 +2936,7 @@
                             "questions": [
                                 {
                                     "id": "employers-business-question-proxy",
-                                    "title": "What is the main activity of <em>{{answers['business-name-answer-proxy']}}</em>?",
+                                    "title": "What is the main activity of <em>{{answers['business-name-answer-proxy']| format_household_name}}</em>?",
                                     "description": "For example, clothing retail, primary education or general hospital.",
                                     "type": "General",
                                     "answers": [
@@ -2963,7 +2963,7 @@
                             "questions": [
                                 {
                                     "id": "employers-business-past-question1",
-                                    "title": "What was the main activity of <em>{{answers['business-name-past-answer1']}}</em>?",
+                                    "title": "What was the main activity of <em>{{answers['business-name-past-answer1']| format_household_name}}</em>?",
                                     "description": "For example, clothing retail, primary education or general hospital.",
                                     "type": "General",
                                     "answers": [
@@ -2990,7 +2990,7 @@
                             "questions": [
                                 {
                                     "id": "employers-business-past-question-proxy",
-                                    "title": "What was the main activity of <em>{{answers['business-name-past-answer-proxy']}}</em>?",
+                                    "title": "What was the main activity of <em>{{answers['business-name-past-answer-proxy']| format_household_name}}</em>?",
                                     "description": "For example, clothing retail, primary education or general hospital.",
                                     "type": "General",
                                     "answers": [
