@@ -214,6 +214,11 @@
                                             }
                                         ]
                                     }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "who-lives-here-interstitial"
+                                    }
                                 }
                             ]
                         },
@@ -292,6 +297,11 @@
                                                 "value": "No, I need to add another person"
                                             }
                                         ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "who-lives-here-interstitial"
                                     }
                                 }
                             ]
