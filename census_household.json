@@ -2309,7 +2309,7 @@
                             "questions": [
                                 {
                                     "id": "self-employed-question-proxy",
-                                    "title": "Is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] }}</em> self-employed in their own registered business?",
+                                    "title": "Is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> self-employed in their own registered business?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -2403,7 +2403,7 @@
                             "questions": [
                                 {
                                     "id": "self-employed-past-question-proxy",
-                                    "title": "Was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] }}</em> self-employed in their own registered business?",
+                                    "title": "Was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> self-employed in their own registered business?",
                                     "type": "General",
                                     "answers": [
                                         {
