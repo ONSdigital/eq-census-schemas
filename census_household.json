@@ -114,7 +114,7 @@
                                 {
                                     "title": "Information you need",
                                     "list": [
-                                        "Names of the people living in household and how they are related"
+                                        "Names of the people living in household"
                                        
                                     ]
                                 }
@@ -820,7 +820,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-date-of-birth",
-                                    "title": "{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }} is {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old. Is this correct?",
+                                    "title": "{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] }} is {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old. Is this correct?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1401,7 +1401,7 @@
                             "questions": [
                                 {
                                     "id": "armed-forces-question-proxy",
-                                    "title": "Has <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> ever served in the UK armed forces?",
+                                    "title": "Has <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> ever served in the UK Armed Forces?",
                                     "type": "General",
                                     "guidance": {
                                         "content": [
@@ -1600,8 +1600,8 @@
                                                     "value": "Retired (whether receiving a pension or not)"
                                                 },
                                                 {
-                                                    "label": "Student",
-                                                    "value": "Student"
+                                                    "label": "Studying",
+                                                    "value": "Studying"
                                                 },
                                                 {
                                                     "label": "Looking after home or family",
@@ -1647,8 +1647,8 @@
                                                     "value": "Retired (whether receiving a pension or not)"
                                                 },
                                                 {
-                                                    "label": "Student",
-                                                    "value": "Student"
+                                                    "label": "Studying",
+                                                    "value": "Studying"
                                                 },
                                                 {
                                                     "label": "Looking after home or family",
@@ -1715,7 +1715,19 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "job-availability1"
+                                        "block": "job-availability1",
+                                        "when": [
+                                            {
+                                                "id": "jobseeker-answer1",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "job-pending1"
                                     }
                                 }
                             ]
@@ -1758,7 +1770,19 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "job-availability-proxy"
+                                        "block": "job-availability-proxy",
+                                        "when": [
+                                            {
+                                                "id": "jobseeker-answer-proxy",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "job-pending-proxy"
                                     }
                                 }
                             ]
@@ -1797,11 +1821,6 @@
                                         "when": [
                                             {
                                                 "id": "job-availability-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            },
-                                            {
-                                                "id": "jobseeker-answer1",
                                                 "condition": "equals",
                                                 "value": "Yes"
                                             }
@@ -1851,11 +1870,6 @@
                                                 "id": "job-availability-answer-proxy",
                                                 "condition": "equals",
                                                 "value": "Yes"
-                                            },
-                                            {
-                                                "id": "jobseeker-answer-proxy",
-                                                "condition": "equals",
-                                                "value": "Yes"
                                             }
                                         ]
                                     }
@@ -1897,23 +1911,6 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "ever-worked1",
-                                        "when": [
-                                            {
-                                                "id": "job-availability-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            },
-                                            {
-                                                "id": "job-pending-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
                                         "block": "ever-worked1"
                                     }
                                 }
@@ -1947,23 +1944,6 @@
                                 }
                             ],
                             "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "ever-worked-proxy",
-                                        "when": [
-                                            {
-                                                "id": "job-availability-answer-proxy",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            },
-                                            {
-                                                "id": "job-pending-answer-proxy",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
                                 {
                                     "goto": {
                                         "block": "ever-worked-proxy"
@@ -2103,8 +2083,7 @@
                                     "id": "main-job-type-question1",
                                     "title": "In your main job, what is your employment status?",
                                     "type": "General",
-                                    "description": "Answer the remaining questions for you main job",
-                                    "answers": [
+                                     "answers": [
                                         {
                                             "id": "main-job-type-answer1",
                                             "mandatory": false,
@@ -2155,7 +2134,6 @@
                                     "id": "main-job-type-question-proxy",
                                     "title": "In their main job, what is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> employment status?",
                                     "type": "General",
-                                    "description": "Answer the remaining questions for their main job",
                                     "answers": [
                                         {
                                             "id": "main-job-type-answer-proxy",
@@ -3182,7 +3160,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "household-member-completed"
+                                        "block": "hours-worked1"
                                     }
                                 }
                             ]
@@ -3217,7 +3195,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "household-member-completed"
+                                        "block": "hours-worked-proxy"
                                     }
                                 }
                             ]
@@ -3280,6 +3258,484 @@
                                                 }
                                             ],
                                             "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "household-member-completed"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "hours-worked1",
+                            "description": "",
+                            "questions": [
+                                {
+                                    "title": "In your main job, how many hours a week do you usually work?",
+                                    "id": "hours-worked-question1",
+                                    "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Include",
+                                                "list": [
+                                                    "paid and unpaid overtime"
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "hours-worked-answer1",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "0 to 15 hours",
+                                                    "value": "0 to 15 hours"
+                                                },
+                                                {
+                                                    "label": "16 to 30 hours",
+                                                    "value": "16 to 30 hours"
+                                                },
+                                                {
+                                                    "label": "31 to 48 hours",
+                                                    "value": "31 to 48 hours"
+                                                },
+                                                {
+                                                    "label": "49 hours or more",
+                                                    "value": "49 hours or more "
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "work-travel1"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "hours-worked-proxy",
+                            "description": "",
+                            "questions": [
+                                {
+                                    "title": "In <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> main job, how many hours a week do they usually work?",
+                                    "id": "hours-worked-question-proxy",
+                                    "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Include",
+                                                "list": [
+                                                    "paid and unpaid overtime"
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "hours-worked-answer-proxy",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "0 to 15 hours",
+                                                    "value": "0 to 15 hours"
+                                                },
+                                                {
+                                                    "label": "16 to 30 hours",
+                                                    "value": "16 to 30 hours"
+                                                },
+                                                {
+                                                    "label": "31 to 48 hours",
+                                                    "value": "31 to 48 hours"
+                                                },
+                                                {
+                                                    "label": "49 hours or more",
+                                                    "value": "49 hours or more "
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "work-travel-proxy"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "work-travel1",
+                            "description": "",
+                            "questions": [
+                                {
+                                    "title": "What transport do you use for the furthest part of your usual journey to work?",
+                                    "id": "work-travel-question1",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "work-travel-answer1",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Work mainly at or from home",
+                                                    "value": "Work mainly at or from home"
+                                                },
+                                                {
+                                                    "label": "Underground, metro, light rail or tram",
+                                                    "value": "Underground, metro, light rail or tram"
+                                                },
+                                                {
+                                                    "label": "Train",
+                                                    "value": "Train"
+                                                },
+                                                {
+                                                    "label": "Bus, minibus or coach",
+                                                    "value": "Bus, minibus or coach "
+                                                },
+                                                {
+                                                    "label": "Taxi",
+                                                    "value": "Taxi "
+                                                },
+                                                {
+                                                    "label": "Motorcycle, scooter or moped",
+                                                    "value": "Motorcycle, scooter or moped"
+                                                },
+                                                {
+                                                    "label": "Driving a car or van",
+                                                    "value": "Driving a car or van"
+                                                },
+                                                {
+                                                    "label": "Passenger in a car or van",
+                                                    "value": "Passenger in a car or van"
+                                                },
+                                                {
+                                                    "label": "Bicycle",
+                                                    "value": "Bicycle"
+                                                },
+                                                {
+                                                    "label": "On foot",
+                                                    "value": "On foot"
+                                                },
+                                                {
+                                                    "label": "Other",
+                                                    "value": "Other"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "household-member-completed",
+                                        "when": [
+                                            {
+                                                "id": "work-travel-answer1",
+                                                "condition": "equals",
+                                                "value": "Work mainly at or from home"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "employer-type-of-address1"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "work-travel-proxy",
+                            "description": "",
+                            "questions": [
+                                {
+                                    "title": "What transport does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> use for the furthest part of their usual journey to work?",
+                                    "id": "work-travel-question-proxy",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "work-travel-answer-proxy",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Work mainly at or from home",
+                                                    "value": "Work mainly at or from home"
+                                                },
+                                                {
+                                                    "label": "Underground, metro, light rail or tram",
+                                                    "value": "Underground, metro, light rail or tram"
+                                                },
+                                                {
+                                                    "label": "Train",
+                                                    "value": "Train"
+                                                },
+                                                {
+                                                    "label": "Bus, minibus or coach",
+                                                    "value": "Bus, minibus or coach "
+                                                },
+                                                {
+                                                    "label": "Taxi",
+                                                    "value": "Taxi "
+                                                },
+                                                {
+                                                    "label": "Motorcycle, scooter or moped",
+                                                    "value": "Motorcycle, scooter or moped"
+                                                },
+                                                {
+                                                    "label": "Driving a car or van",
+                                                    "value": "Driving a car or van"
+                                                },
+                                                {
+                                                    "label": "Passenger in a car or van",
+                                                    "value": "Passenger in a car or van"
+                                                },
+                                                {
+                                                    "label": "Bicycle",
+                                                    "value": "Bicycle"
+                                                },
+                                                {
+                                                    "label": "On foot",
+                                                    "value": "On foot"
+                                                },
+                                                {
+                                                    "label": "Other",
+                                                    "value": "Other"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "household-member-completed",
+                                        "when": [
+                                            {
+                                                "id": "work-travel-answer-proxy",
+                                                "condition": "equals",
+                                                "value": "Work mainly at or from home"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "employer-type-of-address-proxy"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "employer-type-of-address1",
+                            "questions": [
+                                {
+                                    "id": "employer-type-of-address-question1",
+                                    "title": "Where do you work?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "employer-type-of-address-answer1",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "At a workplace or report to a depot",
+                                                    "value": "At a workplace or report to a depot"
+                                                },
+                                                {
+                                                    "label": "An offshore installation",
+                                                    "value": "An offshore installation"
+                                                },
+                                                {
+                                                    "label": "No fixed place",
+                                                    "value": "No fixed place"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "employer-address1",
+                                        "when": [
+                                            {
+                                                "id": "employer-type-of-address-answer1",
+                                                "condition": "equals",
+                                                "value": "At a workplace or report to a depot"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "household-member-completed"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "employer-type-of-address-proxy",
+                            "questions": [
+                                {
+                                    "id": "employer-type-of-address-question-proxy",
+                                    "title": "Where does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> work?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "employer-type-of-address-answer-proxy",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "At a workplace or report to a depot",
+                                                    "value": "At a workplace or report to a depot"
+                                                },
+                                                {
+                                                    "label": "An offshore installation",
+                                                    "value": "An offshore installation"
+                                                },
+                                                {
+                                                    "label": "No fixed place",
+                                                    "value": "No fixed place"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "employer-address-proxy",
+                                        "when": [
+                                            {
+                                                "id": "employer-type-of-address-answer-proxy",
+                                                "condition": "equals",
+                                                "value": "At a workplace or report to a depot"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "household-member-completed"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "employer-address1",
+                            "questions": [
+                                {
+                                    "id": "employer-address-question1",
+                                    "title": "What is the address of <em>{{answers['business-name-answer1']}}</em>?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "employer-address-answer-building1",
+                                            "label": "Building",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "employer-address-answer-street1",
+                                            "label": "Street",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "employer-address-answer-city1",
+                                            "label": "Town or city",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "employer-address-answer-county1",
+                                            "label": "County (optional)",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "employer-adress-answer-postcode1",
+                                            "label": "Postcode",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "household-member-completed"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "employer-address-proxy",
+                            "questions": [
+                                {
+                                    "id": "employer-address-question-proxy",
+                                    "title": "What is the address of <em>{{answers['business-name-answer-proxy']}}</em>?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "employer-address-answer-building-proxy",
+                                            "label": "Building",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "employer-address-answer-street-proxy",
+                                            "label": "Street",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "employer-address-answer-city-proxy",
+                                            "label": "Town or city",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "employer-address-answer-county-proxy",
+                                            "label": "County (optional)",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "employer-adress-answer-postcode-proxy",
+                                            "label": "Postcode",
+                                            "mandatory": false,
+                                            "type": "TextField"
                                         }
                                     ]
                                 }
