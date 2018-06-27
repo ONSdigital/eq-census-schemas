@@ -3654,7 +3654,7 @@
                             "questions": [
                                 {
                                     "id": "employer-address-question1",
-                                    "title": "What is the address of <em>{{answers['business-name-answer1']}}</em>?",
+                                    "title": "What is the address of <em>{{answers['business-name-answer1']| format_household_name}}</em>?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -3704,7 +3704,7 @@
                             "questions": [
                                 {
                                     "id": "employer-address-question-proxy",
-                                    "title": "What is the address of <em>{{answers['business-name-answer-proxy']}}</em>?",
+                                    "title": "What is the address of <em>{{answers['business-name-answer-proxy']| format_household_name}}</em>?",
                                     "type": "General",
                                     "answers": [
                                         {
