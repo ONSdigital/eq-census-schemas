@@ -1476,8 +1476,12 @@
                                                     "value": "Self employed or freelance"
                                                 },
                                                 {
-                                                    "label": "Temporarily away from work ill, on maternity or paternity leave, on holiday or temporarily laid off",
-                                                    "value": "Temporarily away from work ill, on maternity or paternity leave, on holiday or temporarily laid off"
+                                                    "label": "Temporarily away from work ill, on holiday or temporarily laid off",
+                                                    "value": "Temporarily away from work ill, on holiday or temporarily laid off"
+                                                },
+                                                {
+                                                    "label": "On maternity or paternity leave",
+                                                    "value": "On maternity or paternity leave"
                                                 },
                                                 {
                                                     "label": "Doing any other kind of paid work",
@@ -1545,8 +1549,12 @@
                                                     "value": "Self employed or freelance"
                                                 },
                                                 {
-                                                    "label": "Temporarily away from work ill, on maternity or paternity leave, on holiday or temporarily laid off",
-                                                    "value": "Temporarily away from work ill, on maternity or paternity leave, on holiday or temporarily laid off"
+                                                    "label": "Temporarily away from work ill, on holiday or temporarily laid off",
+                                                    "value": "Temporarily away from work ill, on holiday or temporarily laid off"
+                                                },
+                                                {
+                                                    "label": "On maternity or paternity leave",
+                                                    "value": "On maternity or paternity leave"
                                                 },
                                                 {
                                                     "label": "Doing any other kind of paid work",
@@ -2089,8 +2097,8 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "An employee",
-                                                    "value": "An employee"
+                                                    "label": "Employee",
+                                                    "value": "Employee"
                                                 },
                                                 {
                                                     "label": "Self-employed or freelance without employees",
@@ -2140,8 +2148,8 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "An employee",
-                                                    "value": "An employee"
+                                                    "label": "Employee",
+                                                    "value": "Employee"
                                                 },
                                                 {
                                                     "label": "Self-employed or freelance without employees",
