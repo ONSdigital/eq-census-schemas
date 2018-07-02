@@ -820,7 +820,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-date-of-birth",
-                                    "title": "{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] }} is {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old. Is this correct?",
+                                    "title": "{{[answers['first-name'][group_instance], answers['last-name'][group_instance]]| format_household_name }} is {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old. Is this correct?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -2503,7 +2503,7 @@
                                 {
                                     "id": "business-name-question-proxy",
                                     "title": "What is the name of the organisation or business <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> works for?",
-                                    "description": "If you are self-employed in your own business, give the business name.",
+                                    "description": "If {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}} is self-employed in their own business, give the business name.",
                                     "type": "General",
                                     "answers": [
                                         {
