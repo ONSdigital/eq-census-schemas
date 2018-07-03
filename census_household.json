@@ -2122,7 +2122,7 @@
                                             {
                                                 "id": "main-job-type-answer1",
                                                 "condition": "equals",
-                                                "value": "An employee"
+                                                "value": "Employee"
                                             }
                                         ]
                                     }
@@ -2173,7 +2173,7 @@
                                             {
                                                 "id": "main-job-type-answer-proxy",
                                                 "condition": "equals",
-                                                "value": "An employee"
+                                                "value": "Employee"
                                             }
                                         ]
                                     }
@@ -2200,8 +2200,8 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "An employee",
-                                                    "value": "An employee"
+                                                    "label": "Employee",
+                                                    "value": "Employee"
                                                 },
                                                 {
                                                     "label": "Self-employed or freelance without employees",
@@ -2225,7 +2225,7 @@
                                             {
                                                 "id": "main-job-type-past-answer1",
                                                 "condition": "equals",
-                                                "value": "An employee"
+                                                "value": "Employee"
                                             }
                                         ]
                                     }
@@ -2252,8 +2252,8 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "An employee",
-                                                    "value": "An employee"
+                                                    "label": "Employee",
+                                                    "value": "Employee"
                                                 },
                                                 {
                                                     "label": "Self-employed or freelance without employees",
@@ -2277,7 +2277,7 @@
                                             {
                                                 "id": "main-job-type-past-answer-proxy",
                                                 "condition": "equals",
-                                                "value": "An employee"
+                                                "value": "Employee"
                                             }
                                         ]
                                     }
