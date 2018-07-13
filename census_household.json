@@ -2552,6 +2552,23 @@
                             "routing_rules": [
                                 {
                                     "goto": {
+                                        "block": "term-time-location-with-second-address",
+                                        "when": [
+                                            {
+                                                "id": "in-education-answer",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            },
+                                            {
+                                                "id": "another-address-answer",
+                                                "condition": "equals",
+                                                "value": "Yes, an address within the UK"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
                                         "block": "term-time-location",
                                         "when": [
                                             {
@@ -2599,6 +2616,23 @@
                             "routing_rules": [
                                 {
                                     "goto": {
+                                        "block": "term-time-location-with-second-address1",
+                                        "when": [
+                                            {
+                                                "id": "in-education-answer1",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            },
+                                            {
+                                                "id": "another-address-answer1",
+                                                "condition": "equals",
+                                                "value": "Yes, an address within the UK"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
                                         "block": "term-time-location1",
                                         "when": [
                                             {
@@ -2618,7 +2652,7 @@
                         },
                         {
                             "type": "Question",
-                            "id": "term-time-location",
+                            "id": "term-time-location-with-second-address",
                             "questions": [
                                 {
                                     "id": "term-time-location-question",
@@ -2630,7 +2664,11 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "{{answers['address-line-1']}}",
+                                                    "label": "{{answers['address-line']}}",
+                                                    "value": "household"
+                                                },
+                                                {
+                                                    "label": "{{answers['other-address-answer-building']}}",
                                                     "value": "household"
                                                 },
                                                 {
@@ -2649,10 +2687,11 @@
                                         "block": "household-member-completed",
                                         "when": [
                                             {
-                                                "id": "term-time-location-answer",
+                                                "id": "another-address-answer",
                                                 "condition": "equals",
                                                 "value": "Another address"
                                             }
+                                            
                                         ]
                                     }
                                 },
@@ -2665,7 +2704,7 @@
                         },
                         {
                             "type": "Question",
-                            "id": "term-time-location1",
+                            "id": "term-time-location-with-second-address1",
                             "questions": [
                                 {
                                     "id": "term-time-location-question1",
@@ -2678,6 +2717,10 @@
                                             "options": [
                                                 {
                                                     "label": "{{answers['address-line-1']}}",
+                                                    "value": "household"
+                                                },
+                                                {
+                                                    "label": "{{answers['other-address-answer-building1']}}",
                                                     "value": "household"
                                                 },
                                                 {
