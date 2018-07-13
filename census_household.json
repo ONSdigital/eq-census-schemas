@@ -2578,23 +2578,7 @@
                                 }
                             ],
                             "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "term-time-location-with-second-address",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer",
-                                                "condition": "equals",
-                                                "value": "Yes, an address within the UK"
-                                            },
-                                            {
-                                                "id": "in-education-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
+                               
                                 {
                                     "goto": {
                                         "block": "term-time-location",
@@ -2642,23 +2626,7 @@
                                 }
                             ],
                             "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "term-time-location-with-second-address1",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes, an address within the UK"
-                                            },
-                                            {
-                                                "id": "in-education-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
+                               
                                 {
                                     "goto": {
                                         "block": "term-time-location1",
