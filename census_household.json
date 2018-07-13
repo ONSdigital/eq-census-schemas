@@ -661,10 +661,13 @@
                                     "id": "central-heating-question",
                                     "title": "What type of central heating does <em>{{answers['address-line-1']}}</em> have?",
                                     "type": "General",
-                                    "definitions": [{
-                                        "title": "What is central heating?",
-                                        "description": "Central heating is a system that generates heat for multiple rooms."
-                                     }],
+                                     "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Include central heating systems that generate heat for multiple rooms whether or not you use them"
+                                            }
+                                        ]
+                                    },
                                     "answers": [
                                         {
                                             "id": "central-heating-answer",
