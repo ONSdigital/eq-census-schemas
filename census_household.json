@@ -6652,10 +6652,7 @@
                                     "guidance": {
                                         "content": [
                                             {
-                                                "title": "Include",
-                                                "list": [
-                                                    "National Service"
-                                                ]
+                                                "title": "Include National Service"
                                             }
                                         ]
                                     },
@@ -6702,10 +6699,7 @@
                                     "guidance": {
                                         "content": [
                                             {
-                                                "title": "Include",
-                                                "list": [
-                                                    "National Service"
-                                                ]
+                                                "title": "Include National Service"
                                             }
                                         ]
                                     },
