@@ -2416,7 +2416,7 @@
                             "questions": [
                                 {
                                     "id": "address-type-question1",
-                                    "title": "What type of address is the place you stay more than 30 days a year",
+                                    "title": "What is the place you stay more than 30 days a year",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -2472,7 +2472,7 @@
                             "questions": [
                                 {
                                     "id": "address-type-question",
-                                    "title": "What type of address is the place <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> stays more than 30 days a year?",
+                                    "title": "What is the place <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> stays more than 30 days a year?",
                                     "type": "General",
                                     "answers": [
                                         {
