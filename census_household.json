@@ -2622,7 +2622,7 @@
                             "questions": [
                                 {
                                     "id": "term-time-location-question",
-                                    "title": "During term time, does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> live at <em>{{answers['address-line-1']}}</em> ?",
+                                    "title": "During term time, where does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> usually live?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -2630,12 +2630,12 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
+                                                    "label": "{{answers['address-line-1']}}",
+                                                    "value": "household"
                                                 },
                                                 {
-                                                    "label": "No",
-                                                    "value": "No"
+                                                    "label": "Another address",
+                                                    "value": "Another address"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -2651,7 +2651,7 @@
                                             {
                                                 "id": "term-time-location-answer",
                                                 "condition": "equals",
-                                                "value": "No"
+                                                "value": "Another address"
                                             }
                                         ]
                                     }
@@ -2669,7 +2669,7 @@
                             "questions": [
                                 {
                                     "id": "term-time-location-question1",
-                                    "title": "During term time, do you live at <em>{{answers['address-line-1']}}</em> ?",
+                                    "title": "During term time, where do you usually live?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -2677,12 +2677,12 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
+                                                    "label": "{{answers['address-line-1']}}",
+                                                    "value": "household"
                                                 },
                                                 {
-                                                    "label": "No",
-                                                    "value": "No"
+                                                    "label": "Another address",
+                                                    "value": "Another address"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -2698,7 +2698,7 @@
                                             {
                                                 "id": "term-time-location-answer1",
                                                 "condition": "equals",
-                                                "value": "No"
+                                                "value": "Another address"
                                             }
                                         ]
                                     }
