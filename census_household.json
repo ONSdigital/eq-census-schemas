@@ -8033,56 +8033,6 @@
                         },
                         {
                             "type": "Question",
-                            "id": "job-description1",
-                            "questions": [
-                                {
-                                    "id": "job-description-question1",
-                                    "title": "Briefly describe what you do in your main job?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "job-description-answer1",
-                                            "label": "Description",
-                                            "mandatory": false,
-                                            "type": "TextArea"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                 {
-                                    "goto": {
-                                        "block": "employers-business1",
-                                        "when": [
-                                            {
-                                                "id": "main-job-type-answer1",
-                                                "condition": "equals",
-                                                "value": "Employee"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "employers-business1",
-                                        "when": [
-                                            {
-                                                "id": "self-employed-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "professional-quals"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
                             "id": "job-description-proxy",
                             "questions": [
                                 {
