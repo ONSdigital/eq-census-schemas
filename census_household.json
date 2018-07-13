@@ -8033,6 +8033,62 @@
                         },
                         {
                             "type": "Question",
+                            "id": "job-description1",
+                            "questions": [
+                                {
+                                    "id": "job-description-question1",
+                                    "title": "Briefly describe what you do in your main job?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "job-description-answer1",
+                                            "label": "Description",
+                                            "mandatory": false,
+                                            "type": "TextArea",
+                                            "max_length": 200,
+                                            "validation": {
+                                                "messages": {
+                                                    "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                 {
+                                    "goto": {
+                                        "block": "employers-business1",
+                                        "when": [
+                                            {
+                                                "id": "main-job-type-answer1",
+                                                "condition": "equals",
+                                                "value": "Employee"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "employers-business1",
+                                        "when": [
+                                            {
+                                                "id": "self-employed-answer",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "professional-quals"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
                             "id": "job-description-proxy",
                             "questions": [
                                 {
@@ -8046,8 +8102,10 @@
                                             "mandatory": false,
                                             "type": "TextArea",
                                             "max_length": 200,
-                                            "messages": {
-                                                "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                            "validation": {
+                                                "messages": {
+                                                    "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                                }
                                             }
                                         }
                                     ]
@@ -8100,8 +8158,10 @@
                                             "mandatory": false,
                                             "type": "TextArea",
                                             "max_length": 200,
-                                            "messages": {
-                                                "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                            "validation": {
+                                                "messages": {
+                                                    "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                                }
                                             }
                                         }
                                     ]
@@ -8154,8 +8214,10 @@
                                             "mandatory": false,
                                             "type": "TextArea",
                                             "max_length": 200,
-                                            "messages": {
-                                                "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                            "validation": {
+                                                "messages": {
+                                                    "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                                }
                                             }
                                         }
                                     ]
@@ -8209,8 +8271,10 @@
                                             "mandatory": false,
                                             "type": "TextArea",
                                             "max_length": 200,
-                                            "messages": {
-                                                "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                            "validation": {
+                                                "messages": {
+                                                    "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                                }
                                             }
                                         }
                                     ]
@@ -8240,8 +8304,10 @@
                                             "mandatory": false,
                                             "type": "TextArea",
                                             "max_length": 200,
-                                            "messages": {
-                                                "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                            "validation": {
+                                                "messages": {
+                                                    "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                                }
                                             }
                                         }
                                     ]
@@ -8271,8 +8337,10 @@
                                             "mandatory": false,
                                             "type": "TextArea",
                                             "max_length": 200,
-                                            "messages": {
-                                                "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                            "validation": {
+                                                "messages": {
+                                                    "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                                }
                                             }
                                         }
                                     ]
@@ -8302,8 +8370,10 @@
                                             "mandatory": false,
                                             "type": "TextArea",
                                             "max_length": 200,
-                                            "messages": {
-                                                "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                            "validation": {
+                                                "messages": {
+                                                    "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                                }
                                             }
                                         }
                                     ]
