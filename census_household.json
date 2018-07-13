@@ -661,38 +661,47 @@
                                     "id": "central-heating-question",
                                     "title": "What type of central heating does <em>{{answers['address-line-1']}}</em> have?",
                                     "type": "General",
+                                    "definitions": [{
+                                        "title": "What is central heating?",
+                                        "description": "Central heating is a system that generates heat for multiple rooms."
+                                     }],
                                     "answers": [
                                         {
                                             "id": "central-heating-answer",
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Mains gas",
-                                                    "value": "Mains gas"
-                                                },
-                                                {
-                                                    "label": "Other gas (inlcuding liquid petroleum, gas and biogas)",
-                                                    "value": "Other gas (inlcuding liquid petroleum, gas and biogas)"
-                                                },
-                                                {
-                                                    "label": "Electric (include storage heaters)",
-                                                    "value": "Electric (include storage heaters)"
-                                                },
-                                                {
                                                     "label": "Oil",
                                                     "value": "Oil"
                                                 },
                                                 {
-                                                    "label": "Wood or biomass",
-                                                    "value": "Wood or biomass"
+                                                    "label": "Mains gas",
+                                                    "value": "Mains gas"
                                                 },
                                                 {
-                                                    "label": "Other solid fuel (coal, coke)",
-                                                    "value": "Other solid fuel (coal, coke)"
+                                                    "label": "Other gas",
+                                                    "value": "Other gas",
+                                                    "description": "Including Liquid Petroleum Gas and Biogas"
                                                 },
                                                 {
-                                                    "label": "Other renewable heating systems (including solar panels, electric and air heat pump systems)",
-                                                    "value": "Other renewable heating systems (including solar panels, electric and air heat pump systems)"
+                                                    "label": "Electric",
+                                                    "value": "Electric",
+                                                    "description": "For example storage heaters"
+                                                },
+                                                {
+                                                    "label": "Solid Fuel",
+                                                    "value": "Solid Fuel",
+                                                    "description": "For example wood, coal"
+                                                },
+                                                {
+                                                    "label": "Renewable  heating systems",
+                                                    "value": "Wood or biomass",
+                                                    "description": "For example wood pellets or Biomass"
+                                                },
+                                                {
+                                                    "label": "Other renewable electric systems",
+                                                    "value": "Other renewable electric systems",
+                                                    "description": "For example Air Heat or Ground source systems"
                                                 },
                                                 {
                                                     "label": "Other central heating",
@@ -703,7 +712,7 @@
                                                     "value": "No central heating"
                                                 }
                                             ],
-                                            "type": "Checkbox"
+                                            "type": "MutuallyExclusiveCheckbox"
                                         }
                                     ]
                                 }
