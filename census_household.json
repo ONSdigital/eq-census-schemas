@@ -6782,7 +6782,7 @@
                                                     "value": "None of these apply"
                                                 }
                                             ],
-                                            "type": "Checkbox"
+                                            "type": "MutuallyExclusiveCheckbox"
                                         }
                                     ]
                                 }
@@ -6855,7 +6855,7 @@
                                                     "value": "None of these apply"
                                                 }
                                             ],
-                                            "type": "Checkbox"
+                                            "type": "MutuallyExclusiveCheckbox"
                                         }
                                     ]
                                 }
