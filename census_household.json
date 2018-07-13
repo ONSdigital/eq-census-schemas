@@ -1450,7 +1450,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-date-of-birth",
-                                    "title": "{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }} is {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old. Is this correct?",
+                                    "title": "{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] }} is {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old. Is this correct?",
                                     "type": "General",
                                     "answers": [
                                         {
