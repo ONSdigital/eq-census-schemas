@@ -7991,7 +7991,11 @@
                                             "id": "job-description-answer1",
                                             "label": "Description",
                                             "mandatory": false,
-                                            "type": "TextArea"
+                                            "type": "TextArea",
+                                            "max_length": 200,
+                                            "messages": {
+                                                "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                            }
                                         }
                                     ]
                                 }
@@ -8041,7 +8045,11 @@
                                             "id": "job-description-answer-proxy",
                                             "label": "Description",
                                             "mandatory": false,
-                                            "type": "TextArea"
+                                            "type": "TextArea",
+                                            "max_length": 200,
+                                            "messages": {
+                                                "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                            }
                                         }
                                     ]
                                 }
@@ -8091,7 +8099,11 @@
                                             "id": "job-description-past-answer1",
                                             "label": "Description",
                                             "mandatory": false,
-                                            "type": "TextArea"
+                                            "type": "TextArea",
+                                            "max_length": 200,
+                                            "messages": {
+                                                "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                            }
                                         }
                                     ]
                                 }
@@ -8141,7 +8153,11 @@
                                             "id": "job-description-past-answer-proxy",
                                             "label": "Description",
                                             "mandatory": false,
-                                            "type": "TextArea"
+                                            "type": "TextArea",
+                                            "max_length": 200,
+                                            "messages": {
+                                                "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                            }
                                         }
                                     ]
                                 }
@@ -8192,7 +8208,11 @@
                                             "id": "employers-business-answer1",
                                             "label": "Description",
                                             "mandatory": false,
-                                            "type": "TextArea"
+                                            "type": "TextArea",
+                                            "max_length": 200,
+                                            "messages": {
+                                                "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                            }
                                         }
                                     ]
                                 }
@@ -8219,7 +8239,11 @@
                                             "id": "employers-business-answer-proxy",
                                             "label": "Description",
                                             "mandatory": false,
-                                            "type": "TextArea"
+                                            "type": "TextArea",
+                                            "max_length": 200,
+                                            "messages": {
+                                                "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                            }
                                         }
                                     ]
                                 }
@@ -8246,7 +8270,11 @@
                                             "id": "employers-business-past-answer1",
                                             "label": "Description",
                                             "mandatory": false,
-                                            "type": "TextArea"
+                                            "type": "TextArea",
+                                            "max_length": 200,
+                                            "messages": {
+                                                "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                            }
                                         }
                                     ]
                                 }
@@ -8273,7 +8301,11 @@
                                             "id": "employers-business-past-answer-proxy",
                                             "label": "Description",
                                             "mandatory": false,
-                                            "type": "TextArea"
+                                            "type": "TextArea",
+                                            "max_length": 200,
+                                            "messages": {
+                                                "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                            }
                                         }
                                     ]
                                 }
@@ -8856,8 +8888,12 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "At a workplace or report to a depot",
-                                                    "value": "At a workplace or report to a depot"
+                                                    "label": "At a workplace",
+                                                    "value": "At a workplace"
+                                                },
+                                                {
+                                                    "label": "Report to a depot",
+                                                    "value": "Report to a depot"
                                                 },
                                                 {
                                                     "label": "An offshore installation",
@@ -8881,7 +8917,19 @@
                                             {
                                                 "id": "employer-type-of-address-answer1",
                                                 "condition": "equals",
-                                                "value": "At a workplace or report to a depot"
+                                                "value": "At a workplace"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                     "goto": {
+                                        "block": "employer-address1",
+                                        "when": [
+                                            {
+                                                "id": "employer-type-of-address-answer1",
+                                                "condition": "equals",
+                                                "value": "Report to a depot"
                                             }
                                         ]
                                     }
@@ -8907,8 +8955,12 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "At a workplace or report to a depot",
-                                                    "value": "At a workplace or report to a depot"
+                                                    "label": "At a workplace",
+                                                    "value": "At a workplace"
+                                                },
+                                                {
+                                                    "label": "Report to a depot",
+                                                    "value": "Report to a depot"
                                                 },
                                                 {
                                                     "label": "An offshore installation",
@@ -8932,7 +8984,19 @@
                                             {
                                                 "id": "employer-type-of-address-answer-proxy",
                                                 "condition": "equals",
-                                                "value": "At a workplace or report to a depot"
+                                                "value": "At a workplace"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                     "goto": {
+                                        "block": "employer-address-proxy",
+                                        "when": [
+                                            {
+                                                "id": "employer-type-of-address-answer-proxy",
+                                                "condition": "equals",
+                                                "value": "Report to a depot"
                                             }
                                         ]
                                     }
