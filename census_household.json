@@ -2699,7 +2699,7 @@
                                         "block": "employers-business-past1",
                                         "when": [
                                             {
-                                                "id": "self-employed-past-answer1",
+                                                "id": "self-employed-past-answer",
                                                 "condition": "equals",
                                                 "value": "Yes"
                                             }
