@@ -2580,6 +2580,23 @@
                             "routing_rules": [
                                 {
                                     "goto": {
+                                        "block": "term-time-location-with-second-address",
+                                        "when": [
+                                            {
+                                                "id": "another-address-answer",
+                                                "condition": "equals",
+                                                "value": "Yes, an address within the UK"
+                                            },
+                                            {
+                                                "id": "in-education-answer",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
                                         "block": "term-time-location",
                                         "when": [
                                             {
@@ -2627,6 +2644,23 @@
                             "routing_rules": [
                                 {
                                     "goto": {
+                                        "block": "term-time-location-with-second-address1",
+                                        "when": [
+                                            {
+                                                "id": "another-address-answer1",
+                                                "condition": "equals",
+                                                "value": "Yes, an address within the UK"
+                                            },
+                                            {
+                                                "id": "in-education-answer1",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
                                         "block": "term-time-location1",
                                         "when": [
                                             {
@@ -2649,12 +2683,12 @@
                             "id": "term-time-location-with-second-address",
                             "questions": [
                                 {
-                                    "id": "term-time-location-question",
+                                    "id": "term-time-location-question-with-second-address",
                                     "title": "During term time, where does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> usually live?",
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "term-time-location-answer",
+                                            "id": "term-time-location-answer-with-second-address",
                                             "mandatory": false,
                                             "options": [
                                                 {
@@ -2681,7 +2715,7 @@
                                         "block": "household-member-completed",
                                         "when": [
                                             {
-                                                "id": "another-address-answer",
+                                                "id": "term-time-location-answer-with-second-address",
                                                 "condition": "equals",
                                                 "value": "Another address"
                                             }
@@ -2701,12 +2735,12 @@
                             "id": "term-time-location-with-second-address1",
                             "questions": [
                                 {
-                                    "id": "term-time-location-question1",
+                                    "id": "term-time-location-question-with-second-address1",
                                     "title": "During term time, where do you usually live?",
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "term-time-location-answer1",
+                                            "id": "term-time-location-answer-with-second-address1",
                                             "mandatory": false,
                                             "options": [
                                                 {
@@ -2733,7 +2767,7 @@
                                         "block": "household-member-completed",
                                         "when": [
                                             {
-                                                "id": "term-time-location-answer1",
+                                                "id": "term-time-location-answer-with-second-address1",
                                                 "condition": "equals",
                                                 "value": "Another address"
                                             }
