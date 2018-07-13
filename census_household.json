@@ -6515,13 +6515,13 @@
                         },
                         {
  	                        "type": "Question",
- 	                        "id": "qualifications-gcse-proxy-proxy",
+ 	                        "id": "qualifications-gcse-proxy",
                         	"questions": [{
  		                        "id": "qualifications-gcse-question-proxy",
  		                        "title": "What GCSEs does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> have?",
  	                        	"type": "General",
  	                        	"answers": [{
- 		                        	"id": "qualifications-gcse-answer",
+ 		                        	"id": "qualifications-gcse-answer-proxy",
  		                        	"mandatory": false,
  			                        "options": [{
  			                        		"label": "More than 1 at any grade",
@@ -6547,13 +6547,13 @@
                         },
                         {
  	                        "type": "Question",
- 	                        "id": "qualifications-alevel-proxy-proxy",
+ 	                        "id": "qualifications-alevel-proxy",
                         	"questions": [{
  		                        "id": "qualifications-alevel-question-proxy",
  		                        "title": "What A-level and AS-level qualifications does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> have?",
  	                        	"type": "General",
  	                        	"answers": [{
- 		                        	"id": "qualifications-alevel-answer",
+ 		                        	"id": "qualifications-alevel-answer-proxy",
  		                        	"mandatory": false,
  			                        "options": [{
  			                        		"label": "2 or 3 AS-levels ",
@@ -7012,7 +7012,7 @@
                              "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "employment-status",
+                                        "block": "employment-status1",
                                         "when": [
                                             {
                                                 "id": "over-16-answer",
