@@ -2352,6 +2352,13 @@
                                         }
                                     ]
                                 }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "in-education1"
+                                    }
+                                }
                             ]
                         },
                         {
@@ -2407,6 +2414,13 @@
                                             "label": "Please specify type of address"
                                         }
                                     ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "in-education"
+                                    }
                                 }
                             ]
                         },
@@ -2464,6 +2478,13 @@
                                         }
                                     ]
                                 }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "in-education1"
+                                    }
+                                }
                             ]
                         },
                         {
@@ -2519,6 +2540,13 @@
                                             "label": "Please specify type of address"
                                         }
                                     ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "in-education"
+                                    }
                                 }
                             ]
                         },
@@ -5892,6 +5920,10 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
+                                                    "label": "No religion",
+                                                    "value": "No religion"
+                                                },
+                                                {
                                                     "label": "Christian",
                                                     "value": "Christian"
                                                 },
@@ -5919,13 +5951,10 @@
                                                     "label": "Any other religion",
                                                     "value": "Other",
                                                     "child_answer_id": "religion-answer-other"
-                                                },
-                                                {
-                                                    "label": "No religion",
-                                                    "value": "No religion"
                                                 }
+                                               
                                             ],
-                                            "type": "MutuallyExclusiveCheckbox"
+                                            "type": "Checkbox"
                                         },
                                         {
                                             "id": "religion-answer-other",
@@ -5959,7 +5988,11 @@
                                             "id": "religion-answer1",
                                             "mandatory": false,
                                             "options": [
-                                               {
+                                                {
+                                                    "label": "No religion",
+                                                    "value": "No religion"
+                                                },
+                                                {
                                                     "label": "Christian",
                                                     "value": "Christian"
                                                 },
@@ -5987,13 +6020,9 @@
                                                     "label": "Any other religion",
                                                     "value": "Other",
                                                     "child_answer_id": "religion-answer-other1"
-                                                },
-                                                {
-                                                    "label": "No religion",
-                                                    "value": "No religion"
                                                 }
                                             ],
-                                            "type": "MutuallyExclusiveCheckbox"
+                                            "type": "Checkbox"
                                         },
                                         {
                                             "id": "religion-answer-other1",
