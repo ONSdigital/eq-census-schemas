@@ -1538,13 +1538,13 @@
                                 }
                             ]
                         },
-                        {
+                       {
                             "type": "Question",
                             "id": "ever-married-proxy",
                             "questions": [
                                 {
                                     "id": "ever-married-question-proxy",
-                                    "title": "Has {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }} ever been legally married or in a same-sex civil partnership?",
+                                    "title": "Has {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }} ever been legally married or in a registered civil partnership?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1591,7 +1591,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-marriage-type-proxy",
-                                    "title": "On the {{ get_current_date() }}, what is {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }} legal marital or same-sex civil partnership status?",
+                                    "title": "On 13 July 2018, what is {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }} legal marital or registered civil partnership status?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1603,32 +1603,32 @@
                                                     "value": "Married"
                                                 },
                                                  {
-                                                    "label": "In a registered same-sex civil partnership",
-                                                    "value": "In a registered same-sex civil partnership"
+                                                    "label": "In a registered civil partnership",
+                                                    "value": "In a registered civil partnership"
                                                 },
                                                 {
                                                     "label": "Separated, but still legally married",
                                                     "value": "Separated, but still legally married"
                                                 },
                                                  {
-                                                    "label": "Separated, but still legally in a same-sex civil partnership",
-                                                    "value": "Separated, but still legally in a same-sex civil partnership"
+                                                    "label": "Separated, but still legally in a civil partnership",
+                                                    "value": "Separated, but still legally in a civil partnership"
                                                 },
                                                 {
                                                     "label": "Divorced",
                                                     "value": "Divorced"
                                                 },
                                                 {
-                                                    "label": "Same sex civil partnership which is now legally dissolved",
-                                                    "value": "Same sex civil partnership which is now legally dissolved"
+                                                    "label": "Formally in a civil partnership which is now legally dissolved",
+                                                    "value": "Formally in a civil partnership which is now legally dissolved"
                                                 },
                                                 {
                                                     "label": "Widowed",
                                                     "value": "Widowed"
                                                 },
                                                 {
-                                                    "label": "Surviving partner from a same-sex civil partnership",
-                                                    "value": "Surviving partner from a same-sex civil partnership"
+                                                    "label": "Surviving partner from a civil partnership",
+                                                    "value": "Surviving partner from a civil partnership"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -1698,7 +1698,7 @@
                             "questions": [
                                 {
                                     "id": "currrent-marriage-status-question-proxy",
-                                    "title": "Is the marriage opposite sex or same sex?",
+                                    "title": "What type of partnership is this?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1733,7 +1733,7 @@
                             "questions": [
                                 {
                                     "id": "previous-marriage-status-question-proxy",
-                                    "title": "Was the marriage opposite sex or same sex?",
+                                    "title": "What type of partnership was this?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1768,7 +1768,7 @@
                             "questions": [
                                 {
                                     "id": "ever-married-question",
-                                    "title": "Have you ever been legally married or in a same-sex civil partnership?",
+                                    "title": "Are you currently, or have you ever been legally married or in a registered civil partnership?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1815,7 +1815,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-marriage-type",
-                                    "title": "On the {{ get_current_date() }}, what is your legal marital or same-sex civil partnership status?",
+                                    "title": "On 13 July 2018, what is your legal marital or registered civil partnership status?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1827,32 +1827,32 @@
                                                     "value": "Married"
                                                 },
                                                 {
-                                                    "label": "In a registered same-sex civil partnership",
-                                                    "value": "In a registered same-sex civil partnership"
+                                                    "label": "In a registered civil partnership",
+                                                    "value": "In a registered civil partnership"
                                                 },
                                                 {
                                                     "label": "Separated, but still legally married",
                                                     "value": "Separated, but still legally married"
                                                 },
                                                 {
-                                                    "label": "Separated, but still legally in a same-sex civil partnership",
-                                                    "value": "Separated, but still legally in a same-sex civil partnership"
+                                                    "label": "Separated, but still legally in a civil partnership",
+                                                    "value": "Separated, but still legally in a civil partnership"
                                                 },
                                                 {
                                                     "label": "Divorced",
                                                     "value": "Divorced"
                                                 },
                                                 {
-                                                    "label": "Same sex civil partnership which is now legally dissolved",
-                                                    "value": "Same sex civil partnership which is now legally dissolved"
+                                                    "label": "Formally in a civil partnership which is now legally dissolved",
+                                                    "value": "Formally in a civil partnership which is now legally dissolved"
                                                 },
                                                 {
                                                     "label": "Widowed",
                                                     "value": "Widowed"
                                                 },
                                                 {
-                                                    "label": "Surviving partner from a same-sex civil partnership",
-                                                    "value": "Surviving partner from a same-sex civil partnership"
+                                                    "label": "Surviving partner from a civil partnership",
+                                                    "value": "Surviving partner from a civil partnership"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -2304,7 +2304,7 @@
                             "questions": [
                                 {
                                     "id": "address-type-question1",
-                                    "title": "What is that address?",
+                                    "title": "What type of address is <em>{{answers['other-address-answer-building1']}}</em>?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -2360,7 +2360,7 @@
                             "questions": [
                                 {
                                     "id": "address-type-question",
-                                    "title": "What is that address?",
+                                    "title": "What type of address is <em>{{answers['other-address-answer-building']}}</em>?",
                                     "type": "General",
                                     "answers": [
                                         {
