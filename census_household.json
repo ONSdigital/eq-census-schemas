@@ -2583,14 +2583,14 @@
                                         "block": "term-time-location-with-second-address",
                                         "when": [
                                             {
-                                                "id": "in-education-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            },
-                                            {
                                                 "id": "another-address-answer",
                                                 "condition": "equals",
                                                 "value": "Yes, an address within the UK"
+                                            },
+                                            {
+                                                "id": "in-education-answer",
+                                                "condition": "equals",
+                                                "value": "Yes"
                                             }
                                         ]
                                     }
@@ -2647,14 +2647,14 @@
                                         "block": "term-time-location-with-second-address1",
                                         "when": [
                                             {
+                                                "id": "another-address-answer",
+                                                "condition": "equals",
+                                                "value": "Yes, an address within the UK"
+                                            },
+                                            {
                                                 "id": "in-education-answer1",
                                                 "condition": "equals",
                                                 "value": "Yes"
-                                            },
-                                            {
-                                                "id": "another-address-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes, an address within the UK"
                                             }
                                         ]
                                     }
@@ -2692,11 +2692,11 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "{{answers['address-line']}}",
+                                                    "label": "{{answers['address-line']| format_household_name}}",
                                                     "value": "household"
                                                 },
                                                 {
-                                                    "label": "{{answers['other-address-answer-building']}}",
+                                                    "label": "{{answers['other-address-answer-building']| format_household_name}}",
                                                     "value": "household"
                                                 },
                                                 {
@@ -2744,11 +2744,11 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "{{answers['address-line-1']}}",
+                                                    "label": "{{answers['address-line-1']| format_household_name}}",
                                                     "value": "household"
                                                 },
                                                 {
-                                                    "label": "{{answers['other-address-answer-building1']}}",
+                                                    "label": "{{answers['other-address-answer-building1']| format_household_name}}",
                                                     "value": "household"
                                                 },
                                                 {
