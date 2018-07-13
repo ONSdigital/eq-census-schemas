@@ -2661,7 +2661,7 @@
                                             "options": [
                                                 {
                                                     "label": "{{answers['address-line']| format_household_name}}",
-                                                    "value": "household"
+                                                    "value": "household-address"
                                                 },
                                                 {
                                                     "label": "Another address",
@@ -2709,7 +2709,7 @@
                                             "options": [
                                                 {
                                                     "label": "{{answers['address-line-1']| format_household_name}}",
-                                                    "value": "household"
+                                                    "value": "household-address"
                                                 },
                                                 {
                                                     "label": "Another address",
@@ -2755,11 +2755,11 @@
                                             "options": [
                                                 {
                                                     "label": "{{answers['address-line']| format_household_name}}",
-                                                    "value": "household"
+                                                    "value": "household-address"
                                                 },
                                                 {
                                                     "label": "{{answers['other-address-answer-building']| format_household_name}}",
-                                                    "value": "household"
+                                                    "value": "30-day-address"
                                                 },
                                                 {
                                                     "label": "Another address",
@@ -2807,11 +2807,11 @@
                                             "options": [
                                                 {
                                                     "label": "{{answers['address-line-1']| format_household_name}}",
-                                                    "value": "household"
+                                                    "value": "household-address"
                                                 },
                                                 {
                                                     "label": "{{answers['other-address-answer-building1']| format_household_name}}",
-                                                    "value": "household"
+                                                    "value": "30-day-address"
                                                 },
                                                 {
                                                     "label": "Another address",
