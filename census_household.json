@@ -6405,8 +6405,8 @@
                                                     "value": "United Kingdom"
                                                 },
                                                 {
-                                                    "label": "Irish",
-                                                    "value": "Irish"
+                                                    "label": "Ireland",
+                                                    "value": "Ireland"
                                                 },
                                                 {
                                                     "label": "Other",
@@ -6418,7 +6418,7 @@
                                                     "value": "None"
                                                 }
                                             ],
-                                            "type": "Checkbox"
+                                            "type": "MutuallyExclusiveCheckbox"
                                         },
                                         {
                                             "id": "passport-answer-other",
@@ -6468,8 +6468,8 @@
                                                     "value": "United Kingdom"
                                                 },
                                                 {
-                                                    "label": "Irish",
-                                                    "value": "Irish"
+                                                    "label": "Ireland",
+                                                    "value": "Ireland"
                                                 },
                                                 {
                                                     "label": "Other",
@@ -6481,7 +6481,7 @@
                                                     "value": "None"
                                                 }
                                             ],
-                                            "type": "Checkbox"
+                                            "type": "MutuallyExclusiveCheckbox"
                                         },
                                         {
                                             "id": "passport-answer-other1",
