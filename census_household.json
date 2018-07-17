@@ -3839,6 +3839,10 @@
                                     "id": "national-identity-england-question",
                                     "title": "How would <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> describe their national identity?",
                                     "type": "General",
+                                    "definitions": [{
+                                        "title": "What is a national identity?",
+                                        "description": "National Identity is not dependent on your ethnic group or citizenship. This could be about the country or countries where you feel you belong, or think of as home."
+                                    }],
                                     "answers": [
                                         {
                                             "id": "national-identity-england-answer",
@@ -3896,6 +3900,10 @@
                                     "id": "national-identity-wales-question",
                                     "title": "How would you describe <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> national identity?",
                                     "type": "General",
+                                    "definitions": [{
+                                        "title": "What is a national identity?",
+                                        "description": "National Identity is not dependent on your ethnic group or citizenship. This could be about the country or countries where you feel you belong, or think of as home."
+                                    }],
                                     "answers": [
                                         {
                                             "id": "national-identity-wales-answer",
@@ -6150,8 +6158,8 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "This address",
-                                                    "value": "This address"
+                                                    "label": "{{answers['address-line-1']| format_household_name}}",
+                                                    "value": "householdaddress"
                                                 },
                                                 {
                                                     "label": "Student term time or boarding school address in the UK",
@@ -6225,8 +6233,8 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "This address",
-                                                    "value": "This address"
+                                                    "label": "{{answers['address-line-1']| format_household_name}}",
+                                                    "value": "householdaddress"
                                                 },
                                                 {
                                                     "label": "Student term time or boarding school address in the UK",
