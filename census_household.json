@@ -307,7 +307,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "in-education1"
+                                        "block": "household-summary"
                                     }
                                 }
                             ]
