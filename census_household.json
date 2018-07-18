@@ -1335,6 +1335,10 @@
                                     "id": "national-identity-england-question1",
                                     "title": "How would you describe your national identity?",
                                     "type": "General",
+                                    "definitions": [{
+                                        "title": "What is a national identity?",
+                                        "description": "National Identity is not dependent on your ethnic group or citizenship. This could be about the country or countries where you feel you belong, or think of as home."
+                                    }],
                                     "answers": [
                                         {
                                             "id": "national-identity-england-answer1",
@@ -1472,7 +1476,7 @@
                                                 {
                                                     "label": "White",
                                                     "value": "White",
-                                                    "description": "Includes any White backgroun"
+                                                    "description": "Includes any White background"
                                                 },
                                                 {
                                                     "label": "Mixed or Multiple ethnic groups",
@@ -1522,7 +1526,7 @@
                                                 {
                                                     "label": "White",
                                                     "value": "White",
-                                                    "description": "Includs any White background"
+                                                    "description": "Includes any White background"
                                                 },
                                                 {
                                                     "label": "Mixed or Multiple ethnic groups",
@@ -2326,7 +2330,7 @@
                                                     "value": "None"
                                                 }
                                             ],
-                                            "type": "Checkbox"
+                                            "type": "MutuallyExclusiveCheckbox"
                                         },
                                         {
                                             "id": "passport-answer-other1",
@@ -2585,16 +2589,10 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "household-member-completed"
+                                        "block": "submit-answers-section"
                                     }
                                 }
                             ]
-                        },
-                        {
-                            "id": "household-member-completed",
-                            "title": "There are no more questions for {{ [answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}",
-                            "description": "",
-                            "type": "Interstitial"
                         }
                     ]
                 }
