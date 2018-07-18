@@ -112,8 +112,8 @@
                         {
                             "type": "Interstitial",
                             "id": "household-member-begin-section",
-                            "title": "{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}",
-                            "description": "In this section, we’re going to ask you questions about <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em>.",
+                            "title": "About you",
+                            "description": "In this section, we’re going to ask you questions about yourself</em>.",
                             "content": [
                                 {
                                     "title": "Information you need",
