@@ -1140,7 +1140,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "birth-gender"
+                                        "block": "date-of-birth"
                                     }
                                 }
                             ]
@@ -1189,7 +1189,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "birth-gender1"
+                                        "block": "date-of-birth1"
                                     }
                                 }
                             ]
@@ -1237,7 +1237,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "birth-gender"
+                                        "block": "date-of-birth"
                                     }
                                 }
                             ]
@@ -1284,7 +1284,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "birth-gender1"
+                                        "block": "date-of-birth1"
                                     }
                                 }
                             ]
