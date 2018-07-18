@@ -1376,7 +1376,18 @@
                                             "label": "Please describe your national identity"
                                         }
                                     ],
-                                    
+                                     "skip_conditions": [
+                                        {
+                                            "when": [
+                                                {
+                                                    "meta": "region_code",
+                                                    "condition": "equals",
+                                                    "value": "GB-WLS"
+                                                }
+                                            ]
+                                        }
+                                    ]
+
                                 },
                                 {
                                     "id": "national-identity-wales-question1",
