@@ -8,6 +8,7 @@
     "theme": "census",
     "legal_basis": "Voluntary",
     "eq_id": "census",
+     "form_type": "household",
     "metadata": {
         "user_id": {
             "validator": "string"
