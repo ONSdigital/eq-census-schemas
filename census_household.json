@@ -4107,7 +4107,7 @@
                                                 {
                                                     "label": "White",
                                                     "value": "White",
-                                                    "description": "Including English, Welsh, Scottish, Northern Irish, British, Irish, Gypsy, Irish Traveller or any other White background"
+                                                    "description": "Includes British, Roma or any other White background"
                                                 },
                                                 {
                                                     "label": "Mixed or multiple ethnic groups",
@@ -4157,7 +4157,7 @@
                                                 {
                                                     "label": "White",
                                                     "value": "White",
-                                                    "description": "Including Welsh, English, Scottish, Northern Irish, British, Irish, Gypsy, Irish Traveller or any other White background"
+                                                    "description": "Includes British, Roma or any other White background"
                                                 },
                                                 {
                                                     "label": "Mixed or multiple ethnic groups",
@@ -4364,7 +4364,7 @@
                                                 {
                                                     "label": "White",
                                                     "value": "White",
-                                                    "description": "Including English, Welsh, Scottish, Northern Irish, British, Irish, Gypsy, Irish Traveller or any other White background"
+                                                    "description": "Includes British, Roma or any other White background"
                                                 },
                                                 {
                                                     "label": "Mixed or multiple ethnic groups",
@@ -4414,7 +4414,7 @@
                                                 {
                                                     "label": "White",
                                                     "value": "White",
-                                                    "description": "Including Welsh, English, Scottish, Northern Irish, British, Irish, Gypsy, Irish Traveller or any other White background"
+                                                    "description": "Includes British, Roma or any other White background"
                                                 },
                                                 {
                                                     "label": "Mixed or multiple ethnic groups",
@@ -4631,6 +4631,10 @@
                                                     "value": "Gypsy or Irish Traveller"
                                                 },
                                                 {
+                                                    "label": "Roma",
+                                                    "value": "Roma"
+                                                },
+                                                {
                                                     "label": "Any other White background",
                                                     "value": "Other",
                                                     "child_answer_id": "white-ethnic-group-england-answer-other"
@@ -4678,6 +4682,10 @@
                                                 {
                                                     "label": "Gypsy or Irish Traveller",
                                                     "value": "Gypsy or Irish Traveller"
+                                                },
+                                                {
+                                                    "label": "Roma",
+                                                    "value": "Roma"
                                                 },
                                                 {
                                                     "label": "Any other White background",
@@ -4766,6 +4774,10 @@
                                                     "value": "Gypsy or Irish Traveller"
                                                 },
                                                 {
+                                                    "label": "Roma",
+                                                    "value": "Roma"
+                                                },
+                                                {
                                                     "label": "Any other White background",
                                                     "value": "Other",
                                                     "child_answer_id": "white-ethnic-group-england-answer-other1"
@@ -4813,6 +4825,10 @@
                                                 {
                                                     "label": "Gypsy or Irish Traveller",
                                                     "value": "Gypsy or Irish Traveller"
+                                                },
+                                                {
+                                                    "label": "Roma",
+                                                    "value": "Roma"
                                                 },
                                                 {
                                                     "label": "Any other White background",
