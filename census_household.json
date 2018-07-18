@@ -685,7 +685,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "address-type1",
+                                        "block": "address-type-non-uk1",
                                         "when": [
                                             {
                                                 "id": "another-address-answer1",
@@ -702,18 +702,6 @@
                                             {
                                                 "id": "another-address-answer1",
                                                 "condition": "not set"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "address-type1",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer1",
-                                                "condition": "not equals",
-                                                "value": "Other"
                                             }
                                         ]
                                     }
@@ -847,7 +835,69 @@
                                 }
                             ]
                         },
-                      
+                      {
+                            "type": "Question",
+                            "id": "address-type-non-uk1",
+                            "questions": [
+                                {
+                                    "id": "address-type-question-non-uk1",
+                                    "title": "What type of address is the place you stay more than 30 days a year",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "address-type-answer-non-uk1",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Armed forces base address",
+                                                    "value": "Armed forces base address"
+                                                },
+                                                {
+                                                    "label": "Another address when working away from home",
+                                                    "value": "Another address when working away from home"
+                                                },
+                                                {
+                                                    "label": "Student’s home address",
+                                                    "value": "Student’s home address"
+                                                },
+                                                {
+                                                    "label": "Student’s term time address",
+                                                    "value": "Student’s term time address"
+                                                },
+                                                {
+                                                    "label": "Another parent or guardian’s address",
+                                                    "value": "Another parent or guardian’s address"
+                                                },
+                                                {
+                                                    "label": "Holiday home",
+                                                    "value": "Holiday home"
+                                                },
+                                                {
+                                                    "label": "Other (please specify)",
+                                                    "value": "Other",
+                                                    "child_answer_id": "address-type-answer-other-non-uk1"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        },
+                                        {
+                                            "id": "address-type-answer-other-non-uk1",
+                                            "parent_answer_id": "address-type-answer-non-uk1",
+                                            "type": "TextField",
+                                            "mandatory": false,
+                                            "label": "Please specify type of address"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "in-education1"
+                                    }
+                                }
+                            ]
+                        },
                         {
                             "type": "Question",
                             "id": "in-education1",
