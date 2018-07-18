@@ -25,15 +25,170 @@
             "blocks": [
                 {
                             "type": "Question",
-                            "id": "another-address1",
+                            "id": "unpaidcare1",
                             "questions": [
                                 {
-                                    "id": "another-address-question1",
-                                    "title": "Do you stay at another address for more than 30 days a year?",
+                                    "id": "unpaidcare-question1",
+                                    "title": "Are your day to day activities limited because of a health problem or disability which has lasted, or is expected to last, at least 12 months?",
                                     "type": "General",
+                                     "guidance": {
+                                        "content": [
+                                            {
+                                                   "description": "Include problems related to old age"
+                                            }
+                                        ]
+                                    },
                                     "answers": [
                                         {
-                                            "id": "another-address-answer1",
+                                            "id": "unpaidcare-answer1",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Yes, limited a lot",
+                                                    "value": "Yes, limited a lot"
+                                                },
+                                                {
+                                                    "label": "Yes, limited a little",
+                                                    "value": "Yes, limited a little"
+                                                },
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "disability"
+                                    }
+                                }
+                            ]
+                        },
+               {
+                            "type": "Question",
+                            "id": "disability",
+                            "questions": [
+                                {
+                                    "id": "disability-question2",
+                                    "title": "Do you have a physical or mental health conditions or illness lasting or expected to last 12 months or more?",
+                                    "type": "General",
+                                     "guidance": {
+                                        "content": [
+                                            {
+                                                   "description": "Include problems related to old age"
+                                            }
+                                        ]
+                                    },
+                                    "answers": [
+                                        {
+                                            "id": "disability-answer1",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Yes",
+                                                    "value": "Yes"
+                                                },
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "limited",
+                                        "when": [
+                                            {
+                                                "id": "disability-answer1",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "carer",
+                                        "when": [
+                                            {
+                                                "id": "disability-answer1",
+                                                "condition": "equals",
+                                                "value": "No"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                {
+                            "type": "Question",
+                            "id": "limited",
+                            "questions": [
+                                {
+                                    "id": "limited-question2",
+                                    "title": "Do any of your conditions or illnesses reduce your ability to carry out day to day activities?",
+                                    "type": "General",
+                                   
+                                    "answers": [
+                                        {
+                                            "id": "limited-answer1",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Yes, a lot",
+                                                    "value": "Yes, a lot"
+                                                },
+                                                {
+                                                    "label": "Yes, a little",
+                                                    "value": "Yes, a little"
+                                                },
+                                                {
+                                                    "label": "Not at all",
+                                                    "value": "Not at all"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "carer"
+                                       
+                                    }
+                                }
+                            ]
+                        },
+                {
+                            "type": "Question",
+                            "id": "carer",
+                            "questions": [
+                                {
+                                    "id": "carer-question2",
+                                    "title": "Do you look after, or give any help or support to anyone because they have long term physical or mental conditions or illnesses, or problems related to old age?",
+                                    "type": "General",
+                                    "guidance": {
+                                        "content": [
+                                            {
+                                                   "description": "Exclude anything you do as part of your paid employment"
+                                            }
+                                        ]
+                                    },
+                                    "answers": [
+                                        {
+                                            "id": "carer-answer1",
                                             "mandatory": false,
                                             "options": [
                                                 {
@@ -41,23 +196,27 @@
                                                     "value": "No"
                                                 },
                                                 {
-                                                    "label": "Yes, an address within the UK",
-                                                    "value": "Yes, an address within the UK"
+                                                    "label": "Yes, 1-9 hours a week",
+                                                    "value": "Yes, 1-9 hours a week"
+                                                },
+                                               {
+                                                    "label": "Yes, 10-19 hours a week",
+                                                    "value": "Yes, 10-19 hours a week"
                                                 },
                                                 {
-                                                    "label": "Yes, an address outside the UK",
-                                                    "value": "Other",
-                                                    "child_answer_id": "another-address-answer-other1"
+                                                    "label": "Yes, 20-34 hours a week",
+                                                    "value": "Yes, 20-34 hours a week"
+                                                },
+                                                {
+                                                    "label": "Yes, 35-49 hours a week",
+                                                    "value": "Yes, 35-49 hours a week"
+                                                },
+                                                {
+                                                    "label": "Yes, 50 or more hours a week",
+                                                    "value": "Yes, 50 or more hours a week"
                                                 }
                                             ],
                                             "type": "Radio"
-                                        },
-                                        {
-                                            "id": "another-address-answer-other1",
-                                            "parent_answer_id": "another-address-answer1",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please specify a country"
                                         }
                                     ]
                                 }
@@ -65,242 +224,57 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "household-summary",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer1",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "other-address1",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes, an address within the UK"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "address-type-non-uk1",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer1",
-                                                "condition": "equals",
-                                                "value": "Other"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "household-summary",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer1",
-                                                "condition": "not set"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "address-type1",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer1",
-                                                "condition": "not equals",
-                                                "value": "Other"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "household-summary"
+                                        "block": "carer2"
                                     }
                                 }
                             ]
                         },
-                {
+                 {
                             "type": "Question",
-                            "id": "other-address1",
+                            "id": "carer",
                             "questions": [
                                 {
-                                    "id": "other-address-question1",
-                                    "title": "Enter details of the other UK address where you stay more than 30 days a year",
+                                    "id": "carer-question2",
+                                    "title": "Do you look after, or give any help or support to family members, friends, neighbours or others  because they have long term physical or mental conditions or illnesses, or problems related to old age?",
                                     "type": "General",
+                                    "guidance": {
+                                        "content": [
+                                            {
+                                                   "description": "Exclude anything you do as part of your paid employment"
+                                            }
+                                        ]
+                                    },
                                     "answers": [
                                         {
-                                            "id": "other-address-answer-building1",
-                                            "label": "Building",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "other-address-answer-street1",
-                                            "label": "Street",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "other-address-answer-city1",
-                                            "label": "Town or city",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "other-address-answer-county1",
-                                            "label": "County (optional)",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "other-address-answer-postcode1",
-                                            "label": "Postcode",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "address-type1"
-                                    }
-                                }
-                            ]
-                        },
-                {
-                            "type": "Question",
-                            "id": "address-type1",
-                            "questions": [
-                                {
-                                    "id": "address-type-question1",
-                                    "title": "What type of address is <em>{{answers['other-address-answer-building1']| format_household_name}}</em>?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "address-type-answer1",
+                                            "id": "carer-answer1",
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Armed forces base address",
-                                                    "value": "Armed forces base address"
+                                                    "label": "No",
+                                                    "value": "No"
                                                 },
                                                 {
-                                                    "label": "Another address when working away from home",
-                                                    "value": "Another address when working away from home"
+                                                    "label": "Yes, 1-9 hours a week",
+                                                    "value": "Yes, 1-9 hours a week"
+                                                },
+                                               {
+                                                    "label": "Yes, 10-19 hours a week",
+                                                    "value": "Yes, 10-19 hours a week"
                                                 },
                                                 {
-                                                    "label": "Student’s home address",
-                                                    "value": "Student’s home address"
+                                                    "label": "Yes, 20-34 hours a week",
+                                                    "value": "Yes, 20-34 hours a week"
                                                 },
                                                 {
-                                                    "label": "Student’s term time address",
-                                                    "value": "Student’s term time address"
+                                                    "label": "Yes, 35-49 hours a week",
+                                                    "value": "Yes, 35-49 hours a week"
                                                 },
                                                 {
-                                                    "label": "Another parent or guardian’s address",
-                                                    "value": "Another parent or guardian’s address"
-                                                },
-                                                {
-                                                    "label": "Partners address",
-                                                    "value": "Partners address"
-                                                },
-                                                {
-                                                    "label": "Another relatives address",
-                                                    "value": "Another relatives address"
-                                                },
-                                                {
-                                                    "label": "Holiday home",
-                                                    "value": "Holiday home"
-                                                },
-                                                {
-                                                    "label": "Other (please specify)",
-                                                    "value": "Other",
-                                                    "child_answer_id": "address-type-answer-other1"
+                                                    "label": "Yes, 50 or more hours a week",
+                                                    "value": "Yes, 50 or more hours a week"
                                                 }
                                             ],
                                             "type": "Radio"
-                                        },
-                                        {
-                                            "id": "address-type-answer-other1",
-                                            "parent_answer_id": "address-type-answer1",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please specify type of address"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "household-summary"
-                                    }
-                                }
-                            ]
-                        },
-                {
-                            "type": "Question",
-                            "id": "address-type-non-uk1",
-                            "questions": [
-                                {
-                                    "id": "address-type-question-non-uk1",
-                                    "title": "What type of address is the place you stay more than 30 days a year",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "address-type-answer-non-uk1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Armed forces base address",
-                                                    "value": "Armed forces base address"
-                                                },
-                                                {
-                                                    "label": "Another address when working away from home",
-                                                    "value": "Another address when working away from home"
-                                                },
-                                                {
-                                                    "label": "Student’s home address",
-                                                    "value": "Student’s home address"
-                                                },
-                                                {
-                                                    "label": "Student’s term time address",
-                                                    "value": "Student’s term time address"
-                                                },
-                                                {
-                                                    "label": "Another parent or guardian’s address",
-                                                    "value": "Another parent or guardian’s address"
-                                                },
-                                                {
-                                                    "label": "Holiday home",
-                                                    "value": "Holiday home"
-                                                },
-                                                {
-                                                    "label": "Other (please specify)",
-                                                    "value": "Other",
-                                                    "child_answer_id": "address-type-answer-other-non-uk1"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        },
-                                        {
-                                            "id": "address-type-answer-other-non-uk1",
-                                            "parent_answer_id": "address-type-answer-non-uk1",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please specify type of address"
                                         }
                                     ]
                                 }
