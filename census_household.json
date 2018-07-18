@@ -873,7 +873,7 @@
                             "questions": [
                                 {
                                     "id": "number-of-vehicles-question",
-                                    "title": "How many cars or vans are owned, or available for use, by members of this household?",
+                                    "title": "In total, how many cars or vans are owned, or available for use, by members of this household?",
                                     "type": "General",
                                     "answers": [
                                         {
