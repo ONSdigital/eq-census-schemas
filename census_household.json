@@ -1402,18 +1402,6 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "confirm-dob",
-                                        "when": [
-                                            {
-                                                "id": "date-of-birth",
-                                                "condition": "equals",
-                                                "value": "Male"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
                                         "block": "confirm-dob"
                                     }
                                 }
@@ -8543,7 +8531,7 @@
                                         "block": "employers-business-past1",
                                         "when": [
                                             {
-                                                "id": "self-employed-past-answer1",
+                                                "id": "self-employed-past-answer",
                                                 "condition": "equals",
                                                 "value": "Yes"
                                             }
