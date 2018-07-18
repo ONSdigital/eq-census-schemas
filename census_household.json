@@ -133,7 +133,7 @@
                                 {
                                     "id": "sex-question1",
                                     "title": "What is your sex?",
-                                    "description": "A question about gender will follow later if you are aged 16 or ove",
+                                    "description": "A question about gender will follow later",
                                     "type": "General",
                                     "answers": [
                                         {
