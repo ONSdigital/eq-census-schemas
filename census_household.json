@@ -640,7 +640,7 @@
                             "questions": [
                                 {
                                     "id": "number-of-bedrooms-question",
-                                    "title": "How many bedrooms are at <em>{{answers['address-line-1']}}</em>?",
+                                    "title": "How many bedrooms are available for use only by <em>{{answers['address-line-1']}}</em>?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -674,10 +674,6 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Oil",
-                                                    "value": "Oil"
-                                                },
-                                                {
                                                     "label": "Mains gas",
                                                     "value": "Mains gas"
                                                 },
@@ -690,6 +686,10 @@
                                                     "label": "Electric",
                                                     "value": "Electric",
                                                     "description": "For example storage heaters"
+                                                },
+                                                {
+                                                    "label": "Oil",
+                                                    "value": "Oil"
                                                 },
                                                 {
                                                     "label": "Solid Fuel",
@@ -758,7 +758,7 @@
                             "questions": [
                                 {
                                     "id": "own-or-rent-question",
-                                    "title": "Does your household own or rent <em>{{answers['address-line-1']}}</em>?",
+                                    "title": "Does the householder own or rent <em>{{answers['address-line-1']}}</em>?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -778,8 +778,8 @@
                                                     "value": "Part owns and part rents (shared ownership)"
                                                 },
                                                 {
-                                                    "label": "Rents (with or without housing benefit)",
-                                                    "value": "Rents (with or without housing benefit)"
+                                                    "label": "Rents with or without housing benefit",
+                                                    "value": "Rents with or without housing benefit"
                                                 },
                                                 {
                                                     "label": "Lives here rent free",
@@ -873,7 +873,7 @@
                             "questions": [
                                 {
                                     "id": "number-of-vehicles-question",
-                                    "title": "How many cars or vans are available for use by members of this household?",
+                                    "title": "How many cars or vans are owned, or available for use, by members of this household?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -6457,7 +6457,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "qualifications-gcse-proxy"
+                                        "block": "armed-forces-proxy"
                                     }
                                 }
                             ]
@@ -6512,522 +6512,6 @@
                                         "when": [
                                             {
                                                 "id": "over-16-answer1",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "qualifications-gcse"
-                                    }
-                                }
-                            ]
-                        },
-                        {
- 	                        "type": "Question",
- 	                        "id": "qualifications-gcse-proxy",
-                        	"questions": [{
- 		                        "id": "qualifications-gcse-question-proxy",
- 		                        "title": "What GCSEs does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> have?",
- 	                        	"type": "General",
- 	                        	"answers": [{
- 		                        	"id": "qualifications-gcse-answer-proxy",
- 		                        	"mandatory": false,
- 			                        "options": [{
- 			                        		"label": "More than 1 at any grade",
-                                            "value": "More than 1 at any grade"
-                                        },
-                                        {
-                                            "label": "More than 5 grade C and above",
-                                            "value": "More than 5 grade C and above"
-                                        },
-                                        {
-                                            "label": "They do not have GCSE qualifications",
-                                            "value": "They do not have GCSE qualifications"
-                                        }
-                                    ],
-                                    "type": "MutuallyExclusiveCheckbox"
-                                }]
-                            }],
-                            "routing_rules": [{
-                                "goto": {
-                                    "block": "qualifications-alevel-proxy"
-                                }
-                            }]
-                        },
-                        {
- 	                        "type": "Question",
- 	                        "id": "qualifications-alevel-proxy",
-                        	"questions": [{
- 		                        "id": "qualifications-alevel-question-proxy",
- 		                        "title": "What A-level and AS-level qualifications does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> have?",
- 	                        	"type": "General",
- 	                        	"answers": [{
- 		                        	"id": "qualifications-alevel-answer-proxy",
- 		                        	"mandatory": false,
- 			                        "options": [{
- 			                        		"label": "2 or 3 AS-levels ",
-                                            "value": "2 or 3 AS-levels "
-                                        },
-                                        {
-                                            "label": "4 or more AS-levels",
-                                            "value": "4 or more AS-levels"
-                                        },
-                                        {
-                                            "label": "1 A-level",
-                                            "value": "1 A-level"
-                                        },
-                                        {
-                                            "label": "2 or more A-levels",
-                                            "value": "2 or more A-levels"
-                                        },
-                                        {
-                                            "label": "They do not have AS or A Level qualifications",
-                                            "value": "They do not have AS or A Level qualifications"
-                                        }
-                                    ],
-                                    "type": "MutuallyExclusiveCheckbox"
-                                }]
-                            }],
-                            "routing_rules": [{
-                                "goto": {
-                                    "block": "qualifications-nvq-proxy"
-                                }
-                            }]
-                        },
-                        {
- 	                        "type": "Question",
- 	                        "id": "qualifications-nvq-proxy",
-                        	"questions": [{
- 		                        "id": "qualifications-nvq-question-proxy",
- 		                        "title": "What NVQ qualifications does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> have?",
- 	                        	"type": "General",
- 	                        	"answers": [{
- 		                        	"id": "qualifications-nvq-answer-proxy",
- 		                        	"mandatory": false,
- 			                        "options": [{
- 			                        		"label": "NVQ level 1",
-                                            "value": "NVQ level 1"
-                                        },
-                                        {
-                                            "label": "NVQ level 2",
-                                            "value": "NVQ level 2"
-                                        },
-                                        {
-                                            "label": "NVQ level 3",
-                                            "value": "NVQ level 3"
-                                        },
-                                        {
-                                            "label": "NVQ level 4 and above",
-                                            "value": "NVQ level 4 and above"
-                                        },
-                                        {
-                                            "label": "They do not have NVQ qualifications",
-                                            "value": "They do not have NVQ qualifications"
-                                        }
-                                    ],
-                                    "type": "MutuallyExclusiveCheckbox"
-                                }]
-                            }],
-                            "routing_rules": [{
-                                "goto": {
-                                    "block": "qualifications-btec-proxy"
-                                }
-                            }]
-                        },
-                        {
- 	                        "type": "Question",
- 	                        "id": "qualifications-btec-proxy",
-                        	"questions": [{
- 		                        "id": "qualifications-btec-question-proxy",
- 		                        "title": "What BTEC and City and Guild qualifications does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> have?",
- 	                        	"type": "General",
- 	                        	"answers": [{
- 		                        	"id": "qualifications-btec-answer-proxy",
- 		                        	"mandatory": false,
- 			                        "options": [{
- 			                        		"label": "BTEC First or General diploma",
-                                            "value": "BTEC First or General diploma"
-                                        },
-                                        {
-                                            "label": "BTEC national",
-                                            "value": "BTEC national"
-                                        },
-                                        {
-                                            "label": "BTEC higher diploma",
-                                            "value": "BTEC higher diploma"
-                                        },
-                                        {
-                                            "label": "City and Guilds craft",
-                                            "value": "City and Guilds craft"
-                                        },
-                                        {
-                                            "label": "City and Guilds advanced craft",
-                                            "value": "City and Guilds advanced craft"
-                                        },
-                                        {
-                                            "label": "They do not have BTEC and City and Guild qualifications",
-                                            "value": "They do not have BTEC and City and Guild qualifications"
-                                        }
-                                    ],
-                                    "type": "MutuallyExclusiveCheckbox"
-                                }]
-                            }],
-                            "routing_rules": [{
-                                "goto": {
-                                    "block": "qualifications-rsa-proxy"
-                                }
-                            }]
-                        },
-                         {
- 	                        "type": "Question",
- 	                        "id": "qualifications-rsa-proxy",
-                        	"questions": [{
- 		                        "id": "qualifications-rsa-question-proxy",
- 		                        "title": "What RSA, bookkeeping and typewriting qualifications does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> have?",
- 	                        	"type": "General",
- 	                        	"answers": [{
- 		                        	"id": "qualifications-rsa-answer-proxy",
- 		                        	"mandatory": false,
- 			                        "options": [{
- 			                        		"label": "RSA diploma",
-                                            "value": "RSA diploma"
-                                        },
-                                        {
-                                            "label": "RSA advanced diploma",
-                                            "value": "RSA advanced diploma"
-                                        },
-                                        {
-                                            "label": "RSA higher diploma",
-                                            "value": "RSA higher diploma"
-                                        },
-                                        {
-                                            "label": "Typewriting or  bookkeeping ",
-                                            "value": "Typewriting or  bookkeeping "
-                                        },
-                                        {
-                                            "label": "They do not have RSA, bookkeeping or typewriting qualifications",
-                                            "value": "They do not have RSA, bookkeeping or typewriting qualifications"
-                                        }
-                                    ],
-                                    "type": "MutuallyExclusiveCheckbox"
-                                }]
-                            }],
-                            "routing_rules": [{
-                                "goto": {
-                                    "block": "qualifications-higher-proxy"
-                                }
-                            }]
-                        },
-                        {
- 	                        "type": "Question",
- 	                        "id": "qualifications-higher-proxy",
-                        	"questions": [{
- 		                        "id": "qualifications-higher-question-proxy",
- 		                        "title": "What higher level qualifications does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> have?",
- 	                        	"type": "General",
- 	                        	"answers": [{
- 		                        	"id": "qualifications-higher-answer-proxy",
- 		                        	"mandatory": false,
- 			                        "options": [{
- 			                        		"label": "Degree  or masters degree",
-                                            "value": "Degree  or masters degree"
-                                        },
-                                        {
-                                            "label": "Higher national diploma (HND)",
-                                            "value": "Higher national diploma (HND)"
-                                        },
-                                        {
-                                            "label": "Higher national certificate (HNC)",
-                                            "value": "Higher national certificate (HNC)"
-                                        },
-                                        {
-                                            "label": "Teaching",
-                                            "value": "Teaching"
-                                        },
-                                        {
-                                            "label": "Nursing",
-                                            "value": "Nursing"
-                                        },
-                                        {
-                                            "label": "Chartered professional qualifications",
-                                            "value": "Chartered professional qualifications"
-                                        },
-                                        {
-                                            "label": "They do not have these  higher qualifications",
-                                            "value": "They do not have these  higher qualifications"
-                                        }
-                                    ],
-                                    "type": "MutuallyExclusiveCheckbox"
-                                }]
-                            }],
-                             "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "employment-status-proxy",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "armed-forces-proxy"
-                                    }
-                                }
-                            ]
-                        },
-                         {
- 	                        "type": "Question",
- 	                        "id": "qualifications-gcse",
-                        	"questions": [{
- 		                        "id": "qualifications-gcse-question",
- 		                        "title": "What GCSEs do you have?",
- 	                        	"type": "General",
- 	                        	"answers": [{
- 		                        	"id": "qualifications-gcse-answer",
- 		                        	"mandatory": false,
- 			                        "options": [{
- 			                        		"label": "More than 1 at any grade",
-                                            "value": "More than 1 at any grade"
-                                        },
-                                        {
-                                            "label": "More than 5 grade C and above",
-                                            "value": "More than 5 grade C and above"
-                                        },
-                                        {
-                                            "label": "I do not have GCSE qualifications",
-                                            "value": "I do not have GCSE qualifications"
-                                        }
-                                    ],
-                                    "type": "MutuallyExclusiveCheckbox"
-                                }]
-                            }],
-                            "routing_rules": [{
-                                "goto": {
-                                    "block": "qualifications-alevel"
-                                }
-                            }]
-                        },
-                        {
- 	                        "type": "Question",
- 	                        "id": "qualifications-alevel",
-                        	"questions": [{
- 		                        "id": "qualifications-alevel-question",
- 		                        "title": "What A-level and AS-level qualifications do you have?",
- 	                        	"type": "General",
- 	                        	"answers": [{
- 		                        	"id": "qualifications-alevel-answer",
- 		                        	"mandatory": false,
- 			                        "options": [{
- 			                        		"label": "2 or 3 AS-levels ",
-                                            "value": "2 or 3 AS-levels "
-                                        },
-                                        {
-                                            "label": "4 or more AS-levels",
-                                            "value": "4 or more AS-levels"
-                                        },
-                                        {
-                                            "label": "1 A-level",
-                                            "value": "1 A-level"
-                                        },
-                                        {
-                                            "label": "2 or more A-levels",
-                                            "value": "2 or more A-levels"
-                                        },
-                                        {
-                                            "label": "I do not have AS or A Level qualifications",
-                                            "value": "I do not have AS or A Level qualifications"
-                                        }
-                                    ],
-                                    "type": "MutuallyExclusiveCheckbox"
-                                }]
-                            }],
-                            "routing_rules": [{
-                                "goto": {
-                                    "block": "qualifications-nvq"
-                                }
-                            }]
-                        },
-                        {
- 	                        "type": "Question",
- 	                        "id": "qualifications-nvq",
-                        	"questions": [{
- 		                        "id": "qualifications-nvq-question",
- 		                        "title": "What NVQ qualifications do you have?",
- 	                        	"type": "General",
- 	                        	"answers": [{
- 		                        	"id": "qualifications-nvq-answer",
- 		                        	"mandatory": false,
- 			                        "options": [{
- 			                        		"label": "NVQ level 1",
-                                            "value": "NVQ level 1"
-                                        },
-                                        {
-                                            "label": "NVQ level 2",
-                                            "value": "NVQ level 2"
-                                        },
-                                        {
-                                            "label": "NVQ level 3",
-                                            "value": "NVQ level 3"
-                                        },
-                                        {
-                                            "label": "NVQ level 4 and above",
-                                            "value": "NVQ level 4 and above"
-                                        },
-                                        {
-                                            "label": "I do not have NVQ qualifications",
-                                            "value": "I do not have NVQ qualifications"
-                                        }
-                                    ],
-                                    "type": "MutuallyExclusiveCheckbox"
-                                }]
-                            }],
-                            "routing_rules": [{
-                                "goto": {
-                                    "block": "qualifications-btec"
-                                }
-                            }]
-                        },
-                        {
- 	                        "type": "Question",
- 	                        "id": "qualifications-btec",
-                        	"questions": [{
- 		                        "id": "qualifications-btec-question",
- 		                        "title": "What BTEC and City and Guild qualifications do you have?",
- 	                        	"type": "General",
- 	                        	"answers": [{
- 		                        	"id": "qualifications-btec-answer",
- 		                        	"mandatory": false,
- 			                        "options": [{
- 			                        		"label": "BTEC First or General diploma",
-                                            "value": "BTEC First or General diploma"
-                                        },
-                                        {
-                                            "label": "BTEC national",
-                                            "value": "BTEC national"
-                                        },
-                                        {
-                                            "label": "BTEC higher diploma",
-                                            "value": "BTEC higher diploma"
-                                        },
-                                        {
-                                            "label": "City and Guilds craft",
-                                            "value": "City and Guilds craft"
-                                        },
-                                        {
-                                            "label": "City and Guilds advanced craft",
-                                            "value": "City and Guilds advanced craft"
-                                        },
-                                        {
-                                            "label": "I do not have BTEC and City and Guild qualifications",
-                                            "value": "I do not have BTEC and City and Guild qualifications"
-                                        }
-                                    ],
-                                    "type": "MutuallyExclusiveCheckbox"
-                                }]
-                            }],
-                            "routing_rules": [{
-                                "goto": {
-                                    "block": "qualifications-rsa"
-                                }
-                            }]
-                        },
-                         {
- 	                        "type": "Question",
- 	                        "id": "qualifications-rsa",
-                        	"questions": [{
- 		                        "id": "qualifications-rsa-question",
- 		                        "title": "What RSA, bookkeeping and typewriting qualifications do you have?",
- 	                        	"type": "General",
- 	                        	"answers": [{
- 		                        	"id": "qualifications-rsa-answer",
- 		                        	"mandatory": false,
- 			                        "options": [{
- 			                        		"label": "RSA diploma",
-                                            "value": "RSA diploma"
-                                        },
-                                        {
-                                            "label": "RSA advanced diploma",
-                                            "value": "RSA advanced diploma"
-                                        },
-                                        {
-                                            "label": "RSA higher diploma",
-                                            "value": "RSA higher diploma"
-                                        },
-                                        {
-                                            "label": "Typewriting or  bookkeeping ",
-                                            "value": "Typewriting or  bookkeeping "
-                                        },
-                                        {
-                                            "label": "I do not have RSA, bookkeeping or typewriting qualifications",
-                                            "value": "I do not have RSA, bookkeeping or typewriting qualifications"
-                                        }
-                                    ],
-                                    "type": "MutuallyExclusiveCheckbox"
-                                }]
-                            }],
-                            "routing_rules": [{
-                                "goto": {
-                                    "block": "qualifications-higher"
-                                }
-                            }]
-                        },
-                        {
- 	                        "type": "Question",
- 	                        "id": "qualifications-higher",
-                        	"questions": [{
- 		                        "id": "qualifications-higher-question",
- 		                        "title": "What higher level qualifications do you have?",
- 	                        	"type": "General",
- 	                        	"answers": [{
- 		                        	"id": "qualifications-higher-answer",
- 		                        	"mandatory": false,
- 			                        "options": [{
- 			                        		"label": "Degree  or masters degree",
-                                            "value": "Degree  or masters degree"
-                                        },
-                                        {
-                                            "label": "Higher national diploma (HND)",
-                                            "value": "Higher national diploma (HND)"
-                                        },
-                                        {
-                                            "label": "Higher national certificate (HNC)",
-                                            "value": "Higher national certificate (HNC)"
-                                        },
-                                        {
-                                            "label": "Teaching",
-                                            "value": "Teaching"
-                                        },
-                                        {
-                                            "label": "Nursing",
-                                            "value": "Nursing"
-                                        },
-                                        {
-                                            "label": "Chartered professional qualifications",
-                                            "value": "Chartered professional qualifications"
-                                        },
-                                        {
-                                            "label": "I do not have these  higher qualifications",
-                                            "value": "I do not have these  higher qualifications"
-                                        }
-                                    ],
-                                    "type": "MutuallyExclusiveCheckbox"
-                                }]
-                            }],
-                             "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "employment-status1",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer",
                                                 "condition": "equals",
                                                 "value": "No"
                                             }
