@@ -74,7 +74,7 @@
                             "id": "disability",
                             "questions": [
                                 {
-                                    "id": "disability-question2",
+                                    "id": "disability-question",
                                     "title": "Do you have a physical or mental health conditions or illness lasting or expected to last 12 months or more?",
                                     "type": "General",
                                      "guidance": {
@@ -86,7 +86,7 @@
                                     },
                                     "answers": [
                                         {
-                                            "id": "disability-answer1",
+                                            "id": "disability-answer",
                                             "mandatory": false,
                                             "options": [
                                                 {
@@ -109,7 +109,7 @@
                                         "block": "limited",
                                         "when": [
                                             {
-                                                "id": "disability-answer1",
+                                                "id": "disability-answer",
                                                 "condition": "equals",
                                                 "value": "Yes"
                                             }
@@ -121,7 +121,7 @@
                                         "block": "carer",
                                         "when": [
                                             {
-                                                "id": "disability-answer1",
+                                                "id": "disability-answer",
                                                 "condition": "equals",
                                                 "value": "No"
                                             }
@@ -176,7 +176,7 @@
                             "id": "carer",
                             "questions": [
                                 {
-                                    "id": "carer-question2",
+                                    "id": "carer-question",
                                     "title": "Do you look after, or give any help or support to anyone because they have long term physical or mental conditions or illnesses, or problems related to old age?",
                                     "type": "General",
                                     "guidance": {
@@ -188,7 +188,7 @@
                                     },
                                     "answers": [
                                         {
-                                            "id": "carer-answer1",
+                                            "id": "carer-answer",
                                             "mandatory": false,
                                             "options": [
                                                 {
@@ -231,7 +231,7 @@
                         },
                  {
                             "type": "Question",
-                            "id": "carer",
+                            "id": "carer2",
                             "questions": [
                                 {
                                     "id": "carer-question2",
@@ -246,7 +246,7 @@
                                     },
                                     "answers": [
                                         {
-                                            "id": "carer-answer1",
+                                            "id": "carer-answer2",
                                             "mandatory": false,
                                             "options": [
                                                 {
