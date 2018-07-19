@@ -1897,7 +1897,7 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "No",
+                                                    "label": "No, they don't stay at an address for more than 30 days a year",
                                                     "value": "No"
                                                 },
                                                 {
@@ -2004,7 +2004,7 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "No",
+                                                    "label": "No, I don't stay at an address for more than 30 days a year",
                                                     "value": "No"
                                                 },
                                                 {
