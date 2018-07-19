@@ -2234,19 +2234,11 @@
                                                     "value": "Holiday home"
                                                 },
                                                 {
-                                                    "label": "Other (please specify)",
-                                                    "value": "Other",
-                                                    "child_answer_id": "address-type-answer-other1"
+                                                    "label": "Other",
+                                                    "value": "Other"
                                                 }
                                             ],
                                             "type": "Radio"
-                                        },
-                                        {
-                                            "id": "address-type-answer-other1",
-                                            "parent_answer_id": "address-type-answer1",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please specify type of address"
                                         }
                                     ]
                                 }
@@ -2297,19 +2289,11 @@
                                                     "value": "Holiday home"
                                                 },
                                                 {
-                                                    "label": "Other (please specify)",
-                                                    "value": "Other",
-                                                    "child_answer_id": "address-type-answer-other"
+                                                    "label": "Other",
+                                                    "value": "Other"
                                                 }
                                             ],
                                             "type": "Radio"
-                                        },
-                                        {
-                                            "id": "address-type-answer-other",
-                                            "parent_answer_id": "address-type-answer",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please specify type of address"
                                         }
                                     ]
                                 }
