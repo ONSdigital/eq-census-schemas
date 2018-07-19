@@ -2230,6 +2230,14 @@
                                                     "value": "Another parent or guardian’s address"
                                                 },
                                                 {
+                                                    "label": "Partners address",
+                                                    "value": "Partners address"
+                                                },
+                                                {
+                                                    "label": "Another relative's address",
+                                                    "value": "Another relative's address"
+                                                },
+                                                {
                                                     "label": "Holiday home",
                                                     "value": "Holiday home"
                                                 },
@@ -2285,6 +2293,14 @@
                                                     "value": "Another parent or guardian’s address"
                                                 },
                                                 {
+                                                    "label": "Partners address",
+                                                    "value": "Partners address"
+                                                },
+                                                {
+                                                    "label": "Another relative's address",
+                                                    "value": "Another relative's address"
+                                                },
+                                                {
                                                     "label": "Holiday home",
                                                     "value": "Holiday home"
                                                 },
@@ -2312,7 +2328,7 @@
                             "questions": [
                                 {
                                     "id": "address-type-question-non-uk1",
-                                    "title": "What type of address is the place you stay more than 30 days a year",
+                                    "title": "What type of address do you stay at outside of the UK for more than 30 days a year",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -2340,23 +2356,23 @@
                                                     "value": "Another parent or guardian’s address"
                                                 },
                                                 {
+                                                    "label": "Partners address",
+                                                    "value": "Partners address"
+                                                },
+                                                {
+                                                    "label": "Another relative's address",
+                                                    "value": "Another relative's address"
+                                                },
+                                                {
                                                     "label": "Holiday home",
                                                     "value": "Holiday home"
                                                 },
                                                 {
-                                                    "label": "Other (please specify)",
-                                                    "value": "Other",
-                                                    "child_answer_id": "address-type-answer-other-non-uk1"
+                                                    "label": "Other",
+                                                    "value": "Other"
                                                 }
                                             ],
                                             "type": "Radio"
-                                        },
-                                        {
-                                            "id": "address-type-answer-other-non-uk1",
-                                            "parent_answer_id": "address-type-answer-non-uk1",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please specify type of address"
                                         }
                                     ]
                                 }
@@ -2375,7 +2391,7 @@
                             "questions": [
                                 {
                                     "id": "address-type-question-non-uk",
-                                    "title": "What type of address is the place <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> stays more than 30 days a year?",
+                                    "title": "What type of address does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> stay at outside of the UK for more than 30 days a year?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -2403,23 +2419,23 @@
                                                     "value": "Another parent or guardian’s address"
                                                 },
                                                 {
+                                                    "label": "Partners address",
+                                                    "value": "Partners address"
+                                                },
+                                                {
+                                                    "label": "Another relative's address",
+                                                    "value": "Another relative's address"
+                                                },
+                                                {
                                                     "label": "Holiday home",
                                                     "value": "Holiday home"
                                                 },
                                                 {
-                                                    "label": "Other (please specify)",
-                                                    "value": "Other",
-                                                    "child_answer_id": "address-type-answer-other-non-uk"
+                                                    "label": "Other",
+                                                    "value": "Other"
                                                 }
                                             ],
                                             "type": "Radio"
-                                        },
-                                        {
-                                            "id": "address-type-answer-other-non-uk",
-                                            "parent_answer_id": "address-type-answer-non-uk",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please specify type of address"
                                         }
                                     ]
                                 }
