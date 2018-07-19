@@ -75,7 +75,7 @@
                             "questions": [
                                 {
                                     "id": "disability-question",
-                                    "title": "Do you have a physical or mental health conditions or illness lasting or expected to last 12 months or more?",
+                                    "title": "Do you have a physical or mental health conditions or illnesses lasting or expected to last 12 months or more?",
                                     "type": "General",
                                      "guidance": {
                                         "content": [
@@ -241,7 +241,7 @@
                             "questions": [
                                 {
                                     "id": "carer-question2",
-                                    "title": "Do you look after, or give any help or support to family members, friends, neighbours or others  because they have long term physical or mental conditions or illnesses, or problems related to old age?",
+                                    "title": "Do you look after, or give any help or support to family members, friends, neighbours or others because they have long term physical or mental ill health of disability, or problems related to old age?",
                                     "type": "General",
                                     "guidance": {
                                         "content": [
