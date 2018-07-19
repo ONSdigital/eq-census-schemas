@@ -1890,6 +1890,7 @@
                                     "id": "another-address-question",
                                     "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> stay at another address for more than 30 days a year?",
                                     "type": "General",
+                                    "description": "This could be 30 days in a row, or divided across the year",
                                     "answers": [
                                         {
                                             "id": "another-address-answer",
@@ -1995,6 +1996,7 @@
                                 {
                                     "id": "another-address-question1",
                                     "title": "Do you stay at another address for more than 30 days a year?",
+                                    "description": "This could be 30 days in a row, or divided across the year",
                                     "type": "General",
                                     "answers": [
                                         {
