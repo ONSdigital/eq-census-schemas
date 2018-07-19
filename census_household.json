@@ -128,6 +128,44 @@
                         },
                         {
                             "type": "Question",
+                            "id": "name",
+                            "questions": [
+                                {
+                                    "id": "name-question",
+                                    "title": "What is your name?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "first-name",
+                                            "label": "First name",
+                                            "mandatory": true,
+                                            "type": "TextField",
+                                            "validation": {
+                                                "messages": {
+                                                    "MANDATORY_TEXTFIELD": "Please enter a name or remove the person to continue"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "id": "last-name",
+                                            "label": "Last name",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                               
+                                {
+                                    "goto": {
+                                        "block": "date-of-birth1"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
                             "id": "sex1",
                             "questions": [
                                 {
@@ -427,7 +465,7 @@
                                         "content": [
                                             {
                                                    "description": "Include:",
-                                                    "list": ["Long term physical or mental health conditions or illness", "Problems relating to old age"]
+                                                    "list": ["Long term physical or mental health conditions or illness", "Problems related to old age"]
                                    
                                             }
                                         ]
@@ -1482,22 +1520,22 @@
                                                 {
                                                     "label": "Mixed or Multiple ethnic groups",
                                                     "value": "Mixed or Multiple ethnic groups",
-                                                    "description": "Including White and Black Caribbean, White and Black African, White and Asian or any other Mixed or multiple ethnic background"
+                                                    "description": "Includes White and Black Caribbean, White and Black African, White and Asian or any other Mixed or multiple ethnic background"
                                                 },
                                                 {
                                                     "label": "Asian or Asian British",
                                                     "value": "Asian or Asian British",
-                                                    "description": "Including Indian, Pakistani, Bangladeshi, Chinese or any other Asian background"
+                                                    "description": "Includes Indian, Pakistani, Bangladeshi, Chinese or any other Asian background"
                                                 },
                                                 {
                                                     "label": "Black, African, Caribbean or Black British",
                                                     "value": "Black, African, Caribbean or Black British",
-                                                    "description": "Including African, Caribbean or any other Black, African or Caribbean background"
+                                                    "description": "Includes African, Caribbean or any other Black, African or Caribbean background"
                                                 },
                                                 {
                                                     "label": "Other ethnic group",
                                                     "value": "Other ethnic group",
-                                                    "description": "Including Arab or any other ethnic group"
+                                                    "description": "Includes Arab or any other ethnic group"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -1535,17 +1573,17 @@
                                                 {
                                                     "label": "Asian or Asian British",
                                                     "value": "Asian or Asian British",
-                                                    "description": "Including Indian, Pakistani, Bangladeshi, Chinese or any other Asian background"
+                                                    "description": "Includes Indian, Pakistani, Bangladeshi, Chinese or any other Asian background"
                                                 },
                                                 {
                                                     "label": "Black, African, Caribbean or Black British",
                                                     "value": "Black, African, Caribbean or Black British",
-                                                    "description": "Including African, Caribbean or any other Black, African or Caribbean background"
+                                                    "description": "Includes African, Caribbean or any other Black, African or Caribbean background"
                                                 },
                                                 {
                                                     "label": "Other ethnic group",
                                                     "value": "Other ethnic group",
-                                                    "description": "Including Arab or any other ethnic group"
+                                                    "description": "Includes Arab or any other ethnic group"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -1930,7 +1968,7 @@
                             "questions": [
                                 {
                                     "id": "black-ethnic-group-question1",
-                                    "title": "Which one best describes <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> Black, African, Caribbean, Black British ethnic group or background?",
+                                    "title": "Which one best describes your Black, African, Caribbean, Black British ethnic group or background?",
                                     "type": "General",
                                     "answers": [
                                         {
