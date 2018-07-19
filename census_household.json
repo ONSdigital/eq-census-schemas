@@ -159,7 +159,7 @@
                                
                                 {
                                     "goto": {
-                                        "block": "date-of-birth1"
+                                        "block": "sex1"
                                     }
                                 }
                             ]
