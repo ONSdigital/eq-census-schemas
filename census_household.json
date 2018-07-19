@@ -586,7 +586,7 @@
                             "questions": [
                                 {
                                     "id": "disability-limitation-question1",
-                                    "title": "Does your health problem or disability limit your day to day activities?",
+                                    "title": "Does your health problem or disability limit your day-to-day activities?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -2024,7 +2024,7 @@
                             "questions": [
                                 {
                                     "id": "understand-welsh-question1",
-                                    "title": "Can you understand, speak, read or write Welsh",
+                                    "title": "Can you understand, speak, read or write Welsh?",
                                     "type": "General",
                                     "answers": [
                                         {
