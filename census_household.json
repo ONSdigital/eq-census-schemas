@@ -30,6 +30,7 @@
                                 {
                                     "id": "another-address-question1",
                                     "title": "Do you stay at another address for more than 30 days a year?",
+                                    "description": "This could be 30 days in a row, or divided across the year",
                                     "type": "General",
                                     "answers": [
                                         {
