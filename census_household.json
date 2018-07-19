@@ -29,7 +29,7 @@
                             "questions": [
                                 {
                                     "id": "unpaidcare-question1",
-                                    "title": "Are your day to day activities limited because of a health problem or disability which has lasted, or is expected to last, at least 12 months?",
+                                    "title": "Are your day-to-day activities limited because of a health problem or disability which has lasted, or is expected to last, at least 12 months?",
                                     "type": "General",
                                      "guidance": {
                                         "content": [
@@ -142,7 +142,7 @@
                             "questions": [
                                 {
                                     "id": "limited-question2",
-                                    "title": "Do any of your conditions or illnesses reduce your ability to carry out day to day activities?",
+                                    "title": "Do any of your conditions or illnesses reduce your ability to carry-out day-to-day activities?",
                                     "type": "General",
                                    
                                     "answers": [
