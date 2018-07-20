@@ -4882,7 +4882,7 @@
                             "questions": [
                                 {
                                     "id": "mixed-ethnic-group-question1",
-                                    "title": "Which one best describes your Mixed, multiple ethnic group or background?",
+                                    "title": "Which one best describes your Mixed, Multiple ethnic group or background?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -4902,7 +4902,7 @@
                                                     "value": "White and Asian"
                                                 },
                                                 {
-                                                    "label": "Any other",
+                                                    "label": "Any other Mixed or Multiple background",
                                                     "value": "Other",
                                                     "child_answer_id": "mixed-ethnic-group-answer-other1"
                                                 }
@@ -4993,7 +4993,7 @@
                                             "parent_answer_id": "asian-ethnic-group-answer",
                                             "type": "TextField",
                                             "mandatory": false,
-                                            "label": "Please specify any other background"
+                                            "label": "Please specify any other Asian background"
                                         }
                                     ]
                                 }
@@ -5072,7 +5072,7 @@
                                             "parent_answer_id": "asian-ethnic-group-answer1",
                                             "type": "TextField",
                                             "mandatory": false,
-                                            "label": "Please specify any other background"
+                                            "label": "Please specify any other Asian background"
                                         }
                                     ]
                                 }
@@ -5131,7 +5131,7 @@
                                                     "value": "Caribbean"
                                                 },
                                                 {
-                                                    "label": "Any other",
+                                                    "label": "Any other Black, African or Caribbean background",
                                                     "value": "Other",
                                                     "child_answer_id": "black-ethnic-group-answer-other"
                                                 }
@@ -5348,7 +5348,7 @@
                                             "parent_answer_id": "other-ethnic-group-answer1",
                                             "type": "TextField",
                                             "mandatory": false,
-                                            "label": "Please specify Other ethnic group"
+                                            "label": "Please specify any other ethnic group"
                                         }
                                     ]
                                 }
