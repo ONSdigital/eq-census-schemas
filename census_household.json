@@ -113,18 +113,6 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "address-type1",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer1",
-                                                "condition": "not equals",
-                                                "value": "Other"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
                                         "block": "household-summary"
                                     }
                                 }
