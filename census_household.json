@@ -2202,7 +2202,7 @@
                             "questions": [
                                 {
                                     "id": "address-type-question1",
-                                    "title": "What type of address is <em>{{answers['other-address-answer-building1']| format_household_name}}</em>?",
+                                    "title": "What type of address is <em>{{answers['other-address-answer-building1'],answers[other-address-answer-street]| format_household_name}}</em>?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -2265,7 +2265,7 @@
                             "questions": [
                                 {
                                     "id": "address-type-question",
-                                    "title": "What type of address is <em>{{answers['other-address-answer-building']| format_household_name}}</em>?",
+                                    "title": "What type of address is <em>{{answers['other-address-answer-building'],answers[other-address-answer-street]| format_household_name}}</em>?",
                                     "type": "General",
                                     "answers": [
                                         {
