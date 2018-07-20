@@ -880,7 +880,7 @@
                             "questions": [
                                 {
                                     "id": "address-type-question-non-uk1",
-                                    "title": "What type of address is the place you stay more than 30 days a year",
+                                    "title": "What type of address is the place you stay more than 30 days a year?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -906,6 +906,14 @@
                                                 {
                                                     "label": "Another parent or guardian’s address",
                                                     "value": "Another parent or guardian’s address"
+                                                },
+                                                {
+                                                    "label": "Partner's address",
+                                                    "value": "Partner's address"
+                                                },
+                                                {
+                                                    "label": "Another relative's address",
+                                                    "value": "Another relative's address"
                                                 },
                                                 {
                                                     "label": "Holiday home",
@@ -2628,7 +2636,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "submit-answers-section"
+                                        "block": "household-member-completed"
                                     }
                                 }
                             ]
@@ -2637,7 +2645,12 @@
                 }
             ]
         },
-      
+        {
+              "id": "household-member-completed",
+               "title": "There are no more questions for {{ [answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}",
+                "description": "",
+                "type": "Interstitial"
+        },
         {
             "id": "submit-answers-section",
             "title": "Submit answers",
