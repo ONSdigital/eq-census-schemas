@@ -6760,7 +6760,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "main-job-type1"
+                                        "block": "main-employment-block"
                                     }
                                 }
                             ]
@@ -6833,7 +6833,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "main-job-type-proxy"
+                                        "block": "main-employment-block-proxy"
                                     }
                                 }
                             ]
