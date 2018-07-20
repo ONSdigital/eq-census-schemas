@@ -949,7 +949,7 @@
                                         "Education and qualifications",
                                         "Employment and travel to work",
                                         "Second or holiday homes",
-                                        "Unpaid care, health and well-being",
+                                        "Unpaid care and health",
                                         "Languages"
                                     ]
                                 }
@@ -3441,7 +3441,7 @@
                             "questions": [
                                 {
                                     "id": "disability-question",
-                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> have a health problem or disability which has lasted, or is expected to last, at least 12 months?",
+                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> have any physical or mental health conditions or illnesses lasting, or is expected to last 12 months or more?",
                                     "type": "General",
                                     "guidance": {
                                         "content": [
@@ -3495,7 +3495,7 @@
                             "questions": [
                                 {
                                     "id": "disability-question1",
-                                    "title": "Do you have a health problem or disability which has lasted, or is expected to last, at least 12 months?",
+                                    "title": "Do you have any physical or mental health conditions or illnesses lasting, or is expected to last 12 months or more?",
                                     "type": "General",
                                     "guidance": {
                                         "content": [
@@ -3549,7 +3549,7 @@
                             "questions": [
                                 {
                                     "id": "disability-limitation-question",
-                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> health problem or disabilty limit their day to day activities?",
+                                    "title": "Does any of <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> conditions or illnesses reduce their ability to carry-out day-to-day activities?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -3557,16 +3557,16 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Yes, limited a lot",
-                                                    "value": "Yes, limited a lot"
+                                                    "label": "Yes, a lot",
+                                                    "value": "Yes, a lot"
                                                 },
                                                 {
-                                                    "label": "Yes, limited a little",
-                                                    "value": "Yes, limited a little"
+                                                    "label": "Yes, a little",
+                                                    "value": "Yes, a little"
                                                 },
                                                 {
-                                                    "label": "No",
-                                                    "value": "No"
+                                                    "label": "Not at all",
+                                                    "value": "Not at all"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -3588,7 +3588,7 @@
                             "questions": [
                                 {
                                     "id": "disability-limitation-question1",
-                                    "title": "Does your health problem or disability limit your day to day activities?",
+                                    "title": "Do any of your conditions or illnesses reduce your ability to carry-out day-to-day activities?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -3596,16 +3596,16 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Yes, limited a lot",
-                                                    "value": "Yes, limited a lot"
+                                                    "label": "Yes, a lot",
+                                                    "value": "Yes, a lot"
                                                 },
                                                 {
-                                                    "label": "Yes, limited a little",
-                                                    "value": "Yes, limited a little"
+                                                    "label": "Yes, a little",
+                                                    "value": "Yes, a little"
                                                 },
                                                 {
-                                                    "label": "No",
-                                                    "value": "No"
+                                                    "label": "Not at all",
+                                                    "value": "Not at all"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -5391,7 +5391,7 @@
                             "questions": [
                                 {
                                     "id": "sexual-identity-question",
-                                    "title": "Which of the following options best describes how <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> thinks of their sexual orientation?",
+                                    "title": "Which of the following best describes <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> sexual orientation?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -5411,8 +5411,8 @@
                                                     "value": "Bisexual"
                                                 },
                                                 {
-                                                    "label": "Other",
-                                                    "value": "Other",
+                                                    "label": "Other sexual orientation",
+                                                    "value": "Other sexual orientation",
                                                     "child_answer_id": "sexual-identity-answer-other"
                                                 },
                                                 {
