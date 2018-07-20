@@ -7271,13 +7271,8 @@
                         {
                             "type": "Interstitial",
                             "id": "main-employment-block",
-                            "title": "Employment",
-                            "description": "Answer the remaining questions for your last main job",
-                            "content": [
-                                {
-                                    "title": "Your main job is the job in which you usually worked the most hours"
-                                }
-                            ],
+                            "title": "Answer the remaining questions for your last main job",
+                            "description": "Your main job is the job in which you usually worked the most hours",
                             "routing_rules": [
                                 {
                                     "goto": {
@@ -7344,7 +7339,21 @@
                                 },
                                 {
                                     "goto": {
+                                        "block": "main-employment-block-proxy"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Interstitial",
+                            "id": "main-employment-block-proxy",
+                            "title": "Answer the remaining questions for {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}} last main job",
+                            "description": "Their main job is the job in which they usually worked the most hours",
+                            "routing_rules": [
+                                {
+                                    "goto": {
                                         "block": "main-job-type-past-proxy"
+                                        
                                     }
                                 }
                             ]
