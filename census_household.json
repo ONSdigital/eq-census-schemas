@@ -30,7 +30,7 @@
                                 {
                                     "id": "another-address-question1",
                                     "title": "Do you stay at another address for more than 30 days a year?",
-                                    "description": "This could be 30 days in a row, or divided across the year",
+                                    "description": "This is a single address, that you stay at for more than 30 days per year, these do not have to be consecutive",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -186,7 +186,7 @@
                             "questions": [
                                 {
                                     "id": "address-type-question1",
-                                    "title": "What type of address is <em>{{answers['other-address-answer-building1']| format_household_name}}</em>?",
+                                    "title": "What type of address is <em>{{answers['other-address-answer-building1'][group_instance]}}, {{answers['other-address-answer-street1'][group_instance]}}</em>?",
                                     "type": "General",
                                     "answers": [
                                         {
