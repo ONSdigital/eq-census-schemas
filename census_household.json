@@ -102,17 +102,6 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "household-summary",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer1",
-                                                "condition": "not set"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
                                         "block": "household-summary"
                                     }
                                 }
