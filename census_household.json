@@ -30,7 +30,7 @@
                                 {
                                     "id": "another-address-question1",
                                     "title": "Do you stay at another address for more than 30 days a year?",
-                                    "description": "This is a single address, that you stay at for more than 30 days per year, these do not have to be consecutive",
+                                    "description": "This is a single address, that you stay at for more than 30 days per year, these do not have to be consecutive.",
                                     "type": "General",
                                     "answers": [
                                         {
