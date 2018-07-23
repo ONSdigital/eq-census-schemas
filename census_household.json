@@ -1,294 +1,318 @@
 {
-    "mime_type": "application/json/ons/eq",
-    "schema_version": "0.0.1",
-    "data_version": "0.0.2",
-    "survey_id": "census",
-    "title": "2018 Census Test",
-    "description": "Census England Household Schema",
-    "theme": "census",
-    "legal_basis": "Voluntary",
-    "eq_id": "census",
-     "form_type": "household",
-    "metadata": {
-        "user_id": {
-            "validator": "string"
-        },
-        "period_id": {
-            "validator": "string"
-        }
+  "mime_type": "application/json/ons/eq",
+  "schema_version": "0.0.1",
+  "data_version": "0.0.2",
+  "survey_id": "census",
+  "title": "2018 Census Test",
+  "description": "Census England Household Schema",
+  "theme": "census",
+  "legal_basis": "Voluntary",
+  "eq_id": "census",
+  "form_type": "household",
+  "metadata": {
+    "user_id": {
+      "validator": "string"
     },
-    "sections": [{
-        "id": "default-section",
-        "groups": [{
-            "id": "address-group",
-            "title": "",
-            "blocks": [
+    "period_id": {
+      "validator": "string"
+    }
+  },
+  "sections": [
+    {
+      "id": "default-section",
+      "groups": [
+        {
+          "id": "address-group",
+          "title": "",
+          "blocks": [
+            {
+              "id": "person-introduction",
+              "title": "Yourself",
+              "content": [
                 {
-                            "type": "Question",
-                            "id": "another-address1",
-                            "questions": [
-                                {
-                                    "id": "another-address-question1",
-                                    "title": "Do you stay at another address for more than 30 days a year?",
-                                    "description": "This could be 30 days in a row, or divided across the year.",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "another-address-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                },
-                                                {
-                                                    "label": "Yes, an address within the UK",
-                                                    "value": "Yes, an address within the UK"
-                                                },
-                                                {
-                                                    "label": "Yes, an address outside the UK",
-                                                    "value": "Other",
-                                                    "child_answer_id": "another-address-answer-other1"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        },
-                                        {
-                                            "id": "another-address-answer-other1",
-                                            "parent_answer_id": "another-address-answer1",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please specify a country"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "household-summary",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer1",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "other-address1",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes, an address within the UK"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "address-type-non-uk1",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer1",
-                                                "condition": "equals",
-                                                "value": "Other"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "household-summary"
-                                    }
-                                }
-                            ]
-                        },
+                  "description": "In this section, we’re going to ask you questions about <em>yourself</em>."
+                },
                 {
-                            "type": "Question",
-                            "id": "other-address1",
-                            "questions": [
-                                {
-                                    "id": "other-address-question1",
-                                    "title": "Enter details of the other UK address where you stay more than 30 days a year",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "other-address-answer-building1",
-                                            "label": "Building",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "other-address-answer-street1",
-                                            "label": "Street",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "other-address-answer-city1",
-                                            "label": "Town or city",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "other-address-answer-county1",
-                                            "label": "County (optional)",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "other-address-answer-postcode1",
-                                            "label": "Postcode",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "address-type1"
-                                    }
-                                }
-                            ]
-                        },
-                {
-                            "type": "Question",
-                            "id": "address-type1",
-                            "questions": [
-                                {
-                                    "id": "address-type-question1",
-                                    "title": "What type of address is <em>{{answers['other-address-answer-building1']}}, {{answers['other-address-answer-street1']}}</em>?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "address-type-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Armed forces base address",
-                                                    "value": "Armed forces base address"
-                                                },
-                                                {
-                                                    "label": "Another address when working away from home",
-                                                    "value": "Another address when working away from home"
-                                                },
-                                                {
-                                                    "label": "Student’s home address",
-                                                    "value": "Student’s home address"
-                                                },
-                                                {
-                                                    "label": "Student’s term time address",
-                                                    "value": "Student’s term time address"
-                                                },
-                                                {
-                                                    "label": "Another parent or guardian’s address",
-                                                    "value": "Another parent or guardian’s address"
-                                                },
-                                                {
-                                                    "label": "Partners address",
-                                                    "value": "Partners address"
-                                                },
-                                                {
-                                                    "label": "Another relatives address",
-                                                    "value": "Another relatives address"
-                                                },
-                                                {
-                                                    "label": "Holiday home",
-                                                    "value": "Holiday home"
-                                                },
-                                                {
-                                                    "label": "Other",
-                                                    "value": "Other"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "household-summary"
-                                    }
-                                }
-                            ]
-                        },
-                {
-                            "type": "Question",
-                            "id": "address-type-non-uk1",
-                            "questions": [
-                                {
-                                    "id": "address-type-question-non-uk1",
-                                    "title": "What type of address do you stay at outside of the UK for more than 30 days a year?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "address-type-answer-non-uk1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Armed forces base address",
-                                                    "value": "Armed forces base address"
-                                                },
-                                                {
-                                                    "label": "Another address when working away from home",
-                                                    "value": "Another address when working away from home"
-                                                },
-                                                {
-                                                    "label": "Student’s home address",
-                                                    "value": "Student’s home address"
-                                                },
-                                                {
-                                                    "label": "Student’s term time address",
-                                                    "value": "Student’s term time address"
-                                                },
-                                                {
-                                                    "label": "Another parent or guardian’s address",
-                                                    "value": "Another parent or guardian’s address"
-                                                },
-                                                {
-                                                    "label": "Partners address",
-                                                    "value": "Partners address"
-                                                },
-                                                {
-                                                    "label": "Another relative's address",
-                                                    "value": "Another relative's address"
-                                                },
-                                                {
-                                                    "label": "Holiday home",
-                                                    "value": "Holiday home"
-                                                },
-                                                {
-                                                    "label": "Other",
-                                                    "value": "Other"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "household-summary"
-                                    }
-                                }
-                            ]
-                        },
-                {
-                    "type": "Summary",
-                    "id": "household-summary"
+                  "title": "Information you need",
+                  "list": [
+                    "Personal details such as date of birth, country of birth, religion etc.",
+                    "Education and qualifications",
+                    "Employment and travel to work",
+                    "Second or holiday homes",
+                    "unpaid care, health and well-being",
+                    "Languages"
+                  ]
                 }
-            ]
-        }]
-    }]
+              ],
+              "type": "Interstitial"
+            },
+            {
+              "type": "Question",
+              "id": "another-address1",
+              "questions": [
+                {
+                  "id": "another-address-question1",
+                  "title": "Do you stay at another address for more than 30 days a year?",
+                  "description": "This could be 30 days in a row, or divided across the year.",
+                  "type": "General",
+                  "answers": [
+                    {
+                      "id": "another-address-answer1",
+                      "mandatory": false,
+                      "options": [
+                        {
+                          "label": "No",
+                          "value": "No"
+                        },
+                        {
+                          "label": "Yes, an address within the UK",
+                          "value": "Yes, an address within the UK"
+                        },
+                        {
+                          "label": "Yes, an address outside the UK",
+                          "value": "Other",
+                          "child_answer_id": "another-address-answer-other1"
+                        }
+                      ],
+                      "type": "Radio"
+                    },
+                    {
+                      "id": "another-address-answer-other1",
+                      "parent_answer_id": "another-address-answer1",
+                      "type": "TextField",
+                      "mandatory": false,
+                      "label": "Please specify a country"
+                    }
+                  ]
+                }
+              ],
+              "routing_rules": [
+                {
+                  "goto": {
+                    "block": "household-summary",
+                    "when": [
+                      {
+                        "id": "another-address-answer1",
+                        "condition": "equals",
+                        "value": "No"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "goto": {
+                    "block": "other-address1",
+                    "when": [
+                      {
+                        "id": "another-address-answer1",
+                        "condition": "equals",
+                        "value": "Yes, an address within the UK"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "goto": {
+                    "block": "address-type-non-uk1",
+                    "when": [
+                      {
+                        "id": "another-address-answer1",
+                        "condition": "equals",
+                        "value": "Other"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "goto": {
+                    "block": "household-summary"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Question",
+              "id": "other-address1",
+              "questions": [
+                {
+                  "id": "other-address-question1",
+                  "title": "Enter details of the other UK address where you stay more than 30 days a year",
+                  "type": "General",
+                  "answers": [
+                    {
+                      "id": "other-address-answer-building1",
+                      "label": "Building",
+                      "mandatory": false,
+                      "type": "TextField"
+                    },
+                    {
+                      "id": "other-address-answer-street1",
+                      "label": "Street",
+                      "mandatory": false,
+                      "type": "TextField"
+                    },
+                    {
+                      "id": "other-address-answer-city1",
+                      "label": "Town or city",
+                      "mandatory": false,
+                      "type": "TextField"
+                    },
+                    {
+                      "id": "other-address-answer-county1",
+                      "label": "County (optional)",
+                      "mandatory": false,
+                      "type": "TextField"
+                    },
+                    {
+                      "id": "other-address-answer-postcode1",
+                      "label": "Postcode",
+                      "mandatory": false,
+                      "type": "TextField"
+                    }
+                  ]
+                }
+              ],
+              "routing_rules": [
+                {
+                  "goto": {
+                    "block": "address-type1"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Question",
+              "id": "address-type1",
+              "questions": [
+                {
+                  "id": "address-type-question1",
+                  "title": "What type of address is <em>{{answers['other-address-answer-building1']}}, {{answers['other-address-answer-street1']}}</em>?",
+                  "type": "General",
+                  "answers": [
+                    {
+                      "id": "address-type-answer1",
+                      "mandatory": false,
+                      "options": [
+                        {
+                          "label": "Armed forces base address",
+                          "value": "Armed forces base address"
+                        },
+                        {
+                          "label": "Another address when working away from home",
+                          "value": "Another address when working away from home"
+                        },
+                        {
+                          "label": "Student’s home address",
+                          "value": "Student’s home address"
+                        },
+                        {
+                          "label": "Student’s term time address",
+                          "value": "Student’s term time address"
+                        },
+                        {
+                          "label": "Another parent or guardian’s address",
+                          "value": "Another parent or guardian’s address"
+                        },
+                        {
+                          "label": "Partners address",
+                          "value": "Partners address"
+                        },
+                        {
+                          "label": "Another relatives address",
+                          "value": "Another relatives address"
+                        },
+                        {
+                          "label": "Holiday home",
+                          "value": "Holiday home"
+                        },
+                        {
+                          "label": "Other",
+                          "value": "Other"
+                        }
+                      ],
+                      "type": "Radio"
+                    }
+                  ]
+                }
+              ],
+              "routing_rules": [
+                {
+                  "goto": {
+                    "block": "household-summary"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Question",
+              "id": "address-type-non-uk1",
+              "questions": [
+                {
+                  "id": "address-type-question-non-uk1",
+                  "title": "What type of address do you stay at outside of the UK for more than 30 days a year?",
+                  "type": "General",
+                  "answers": [
+                    {
+                      "id": "address-type-answer-non-uk1",
+                      "mandatory": false,
+                      "options": [
+                        {
+                          "label": "Armed forces base address",
+                          "value": "Armed forces base address"
+                        },
+                        {
+                          "label": "Another address when working away from home",
+                          "value": "Another address when working away from home"
+                        },
+                        {
+                          "label": "Student’s home address",
+                          "value": "Student’s home address"
+                        },
+                        {
+                          "label": "Student’s term time address",
+                          "value": "Student’s term time address"
+                        },
+                        {
+                          "label": "Another parent or guardian’s address",
+                          "value": "Another parent or guardian’s address"
+                        },
+                        {
+                          "label": "Partners address",
+                          "value": "Partners address"
+                        },
+                        {
+                          "label": "Another relative's address",
+                          "value": "Another relative's address"
+                        },
+                        {
+                          "label": "Holiday home",
+                          "value": "Holiday home"
+                        },
+                        {
+                          "label": "Other",
+                          "value": "Other"
+                        }
+                      ],
+                      "type": "Radio"
+                    }
+                  ]
+                }
+              ],
+              "routing_rules": [
+                {
+                  "goto": {
+                    "block": "household-summary"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Summary",
+              "id": "household-summary"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
-
