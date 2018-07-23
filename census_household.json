@@ -27,7 +27,7 @@
           "blocks": [
             {
               "id": "person-introduction",
-              "title": "Yourself",
+              "title": "About you",
               "content": [
                 {
                   "description": "In this section, we’re going to ask you questions about <em>yourself</em>."
