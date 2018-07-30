@@ -9,14 +9,16 @@
     "legal_basis": "Voluntary",
     "eq_id": "census",
      "form_type": "household",
-    "metadata": {
-        "user_id": {
+    "metadata": [
+        {
+            "name": "user_id",
             "validator": "string"
         },
-        "period_id": {
+        {
+            "name": "period_id",
             "validator": "string"
         }
-    },
+    ],
     "sections": [{
         "id": "default-section",
         "groups": [{
