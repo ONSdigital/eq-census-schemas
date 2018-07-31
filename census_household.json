@@ -5473,7 +5473,7 @@
                             "questions": [
                                 {
                                     "id": "sexual-identity-question1",
-                                    "title": "Which of the following options best describes how you think of your sexual orientation?",
+                                    "title": "Which of the following best describes your sexual orientation?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -5493,7 +5493,7 @@
                                                     "value": "Bisexual"
                                                 },
                                                 {
-                                                    "label": "Other",
+                                                    "label": "Other sexual orientation",
                                                     "value": "Other",
                                                     "child_answer_id": "sexual-identity-answer-other1"
                                                 },
