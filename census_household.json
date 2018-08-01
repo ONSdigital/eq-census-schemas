@@ -46,7 +46,7 @@
                                     "answers": [
                                         {
                                             "id": "address-line-1",
-                                            "label": "House name or number)",
+                                            "label": "House name or number",
                                             "mandatory": true,
                                             "type": "TextField",
                                             "validation": {
