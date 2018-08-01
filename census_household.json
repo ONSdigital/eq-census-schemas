@@ -447,18 +447,6 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "own-or-rent",
-                                        "when": [
-                                            {
-                                                "id": "else-permanent-or-family-home-answer",
-                                                "condition": "equals",
-                                                "value": "Someone lives here as their permanent home"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
                                         "block": "household-summary"
                                     }
                                 }
