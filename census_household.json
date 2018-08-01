@@ -108,7 +108,7 @@
                             "questions": [
                                 {
                                     "id": "permanent-or-family-home-question",
-                                    "title": "Does anyone live at <em>{{answers['address-line-1']}}, {{answers['address-line-2']}}</em> as their permanent or family home?",
+                                    "title": "Does anyone live at {{answers['address-line-1']}}, {{answers['address-line-2']}} as their permanent or family home?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -166,7 +166,7 @@
                             "questions": [
                                 {
                                     "id": "type-of-accommodation-question",
-                                    "title": "What type of accommodation is <em>{{answers['address-line-1']}}, {{answers['address-line-2']}} </em>?",
+                                    "title": "What type of accommodation is {{answers['address-line-1']}}, {{answers['address-line-2']}}?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -304,7 +304,7 @@
                             "questions": [
                                 {
                                     "id": "self-contained-accommodation-question",
-                                    "title": "Are all the rooms in <em>{{answers['address-line-1']}}, {{answers['address-line-2']}} </em> behind a door that only this household can use?",
+                                    "title": "Are all the rooms in {{answers['address-line-1']}}, {{answers['address-line-2']}} behind a door that only this household can use?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -332,7 +332,7 @@
                             "questions": [
                                 {
                                     "id": "number-of-bedrooms-question",
-                                    "title": "How many bedrooms are available for use only by <em>{{answers['address-line-1']}}, {{answers['address-line-2']}} </em>?",
+                                    "title": "How many bedrooms are available for use only by {{answers['address-line-1']}}, {{answers['address-line-2']}}?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -351,7 +351,7 @@
                             "questions": [
                                 {
                                     "id": "central-heating-question",
-                                    "title": "What type of central heating does <em>{{answers['address-line-1']}}, {{answers['address-line-2']}} </em> have?",
+                                    "title": "What type of central heating does {{answers['address-line-1']}}, {{answers['address-line-2']}} have?",
                                     "type": "General",
                                      "guidance": {
                                         "content": [
@@ -438,7 +438,7 @@
                             "questions": [
                                 {
                                     "id": "own-or-rent-question",
-                                    "title": "Does the householder own or rent <em>{{answers['address-line-1']}}, {{answers['address-line-2']}} </em>?",
+                                    "title": "Does the householder own or rent {{answers['address-line-1']}}, {{answers['address-line-2']}}?",
                                     "type": "General",
                                     "answers": [
                                         {
