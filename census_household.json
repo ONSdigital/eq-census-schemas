@@ -671,27 +671,28 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
+                                                    "label": "Oil",
+                                                    "value": "Oil"
+                                                },
+                                                {
                                                     "label": "Mains gas",
                                                     "value": "Mains gas"
                                                 },
                                                 {
                                                     "label": "Other gas",
                                                     "value": "Other gas",
-                                                    "description": "Including Liquid Petroleum Gas and Biogas"
+                                                    "description": "For example Liquid Petroleum Gas and Biogas"
                                                 },
                                                 {
                                                     "label": "Electric",
                                                     "value": "Electric",
                                                     "description": "For example storage heaters"
                                                 },
-                                                {
-                                                    "label": "Oil",
-                                                    "value": "Oil"
-                                                },
+                                                
                                                 {
                                                     "label": "Solid Fuel",
                                                     "value": "Solid Fuel",
-                                                    "description": "For example wood, coal"
+                                                    "description": "For example coal"
                                                 },
                                                 {
                                                     "label": "Renewable  heating systems",
@@ -1566,14 +1567,14 @@
                                                 {
                                                     "label": "Elsewhere",
                                                     "value": "Other",
-                                                    "child_answer_id": "country-of-birth-england-answer-other"
+                                                    "child_answer_id": "country-of-birth-answer-other"
                                                 }
                                             ],
                                             "type": "Radio"
                                         },
                                         {
-                                            "id": "country-of-birth-england-answer-other",
-                                            "parent_answer_id": "country-of-birth-england-answer",
+                                            "id": "country-of-birth-answer-other",
+                                            "parent_answer_id": "country-of-birth-answer",
                                             "type": "TextField",
                                             "mandatory": false,
                                             "label": "Please specify current name of country"
