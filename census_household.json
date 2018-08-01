@@ -20,10 +20,6 @@
         {
             "name": "period_id",
             "validator": "string"
-        },
-        {
-            "name": "region_code",
-            "validator": "string"
         }
     ],
     "sections": [
@@ -157,7 +153,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "household-and-accommodation-section",
+                                        "block": "household-and-accommodation-block",
                                         "when": [
                                             {
                                                 "id": "permanent-or-family-home-answer",
@@ -211,7 +207,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "household-and-accommodation-section"
+                                        "block": "household-and-accommodation-block"
                                        
                                     }
                                 }
@@ -686,10 +682,8 @@
                             ]
                         },
                         {
-                            "id": "household-and-accommodation-completed",
-                            "title": "You have successfully completed the ‘Household and Accommodation’ section",
-                            "description": "",
-                            "type": "Interstitial"
+                            "type": "Summary",
+                            "id": "household-summary"
                         }
                     ]
                 }
