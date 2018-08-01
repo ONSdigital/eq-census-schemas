@@ -149,68 +149,6 @@
                                         }
                                     ]
                                 }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "household-and-accommodation-block",
-                                        "when": [
-                                            {
-                                                "id": "permanent-or-family-home-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "else-permanent-or-family-home",
-                                        "when": [
-                                            {
-                                                "id": "permanent-or-family-home-answer",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "else-permanent-or-family-home",
-                            "questions": [
-                                {
-                                    "id": "else-permanent-or-family-home-question",
-                                    "title": "Can you confirm no one lives here as their permanent or family home?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "else-permanent-or-family-home-answer",
-                                            "mandatory": true,
-                                            "options": [
-                                                {
-                                                    "label": "Someone lives here as their permanent home",
-                                                    "value": "Someone lives here as their permanent home"
-                                                },
-                                                {
-                                                    "label": "No one lives here as their permanent home",
-                                                    "value": "No one lives here as their permanent home"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "household-and-accommodation-block"
-                                       
-                                    }
-                                }
                             ]
                         }
                         
@@ -521,7 +459,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "household-and-accommodation-completed"
+                                        "block": "household-summary"
                                     }
                                 }
                             ]
