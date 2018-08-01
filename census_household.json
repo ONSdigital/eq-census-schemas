@@ -1393,585 +1393,31 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "another-address1"
+                                        "block": "in-education"
                                     }
                                 }
                             ]
                         },
                        
-                        {
-                            "type": "Question",
-                            "id": "another-address",
-                            "questions": [
-                                {
-                                    "id": "another-address-question",
-                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> stay at another address for more than 30 days a year?",
-                                    "type": "General",
-                                    "description": "This could be 30 days in a row, or divided across the year",
-                                    "answers": [
-                                        {
-                                            "id": "another-address-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                },
-                                                {
-                                                    "label": "Yes, an address within the UK",
-                                                    "value": "Yes, an address within the UK"
-                                                },
-                                                {
-                                                    "label": "Yes, an address outside the UK",
-                                                    "value": "Other",
-                                                    "child_answer_id": "another-address-answer-other"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        },
-                                        {
-                                            "id": "another-address-answer-other",
-                                            "parent_answer_id": "another-address-answer",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please specify a country"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "in-education",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "other-address",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer",
-                                                "condition": "equals",
-                                                "value": "Yes, an address within the UK"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "address-type",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer",
-                                                "condition": "equals",
-                                                "value": "Other"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "in-education",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer",
-                                                "condition": "not set"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "address-type-non-uk",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer",
-                                                "condition": "not equals",
-                                                "value": "Other"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "in-education"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "another-address1",
-                            "questions": [
-                                {
-                                    "id": "another-address-question1",
-                                    "title": "Do you stay at another address for more than 30 days a year?",
-                                    "description": "This could be 30 days in a row, or divided across the year",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "another-address-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                },
-                                                {
-                                                    "label": "Yes, an address within the UK",
-                                                    "value": "Yes, an address within the UK"
-                                                },
-                                                {
-                                                    "label": "Yes, an address outside the UK",
-                                                    "value": "Other",
-                                                    "child_answer_id": "another-address-answer-other1"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        },
-                                        {
-                                            "id": "another-address-answer-other1",
-                                            "parent_answer_id": "another-address-answer1",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please specify a country"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "in-education1",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer1",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "other-address1",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes, an address within the UK"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "address-type-non-uk1",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer1",
-                                                "condition": "equals",
-                                                "value": "Other"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "in-education1",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer1",
-                                                "condition": "not set"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "address-type1",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer1",
-                                                "condition": "not equals",
-                                                "value": "Other"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "in-education1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "other-address",
-                            "questions": [
-                                {
-                                    "id": "other-address-question",
-                                    "title": "Enter details of the other UK address where <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> stay more than 30 days a year",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "other-address-answer-building",
-                                            "label": "Building",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "other-address-answer-street",
-                                            "label": "Street",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "other-address-answer-city",
-                                            "label": "Town or city",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "other-address-answer-county",
-                                            "label": "County (optional)",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "other-address-answer-postcode",
-                                            "label": "Postcode",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "address-type"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "other-address1",
-                            "questions": [
-                                {
-                                    "id": "other-address-question1",
-                                    "title": "Enter details of the other UK address where you stay more than 30 days a year",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "other-address-answer-building1",
-                                            "label": "Building",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "other-address-answer-street1",
-                                            "label": "Street",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "other-address-answer-city1",
-                                            "label": "Town or city",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "other-address-answer-county1",
-                                            "label": "County (optional)",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "other-address-answer-postcode1",
-                                            "label": "Postcode",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "address-type1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "address-type1",
-                            "questions": [
-                                {
-                                    "id": "address-type-question1",
-                                    "title": "What type of address is <em>{{answers['other-address-answer-building1'][group_instance]}}, {{answers['other-address-answer-street1'][group_instance]}}</em>?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "address-type-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Armed forces base address",
-                                                    "value": "Armed forces base address"
-                                                },
-                                                {
-                                                    "label": "Another address when working away from home",
-                                                    "value": "Another address when working away from home"
-                                                },
-                                                {
-                                                    "label": "Student’s home address",
-                                                    "value": "Student’s home address"
-                                                },
-                                                {
-                                                    "label": "Student’s term time address",
-                                                    "value": "Student’s term time address"
-                                                },
-                                                {
-                                                    "label": "Another parent or guardian’s address",
-                                                    "value": "Another parent or guardian’s address"
-                                                },
-                                                {
-                                                    "label": "Partners address",
-                                                    "value": "Partners address"
-                                                },
-                                                {
-                                                    "label": "Another relative's address",
-                                                    "value": "Another relative's address"
-                                                },
-                                                {
-                                                    "label": "Holiday home",
-                                                    "value": "Holiday home"
-                                                },
-                                                {
-                                                    "label": "Other",
-                                                    "value": "Other"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "in-education1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "address-type",
-                            "questions": [
-                                {
-                                    "id": "address-type-question",
-                                    "title": "What type of address is <em>{{answers['other-address-answer-building'][group_instance]}}, {{answers['other-address-answer-street'][group_instance]}}</em>?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "address-type-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Armed forces base address",
-                                                    "value": "Armed forces base address"
-                                                },
-                                                {
-                                                    "label": "Another address when working away from home",
-                                                    "value": "Another address when working away from home"
-                                                },
-                                                {
-                                                    "label": "Student’s home address",
-                                                    "value": "Student’s home address"
-                                                },
-                                                {
-                                                    "label": "Student’s term time address",
-                                                    "value": "Student’s term time address"
-                                                },
-                                                {
-                                                    "label": "Another parent or guardian’s address",
-                                                    "value": "Another parent or guardian’s address"
-                                                },
-                                                {
-                                                    "label": "Partners address",
-                                                    "value": "Partners address"
-                                                },
-                                                {
-                                                    "label": "Another relative's address",
-                                                    "value": "Another relative's address"
-                                                },
-                                                {
-                                                    "label": "Holiday home",
-                                                    "value": "Holiday home"
-                                                },
-                                                {
-                                                    "label": "Other",
-                                                    "value": "Other"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "in-education"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "address-type-non-uk1",
-                            "questions": [
-                                {
-                                    "id": "address-type-question-non-uk1",
-                                    "title": "What type of address do you stay at outside of the UK for more than 30 days a year",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "address-type-answer-non-uk1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Armed forces base address",
-                                                    "value": "Armed forces base address"
-                                                },
-                                                {
-                                                    "label": "Another address when working away from home",
-                                                    "value": "Another address when working away from home"
-                                                },
-                                                {
-                                                    "label": "Student’s home address",
-                                                    "value": "Student’s home address"
-                                                },
-                                                {
-                                                    "label": "Student’s term time address",
-                                                    "value": "Student’s term time address"
-                                                },
-                                                {
-                                                    "label": "Another parent or guardian’s address",
-                                                    "value": "Another parent or guardian’s address"
-                                                },
-                                                {
-                                                    "label": "Partners address",
-                                                    "value": "Partners address"
-                                                },
-                                                {
-                                                    "label": "Another relative's address",
-                                                    "value": "Another relative's address"
-                                                },
-                                                {
-                                                    "label": "Holiday home",
-                                                    "value": "Holiday home"
-                                                },
-                                                {
-                                                    "label": "Other",
-                                                    "value": "Other"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "in-education1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "address-type-non-uk",
-                            "questions": [
-                                {
-                                    "id": "address-type-question-non-uk",
-                                    "title": "What type of address does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> stay at outside of the UK for more than 30 days a year?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "address-type-answer-non-uk",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Armed forces base address",
-                                                    "value": "Armed forces base address"
-                                                },
-                                                {
-                                                    "label": "Another address when working away from home",
-                                                    "value": "Another address when working away from home"
-                                                },
-                                                {
-                                                    "label": "Student’s home address",
-                                                    "value": "Student’s home address"
-                                                },
-                                                {
-                                                    "label": "Student’s term time address",
-                                                    "value": "Student’s term time address"
-                                                },
-                                                {
-                                                    "label": "Another parent or guardian’s address",
-                                                    "value": "Another parent or guardian’s address"
-                                                },
-                                                {
-                                                    "label": "Partners address",
-                                                    "value": "Partners address"
-                                                },
-                                                {
-                                                    "label": "Another relative's address",
-                                                    "value": "Another relative's address"
-                                                },
-                                                {
-                                                    "label": "Holiday home",
-                                                    "value": "Holiday home"
-                                                },
-                                                {
-                                                    "label": "Other",
-                                                    "value": "Other"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "in-education"
-                                    }
-                                }
-                            ]
-                        },
+                        
                         {
                             "type": "Question",
                             "id": "in-education",
                             "questions": [
                                 {
                                     "id": "in-education-question",
-                                    "title": "Is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> in full-time education?",
+                                     "titles": [{
+                                            "value": "Is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> in full-time education?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Are you in full-time education?"
+                                        }
+                                    ],
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1993,23 +1439,6 @@
                                 }
                             ],
                             "routing_rules": [
-                               {
-                                    "goto": {
-                                        "block": "term-time-location-with-second-address",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer",
-                                                "condition": "equals",
-                                                "value": "Yes, an address within the UK"
-                                            },
-                                            {
-                                                "id": "in-education-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
                                 {
                                     "goto": {
                                         "block": "term-time-location",
@@ -2029,77 +1458,25 @@
                                 }
                             ]
                         },
-                        {
-                            "type": "Question",
-                            "id": "in-education1",
-                            "questions": [
-                                {
-                                    "id": "in-education-question1",
-                                    "title": "Are you in full-time education?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "in-education-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "term-time-location-with-second-address1",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes, an address within the UK"
-                                            },
-                                            {
-                                                "id": "in-education-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "term-time-location1",
-                                        "when": [
-                                            {
-                                                "id": "in-education-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "country-of-birth1"
-                                    }
-                                }
-                            ]
-                        },
+                        
                         {
                             "type": "Question",
                             "id": "term-time-location",
                             "questions": [
                                 {
                                     "id": "term-time-location-question",
-                                    "title": "During term time, where does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> usually live?",
+                                    "titles": [{
+                                            "value": "During term time, where does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> usually live?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "During term time, where do you usually live?"
+                                        }
+                                    ],
                                     "type": "General",
                                     "answers": [
                                         {
@@ -2141,162 +1518,25 @@
                                 }
                             ]
                         },
-                        {
-                            "type": "Question",
-                            "id": "term-time-location1",
-                            "questions": [
-                                {
-                                    "id": "term-time-location-question1",
-                                    "title": "During term time, where do you usually live?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "term-time-location-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "{{answers['address-line-1']| format_household_name}}",
-                                                    "value": "household-address"
-                                                },
-                                                {
-                                                    "label": "Another address",
-                                                    "value": "Another address"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "household-member-completed",
-                                        "when": [
-                                            {
-                                                "id": "term-time-location-answer1",
-                                                "condition": "equals",
-                                                "value": "Another address"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "country-of-birth1"
-                                    }
-                                }
-                            ]
-                        },{
-                            "type": "Question",
-                            "id": "term-time-location-with-second-address",
-                            "questions": [
-                                {
-                                    "id": "term-time-location-question-with-second-address",
-                                    "title": "During term time, where does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> usually live?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "term-time-location-answer-with-second-address",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "{{answers['address-line-1']| format_household_name}}",
-                                                    "value": "household-address"
-                                                },
-                                                {
-                                                    "label": "{{answers['other-address-answer-building'][group_instance]}}, {{answers['other-address-answer-street'][group_instance]}}",
-                                                    "value": "30-day-address"
-                                                },
-                                                {
-                                                    "label": "Another address",
-                                                    "value": "Another address"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "household-member-completed",
-                                        "when": [
-                                            {
-                                                "id": "term-time-location-answer-with-second-address",
-                                                "condition": "equals",
-                                                "value": "Another address"
-                                            }
-                                            
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "country-of-birth"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "term-time-location-with-second-address1",
-                            "questions": [
-                                {
-                                    "id": "term-time-location-question-with-second-address1",
-                                    "title": "During term time, where do you usually live?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "term-time-location-answer-with-second-address1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "{{answers['address-line-1']| format_household_name}}",
-                                                    "value": "household-address"
-                                                },
-                                                {
-                                                    "label": "{{answers['other-address-answer-building1'][group_instance]}}, {{answers['other-address-answer-street1'][group_instance]}}",
-                                                    "value": "30-day-address"
-                                                },
-                                                {
-                                                    "label": "Another address",
-                                                    "value": "Another address"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "household-member-completed",
-                                        "when": [
-                                            {
-                                                "id": "term-time-location-answer-with-second-address1",
-                                                "condition": "equals",
-                                                "value": "Another address"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "country-of-birth1"
-                                    }
-                                }
-                            ]
-                        },
+                       
                         {
                             "type": "Question",
                             "id": "country-of-birth",
                             "questions": [
                                 {
-                                    "id": "country-of-birth-england-question",
-                                    "title": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> country of birth?",
+                                    "id": "country-of-birth-question",
+                                    "titles": [{
+                                            "value": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> country of birth?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> country of birth?"
+                                        }
+                                    ],
                                     "type": "General",
                                     "answers": [
                                         {
@@ -2304,20 +1544,20 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "England",
-                                                    "value": "England"
+                                                    "label": "Northern Ireland",
+                                                    "value": "Northern Ireland"
                                                 },
                                                 {
-                                                    "label": "Wales",
-                                                    "value": "Wales"
+                                                    "label": "England",
+                                                    "value": "England"
                                                 },
                                                 {
                                                     "label": "Scotland",
                                                     "value": "Scotland"
                                                 },
                                                 {
-                                                    "label": "Northern Ireland",
-                                                    "value": "Northern Ireland"
+                                                    "label": "Wales",
+                                                    "value": "Wales"
                                                 },
                                                 {
                                                     "label": "Republic of Ireland",
@@ -2337,74 +1577,6 @@
                                             "type": "TextField",
                                             "mandatory": false,
                                             "label": "Please specify current name of country"
-                                        }
-                                    ],
-                                    "skip_conditions": [
-                                        {
-                                            "when": [
-                                                {
-                                                    "meta": "region_code",
-                                                    "condition": "equals",
-                                                    "value": "GB-WLS"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "id": "country-of-birth-wales-question",
-                                    "title": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> country of birth?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "country-of-birth-wales-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Wales",
-                                                    "value": "Wales"
-                                                },
-                                                {
-                                                    "label": "England",
-                                                    "value": "England"
-                                                },
-                                                {
-                                                    "label": "Scotland",
-                                                    "value": "Scotland"
-                                                },
-                                                {
-                                                    "label": "Northern Ireland",
-                                                    "value": "Northern Ireland"
-                                                },
-                                                {
-                                                    "label": "Republic of Ireland",
-                                                    "value": "Republic of Ireland"
-                                                },
-                                                {
-                                                    "label": "Elsewhere",
-                                                    "value": "Other",
-                                                    "child_answer_id": "country-of-birth-wales-answer-other"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        },
-                                        {
-                                            "id": "country-of-birth-wales-answer-other",
-                                            "parent_answer_id": "country-of-birth-wales-answer",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please specify current name of country"
-                                        }
-                                    ],
-                                    "skip_conditions": [
-                                        {
-                                            "when": [
-                                                {
-                                                    "meta": "region_code",
-                                                    "condition": "not equals",
-                                                    "value": "GB-WLS"
-                                                }
-                                            ]
                                         }
                                     ]
                                 }
@@ -3747,13 +2919,16 @@
                                 {
                                     "goto": {
                                         "block": "sexual-identity",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
+                                        "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
                                             }
-                                        ]
+                                        }]
                                     }
                                 },
                                 {
@@ -4004,13 +3179,16 @@
                                 {
                                     "goto": {
                                         "block": "sexual-identity1",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
+                                        "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
                                             }
-                                        ]
+                                        }]
                                     }
                                 },
                                 {
@@ -4147,13 +3325,16 @@
                                 {
                                     "goto": {
                                         "block": "sexual-identity",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
+                                        "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
                                             }
-                                        ]
+                                        }]
                                     }
                                 },
                                 {
@@ -4290,13 +3471,16 @@
                                 {
                                     "goto": {
                                         "block": "sexual-identity1",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
+                                        "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
                                             }
-                                        ]
+                                        }]
                                     }
                                 },
                                 {
@@ -4365,13 +3549,16 @@
                                 {
                                     "goto": {
                                         "block": "sexual-identity",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
+                                        "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
                                             }
-                                        ]
+                                        }]
                                     }
                                 },
                                 {
@@ -4440,13 +3627,16 @@
                                 {
                                     "goto": {
                                         "block": "sexual-identity1",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
+                                       "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
                                             }
-                                        ]
+                                        }]
                                     }
                                 },
                                 {
@@ -4519,13 +3709,16 @@
                                 {
                                     "goto": {
                                         "block": "sexual-identity",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
+                                        "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
                                             }
-                                        ]
+                                        }]
                                     }
                                 },
                                 {
@@ -4598,13 +3791,16 @@
                                 {
                                     "goto": {
                                         "block": "sexual-identity1",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
+                                       "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
                                             }
-                                        ]
+                                        }]
                                     }
                                 },
                                 {
@@ -4669,13 +3865,16 @@
                                 {
                                     "goto": {
                                         "block": "sexual-identity",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
+                                        "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
                                             }
-                                        ]
+                                        }]
                                     }
                                 },
                                 {
@@ -4736,13 +3935,16 @@
                                 {
                                     "goto": {
                                         "block": "sexual-identity",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
+                                        "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
                                             }
-                                        ]
+                                        }]
                                     }
                                 },
                                 {
@@ -4807,13 +4009,16 @@
                                 {
                                     "goto": {
                                         "block": "sexual-identity1",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
+                                        "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
                                             }
-                                        ]
+                                        }]
                                     }
                                 },
                                 {
@@ -4874,13 +4079,16 @@
                                 {
                                     "goto": {
                                         "block": "sexual-identity1",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
+                                       "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
                                             }
-                                        ]
+                                        }]
                                     }
                                 },
                                 {
@@ -4953,13 +4161,16 @@
                                  {
                                     "goto": {
                                         "block": "birth-gender",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
+                                       "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
                                             }
-                                        ]
+                                        }]
                                     }
                                 },
                                 {
@@ -5032,13 +4243,16 @@
                                   {
                                     "goto": {
                                         "block": "birth-gender1",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
+                                       "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
                                             }
-                                        ]
+                                        }]
                                     }
                                 },{
                                     "goto": {
@@ -6038,13 +5252,16 @@
                                 {
                                     "goto": {
                                         "block": "household-member-completed",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer",
-                                                "condition": "equals",
-                                                "value": "No"
+                                        "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
                                             }
-                                        ]
+                                        }]
                                     }
                                 },
                                 {
@@ -6101,13 +5318,16 @@
                                 {
                                     "goto": {
                                         "block": "household-member-completed",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer1",
-                                                "condition": "equals",
-                                                "value": "No"
+                                       "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
                                             }
-                                        ]
+                                        }]
                                     }
                                 },
                                 {
