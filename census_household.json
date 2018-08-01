@@ -1098,7 +1098,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "You are {{ calculate_years_difference (answers['date-of-birth-answer1'][group_instance], 'now') }} old. Is this correct?"
+                                            "value": "You are {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old. Is this correct?"
                                         }
                                     ],
                                     "type": "General",
