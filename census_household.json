@@ -4433,7 +4433,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "religion1",
+                                        "block": "religion",
                                         "when": [
                                             {
                                                 "id": "language-england-answer1",
@@ -4445,7 +4445,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "religion1",
+                                        "block": "religion",
                                         "when": [
                                             {
                                                 "id": "language-welsh-answer1",
@@ -4500,7 +4500,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "religion1"
+                                        "block": "religion"
                                     }
                                 }
                             ]
@@ -4511,8 +4511,18 @@
                             "questions": [
                                 {
                                     "id": "religion-question",
-                                    "title": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> religion?",
-                                    "description": "This question is voluntary",
+                                    "titles": [{
+                                            "value": "What religion, religious denomination or body does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> belong to?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "What religion, religious denomination or body do you belong to?"
+                                        }
+                                    ],
                                     "type": "General",
                                     "answers": [
                                         {
@@ -4520,41 +4530,33 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "No religion",
-                                                    "value": "No religion"
+                                                    "label": "Roman Catholic",
+                                                    "value": "Roman Catholic"
                                                 },
                                                 {
-                                                    "label": "Christian",
-                                                    "value": "Christian"
+                                                    "label": "Presbyterian Church in Ireland",
+                                                    "value": "Presbyterian Church in Ireland"
                                                 },
                                                 {
-                                                    "label": "Buddhist",
-                                                    "value": "Buddhist"
+                                                    "label": "Church of Ireland",
+                                                    "value": "Church of Ireland"
                                                 },
                                                 {
-                                                    "label": "Hindu",
-                                                    "value": "Hindu"
-                                                },
-                                                {
-                                                    "label": "Jewish",
-                                                    "value": "Jewish"
-                                                },
-                                                {
-                                                    "label": "Muslim",
-                                                    "value": "Muslim"
-                                                },
-                                                {
-                                                    "label": "Sikh",
-                                                    "value": "Sikh"
+                                                    "label": "Methodist Church in Ireland",
+                                                    "value": "Methodist Church in Ireland"
                                                 },
                                                 {
                                                     "label": "Any other religion",
                                                     "value": "Other",
                                                     "child_answer_id": "religion-answer-other"
+                                                },
+                                                {
+                                                    "label": "None",
+                                                    "value": "None"
                                                 }
                                                
                                             ],
-                                            "type": "Checkbox"
+                                            "type": "MutuallyExclusiveCheckbox"
                                         },
                                         {
                                             "id": "religion-answer-other",
@@ -4569,64 +4571,67 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "past-usual-address"
+                                        "block": "religion-brought-up"
                                     }
                                 }
                             ]
                         },
                         {
                             "type": "Question",
-                            "id": "religion1",
+                            "id": "religion-brought-up",
                             "questions": [
                                 {
-                                    "id": "religion-question1",
-                                    "title": "What is your religion?",
-                                    "description": "This question is voluntary",
+                                    "id": "religion-brought-up-question",
+                                    "titles": [{
+                                            "value": "What religion, religious denomination or body was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> brought up in?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "What religion, religious denomination or body were you brought up in?"
+                                        }
+                                    ],
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "religion-answer1",
+                                            "id": "religion-brought-up-answer",
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "No religion",
-                                                    "value": "No religion"
+                                                    "label": "Roman Catholic",
+                                                    "value": "Roman Catholic"
                                                 },
                                                 {
-                                                    "label": "Christian",
-                                                    "value": "Christian"
+                                                    "label": "Presbyterian Church in Ireland",
+                                                    "value": "Presbyterian Church in Ireland"
                                                 },
                                                 {
-                                                    "label": "Buddhist",
-                                                    "value": "Buddhist"
+                                                    "label": "Church of Ireland",
+                                                    "value": "Church of Ireland"
                                                 },
                                                 {
-                                                    "label": "Hindu",
-                                                    "value": "Hindu"
-                                                },
-                                                {
-                                                    "label": "Jewish",
-                                                    "value": "Jewish"
-                                                },
-                                                {
-                                                    "label": "Muslim",
-                                                    "value": "Muslim"
-                                                },
-                                                {
-                                                    "label": "Sikh",
-                                                    "value": "Sikh"
+                                                    "label": "Methodist Church in Ireland",
+                                                    "value": "Methodist Church in Ireland"
                                                 },
                                                 {
                                                     "label": "Any other religion",
                                                     "value": "Other",
-                                                    "child_answer_id": "religion-answer-other1"
+                                                    "child_answer_id": "religion-answer-other"
+                                                },
+                                                {
+                                                    "label": "None",
+                                                    "value": "None"
                                                 }
+                                               
                                             ],
-                                            "type": "Checkbox"
+                                            "type": "MutuallyExclusiveCheckbox"
                                         },
                                         {
-                                            "id": "religion-answer-other1",
-                                            "parent_answer_id": "religion-answer1",
+                                            "id": "religion-brought-up-answer-other",
+                                            "parent_answer_id": "religion-brought-up-answer",
                                             "type": "TextField",
                                             "mandatory": false,
                                             "label": "Please specify other religion"
@@ -4637,7 +4642,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "past-usual-address1"
+                                        "block": "past-usual-address"
                                     }
                                 }
                             ]
