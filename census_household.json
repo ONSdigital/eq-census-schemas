@@ -3012,6 +3012,17 @@
                                 },
                                 {
                                     "goto": {
+                                        "block": "main-employment-block-proxy",
+                                        "when": [{
+                                           "id": "proxy-check-answer",
+                                           "condition": "equals",
+                                           "value": "proxy"
+                                        }]
+                                     
+                                    }
+                                },
+                                {
+                                    "goto": {
                                         "block": "main-employment-block"
                                     }
                                 }
@@ -3313,26 +3324,41 @@
                                 },
                                 {
                                     "goto": {
+                                        "block": "past-main-employment-block-proxy",
+                                        "when": [{
+                                           "id": "proxy-check-answer",
+                                           "condition": "equals",
+                                           "value": "proxy"
+                                        }]
+                                     }
+                                    
+                                },
+                                {
+                                    "goto": {
                                         "block": "past-main-employment-block"
-                                    }
+                                     }
+                                    
                                 }
                             ]
                         },
                         {
                             "type": "Interstitial",
                             "id": "past-main-employment-block",
-                            "titles": [{
-                                   "value": "Answer the remaining questions for <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> last main job",
-                                   "when": [{
-                                           "id": "proxy-check-answer",
-                                           "condition": "equals",
-                                           "value": "proxy"
-                                        }]
-                                     },
-                                     {
-                                          "value": "Answer the remaining questions for your last main job"
-                                      }
-                             ],
+                            "title":  "Answer the remaining questions for your last main job",
+                            "description": "Your main job is the job in which you usually worked the most hours",
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "main-job-type-past"
+                                        
+                                    }
+                                }
+                            ]
+                        },
+                         {
+                            "type": "Interstitial",
+                            "id": "past-main-employment-block-proxy",
+                            "title": "Answer the remaining questions for <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> last main job",
                             "description": "Your main job is the job in which you usually worked the most hours",
                             "routing_rules": [
                                 {
@@ -3346,19 +3372,21 @@
                         {
                             "type": "Interstitial",
                             "id": "main-employment-block",
-                            "titles": [{
-                                   "value": "Answer the remaining questions for {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}} main job",
-                                   "when": [{
-                                          "id": "proxy-check-answer",
-                                          "condition": "equals",
-                                          "value": "proxy"
-                                      }]
-                                  },
-                                  {
-                                            "value": "Answer the remaining questions for your main job"
-                                  }
-                             ],
-                             "description": "Your main job is the job in which you usually work the most hours",
+                            "title": "Your main job is the job in which you usually work the most hours",
+                             "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "main-job-type"
+                                        
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Interstitial",
+                            "id": "main-employment-block-proxy",
+                            "title": "Answer the remaining questions for {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}} main job",
+                            "description": "Your main job is the job in which you usually work the most hours",
                              "routing_rules": [
                                 {
                                     "goto": {
@@ -4212,11 +4240,11 @@
                         {
                             "type": "Question",
                             "id": "work-travel",
-                            "description": "",
+                            "description": "Select one option only, for the longest part, by distance, of your usual journey to place of work or study.",
                             "questions": [
                                 {
                                     "titles": [{
-                                            "value": "What transport does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> use for the furthest part of their usual journey to work?",
+                                            "value": "How does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> usually travel to your main place of work or study (including school)?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -4224,7 +4252,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "What transport do you use for the furthest part of your usual journey to work?"
+                                            "value": "How do you usually travel to your main place of work or study (including school)?"
                                         }
                                     ],
                                     "id": "work-travel-question",
@@ -4235,30 +4263,6 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Work mainly at or from home",
-                                                    "value": "Work mainly at or from home"
-                                                },
-                                                {
-                                                    "label": "Underground, metro, light rail or tram",
-                                                    "value": "Underground, metro, light rail or tram"
-                                                },
-                                                {
-                                                    "label": "Train",
-                                                    "value": "Train"
-                                                },
-                                                {
-                                                    "label": "Bus, minibus or coach",
-                                                    "value": "Bus, minibus or coach "
-                                                },
-                                                {
-                                                    "label": "Taxi",
-                                                    "value": "Taxi "
-                                                },
-                                                {
-                                                    "label": "Motorcycle, scooter or moped",
-                                                    "value": "Motorcycle, scooter or moped"
-                                                },
-                                                {
                                                     "label": "Driving a car or van",
                                                     "value": "Driving a car or van"
                                                 },
@@ -4267,12 +4271,32 @@
                                                     "value": "Passenger in a car or van"
                                                 },
                                                 {
-                                                    "label": "Bicycle",
-                                                    "value": "Bicycle"
+                                                    "label": "Car or van pool, sharing driving",
+                                                    "value": "Car or van pool, sharing driving"
+                                                },
+                                                {
+                                                    "label": "Bus, minibus or coach (public or private)",
+                                                    "value": "Bus, minibus or coach (public or private)"
                                                 },
                                                 {
                                                     "label": "On foot",
                                                     "value": "On foot"
+                                                },
+                                                {
+                                                    "label": "Taxi",
+                                                    "value": "Taxi "
+                                                },
+                                                {
+                                                    "label": "Train",
+                                                    "value": "Train"
+                                                },
+                                                {
+                                                    "label": "Bicycle",
+                                                    "value": "Bicycle"
+                                                },
+                                                {
+                                                    "label": "Motorcycle, scooter or moped",
+                                                    "value": "Motorcycle, scooter or moped"
                                                 },
                                                 {
                                                     "label": "Other",
