@@ -20,10 +20,6 @@
         {
             "name": "period_id",
             "validator": "string"
-        },
-        {
-            "name": "region_code",
-            "validator": "string"
         }
     ],
     "sections": [
@@ -2219,7 +2215,7 @@
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "understand-irish-answer",
+                                            "id": "frequency-irish-answer",
                                             "mandatory": false,
                                             "options": [
                                                 {
@@ -2345,7 +2341,7 @@
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "understand-ulster-scots-answer",
+                                            "id": "frequency-ulster-scots-answer",
                                             "mandatory": false,
                                             "options": [
                                                 {
