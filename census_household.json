@@ -3322,17 +3322,17 @@
                             "type": "Interstitial",
                             "id": "past-main-employment-block",
                             "titles": [{
-                                           "value": "Answer the remaining questions for <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> last main job",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "Answer the remaining questions for your last main job"
-                                        }
-                                    ],
+                                   "value": "Answer the remaining questions for <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> last main job",
+                                   "when": [{
+                                           "id": "proxy-check-answer",
+                                           "condition": "equals",
+                                           "value": "proxy"
+                                        }]
+                                     },
+                                     {
+                                          "value": "Answer the remaining questions for your last main job"
+                                      }
+                             ],
                             "description": "Your main job is the job in which you usually worked the most hours",
                             "routing_rules": [
                                 {
@@ -3358,8 +3358,8 @@
                                             "value": "Answer the remaining questions for your main job"
                                   }
                              ],
-                            "description": "Your main job is the job in which you usually work the most hours",
-                            "routing_rules": [
+                             "description": "Your main job is the job in which you usually work the most hours",
+                             "routing_rules": [
                                 {
                                     "goto": {
                                         "block": "main-job-type"
