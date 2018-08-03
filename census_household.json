@@ -1535,7 +1535,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> country of birth?"
+                                            "value": "What is your country of birth?"
                                         }
                                     ],
                                     "type": "General",
@@ -1588,133 +1588,6 @@
                                         "block": "health"
                                         
                                     }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "arrive-in-uk"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "arrive-in-uk",
-                            "questions": [
-                                {
-                                    "id": "arrive-in-uk-question",
-                                    "title": "When did <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> most recently arrive to live in the United Kingdom?",
-                                    "type": "General",
-                                    "description": "Do not count short visits away from the UK",
-                                    "answers": [
-                                        {
-                                            "id": "arrive-in-uk-answer",
-                                            "mandatory": false,
-                                            "type": "MonthYearDate"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "length-of-stay"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "arrive-in-uk1",
-                            "questions": [
-                                {
-                                    "id": "arrive-in-uk-question1",
-                                    "title": "When did you most recently arrive to live in the United Kingdom?",
-                                    "type": "General",
-                                    "description": "Do not count short visits away from the UK",
-                                    "answers": [
-                                        {
-                                            "id": "arrive-in-uk-answer1",
-                                            "mandatory": false,
-                                            "type": "MonthYearDate"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "length-of-stay1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "length-of-stay",
-                            "questions": [
-                                {
-                                    "id": "length-of-stay-question",
-                                    "title": "Including the time already spent here, how long does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> intend to stay in the United Kingdom?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "length-of-stay-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Less than 12 months",
-                                                    "value": "Less than 12 months"
-                                                },
-                                                {
-                                                    "label": "12 months or more",
-                                                    "value": "12 months or more"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "health"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "length-of-stay1",
-                            "questions": [
-                                {
-                                    "id": "length-of-stay-question1",
-                                    "title": "Including the time already spent here, how long do you intend to stay in the United Kingdom?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "length-of-stay-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Less than 12 months",
-                                                    "value": "Less than 12 months"
-                                                },
-                                                {
-                                                    "label": "12 months or more",
-                                                    "value": "12 months or more"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "health1"
-                                    }
                                 }
                             ]
                         },
@@ -1724,7 +1597,18 @@
                             "questions": [
                                 {
                                     "id": "health-question",
-                                    "title": "How is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> health in general?",
+                                     "titles": [{
+                                            "value": "How is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> health in general?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "How is your health in general?"
+                                        }
+                                    ],
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1767,81 +1651,92 @@
                         },
                         {
                             "type": "Question",
-                            "id": "health1",
-                            "questions": [
-                                {
-                                    "id": "health-question1",
-                                    "title": "How is your health in general?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "health-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Very good",
-                                                    "value": "Very good"
-                                                },
-                                                {
-                                                    "label": "Good",
-                                                    "value": "Good"
-                                                },
-                                                {
-                                                    "label": "Fair",
-                                                    "value": "Fair"
-                                                },
-                                                {
-                                                    "label": "Bad",
-                                                    "value": "Bad"
-                                                },
-                                                {
-                                                    "label": "Very bad",
-                                                    "value": "Very bad"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "disability1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
                             "id": "disability",
                             "questions": [
                                 {
                                     "id": "disability-question",
-                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> have any physical or mental health conditions or illnesses lasting, or is expected to last 12 months or more?",
+                                    "titles": [{
+                                            "value": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> have any of the following conditions that have lasted, or are expected to last, at least 12 months?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Do you have any of the following conditions that have lasted, or are expected to last, at least 12 months?"
+                                        }
+                                    ],
                                     "type": "General",
-                                    "guidance": {
-                                        "content": [
-                                            {
-                                                "title": "Include problems related to old age"
-                                            }
-                                        ]
-                                    },
                                     "answers": [
                                         {
                                             "id": "disability-answer",
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
+                                                    "label": "Deafness or partial hearing loss",
+                                                    "value": "Deafness or partial hearing loss"
                                                 },
                                                 {
-                                                    "label": "No",
-                                                    "value": "No"
+                                                    "label": "Blindness or partial sight loss",
+                                                    "value": "Blindness or partial sight loss"
+                                                },
+                                                {
+                                                    "label": "A mobility or dexterity difficulty that substantially limits one or more basic physical activities",
+                                                    "value": "slight mobility",
+                                                    "description": "For example walking, climbing stairs, lifting or carrying"
+                                                },
+                                                {
+                                                    "label": "A mobility or dexterity difficulty which requires the use of a wheelchair in the home",
+                                                    "value": "full mobility"
+                                                },
+                                                {
+                                                    "label": "A learning difficulty",
+                                                    "value": "A learning difficulty",
+                                                    "description": "For example, dyslexia or ADHD"
+                                                },
+                                                {
+                                                    "label": "An intellectual or learning difficulty",
+                                                    "value": "An intellectual or learning difficulty",
+                                                    "description": "For example, Down syndrome"
+                                                },
+                                                {
+                                                    "label": "Autism or Asperger syndrome",
+                                                    "value": "Autism or Asperger syndrome"
+                                                },
+                                                {
+                                                    "label": "An emotional, psychological or mental health condition",
+                                                    "value": "An emotional, psychological or mental health condition",
+                                                    "description": "For example depression or schizophrenia"
+                                                },
+                                                {
+                                                    "label": "Long-term pain or discomfort",
+                                                    "value": "Long-term pain or discomfort"
+                                                },
+                                                {
+                                                    "label": "Shortness of breath or difficulty breathing",
+                                                    "value": "Shortness of breath or difficulty breathing"
+                                                },
+                                                {
+                                                    "label": "Frequent periods of confusion or memory loss",
+                                                    "value": "Frequent periods of confusion or memory loss",
+                                                    "description": "For example dementia"
+                                                },
+                                                {
+                                                    "label": "A physical health condition",
+                                                    "value": "A physical health condition",
+                                                    "description": "For example cancer, HIV, diabetes, heart disease or epilepsy"
+                                                },
+                                                {
+                                                    "label": "Other condition",
+                                                    "value": "Other condition"
+                                                },
+                                                {
+                                                    "label": "No condition",
+                                                    "value": "No condition"
                                                 }
                                             ],
-                                            "type": "Radio"
+                                            "type": "MutuallyExclusiveCheckbox"
                                         }
                                     ]
                                 }
@@ -1849,73 +1744,19 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "disability-limitation",
+                                        "block": "carer",
                                         "when": [
                                             {
                                                 "id": "disability-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
+                                                "condition": "contains",
+                                                "value": "No condition"
                                             }
                                         ]
                                     }
                                 },
                                 {
                                     "goto": {
-                                        "block": "carer"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "disability1",
-                            "questions": [
-                                {
-                                    "id": "disability-question1",
-                                    "title": "Do you have any physical or mental health conditions or illnesses lasting, or is expected to last 12 months or more?",
-                                    "type": "General",
-                                    "guidance": {
-                                        "content": [
-                                            {
-                                                "title": "Include problems related to old age"
-                                            }
-                                        ]
-                                    },
-                                    "answers": [
-                                        {
-                                            "id": "disability-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "disability-limitation1",
-                                        "when": [
-                                            {
-                                                "id": "disability-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "carer1"
+                                        "block": "disability-limitation"
                                     }
                                 }
                             ]
@@ -1926,7 +1767,18 @@
                             "questions": [
                                 {
                                     "id": "disability-limitation-question",
-                                    "title": "Does any of <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> conditions or illnesses reduce their ability to carry-out day-to-day activities?",
+                                    "titles": [{
+                                            "value": "Does any of <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> conditions or illnesses reduce their ability to carry-out day-to-day activities?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Do any of your conditions or illnesses reduce your ability to carry-out day-to-day activities?"
+                                        }
+                                    ],
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1955,45 +1807,6 @@
                                 {
                                     "goto": {
                                         "block": "carer"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "disability-limitation1",
-                            "questions": [
-                                {
-                                    "id": "disability-limitation-question1",
-                                    "title": "Do any of your conditions or illnesses reduce your ability to carry-out day-to-day activities?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "disability-limitation-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Yes, a lot",
-                                                    "value": "Yes, a lot"
-                                                },
-                                                {
-                                                    "label": "Yes, a little",
-                                                    "value": "Yes, a little"
-                                                },
-                                                {
-                                                    "label": "Not at all",
-                                                    "value": "Not at all"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "carer1"
                                     }
                                 }
                             ]
