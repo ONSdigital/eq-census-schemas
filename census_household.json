@@ -2622,7 +2622,7 @@
                                                 {
                                                     "label": "Any other religion",
                                                     "value": "Other",
-                                                    "child_answer_id": "religion-answer-other"
+                                                    "child_answer_id": "religion-brought-up-answer-other"
                                                 },
                                                 {
                                                     "label": "None",
