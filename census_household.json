@@ -3750,7 +3750,11 @@
                                     "type": "General",
                                     "definitions": [{
                                         "title": "What is a national identity?",
-                                        "description": "National Identity is not dependent on your ethnic group or citizenship. This could be about the country or countries where you feel you belong, or think of as home."
+                                        "content": [
+                                            {
+                                                "description": "National Identity is not dependent on your ethnic group or citizenship. This could be about the country or countries where you feel you belong, or think of as home."
+                                            }
+                                        ]
                                     }],
                                     "answers": [
                                         {
@@ -3811,7 +3815,11 @@
                                     "type": "General",
                                     "definitions": [{
                                         "title": "What is a national identity?",
-                                        "description": "National Identity is not dependent on your ethnic group or citizenship. This could be about the country or countries where you feel you belong, or think of as home."
+                                        "content": [
+                                            {
+                                                "description": "National Identity is not dependent on your ethnic group or citizenship. This could be about the country or countries where you feel you belong, or think of as home."
+                                            }
+                                        ]
                                     }],
                                     "answers": [
                                         {
@@ -5555,7 +5563,11 @@
                                     "type": "General",
                                      "definitions": [{
                                         "title": "What is trans?",
-                                        "description": "Here trans means your gender is different from the sex you were registered at birth."
+                                        "content": [
+                                            {
+                                                "description": "Here trans means your gender is different from the sex you were registered at birth."
+                                            }
+                                        ]
                                      }],
                                      "answers": [
                                         {
@@ -5618,7 +5630,11 @@
                                     "type": "General",
                                     "definitions": [{
                                         "title": "What is trans?",
-                                        "description": "Here trans means your gender is different from the sex you were registered at birth."
+                                        "content": [
+                                            {
+                                                "description": "Here trans means your gender is different from the sex you were registered at birth."
+                                            }
+                                        ]
                                      }],
                                     "answers": [
                                         {
@@ -5763,7 +5779,11 @@
                                     "type": "General",
                                      "definitions": [{
                                         "title": "What is main language?",
-                                        "description": "Main language is your first or preferred language."
+                                         "content": [
+                                            {
+                                                "description": "Main language is your first or preferred language."
+                                            }
+                                        ]
                                     }],
                                     "answers": [
                                         {
@@ -5809,7 +5829,11 @@
                                     "type": "General",
                                      "definitions": [{
                                         "title": "What is main language?",
-                                        "description": "Main language is your first or preferred language."
+                                        "content": [
+                                            {
+                                                "description": "Main language is your first or preferred language."
+                                            }
+                                        ]
                                     }],
                                     "answers": [
                                         {
