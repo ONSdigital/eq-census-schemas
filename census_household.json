@@ -353,7 +353,6 @@
                                     "id": "central-heating-question",
                                     "title": "What type of central heating does {{answers['address-line-1']}}, {{answers['address-line-2']}} have?",
                                     "type": "General",
-                                    "description":  "Select all that apply, whether or not you use them",
                                     "answers": [
                                         {
                                             "id": "central-heating-answer",
