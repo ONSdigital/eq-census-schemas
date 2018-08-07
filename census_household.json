@@ -356,7 +356,7 @@
                                      "guidance": {
                                         "content": [
                                             {
-                                                "title": "Include central heating systems that generate heat for multiple rooms whether or not you use them"
+                                                "title": "Select all that apply, whether or not you use them"
                                             }
                                         ]
                                     },
@@ -370,14 +370,12 @@
                                                     "value": "Mains gas"
                                                 },
                                                 {
-                                                    "label": "Other gas",
-                                                    "value": "Other gas",
-                                                    "description": "Including Liquid Petroleum Gas and Biogas"
+                                                    "label": "Tank or bottled gas",
+                                                    "value": "Tank or bottled gas"
                                                 },
                                                 {
-                                                    "label": "Electric",
-                                                    "value": "Electric",
-                                                    "description": "For example storage heaters"
+                                                    "label": "Electricity",
+                                                    "value": "Electricity"
                                                 },
                                                 {
                                                     "label": "Oil",
@@ -386,21 +384,20 @@
                                                 {
                                                     "label": "Solid Fuel",
                                                     "value": "Solid Fuel",
-                                                    "description": "For example wood, coal"
+                                                    "description": "Excluding wood"
                                                 },
                                                 {
-                                                    "label": "Renewable  heating systems",
-                                                    "value": "Wood or biomass",
-                                                    "description": "For example wood pellets or Biomass"
+                                                    "label": "Wood",
+                                                    "value": "Wood"
                                                 },
                                                 {
-                                                    "label": "Other renewable electric systems",
-                                                    "value": "Other renewable electric systems",
-                                                    "description": "For example Air Heat or Ground source systems"
+                                                    "label": "Renewable energy",
+                                                    "value": "Renewable energy",
+                                                    "description": "Including solar panels, air heat pump systems and wood pellets"
                                                 },
                                                 {
-                                                    "label": "Other central heating",
-                                                    "value": "Other central heating"
+                                                    "label": "Other",
+                                                    "value": "Other"
                                                 },
                                                 {
                                                     "label": "No central heating",
