@@ -232,7 +232,7 @@
                           "value": "Other"
                         }
                       ],
-                      "type": "Radio"
+                      "type": "Checkbox"
                     }
                   ]
                 }
@@ -295,7 +295,7 @@
                           "value": "Other"
                         }
                       ],
-                      "type": "Radio"
+                      "type": "Checkbox"
                     }
                   ]
                 }
