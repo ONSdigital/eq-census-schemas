@@ -691,8 +691,8 @@
                                                     "description": "For example coal"
                                                 },
                                                 {
-                                                    "label": "Renewable  heating systems",
-                                                    "value": "Wood or biomass",
+                                                    "label": "Renewable heating systems",
+                                                    "value": "Renewable heating systems",
                                                     "description": "For example wood pellets or Biomass"
                                                 },
                                                 {
@@ -710,6 +710,109 @@
                                                 }
                                             ],
                                             "type": "MutuallyExclusiveCheckbox"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "renewable-energy",
+                                        "when": [
+                                            {
+                                                "id": "central-heating-answer",
+                                                "condition": "contains",
+                                                "value": "Renewable heating systems"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "renewable-energy",
+                                        "when": [
+                                            {
+                                                "id": "central-heating-answer",
+                                                "condition": "contains",
+                                                "value": "Other renewable electric systems"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "own-or-rent",
+                                        "when": [
+                                            {
+                                                "id": "permanent-or-family-home-answer",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "own-or-rent",
+                                        "when": [
+                                            {
+                                                "id": "else-permanent-or-family-home-answer",
+                                                "condition": "equals",
+                                                "value": "Someone lives here as their permanent home"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "household-and-accommodation-completed"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "renewable-energy",
+                            "questions": [
+                                {
+                                    "id": "renewable-energy-question",
+                                    "title": "Which of the following renewable energy systems does <em>{{answers['address-line-1']}}</em> have?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "renewable-energy-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Solar Photovoltaic systems",
+                                                    "value": "Solar Photovoltaic systems"
+                                                },
+                                                {
+                                                    "label": "Solar water heating",
+                                                    "value": "Solar water heating"
+                                                },
+                                                {
+                                                    "label": "Wind turbine",
+                                                    "value": "Wind turbine"
+                                                },
+                                                {
+                                                    "label": "Other",
+                                                    "value": "Other",
+                                                    "child-answer-id": "renewable-energy-answer-other"
+                                                },
+                                                {
+                                                    "label": "None of these",
+                                                    "value": "None of these"
+                                                }
+                                            ],
+                                            "type": "MutuallyExclusiveCheckbox"
+                                        },
+                                        {
+                                            "id": "renewable-energy-answer-other",
+                                            "parent_answer_id": "renewable-energy-answer",
+                                            "type": "TextField",
+                                            "mandatory": false,
+                                            "label": "Please specify other renewable energy system"
                                         }
                                     ]
                                 }
@@ -752,7 +855,7 @@
                             "questions": [
                                 {
                                     "id": "own-or-rent-question",
-                                    "title": "Does the householder own or rent <em>{{answers['address-line-1']}}</em>?",
+                                    "title": "Does your household own or rent <em>{{answers['address-line-1']}}</em>?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -823,7 +926,7 @@
                             "questions": [
                                 {
                                     "id": "landlord-question",
-                                    "title": "Who is your landlord?",
+                                    "title": "Who do you rent from?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -831,16 +934,20 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Housing association, housing co-operative, charitable trust, registered social landlord",
-                                                    "value": "Housing association, housing co-operative, charitable trust, registered social landlord"
+                                                    "label": "Northern Ireland Housing Executive",
+                                                    "value": "Northern Ireland Housing Executive"
                                                 },
                                                 {
-                                                    "label": "Council (local authority)",
-                                                    "value": "Council (local authority)"
+                                                    "label": "Housing association or charitable trust",
+                                                    "value": "Housing association or charitable trust"
                                                 },
                                                 {
-                                                    "label": "Private landlord or letting agency",
-                                                    "value": "Private landlord or letting agency"
+                                                    "label": "Private landlord",
+                                                    "value": "Private landlord"
+                                                },
+                                                {
+                                                    "label": "Private renting with a letting agent",
+                                                    "value": "Private renting with a letting agent"
                                                 },
                                                 {
                                                     "label": "Employer of a household member",
