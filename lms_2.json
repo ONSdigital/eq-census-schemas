@@ -1,4 +1,4 @@
-{
+§{
     "mime_type": "application/json/ons/eq",
     "schema_version": "0.0.1",
     "data_version": "0.0.2",
@@ -2227,8 +2227,6 @@
                             }
                         ]
                     },
-
-
                     {
                         "id": "have-second-job-main-job-job-type-w3-1",
                         "type": "Question",
@@ -2337,16 +2335,9 @@
                         "type": "Question",
                         "questions": [{
                             "id": "have-second-job-second-job-full-or-part-time-question",
-                            "titles": [{
-                                    "value": "In <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> second job, are they an employee or self employed?",
-                                    "when": [{
-                                        "id": "proxy-check-answer",
-                                        "condition": "equals",
-                                        "value": "proxy"
-                                    }]
-                                },
+                            "titles": [
                                 {
-                                    "value": "In your second job, are you an employee or self employed?"
+                                    "value": "Is that job full time or part time?"
                                 }
                             ],
                             "type": "General",
@@ -2383,7 +2374,6 @@
 
                         ]
                     },
-
                     {
                         "id": "no-second-job-main-job-job-type-w3",
                         "type": "Question",
@@ -2460,7 +2450,6 @@
                             }
                         ]
                     },
-
                     {
                         "id": "which-kind-of-self-employed-self18",
                         "type": "Question",
@@ -2537,8 +2526,6 @@
                         ]
 
                     },
-
-
                     {
                         "id": "working-hours-flex10",
                         "type": "Question",
@@ -2611,7 +2598,6 @@
                         }]
 
                     },
-
                     {
                         "id": "not-working-casual-work-nw-2",
                         "type": "Question",
@@ -2662,9 +2648,6 @@
                             }
                         ]
                     },
-
-
-
                     {
                         "id": "working-days-w5",
                         "type": "Question",
@@ -2759,9 +2742,6 @@
                             }
                         ]
                     },
-
-
-
                     {
                         "id": "overtime-w6",
                         "type": "Question",
@@ -2898,8 +2878,6 @@
                             }
                         ]
                     },
-
-
                     {
                         "id": "unpaid-overtime-w10",
                         "type": "Question",
@@ -2980,7 +2958,7 @@
                         "questions": [{
                             "id": "how-many-usual-hours-main-question",
                             "titles": [{
-                                    "value": "How many hours does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> usually work in a week  ? If they work shift work then answer for their busiest week. Do not include overtime.",
+                                    "value": "How many hours does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> usually work in a week?",
                                     "when": [{
                                         "id": "proxy-check-answer",
                                         "condition": "equals",
@@ -2988,7 +2966,7 @@
                                     }]
                                 },
                                 {
-                                    "value": "How many hours do you usually work in a week in your main job ? If you work shift work then answer for your busiest week. Do not include overtime."
+                                    "value": "How many hours do you usually work in a week?"
 
                                 }
                             ],
@@ -2997,7 +2975,14 @@
                                 "id": "how-many-usual-hours-main-answer",
                                 "mandatory": false,
                                 "type": "Number"
-                            }]
+                            }],
+                            "guidance": {
+                                "content": [
+                                  {
+                                    "description": "If shift work then answer for the busiest week. Do not include overtime."
+                                  }
+                                ]
+                              }
                         }],
                         "routing_rules": [{
                                 "goto": {
@@ -3038,7 +3023,8 @@
                             "answers": [{
                                 "id": "how-many-actual-hours-main-answer",
                                 "mandatory": false,
-                                "type": "Number"
+                                "type": "Number",
+                                "label": "Hours"
                             }]
                         }],
                         "routing_rules": [{
@@ -3047,6 +3033,7 @@
                             }
                         }]
                     },
+
                     {
                         "id": "main-job-unpaid-overtime-w-10-1",
                         "type": "Question",
@@ -3067,6 +3054,7 @@
                             "type": "General",
                             "answers": [{
                                 "id": "main-job-unpaid-overtime-answer",
+                                "label": "hours",
                                 "mandatory": false,
                                 "type": "Number"
                             }]
@@ -3093,7 +3081,8 @@
                             "answers": [{
                                 "id": "second-job-unpaid-overtime-answer",
                                 "mandatory": false,
-                                "type": "Number"
+                                "type": "Number",
+                                "label": "hours"
                             }]
                         }],
                         "routing_rules": [{
@@ -3134,7 +3123,8 @@
                             "answers": [{
                                 "id": "main-job-paid-overtime-answer",
                                 "mandatory": false,
-                                "type": "Number"
+                                "type": "Number",
+                                "label": "hours"
                             }]
                         }]
                     },
@@ -3166,10 +3156,12 @@
                             "answers": [{
                                 "id": "second-job-paid-overtime-answer",
                                 "mandatory": false,
-                                "type": "Number"
+                                "type": "Number",
+                                "label": "hours"
                             }]
                         }]
                     },
+
                     {
                         "id": "main-job-actual-hours-w12-1",
                         "type": "Question",
@@ -3191,7 +3183,8 @@
                             "answers": [{
                                 "id": "main-job-actual-hours-answer",
                                 "mandatory": false,
-                                "type": "Number"
+                                "type": "Number",
+                                "label": "Hours"
                             }]
                         }],
                         "routing_rules": [{
@@ -3268,7 +3261,7 @@
                         "questions": [{
                             "id": "how-many-usual-hours-second-question",
                             "titles": [{
-                                    "value": "How many hours does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> usually work in a week  in their second job ? If they work shift work then answer for their busiest week. Do not include overtime.",
+                                    "value": "How many hours does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> usually work in a week  in their second job ?",
                                     "when": [{
                                         "id": "proxy-check-answer",
                                         "condition": "equals",
@@ -3276,7 +3269,7 @@
                                     }]
                                 },
                                 {
-                                    "value": "How many hours do you usually work in a week in your second job ? If you work shift work then answer for your busiest week. Do not include overtime."
+                                    "value": "How many hours do you usually work in a week in your second job ?"
 
                                 }
                             ],
@@ -3284,8 +3277,16 @@
                             "answers": [{
                                 "id": "how-many-usual-hours-second-answer",
                                 "mandatory": false,
-                                "type": "Number"
-                            }]
+                                "type": "Number",
+                                "label": "Hours"
+                            }],
+                            "guidance": {
+                                "content": [
+                                  {
+                                    "description": "If shift work then answer for the busiest week. Do not include overtime."
+                                  }
+                                ]
+                            }
                         }]
                     },
                     {
@@ -3309,7 +3310,8 @@
                             "answers": [{
                                 "id": "how-many-actual-hours-second-answer",
                                 "mandatory": false,
-                                "type": "Number"
+                                "type": "Number",
+                                "label": "Hours"
                             }]
                         }],
                         "routing_rules": [{
@@ -3381,6 +3383,7 @@
                         ]
                     },
 
+
                     {
                         "id": "casual-hours-worked-casac",
                         "type": "Question",
@@ -3402,11 +3405,11 @@
                             "answers": [{
                                 "id": "casual-hours-answer",
                                 "mandatory": false,
-                                "type": "Number"
+                                "type": "Number",
+                                "label": "Hours"
                             }]
                         }]
                     },
-
                     {
                         "id": "hours-totalized-w13",
                         "type": "Question",
@@ -3449,7 +3452,6 @@
                             }
                         ]
                     },
-
                     {
                         "id": "reason-why-fewer-hours-than-usual-self-employed-w14-semp",
                         "type": "Question",
@@ -3497,8 +3499,9 @@
                                         "value": "No client or customer that week"
                                     },
                                     {
-                                        "label": "Temporary interruption to work (including bad weather)",
-                                        "value": "Temporary interruption to work (including bad weather)"
+                                        "label": "Temporary interruption to work",
+                                        "value": "Temporary interruption to work ",
+                                        "description": "Including bad weather"
                                     },
                                     {
                                         "label": "Other",
@@ -3558,8 +3561,6 @@
                         ]
 
                     },
-
-
                     {
                         "id": "reason-why-fewer-hours-than-usual-employee-w14-emp",
                         "type": "Question",
@@ -3583,8 +3584,9 @@
                                 "mandatory": false,
                                 "type": "Radio",
                                 "options": [{
-                                        "label": "On leave (paid or unpaid)",
-                                        "value": "On leave"
+                                        "label": "On leave",
+                                        "value": "On leave",
+                                        "description": "paid or unpaid"
                                     },
                                     {
                                         "label": "Illness or injury expected to last fewer than 4 weeks",
@@ -3603,12 +3605,13 @@
                                         "value": "Waiting to start a new job"
                                     },
                                     {
-                                        "label": "My hours vary",
-                                        "value": "My hours vary"
+                                        "label": "Hours vary",
+                                        "value": "Hours vary"
                                     },
                                     {
-                                        "label": "Temporary interruption to work (including bad weather, labour disputes)",
-                                        "value": "Temporary interruption to work"
+                                        "label": "Temporary interruption to work",
+                                        "value": "Temporary interruption to work",
+                                        "description": "Including bad weather, labour disputes"
                                     },
                                     {
                                         "label": "Job is casual",
@@ -3818,8 +3821,6 @@
                         ]
 
                     },
-
-
                     {
                         "id": "left-paid-job-red3",
                         "type": "Question",
@@ -3871,7 +3872,6 @@
                             }
                         ]
                     },
-
                     {
                         "id": "did-you-look-for-paid-work-nw3",
                         "type": "Question",
@@ -3923,7 +3923,6 @@
                         ]
 
                     },
-
                     {
                         "id": "how-long-have-you-been-looking-dur1",
                         "type": "Question",
@@ -4065,7 +4064,6 @@
                             }
                         }]
                     },
-
                     {
                         "id": "not-looking-for-work-reason-nw4",
                         "type": "Question",
@@ -4292,10 +4290,12 @@
                                 "type": "General",
                                 "answers": [{
                                     "id": "when-left-last-paid-job-answer",
-                                    "label": "Years and Months",
+                                    "type": "MonthYearDate",
                                     "mandatory": false,
-                                    "units": ["years", "months"],
-                                    "type": "Duration"
+                                    "maximum": {
+                                        "value": "now"
+                                    }
+
                                 }]
                             }
                         ],
@@ -4307,7 +4307,6 @@
                             }
                         ]
                     },
-
                     {
                         "id": "reason-leaving-paid-job-red4",
                         "type": "Question",
@@ -4359,8 +4358,9 @@
                                         "value": "Early retirement"
                                     },
                                     {
-                                        "label": "Retired (at or after State Pension age)",
-                                        "value": "Retired (at or after State Pension age)"
+                                        "label": "Retired",
+                                        "value": "Retired",
+                                        "description": "At or after State Pension age"
                                     },
                                     {
                                         "label": "Family or personal reasons",
@@ -4412,8 +4412,6 @@
                             }]
                         }]
                     },
-
-
                     {
                         "id": "enrolled-education-course-qe1",
                         "type": "Question",
@@ -4510,7 +4508,6 @@
                             }]
                         }]
                     },
-
                     {
                         "id": "household-member-completed",
                         "title": "There are no more questions for {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}",
