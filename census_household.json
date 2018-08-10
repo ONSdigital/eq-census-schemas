@@ -523,7 +523,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "self-contained-accommodation"
+                                        "block": "adaptation"
                                     }
                                 }
                             ]
@@ -534,7 +534,7 @@
                             "questions": [
                                 {
                                     "id": "type-of-house-question",
-                                    "title": "Is your house or bungalow:",
+                                    "title": "What type of house or bungalow is it?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -550,8 +550,9 @@
                                                     "value": "Semi-detached"
                                                 },
                                                 {
-                                                    "label": "Terraced (including end-terrace)",
-                                                    "value": "Terraced"
+                                                    "label": "Terraced",
+                                                    "value": "Terraced",
+                                                    "description": "Including end-terrace"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -562,7 +563,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "self-contained-accommodation"
+                                        "block": "adaptation"
                                     }
                                 }
                             ]
@@ -573,7 +574,7 @@
                             "questions": [
                                 {
                                     "id": "type-of-flat-question",
-                                    "title": "Is your flat, maisonette or apartment:",
+                                    "title": "What type of flat, maisonette or apartment is it?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -596,6 +597,13 @@
                                             "type": "Radio"
                                         }
                                     ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "adaptation"
+                                    }
                                 }
                             ]
                         },
@@ -660,55 +668,8 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "self-contained-accommodation"
+                                        "block": "central-heating"
                                     }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "self-contained-accommodation",
-                            "questions": [
-                                {
-                                    "id": "self-contained-accommodation-question",
-                                    "title": "Are all the rooms at <em>{{answers['address-line-1']}}</em> behind a door that only this household can use?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "self-contained-accommodation-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "number-of-bedrooms",
-                            "questions": [
-                                {
-                                    "id": "number-of-bedrooms-question",
-                                    "title": "How many bedrooms are available for use only by <em>{{answers['address-line-1']}}</em>?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "number-of-bedrooms-answer",
-                                            "label": "Number of bedrooms",
-                                            "mandatory": false,
-                                            "type": "Number"
-                                        }
-                                    ]
                                 }
                             ]
                         },
@@ -886,7 +847,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "own-or-rent",
+                                        "block": "damp",
                                         "when": [
                                             {
                                                 "id": "permanent-or-family-home-answer",
@@ -898,7 +859,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "own-or-rent",
+                                        "block": "damp",
                                         "when": [
                                             {
                                                 "id": "else-permanent-or-family-home-answer",
@@ -911,6 +872,53 @@
                                 {
                                     "goto": {
                                         "block": "household-and-accommodation-completed"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "damp",
+                            "questions": [
+                                {
+                                    "id": "damp-question",
+                                    "title": "Is <em>{{answers['address-line-1']}}</em> damp?",
+                                    "type": "General",
+                                     "definitions": [{
+                                        "title": "What do we mean by damp?",
+                                        "content": [
+                                            {
+                                                "description": "A damp accomodation may feel or smell damp or have damp patches on the walls, ceiling, floor or window frames"
+                                            }
+                                        ]
+                                    }],
+                                    "answers": [
+                                        {
+                                            "id": "damp-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Yes, always",
+                                                    "value": "Yes, always"
+                                                },
+                                                {
+                                                    "label": "Yes, sometimes",
+                                                    "value": "Yes, sometimes"
+                                                },
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "own-or-rent"
                                     }
                                 }
                             ]
