@@ -601,6 +601,72 @@
                         },
                         {
                             "type": "Question",
+                            "id": "adaptation",
+                            "questions": [
+                                {
+                                    "id": "adaptation-question",
+                                    "title": "Has this accomodation been designed or adapted for any of the following?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "adaptation-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Internal wheelchair usage",
+                                                    "value": "Internal wheelchair usage",
+                                                    "description": "For example downstairs bathroom"
+                                                },
+                                                {
+                                                    "label": "External wheelchair usage",
+                                                    "value": "External wheelchair usage",
+                                                    "description": "For example a ramp"
+                                                },
+                                                {
+                                                    "label": "Other physical or mobility difficulties",
+                                                    "value": "Other physical or mobility difficulties"
+                                                },
+                                                {
+                                                    "label": "Visual difficulties",
+                                                    "value": "Visual difficulties"
+                                                },
+                                                {
+                                                    "label": "Hearing difficulties",
+                                                    "value": "Hearing difficulties"
+                                                },
+                                                {
+                                                    "label": "Other",
+                                                    "value": "Other",
+                                                    "child-answer-id": "adaptation-answer-other"
+                                                },
+                                                {
+                                                    "label": "None of these",
+                                                    "value": "None of these"
+                                                }
+                                                
+                                            ],
+                                            "type": "MutuallyExclusiveCheckbox"
+                                        }
+                                    ]
+                                },
+                                        {
+                                            "id": "adaptation-answer-other",
+                                            "parent_answer_id": "adaptation-answer",
+                                            "type": "TextField",
+                                            "mandatory": false,
+                                            "label": "Please specify any other reasons"
+                                        }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "self-contained-accommodation"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
                             "id": "self-contained-accommodation",
                             "questions": [
                                 {
