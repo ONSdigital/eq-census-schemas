@@ -3567,6 +3567,23 @@
                                         ]
                                     }
                                 },
+                                 {
+                                    "goto": {
+                                        "block": "study-address",
+                                        "when": [
+                                            {
+                                                "id": "ever-worked-answer",
+                                                "condition": "equals",
+                                                "value": "No, I have never worked"
+                                            },
+                                            { 
+                                               "id": "employment-type-answer",
+                                               "condition": "equals",
+                                               "value": "Studying"
+                                            }
+                                        ]
+                                    }
+                                },
                                 {
                                     "goto": {
                                         "block": "household-member-completed",
