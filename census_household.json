@@ -4147,7 +4147,7 @@
                                 {
                                     "id": "job-description-past-question",
                                      "titles": [{
-                                            "value": "Briefly describe what <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> does in their main job?",
+                                            "value": "Briefly describe what <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> did in their main job?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -4155,7 +4155,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "Briefly describe what you do in your main job?"
+                                            "value": "Briefly describe what you did in your main job?"
                                         }
                                     ],
                                     "type": "General",
