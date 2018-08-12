@@ -767,7 +767,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "own-or-rent",
+                                        "block": "damp",
                                         "when": [
                                             {
                                                 "id": "permanent-or-family-home-answer",
@@ -779,7 +779,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "own-or-rent",
+                                        "block": "damp",
                                         "when": [
                                             {
                                                 "id": "else-permanent-or-family-home-answer",
