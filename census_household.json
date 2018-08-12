@@ -846,31 +846,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "damp",
-                                        "when": [
-                                            {
-                                                "id": "permanent-or-family-home-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "damp",
-                                        "when": [
-                                            {
-                                                "id": "else-permanent-or-family-home-answer",
-                                                "condition": "equals",
-                                                "value": "Someone lives here as their permanent home"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "household-and-accommodation-completed"
+                                        "block": "damp"
                                     }
                                 }
                             ]
@@ -917,7 +893,30 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "own-or-rent"
+                                        "block": "own-or-rent",
+                                        "when": [
+                                            {
+                                                "id": "permanent-or-family-home-answer",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "own-or-rent",
+                                        "when": [
+                                            {
+                                                "id": "else-permanent-or-family-home-answer",
+                                                "condition": "equals",
+                                                "value": "Someone lives here as their permanent home"
+                                            }
+                                        ]
+                                    }
+                                },{
+                                    "goto": {
+                                        "block": "number-of-vehicles"
                                     }
                                 }
                             ]
