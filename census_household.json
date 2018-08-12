@@ -4714,7 +4714,6 @@
                          {
                             "type": "Question",
                             "id": "study-travel",
-                            "description": "Select one option only, for the longest part, by distance, of your usual journey to place of study.",
                             "questions": [
                                 {
                                     "titles": [{
@@ -4729,6 +4728,7 @@
                                             "value": "How do you usually travel to your place of study, including school?"
                                         }
                                     ],
+                                     "description": "Select one option only, for the longest part, by distance, of your usual journey to place of study.",
                                     "id": "study-travel-question",
                                     "type": "General",
                                     "answers": [
