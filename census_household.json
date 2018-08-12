@@ -3968,7 +3968,7 @@
                                 {
                                     "id": "business-name-past-question",
                                     "titles": [{
-                                            "value": "What was the name of the organisation or business <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> works for?",
+                                            "value": "What was the name of the organisation or business <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> worked for?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -3976,7 +3976,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "What was the name of the organisation or business you work for?"
+                                            "value": "What was the name of the organisation or business you worked for?"
                                         }
                                     ],
                                     "description": "If you were self-employed in your own business, give the business name.",
