@@ -2850,7 +2850,7 @@
                                         "when": [
                                           {
                                              "id": "date-of-birth-answer",
-                                             "condition": "less than",
+                                             "condition": "greater than",
                                              "date_comparison": {
                                                  "value": "now",
                                                  "offset_by": {
@@ -2871,7 +2871,7 @@
                                         "block": "household-member-completed",
                                         "when": [{
                                             "id": "date-of-birth-answer",
-                                            "condition": "less than",
+                                            "condition": "greater than",
                                             "date_comparison": {
                                                 "value": "now",
                                                 "offset_by": {
