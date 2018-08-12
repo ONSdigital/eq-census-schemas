@@ -613,7 +613,7 @@
                             "questions": [
                                 {
                                     "id": "adaptation-question",
-                                    "title": "Has this accomodation been designed or adapted for any of the following?",
+                                    "title": "Has <em>{{answers['address-line-1']}}</em> been designed or adapted for any of the following?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -651,12 +651,9 @@
                                                     "label": "None of these",
                                                     "value": "None of these"
                                                 }
-                                                
                                             ],
                                             "type": "MutuallyExclusiveCheckbox"
-                                        }
-                                    ]
-                                },
+                                        },
                                         {
                                             "id": "adaptation-answer-other",
                                             "parent_answer_id": "adaptation-answer",
@@ -664,6 +661,8 @@
                                             "mandatory": false,
                                             "label": "Please specify any other reasons"
                                         }
+                                    ]
+                                }
                             ],
                             "routing_rules": [
                                 {
