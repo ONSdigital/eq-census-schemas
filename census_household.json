@@ -4656,7 +4656,18 @@
                             "questions": [
                                 {
                                     "id": "study-address-question",
-                                    "title": "What address does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> travel to for their course of study, including school?",
+                                    "titles": [{
+                                            "value": "What address does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> travel to for their course of study, including school?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "What address do you travel to for your course of study, including school?"
+                                        }
+                                    ],
                                     "type": "General",
                                     "answers": [
                                         {
