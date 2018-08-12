@@ -1395,7 +1395,7 @@
                                 {
                                     "id": "confirm-marriage-type",
                                      "titles": [{
-                                            "value": "On 13 July 2018, what is {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }} legal marital or registered civil partnership status?",
+                                            "value": "On 13 July 2018, what is {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }} legal marital or same-sex civil partnership status?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -1403,7 +1403,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "On 13 July 2018, what is your legal marital or registered civil partnership status?"
+                                            "value": "On 13 July 2018, what is your legal marital or same-sex civil partnership status?"
                                         }
                                     ],
                                     "type": "General",
@@ -1417,115 +1417,32 @@
                                                     "value": "Married"
                                                 },
                                                 {
-                                                    "label": "In a registered civil partnership",
-                                                    "value": "In a registered civil partnership"
+                                                    "label": "In a registered same-sex civil partnership",
+                                                    "value": "In a registered same-sex civil partnership"
                                                 },
                                                 {
                                                     "label": "Separated, but still legally married",
                                                     "value": "Separated, but still legally married"
                                                 },
                                                 {
-                                                    "label": "Separated, but still legally in a civil partnership",
-                                                    "value": "Separated, but still legally in a civil partnership"
+                                                    "label": "Separated, but still legally in a same-sex civil partnership",
+                                                    "value": "Separated, but still legally in a same-sex civil partnership"
                                                 },
                                                 {
                                                     "label": "Divorced",
                                                     "value": "Divorced"
                                                 },
                                                 {
-                                                    "label": "Formally in a civil partnership which is now legally dissolved",
-                                                    "value": "Formally in a civil partnership which is now legally dissolved"
+                                                    "label": "Formally in a same-sex civil partnership which is now legally dissolved",
+                                                    "value": "Formally in a same-sex civil partnership which is now legally dissolved"
                                                 },
                                                 {
                                                     "label": "Widowed",
                                                     "value": "Widowed"
                                                 },
                                                 {
-                                                    "label": "Surviving partner from a civil partnership",
-                                                    "value": "Surviving partner from a civil partnership"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "current-marriage-status",
-                                        "when": [
-                                            {
-                                                "id": "confirm-marriage-type-answer",
-                                                "condition": "equals",
-                                                "value": "Married"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "previous-marriage-status",
-                                        "when": [
-                                            {
-                                                "id": "confirm-marriage-type-answer",
-                                                "condition": "equals",
-                                                "value": "Divorced"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "previous-marriage-status",
-                                        "when": [
-                                            {
-                                                "id": "confirm-marriage-type-answer",
-                                                "condition": "equals",
-                                                "value": "Widowed"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "previous-marriage-status",
-                                        "when": [
-                                            {
-                                                "id": "confirm-marriage-type-answer",
-                                                "condition": "equals",
-                                                "value": "Separated, but still legally married"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "in-education"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "current-marriage-status",
-                            "questions": [
-                                {
-                                    "id": "currrent-marriage-status-question",
-                                    "title": "What type of partnership is this?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "current-marriage-status-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Marriage to a partner of the opposite sex",
-                                                    "value": "Marriage to a partner of the opposite sex"
-                                                },
-                                                {
-                                                    "label": "Marriage to a partner of the same sex",
-                                                    "value": "Marriage to a partner of the same sex"
+                                                    "label": "Surviving partner from a same-sex civil partnership",
+                                                    "value": "Surviving partner from a same-sex civil partnership"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -1541,43 +1458,6 @@
                                 }
                             ]
                         },
-                        {
-                            "type": "Question",
-                            "id": "previous-marriage-status",
-                            "questions": [
-                                {
-                                    "id": "previous-marriage-status-question",
-                                    "title": "What type of partnership was this?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "previous-marriage-status-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Marriage to a partner of the opposite sex",
-                                                    "value": "Marriage to a partner of the opposite sex"
-                                                },
-                                                {
-                                                    "label": "Marriage to a partner of the same sex",
-                                                    "value": "Marriage to a partner of the same sex"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "in-education"
-                                    }
-                                }
-                            ]
-                        },
-                       
-                        
                         {
                             "type": "Question",
                             "id": "in-education",
@@ -1761,6 +1641,937 @@
                             ],
                             "routing_rules": [
                                 {
+                                    "goto": {
+                                        "block": "past-usual-address"
+                                        
+                                    }
+                                }
+                            ]
+                        },
+                         {
+                            "type": "Question",
+                            "id": "past-usual-address",
+                            "questions": [
+                                {
+                                    "id": "past-usual-address-question",
+                                     "titles": [{
+                                            "value": "One year ago, what was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> usual address?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "One year ago, what was your usual address?"
+                                        }
+                                    ],
+                                    "description": "If you had no usual address one year ago, state the address where you were staying.",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "past-usual-address-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "{{answers['address-line-1']| format_household_name}}",
+                                                    "value": "householdaddress"
+                                                },
+                                                {
+                                                    "label": "Student term time address in the UK",
+                                                    "value": "Student term time address in the UK"
+                                                },
+                                                {
+                                                    "label": "Another address in the UK",
+                                                    "value": "Another address in the UK"
+                                                },
+                                                {
+                                                    "label": "An address outside the UK",
+                                                    "value": "Other",
+                                                    "child_answer_id": "past-usual-address-answer-other"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        },
+                                        {
+                                            "id": "past-usual-address-answer-other",
+                                            "parent_answer_id": "past-usual-address-answer",
+                                            "type": "TextField",
+                                            "mandatory": false,
+                                            "label": "Please enter the country"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "last-year-address",
+                                        "when": [
+                                            {
+                                                "id": "past-usual-address-answer",
+                                                "condition": "equals",
+                                                "value": "Student term time address in the UK"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "last-year-address",
+                                        "when": [
+                                            {
+                                                "id": "past-usual-address-answer",
+                                                "condition": "equals",
+                                                "value": "Another address in the UK"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "passports"
+                                    }
+                                }
+                            ]
+                        },
+                        
+                        {
+                            "type": "Question",
+                            "id": "last-year-address",
+                            "questions": [
+                                {
+                                    "id": "last-year-address-question",
+                                     "titles": [{
+                                            "value": "Enter <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> address from one year ago?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Enter your address from one year ago"
+                                        }
+                                    ],
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "last-year-address-answer-building",
+                                            "label": "Building",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "last-year-address-answer-street",
+                                            "label": "Street",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "last-year-address-answer-city",
+                                            "label": "Town or city",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "last-year-address-answer-county",
+                                            "label": "County (optional)",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "last-year-address-answer-postcode",
+                                            "label": "Postcode",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "passports"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "passports",
+                            "questions": [
+                                {
+                                    "id": "passports-question",
+                                    "titles": [{
+                                            "value": "What passports does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> hold?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "What passports does you hold?"
+                                        }
+                                    ],
+                                    "description": "",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "passports-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "United Kingdom",
+                                                    "value": "United Kingdom"
+                                                },
+                                                {
+                                                    "label": "Ireland",
+                                                    "value": "Ireland"
+                                                },
+                                                {
+                                                    "label": "Other",
+                                                    "value": "Other",
+                                                    "child_answer_id": "passport-answer-other"
+                                                },
+                                                {
+                                                    "label": "None",
+                                                    "value": "None"
+                                                }
+                                            ],
+                                            "type": "MutuallyExclusiveCheckbox"
+                                        },
+                                        {
+                                            "id": "passport-answer-other",
+                                            "parent_answer_id": "passports-answer",
+                                            "type": "TextField",
+                                            "mandatory": false,
+                                            "label": "Please specify the passport held"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "household-member-completed",
+                                        "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
+                                            }
+                                        }]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "national-identity"
+                                    }
+                                }
+                            ]
+                        },
+                         {
+                            "type": "Question",
+                            "id": "national-identity",
+                            "questions": [
+                                {
+                                    "id": "national-identity-question",
+                                    "titles": [{
+                                            "value": "How would <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> describe their national identity?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "How would you describe your national identity?"
+                                        }
+                                    ],
+                                    "type": "General",
+                                    "definitions": [{
+                                        "title": "What is a national identity?",
+                                        "content": [
+                                            {
+                                                "description": "National Identity is not dependent on your ethnic group or citizenship. This could be about the country or countries where you feel you belong, or think of as home."
+                                            }
+                                        ]
+                                    }],
+                                    "answers": [
+                                        {
+                                            "id": "national-identity-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "British",
+                                                    "value": "British"
+                                                },
+                                                {
+                                                    "label": "Irish",
+                                                    "value": "Irish"
+                                                },
+                                                {
+                                                    "label": "Northern Irish",
+                                                    "value": "Northern Irish"
+                                                },
+                                                {
+                                                    "label": "English",
+                                                    "value": "English"
+                                                },
+                                                {
+                                                    "label": "Scottish",
+                                                    "value": "Scottish"
+                                                },
+                                                {
+                                                    "label": "Welsh",
+                                                    "value": "Welsh"
+                                                },
+                                                {
+                                                    "label": "Other",
+                                                    "value": "Other",
+                                                    "child_answer_id": "national-identity-answer-other"
+                                                }
+                                            ],
+                                            "type": "Checkbox"
+                                        },
+                                        {
+                                            "id": "national-identity-answer-other",
+                                            "parent_answer_id": "national-identity-answer",
+                                            "type": "TextField",
+                                            "mandatory": false,
+                                            "label": "Please describe your national identity"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "ethnic-group"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "ethnic-group",
+                            "questions": [
+                                {
+                                    "id": "ethnic-group-question",
+                                    "titles": [{
+                                            "value": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> ethnic group?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "What is your ethnic group?"
+                                        }
+                                    ], 
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "ethnic-group-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "White",
+                                                    "value": "White"
+                                                },
+                                                {
+                                                    "label": "Chinese",
+                                                    "value": "Chinese"
+                                                },
+                                                {
+                                                    "label": "Irish Traveller",
+                                                    "value": "Irish Traveller"
+                                                },
+                                                {
+                                                    "label": "Roma",
+                                                    "value": "Roma"
+                                                },
+                                                {
+                                                    "label": "Indian",
+                                                    "value": "Indian"
+                                                },
+                                                {
+                                                    "label": "Filipino",
+                                                    "value": "Filipino"
+                                                },
+                                                {
+                                                    "label": "Black African",
+                                                    "value": "Black African"
+                                                },
+                                                {
+                                                    "label": "Black other",
+                                                    "value": "Black other"
+                                                },
+                                                {
+                                                    "label": "Mixed ethnic group",
+                                                    "value": "Mixed ethnic group"
+                                                },
+                                                {
+                                                    "label": "Other ethnic group",
+                                                    "value": "Other ethnic group",
+                                                    "child_answer_id": "ethnic-group-answer-other"
+                                                }
+                                                
+                                            ],
+                                            "type": "Radio"
+                                        },
+                                        {
+                                            "id": "ethnic-group-answer-other",
+                                            "parent_answer_id": "ethnic-group-answer",
+                                            "type": "TextField",
+                                            "mandatory": false,
+                                            "label": "Please describe your ethnic group"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "religion"
+                                    }
+                                }
+                            ]
+                        },
+                         {
+                            "type": "Question",
+                            "id": "religion",
+                            "questions": [
+                                {
+                                    "id": "religion-question",
+                                    "titles": [{
+                                            "value": "What religion, religious denomination or body does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> belong to?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "What religion, religious denomination or body do you belong to?"
+                                        }
+                                    ],
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "religion-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Roman Catholic",
+                                                    "value": "Roman Catholic"
+                                                },
+                                                {
+                                                    "label": "Presbyterian Church in Ireland",
+                                                    "value": "Presbyterian Church in Ireland"
+                                                },
+                                                {
+                                                    "label": "Church of Ireland",
+                                                    "value": "Church of Ireland"
+                                                },
+                                                {
+                                                    "label": "Methodist Church in Ireland",
+                                                    "value": "Methodist Church in Ireland"
+                                                },
+                                                {
+                                                    "label": "Any other religion",
+                                                    "value": "Other",
+                                                    "child_answer_id": "religion-answer-other"
+                                                },
+                                                {
+                                                    "label": "None",
+                                                    "value": "None"
+                                                }
+                                               
+                                            ],
+                                            "type": "MutuallyExclusiveCheckbox"
+                                        },
+                                        {
+                                            "id": "religion-answer-other",
+                                            "parent_answer_id": "religion-answer",
+                                            "type": "TextField",
+                                            "mandatory": false,
+                                            "label": "Please specify other religion"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "religion-brought-up",
+                                        "when": [
+                                            {
+                                                "id": "religion-answer",
+                                                "condition": "contains",
+                                                "value": "None"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "language"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "religion-brought-up",
+                            "questions": [
+                                {
+                                    "id": "religion-brought-up-question",
+                                    "titles": [{
+                                            "value": "What religion, religious denomination or body was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> brought up in?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "What religion, religious denomination or body were you brought up in?"
+                                        }
+                                    ],
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "religion-brought-up-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Roman Catholic",
+                                                    "value": "Roman Catholic"
+                                                },
+                                                {
+                                                    "label": "Presbyterian Church in Ireland",
+                                                    "value": "Presbyterian Church in Ireland"
+                                                },
+                                                {
+                                                    "label": "Church of Ireland",
+                                                    "value": "Church of Ireland"
+                                                },
+                                                {
+                                                    "label": "Methodist Church in Ireland",
+                                                    "value": "Methodist Church in Ireland"
+                                                },
+                                                {
+                                                    "label": "Any other religion",
+                                                    "value": "Other",
+                                                    "child_answer_id": "religion-brought-up-answer-other"
+                                                },
+                                                {
+                                                    "label": "None",
+                                                    "value": "None"
+                                                }
+                                               
+                                            ],
+                                            "type": "MutuallyExclusiveCheckbox"
+                                        },
+                                        {
+                                            "id": "religion-brought-up-answer-other",
+                                            "parent_answer_id": "religion-brought-up-answer",
+                                            "type": "TextField",
+                                            "mandatory": false,
+                                            "label": "Please specify other religion"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "language"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "language",
+                            "questions": [
+                                {
+                                    "id": "language-question",
+                                    "titles": [{
+                                            "value": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> main language?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "What is your main language?"
+                                        }
+                                    ], 
+                                    "type": "General",
+                                     "definitions": [{
+                                        "title": "What is main language?",
+                                         "content": [
+                                            {
+                                                "description": "Main language is your first or preferred language."
+                                            }
+                                        ]
+                                    }],
+                                    "answers": [
+                                        {
+                                            "id": "language-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "English",
+                                                    "value": "English"
+                                                },
+                                                {
+                                                    "label": "Other",
+                                                    "value": "Other",
+                                                    "description": "Including British Sign Language",
+                                                    "child_answer_id": "language-answer-other"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        },
+                                        {
+                                            "id": "language-answer-other",
+                                            "parent_answer_id": "language-answer",
+                                            "type": "TextField",
+                                            "mandatory": false,
+                                            "label": "Please specify main language"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "understand-irish",
+                                        "when": [
+                                            {
+                                                "id": "language-answer",
+                                                "condition": "equals",
+                                                "value": "English"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "english"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "english",
+                            "questions": [
+                                {
+                                    "id": "english-question",
+                                     "titles": [{
+                                            "value": "How well can <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> speak English?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "How well can you speak English?"
+                                        }
+                                    ], 
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "english-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Very well",
+                                                    "value": "Very well"
+                                                },
+                                                {
+                                                    "label": "Well",
+                                                    "value": "Well"
+                                                },
+                                                {
+                                                    "label": "Not well",
+                                                    "value": "Not well"
+                                                },
+                                                {
+                                                    "label": "Not at all",
+                                                    "value": "Not at all"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "understand-irish"
+                                    }
+                                }
+                            ]
+                        },
+                         {
+                            "type": "Question",
+                            "id": "understand-irish",
+                            "questions": [
+                                {
+                                    "id": "understand-irish-question",
+                                    "titles": [{
+                                            "value": "Can <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> understand, speak, read or write Irish",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Can you understand, speak, read or write Irish?"
+                                        }
+                                    ], 
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "understand-irish-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Understand spoken Irish",
+                                                    "value": "Understand spoken Irish"
+                                                },
+                                                {
+                                                    "label": "Speak Irish",
+                                                    "value": "Speak Irish"
+                                                },
+                                                {
+                                                    "label": "Read Irish",
+                                                    "value": "Read Irish"
+                                                },
+                                                {
+                                                    "label": "Write Irish",
+                                                    "value": "Write Irish"
+                                                },
+                                                {
+                                                    "label": "No ability",
+                                                    "value": "No ability"
+                                                }
+                                            ],
+                                            "type": "MutuallyExclusiveCheckbox"
+                                        }
+                                    ]
+                                }
+                            ],
+                             "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "frequency-irish",
+                                        "when": [
+                                            {
+                                                "id": "understand-irish-answer",
+                                                "condition": "contains",
+                                                "value": "Speak Irish"
+                                            }
+                                        ]
+                                    }
+                                },
+                                 {
+                                    "goto": {
+                                        "block": "understand-ulster-scots"
+                                        
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "frequency-irish",
+                            "questions": [
+                                {
+                                    "id": "frequency-irish-question",
+                                    "titles": [{
+                                            "value": "How often does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> speak Irish",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "How often do you speak Irish?"
+                                        }
+                                    ], 
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "frequency-irish-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Daily",
+                                                    "value": "Daily"
+                                                },
+                                                {
+                                                    "label": "Weekly",
+                                                    "value": "Weekly"
+                                                },
+                                                {
+                                                    "label": "Less often",
+                                                    "value": "Less often"
+                                                },
+                                                {
+                                                    "label": "Never",
+                                                    "value": "Never"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                             "routing_rules": [
+                                 {
+                                    "goto": {
+                                        "block": "understand-ulster-scots"
+                                        
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "understand-ulster-scots",
+                            "questions": [
+                                {
+                                    "id": "understand-ulster-scots-question",
+                                    "titles": [{
+                                            "value": "Can <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> understand, speak, read or write Ulster Scots",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Can you understand, speak, read or write Ulster Scots?"
+                                        }
+                                    ], 
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "understand-ulster-scots-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Understand spoken Ulster Scots",
+                                                    "value": "Understand spoken Ulster Scots"
+                                                },
+                                                {
+                                                    "label": "Speak Ulster Scots",
+                                                    "value": "Speak Ulster Scots"
+                                                },
+                                                {
+                                                    "label": "Read Ulster Scots",
+                                                    "value": "Read Ulster Scots"
+                                                },
+                                                {
+                                                    "label": "Write Ulster Scots",
+                                                    "value": "Write Ulster Scots"
+                                                },
+                                                {
+                                                    "label": "No ability",
+                                                    "value": "No ability"
+                                                }
+                                            ],
+                                            "type": "MutuallyExclusiveCheckbox"
+                                        }
+                                    ]
+                                }
+                            ],
+                             "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "frequency-ulster-scots",
+                                        "when": [
+                                            {
+                                                "id": "understand-ulster-scots-answer",
+                                                "condition": "contains",
+                                                "value": "Speak Ulster Scots"
+                                            }
+                                        ]
+                                    }
+                                },
+                                 {
+                                    "goto": {
+                                        "block": "health"
+                                        
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "frequency-ulster-scots",
+                            "questions": [
+                                {
+                                    "id": "frequency-ulster-scots-question",
+                                    "titles": [{
+                                            "value": "How often does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> speak Ulster Scots",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "How often do you speak Ulster Scots?"
+                                        }
+                                    ], 
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "frequency-ulster-scots-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Daily",
+                                                    "value": "Daily"
+                                                },
+                                                {
+                                                    "label": "Weekly",
+                                                    "value": "Weekly"
+                                                },
+                                                {
+                                                    "label": "Less often",
+                                                    "value": "Less often"
+                                                },
+                                                {
+                                                    "label": "Never",
+                                                    "value": "Never"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                             "routing_rules": [
+                                 {
                                     "goto": {
                                         "block": "health"
                                         
@@ -2052,176 +2863,29 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "national-identity"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "national-identity",
-                            "questions": [
-                                {
-                                    "id": "national-identity-question",
-                                    "titles": [{
-                                            "value": "How would <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> describe their national identity?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "How would you describe your national identity?"
-                                        }
-                                    ],
-                                    "type": "General",
-                                    "definitions": [{
-                                        "title": "What is a national identity?",
-                                        "content": [
-                                            {
-                                                "description": "National Identity is not dependent on your ethnic group or citizenship. This could be about the country or countries where you feel you belong, or think of as home."
+                                        "block": "study-address",
+                                        "when": [
+                                          {
+                                             "id": "date-of-birth-answer",
+                                             "condition": "less than",
+                                             "date_comparison": {
+                                                 "value": "now",
+                                                 "offset_by": {
+                                                     "years": -16
+                                                 }
+                                              }
+                                           },
+                                           { 
+                                               "id": "in-education-answer",
+                                               "condition": "equals",
+                                               "value": "Yes"
                                             }
-                                        ]
-                                    }],
-                                    "answers": [
-                                        {
-                                            "id": "national-identity-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "British",
-                                                    "value": "British"
-                                                },
-                                                {
-                                                    "label": "Irish",
-                                                    "value": "Irish"
-                                                },
-                                                {
-                                                    "label": "Northern Irish",
-                                                    "value": "Northern Irish"
-                                                },
-                                                {
-                                                    "label": "English",
-                                                    "value": "English"
-                                                },
-                                                {
-                                                    "label": "Scottish",
-                                                    "value": "Scottish"
-                                                },
-                                                {
-                                                    "label": "Welsh",
-                                                    "value": "Welsh"
-                                                },
-                                                {
-                                                    "label": "Other",
-                                                    "value": "Other",
-                                                    "child_answer_id": "national-identity-answer-other"
-                                                }
-                                            ],
-                                            "type": "Checkbox"
-                                        },
-                                        {
-                                            "id": "national-identity-answer-other",
-                                            "parent_answer_id": "national-identity-answer",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please describe your national identity"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "ethnic-group"
+                                        ] 
                                     }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "ethnic-group",
-                            "questions": [
-                                {
-                                    "id": "ethnic-group-question",
-                                    "titles": [{
-                                            "value": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> ethnic group?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "What is your ethnic group?"
-                                        }
-                                    ], 
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "ethnic-group-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "White",
-                                                    "value": "White"
-                                                },
-                                                {
-                                                    "label": "Chinese",
-                                                    "value": "Chinese"
-                                                },
-                                                {
-                                                    "label": "Irish Traveller",
-                                                    "value": "Irish Traveller"
-                                                },
-                                                {
-                                                    "label": "Roma",
-                                                    "value": "Roma"
-                                                },
-                                                {
-                                                    "label": "Indian",
-                                                    "value": "Indian"
-                                                },
-                                                {
-                                                    "label": "Filipino",
-                                                    "value": "Filipino"
-                                                },
-                                                {
-                                                    "label": "Black African",
-                                                    "value": "Black African"
-                                                },
-                                                {
-                                                    "label": "Black other",
-                                                    "value": "Black other"
-                                                },
-                                                {
-                                                    "label": "Mixed ethnic group",
-                                                    "value": "Mixed ethnic group"
-                                                },
-                                                {
-                                                    "label": "Other ethnic group",
-                                                    "value": "Other ethnic group",
-                                                    "child_answer_id": "ethnic-group-answer-other"
-                                                }
-                                                
-                                            ],
-                                            "type": "Radio"
-                                        },
-                                        {
-                                            "id": "ethnic-group-answer-other",
-                                            "parent_answer_id": "ethnic-group-answer",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please describe your ethnic group"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
+                                },
                                 {
                                     "goto": {
-                                        "block": "sexual-identity",
+                                        "block": "household-member-completed",
                                         "when": [{
                                             "id": "date-of-birth-answer",
                                             "condition": "less than",
@@ -2236,7 +2900,8 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "understand-irish"
+                                        "block": "sexual-identity"
+                                        
                                     }
                                 }
                             ]
@@ -2302,7 +2967,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "understand-irish"
+                                        "block": "any-quals"
                                         
                                     }
                                 }
@@ -2310,12 +2975,12 @@
                         },
                         {
                             "type": "Question",
-                            "id": "understand-irish",
+                            "id": "any-quals",
                             "questions": [
                                 {
-                                    "id": "understand-irish-question",
+                                    "id": "any-quals-question",
                                     "titles": [{
-                                            "value": "Can <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> understand, speak, read or write Irish",
+                                            "value": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> have any qualifications?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -2323,357 +2988,22 @@
                                             }]
                                         },
                                         {
-                                            "value": "Can you understand, speak, read or write Irish?"
+                                            "value": "Do you have any qualifications?"
                                         }
-                                    ], 
+                                    ],
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "understand-irish-answer",
+                                            "id": "any-quals-answer",
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Understand spoken Irish",
-                                                    "value": "Understand spoken Irish"
+                                                    "label": "Yes",
+                                                    "value": "Yes"
                                                 },
                                                 {
-                                                    "label": "Speak Irish",
-                                                    "value": "Speak Irish"
-                                                },
-                                                {
-                                                    "label": "Read Irish",
-                                                    "value": "Read Irish"
-                                                },
-                                                {
-                                                    "label": "Write Irish",
-                                                    "value": "Write Irish"
-                                                },
-                                                {
-                                                    "label": "No ability",
-                                                    "value": "No ability"
-                                                }
-                                            ],
-                                            "type": "MutuallyExclusiveCheckbox"
-                                        }
-                                    ]
-                                }
-                            ],
-                             "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "frequency-irish",
-                                        "when": [
-                                            {
-                                                "id": "understand-irish-answer",
-                                                "condition": "contains",
-                                                "value": "Speak Irish"
-                                            }
-                                        ]
-                                    }
-                                },
-                                 {
-                                    "goto": {
-                                        "block": "understand-ulster-scots"
-                                        
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "frequency-irish",
-                            "questions": [
-                                {
-                                    "id": "frequency-irish-question",
-                                    "titles": [{
-                                            "value": "How often does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> speak Irish",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "How often do you speak Irish?"
-                                        }
-                                    ], 
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "frequency-irish-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Daily",
-                                                    "value": "Daily"
-                                                },
-                                                {
-                                                    "label": "Weekly",
-                                                    "value": "Weekly"
-                                                },
-                                                {
-                                                    "label": "Less often",
-                                                    "value": "Less often"
-                                                },
-                                                {
-                                                    "label": "Never",
-                                                    "value": "Never"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                             "routing_rules": [
-                                 {
-                                    "goto": {
-                                        "block": "understand-ulster-scots"
-                                        
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "understand-ulster-scots",
-                            "questions": [
-                                {
-                                    "id": "understand-ulster-scots-question",
-                                    "titles": [{
-                                            "value": "Can <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> understand, speak, read or write Ulster Scots",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "Can you understand, speak, read or write Ulster Scots?"
-                                        }
-                                    ], 
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "understand-ulster-scots-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Understand spoken Ulster Scots",
-                                                    "value": "Understand spoken Ulster Scots"
-                                                },
-                                                {
-                                                    "label": "Speak Ulster Scots",
-                                                    "value": "Speak Ulster Scots"
-                                                },
-                                                {
-                                                    "label": "Read Ulster Scots",
-                                                    "value": "Read Ulster Scots"
-                                                },
-                                                {
-                                                    "label": "Write Ulster Scots",
-                                                    "value": "Write Ulster Scots"
-                                                },
-                                                {
-                                                    "label": "No ability",
-                                                    "value": "No ability"
-                                                }
-                                            ],
-                                            "type": "MutuallyExclusiveCheckbox"
-                                        }
-                                    ]
-                                }
-                            ],
-                             "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "language",
-                                        "when": [
-                                            {
-                                                "id": "understand-ulster-scots-answer",
-                                                "condition": "contains",
-                                                "value": "Speak Ulster Scots"
-                                            }
-                                        ]
-                                    }
-                                },
-                                 {
-                                    "goto": {
-                                        "block": "language"
-                                        
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "frequency-ulster-scots",
-                            "questions": [
-                                {
-                                    "id": "frequency-ulster-scots-question",
-                                    "titles": [{
-                                            "value": "How often does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> speak Ulster Scots",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "How often do you speak Ulster Scots?"
-                                        }
-                                    ], 
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "frequency-ulster-scots-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Daily",
-                                                    "value": "Daily"
-                                                },
-                                                {
-                                                    "label": "Weekly",
-                                                    "value": "Weekly"
-                                                },
-                                                {
-                                                    "label": "Less often",
-                                                    "value": "Less often"
-                                                },
-                                                {
-                                                    "label": "Never",
-                                                    "value": "Never"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                             "routing_rules": [
-                                 {
-                                    "goto": {
-                                        "block": "language"
-                                        
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "language",
-                            "questions": [
-                                {
-                                    "id": "language-question",
-                                    "titles": [{
-                                            "value": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> main language?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "What is your main language?"
-                                        }
-                                    ], 
-                                    "type": "General",
-                                     "definitions": [{
-                                        "title": "What is main language?",
-                                         "content": [
-                                            {
-                                                "description": "Main language is your first or preferred language."
-                                            }
-                                        ]
-                                    }],
-                                    "answers": [
-                                        {
-                                            "id": "language-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "English",
-                                                    "value": "English"
-                                                },
-                                                {
-                                                    "label": "Other",
-                                                    "value": "Other",
-                                                    "description": "Including British Sign Language",
-                                                    "child_answer_id": "language-answer-other"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        },
-                                        {
-                                            "id": "language-answer-other",
-                                            "parent_answer_id": "language-answer",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please specify main language"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "religion",
-                                        "when": [
-                                            {
-                                                "id": "language-answer",
-                                                "condition": "equals",
-                                                "value": "English"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "english"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "english",
-                            "questions": [
-                                {
-                                    "id": "english-question",
-                                     "titles": [{
-                                            "value": "How well can <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> speak English?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "How well can you speak English?"
-                                        }
-                                    ], 
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "english-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Very well",
-                                                    "value": "Very well"
-                                                },
-                                                {
-                                                    "label": "Well",
-                                                    "value": "Well"
-                                                },
-                                                {
-                                                    "label": "Not well",
-                                                    "value": "Not well"
-                                                },
-                                                {
-                                                    "label": "Not at all",
-                                                    "value": "Not at all"
+                                                    "label": "No",
+                                                    "value": "No"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -2684,19 +3014,31 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "religion"
+                                        "block": "qualifications",
+                                        "when": [
+                                            {
+                                                "id": "any-quals-answer",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "apprenticeships"
                                     }
                                 }
                             ]
                         },
                         {
                             "type": "Question",
-                            "id": "religion",
+                            "id": "qualifications",
                             "questions": [
                                 {
-                                    "id": "religion-question",
+                                    "id": "qualifications-question",
                                     "titles": [{
-                                            "value": "What religion, religious denomination or body does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> belong to?",
+                                            "value": "Which of these qualifications does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> have?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -2704,50 +3046,39 @@
                                             }]
                                         },
                                         {
-                                            "value": "What religion, religious denomination or body do you belong to?"
+                                            "value": "Which of these qualifications do you have?"
                                         }
                                     ],
                                     "type": "General",
+                                    "description": "If your UK qualification is not listed, select the option that contains its nearest equivalent. If you have qualifications you gained outside the UK, select the option that indicates the nearest UK equivalents (if known).",
                                     "answers": [
                                         {
-                                            "id": "religion-answer",
+                                            "id": "qualifications-answer",
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Roman Catholic",
-                                                    "value": "Roman Catholic"
+                                                    "label": "Degree Level (or above), NVQ level 4 or 5, HNC, HND, BTEC Higher, Foundation Degree",
+                                                    "value": "Degree Level (or above), NVQ level 4 or 5, HNC, HND, BTEC Higher, Foundation Degree"
                                                 },
                                                 {
-                                                    "label": "Presbyterian Church in Ireland",
-                                                    "value": "Presbyterian Church in Ireland"
+                                                    "label": "2 or more A levels (grades A* to E), NVQ Level 3",
+                                                    "value": "2 or more A levels (grades A* to E), NVQ Level 3"
                                                 },
                                                 {
-                                                    "label": "Church of Ireland",
-                                                    "value": "Church of Ireland"
+                                                    "label": "5 or more GCSEs or O Levels (grades A* to C), 1 A level (grade A* to E), NVQ Level 2",
+                                                    "value": "5 or more GCSEs or O Levels (grades A* to C), 1 A level (grade A* to E), NVQ Level 2"
                                                 },
                                                 {
-                                                    "label": "Methodist Church in Ireland",
-                                                    "value": "Methodist Church in Ireland"
+                                                    "label": "Fewer than 5 GCSEs or O Levels (grades A* to C) or any number at grades D to G, NVQ Level 1",
+                                                    "value": "Fewer than 5 GCSEs or O Levels (grades A* to C) or any number at grades D to G, NVQ Level 1"
                                                 },
                                                 {
-                                                    "label": "Any other religion",
-                                                    "value": "Other",
-                                                    "child_answer_id": "religion-answer-other"
-                                                },
-                                                {
-                                                    "label": "None",
-                                                    "value": "None"
+                                                    "label": "None of these apply",
+                                                    "value": "None of these apply"
                                                 }
-                                               
+                                                
                                             ],
                                             "type": "MutuallyExclusiveCheckbox"
-                                        },
-                                        {
-                                            "id": "religion-answer-other",
-                                            "parent_answer_id": "religion-answer",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please specify other religion"
                                         }
                                     ]
                                 }
@@ -2755,19 +3086,19 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "religion-brought-up"
+                                        "block": "apprenticeships"
                                     }
                                 }
                             ]
                         },
                         {
                             "type": "Question",
-                            "id": "religion-brought-up",
+                            "id": "apprenticeships",
                             "questions": [
                                 {
-                                    "id": "religion-brought-up-question",
+                                    "id": "apprenticeships-question",
                                     "titles": [{
-                                            "value": "What religion, religious denomination or body was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> brought up in?",
+                                            "value": "Has <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> completed an apprenticeship (trade, advanced, foundation, or modern)?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -2775,281 +3106,31 @@
                                             }]
                                         },
                                         {
-                                            "value": "What religion, religious denomination or body were you brought up in?"
+                                            "value": "Have you completed an apprenticeship (trade, advanced, foundation, or modern)?"
                                         }
                                     ],
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "religion-brought-up-answer",
+                                            "id": "apprenticeships-answer",
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Roman Catholic",
-                                                    "value": "Roman Catholic"
+                                                    "label": "Yes",
+                                                    "value": "Yes"
                                                 },
                                                 {
-                                                    "label": "Presbyterian Church in Ireland",
-                                                    "value": "Presbyterian Church in Ireland"
-                                                },
-                                                {
-                                                    "label": "Church of Ireland",
-                                                    "value": "Church of Ireland"
-                                                },
-                                                {
-                                                    "label": "Methodist Church in Ireland",
-                                                    "value": "Methodist Church in Ireland"
-                                                },
-                                                {
-                                                    "label": "Any other religion",
-                                                    "value": "Other",
-                                                    "child_answer_id": "religion-brought-up-answer-other"
-                                                },
-                                                {
-                                                    "label": "None",
-                                                    "value": "None"
+                                                    "label": "No",
+                                                    "value": "No"
                                                 }
-                                               
-                                            ],
-                                            "type": "MutuallyExclusiveCheckbox"
-                                        },
-                                        {
-                                            "id": "religion-brought-up-answer-other",
-                                            "parent_answer_id": "religion-brought-up-answer",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please specify other religion"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "past-usual-address"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "past-usual-address",
-                            "questions": [
-                                {
-                                    "id": "past-usual-address-question",
-                                     "titles": [{
-                                            "value": "One year ago, what was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> usual address?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "One year ago, what was your usual address?"
-                                        }
-                                    ],
-                                    "description": "If you had no usual address one year ago, state the address where you were staying.",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "past-usual-address-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "{{answers['address-line-1']| format_household_name}}",
-                                                    "value": "householdaddress"
-                                                },
-                                                {
-                                                    "label": "Student term time address in the UK",
-                                                    "value": "Student term time address in the UK"
-                                                },
-                                                {
-                                                    "label": "Another address in the UK",
-                                                    "value": "Another address in the UK"
-                                                },
-                                                {
-                                                    "label": "An address outside the UK",
-                                                    "value": "Other",
-                                                    "child_answer_id": "past-usual-address-answer-other"
-                                                }
+                                                
                                             ],
                                             "type": "Radio"
-                                        },
-                                        {
-                                            "id": "past-usual-address-answer-other",
-                                            "parent_answer_id": "past-usual-address-answer",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please enter the country"
                                         }
                                     ]
                                 }
                             ],
                             "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "last-year-address",
-                                        "when": [
-                                            {
-                                                "id": "past-usual-address-answer",
-                                                "condition": "equals",
-                                                "value": "Student term time address in the UK"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "last-year-address",
-                                        "when": [
-                                            {
-                                                "id": "past-usual-address-answer",
-                                                "condition": "equals",
-                                                "value": "Another address in the UK"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "passports"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "last-year-address",
-                            "questions": [
-                                {
-                                    "id": "last-year-address-question",
-                                     "titles": [{
-                                            "value": "Enter <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> address from one year ago?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "Enter your address from one year ago"
-                                        }
-                                    ],
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "last-year-address-answer-building",
-                                            "label": "Building",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "last-year-address-answer-street",
-                                            "label": "Street",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "last-year-address-answer-city",
-                                            "label": "Town or city",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "last-year-address-answer-county",
-                                            "label": "County (optional)",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "last-year-address-answer-postcode",
-                                            "label": "Postcode",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "passports"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "passports",
-                            "questions": [
-                                {
-                                    "id": "passports-question",
-                                    "titles": [{
-                                            "value": "What passports does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> hold?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "What passports does you hold?"
-                                        }
-                                    ],
-                                    "description": "",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "passports-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "United Kingdom",
-                                                    "value": "United Kingdom"
-                                                },
-                                                {
-                                                    "label": "Ireland",
-                                                    "value": "Ireland"
-                                                },
-                                                {
-                                                    "label": "Other",
-                                                    "value": "Other",
-                                                    "child_answer_id": "passport-answer-other"
-                                                },
-                                                {
-                                                    "label": "None",
-                                                    "value": "None"
-                                                }
-                                            ],
-                                            "type": "MutuallyExclusiveCheckbox"
-                                        },
-                                        {
-                                            "id": "passport-answer-other",
-                                            "parent_answer_id": "passports-answer",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please specify the passport held"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "household-member-completed",
-                                        "when": [{
-                                            "id": "date-of-birth-answer",
-                                            "condition": "less than",
-                                            "date_comparison": {
-                                                "value": "now",
-                                                "offset_by": {
-                                                    "years": -16
-                                                }
-                                            }
-                                        }]
-                                    }
-                                },
                                 {
                                     "goto": {
                                         "block": "armed-forces"
@@ -3057,6 +3138,8 @@
                                 }
                             ]
                         },
+                       
+                       
                         {
                             "type": "Question",
                             "id": "armed-forces",
@@ -3483,7 +3566,24 @@
                                     ]
                                 }
                             ],
-                            "routing_rules": [
+                            "routing_rules": [  
+                                {
+                                    "goto": {
+                                        "block": "study-address",
+                                        "when": [
+                                            {
+                                                "id": "ever-worked-answer",
+                                                "condition": "equals",
+                                                "value": "No, I have never worked"
+                                            },
+                                            { 
+                                               "id": "in-education-answer",
+                                               "condition": "equals",
+                                               "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
                                 {
                                     "goto": {
                                         "block": "household-member-completed",
@@ -4429,7 +4529,7 @@
                             "questions": [
                                 {
                                     "titles": [{
-                                            "value": "How does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> usually travel to your main place of work or study (including school)?",
+                                            "value": "How does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> usually travel to their main place of work?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -4437,7 +4537,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "How do you usually travel to your main place of work or study (including school)?"
+                                            "value": "How do you usually travel to your main place of work?"
                                         }
                                     ],
                                     "id": "work-travel-question",
@@ -4629,6 +4729,135 @@
                                             "label": "Postcode",
                                             "mandatory": false,
                                             "type": "TextField"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "household-member-completed"
+                                    }
+                                }
+                            ]
+                        },
+                         {
+                            "type": "Question",
+                            "id": "study-address",
+                            "questions": [
+                                {
+                                    "id": "study-address-question",
+                                    "title": "What address does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> travel to for their course of study, including school?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "study-address-answer-building",
+                                            "label": "Building",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "study-address-answer-street",
+                                            "label": "Street",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "study-address-answer-city",
+                                            "label": "Town or city",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "study-address-answer-county",
+                                            "label": "County (optional)",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "study-adress-answer-postcode",
+                                            "label": "Postcode",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "study-travel"
+                                    }
+                                }
+                            ]
+                        },
+                         {
+                            "type": "Question",
+                            "id": "study-travel",
+                            "description": "Select one option only, for the longest part, by distance, of your usual journey to place of study.",
+                            "questions": [
+                                {
+                                    "titles": [{
+                                            "value": "How does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> usually travel to their place of study, including school?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "How do you usually travel to your place of study, including school?"
+                                        }
+                                    ],
+                                    "id": "study-travel-question",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "study-travel-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Driving a car or van",
+                                                    "value": "Driving a car or van"
+                                                },
+                                                {
+                                                    "label": "Passenger in a car or van",
+                                                    "value": "Passenger in a car or van"
+                                                },
+                                                {
+                                                    "label": "Car or van pool, sharing driving",
+                                                    "value": "Car or van pool, sharing driving"
+                                                },
+                                                {
+                                                    "label": "Bus, minibus or coach (public or private)",
+                                                    "value": "Bus, minibus or coach (public or private)"
+                                                },
+                                                {
+                                                    "label": "On foot",
+                                                    "value": "On foot"
+                                                },
+                                                {
+                                                    "label": "Taxi",
+                                                    "value": "Taxi "
+                                                },
+                                                {
+                                                    "label": "Train",
+                                                    "value": "Train"
+                                                },
+                                                {
+                                                    "label": "Bicycle",
+                                                    "value": "Bicycle"
+                                                },
+                                                {
+                                                    "label": "Motorcycle, scooter or moped",
+                                                    "value": "Motorcycle, scooter or moped"
+                                                },
+                                                {
+                                                    "label": "Other",
+                                                    "value": "Other"
+                                                }
+                                            ],
+                                            "type": "Radio"
                                         }
                                     ]
                                 }
