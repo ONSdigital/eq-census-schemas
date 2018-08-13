@@ -4112,30 +4112,6 @@
                                 }
                             ],
                             "routing_rules": [
-                                 {
-                                    "goto": {
-                                        "block": "employers-business",
-                                        "when": [
-                                            {
-                                                "id": "main-job-type-answer",
-                                                "condition": "equals",
-                                                "value": "Employee"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "employers-business",
-                                        "when": [
-                                            {
-                                                "id": "self-employed-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
                                 {
                                     "goto": {
                                         "block": "employers-business"
@@ -4179,30 +4155,6 @@
                                 }
                             ],
                            "routing_rules": [
-                                 {
-                                    "goto": {
-                                        "block": "employers-business-past",
-                                        "when": [
-                                            {
-                                                "id": "main-job-type-past-answer",
-                                                "condition": "equals",
-                                                "value": "Employee"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "employers-business-past",
-                                        "when": [
-                                            {
-                                                "id": "self-employed-past-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
                                 {
                                     "goto": {
                                         "block": "employers-business-past"
@@ -4238,7 +4190,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "supervise"
+                                        "block": "supervise1"
                                     }
                                 }
                             ]
@@ -4271,7 +4223,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "supervise-past"
+                                        "block": "supervise-past1"
                                     }
                                 }
                             ]
