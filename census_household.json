@@ -4269,7 +4269,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "hours-worked1"
+                                        "block": "hours-worked"
                                     }
                                 }
                             ]
@@ -4380,7 +4380,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "employer-type-of-address"
+                                        "block": "employer-type-of-address1"
                                     }
                                 }
                             ]
