@@ -4380,7 +4380,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "employer-type-of-address1"
+                                        "block": "employer-type-of-address"
                                     }
                                 }
                             ]
@@ -4459,7 +4459,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "work-travel"
+                                        "block": "work-travel1"
                                     }
                                 }
                             ]
