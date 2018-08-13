@@ -4190,7 +4190,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "supervise1"
+                                        "block": "supervise"
                                     }
                                 }
                             ]
@@ -4223,7 +4223,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "supervise-past1"
+                                        "block": "supervise-past"
                                     }
                                 }
                             ]
@@ -4269,7 +4269,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "hours-worked"
+                                        "block": "hours-worked1"
                                     }
                                 }
                             ]
