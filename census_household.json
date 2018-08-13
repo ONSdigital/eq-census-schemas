@@ -3446,13 +3446,6 @@
                                     "id": "disability-question",
                                     "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> have any physical or mental health conditions or illnesses lasting, or is expected to last 12 months or more?",
                                     "type": "General",
-                                    "guidance": {
-                                        "content": [
-                                            {
-                                                "title": "Include problems related to old age"
-                                            }
-                                        ]
-                                    },
                                     "answers": [
                                         {
                                             "id": "disability-answer",
@@ -3500,13 +3493,6 @@
                                     "id": "disability-question1",
                                     "title": "Do you have any physical or mental health conditions or illnesses lasting, or is expected to last 12 months or more?",
                                     "type": "General",
-                                    "guidance": {
-                                        "content": [
-                                            {
-                                                "title": "Include problems related to old age"
-                                            }
-                                        ]
-                                    },
                                     "answers": [
                                         {
                                             "id": "disability-answer1",
