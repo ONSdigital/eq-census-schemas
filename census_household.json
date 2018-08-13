@@ -4111,31 +4111,7 @@
                             "routing_rules": [
                                  {
                                     "goto": {
-                                        "block": "employers-business",
-                                        "when": [
-                                            {
-                                                "id": "main-job-type-answer",
-                                                "condition": "equals",
-                                                "value": "Employee"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "employers-business",
-                                        "when": [
-                                            {
-                                                "id": "self-employed-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "professional-quals"
+                                        "block": "employers-business"
                                     }
                                 }
                             ]
@@ -4178,32 +4154,8 @@
                             "routing_rules": [
                                  {
                                     "goto": {
-                                        "block": "employers-business-past",
-                                        "when": [
-                                            {
-                                                "id": "main-job-type-past-answer",
-                                                "condition": "equals",
-                                                "value": "Employee"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "employers-business-past",
-                                        "when": [
-                                            {
-                                                "id": "self-employed-past-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "professional-quals-past"
-                                    }
+                                        "block": "employers-business-past"
+                                       
                                 }
                             ]
                         },
