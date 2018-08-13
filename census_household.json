@@ -4459,7 +4459,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "work-travel1"
+                                        "block": "work-travel"
                                     }
                                 }
                             ]
@@ -4588,19 +4588,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "household-member-completed",
-                                        "when": [
-                                            {
-                                                "id": "work-travel-answer",
-                                                "condition": "equals",
-                                                "value": "Work mainly at or from home"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "employer-type-of-address"
+                                        "block": "household-member-completed"
                                     }
                                 }
                             ]
