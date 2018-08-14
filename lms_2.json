@@ -2233,7 +2233,7 @@
                         "questions": [{
                                 "id": "have-second-job-main-job-employee-or-self-employed-question",
                                 "titles": [{
-                                        "value": "In <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> main job, are they an employee or self employed?",
+                                        "value": "In <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> main job, what is their employment status?",
                                         "when": [{
                                             "id": "proxy-check-answer",
                                             "condition": "equals",
@@ -2241,13 +2241,66 @@
                                         }]
                                     },
                                     {
-                                        "value": "In your main job, are you an employee or self employed?"
+                                        "value": "In your main job, what is your employment status?"
                                     }
                                 ],
                                 "type": "General",
                                 "answers": [{
-                                    "id": "have-second-job-main-job-employee-or-self-employed-answer",
+                                        "id": "have-second-job-main-job-employee-or-self-employed-answer",
+                                        "mandatory": false,
+                                        "label": "Employee or self employed?",
+                                        "type": "Radio",
+                                        "options": [{
+                                                "label": "An employee",
+                                                "value": "employee"
+                                            },
+                                            {
+                                                "label": "Self-employed",
+                                                "value": "Self-employed"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "have-second-job-main-job-employment-full-or-part-time-answer",
+                                        "mandatory": false,
+                                        "label": "Full time or part time",
+                                        "type": "Radio",
+                                            "options": [{
+                                                "label": "Full time",
+                                                "value": "Full time"
+                                            },
+                                            {
+                                                "label": "Part time",
+                                                "value": "Part time"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "have-second-job-second-job-employee-or-self-employed-w3-2",
+                        "type": "Question",
+                        "questions": [{
+                            "id": "have-second-job-second-job-employee-or-self-employed-question",
+                            "titles": [{
+                                    "value": "In <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> second job, what is their employment status?",
+                                    "when": [{
+                                        "id": "proxy-check-answer",
+                                        "condition": "equals",
+                                        "value": "proxy"
+                                    }]
+                                },
+                                {
+                                    "value": "In your second job, what is your employment status?"
+                                }
+                            ],
+                            "type": "General",
+                            "answers": [{
+                                    "id": "have-second-job-second-job-employee-or-self-employed-answer",
                                     "mandatory": false,
+                                    "label": "Employee or self employed",
                                     "type": "Radio",
                                     "options": [{
                                             "label": "An employee",
@@ -2258,28 +2311,12 @@
                                             "value": "Self-employed"
                                         }
                                     ]
-                                }]
-                            },
-                            {
-                                "id": "have-second-job-main-job-employment-full-or-part-time-question",
-                                "titles": [{
-                                        "value": "In <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> main job, are they full time or part time?",
-                                        "when": [{
-                                            "id": "proxy-check-answer",
-                                            "condition": "equals",
-                                            "value": "proxy"
-                                        }]
-                                    },
-                                    {
-                                        "value": "In your main job, are you full time or part time?"
-                                    }
-                                ],
-                                "type": "General",
-                                "answers": [{
-                                    "id": "have-second-job-main-job-employment-full-or-part-time-answer",
+                                },
+                                {
+                                    "id": "have-second-job-second-job-full-or-part-time-answer",
                                     "mandatory": false,
+                                    "label": "Full time or part time",
                                     "type": "Radio",
-
                                     "options": [{
                                             "label": "Full time",
                                             "value": "Full time"
@@ -2289,72 +2326,8 @@
                                             "value": "Part time"
                                         }
                                     ]
-                                }]
-                            }
-
-                        ]
-                    },
-                    {
-
-                        "id": "have-second-job-second-job-employee-or-self-employed-w3-2",
-                        "type": "Question",
-                        "questions": [{
-                            "id": "have-second-job-second-job-employee-or-self-employed-question",
-                            "titles": [{
-                                    "value": "In <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> second job, are they an employee or self employed?",
-                                    "when": [{
-                                        "id": "proxy-check-answer",
-                                        "condition": "equals",
-                                        "value": "proxy"
-                                    }]
-                                },
-                                {
-                                    "value": "In your second job, are you an employee or self employed?"
                                 }
-                            ],
-                            "type": "General",
-                            "answers": [{
-                                "id": "have-second-job-second-job-employee-or-self-employed-answer",
-                                "mandatory": false,
-                                "type": "Radio",
-                                "options": [{
-                                        "label": "An employee",
-                                        "value": "employee"
-                                    },
-                                    {
-                                        "label": "Self-employed",
-                                        "value": "Self-employed"
-                                    }
-                                ]
-                            }]
-                        }]
-                    },
-                    {
-
-                        "id": "have-second-job-second-job-full-or-part-time-w4-2",
-                        "type": "Question",
-                        "questions": [{
-                            "id": "have-second-job-second-job-full-or-part-time-question",
-                            "titles": [
-                                {
-                                    "value": "Is that job full time or part time?"
-                                }
-                            ],
-                            "type": "General",
-                            "answers": [{
-                                "id": "have-second-job-second-job-full-or-part-time-answer",
-                                "mandatory": false,
-                                "type": "Radio",
-                                "options": [{
-                                        "label": "Full time",
-                                        "value": "Full time"
-                                    },
-                                    {
-                                        "label": "Part time",
-                                        "value": "Part time"
-                                    }
-                                ]
-                            }]
+                            ]
                         }],
                         "routing_rules": [{
                                 "goto": {
@@ -2380,7 +2353,7 @@
                         "questions": [{
                                 "id": "no-second-job-main-job-employee-or-self-employed-question",
                                 "titles": [{
-                                        "value": "Is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}s</em> an employee or self employed?",
+                                        "value": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> employment status?",
                                         "when": [{
                                             "id": "proxy-check-answer",
                                             "condition": "equals",
@@ -2388,13 +2361,14 @@
                                         }]
                                     },
                                     {
-                                        "value": "Are you an employee or self employed?"
+                                        "value": "What is your employment status?"
                                     }
                                 ],
                                 "type": "General",
                                 "answers": [{
                                     "id": "no-second-job-main-job-employee-or-self-employed-answer",
                                     "mandatory": false,
+                                    "label": "Employee or self employed?",
                                     "type": "Radio",
                                     "options": [{
                                             "label": "An employee",
@@ -2405,19 +2379,11 @@
                                             "value": "Self-employed"
                                         }
                                     ]
-                                }]
-                            },
-                            {
-                                "id": "no-second-job-main-job-employment-type-questions",
-                                "titles": [
-                                    {
-                                        "value": "Is that job full time or part time?"
-                                    }
-                                ],
-                                "type": "General",
-                                "answers": [{
+                                },
+                                {
                                         "id": "no-second-job-main-job-employment-full-or-part-time-answer",
                                         "mandatory": false,
+                                        "label": "Full time or part time?",
                                         "type": "Radio",
                                         "options": [{
                                                 "label": "Full time",
@@ -2428,9 +2394,7 @@
                                                 "value": "Part time"
                                             }
                                         ]
-                                    }
-
-                                ]
+                                    }]
                             }
                         ],
                         "routing_rules": [{
@@ -2873,7 +2837,7 @@
                             },
                             {
                                 "goto": {
-                                    "block": "main-job-actual-hours-w12-1"
+                                    "block": "main-job-usual-hours-w12-1"
                                 }
                             }
                         ]
@@ -2899,8 +2863,8 @@
                             "answers": [{
                                 "id": "unpaid-overtime-answer",
                                 "mandatory": false,
-                                "type": "Unit",
-                                "unit": "duration-hour"
+                                "type": "Number",
+                                "label": "Hours"
                             }]
                         }],
                         "routing_rules": [{
@@ -2986,7 +2950,7 @@
                         }],
                         "routing_rules": [{
                                 "goto": {
-                                    "block": "hours-totalized-w13",
+                                    "block": "hours-totalized-single-job-w13",
                                     "when": [{
                                         "id": "working-days-answer",
                                         "condition": "equals",
@@ -3029,7 +2993,7 @@
                         }],
                         "routing_rules": [{
                             "goto": {
-                                "block": "hours-totalized-w13"
+                                "block": "hours-totalized-single-job-w13"
                             }
                         }]
                     },
@@ -3054,7 +3018,7 @@
                             "type": "General",
                             "answers": [{
                                 "id": "main-job-unpaid-overtime-answer",
-                                "label": "hours",
+                                "label": "Hours",
                                 "mandatory": false,
                                 "type": "Number"
                             }]
@@ -3097,7 +3061,7 @@
                             },
                             {
                                 "goto": {
-                                    "block": "main-job-actual-hours-w12-1"
+                                    "block": "main-job-usual-hours-w12-1"
                                 }
                             }
                         ]
@@ -3163,7 +3127,36 @@
                     },
 
                     {
-                        "id": "main-job-actual-hours-w12-1",
+                        "id": "main-job-usual-hours-w12-1",
+                        "type": "Question",
+                        "questions": [{
+                            "id": "main-job-usual-hours-question",
+                            "titles": [{
+                                    "value": "How many hours does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> usually work in a week in their main job ?",
+                                    "when": [{
+                                        "id": "proxy-check-answer",
+                                        "condition": "equals",
+                                        "value": "proxy"
+                                    }]
+                                },
+                                {
+                                    "value": "How many hours do you usually work in a week in your main job ?"
+
+                                }
+                            ],
+                            "type": "General",
+                            "answers": [{
+                                "id": "main-job-usual-answer",
+                                "mandatory": false,
+                                "type": "Number",
+                                "label": "Hours"
+                            }]
+                        }]
+                    },
+
+
+                    {
+                        "id": "main-job-actual-hours-w12-1-1",
                         "type": "Question",
                         "questions": [{
                             "id": "main-job-actual-hours-question",
@@ -3240,7 +3233,7 @@
                         }],
                         "routing_rules": [{
                                 "goto": {
-                                    "block": "main-job-actual-hours-w12-1",
+                                    "block": "main-job-actual-hours-w12-1-1",
                                     "when": [{
                                         "id": "main-job-actual-hours-confirmation-answer",
                                         "condition": "equals",
@@ -3326,7 +3319,7 @@
                             },
                             {
                                 "goto": {
-                                    "block": "hours-totalized-w13"
+                                    "block": "hours-totalized-twojobs-job-w13"
                                 }
                             }
                         ]
@@ -3377,7 +3370,7 @@
                             },
                             {
                                 "goto": {
-                                    "block": "hours-totalized-w13"
+                                    "block": "hours-totalized-twojobs-job-w13"
                                 }
                             }
                         ]
@@ -3410,21 +3403,32 @@
                             }]
                         }]
                     },
+
                     {
-                        "id": "hours-totalized-w13",
-                        "type": "Question",
-                        "questions": [{
-                            "id": "hours-totalized-question",
-                            "titles": [{
-                                "value": "Some Totalizer Type that we do not have yet goes here "
-                            }],
-                            "type": "General",
-                            "answers": [{
-                                "id": "hours-totalized--answer",
-                                "mandatory": false,
-                                "type": "Number"
-                            }]
+                        "id": "hours-totalized-single-job-w13",
+                        "type": "CalculatedSummary",
+                        "titles": [{
+                                "value": "We calculate the total number of hours that <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> worked in their job, including overtime, to be %(total)s hours for the week Monday XXXX – Sunday XXXX September. Is this correct? ",
+                                "when": [{
+                                    "id": "proxy-check-answer",
+                                    "condition": "equals",
+                                    "value": "proxy"
+                                }]
+                            },
+                            {
+                            "value": "We calculate the total number of hours that you worked in your job, including overtime, to be %(total)s hours for the week Monday XXXX – Sunday XXXX September. Is this correct? "
                         }],
+                        "calculation": {
+                            "calculation_type": "sum",
+                            "answers_to_calculate": [
+                                "how-many-actual-hours-main-answer",
+                                "paid-overtime-answer",
+                                "unpaid-overtime-answer"
+                            ],
+                            "titles": [{
+                                "value": "Total hours worked"
+                            }]
+                        },
                         "routing_rules": [{
                                 "goto": {
                                     "block": "reason-why-fewer-hours-than-usual-employee-w14-emp",
@@ -3435,6 +3439,42 @@
                                     }]
                                 }
                             },
+                            {
+                                "goto": {
+                                    "block": "reason-why-fewer-hours-than-usual-self-employed-w14-semp"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "hours-totalized-twojobs-job-w13",
+                        "type": "CalculatedSummary",
+                        "titles": [{
+                                "value": "We calculate the total number of hours that <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> worked in their job, including overtime, to be %(total)s hours for the week Monday XXXX – Sunday XXXX September. Is this correct? ",
+                                "when": [{
+                                    "id": "proxy-check-answer",
+                                    "condition": "equals",
+                                    "value": "proxy"
+                                }]
+                            },
+                            {
+                            "value": "We calculate the total number of hours that you worked in your job, including overtime, to be %(total)s hours for the week Monday XXXX – Sunday XXXX September. Is this correct? "
+                        }],
+                        "calculation": {
+                            "calculation_type": "sum",
+                            "answers_to_calculate": [
+                                "main-job-actual-hours-answer",
+                                "how-many-actual-hours-second-answer",
+                                "main-job-paid-overtime-answer",
+                                "second-job-paid-overtime-answer",
+                                "main-job-unpaid-overtime-answer",
+                                "second-job-unpaid-overtime-answer"
+                            ],
+                            "titles": [{
+                                "value": "Total hours worked"
+                            }]
+                        },
+                        "routing_rules": [
                             {
                                 "goto": {
                                     "block": "reason-why-fewer-hours-than-usual-employee-w14-emp",
@@ -3452,6 +3492,8 @@
                             }
                         ]
                     },
+
+
                     {
                         "id": "reason-why-fewer-hours-than-usual-self-employed-w14-semp",
                         "type": "Question",
