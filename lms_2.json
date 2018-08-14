@@ -2946,7 +2946,7 @@
                                     "description": "If shift work then answer for the busiest week. Do not include overtime."
                                   }
                                 ]
-                              }
+                            }
                         }],
                         "routing_rules": [{
                                 "goto": {
@@ -3125,7 +3125,6 @@
                             }]
                         }]
                     },
-
                     {
                         "id": "main-job-usual-hours-w12-1",
                         "type": "Question",
@@ -3150,7 +3149,14 @@
                                 "mandatory": false,
                                 "type": "Number",
                                 "label": "Hours"
-                            }]
+                            }],
+                            "guidance": {
+                                "content": [
+                                  {
+                                    "description": "If shift work then answer for the busiest week. Do not include overtime."
+                                  }
+                                ]
+                            }
                         }]
                     },
 
