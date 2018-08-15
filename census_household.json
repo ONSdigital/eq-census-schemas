@@ -2162,7 +2162,7 @@
                                                 }
                                                
                                             ],
-                                            "type": "MutuallyExclusiveCheckbox"
+                                            "type": "Radio"
                                         },
                                         {
                                             "id": "religion-brought-up-answer-other",
