@@ -746,30 +746,6 @@
                                         "block": "renewable-energy",
                                         "when": [
                                             {
-                                                "id": "central-heating-answer",
-                                                "condition": "contains",
-                                                "value": "Renewable heating systems"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "renewable-energy",
-                                        "when": [
-                                            {
-                                                "id": "central-heating-answer",
-                                                "condition": "contains",
-                                                "value": "Other renewable electric systems"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "damp",
-                                        "when": [
-                                            {
                                                 "id": "permanent-or-family-home-answer",
                                                 "condition": "equals",
                                                 "value": "Yes"
@@ -779,7 +755,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "damp",
+                                        "block": "renewable-energy",
                                         "when": [
                                             {
                                                 "id": "else-permanent-or-family-home-answer",
