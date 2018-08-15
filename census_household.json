@@ -2079,7 +2079,7 @@
                                                 }
                                                
                                             ],
-                                            "type": "MutuallyExclusiveCheckbox"
+                                            "type": "Radio"
                                         },
                                         {
                                             "id": "religion-answer-other",
