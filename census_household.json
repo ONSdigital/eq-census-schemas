@@ -2249,7 +2249,7 @@
                                                     "value": "Other"
                                                 }
                                             ],
-                                            "type": "Radio"
+                                            "type": "Checkbox"
                                         }
                                     ]
                                 }
@@ -2312,7 +2312,7 @@
                                                     "value": "Other"
                                                 }
                                             ],
-                                            "type": "Radio"
+                                            "type": "Checkbox"
                                         }
                                     ]
                                 }
@@ -2331,7 +2331,7 @@
                             "questions": [
                                 {
                                     "id": "address-type-question-non-uk1",
-                                    "title": "What type of address do you stay at outside of the UK for more than 30 days a year",
+                                    "title": "What type of address is your address in {{answers['another-address-answer-other1']}}",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -2375,7 +2375,7 @@
                                                     "value": "Other"
                                                 }
                                             ],
-                                            "type": "Radio"
+                                            "type": "Checkbox"
                                         }
                                     ]
                                 }
@@ -2394,7 +2394,7 @@
                             "questions": [
                                 {
                                     "id": "address-type-question-non-uk",
-                                    "title": "What type of address does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> stay at outside of the UK for more than 30 days a year?",
+                                    "title": "What type of address is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> address in {{answers['another-address-answer-other1']}}?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -2438,7 +2438,7 @@
                                                     "value": "Other"
                                                 }
                                             ],
-                                            "type": "Radio"
+                                            "type": "Checkbox"
                                         }
                                     ]
                                 }
