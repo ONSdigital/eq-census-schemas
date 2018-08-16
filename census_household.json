@@ -1605,12 +1605,12 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Opposite sex marriage",
-                                                    "value": "Opposite sex marriage"
+                                                    "label": "Marriage to a partner of the opposite-sex",
+                                                    "value": "Marriage to a partner of the opposite-sex"
                                                 },
                                                 {
-                                                    "label": "Same sex marriage",
-                                                    "value": "Same sex marriage"
+                                                    "label": "Marriage to a partner of the same-sex",
+                                                    "value": "Marriage to a partner of the same-sex"
                                                 }
                                             ],
                                             "type": "Radio"
