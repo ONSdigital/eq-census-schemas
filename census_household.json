@@ -4172,22 +4172,22 @@
                                                 {
                                                     "label": "Mixed or Multiple ethnic groups",
                                                     "value": "Mixed or Multiple ethnic groups",
-                                                    "description": "Including White and Black Caribbean, White and Black African, White and Asian or any other Mixed or Multiple ethnic background"
+                                                    "description": "Includes White and Black Caribbean, White and Black African, White and Asian or any other Mixed or Multiple ethnic background"
                                                 },
                                                 {
                                                     "label": "Asian or Asian British",
                                                     "value": "Asian or Asian British",
-                                                    "description": "Including Indian, Pakistani, Bangladeshi, Chinese or any other Asian background"
+                                                    "description": "Includes Indian, Pakistani, Bangladeshi, Chinese or any other Asian background"
                                                 },
                                                 {
                                                     "label": "Black, African, Caribbean or Black British",
                                                     "value": "Black, African, Caribbean or Black British",
-                                                    "description": "Including any Black, African, Caribbean or Black British background"
+                                                    "description": "Includes any Black, African, Caribbean or Black British background"
                                                 },
                                                 {
                                                     "label": "Other ethnic group",
                                                     "value": "Other ethnic group",
-                                                    "description": "Including Arab or any other ethnic group"
+                                                    "description": "Includes Arab or any other ethnic group"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -4222,22 +4222,22 @@
                                                 {
                                                     "label": "Mixed or Multiple ethnic groups",
                                                     "value": "Mixed or Multiple ethnic groups",
-                                                    "description": "Including White and Black Caribbean, White and Black African, White and Asian or any other Mixed or Multiple ethnic background"
+                                                    "description": "Includes White and Black Caribbean, White and Black African, White and Asian or any other Mixed or Multiple ethnic background"
                                                 },
                                                 {
                                                     "label": "Asian or Asian British",
                                                     "value": "Asian or Asian British",
-                                                    "description": "Including Indian, Pakistani, Bangladeshi, Chinese or any other Asian background"
+                                                    "description": "Includes Indian, Pakistani, Bangladeshi, Chinese or any other Asian background"
                                                 },
                                                 {
                                                     "label": "Black, African, Caribbean or Black British",
                                                     "value": "Black, African, Caribbean or Black British",
-                                                    "description": "Including any Black, African, Caribbean or Black British background"
+                                                    "description": "Includes any Black, African, Caribbean or Black British background"
                                                 },
                                                 {
                                                     "label": "Other ethnic group",
                                                     "value": "Other ethnic group",
-                                                    "description": "Including Arab or any other ethnic group"
+                                                    "description": "Includes Arab or any other ethnic group"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -4429,22 +4429,22 @@
                                                 {
                                                     "label": "Mixed or Multiple ethnic groups",
                                                     "value": "Mixed or Multiple ethnic groups",
-                                                    "description": "Including White and Black Caribbean, White and Black African, White and Asian or any other Mixed or Multiple ethnic background"
+                                                    "description": "Includes White and Black Caribbean, White and Black African, White and Asian or any other Mixed or Multiple ethnic background"
                                                 },
                                                 {
                                                     "label": "Asian or Asian British",
                                                     "value": "Asian or Asian British",
-                                                    "description": "Including Indian, Pakistani, Bangladeshi, Chinese or any other Asian background"
+                                                    "description": "Includes Indian, Pakistani, Bangladeshi, Chinese or any other Asian background"
                                                 },
                                                 {
                                                     "label": "Black, African, Caribbean or Black British",
                                                     "value": "Black, African, Caribbean or Black British",
-                                                    "description": "Including any Black, African, Caribbean or Black British background"
+                                                    "description": "Includes any Black, African, Caribbean or Black British background"
                                                 },
                                                 {
                                                     "label": "Other ethnic group",
                                                     "value": "Other ethnic group",
-                                                    "description": "Including Arab or any other ethnic group"
+                                                    "description": "Includes Arab or any other ethnic group"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -4479,22 +4479,22 @@
                                                 {
                                                     "label": "Mixed or Multiple ethnic groups",
                                                     "value": "Mixed or Multiple ethnic groups",
-                                                    "description": "Including White and Black Caribbean, White and Black African, White and Asian or any other Mixed or Multiple ethnic background"
+                                                    "description": "Includes White and Black Caribbean, White and Black African, White and Asian or any other Mixed or Multiple ethnic background"
                                                 },
                                                 {
                                                     "label": "Asian or Asian British",
                                                     "value": "Asian or Asian British",
-                                                    "description": "Including Indian, Pakistani, Bangladeshi, Chinese or any other Asian background"
+                                                    "description": "Includes Indian, Pakistani, Bangladeshi, Chinese or any other Asian background"
                                                 },
                                                 {
                                                     "label": "Black, African, Caribbean or Black British",
                                                     "value": "Black, African, Caribbean or Black British",
-                                                    "description": "Including any Black, African, Caribbean or Black British background"
+                                                    "description": "Includes any Black, African, Caribbean or Black British background"
                                                 },
                                                 {
                                                     "label": "Other ethnic group",
                                                     "value": "Other ethnic group",
-                                                    "description": "Including Arab or any other ethnic group"
+                                                    "description": "Includes Arab or any other ethnic group"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -5032,7 +5032,7 @@
                             "questions": [
                                 {
                                     "id": "mixed-ethnic-group-question1",
-                                    "title": "Which one best describes your Mixed, Multiple ethnic group or background?",
+                                    "title": "Which one best describes your Mixed or Multiple ethnic group or background?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -5107,7 +5107,7 @@
                             "questions": [
                                 {
                                     "id": "asian-ethnic-group-question",
-                                    "title": "Which one best describes <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> Asian, Asian British ethnic group or background?",
+                                    "title": "Which one best describes <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> Asian or Asian British ethnic group or background?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -5186,7 +5186,7 @@
                             "questions": [
                                 {
                                     "id": "asian-ethnic-group-question1",
-                                    "title": "Which one best describes your Asian, Asian British ethnic group or background?",
+                                    "title": "Which one best describes your Asian or Asian British ethnic group or background?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -5265,7 +5265,7 @@
                             "questions": [
                                 {
                                     "id": "black-ethnic-group-question",
-                                    "title": "Which one best describes <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> Black, African, Caribbean, Black British ethnic group or background?",
+                                    "title": "Which one best describes <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> Black, African, Caribbean or Black British ethnic group or background?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -5403,7 +5403,7 @@
                             "questions": [
                                 {
                                     "id": "black-ethnic-group-question1",
-                                    "title": "Which one best describes your Black, African, Caribbean, Black British ethnic group or background?",
+                                    "title": "Which one best describes your Black, African, Caribbean or Black British ethnic group or background?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -6272,7 +6272,8 @@
                                                 },
                                                 {
                                                     "label": "Christian",
-                                                    "value": "Christian"
+                                                    "value": "Christian",
+                                                    "description": "Including Church of England, Catholic, Protestant and all other Christian denominations"
                                                 },
                                                 {
                                                     "label": "Buddhist",
@@ -6341,7 +6342,8 @@
                                                 },
                                                 {
                                                     "label": "Christian",
-                                                    "value": "Christian"
+                                                    "value": "Christian",
+                                                    "description": "Including Church of England, Catholic, Protestant and all other Christian denominations"
                                                 },
                                                 {
                                                     "label": "Buddhist",
