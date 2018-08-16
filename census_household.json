@@ -1952,7 +1952,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "address-type",
+                                        "block": "address-type-non-uk",
                                         "when": [
                                             {
                                                 "id": "another-address-answer",
@@ -2394,7 +2394,7 @@
                             "questions": [
                                 {
                                     "id": "address-type-question-non-uk",
-                                    "title": "What type of address is ?",
+                                    "title": "What type of address is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> address in {{answers['another-address-answer-other1']| format_household_name}}?",
                                     "type": "General",
                                     "answers": [
                                         {
