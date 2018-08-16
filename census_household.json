@@ -2824,7 +2824,7 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "{{answers['address-line-1']}}, {{answers['address-line-2']}}",
+                                                    "label": "{{answers['address-line-1']| format_household_name}}",
                                                     "value": "household-address"
                                                 },
                                                 {
@@ -2880,7 +2880,7 @@
                                                     "value": "household-address"
                                                 },
                                                 {
-                                                    "label": "Your address in {{answers['another-address-answer-other1']| format_household_name}}}",
+                                                    "label": "Your address in {{answers['another-address-answer-other1']| format_household_name}}",
                                                     "value": "30-day-address"
                                                 },
                                                 {
