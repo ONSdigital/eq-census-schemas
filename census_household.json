@@ -1443,7 +1443,7 @@
                             "questions": [
                                 {
                                     "id": "ever-married-question-proxy",
-                                    "title": "Has {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }} ever been legally married or in a registered civil partnership?",
+                                    "title": "Is {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }} currently, or have they ever been legally married or in a registered civil partnership?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1640,12 +1640,12 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Opposite sex marriage",
-                                                    "value": "Opposite sex marriage"
+                                                    "label": "Marriage to a partner of the opposite-sex",
+                                                    "value": "Marriage to a partner of the opposite-sex"
                                                 },
                                                 {
-                                                    "label": "Same sex marriage",
-                                                    "value": "Same sex marriage"
+                                                    "label": "Marriage to a partner of the same-sex",
+                                                    "value": "Marriage to a partner of the same-sex"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -3616,7 +3616,7 @@
                             "questions": [
                                 {
                                     "id": "carer-question",
-                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> look after, or give any help or support to anyone because they have long-term physical or mental ill-health or disability, or problems related to old age?",
+                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> look after, or give any help or support to family members, friends, neighbours or others because they have long-term physical or mental health conditions or illnesses, or problems related to old age?",
                                     "guidance": {
                                         "content": [
                                             {
@@ -3674,7 +3674,7 @@
                             "questions": [
                                 {
                                     "id": "carer-question1",
-                                    "title": "Do you look after, or give any help or support to anyone because they have long-term physical or mental ill-health or disability, or problems related to old age?",
+                                    "title": "Do you look after, or give any help or support to family members, friends, neighbours or others because they have long-term physical or mental health conditions or illnesses, or problems related to old age?",
                                     "guidance": {
                                         "content": [
                                             {
@@ -6525,7 +6525,7 @@
                                             "parent_answer_id": "passports-answer",
                                             "type": "TextField",
                                             "mandatory": false,
-                                            "label": "Please specify the passport held"
+                                            "label": "Please specify the passports held"
                                         }
                                     ]
                                 }
@@ -6588,7 +6588,7 @@
                                             "parent_answer_id": "passports-answer1",
                                             "type": "TextField",
                                             "mandatory": false,
-                                            "label": "Please specify the passport you hold"
+                                            "label": "Please specify the passports you hold"
                                         }
                                     ]
                                 }
@@ -6716,10 +6716,7 @@
                                     "guidance": {
                                         "content": [
                                             {
-                                                "title": "Include",
-                                                "list": [
-                                                    "casual or temporary work, even if only for one hour"
-                                                ]
+                                                "title": "Include casual or temporary work, even if only for one hour"
                                             }
                                         ]
                                     },
@@ -6789,10 +6786,7 @@
                                    "guidance": {
                                         "content": [
                                             {
-                                                "title": "Include",
-                                                "list": [
-                                                    "casual or temporary work, even if only for one hour"
-                                                ]
+                                                "title": "Include casual or temporary work, even if only for one hour"
                                             }
                                         ]
                                     },
@@ -8652,10 +8646,7 @@
                                     "guidance": {
                                         "content": [
                                             {
-                                                "title": "Include",
-                                                "list": [
-                                                    "paid and unpaid overtime"
-                                                ]
+                                                "title": "Include paid and unpaid overtime"
                                             }
                                         ]
                                     },
@@ -8706,10 +8697,7 @@
                                     "guidance": {
                                         "content": [
                                             {
-                                                "title": "Include",
-                                                "list": [
-                                                    "paid and unpaid overtime"
-                                                ]
+                                                "title": "Include paid and unpaid overtime"
                                             }
                                         ]
                                     },
