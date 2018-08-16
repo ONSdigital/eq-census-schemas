@@ -2827,7 +2827,7 @@
                                                     "label": "{{answers['address-line-1']}}, {{answers['address-line-2']}}",
                                                     "value": "household-address"
                                                 },
-                                                { .                           
+                                                {                          
                                                     "label": "Their address in {{answers['another-address-answer-other']| format_household_name}}",
                                                     "value": "30-day-address"
                                                 },
