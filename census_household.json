@@ -4015,6 +4015,14 @@
                                     "id": "national-identity-england-question1",
                                     "title": "How would you describe your national identity?",
                                     "type": "General",
+                                     "definitions": [{
+                                        "title": "What is a national identity?",
+                                        "content": [
+                                            {
+                                                "description": "National Identity is not dependent on your ethnic group or citizenship. This could be about the country or countries where you feel you belong, or think of as home."
+                                            }
+                                        ]
+                                    }],
                                     "answers": [
                                         {
                                             "id": "national-identity-england-answer1",
@@ -4072,6 +4080,14 @@
                                     "id": "national-identity-wales-question1",
                                     "title": "How would you describe <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> national identity?",
                                     "type": "General",
+                                     "definitions": [{
+                                        "title": "What is a national identity?",
+                                        "content": [
+                                            {
+                                                "description": "National Identity is not dependent on your ethnic group or citizenship. This could be about the country or countries where you feel you belong, or think of as home."
+                                            }
+                                        ]
+                                    }],
                                     "answers": [
                                         {
                                             "id": "national-identity-wales-answer1",
