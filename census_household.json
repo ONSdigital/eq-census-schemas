@@ -8026,6 +8026,17 @@
                             "routing_rules": [
                                  {
                                     "goto": {
+                                        "block": "business-name1",
+                                        "when": [
+                                            {
+                                                "id": "self-employed-answer",
+                                                "condition": "not set"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
                                         "block": "employers-business1",
                                         "when": [
                                             {
@@ -8044,6 +8055,18 @@
                                                 "id": "self-employed-answer",
                                                 "condition": "equals",
                                                 "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "not-registered-business",
+                                        "when": [
+                                            {
+                                                "id": "self-employed-answer",
+                                                "condition": "equals",
+                                                "value": "No"
                                             }
                                         ]
                                     }
@@ -8080,6 +8103,17 @@
                                 }
                             ],
                             "routing_rules": [
+                                 {
+                                    "goto": {
+                                        "block": "business-name-proxy",
+                                        "when": [
+                                            {
+                                                "id": "self-employed-answer-proxy",
+                                                "condition": "not set"
+                                            }
+                                        ]
+                                    }
+                                },
                                 {
                                     "goto": {
                                         "block": "employers-business-proxy",
@@ -8100,6 +8134,18 @@
                                                 "id": "self-employed-answer-proxy",
                                                 "condition": "equals",
                                                 "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "not-registered-business-proxy",
+                                        "when": [
+                                            {
+                                                "id": "self-employed-answer-proxy",
+                                                "condition": "equals",
+                                                "value": "No"
                                             }
                                         ]
                                     }
@@ -8136,7 +8182,17 @@
                                 }
                             ],
                             "routing_rules": [
-                                 {
+                                  {
+                                    "goto": {
+                                        "block": "business-name-past1",
+                                        "when": [
+                                            {
+                                                "id": "self-employed-past-answer",
+                                                "condition": "not set"
+                                            }
+                                        ]
+                                    }
+                                },{
                                     "goto": {
                                         "block": "employers-business-past1",
                                         "when": [
@@ -8156,6 +8212,18 @@
                                                 "id": "self-employed-past-answer",
                                                 "condition": "equals",
                                                 "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "not-registered-business-past",
+                                        "when": [
+                                            {
+                                                "id": "self-employed-past-answer",
+                                                "condition": "equals",
+                                                "value": "No"
                                             }
                                         ]
                                     }
@@ -8192,7 +8260,17 @@
                                 }
                             ],
                             "routing_rules": [
-                                {
+                                 {
+                                    "goto": {
+                                        "block": "business-name-past-proxy",
+                                        "when": [
+                                            {
+                                                "id": "self-employed-past-answer-proxy",
+                                                "condition": "not set"
+                                            }
+                                        ]
+                                    }
+                                },{
                                     "goto": {
                                         "block": "employers-business-past-proxy",
                                         "when": [
@@ -8212,6 +8290,18 @@
                                                 "id": "self-employed-past-answer-proxy",
                                                 "condition": "equals",
                                                 "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "not-registered-business-past-proxy",
+                                        "when": [
+                                            {
+                                                "id": "self-employed-past-answer-proxy",
+                                                "condition": "equals",
+                                                "value": "No"
                                             }
                                         ]
                                     }
@@ -8334,6 +8424,138 @@
                                     "answers": [
                                         {
                                             "id": "employers-business-past-answer-proxy",
+                                            "label": "Description",
+                                            "mandatory": false,
+                                            "type": "TextArea",
+                                            "max_length": 200,
+                                            "validation": {
+                                                "messages": {
+                                                    "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "professional-quals-past-proxy"
+                                    }
+                                }
+                            ]
+                        },
+                         {
+                            "type": "Question",
+                            "id": "not-registered-business",
+                            "questions": [
+                                {
+                                    "id": "not-registered-business-question",
+                                    "title": "What is the main activity of your work</em>?",
+                                    "description": "For example, clothing retail, primary education or general hospital.",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "not-registered-business-answer",
+                                            "label": "Description",
+                                            "mandatory": false,
+                                            "type": "TextArea",
+                                            "max_length": 200,
+                                            "validation": {
+                                                "messages": {
+                                                    "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "professional-quals"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "not-registered-business-proxy",
+                            "questions": [
+                                {
+                                    "id": "not-registered-business-question-proxy",
+                                    "title": "What is the main activity of <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> work?",
+                                    "description": "For example, clothing retail, primary education or general hospital.",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "not-registered-business-answer-proxy",
+                                            "label": "Description",
+                                            "mandatory": false,
+                                            "type": "TextArea",
+                                            "max_length": 200,
+                                            "validation": {
+                                                "messages": {
+                                                    "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "professional-quals-proxy"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "not-registered-business-past",
+                            "questions": [
+                                {
+                                    "id": "not-registered-business-past-question",
+                                    "title": "What was the main activity of your work?",
+                                    "description": "For example, clothing retail, primary education or general hospital.",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "not-registered-business-past-answer",
+                                            "label": "Description",
+                                            "mandatory": false,
+                                            "type": "TextArea",
+                                            "max_length": 200,
+                                            "validation": {
+                                                "messages": {
+                                                    "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "professional-quals-past"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "not-registered-business-past-proxy",
+                            "questions": [
+                                {
+                                    "id": "not-registered-business-past-question-proxy",
+                                    "title": "What was the main activity of <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> work?",
+                                    "description": "For example, clothing retail, primary education or general hospital.",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "not-registered-business-past-answer-proxy",
                                             "label": "Description",
                                             "mandatory": false,
                                             "type": "TextArea",
