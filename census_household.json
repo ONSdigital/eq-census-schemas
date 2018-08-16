@@ -2481,7 +2481,7 @@
                             "routing_rules": [
                                {
                                     "goto": {
-                                        "block": "term-time-location-with-second-address-non-uk1",
+                                        "block": "term-time-location-with-second-address-non-uk",
                                         "when": [
                                             {
                                                 "id": "another-address-answer",
@@ -2824,10 +2824,10 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "{{answers['address-line-1']| format_household_name}}",
+                                                    "label": "{{answers['address-line-1']}}, {{answers['address-line-2']}}",
                                                     "value": "household-address"
                                                 },
-                                                {
+                                                { .                           
                                                     "label": "Their address in {{answers['another-address-answer-other']| format_household_name}}",
                                                     "value": "30-day-address"
                                                 },
@@ -2879,7 +2879,7 @@
                                                     "label": "{{answers['address-line-1']}}, {{answers['address-line-2']}}",
                                                     "value": "household-address"
                                                 },
-                                                {
+                                                {                             
                                                     "label": "Your address in {{answers['another-address-answer-other1']| format_household_name}}",
                                                     "value": "30-day-address"
                                                 },
