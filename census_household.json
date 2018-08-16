@@ -2626,7 +2626,7 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "{{answers['address-line-1'] | format_household_name}}",
+                                                    "label": "{{answers['address-line-1']}}, {{answers['address-line-2']}}",
                                                     "value": "household-address"
                                                 },
                                                 {
@@ -2674,7 +2674,7 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "{{answers['address-line-1']| format_household_name}}",
+                                                    "label": "{{answers['address-line-1']}}, {{answers['address-line-2']}}",
                                                     "value": "household-address"
                                                 },
                                                 {
@@ -2721,7 +2721,7 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "{{answers['address-line-1']| format_household_name}}",
+                                                    "label": "{{answers['address-line-1']}}, {{answers['address-line-2']}}",
                                                     "value": "household-address"
                                                 },
                                                 {
@@ -2773,7 +2773,7 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "{{answers['address-line-1']| format_household_name}}",
+                                                    "label": "{{answers['address-line-1']}}, {{answers['address-line-2']}}",
                                                     "value": "household-address"
                                                 },
                                                 {
@@ -2824,11 +2824,11 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "{{answers['address-line-1'][group_instance]}}",
+                                                    "label": "{{answers['address-line-1']}}, {{answers['address-line-2']}}",
                                                     "value": "household-address"
                                                 },
                                                 {
-                                                    "label": "Their address in {{answers['another-address-answer-other']| format_household_name}}}",
+                                                    "label": "Their address in {{answers['another-address-answer-other']| format_household_name}}",
                                                     "value": "30-day-address"
                                                 },
                                                 {
@@ -2876,7 +2876,7 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "{{answers['address-line-1'][group_instance]}}",
+                                                    "label": "{{answers['address-line-1']}}, {{answers['address-line-2']}}",
                                                     "value": "household-address"
                                                 },
                                                 {
