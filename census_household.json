@@ -8026,10 +8026,10 @@
                             "routing_rules": [
                                  {
                                     "goto": {
-                                        "block": "business-name1",
+                                        "block": "not-registered-business",
                                         "when": [
                                             {
-                                                "id": "self-employed-answer",
+                                                "id": "business-name-answer1",
                                                 "condition": "not set"
                                             }
                                         ]
@@ -8105,10 +8105,10 @@
                             "routing_rules": [
                                  {
                                     "goto": {
-                                        "block": "business-name-proxy",
+                                        "block": "not-registered-business-proxy",
                                         "when": [
                                             {
-                                                "id": "self-employed-answer-proxy",
+                                                "id": "business-name-answer-proxy",
                                                 "condition": "not set"
                                             }
                                         ]
@@ -8184,10 +8184,10 @@
                             "routing_rules": [
                                   {
                                     "goto": {
-                                        "block": "business-name-past1",
+                                        "block": "not-registered-business-past",
                                         "when": [
                                             {
-                                                "id": "self-employed-past-answer",
+                                                "id": "business-name-past-answer1",
                                                 "condition": "not set"
                                             }
                                         ]
@@ -8262,10 +8262,10 @@
                             "routing_rules": [
                                  {
                                     "goto": {
-                                        "block": "business-name-past-proxy",
+                                        "block": "not-registered-business-past-proxy",
                                         "when": [
                                             {
-                                                "id": "self-employed-past-answer-proxy",
+                                                "id": "business-name-past-answer-proxy",
                                                 "condition": "not set"
                                             }
                                         ]
