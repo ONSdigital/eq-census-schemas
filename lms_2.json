@@ -2883,7 +2883,7 @@
                                         },
                                         {
                                             "id": "working-hours-answer",
-                                            "condition": "equals",
+                                            "condition": "contains",
                                             "value": "Casual working"
                                         }
                                     ]
@@ -2964,7 +2964,7 @@
                                         },
                                         {
                                             "id": "working-days-answer",
-                                            "condition": "equals",
+                                            "condition": "contains",
                                             "value": "Did not work this week"
                                         },
                                         {
@@ -2986,7 +2986,7 @@
                                         },
                                         {
                                             "id": "working-days-answer",
-                                            "condition": "equals",
+                                            "condition": "contains",
                                             "value": "Did not work this week"
                                         },
                                         {
@@ -3347,7 +3347,7 @@
                                     "block": "one-job-totalized-w13",
                                     "when": [{
                                         "id": "working-days-answer",
-                                        "condition": "equals",
+                                        "condition": "contains",
                                         "value": "Did not work this week"
                                     }]
                                 }
