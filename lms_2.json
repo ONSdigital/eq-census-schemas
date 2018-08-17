@@ -2667,7 +2667,7 @@
                                     "block": "working-days-w5",
                                     "when": [{
                                         "id": "which-kind-of-self-employed-answer",
-                                        "condition": "equals",
+                                        "condition": "contains",
                                         "value": "Working for yourself"
                                     }]
                                 }
