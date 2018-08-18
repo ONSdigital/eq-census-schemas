@@ -1087,7 +1087,7 @@
                             ]
                         },
                         {
-                            "type": "Question",
+                            "type": "ConfirmationQuestion",
                             "id": "confirm-dob",
                             "questions": [
                                 {
@@ -1105,7 +1105,7 @@
                                                 },
                                                 {
                                                     "label": "No, I need to change this date",
-                                                    "value": "No, I need to change this date"
+                                                    "value": "No"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -1114,7 +1114,17 @@
                                 }
                             ],
                                "routing_rules": [{
-                                    "goto": {
+                                   "goto": {
+                                        "block": "date-of-birth",
+                                        "when": [{
+                                            "id": "confirm-date-of-birth-answer",
+                                            "condition": "equals",
+                                            "value": "No"
+                                        }]
+                                   }
+                                },
+                                {                 
+                                   "goto": {
                                         "block": "ever-married",
                                         "when": [{
                                             "id": "date-of-birth-answer",
@@ -1137,7 +1147,7 @@
                   
                         },
                         {
-                            "type": "Question",
+                            "type": "ConfirmationQuestion",
                             "id": "confirm-dob-proxy",
                             "questions": [
                                 {
@@ -1146,7 +1156,7 @@
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "confirm-date-of-birth-answer",
+                                            "id": "confirm-date-of-birth-answer-proxy",
                                             "mandatory": false,
                                             "options": [
                                                 {
@@ -1155,7 +1165,7 @@
                                                 },
                                                 {
                                                     "label": "No, I need to change this date",
-                                                    "value": "No, I need to change this date"
+                                                    "value": "No"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -1163,8 +1173,19 @@
                                     ]
                                 }
                             ],
-                               "routing_rules": [{
+                               "routing_rules": [
+                                 {
                                     "goto": {
+                                        "block": "date-of-birth",
+                                        "when": [{
+                                            "id": "confirm-date-of-birth-answer-proxy",
+                                            "condition": "equals",
+                                            "value": "No"
+                                        }]
+                                    }
+                                  },
+                                  {
+                                     "goto": {
                                         "block": "ever-married",
                                         "when": [{
                                             "id": "date-of-birth-answer",
