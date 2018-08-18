@@ -1248,7 +1248,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "in-education",
+                                        "block": "another-address",
                                         "when": [
                                             {
                                                 "id": "confirm-ever-married-answer",
