@@ -4172,7 +4172,7 @@
                                                 {
                                                     "label": "Mixed or Multiple ethnic groups",
                                                     "value": "Mixed or Multiple ethnic groups",
-                                                    "description": "Includes White and Black Caribbean, White and Black African, White and Asian or any other Mixed or Multiple ethnic background"
+                                                    "description": "Includes White and Black Caribbean, White and Black African, White and Asian or any other Mixed or Multiple background"
                                                 },
                                                 {
                                                     "label": "Asian or Asian British",
@@ -4222,7 +4222,7 @@
                                                 {
                                                     "label": "Mixed or Multiple ethnic groups",
                                                     "value": "Mixed or Multiple ethnic groups",
-                                                    "description": "Includes White and Black Caribbean, White and Black African, White and Asian or any other Mixed or Multiple ethnic background"
+                                                    "description": "Includes White and Black Caribbean, White and Black African, White and Asian or any other Mixed or Multiple background"
                                                 },
                                                 {
                                                     "label": "Asian or Asian British",
@@ -4429,7 +4429,7 @@
                                                 {
                                                     "label": "Mixed or Multiple ethnic groups",
                                                     "value": "Mixed or Multiple ethnic groups",
-                                                    "description": "Includes White and Black Caribbean, White and Black African, White and Asian or any other Mixed or Multiple ethnic background"
+                                                    "description": "Includes White and Black Caribbean, White and Black African, White and Asian or any other Mixed or Multiple background"
                                                 },
                                                 {
                                                     "label": "Asian or Asian British",
@@ -4479,7 +4479,7 @@
                                                 {
                                                     "label": "Mixed or Multiple ethnic groups",
                                                     "value": "Mixed or Multiple ethnic groups",
-                                                    "description": "Includes White and Black Caribbean, White and Black African, White and Asian or any other Mixed or Multiple ethnic background"
+                                                    "description": "Includes White and Black Caribbean, White and Black African, White and Asian or any other Mixed or Multiple background"
                                                 },
                                                 {
                                                     "label": "Asian or Asian British",
@@ -8606,7 +8606,7 @@
                             "questions": [
                                 {
                                     "id": "not-registered-business-question",
-                                    "title": "What is the main activity of your work</em>?",
+                                    "title": "What is the main activity of your organisation, business or freelance work?",
                                     "description": "For example, clothing retail, primary education or general hospital.",
                                     "type": "General",
                                     "answers": [
@@ -8639,7 +8639,7 @@
                             "questions": [
                                 {
                                     "id": "not-registered-business-question-proxy",
-                                    "title": "What is the main activity of <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> work?",
+                                    "title": "What is the main activity of <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> organisation, business or freelance work?",
                                     "description": "For example, clothing retail, primary education or general hospital.",
                                     "type": "General",
                                     "answers": [
@@ -8672,7 +8672,7 @@
                             "questions": [
                                 {
                                     "id": "not-registered-business-past-question",
-                                    "title": "What was the main activity of your work?",
+                                    "title": "What was the main activity of your organisation, business or freelance work?",
                                     "description": "For example, clothing retail, primary education or general hospital.",
                                     "type": "General",
                                     "answers": [
@@ -8705,7 +8705,7 @@
                             "questions": [
                                 {
                                     "id": "not-registered-business-past-question-proxy",
-                                    "title": "What was the main activity of <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> work?",
+                                    "title": "What was the main activity of <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> organisation, business or freelance work?",
                                     "description": "For example, clothing retail, primary education or general hospital.",
                                     "type": "General",
                                     "answers": [
