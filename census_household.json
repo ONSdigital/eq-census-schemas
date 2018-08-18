@@ -968,7 +968,7 @@
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "proxy-answer",
+                                            "id": "proxy-check-answer",
                                             "mandatory": true,
                                             "options": [
                                                 {
@@ -977,7 +977,7 @@
                                                 },
                                                 {
                                                     "label": "No, I am answering on their behalf",
-                                                    "value": "No, I am answering on their behalf"
+                                                    "value": "proxy"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -986,115 +986,9 @@
                                 }
                             ],
                             "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "over-161",
-                                        "when": [
-                                            {
-                                                "id": "proxy-answer",
-                                                "condition": "equals",
-                                                "value": "Yes, I am"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "over-16"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "over-16",
-                            "questions": [
-                                {
-                                    "id": "over-16-question",
-                                    "title": "Is {{ [answers['first-name'][group_instance], answers['middle-names'][group_instance], answers['last-name'][group_instance]] | format_household_name }} aged 16 or over?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "over-16-answer",
-                                            "mandatory": true,
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "sex-under16",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
                                 {
                                     "goto": {
                                         "block": "sex"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "over-161",
-                            "questions": [
-                                {
-                                    "id": "over-16-question1",
-                                    "title": "Are you aged 16 or over?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "over-16-answer1",
-                                            "mandatory": true,
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "sex-under161",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer1",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "sex1"
                                     }
                                 }
                             ]
@@ -1105,9 +999,19 @@
                             "questions": [
                                 {
                                     "id": "sex-question",
-                                    "title": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> sex?",
+                                     "titles": [{
+                                             "value": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> sex?",
+                                              "when": [{
+                                                    "id": "proxy-check-answer",
+                                                    "condition": "equals",
+                                                    "value": "proxy"
+                                                }]
+                                            },
+                                            {
+                                                "value": "What is your sex?"
+                                            }
+                                        ],
                                     "type": "General",
-                                    "description": "A question about gender will follow later",
                                     "answers": [
                                         {
                                             "id": "sex-answer",
@@ -1120,27 +1024,27 @@
                                                 {
                                                     "label": "Female",
                                                     "value": "Female"
+                                                },
+                                                {
+                                                    "label": "Other",
+                                                    "value": "Other",
+                                                    "child_answer_id": "sex-answer-other"
                                                 }
                                                 
                                             ],
                                             "type": "Radio"
+                                        },
+                                        {
+                                            "id": "sex-answer-other",
+                                            "parent_answer_id": "sex-answer",
+                                            "type": "TextField",
+                                            "mandatory": false,
+                                            "label": "Please specify sex"
                                         }
                                     ]
                                 }
                             ],
                             "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "date-of-birth",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
                                 {
                                     "goto": {
                                         "block": "date-of-birth"
@@ -1148,158 +1052,24 @@
                                 }
                             ]
                         },
-                        {
-                            "type": "Question",
-                            "id": "sex1",
-                            "questions": [
-                                {
-                                    "id": "sex-question1",
-                                    "title": "What is your sex?",
-                                    "description": "A question about gender will follow later",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "sex-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Male",
-                                                    "value": "Male"
-                                                },
-                                                {
-                                                    "label": "Female",
-                                                    "value": "Female"
-                                                }
-                                                
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "date-of-birth1",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer1",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "date-of-birth1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "sex-under16",
-                            "questions": [
-                                {
-                                    "id": "sex-under16-question",
-                                    "title": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> sex?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "sex-under16-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Male",
-                                                    "value": "Male"
-                                                },
-                                                {
-                                                    "label": "Female",
-                                                    "value": "Female"
-                                                }
-                                                
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "date-of-birth",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "date-of-birth"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "sex-under161",
-                            "questions": [
-                                {
-                                    "id": "sex-under16-question1",
-                                    "title": "What is your sex?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "sex-under16-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Male",
-                                                    "value": "Male"
-                                                },
-                                                {
-                                                    "label": "Female",
-                                                    "value": "Female"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "date-of-birth1",
-                                        "when": [
-                                            {
-                                                "id": "over-16-answer1",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "date-of-birth1"
-                                    }
-                                }
-                            ]
-                        },
-                        
                         {
                             "type": "Question",
                             "id": "date-of-birth",
                             "questions": [
                                 {
                                     "id": "date-of-birth-question",
-                                    "title": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> date of birth?",
+                                    "titles": [{
+                                            "value": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> date of birth?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "What is your date of birth?"
+                                        }
+                                    ],
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1320,36 +1090,22 @@
                         },
                         {
                             "type": "Question",
-                            "id": "date-of-birth1",
-                            "questions": [
-                                {
-                                    "id": "date-of-birth-question1",
-                                    "title": "What is your date of birth?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "date-of-birth-answer1",
-                                            "mandatory": true,
-                                            "type": "Date"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "confirm-dob1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
                             "id": "confirm-dob",
                             "questions": [
                                 {
                                     "id": "confirm-date-of-birth",
-                                    "title": "{{[answers['first-name'][group_instance], answers['last-name'][group_instance]]  | format_household_name}} is {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old. Is this correct?",
+                                     "titles": [{
+                                            "value": "{{[answers['first-name'][group_instance], answers['last-name'][group_instance]]  | format_household_name}} is {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old. Is this correct?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "You are {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old. Is this correct?"
+                                        }
+                                    ],
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1370,304 +1126,56 @@
                                     ]
                                 }
                             ],
-                            "routing_rules": [
-                                {
+                               "routing_rules": [{
                                     "goto": {
-                                        "block": "date-of-birth",
-                                        "when": [
-                                            {
-                                                "id": "confirm-date-of-birth-answer",
-                                                "condition": "equals",
-                                                "value": "No, I need to amend this date"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "ever-married-proxy"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "confirm-dob1",
-                            "questions": [
-                                {
-                                    "id": "confirm-date-of-birth1",
-                                    "title": "You are {{ calculate_years_difference (answers['date-of-birth-answer1'][group_instance], 'now') }} old. Is this correct?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "confirm-date-of-birth-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Yes, I am {{ calculate_years_difference (answers['date-of-birth-answer1'][group_instance], 'now') }} old",
-                                                    "value": "Yes"
-                                                },
-                                                {
-                                                    "label": "No, I need to change this date",
-                                                    "value": "No, I need to change this date"
+                                        "block": "ever-married",
+                                        "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
                                                 }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "date-of-birth1",
-                                        "when": [
-                                            {
-                                                "id": "confirm-date-of-birth-answer1",
-                                                "condition": "equals",
-                                                "value": "No, I need to change this date"
                                             }
-                                        ]
+                                        }]
                                     }
                                 },
                                 {
                                     "goto": {
-                                        "block": "ever-married"
+                                        "block": "ever-married",
+                                        "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "not set"
+                                        }]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "in-education"
                                     }
                                 }
                             ]
+                  
                         },
-                       {
-                            "type": "Question",
-                            "id": "ever-married-proxy",
-                            "questions": [
-                                {
-                                    "id": "ever-married-question-proxy",
-                                    "title": "Is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> currently, or have they ever been legally married or in a registered civil partnership?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "confirm-ever-married-answer-proxy",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "another-address",
-                                        "when": [
-                                            {
-                                                "id": "confirm-ever-married-answer-proxy",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "marriage-type-proxy"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "marriage-type-proxy",
-                            "questions": [
-                                {
-                                    "id": "confirm-marriage-type-proxy",
-                                    "title": "On 13 July 2018, what is {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }} legal marital or registered civil partnership status?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "confirm-marriage-type-answer-proxy",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Married",
-                                                    "value": "Married"
-                                                },
-                                                 {
-                                                    "label": "In a registered civil partnership",
-                                                    "value": "In a registered civil partnership"
-                                                },
-                                                {
-                                                    "label": "Separated, but still legally married",
-                                                    "value": "Separated, but still legally married"
-                                                },
-                                                 {
-                                                    "label": "Separated, but still legally in a civil partnership",
-                                                    "value": "Separated, but still legally in a civil partnership"
-                                                },
-                                                {
-                                                    "label": "Divorced",
-                                                    "value": "Divorced"
-                                                },
-                                                {
-                                                    "label": "Formally in a civil partnership which is now legally dissolved",
-                                                    "value": "Formally in a civil partnership which is now legally dissolved"
-                                                },
-                                                {
-                                                    "label": "Widowed",
-                                                    "value": "Widowed"
-                                                },
-                                                {
-                                                    "label": "Surviving partner from a civil partnership",
-                                                    "value": "Surviving partner from a civil partnership"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "current-marriage-status-proxy",
-                                        "when": [
-                                            {
-                                                "id": "confirm-marriage-type-answer-proxy",
-                                                "condition": "equals",
-                                                "value": "Married"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "previous-marriage-status-proxy",
-                                        "when": [
-                                            {
-                                                "id": "confirm-marriage-type-answer-proxy",
-                                                "condition": "equals",
-                                                "value": "Divorced"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "previous-marriage-status-proxy",
-                                        "when": [
-                                            {
-                                                "id": "confirm-marriage-type-answer-proxy",
-                                                "condition": "equals",
-                                                "value": "Widowed"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "previous-marriage-status-proxy",
-                                        "when": [
-                                            {
-                                                "id": "confirm-marriage-type-answer-proxy",
-                                                "condition": "equals",
-                                                "value": "Separated, but still legally married"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "another-address"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "current-marriage-status-proxy",
-                            "questions": [
-                                {
-                                    "id": "currrent-marriage-status-question-proxy",
-                                    "title": "What type of partnership is this?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "current-marriage-status-answer-proxy",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Marriage to a partner of the opposite-sex",
-                                                    "value": "Marriage to a partner of the opposite-sex"
-                                                },
-                                                {
-                                                    "label": "Marriage to a partner of the same-sex",
-                                                    "value": "Marriage to a partner of the same-sex"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "another-address"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "previous-marriage-status-proxy",
-                            "questions": [
-                                {
-                                    "id": "previous-marriage-status-question-proxy",
-                                    "title": "What type of partnership was this?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "previous-marriage-status-answer-proxy",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Marriage to a partner of the opposite-sex",
-                                                    "value": "Marriage to a partner of the opposite-sex"
-                                                },
-                                                {
-                                                    "label": "Marriage to a partner of the same-sex",
-                                                    "value": "Marriage to a partner of the same-sex"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "another-address"
-                                    }
-                                }
-                            ]
-                        },
-                        {
+                         {
                             "type": "Question",
                             "id": "ever-married",
                             "questions": [
                                 {
                                     "id": "ever-married-question",
-                                    "title": "Are you currently, or have you ever been legally married or in a registered civil partnership?",
+                                     "titles": [{
+                                            "value": "Has {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }} ever been legally married or in a registered civil partnership?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Are you currently, or have you ever been legally married or in a registered civil partnership?"
+                                        }
+                                    ],
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1691,7 +1199,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "another-address1",
+                                        "block": "in-education",
                                         "when": [
                                             {
                                                 "id": "confirm-ever-married-answer",
@@ -1714,7 +1222,18 @@
                             "questions": [
                                 {
                                     "id": "confirm-marriage-type",
-                                    "title": "On 13 July 2018, what is your legal marital or registered civil partnership status?",
+                                     "titles": [{
+                                            "value": "On 13 July 2018, what is {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }} legal marital or registered civil partnership status?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "On 13 July 2018, what is your legal marital or registered civil partnership status?"
+                                        }
+                                    ],
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1725,7 +1244,7 @@
                                                     "label": "Married",
                                                     "value": "Married"
                                                 },
-                                                {
+                                                 {
                                                     "label": "In a registered civil partnership",
                                                     "value": "In a registered civil partnership"
                                                 },
@@ -1733,7 +1252,7 @@
                                                     "label": "Separated, but still legally married",
                                                     "value": "Separated, but still legally married"
                                                 },
-                                                {
+                                                 {
                                                     "label": "Separated, but still legally in a civil partnership",
                                                     "value": "Separated, but still legally in a civil partnership"
                                                 },
@@ -1810,7 +1329,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "another-address1"
+                                        "block": "another-address"
                                     }
                                 }
                             ]
@@ -1829,12 +1348,12 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Marriage to a partner of the opposite sex",
-                                                    "value": "Marriage to a partner of the opposite sex"
+                                                    "label": "Marriage to a partner of the opposite-sex",
+                                                    "value": "Marriage to a partner of the opposite-sex"
                                                 },
                                                 {
-                                                    "label": "Marriage to a partner of the same sex",
-                                                    "value": "Marriage to a partner of the same sex"
+                                                    "label": "Marriage to a partner of the same-sex",
+                                                    "value": "Marriage to a partner of the same-sex"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -1845,7 +1364,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "another-address1"
+                                        "block": "another-address"
                                     }
                                 }
                             ]
@@ -1864,12 +1383,12 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Marriage to a partner of the opposite sex",
-                                                    "value": "Marriage to a partner of the opposite sex"
+                                                    "label": "Marriage to a partner of the opposite-sex",
+                                                    "value": "Marriage to a partner of the opposite-sex"
                                                 },
                                                 {
-                                                    "label": "Marriage to a partner of the same sex",
-                                                    "value": "Marriage to a partner of the same sex"
+                                                    "label": "Marriage to a partner of the same-sex",
+                                                    "value": "Marriage to a partner of the same-sex"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -1880,7 +1399,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "another-address1"
+                                        "block": "another-address"
                                     }
                                 }
                             ]
@@ -1891,7 +1410,18 @@
                             "questions": [
                                 {
                                     "id": "another-address-question",
-                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> stay at another address for more than 30 days a year?",
+                                    "titles": [{
+                                            "value": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> stay at another address for more than 30 days a year?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Do you stay at another address for more than 30 days a year?"
+                                        }
+                                    ],
                                     "type": "General",
                                     "description": "This could be 30 days in a row, or divided across the year",
                                     "answers": [
@@ -1994,118 +1524,22 @@
                         },
                         {
                             "type": "Question",
-                            "id": "another-address1",
-                            "questions": [
-                                {
-                                    "id": "another-address-question1",
-                                    "title": "Do you stay at another address for more than 30 days a year?",
-                                    "description": "This could be 30 days in a row, or divided across the year",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "another-address-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                },
-                                                {
-                                                    "label": "Yes, an address within the UK",
-                                                    "value": "Yes, an address within the UK"
-                                                },
-                                                {
-                                                    "label": "Yes, an address outside the UK",
-                                                    "value": "Other",
-                                                    "child_answer_id": "another-address-answer-other1"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        },
-                                        {
-                                            "id": "another-address-answer-other1",
-                                            "parent_answer_id": "another-address-answer1",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please specify a country"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "in-education1",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer1",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "other-address1",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer1",
-                                                "condition": "equals",
-                                                "value": "Yes, an address within the UK"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "address-type-non-uk1",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer1",
-                                                "condition": "equals",
-                                                "value": "Other"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "in-education1",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer1",
-                                                "condition": "not set"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "address-type1",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer1",
-                                                "condition": "not equals",
-                                                "value": "Other"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "in-education1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
                             "id": "other-address",
                             "questions": [
                                 {
                                     "id": "other-address-question",
-                                    "title": "Enter details of the other UK address where <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> stay more than 30 days a year",
+                                     "titles": [{
+                                            "value": "Enter details of the other UK address where <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> stay more than 30 days a year",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Enter details of the other UK address where you stay more than 30 days a year"
+                                        }
+                                    ],
                                     "type": "General",
                                     "answers": [
                                         {
@@ -2151,124 +1585,11 @@
                         },
                         {
                             "type": "Question",
-                            "id": "other-address1",
-                            "questions": [
-                                {
-                                    "id": "other-address-question1",
-                                    "title": "Enter details of the other UK address where you stay more than 30 days a year",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "other-address-answer-building1",
-                                            "label": "Building",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "other-address-answer-street1",
-                                            "label": "Street",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "other-address-answer-city1",
-                                            "label": "Town or city",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "other-address-answer-county1",
-                                            "label": "County (optional)",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "other-address-answer-postcode1",
-                                            "label": "Postcode",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "address-type1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "address-type1",
-                            "questions": [
-                                {
-                                    "id": "address-type-question1",
-                                    "title": "What type of address is <em>{{answers['other-address-answer-building1'][group_instance]}}, {{answers['other-address-answer-street1'][group_instance]}}</em>?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "address-type-answer1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Armed forces base address",
-                                                    "value": "Armed forces base address"
-                                                },
-                                                {
-                                                    "label": "Another address when working away from home",
-                                                    "value": "Another address when working away from home"
-                                                },
-                                                {
-                                                    "label": "Student’s home address",
-                                                    "value": "Student’s home address"
-                                                },
-                                                {
-                                                    "label": "Student’s term time address",
-                                                    "value": "Student’s term time address"
-                                                },
-                                                {
-                                                    "label": "Another parent or guardian’s address",
-                                                    "value": "Another parent or guardian’s address"
-                                                },
-                                                {
-                                                    "label": "Partners address",
-                                                    "value": "Partners address"
-                                                },
-                                                {
-                                                    "label": "Another relative's address",
-                                                    "value": "Another relative's address"
-                                                },
-                                                {
-                                                    "label": "Holiday home",
-                                                    "value": "Holiday home"
-                                                },
-                                                {
-                                                    "label": "Other",
-                                                    "value": "Other"
-                                                }
-                                            ],
-                                            "type": "Checkbox"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "in-education1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
                             "id": "address-type",
                             "questions": [
                                 {
                                     "id": "address-type-question",
-                                    "title": "What type of address is <em>{{answers['other-address-answer-building'][group_instance]}}, {{answers['other-address-answer-street'][group_instance]}}</em>?",
+                                    "title": "What type of address is <em>{{answers['other-address-answer-building1'][group_instance]}}, {{answers['other-address-answer-street1'][group_instance]}}</em>?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -2327,78 +1648,26 @@
                         },
                         {
                             "type": "Question",
-                            "id": "address-type-non-uk1",
-                            "questions": [
-                                {
-                                    "id": "address-type-question-non-uk1",
-                                    "title": "What type of address is your address in <em>{{answers['another-address-answer-other1']| format_household_name}}</em>?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "address-type-answer-non-uk1",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Armed forces base address",
-                                                    "value": "Armed forces base address"
-                                                },
-                                                {
-                                                    "label": "Another address when working away from home",
-                                                    "value": "Another address when working away from home"
-                                                },
-                                                {
-                                                    "label": "Student’s home address",
-                                                    "value": "Student’s home address"
-                                                },
-                                                {
-                                                    "label": "Student’s term time address",
-                                                    "value": "Student’s term time address"
-                                                },
-                                                {
-                                                    "label": "Another parent or guardian’s address",
-                                                    "value": "Another parent or guardian’s address"
-                                                },
-                                                {
-                                                    "label": "Partners address",
-                                                    "value": "Partners address"
-                                                },
-                                                {
-                                                    "label": "Another relative's address",
-                                                    "value": "Another relative's address"
-                                                },
-                                                {
-                                                    "label": "Holiday home",
-                                                    "value": "Holiday home"
-                                                },
-                                                {
-                                                    "label": "Other",
-                                                    "value": "Other"
-                                                }
-                                            ],
-                                            "type": "Checkbox"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "in-education1"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
                             "id": "address-type-non-uk",
                             "questions": [
                                 {
                                     "id": "address-type-question-non-uk",
-                                    "title": "What type of address is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> address in {{answers['another-address-answer-other']| format_household_name}}?",
+                                     "titles": [{
+                                            "value": "What type of address is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> address in {{answers['another-address-answer-other']| format_household_name}}?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "What type of address is your address in <em>{{answers['another-address-answer-other1']| format_household_name}}</em>?"
+                                        }
+                                    ],
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "address-type-answer-non-uk",
+                                            "id": "address-type-answer-non-uk1",
                                             "mandatory": false,
                                             "options": [
                                                 {
@@ -2451,6 +1720,7 @@
                                 }
                             ]
                         },
+                       
                         {
                             "type": "Question",
                             "id": "in-education",
