@@ -2457,7 +2457,7 @@
                             "questions": [
                                 {
                                     "id": "in-education-question",
-                                    "title": "Is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> in full-time education?",
+                                    "title": "Is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> schoolchild or student in full-time education?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -2537,7 +2537,7 @@
                             "questions": [
                                 {
                                     "id": "in-education-question1",
-                                    "title": "Are you in full-time education?",
+                                    "title": "Are you a schoolchild or student in full-time education?",
                                     "type": "General",
                                     "answers": [
                                         {
