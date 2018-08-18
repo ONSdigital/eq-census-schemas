@@ -9302,6 +9302,38 @@
                             "routing_rules": [
                                 {
                                     "goto": {
+                                        "block": "no-business-name-employer-address1",
+                                        "when": [
+                                            {
+                                                "id": "business-name-answer1",
+                                                "condition": "not set"
+                                            },
+                                            {
+                                                "id": "employer-type-of-address-answer1",
+                                                "condition": "equals",
+                                                "value": "At a workplace"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                     "goto": {
+                                        "block": "no-business-name-employer-address1",
+                                        "when": [
+                                            {
+                                                "id": "business-name-answer1",
+                                                "condition": "not set"
+                                            },
+                                            {
+                                                "id": "employer-type-of-address-answer1",
+                                                "condition": "equals",
+                                                "value": "Report to a depot"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
                                         "block": "employer-address1",
                                         "when": [
                                             {
@@ -9372,6 +9404,37 @@
                             ],
                             "routing_rules": [
                                 {
+                                    "goto": {
+                                        "block": "no-business-name-employer-address-proxy",
+                                        "when": [
+                                            {
+                                                "id": "business-name-proxy",
+                                                "condition": "not set"
+                                            },
+                                            {
+                                                "id": "employer-type-of-address-answer-proxy",
+                                                "condition": "equals",
+                                                "value": "Report to a depot"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                     "goto": {
+                                        "block": "no-business-name-employer-address-proxy",
+                                        "when": [
+                                            {
+                                                "id": "business-name-proxy",
+                                                "condition": "not set"
+                                            },
+                                            {
+                                                "id": "employer-type-of-address-answer-proxy",
+                                                "condition": "equals",
+                                                "value": "At a workplace"
+                                            }
+                                        ]
+                                    }
+                                },{
                                     "goto": {
                                         "block": "employer-address-proxy",
                                         "when": [
@@ -9487,6 +9550,106 @@
                                         },
                                         {
                                             "id": "employer-adress-answer-postcode-proxy",
+                                            "label": "Postcode",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "household-member-completed"
+                                    }
+                                }
+                            ]
+                        },
+                         {
+                            "type": "Question",
+                            "id": "no-business-name-employer-address1",
+                            "questions": [
+                                {
+                                    "id": "no-business-name-employer-address-question1",
+                                    "title": "What is the address of your workplace or depot?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "no-business-name-employer-address-answer-building1",
+                                            "label": "Building",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "no-business-name-employer-address-answer-street1",
+                                            "label": "Street",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "no-business-name-employer-address-answer-city1",
+                                            "label": "Town or city",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "no-business-name-employer-address-answer-county1",
+                                            "label": "County (optional)",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "no-business-name-employer-adress-answer-postcode1",
+                                            "label": "Postcode",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "household-member-completed"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "no-business-name-employer-address-proxy",
+                            "questions": [
+                                {
+                                    "id": "no-business-name-employer-address-question-proxy",
+                                    "title": "What is the address of their workplace or depot?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "no-business-name-employer-address-answer-building-proxy",
+                                            "label": "Building",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "no-business-name-employer-address-answer-street-proxy",
+                                            "label": "Street",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "no-business-name-employer-address-answer-city-proxy",
+                                            "label": "Town or city",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "no-business-name-employer-address-answer-county-proxy",
+                                            "label": "County (optional)",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "no-business-name-employer-adress-answer-postcode-proxy",
                                             "label": "Postcode",
                                             "mandatory": false,
                                             "type": "TextField"
