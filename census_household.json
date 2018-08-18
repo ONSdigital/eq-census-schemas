@@ -5698,7 +5698,7 @@
                             "questions": [
                                 {
                                     "id": "birth-gender-question",
-                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> consider themselves being trans?",
+                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> consider themselves to be trans?",
                                     "type": "General",
                                      "definitions": [{
                                         "title": "What is trans?",
@@ -9181,18 +9181,6 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "household-member-completed",
-                                        "when": [
-                                            {
-                                                "id": "work-travel-answer1",
-                                                "condition": "equals",
-                                                "value": "Work mainly at or from home"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
                                         "block": "employer-type-of-address1"
                                     }
                                 }
@@ -9265,18 +9253,6 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "household-member-completed",
-                                        "when": [
-                                            {
-                                                "id": "work-travel-answer-proxy",
-                                                "condition": "equals",
-                                                "value": "Work mainly at or from home"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
                                         "block": "employer-type-of-address-proxy"
                                     }
                                 }
@@ -9302,6 +9278,10 @@
                                                 {
                                                     "label": "Report to a depot",
                                                     "value": "Report to a depot"
+                                                },
+                                                {
+                                                    "label": "Mainly at or from home",
+                                                    "value": "Mainly at or from home"
                                                 },
                                                 {
                                                     "label": "An offshore installation",
@@ -9369,6 +9349,10 @@
                                                 {
                                                     "label": "Report to a depot",
                                                     "value": "Report to a depot"
+                                                },
+                                                {
+                                                    "label": "Mainly at or from home",
+                                                    "value": "Mainly at or from home"
                                                 },
                                                 {
                                                     "label": "An offshore installation",
