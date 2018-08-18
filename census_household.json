@@ -6399,6 +6399,7 @@
                                     "id": "past-usual-address-question",
                                     "title": "One year ago, what was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> usual address?",
                                     "type": "General",
+                                    "description": "If they had no usual address one year ago, state the address where they were staying",
                                     "answers": [
                                         {
                                             "id": "past-usual-address-answer",
@@ -6473,6 +6474,7 @@
                                 {
                                     "id": "past-usual-address-question1",
                                     "title": "One year ago, what was your usual address?",
+                                     "description": "If you had no usual address one year ago, state the address where you were staying",
                                     "type": "General",
                                     "answers": [
                                         {
