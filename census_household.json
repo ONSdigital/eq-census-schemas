@@ -4250,7 +4250,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "armed-forces-proxy"
+                                        "block": "armed-forces"
                                     }
                                 }
                             ]
