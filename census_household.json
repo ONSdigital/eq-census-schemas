@@ -1977,6 +1977,19 @@
                                 },
                                 {
                                     "goto": {
+                                        "block": "household-member-completed",
+                                        "when": [
+                                            {
+                                                "id": "term-time-location-answer-with-second-address",
+                                                "condition": "equals",
+                                                "value": "30-day-address"
+                                            }
+                                            
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
                                         "block": "country-of-birth"
                                     }
                                 }
@@ -2034,6 +2047,19 @@
                                                 "id": "term-time-location-answer-with-second-address-non-uk",
                                                 "condition": "equals",
                                                 "value": "Another address"
+                                            }
+                                            
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "household-member-completed",
+                                        "when": [
+                                            {
+                                                "id": "term-time-location-answer-with-second-address-non-uk",
+                                                "condition": "equals",
+                                                "value": "30-day-address"
                                             }
                                             
                                         ]
