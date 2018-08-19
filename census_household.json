@@ -5380,7 +5380,7 @@
                             "questions": [
                                 {
                                     "id": "employers-business-past-question",
-                                    "title": "What was the main activity of <em>{{answers['business-name-past-answer1']| format_household_name}}</em>?",
+                                    "title": "What was the main activity of <em>{{answers['business-name-past-answer']| format_household_name}}</em>?",
                                     "description": "For example, clothing retail, primary education or general hospital.",
                                     "type": "General",
                                     "answers": [
