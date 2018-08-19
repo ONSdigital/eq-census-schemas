@@ -1710,7 +1710,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "What type of address is your address in <em>{{answers['another-address-answer-other1']| format_household_name}}</em>?"
+                                            "value": "What type of address is your address in <em>{{answers['another-address-answer-other']| format_household_name}}</em>?"
                                         }
                                     ],
                                     "type": "General",
@@ -2012,7 +2012,7 @@
                                                     "value": "household-address"
                                                 },
                                                 {                          
-                                                    "label": "Their address in {{answers['another-address-answer-other']| format_household_name}}",
+                                                    "label": "The address in {{answers['another-address-answer-other']| format_household_name}}",
                                                     "value": "30-day-address"
                                                 },
                                                 {
@@ -4246,21 +4246,7 @@
                                 }
                             ],
                             "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "household-member-completed",
-                                         "when": [{
-                                            "id": "date-of-birth-answer",
-                                            "condition": "greater than",
-                                            "date_comparison": {
-                                                "value": "now",
-                                                "offset_by": {
-                                                    "years": -16
-                                                }
-                                            }
-                                        }]
-                                    }
-                                },
+                                
                                 {
                                     "goto": {
                                         "block": "armed-forces-proxy"
