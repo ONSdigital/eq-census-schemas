@@ -2977,19 +2977,6 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "sexual-identity",
-                                        "id": "date-of-birth-answer",
-                                             "condition": "less than",
-                                             "date_comparison": {
-                                                 "value": "now",
-                                                 "offset_by": {
-                                                     "years": -16
-                                                 }
-                                              }
-                                    }
-                                },
-                                {
-                                    "goto": {
                                         "block": "understand-welsh",
                                         "when": [
                                             {
@@ -4246,7 +4233,21 @@
                                 }
                             ],
                             "routing_rules": [
-                                
+                                {
+                                    "goto": {
+                                        "block": "household-member-completed",
+                                         "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "greater than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
+                                            }
+                                        }]
+                                    }
+                                },
                                 {
                                     "goto": {
                                         "block": "armed-forces-proxy"
