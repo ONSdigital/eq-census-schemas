@@ -137,7 +137,7 @@
                                             {
                                                 "label": "Other",
                                                 "value": "Other",
-                                                "child_answer-id": "address-type-check-answer-other"
+                                                "child_answer_id": "address-type-check-answer-other"
                                             }
                                         ]
                                     },
@@ -2257,6 +2257,7 @@
                             }
                         ]
                     },
+
                     {
                         "id": "two-jobs-j1-emp-status-w3-1",
                         "type": "Question",
@@ -2460,9 +2461,9 @@
                                 "goto": {
                                     "block": "which-kind-of-self-employed-self18",
                                     "when": [{
-                                        "id": "two-jobs-j2-emp-status-full-or-part-time-proxy-answer",
+                                        "id": "two-jobs-j1-emp-status-emp-or-self-proxy-answer",
                                         "condition": "equals",
-                                        "value": "Working for yourself"
+                                        "value": "Self-employed"
                                     }]
                                 }
                             },
@@ -2743,7 +2744,7 @@
                                         {
                                             "label": "Some other arrangement",
                                             "value": "Some other arrangement",
-                                            "child_answer-id": "working-hours-answer-other"
+                                            "child_answer_id": "working-hours-answer-other"
                                         },
                                         {
                                             "label": "None of these",
@@ -3107,7 +3108,7 @@
                                     }]
                                 },
                                 {
-                                    "value": "Many jobs or businesses have usual hours. Not including your overtime, how many hours do you usually work in a week in your job or business??"
+                                    "value": "Many jobs or businesses have usual hours. Not including your overtime, how many hours do you usually work in a week in your job or business?"
                                 }
                             ],
                             "type": "General",
@@ -3924,45 +3925,71 @@
                             ],
                             "type": "General",
                             "answers": [{
-                                "id": "reason-why-fewer-hours-than-usual-self-employed-answer",
-                                "mandatory": false,
-                                "type": "Radio",
-                                "options": [{
-                                        "label": "On leave",
-                                        "value": "On leave"
-                                    },
-                                    {
-                                        "label": "Illness or injury expected to last fewer than 4 weeks",
-                                        "value": "Illness or injury expected to last fewer than 4 weeks"
-                                    },
-                                    {
-                                        "label": "Illness or disability expected to last for 4 weeks or longer",
-                                        "value": "Illness or disability expected to last for 4 weeks or longer"
-                                    },
-                                    {
-                                        "label": "Maternity or paternity leave",
-                                        "value": "Maternity or paternity leave"
-                                    },
-                                    {
-                                        "label": "Business not set up yet",
-                                        "value": "Business not set up yet"
-                                    },
-                                    {
-                                        "label": "No client or customer that week",
-                                        "value": "No client or customer that week"
-                                    },
-                                    {
-                                        "label": "Temporary interruption to work",
-                                        "value": "Temporary interruption to work ",
-                                        "description": "Including bad weather"
-                                    },
-                                    {
-                                        "label": "Other",
-                                        "value": "Other"
-                                    }
-                                ]
-                            }]
-                        }]
+                                    "id": "reason-why-fewer-hours-than-usual-self-employed-answer",
+                                    "mandatory": false,
+                                    "type": "Radio",
+                                    "options": [{
+                                            "label": "On leave",
+                                            "value": "On leave"
+                                        },
+                                        {
+                                            "label": "Illness or injury expected to last fewer than 4 weeks",
+                                            "value": "Illness or injury expected to last fewer than 4 weeks"
+                                        },
+                                        {
+                                            "label": "Illness or disability expected to last for 4 weeks or longer",
+                                            "value": "Illness or disability expected to last for 4 weeks or longer"
+                                        },
+                                        {
+                                            "label": "Maternity or paternity leave",
+                                            "value": "Maternity or paternity leave"
+                                        },
+                                        {
+                                            "label": "Business not set up yet",
+                                            "value": "Business not set up yet"
+                                        },
+                                        {
+                                            "label": "No client or customer that week",
+                                            "value": "No client or customer that week"
+                                        },
+                                        {
+                                            "label": "Temporary interruption to work",
+                                            "value": "Temporary interruption to work ",
+                                            "description": "Including bad weather"
+                                        },
+                                        {
+                                            "label": "Other",
+                                            "value": "Other",
+                                            "child_answer_id": "reason-why-fewer-hours-than-usual-self-employed-answer-other"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "reason-why-fewer-hours-than-usual-self-employed-answer-other",
+                                    "parent_answer_id": "reason-why-fewer-hours-than-usual-self-employed-answer",
+                                    "type": "TextField",
+                                    "mandatory": false,
+                                    "label": "Please describe"
+                                }
+                        ]
+                        }],
+                        "routing_rules":[
+                            {
+                                "goto": {
+                                    "block": "how-long-have-you-been-looking-before-start-dur2",
+                                        "when": [{
+                                            "id": "reason-why-fewer-hours-than-usual-self-employed-answer",
+                                            "condition": "equals",
+                                            "value": "Business not set up yet"
+                                        }]
+                                }
+                            },
+                            {
+                                "goto": {
+                                    "block": "when-start-working-current-business-red6-semp"
+                                }
+                            }
+                        ]
                     },
                     {
                         "id": "when-start-working-current-business-red6-semp",
@@ -4033,49 +4060,58 @@
                             ],
                             "type": "General",
                             "answers": [{
-                                "id": "reason-why-fewer-hours-than-usual-employee-answer",
-                                "mandatory": false,
-                                "type": "Radio",
-                                "options": [{
-                                        "label": "On leave",
-                                        "value": "On leave",
-                                        "description": "paid or unpaid"
-                                    },
-                                    {
-                                        "label": "Illness or injury expected to last fewer than 4 weeks",
-                                        "value": "Illness or injury expected to last fewer than 4 weeks"
-                                    },
-                                    {
-                                        "label": "Illness or disability expected to last for 4 weeks or longer",
-                                        "value": "Illness or disability expected to last for 4 weeks or longer"
-                                    },
-                                    {
-                                        "label": "Maternity or paternity leave",
-                                        "value": "Maternity or paternity leave"
-                                    },
-                                    {
-                                        "label": "Waiting to start a new job",
-                                        "value": "Waiting to start a new job"
-                                    },
-                                    {
-                                        "label": "Hours vary",
-                                        "value": "Hours vary"
-                                    },
-                                    {
-                                        "label": "Temporary interruption to work",
-                                        "value": "Temporary interruption to work",
-                                        "description": "Including bad weather, labour disputes"
-                                    },
-                                    {
-                                        "label": "Job is casual",
-                                        "value": "Job is casual"
-                                    },
-                                    {
-                                        "label": "Other",
-                                        "value": "Other"
-                                    }
-                                ]
-                            }]
+                                    "id": "reason-why-fewer-hours-than-usual-employee-answer",
+                                    "mandatory": false,
+                                    "type": "Radio",
+                                    "options": [{
+                                            "label": "On leave",
+                                            "value": "On leave",
+                                            "description": "paid or unpaid"
+                                        },
+                                        {
+                                            "label": "Illness or injury expected to last fewer than 4 weeks",
+                                            "value": "Illness or injury expected to last fewer than 4 weeks"
+                                        },
+                                        {
+                                            "label": "Illness or disability expected to last for 4 weeks or longer",
+                                            "value": "Illness or disability expected to last for 4 weeks or longer"
+                                        },
+                                        {
+                                            "label": "Maternity or paternity leave",
+                                            "value": "Maternity or paternity leave"
+                                        },
+                                        {
+                                            "label": "Waiting to start a new job",
+                                            "value": "Waiting to start a new job"
+                                        },
+                                        {
+                                            "label": "Hours vary",
+                                            "value": "Hours vary"
+                                        },
+                                        {
+                                            "label": "Temporary interruption to work",
+                                            "value": "Temporary interruption to work",
+                                            "description": "Including bad weather, labour disputes"
+                                        },
+                                        {
+                                            "label": "Job is casual",
+                                            "value": "Job is casual"
+                                        },
+                                        {
+                                            "label": "Other",
+                                            "value": "Other",
+                                            "child_answer_id": "reason-why-fewer-hours-than-usual-employee-answer-other"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "reason-why-fewer-hours-than-usual-employee-answer-other",
+                                    "parent_answer_id": "reason-why-fewer-hours-than-usual-employee-answer",
+                                    "type": "TextField",
+                                    "mandatory": false,
+                                    "label": "Please describe"
+                                }
+                            ]
                         }],
                         "routing_rules": [{
                                 "goto": {
@@ -4505,7 +4541,7 @@
                                         {
                                             "label": "Other",
                                             "value": "Other",
-                                            "child_answer-id": "not-be-able-to-start-answer-other"
+                                            "child_answer_id": "not-be-able-to-start-answer-other"
                                         }
                                     ]
                                 },
@@ -4599,7 +4635,7 @@
                                         {
                                             "label": "Other",
                                             "value": "Other",
-                                            "child_answer-id": "not-looking-for-work-reason-answer-other"
+                                            "child_answer_id": "not-looking-for-work-reason-answer-other"
                                         }
                                     ]
                                 },
@@ -4618,7 +4654,7 @@
                                     "when": [{
                                         "id": "not-looking-for-work-reason-answer",
                                         "condition": "equals",
-                                        "value": "Waiting to start a job that has been accepted"
+                                        "value": "Waiting to start a job recently accepted"
                                     }]
                                 }
                             },
