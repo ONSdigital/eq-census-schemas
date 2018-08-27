@@ -21,203 +21,251 @@
   ],
   "sections": [
     {
-            "id": "your-address-section",
-            "title": "Your address",
-            "groups": [
+      "id": "default-section",
+      "groups": [
+        {
+          "id": "address-group",
+          "title": "",
+          "blocks": [
+            
+            {
+						"type": "Question",
+						"id": "confirm-establishment",
+						"questions": [{
+							"id": "confirm-establishment-question",
+							"title": "Is this accomodation a ...basically confirm its a communal establishment?",
+							"definitions": [{
+								"title": "What is a Communal Establishment?",
+								"content": [{
+									"description": "A Communal Establishment is defined as an establishment providing managed residential accommodation. Managed means full-time or part-time supervision of the accommodation. Blah blah use nicer wording "
+								}]
+							}],
+							"type": "General",
+							"answers": [{
+								"id": "confirm-establishment-answer",
+								"mandatory": false,
+								"options": [{
+										"label": "Yes, this is a communal establishment",
+										"value": "Yes"
+									},
+									{
+										"label": "No, this is a residential home",
+										"value": "No, this ia a residential home"
+									},
+									{
+										"label": "No, this is used for something else",
+										"value": "No, this ia used for something else"
+									}
+								],
+								"type": "Radio"
+							}]
+						}],
+						"routing_rules": [{
+								"goto": {
+									"block": "nature-establishment",
+									"when": [{
+										"id": "confirm-establishment-answer",
+										"condition": "equals",
+										"value": "Yes"
+									}]
+								}
+							},
+							{
+								"goto": {
+									"block": "household-summary"
+								}
+							}
+						]
+					},
+            {
+						"type": "Question",
+						"id": "nature-establishment",
+						"questions": [{
+							"id": "nature-establishment-question",
+							"title": "What is the nature of this establishment?",
+							"type": "General",
+							"answers": [{
+								"id": "nature-establishment-answer",
+								"mandatory": false,
+								"options": [{
+										"label": "Medical and care",
+										"value": "Medical and care"
+									},
+									{
+										"label": "Education",
+										"value": "Education"
+									},
+									{
+										"label": "Armed Forces",
+										"value": "Armed Forces",
+										"description": "Defence establishment, including ships"
+									},
+									{
+										"label": "Detention",
+										"value": "Detention"
+									},
+									{
+										"label": "Travel or temporary accommodation",
+										"value": "Travel or temporary accommodation"
+									},
+									{
+										"label": "Other",
+										"value": "Other"
+									}
+								],
+								"type": "Radio"
+							}]
+						}],
+						"routing_rules": [{
+								"goto": {
+									"block": "household-summary",
+									"when": [{
+										"id": "nature-establishment-answer",
+										"condition": "equals",
+										"value": "Medical and care"
+									}]
+								}
+							},
+							{
+								"goto": {
+									"block": "household-summary"
+								}
+							}
+						]
+					},
+            {
+              "type": "Question",
+              "id": "address-type1",
+              "questions": [
                 {
-                    "id": "what-is-your-address-group",
-                    "title": "What is your address?",
-                    "blocks": [
+                  "id": "address-type-question1",
+                  "title": "What type of address is <em>{{answers['other-address-answer-building1']}}, {{answers['other-address-answer-street1']}}</em>?",
+                  "type": "General",
+                  "answers": [
+                    {
+                      "id": "address-type-answer1",
+                      "mandatory": false,
+                      "options": [
                         {
-                            "type": "Introduction",
-                            "id": "introduction"
+                          "label": "Armed forces base address",
+                          "value": "Armed forces base address"
                         },
                         {
-                            "type": "Question",
-                            "id": "what-is-your-address",
-                            "questions": [
-                                {
-                                    "id": "what-is-your-address-question",
-                                    "title": "What is your address?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "address-line-1",
-                                            "label": "House name or number",
-                                            "mandatory": true,
-                                            "type": "TextField",
-                                            "validation": {
-                                                "messages": {
-                                                    "MANDATORY_TEXTFIELD": "Enter an address to continue"
-                                                }
-                                            }
-                                        },
-                                        {
-                                            "id": "address-line-2",
-                                            "label": "Street",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "address-line-3",
-                                            "label": "Town",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "county",
-                                            "label": "County",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "postcode",
-                                            "label": "Postcode",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "country",
-                                            "label": "Country",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        }
-                                    ]
-                                }
-                            ]
+                          "label": "Another address when working away from home",
+                          "value": "Another address when working away from home"
                         },
                         {
-                            "type": "Question",
-                            "id": "confirm-establishment",
-                            "questions": [
-                             {
-                                 "id": "confirm-establishment-question",
-                                 "title": "Is this accomodation a ...basically confirm its a communal establishment?",
-                                 "definitions": [{
-                                        "title": "What is a Communal Establishment?",
-                                        "content": [
-                                            {
-                                                "description": "A Communal Establishment is defined as an establishment providing managed residential accommodation. Managed means full-time or part-time supervision of the accommodation. Blah blah use nicer wording "
-                                            }
-                                        ]
-                                    }],
-                                 "type": "General",
-                                 "answers": [
-                                   {
-                                       "id": "confirm-establishment-answer",
-                                       "mandatory": false,
-                                       "options": [
-                                         {
-                                           "label": "Yes, this is a communal establishment",
-                                           "value": "Yes"
-                                        },
-                                        {
-                                           "label": "No, this is a residential home",
-                                           "value": "No, this ia a residential home"
-                                        },
-                                        {
-                                           "label": "No, this is used for something else",
-                                           "value": "No, this ia used for something else"
-                                        }
-                                      ],
-                                      "type": "Radio"
-                                    }
-                                  ]
-                               }
-                            ],
-                            "routing_rules": [
-                             {
-                                "goto": {
-                                    "block": "nature-establishment",
-                                    "when": [
-                                      {
-                                         "id": "confirm-establishment-answer",
-                                         "condition": "equals",
-                                         "value": "Yes"
-                                      }
-                                    ]
-                                 }
-                              },
-                              {
-                                  "goto": {
-                                     "block": "household-summary"
-                                   }
-                               }
-                            ]
-                          },
-                          {
-                              "type": "Question",
-                              "id": "nature-establishment",
-                              "questions": [
-                               {
-                                    "id": "nature-establishment-question",
-                                    "title": "What is the nature of this establishment?",
-                                    "type": "General",
-                                    "answers": [
-                                       {
-                                          "id": "nature-establishment-answer",
-                                          "mandatory": false,
-                                           "options": [
-                                              {
-                                                 "label": "Medical and care",
-                                                 "value": "Medical and care"
-                                              },
-                                              {
-                                                 "label": "Education",
-                                                 "value": "Education"
-                                              },
-                                              {
-                                                 "label": "Armed Forces",
-                                                 "value": "Armed Forces",
-                                                 "description": "Defence establishment, including ships"
-                                              },
-                                              {
-                                                 "label": "Detention",                                
-                                                 "value": "Detention"
-                                              },
-                                              {
-                                                 "label": "Travel or temporary accommodation",
-                                                 "value": "Travel or temporary accommodation"
-                                              },
-                                              {
-                                                  "label": "Other",
-                                                  "value": "Other"
-                                              }
-                                           ],
-                                           "type": "Radio"
-                                        }
-                                      ]
-                                   }
-                                 ],
-                                 "routing_rules": [
-                                     {
-                                            "goto": {
-                                              "block": "household-summary",
-                                              "when": [
-                                                {
-                                                  "id": "nature-establishment-answert-answer",
-                                                  "condition": "equals",
-                                                  "value": "Medical and care"
-                                                }
-                                              ]
-                                            }
-                                          },
-                                          {
-                                            "goto": {
-                                              "block": "household-summary"
-                                            }
-                                          }
-                                        ]
-                                      }
-                       ]
-                   }
-               ]
+                          "label": "Student’s home address",
+                          "value": "Student’s home address"
+                        },
+                        {
+                          "label": "Student’s term time address",
+                          "value": "Student’s term time address"
+                        },
+                        {
+                          "label": "Another parent or guardian’s address",
+                          "value": "Another parent or guardian’s address"
+                        },
+                        {
+                          "label": "Partners address",
+                          "value": "Partners address"
+                        },
+                        {
+                          "label": "Another relatives address",
+                          "value": "Another relatives address"
+                        },
+                        {
+                          "label": "Holiday home",
+                          "value": "Holiday home"
+                        },
+                        {
+                          "label": "Other",
+                          "value": "Other"
+                        }
+                      ],
+                      "type": "Checkbox"
+                    }
+                  ]
+                }
+              ],
+              "routing_rules": [
+                {
+                  "goto": {
+                    "block": "household-summary"
+                  }
+                }
+              ]
             },
-           
-     {
-          "type": "Summary",
-          "id": "household-summary"
-     }
-          
+            {
+              "type": "Question",
+              "id": "address-type-non-uk1",
+              "questions": [
+                {
+                  "id": "address-type-question-non-uk1",
+                  "title": "What type of address do you stay at outside of the UK for more than 30 days a year?",
+                  "type": "General",
+                  "answers": [
+                    {
+                      "id": "address-type-answer-non-uk1",
+                      "mandatory": false,
+                      "options": [
+                        {
+                          "label": "Armed forces base address",
+                          "value": "Armed forces base address"
+                        },
+                        {
+                          "label": "Another address when working away from home",
+                          "value": "Another address when working away from home"
+                        },
+                        {
+                          "label": "Student’s home address",
+                          "value": "Student’s home address"
+                        },
+                        {
+                          "label": "Student’s term time address",
+                          "value": "Student’s term time address"
+                        },
+                        {
+                          "label": "Another parent or guardian’s address",
+                          "value": "Another parent or guardian’s address"
+                        },
+                        {
+                          "label": "Partners address",
+                          "value": "Partners address"
+                        },
+                        {
+                          "label": "Another relative's address",
+                          "value": "Another relative's address"
+                        },
+                        {
+                          "label": "Holiday home",
+                          "value": "Holiday home"
+                        },
+                        {
+                          "label": "Other",
+                          "value": "Other"
+                        }
+                      ],
+                      "type": "Checkbox"
+                    }
+                  ]
+                }
+              ],
+              "routing_rules": [
+                {
+                  "goto": {
+                    "block": "household-summary"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Summary",
+              "id": "household-summary"
+            }
+          ]
+        }
+      ]
+    }
   ]
 }
