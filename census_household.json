@@ -494,7 +494,7 @@
 				"block": "medical-care-group",
 				"when": [{
 					"id": "group-type-answer",
-					"condition": "equals",
+					"condition": "contains",
 					"value": "Medical and care"
 				}]
 		        }
@@ -504,7 +504,7 @@
 				"block": "responsibility",
 				"when": [{
 					"id": "group-type-answer",
-					"condition": "equals",
+					"condition": "contains",
 					"value": "Armed Forces"
 				}]
 		        }
@@ -514,7 +514,7 @@
 				"block": "responsibility",
 				"when": [{
 					"id": "group-type-answer",
-					"condition": "equals",
+					"condition": "contains",
 					"value": "Education"
 				}]
 		        }
@@ -524,7 +524,7 @@
 				"block": "responsibility",
 				"when": [{
 					"id": "group-type-answer",
-					"condition": "equals",
+					"condition": "contains",
 					"value": "Detention"
 				}]
 		        }
@@ -534,7 +534,7 @@
 				"block": "travel-temp-accomodation-group",
 				"when": [{
 					"id": "group-type-answer",
-					"condition": "equals",
+					"condition": "contains",
 					"value": "Travel or temporary accommodation"
 				}]
 		        }
@@ -544,7 +544,7 @@
 				"block": "other-establishment-group",
 				"when": [{
 					"id": "group-type-answer",
-					"condition": "equals",
+					"condition": "contains",
 					"value": "Other"
 				}]
 		        }
