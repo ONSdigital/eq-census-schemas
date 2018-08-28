@@ -396,6 +396,49 @@
                 }
               ]
             },
+	    {
+              "type": "Question",
+              "id": "age-range",
+              "questions": [
+                {
+                  "id": "age-range-question",
+                  "title": "Which age group does this establishment cater for?",
+                  "type": "General",
+                  "answers": [
+                    {
+                      "id": "age-range-answer",
+                      "mandatory": false,
+                      "options": [
+                        {
+                           "label": "Age 0 to 17 years",
+                           "value": "Age 0 to 17 years"
+                        },
+                        {
+                           "label": "Age 18 to 24 years",
+                           "value": "Age 18 to 24 years"
+                        },
+                        {
+                           "label": "Age 25 to 64 years",
+                           "value": "Age 25 to 64 years"
+                        },
+                        {
+                           "label": "Age 65 years and above",
+                           "value": "Age 65 years and above"
+                        }
+                      ],
+                      "type": "Checkbox"
+                    }
+                  ]
+                }
+              ],
+              "routing_rules": [
+                {
+                  "goto": {
+                    "block": "household-summary"
+                  }
+                }
+              ]
+            },	  
             {
               "type": "Summary",
               "id": "household-summary"
