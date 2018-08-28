@@ -516,7 +516,7 @@
 		 },	
 	          {
 			"goto": {
-				"block": "detention-group",
+				"block": "responsibility",
 				"when": [{
 					"id": "group-type-answer",
 					"condition": "equals",
