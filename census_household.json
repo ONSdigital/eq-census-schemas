@@ -68,7 +68,12 @@
 					"value": "Yes"
 				}]
 			}
+		   },
+		   {
+		        "goto": {
+				"block": "household-summary"	   
 			}
+		   }
 		]
 	    },
             {
