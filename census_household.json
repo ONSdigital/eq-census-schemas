@@ -439,7 +439,7 @@
               "routing_rules": [
                 {
                   "goto": {
-                    "block": "household-summary"
+                    "block": "group-type"
                   }
                 }
               ]
