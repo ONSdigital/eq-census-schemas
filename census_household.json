@@ -68,11 +68,6 @@
 					"value": "Yes"
 				}]
 			}
-			},
-			{
-			    "goto": {
-				"block": "household-summary"
-	    		    }
 			}
 		]
 	    },
@@ -85,7 +80,7 @@
 			"type": "General",
 			"answers": [{
 				"id": "nature-establishment-answer",
-				"mandatory": false,
+				"mandatory": true,
 				"options": [{
 						"label": "Medical and care",
 						"value": "Medical and care"
@@ -123,6 +118,16 @@
 					"id": "nature-establishment-answer",
 					"condition": "equals",
 					"value": "Medical and care"
+				}]
+		        }
+		 },
+	         {
+			"goto": {
+				"block": "age-range",
+				"when": [{
+					"id": "nature-establishment-answer",
+					"condition": "equals",
+					"value": "Armed Forces"
 				}]
 		        }
 		 },
@@ -438,7 +443,330 @@
                   }
                 }
               ]
-            },	  
+            },	 
+            {
+		"type": "Question",
+		"id": "group-type",
+		"questions": [{
+			"id": "group-type-question",
+			"title": "Which groups does this establishment cater for?",
+			"type": "General",
+			"answers": [{
+				"id": "group-type-answer",
+				"mandatory": true,
+				"options": [{
+						"label": "Medical and care",
+						"value": "Medical and care"
+					},
+					{
+						"label": "Education",
+						"value": "Education"
+					},
+					{
+						"label": "Armed Forces",
+						"value": "Armed Forces",
+						"description": "Defence establishment, including ships"
+					},
+					{
+						"label": "Detention",
+						"value": "Detention"
+					},
+					{
+						"label": "Travel or temporary accommodation",
+						"value": "Travel or temporary accommodation"
+					},
+					{
+						"label": "Other",
+						"value": "Other"
+					}
+				],
+				"type": "Checkbox"
+			}]
+		}],
+		"routing_rules": [
+		  {
+			"goto": {
+				"block": "medical-care-group",
+				"when": [{
+					"id": "group-type-answer",
+					"condition": "equals",
+					"value": "Medical and care"
+				}]
+		        }
+		 },
+	         {
+			"goto": {
+				"block": "responsibility",
+				"when": [{
+					"id": "group-type-answer",
+					"condition": "equals",
+					"value": "Armed Forces"
+				}]
+		        }
+		 },
+		 {
+			"goto": {
+				"block": "responsibility",
+				"when": [{
+					"id": "group-type-answer",
+					"condition": "equals",
+					"value": "Education"
+				}]
+		        }
+		 },	
+	          {
+			"goto": {
+				"block": "detention-group",
+				"when": [{
+					"id": "group-type-answer",
+					"condition": "equals",
+					"value": "Detention"
+				}]
+		        }
+		 },	
+	          {
+			"goto": {
+				"block": "travel-temp-accomodation-group",
+				"when": [{
+					"id": "group-type-answer",
+					"condition": "equals",
+					"value": "Travel or temporary accommodation"
+				}]
+		        }
+		 },
+	          {
+			"goto": {
+				"block": "other-establishment-group",
+				"when": [{
+					"id": "group-type-answer",
+					"condition": "equals",
+					"value": "Other"
+				}]
+		        }
+		 }
+		]
+	    },
+            {
+              "type": "Question",
+              "id": "medical-care-group",
+              "questions": [
+                {
+                  "id": "medical-care-group-question",
+                  "title": "Which groups of people in medical and care does this establishment cater for?",
+                  "type": "General",
+                  "answers": [
+                    {
+                      "id": "medical-care-group-answer",
+                      "mandatory": false,
+                      "options": [
+                        {
+                          "label": "Physical disability",
+                          "value": "Physical disability"
+                        },
+                        {
+                          "label": "Learning disability",
+                          "value": "Learning disability"
+                        },
+                        {
+                          "label": "Mental illness",
+                          "value": "Mental illness"
+                        },
+                        {
+                          "label": "Intermediate care",
+                          "value": "Intermediate care"
+                        },
+                        {
+                          "label": "Substance misuse",
+                          "value": "Substance misuse"
+                        },
+                        {
+                          "label": "End of life care",
+                          "value": "End of life care"
+                        },
+                        {
+                          "label": "Respite care",
+                          "value": "Respite care"
+                        },
+                        {
+                          "label": "Chronic illness care",
+                          "value": "Chronic illness care"
+                        },
+                        {
+                          "label": "Older people",
+                          "value": "Older people"
+                        }
+                      ],
+                      "type": "Checkbox"
+                    }
+                  ]
+                }
+              ],
+              "routing_rules": [
+                {
+                  "goto": {
+                    "block": "responsibility"
+                  }
+                }
+              ]
+            },
+             {
+              "type": "Question",
+              "id": "travel-temp-accomodation-group",
+              "questions": [
+                {
+                  "id": "travel-temp-accomodation-group-question",
+                  "title": "Which groups of people in travel or temporary accommodation does this establishment cater for?",
+                  "type": "General",
+                  "answers": [
+                    {
+                      "id": "travel-temp-accomodation-group-answer",
+                      "mandatory": false,
+                      "options": [
+                        {
+                           "label": "Paying guests",
+                           "value": "Paying guests"
+                        },
+                        {
+                           "label": "Homeless people",
+                           "value": "Homeless people"
+                        }
+                      ],
+                      "type": "Checkbox"
+                    }
+                  ]
+                }
+              ],
+              "routing_rules": [
+                {
+                  "goto": {
+                    "block": "responsibility"
+                  }
+                }
+              ]
+            },
+             {
+              "type": "Question",
+              "id": "other-establishment-group",
+              "questions": [
+                {
+                  "id": "other-establishment-group-question",
+                  "title": "Which groups of people in ‘Other’ does this establishment cater for?",
+                  "type": "General",
+                  "answers": [
+                    {
+                      "id": "other-establishment-group-answer",
+                      "mandatory": false,
+                      "options": [
+                        {
+                           "label": "Nurses and doctors",
+                           "value": "Nurses and doctors"
+                        },
+                        {
+                           "label": "Staff",
+                           "value": "Staff" 
+                        },
+			{
+                           "label": "Seasonal or temporary workers",
+                           "value": "Seasonal or temporary workers"
+                        },
+                        {
+                           "label": "Other",
+                           "value": "Other"
+                        }
+                      ],
+                      "type": "Checkbox"
+                    }
+                  ]
+                }
+              ],
+              "routing_rules": [
+                {
+                  "goto": {
+                    "block": "responsibility"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Question",
+              "id": "responsibility",
+              "questions": [
+                {
+                  "id": "responsibility-question",
+                  "title": "Who is responsible for the management of this establishment?",
+                  "type": "General",
+                  "answers": [
+                    {
+                      "id": "responsibility-answer",
+                      "mandatory": false,
+                      "options": [
+                        {
+                           "label": "NHS",
+                           "value": "NHS"
+                        },
+                        {
+                           "label": "Local authority",
+                           "value": "Local authority" 
+                        },
+			{
+                           "label": "Government department or agency",
+                           "value": "Government department or agency"
+                        },
+                        {
+                           "label": "Registered social landlord or housing association",
+                           "value": "Registered social landlord or housing association"
+                        },
+                        {
+                           "label": "Charity or voluntary organisation",
+                           "value": "Charity or voluntary organisation"
+                        },
+                        {
+                           "label": "Private owner or company",
+                           "value": "Private owner or company"
+                        },
+                        {
+                           "label": "Other",
+                           "value": "Other"
+                        }
+                      ],
+                      "type": "Checkbox"
+                    }
+                  ]
+                }
+              ],
+              "routing_rules": [
+                {
+                  "goto": {
+                    "block": "responsibility"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Question",
+              "id": "number-of-individuals",
+              "questions": [
+                {
+                  "id": "number-of-individuals-question",
+                  "title": "How many people do you currently have staying in this establishment?",
+		  "description": "This enables us to send the correct number of individual census forms to this establishment",
+                  "type": "General",
+                  "answers": [{
+                        "id": "number-of-individuals-answer",
+                        "label": "Number of individuals staying",
+                        "mandatory": true,
+                        "type": "Number"
+                    }]
+                }
+              ],
+              "routing_rules": [
+                {
+                  "goto": {
+                    "block": "household-summary"
+                  }
+                }
+              ]
+            },
             {
               "type": "Summary",
               "id": "household-summary"
