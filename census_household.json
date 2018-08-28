@@ -543,7 +543,12 @@
 					"value": "Other"
 				}]
 		        }
-		 }
+		 },
+			{
+				"goto": {
+				"block": "household-summary"
+				}
+			}
 		]
 	    },
             {
