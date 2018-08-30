@@ -4395,8 +4395,8 @@
                                                     "value": "Report to a depot"
                                                 },
                                                 {
-                                                    "label": "An offshore installation",
-                                                    "value": "An offshore installation"
+                                                    "label": "Work or study mainly at or from home",
+                                                    "value": "Work or study mainly at or from home"
                                                 },
                                                 {
                                                     "label": "No fixed place",
@@ -4429,6 +4429,17 @@
                                                 "id": "employer-type-of-address-answer",
                                                 "condition": "equals",
                                                 "value": "Report to a depot"
+                                            }
+                                        ]
+                                    }
+                                }, {
+                                     "goto": {
+                                        "block": "household-member-completed",
+                                        "when": [
+                                            {
+                                                "id": "employer-type-of-address-answer",
+                                                "condition": "equals",
+                                                "value": "Work or study mainly at or from home"
                                             }
                                         ]
                                     }
