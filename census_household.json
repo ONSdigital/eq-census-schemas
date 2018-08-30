@@ -4486,10 +4486,22 @@
                                         {
                                             "id": "armed-forces-answer",
                                             "mandatory": false,
+                                            "guidance": {
+                                                "show_guidance": "Why your answer is important",
+                                                "hide_guidance": "Why your answer is important",
+                                                "content": [{
+                                                   "description": "We are measuring the number of people who have served in UK Armed Forces and now left. This data is needed to support central and local government commitments made under the Armed Forces Covenant."
+                                                    }
+                                                 ]
+                                            },
                                             "options": [
                                                 {
-                                                    "label": "No, or currently serving",
-                                                    "value": "No, or currently serving"
+                                                    "label": "No",
+                                                    "value": "No"
+                                                },
+                                                {
+                                                    "label": "Yes, currently serving",
+                                                    "value": "Yes, currently serving"
                                                 },
                                                 {
                                                     "label": "Yes, previously served in Regular Armed Forces",
