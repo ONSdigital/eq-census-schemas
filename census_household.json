@@ -2525,7 +2525,7 @@
                                 {
                                     "id": "carer-question",
                                     "titles": [{
-                                            "value": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> look after, or give any help or support to family members, friends, neighbours or others because they have long-term physical or mental health conditions or illnesses, or problems related to old age?",
+                                            "value": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> look after, or give any help or support to anyone because they have long-term physical or mental health conditions or illnesses, or problems related to old age?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -2533,13 +2533,13 @@
                                             }]
                                         },
                                         {
-                                            "value": "Do you look after, or give any help or support to family members, friends, neighbours or others because they have long-term physical or mental health conditions or illnesses, or problems related to old age?"
+                                            "value": "Do you look after, or give any help or support to anyone because they have long-term physical or mental health conditions or illnesses, or problems related to old age?"
                                         }
                                     ],
                                     "guidance": {
                                         "content": [
                                             {
-                                                "title": "Exclude anything you do as part of your paid employment"
+                                                "title": "Do not count anything you do as part of your paid employment"
                                             }
                                         ]
                                     },
@@ -2793,9 +2793,9 @@
                                                     "description": "Includes Indian, Pakistani, Bangladeshi, Chinese or any other Asian background"
                                                 },
                                                 {
-                                                    "label": "Black, African, Caribbean or Black British",
-                                                    "value": "Black, African, Caribbean or Black British",
-                                                    "description": "Includes any Black, African, Caribbean or Black British background"
+                                                    "label": "Black, Caribbean, African or Black British",
+                                                    "value": "Black, Caribbean, African or Black British",
+                                                    "description": "Includes any Black, Caribbean, African or Black British background"
                                                 },
                                                 {
                                                     "label": "Other ethnic group",
@@ -2854,9 +2854,9 @@
                                                     "description": "Includes Indian, Pakistani, Bangladeshi, Chinese or any other Asian background"
                                                 },
                                                 {
-                                                    "label": "Black, African, Caribbean or Black British",
-                                                    "value": "Black, African, Caribbean or Black British",
-                                                    "description": "Includes any Black, African, Caribbean or Black British background"
+                                                    "label": "Black, Caribbean, African or Black British",
+                                                    "value": "Black, Caribbean, African or Black British",
+                                                    "description": "Includes any Black, Caribbean, African or Black British background"
                                                 },
                                                 {
                                                     "label": "Other ethnic group",
@@ -2924,7 +2924,7 @@
                                             {
                                                 "id": "ethnic-group-england-answer",
                                                 "condition": "equals",
-                                                "value": "Black, African, Caribbean or Black British"
+                                                "value": "Black, Caribbean, African or Black British"
                                             }
                                         ]
                                     }
@@ -2984,7 +2984,7 @@
                                             {
                                                 "id": "ethnic-group-wales-answer",
                                                 "condition": "equals",
-                                                "value": "Black, African, Caribbean or Black British"
+                                                "value": "Black, Caribbean, African or Black British"
                                             }
                                         ]
                                     }
@@ -3246,7 +3246,7 @@
                                                     "value": "White and Asian"
                                                 },
                                                 {
-                                                    "label": "Any other",
+                                                    "label": "Any other Mixed or Multiple background",
                                                     "value": "Other",
                                                     "child_answer_id": "mixed-ethnic-group-answer-other"
                                                 }
