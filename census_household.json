@@ -2074,7 +2074,7 @@
                                         "when": [
                                             {
                                                 "id": "religion-answer",
-                                                "condition": "contains",
+                                                "condition": "equals",
                                                 "value": "None"
                                             }
                                         ]
