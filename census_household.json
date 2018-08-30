@@ -3156,6 +3156,27 @@
                             "routing_rules": [
                                 {
                                     "goto": {
+                                        "block": "sexual-identity-proxy",
+                                        "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
+                                            }
+                                        },
+                                        {
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
                                         "block": "sexual-identity",
                                        "when": [{
                                             "id": "date-of-birth-answer",
@@ -3243,6 +3264,27 @@
                                 }
                             ],
                             "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "sexual-identity-proxy",
+                                        "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
+                                            }
+                                        },
+                                        {
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }
+                                        ]
+                                    }
+                                },
                                 {
                                     "goto": {
                                         "block": "sexual-identity",
@@ -3338,6 +3380,27 @@
                             "routing_rules": [
                                 {
                                     "goto": {
+                                        "block": "sexual-identity-proxy",
+                                        "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
+                                            }
+                                        },
+                                        {
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
                                         "block": "sexual-identity",
                                         "when": [{
                                             "id": "date-of-birth-answer",
@@ -3423,6 +3486,27 @@
                             "routing_rules": [
                                 {
                                     "goto": {
+                                        "block": "sexual-identity-proxy",
+                                        "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
+                                            }
+                                        },
+                                        {
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
                                         "block": "sexual-identity",
                                         "when": [{
                                             "id": "date-of-birth-answer",
@@ -3504,6 +3588,27 @@
                             "routing_rules": [
                                 {
                                     "goto": {
+                                        "block": "sexual-identity-proxy",
+                                        "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
+                                            }
+                                        },
+                                        {
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
                                         "block": "sexual-identity",
                                         "when": [{
                                             "id": "date-of-birth-answer",
@@ -3542,18 +3647,7 @@
                             "questions": [
                                 {
                                     "id": "sexual-identity-question",
-                                    "titles": [{
-                                            "value": "Which of the following best describes <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> sexual orientation?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "Which of the following best describes your sexual orientation?"
-                                        }
-                                    ],
+                                    "title": "Which of the following best describes your sexual orientation",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -3587,6 +3681,88 @@
                                         {
                                             "id": "sexual-identity-answer-other",
                                             "parent_answer_id": "sexual-identity-answer",
+                                            "type": "TextField",
+                                            "mandatory": false,
+                                            "label": "Please specify your sexual orientation"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                 {
+                                    "goto": {
+                                        "block": "birth-gender",
+                                        "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
+                                            }
+                                        }]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "understand-welsh",
+                                        "when": [
+                                            {
+                                                "meta": "region_code",
+                                                "condition": "equals",
+                                                "value": "GB-WLS"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "language"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "sexual-identity-proxy",
+                            "questions": [
+                                {
+                                    "id": "sexual-identity-question-proxy",
+                                    "title": "Which of the following best describes <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> sexual orientation?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "sexual-identity-answer-proxy",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Straight or Heterosexual",
+                                                    "value": "Straight or Heterosexual"
+                                                },
+                                                {
+                                                    "label": "Gay or Lesbian",
+                                                    "value": "Gay or Lesbian"
+                                                },
+                                                {
+                                                    "label": "Bisexual",
+                                                    "value": "Bisexual"
+                                                },
+                                                {
+                                                    "label": "Other sexual orientation",
+                                                    "value": "Other sexual orientation",
+                                                    "child_answer_id": "sexual-identity-answer-other-proxy"
+                                                },
+                                                {
+                                                    "label": "Prefer not to say",
+                                                    "value": "Prefer not to say"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        },
+                                        {
+                                            "id": "sexual-identity-answer-other-proxy",
+                                            "parent_answer_id": "sexual-identity-answer-proxy",
                                             "type": "TextField",
                                             "mandatory": false,
                                             "label": "Please specify their sexual orientation"
@@ -3629,7 +3805,6 @@
                                 }
                             ]
                         },
-                       
                         {
                             "type": "Question",
                             "id": "birth-gender",
