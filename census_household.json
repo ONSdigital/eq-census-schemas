@@ -2780,7 +2780,7 @@
                                                 {
                                                     "label": "White",
                                                     "value": "White",
-                                                    "description": "Includes British, Roma or any other White background"
+                                                    "description": "Includes British, Northern Irish, Irish, Gypsy, Irish Traveller, Roma or any other White background"
                                                 },
                                                 {
                                                     "label": "Mixed or Multiple ethnic groups",
@@ -2841,7 +2841,7 @@
                                                 {
                                                     "label": "White",
                                                     "value": "White",
-                                                    "description": "Includes British, Roma or any other White background"
+                                                    "description": "Includes British, Northern Irish, Irish, Gypsy, Irish Traveller, Roma or any other White background"
                                                 },
                                                 {
                                                     "label": "Mixed or Multiple ethnic groups",
@@ -3053,8 +3053,8 @@
                                                     "value": "Irish"
                                                 },
                                                 {
-                                                    "label": "Gypsy, Romany Gypsy or Irish Traveller",
-                                                    "value": "Gypsy, Romany Gypsy or Irish Traveller"
+                                                    "label": "Gypsy or Irish Traveller",
+                                                    "value": "Gypsy or Irish Traveller"
                                                 },
                                                 {
                                                     "label": "Roma",
@@ -3117,8 +3117,8 @@
                                                     "value": "Irish"
                                                 },
                                                 {
-                                                    "label": "Gypsy, Romany Gypsy or Irish Traveller",
-                                                    "value": "Gypsy, Romany Gypsy or Irish Traveller"
+                                                    "label": "Gypsy or Irish Traveller",
+                                                    "value": "Gypsy or Irish Traveller"
                                                 },
                                                 {
                                                     "label": "Roma",
