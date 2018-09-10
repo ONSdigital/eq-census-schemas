@@ -1,727 +1,785 @@
 {
-  "mime_type": "application/json/ons/eq",
-  "schema_version": "0.0.1",
-  "data_version": "0.0.2",
-  "survey_id": "census",
-  "title": "2018 Census Test",
-  "description": "Census England Household Schema",
-  "theme": "census",
-  "legal_basis": "Voluntary",
-  "eq_id": "census",
-  "form_type": "household",
-  "metadata": [
-    {
-        "name": "user_id",
-        "validator": "string"
-    },
-    {
-        "name": "period_id",
-        "validator": "string"
-    }
-  ],
-  "sections": [
-    {
-      "id": "default-section",
-      "groups": [
+    "mime_type": "application/json/ons/eq",
+    "schema_version": "0.0.1",
+    "data_version": "0.0.2",
+    "survey_id": "census",
+    "title": "2018 Census Test",
+    "description": "Census England Household Schema",
+    "theme": "census",
+    "legal_basis": "Voluntary",
+    "eq_id": "census",
+    "form_type": "household",
+    "metadata": [
         {
-          "id": "address-group",
-          "title": "",
-          "blocks": [
-            {
-		"type": "Question",
-		"id": "confirm-establishment",
-		"questions": [{
-			"id": "confirm-establishment-question",
-			"title": "Is this accomodation a ...basically confirm its a communal establishment?",
-			"definitions": [{
-				"title": "What is a Communal Establishment?",
-				"content": [{
-					"description": "A Communal Establishment is defined as an establishment providing managed residential accommodation. Managed means full-time or part-time supervision of the accommodation. Blah blah use nicer wording "
-				}]
-			}],
-			"type": "General",
-			"answers": [{
-				"id": "confirm-establishment-answer",
-				"mandatory": false,
-				"options": [{
-						"label": "Yes, this is a communal establishment",
-						"value": "Yes"
-					},
-					{
-						"label": "No, this is a residential home",
-						"value": "No, this ia a residential home"
-					},
-					{
-						"label": "No, this is used for something else",
-						"value": "No, this ia used for something else"
-					}
-				],
-				"type": "Radio"
-			}]
-		}],
-		"routing_rules": [{
-			"goto": {
-				"block": "nature-establishment",
-				"when": [{
-					"id": "confirm-establishment-answer",
-					"condition": "equals",
-					"value": "Yes"
-				}]
-			}
-		   },
-		   {
-		        "goto": {
-				"block": "household-summary"	   
-			}
-		   }
-		]
-	    },
-            {
-		"type": "Question",
-		"id": "nature-establishment",
-		"questions": [{
-			"id": "nature-establishment-question",
-			"title": "What is the nature of this establishment?",
-			"type": "General",
-			"answers": [{
-				"id": "nature-establishment-answer",
-				"mandatory": true,
-				"options": [{
-						"label": "Medical and care",
-						"value": "Medical and care"
-					},
-					{
-						"label": "Education",
-						"value": "Education"
-					},
-					{
-						"label": "Armed Forces",
-						"value": "Armed Forces",
-						"description": "Defence establishment, including ships"
-					},
-					{
-						"label": "Detention",
-						"value": "Detention"
-					},
-					{
-						"label": "Travel or temporary accommodation",
-						"value": "Travel or temporary accommodation"
-					},
-					{
-						"label": "Other",
-						"value": "Other"
-					}
-				],
-				"type": "Radio"
-			}]
-		}],
-		"routing_rules": [
-		  {
-			"goto": {
-				"block": "medical-care",
-				"when": [{
-					"id": "nature-establishment-answer",
-					"condition": "equals",
-					"value": "Medical and care"
-				}]
-		        }
-		 },
-	         {
-			"goto": {
-				"block": "age-range",
-				"when": [{
-					"id": "nature-establishment-answer",
-					"condition": "equals",
-					"value": "Armed Forces"
-				}]
-		        }
-		 },
-		 {
-			"goto": {
-				"block": "education",
-				"when": [{
-					"id": "nature-establishment-answer",
-					"condition": "equals",
-					"value": "Education"
-				}]
-		        }
-		 },	
-	          {
-			"goto": {
-				"block": "detention",
-				"when": [{
-					"id": "nature-establishment-answer",
-					"condition": "equals",
-					"value": "Detention"
-				}]
-		        }
-		 },	
-	          {
-			"goto": {
-				"block": "travel-temp-accomodation",
-				"when": [{
-					"id": "nature-establishment-answer",
-					"condition": "equals",
-					"value": "Travel or temporary accommodation"
-				}]
-		        }
-		 },
-	          {
-			"goto": {
-				"block": "other-establishment",
-				"when": [{
-					"id": "nature-establishment-answer",
-					"condition": "equals",
-					"value": "Other"
-				}]
-		        }
-		 },
-		 {
-			"goto": {
-				"block": "household-summary"
-			}
-		 }
-		]
-	    },
-            {
-              "type": "Question",
-              "id": "medical-care",
-              "questions": [
-                {
-                  "id": "medical-care-question",
-                  "title": "What type of medical and care establishment is (pipe address)?",
-                  "type": "General",
-                  "answers": [
-                    {
-                      "id": "medical-care-answer",
-                      "mandatory": false,
-                      "options": [
-                        {
-                          "label": "General hospital",
-                          "value": "General hospital"
-                        },
-                        {
-                          "label": "Mental health hospital or unit",
-                          "value": "Mental health hospital or unit",
-		          "description": "Including secure units"
-                        },
-                        {
-                          "label": "Other hospital",
-                          "value": "Other hospital"
-                        },
-                        {
-                          "label": "Care home without nursing",
-                          "value": "Care home without nursing"
-                        },
-                        {
-                          "label": "Care home with nursing",
-                          "value": "Care home with nursing"
-                        },
-                        {
-                          "label": "Sheltered housing only",
-                          "value": "Sheltered housing only"
-                        },
-                        {
-                          "label": "Children’s home",
-                          "value": "Children’s home",
-		          "description": "Including secure units"
-                        },
-                        {
-                          "label": "Other medical and care establishment",
-                          "value": "Other"
-                        }
-                      ],
-                      "type": "Checkbox"
-                    }
-                  ]
-                }
-              ],
-              "routing_rules": [
-                {
-                  "goto": {
-                    "block": "age-range"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "Question",
-              "id": "education",
-              "questions": [
-                {
-                  "id": "education-question",
-                  "title": "What type of education establishment is (pipe address)?",
-                  "type": "General",
-                  "answers": [
-                    {
-                      "id": "education-answer",
-                      "mandatory": false,
-                      "options": [
-                        {
-                          "label": "School",
-                          "value": "School"
-                        },
-                        {
-                          "label": "University",
-                          "value": "University",
-		          "description": "For example halls of residence"
-                        },
-                        {
-                          "label": "Other educational establishment",
-                          "value": "Other educational establishment"
-                        }
-                      ],
-                      "type": "Checkbox"
-                    }
-                  ]
-                }
-              ],
-              "routing_rules": [
-                {
-                  "goto": {
-                    "block": "age-range"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "Question",
-              "id": "detention",
-              "questions": [
-                {
-                  "id": "detention-question",
-                  "title": "What type of detention establishment is (pipe address)?",
-                  "type": "General",
-                  "answers": [
-                    {
-                      "id": "detention-answer",
-                      "mandatory": false,
-                      "options": [
-                        {
-                          "label": "Prison Service establishment",
-                          "value": "Prison Service establishment"
-                        },
-                        {
-                          "label": "Approved premises (probation or bail hostel)",
-                          "value": "Approved premises (probation or bail hostel)"
-                        },
-                        {
-                          "label": "Detention centre",
-                          "value": "Detention centre"
-                        },
-                        {
-                          "label": "Other detention establishment",
-                          "value": "Other detention establishment"
-                        }
-                      ],
-                      "type": "Checkbox"
-                    }
-                  ]
-                }
-              ],
-              "routing_rules": [
-                {
-                  "goto": {
-                    "block": "age-range"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "Question",
-              "id": "travel-temp-accomodation",
-              "questions": [
-                {
-                  "id": "travel-temp-accomodation-question",
-                  "title": "What type of travel or temporary accomodation is (pipe address)?",
-                  "type": "General",
-                  "answers": [
-                    {
-                      "id": "travel-temp-accomodation-answer",
-                      "mandatory": false,
-                      "options": [
-                        {
-                           "label": "Hotel, guest house, B&B or youth hostel",
-                           "value": "Hotel, guest house, B&B or youth hostel"
-                        },
-                        {
-                           "label": "Holiday accommodation",
-                           "value": "Holiday accommodation",
-			   "description": "For example holiday parks"
-                        },
-                        {
-                           "label": "Hostel or temporary accommodation",
-                           "value": "Hostel or temporary accommodation"
-                        }
-                      ],
-                      "type": "Checkbox"
-                    }
-                  ]
-                }
-              ],
-              "routing_rules": [
-                {
-                  "goto": {
-                    "block": "age-range"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "Question",
-              "id": "other-establishment",
-              "questions": [
-                {
-                  "id": "other-establishment-question",
-                  "title": "What type of establishment is (pipe address)?",
-                  "type": "General",
-                  "answers": [
-                    {
-                      "id": "other-establishment-answer",
-                      "mandatory": false,
-                      "options": [
-                        {
-                           "label": "Religious establishment",
-                           "value": "Religious establishment"
-                        },
-                        {
-                           "label": "Staff or worker accommodation only",
-                           "value": "Staff or worker accommodation only"
-                        },
-                        {
-                           "label": "Other establishment",
-                           "value": "Other establishment"
-                        }
-                      ],
-                      "type": "Checkbox"
-                    }
-                  ]
-                }
-              ],
-              "routing_rules": [
-                {
-                  "goto": {
-                    "block": "age-range"
-                  }
-                }
-              ]
-            },
-	    {
-              "type": "Question",
-              "id": "age-range",
-              "questions": [
-                {
-                  "id": "age-range-question",
-                  "title": "Which age group does this establishment cater for?",
-                  "type": "General",
-                  "answers": [
-                    {
-                      "id": "age-range-answer",
-                      "mandatory": false,
-                      "options": [
-                        {
-                           "label": "Age 0 to 17 years",
-                           "value": "Age 0 to 17 years"
-                        },
-                        {
-                           "label": "Age 18 to 24 years",
-                           "value": "Age 18 to 24 years"
-                        },
-                        {
-                           "label": "Age 25 to 64 years",
-                           "value": "Age 25 to 64 years"
-                        },
-                        {
-                           "label": "Age 65 years and above",
-                           "value": "Age 65 years and above"
-                        }
-                      ],
-                      "type": "Checkbox"
-                    }
-                  ]
-                }
-              ],
-              "routing_rules": [
-                {
-                  "goto": {
-                    "block": "group-type"
-                  }
-                }
-              ]
-            },	 
-            {
-		"type": "Question",
-		"id": "group-type",
-		"questions": [{
-			"id": "group-type-question",
-			"title": "Which groups does this establishment cater for?",
-			"type": "General",
-			"answers": [{
-				"id": "group-type-answer",
-				"mandatory": true,
-				"options": [{
-						"label": "Medical and care",
-						"value": "Medical and care"
-					},
-					{
-						"label": "Education",
-						"value": "Education"
-					},
-					{
-						"label": "Armed Forces",
-						"value": "Armed Forces",
-						"description": "Defence establishment, including ships"
-					},
-					{
-						"label": "Detention",
-						"value": "Detention"
-					},
-					{
-						"label": "Travel or temporary accommodation",
-						"value": "Travel or temporary accommodation"
-					},
-					{
-						"label": "Other",
-						"value": "Other"
-					}
-				],
-				"type": "Checkbox"
-			}]
-		}]
-	    },
-            {
-              "type": "Question",
-              "id": "medical-care-group",
-	      "skip_conditions": [{
-                  "when": [{
-                      "id": "group-type-answer",
-                      "condition": "not contains",
-                      "value": "Medical and care"
-	          }]
-              }],
-              "questions": [
-                {
-                  "id": "medical-care-group-question",
-                  "title": "Which groups of people in medical and care does this establishment cater for?",
-                  "type": "General",
-                  "answers": [
-                    {
-                      "id": "medical-care-group-answer",
-                      "mandatory": false,
-                      "options": [
-                        {
-                          "label": "Physical disability",
-                          "value": "Physical disability"
-                        },
-                        {
-                          "label": "Learning disability",
-                          "value": "Learning disability"
-                        },
-                        {
-                          "label": "Mental illness",
-                          "value": "Mental illness"
-                        },
-                        {
-                          "label": "Intermediate care",
-                          "value": "Intermediate care"
-                        },
-                        {
-                          "label": "Substance misuse",
-                          "value": "Substance misuse"
-                        },
-                        {
-                          "label": "End of life care",
-                          "value": "End of life care"
-                        },
-                        {
-                          "label": "Respite care",
-                          "value": "Respite care"
-                        },
-                        {
-                          "label": "Chronic illness care",
-                          "value": "Chronic illness care"
-                        },
-                        {
-                          "label": "Older people",
-                          "value": "Older people"
-                        }
-                      ],
-                      "type": "Checkbox"
-                    }
-                  ]
-                }
-              ]
-            },
-             {
-              "type": "Question",
-              "id": "travel-temp-accomodation-group",
-	      "skip_conditions": [{
-                  "when": [{
-                      "id": "group-type-answer",
-                      "condition": "not contains",
-                      "value": "Travel or temporary accommodation"
-	          }]
-              }],
-              "questions": [
-                {
-                  "id": "travel-temp-accomodation-group-question",
-                  "title": "Which groups of people in travel or temporary accommodation does this establishment cater for?",
-                  "type": "General",
-                  "answers": [
-                    {
-                      "id": "travel-temp-accomodation-group-answer",
-                      "mandatory": false,
-                      "options": [
-                        {
-                           "label": "Paying guests",
-                           "value": "Paying guests"
-                        },
-                        {
-                           "label": "Homeless people",
-                           "value": "Homeless people"
-                        }
-                      ],
-                      "type": "Checkbox"
-                    }
-                  ]
-                }
-              ]
-            },
-             {
-              "type": "Question",
-              "id": "other-establishment-group",
-	      "skip_conditions": [{
-                  "when": [{
-                      "id": "group-type-answer",
-                      "condition": "not contains",
-                      "value": "Other"
-	          }]
-              }],
-              "questions": [
-                {
-                  "id": "other-establishment-group-question",
-                  "title": "Which groups of people in ‘Other’ does this establishment cater for?",
-                  "type": "General",
-                  "answers": [
-                    {
-                      "id": "other-establishment-group-answer",
-                      "mandatory": false,
-                      "options": [
-                        {
-                           "label": "Nurses and doctors",
-                           "value": "Nurses and doctors"
-                        },
-                        {
-                           "label": "Staff",
-                           "value": "Staff" 
-                        },
-			{
-                           "label": "Seasonal or temporary workers",
-                           "value": "Seasonal or temporary workers"
-                        },
-                        {
-                           "label": "Other",
-                           "value": "Other"
-                        }
-                      ],
-                      "type": "Checkbox"
-                    }
-                  ]
-                }
-              ],
-            },
-            {
-              "type": "Question",
-              "id": "responsibility",
-	      "skip_conditions": [{
-                  "when": [{
-                      "id": "group-type-answer",
-                      "condition": "not contains",
-                      "value": "Armed Forces"
-	          }]
-              }, {
-                  "when": [{
-                      "id": "group-type-answer",
-                      "condition": "not contains",
-                      "value": "Education"
-	          }]
-              }, {
-                  "when": [{
-                      "id": "group-type-answer",
-                      "condition": "not contains",
-                      "value": "Detention"
-	          }]
-              }],
-              "questions": [
-                {
-                  "id": "responsibility-question",
-                  "title": "Who is responsible for the management of this establishment?",
-                  "type": "General",
-                  "answers": [
-                    {
-                      "id": "responsibility-answer",
-                      "mandatory": false,
-                      "options": [
-                        {
-                           "label": "NHS",
-                           "value": "NHS"
-                        },
-                        {
-                           "label": "Local authority",
-                           "value": "Local authority" 
-                        },
-			{
-                           "label": "Government department or agency",
-                           "value": "Government department or agency"
-                        },
-                        {
-                           "label": "Registered social landlord or housing association",
-                           "value": "Registered social landlord or housing association"
-                        },
-                        {
-                           "label": "Charity or voluntary organisation",
-                           "value": "Charity or voluntary organisation"
-                        },
-                        {
-                           "label": "Private owner or company",
-                           "value": "Private owner or company"
-                        },
-                        {
-                           "label": "Other",
-                           "value": "Other"
-                        }
-                      ],
-                      "type": "Checkbox"
-                    }
-                  ]
-                }
-              ],
-            },
-            {
-              "type": "Question",
-              "id": "number-of-individuals",
-              "questions": [
-                {
-                  "id": "number-of-individuals-question",
-                  "title": "How many people do you currently have staying in this establishment?",
-		  "description": "This enables us to send the correct number of individual census forms to this establishment",
-                  "type": "General",
-                  "answers": [{
-                        "id": "number-of-individuals-answer",
-                        "label": "Number of individuals staying",
-                        "mandatory": true,
-                        "type": "Number"
-                    }]
-                }
-              ]
-            },
-            {
-              "type": "Summary",
-              "id": "household-summary"
-            }
-          ]
+            "name": "user_id",
+            "validator": "string"
+        },
+        {
+            "name": "period_id",
+            "validator": "string"
         }
-      ]
-    }
-  ]
+    ],
+    "sections": [
+        {
+            "id": "default-section",
+            "groups": [
+                {
+                    "id": "address-group",
+                    "title": "",
+                    "blocks": [
+                        {
+                            "type": "Question",
+                            "id": "confirm-establishment",
+                            "questions": [
+                                {
+                                    "id": "confirm-establishment-question",
+                                    "title": "Is this accomodation a ...basically confirm its a communal establishment?",
+                                    "definitions": [
+                                        {
+                                            "title": "What is a Communal Establishment?",
+                                            "content": [
+                                                {
+                                                    "description": "A Communal Establishment is defined as an establishment providing managed residential accommodation. Managed means full-time or part-time supervision of the accommodation. Blah blah use nicer wording "
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "confirm-establishment-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Yes, this is a communal establishment",
+                                                    "value": "Yes"
+                                                },
+                                                {
+                                                    "label": "No, this is a residential home",
+                                                    "value": "No, this ia a residential home"
+                                                },
+                                                {
+                                                    "label": "No, this is used for something else",
+                                                    "value": "No, this ia used for something else"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "nature-establishment",
+                                        "when": [
+                                            {
+                                                "id": "confirm-establishment-answer",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "household-summary"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "nature-establishment",
+                            "questions": [
+                                {
+                                    "id": "nature-establishment-question",
+                                    "title": "What is the nature of this establishment?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "nature-establishment-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "Medical and care",
+                                                    "value": "Medical and care"
+                                                },
+                                                {
+                                                    "label": "Education",
+                                                    "value": "Education"
+                                                },
+                                                {
+                                                    "label": "Armed Forces",
+                                                    "value": "Armed Forces",
+                                                    "description": "Defence establishment, including ships"
+                                                },
+                                                {
+                                                    "label": "Detention",
+                                                    "value": "Detention"
+                                                },
+                                                {
+                                                    "label": "Travel or temporary accommodation",
+                                                    "value": "Travel or temporary accommodation"
+                                                },
+                                                {
+                                                    "label": "Other",
+                                                    "value": "Other"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "medical-care",
+                                        "when": [
+                                            {
+                                                "id": "nature-establishment-answer",
+                                                "condition": "equals",
+                                                "value": "Medical and care"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "age-range",
+                                        "when": [
+                                            {
+                                                "id": "nature-establishment-answer",
+                                                "condition": "equals",
+                                                "value": "Armed Forces"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "education",
+                                        "when": [
+                                            {
+                                                "id": "nature-establishment-answer",
+                                                "condition": "equals",
+                                                "value": "Education"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "detention",
+                                        "when": [
+                                            {
+                                                "id": "nature-establishment-answer",
+                                                "condition": "equals",
+                                                "value": "Detention"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "travel-temp-accomodation",
+                                        "when": [
+                                            {
+                                                "id": "nature-establishment-answer",
+                                                "condition": "equals",
+                                                "value": "Travel or temporary accommodation"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "other-establishment",
+                                        "when": [
+                                            {
+                                                "id": "nature-establishment-answer",
+                                                "condition": "equals",
+                                                "value": "Other"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "household-summary"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "medical-care",
+                            "questions": [
+                                {
+                                    "id": "medical-care-question",
+                                    "title": "What type of medical and care establishment is (pipe address)?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "medical-care-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "General hospital",
+                                                    "value": "General hospital"
+                                                },
+                                                {
+                                                    "label": "Mental health hospital or unit",
+                                                    "value": "Mental health hospital or unit",
+                                                    "description": "Including secure units"
+                                                },
+                                                {
+                                                    "label": "Other hospital",
+                                                    "value": "Other hospital"
+                                                },
+                                                {
+                                                    "label": "Care home without nursing",
+                                                    "value": "Care home without nursing"
+                                                },
+                                                {
+                                                    "label": "Care home with nursing",
+                                                    "value": "Care home with nursing"
+                                                },
+                                                {
+                                                    "label": "Sheltered housing only",
+                                                    "value": "Sheltered housing only"
+                                                },
+                                                {
+                                                    "label": "Children’s home",
+                                                    "value": "Children’s home",
+                                                    "description": "Including secure units"
+                                                },
+                                                {
+                                                    "label": "Other medical and care establishment",
+                                                    "value": "Other"
+                                                }
+                                            ],
+                                            "type": "Checkbox"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "age-range"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "education",
+                            "questions": [
+                                {
+                                    "id": "education-question",
+                                    "title": "What type of education establishment is (pipe address)?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "education-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "School",
+                                                    "value": "School"
+                                                },
+                                                {
+                                                    "label": "University",
+                                                    "value": "University",
+                                                    "description": "For example halls of residence"
+                                                },
+                                                {
+                                                    "label": "Other educational establishment",
+                                                    "value": "Other educational establishment"
+                                                }
+                                            ],
+                                            "type": "Checkbox"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "age-range"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "detention",
+                            "questions": [
+                                {
+                                    "id": "detention-question",
+                                    "title": "What type of detention establishment is (pipe address)?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "detention-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Prison Service establishment",
+                                                    "value": "Prison Service establishment"
+                                                },
+                                                {
+                                                    "label": "Approved premises (probation or bail hostel)",
+                                                    "value": "Approved premises (probation or bail hostel)"
+                                                },
+                                                {
+                                                    "label": "Detention centre",
+                                                    "value": "Detention centre"
+                                                },
+                                                {
+                                                    "label": "Other detention establishment",
+                                                    "value": "Other detention establishment"
+                                                }
+                                            ],
+                                            "type": "Checkbox"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "age-range"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "travel-temp-accomodation",
+                            "questions": [
+                                {
+                                    "id": "travel-temp-accomodation-question",
+                                    "title": "What type of travel or temporary accomodation is (pipe address)?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "travel-temp-accomodation-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Hotel, guest house, B&B or youth hostel",
+                                                    "value": "Hotel, guest house, B&B or youth hostel"
+                                                },
+                                                {
+                                                    "label": "Holiday accommodation",
+                                                    "value": "Holiday accommodation",
+                                                    "description": "For example holiday parks"
+                                                },
+                                                {
+                                                    "label": "Hostel or temporary accommodation",
+                                                    "value": "Hostel or temporary accommodation"
+                                                }
+                                            ],
+                                            "type": "Checkbox"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "age-range"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "other-establishment",
+                            "questions": [
+                                {
+                                    "id": "other-establishment-question",
+                                    "title": "What type of establishment is (pipe address)?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "other-establishment-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Religious establishment",
+                                                    "value": "Religious establishment"
+                                                },
+                                                {
+                                                    "label": "Staff or worker accommodation only",
+                                                    "value": "Staff or worker accommodation only"
+                                                },
+                                                {
+                                                    "label": "Other establishment",
+                                                    "value": "Other establishment"
+                                                }
+                                            ],
+                                            "type": "Checkbox"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "age-range"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "age-range",
+                            "questions": [
+                                {
+                                    "id": "age-range-question",
+                                    "title": "Which age group does this establishment cater for?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "age-range-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Age 0 to 17 years",
+                                                    "value": "Age 0 to 17 years"
+                                                },
+                                                {
+                                                    "label": "Age 18 to 24 years",
+                                                    "value": "Age 18 to 24 years"
+                                                },
+                                                {
+                                                    "label": "Age 25 to 64 years",
+                                                    "value": "Age 25 to 64 years"
+                                                },
+                                                {
+                                                    "label": "Age 65 years and above",
+                                                    "value": "Age 65 years and above"
+                                                }
+                                            ],
+                                            "type": "Checkbox"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "group-type"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "group-type",
+                            "questions": [
+                                {
+                                    "id": "group-type-question",
+                                    "title": "Which groups does this establishment cater for?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "group-type-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "Medical and care",
+                                                    "value": "Medical and care"
+                                                },
+                                                {
+                                                    "label": "Education",
+                                                    "value": "Education"
+                                                },
+                                                {
+                                                    "label": "Armed Forces",
+                                                    "value": "Armed Forces",
+                                                    "description": "Defence establishment, including ships"
+                                                },
+                                                {
+                                                    "label": "Detention",
+                                                    "value": "Detention"
+                                                },
+                                                {
+                                                    "label": "Travel or temporary accommodation",
+                                                    "value": "Travel or temporary accommodation"
+                                                },
+                                                {
+                                                    "label": "Other",
+                                                    "value": "Other"
+                                                }
+                                            ],
+                                            "type": "Checkbox"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "medical-care-group",
+                            "skip_conditions": [
+                                {
+                                    "when": [
+                                        {
+                                            "id": "group-type-answer",
+                                            "condition": "not contains",
+                                            "value": "Medical and care"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "questions": [
+                                {
+                                    "id": "medical-care-group-question",
+                                    "title": "Which groups of people in medical and care does this establishment cater for?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "medical-care-group-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Physical disability",
+                                                    "value": "Physical disability"
+                                                },
+                                                {
+                                                    "label": "Learning disability",
+                                                    "value": "Learning disability"
+                                                },
+                                                {
+                                                    "label": "Mental illness",
+                                                    "value": "Mental illness"
+                                                },
+                                                {
+                                                    "label": "Intermediate care",
+                                                    "value": "Intermediate care"
+                                                },
+                                                {
+                                                    "label": "Substance misuse",
+                                                    "value": "Substance misuse"
+                                                },
+                                                {
+                                                    "label": "End of life care",
+                                                    "value": "End of life care"
+                                                },
+                                                {
+                                                    "label": "Respite care",
+                                                    "value": "Respite care"
+                                                },
+                                                {
+                                                    "label": "Chronic illness care",
+                                                    "value": "Chronic illness care"
+                                                },
+                                                {
+                                                    "label": "Older people",
+                                                    "value": "Older people"
+                                                }
+                                            ],
+                                            "type": "Checkbox"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "travel-temp-accomodation-group",
+                            "skip_conditions": [
+                                {
+                                    "when": [
+                                        {
+                                            "id": "group-type-answer",
+                                            "condition": "not contains",
+                                            "value": "Travel or temporary accommodation"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "questions": [
+                                {
+                                    "id": "travel-temp-accomodation-group-question",
+                                    "title": "Which groups of people in travel or temporary accommodation does this establishment cater for?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "travel-temp-accomodation-group-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Paying guests",
+                                                    "value": "Paying guests"
+                                                },
+                                                {
+                                                    "label": "Homeless people",
+                                                    "value": "Homeless people"
+                                                }
+                                            ],
+                                            "type": "Checkbox"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "other-establishment-group",
+                            "skip_conditions": [
+                                {
+                                    "when": [
+                                        {
+                                            "id": "group-type-answer",
+                                            "condition": "not contains",
+                                            "value": "Other"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "questions": [
+                                {
+                                    "id": "other-establishment-group-question",
+                                    "title": "Which groups of people in ‘Other’ does this establishment cater for?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "other-establishment-group-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Nurses and doctors",
+                                                    "value": "Nurses and doctors"
+                                                },
+                                                {
+                                                    "label": "Staff",
+                                                    "value": "Staff"
+                                                },
+                                                {
+                                                    "label": "Seasonal or temporary workers",
+                                                    "value": "Seasonal or temporary workers"
+                                                },
+                                                {
+                                                    "label": "Other",
+                                                    "value": "Other"
+                                                }
+                                            ],
+                                            "type": "Checkbox"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "responsibility",
+                            "skip_conditions": [
+                                {
+                                    "when": [
+                                        {
+                                            "id": "group-type-answer",
+                                            "condition": "not contains",
+                                            "value": "Armed Forces"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "when": [
+                                        {
+                                            "id": "group-type-answer",
+                                            "condition": "not contains",
+                                            "value": "Education"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "when": [
+                                        {
+                                            "id": "group-type-answer",
+                                            "condition": "not contains",
+                                            "value": "Detention"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "questions": [
+                                {
+                                    "id": "responsibility-question",
+                                    "title": "Who is responsible for the management of this establishment?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "responsibility-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "NHS",
+                                                    "value": "NHS"
+                                                },
+                                                {
+                                                    "label": "Local authority",
+                                                    "value": "Local authority"
+                                                },
+                                                {
+                                                    "label": "Government department or agency",
+                                                    "value": "Government department or agency"
+                                                },
+                                                {
+                                                    "label": "Registered social landlord or housing association",
+                                                    "value": "Registered social landlord or housing association"
+                                                },
+                                                {
+                                                    "label": "Charity or voluntary organisation",
+                                                    "value": "Charity or voluntary organisation"
+                                                },
+                                                {
+                                                    "label": "Private owner or company",
+                                                    "value": "Private owner or company"
+                                                },
+                                                {
+                                                    "label": "Other",
+                                                    "value": "Other"
+                                                }
+                                            ],
+                                            "type": "Checkbox"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "number-of-individuals",
+                            "questions": [
+                                {
+                                    "id": "number-of-individuals-question",
+                                    "title": "How many people do you currently have staying in this establishment?",
+                                    "description": "This enables us to send the correct number of individual census forms to this establishment",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "number-of-individuals-answer",
+                                            "label": "Number of individuals staying",
+                                            "mandatory": true,
+                                            "type": "Number"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Summary",
+                            "id": "household-summary"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 }
