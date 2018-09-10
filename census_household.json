@@ -369,6 +369,7 @@
                                     "id": "household-relationships-question",
                                     "title": "How are the following people related to {{ [answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}?",
                                     "type": "Relationship",
+                                    "member_label": "[answers['first-name'], answers['last-name']] | format_household_name",
                                     "answers": [
                                         {
                                             "id": "household-relationships-answer",
