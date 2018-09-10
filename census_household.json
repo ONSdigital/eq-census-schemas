@@ -498,7 +498,7 @@
                       "condition": "not contains",
                       "value": "Medical and care"
 	          }]
-              }]
+              }],
               "questions": [
                 {
                   "id": "medical-care-group-question",
@@ -561,7 +561,7 @@
                       "condition": "not contains",
                       "value": "Travel or temporary accommodation"
 	          }]
-              }]
+              }],
               "questions": [
                 {
                   "id": "travel-temp-accomodation-group-question",
@@ -596,7 +596,7 @@
                       "condition": "not contains",
                       "value": "Other"
 	          }]
-              }]
+              }],
               "questions": [
                 {
                   "id": "other-establishment-group-question",
@@ -651,7 +651,7 @@
                       "condition": "not contains",
                       "value": "Detention"
 	          }]
-              }]
+              }],
               "questions": [
                 {
                   "id": "responsibility-question",
