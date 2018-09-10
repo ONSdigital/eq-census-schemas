@@ -487,78 +487,18 @@
 				],
 				"type": "Checkbox"
 			}]
-		}],
-		"routing_rules": [
-		  {
-			"goto": {
-				"block": "medical-care-group",
-				"when": [{
-					"id": "group-type-answer",
-					"condition": "contains",
-					"value": "Medical and care"
-				}]
-		        }
-		 },
-	         {
-			"goto": {
-				"block": "responsibility",
-				"when": [{
-					"id": "group-type-answer",
-					"condition": "contains",
-					"value": "Armed Forces"
-				}]
-		        }
-		 },
-		 {
-			"goto": {
-				"block": "responsibility",
-				"when": [{
-					"id": "group-type-answer",
-					"condition": "contains",
-					"value": "Education"
-				}]
-		        }
-		 },	
-	          {
-			"goto": {
-				"block": "responsibility",
-				"when": [{
-					"id": "group-type-answer",
-					"condition": "contains",
-					"value": "Detention"
-				}]
-		        }
-		 },	
-	          {
-			"goto": {
-				"block": "travel-temp-accomodation-group",
-				"when": [{
-					"id": "group-type-answer",
-					"condition": "contains",
-					"value": "Travel or temporary accommodation"
-				}]
-		        }
-		 },
-	          {
-			"goto": {
-				"block": "other-establishment-group",
-				"when": [{
-					"id": "group-type-answer",
-					"condition": "contains",
-					"value": "Other"
-				}]
-		        }
-		 },
-			{
-				"goto": {
-				"block": "household-summary"
-				}
-			}
-		]
+		}]
 	    },
             {
               "type": "Question",
               "id": "medical-care-group",
+	      "skip_conditions": [{
+                  "when": [{
+                      "id": "group-type-answer",
+                      "condition": "not contains",
+                      "value": "Medical and care"
+	          }]
+              }]
               "questions": [
                 {
                   "id": "medical-care-group-question",
@@ -610,18 +550,18 @@
                     }
                   ]
                 }
-              ],
-              "routing_rules": [
-                {
-                  "goto": {
-                    "block": "responsibility"
-                  }
-                }
               ]
             },
              {
               "type": "Question",
               "id": "travel-temp-accomodation-group",
+	      "skip_conditions": [{
+                  "when": [{
+                      "id": "group-type-answer",
+                      "condition": "not contains",
+                      "value": "Travel or temporary accommodation"
+	          }]
+              }]
               "questions": [
                 {
                   "id": "travel-temp-accomodation-group-question",
@@ -645,18 +585,18 @@
                     }
                   ]
                 }
-              ],
-              "routing_rules": [
-                {
-                  "goto": {
-                    "block": "responsibility"
-                  }
-                }
               ]
             },
              {
               "type": "Question",
               "id": "other-establishment-group",
+	      "skip_conditions": [{
+                  "when": [{
+                      "id": "group-type-answer",
+                      "condition": "not contains",
+                      "value": "Other"
+	          }]
+              }]
               "questions": [
                 {
                   "id": "other-establishment-group-question",
@@ -689,17 +629,29 @@
                   ]
                 }
               ],
-              "routing_rules": [
-                {
-                  "goto": {
-                    "block": "responsibility"
-                  }
-                }
-              ]
             },
             {
               "type": "Question",
               "id": "responsibility",
+	      "skip_conditions": [{
+                  "when": [{
+                      "id": "group-type-answer",
+                      "condition": "not contains",
+                      "value": "Armed Forces"
+	          }]
+              }, {
+                  "when": [{
+                      "id": "group-type-answer",
+                      "condition": "not contains",
+                      "value": "Education"
+	          }]
+              }, {
+                  "when": [{
+                      "id": "group-type-answer",
+                      "condition": "not contains",
+                      "value": "Detention"
+	          }]
+              }]
               "questions": [
                 {
                   "id": "responsibility-question",
@@ -744,13 +696,6 @@
                   ]
                 }
               ],
-              "routing_rules": [
-                {
-                  "goto": {
-                    "block": "responsibility"
-                  }
-                }
-              ]
             },
             {
               "type": "Question",
@@ -767,13 +712,6 @@
                         "mandatory": true,
                         "type": "Number"
                     }]
-                }
-              ],
-              "routing_rules": [
-                {
-                  "goto": {
-                    "block": "household-summary"
-                  }
                 }
               ]
             },
