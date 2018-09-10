@@ -686,20 +686,12 @@
                                             "id": "group-type-answer",
                                             "condition": "not contains",
                                             "value": "Armed Forces"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "when": [
+                                        },
                                         {
                                             "id": "group-type-answer",
                                             "condition": "not contains",
                                             "value": "Education"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "when": [
+                                        },
                                         {
                                             "id": "group-type-answer",
                                             "condition": "not contains",
