@@ -5417,7 +5417,8 @@
                                         "when": [
                                             {
                                                 "id": "business-name-answer",
-                                                "condition": "not set"
+                                                "condition": "equals",
+                                                "value": ""
                                             }
                                         ]
                                     }
@@ -5506,8 +5507,9 @@
                                         "block": "not-registered-business-past",
                                         "when": [
                                             {
-                                                "id": "business-name-past-answer",
-                                                "condition": "not set"
+                                                "id": "business-name-answer",
+                                                "condition": "equals",
+                                                "value": ""
                                             }
                                         ]
                                     }
