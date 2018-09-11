@@ -6096,7 +6096,8 @@
                                         "when": [
                                             {
                                                 "id": "business-name-answer",
-                                                "condition": "not set"
+                                                "condition": "equals",
+                                                "value": ""
                                             },
                                             {
                                                 "id": "employer-type-of-address-answer",
@@ -6112,7 +6113,8 @@
                                         "when": [
                                             {
                                                 "id": "business-name-answer",
-                                                "condition": "not set"
+                                                "condition": "equals",
+                                                "value": ""
                                             },
                                             {
                                                 "id": "employer-type-of-address-answer",
