@@ -2478,7 +2478,7 @@
                                 {
                                     "id": "disability-limitation-question",
                                     "titles": [{
-                                            "value": "Does any of <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> conditions or illnesses reduce their ability to carry-out day-to-day activities?",
+                                            "value": "Does any of <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> conditions or illnesses reduce their ability to carry out day-to-day activities?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -2486,7 +2486,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "Do any of your conditions or illnesses reduce your ability to carry-out day-to-day activities?"
+                                            "value": "Do any of your conditions or illnesses reduce your ability to carry out day-to-day activities?"
                                         }
                                     ],
                                     "type": "General",
