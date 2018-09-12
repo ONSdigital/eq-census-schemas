@@ -2304,7 +2304,21 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "length-of-stay"
+                                        "block": "length-of-stay",
+                                       "when": [{
+                                            "id": "arrive-in-uk-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -1
+                                                }
+                                            }
+                                        }]
+                                    }
+                                },{
+                                    "goto": {
+                                        "block": "health"
                                     }
                                 }
                             ]
