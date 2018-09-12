@@ -144,7 +144,7 @@
                                 {
                                     "id": "sex-question",
                                      "titles": [{
-                                             "value": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> sex?",
+                                             "value": "What is <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}<em> sex?",
                                               "when": [{
                                                     "id": "proxy-check-answer",
                                                     "condition": "equals",
@@ -192,7 +192,7 @@
                                 {
                                     "id": "date-of-birth-question",
                                     "titles": [{
-                                            "value": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> date of birth?",
+                                            "value": "What is <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}<em> date of birth?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -237,7 +237,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-date-of-birth",
-                                    "title": "You are {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old. Is this correct?",
+                                    "title": "You are {{ calculate_years_difference (answers['date-of-birth-answer'], 'now') }} old. Is this correct?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -245,7 +245,7 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Yes, I am {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old",
+                                                    "label": "Yes, I am {{ calculate_years_difference (answers['date-of-birth-answer'], 'now') }} old",
                                                     "value": "Yes"
                                                 },
                                                 {
@@ -282,7 +282,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-date-of-birth-proxy",
-                                    "title": "{{[answers['first-name'][group_instance], answers['last-name'][group_instance]]  | format_household_name}} is {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old. Is this correct?",
+                                    "title": "{{[answers['first-name'], answers['last-name']]  | format_household_name}} is {{ calculate_years_difference (answers['date-of-birth-answer'], 'now') }} old. Is this correct?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -290,7 +290,7 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Yes, {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}} is {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old",
+                                                    "label": "Yes, {{[answers['first-name'], answers['last-name']] | format_household_name}} is {{ calculate_years_difference (answers['date-of-birth-answer'], 'now') }} old",
                                                     "value": "Yes"
                                                 },
                                                 {
@@ -329,7 +329,7 @@
                                 {
                                     "id": "country-of-birth-england-question",
                                      "titles": [{
-                                            "value": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> country of birth?",
+                                            "value": "What is <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}<em> country of birth?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -397,7 +397,7 @@
                                 {
                                     "id": "country-of-birth-wales-question",
                                      "titles": [{
-                                            "value": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> country of birth?",
+                                            "value": "What is <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}<em> country of birth?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -478,7 +478,7 @@
                                 {
                                     "id": "ethnic-group-england-question",
                                     "titles": [{
-                                            "value": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> ethnic group?",
+                                            "value": "What is <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}<em> ethnic group?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -539,7 +539,7 @@
                                 {
                                     "id": "ethnic-group-wales-question",
                                     "titles": [{
-                                            "value": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> ethnic group?",
+                                            "value": "What is <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}<em> ethnic group?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -745,7 +745,7 @@
                                 {
                                     "id": "white-ethnic-group-england-question",
                                     "titles": [{
-                                            "value": "Which one best describes <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> White ethnic group or background?",
+                                            "value": "Which one best describes <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}<em> White ethnic group or background?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -809,7 +809,7 @@
                                 {
                                     "id": "white-ethnic-group-wales-question",
                                     "titles": [{
-                                            "value": "Which one best describes <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> White ethnic group or background?",
+                                            "value": "Which one best describes <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}<em> White ethnic group or background?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -886,7 +886,7 @@
                                 {
                                     "id": "mixed-ethnic-group-question",
                                     "titles": [{
-                                            "value": "Which one best describes <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> Mixed, Multiple ethnic group or background?",
+                                            "value": "Which one best describes <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}<em> Mixed, Multiple ethnic group or background?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -949,7 +949,7 @@
                                 {
                                     "id": "asian-ethnic-group-question",
                                     "titles": [{
-                                            "value": "Which one best describes <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> Asian or Asian British ethnic group or background?",
+                                            "value": "Which one best describes <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}<em> Asian or Asian British ethnic group or background?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -1016,7 +1016,7 @@
                                 {
                                     "id": "black-ethnic-group-question",
                                      "titles": [{
-                                            "value": "Which one best describes <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> Black, African, Caribbean or Black British ethnic group or background?",
+                                            "value": "Which one best describes <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}<em> Black, African, Caribbean or Black British ethnic group or background?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -1075,7 +1075,7 @@
                                 {
                                     "id": "other-ethnic-group-question",
                                     "titles": [{
-                                            "value": "Which one best describes <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> other ethnic group or background?",
+                                            "value": "Which one best describes <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}<em> other ethnic group or background?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -1144,7 +1144,7 @@
                                 {
                                     "id": "apprenticeship-question",
                                     "titles": [{
-                                            "value": "Has <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> completed an apprenticeship?",
+                                            "value": "Has <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}<em> completed an apprenticeship?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -1193,7 +1193,7 @@
 
                         {
                               "id": "household-member-completed",
-                               "title": "There are no more questions for {{ [answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}",
+                               "title": "There are no more questions for <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}<em>",
                                 "description": "",
                                 "type": "Interstitial"
                         }
