@@ -2307,7 +2307,7 @@
                                         "block": "length-of-stay",
                                        "when": [{
                                             "id": "arrive-in-uk-answer",
-                                            "condition": "less than",
+                                            "condition": "greater than",
                                             "date_comparison": {
                                                 "value": "now",
                                                 "offset_by": {
