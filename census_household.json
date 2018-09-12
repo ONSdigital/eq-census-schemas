@@ -4822,7 +4822,7 @@
                                 {
                                     "id": "job-pending-question",
                                     "titles": [{
-                                            "value": "Last week, was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> waiting to start a job already accepted?",
+                                            "value": "In the last seven days, was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> waiting to start a job already accepted?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
