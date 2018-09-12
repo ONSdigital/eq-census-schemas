@@ -260,7 +260,7 @@
                                                     "value": "Other"
                                                 }
                                             ],
-                                            "type": "Checkbox"
+                                            "type": "Radio"
                                         }
                                     ]
                                 }
@@ -300,7 +300,7 @@
                                                     "value": "Other educational establishment"
                                                 }
                                             ],
-                                            "type": "Checkbox"
+                                            "type": "Radio"
                                         }
                                     ]
                                 }
@@ -343,7 +343,7 @@
                                                     "value": "Other detention establishment"
                                                 }
                                             ],
-                                            "type": "Checkbox"
+                                            "type": "Radio"
                                         }
                                     ]
                                 }
@@ -383,7 +383,7 @@
                                                     "value": "Hostel or temporary accommodation"
                                                 }
                                             ],
-                                            "type": "Checkbox"
+                                            "type": "Radio"
                                         }
                                     ]
                                 }
@@ -422,7 +422,7 @@
                                                     "value": "Other establishment"
                                                 }
                                             ],
-                                            "type": "Checkbox"
+                                            "type": "Radio"
                                         }
                                     ]
                                 }
@@ -502,7 +502,7 @@
                                                 {
                                                     "label": "Armed Forces",
                                                     "value": "Armed Forces",
-                                                    "description": "Defence establishment, including ships"
+                                                    "description": "Armed Forces personnel"
                                                 },
                                                 {
                                                     "label": "Detention",
@@ -631,6 +631,45 @@
                         },
                         {
                             "type": "Question",
+                            "id": "detention-group",
+                            "skip_conditions": [
+                                {
+                                    "when": [
+                                        {
+                                            "id": "group-type-answer",
+                                            "condition": "not contains",
+                                            "value": "Detention"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "questions": [
+                                {
+                                    "id": "detention-group-question",
+                                    "title": "Which groups of people in ‘Detention’ does this establishment cater for?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "detention-group-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Prisoner or offenders",
+                                                    "value": "Prisoner or offenders"
+                                                },
+                                                {
+                                                    "label": "Asylum seekers",
+                                                    "value": "Asylum seekers"
+                                                }
+                                            ],
+                                            "type": "Checkbox"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
                             "id": "other-establishment-group",
                             "skip_conditions": [
                                 {
@@ -691,11 +730,6 @@
                                             "id": "group-type-answer",
                                             "condition": "not contains",
                                             "value": "Education"
-                                        },
-                                        {
-                                            "id": "group-type-answer",
-                                            "condition": "not contains",
-                                            "value": "Detention"
                                         }
                                     ]
                                 }
