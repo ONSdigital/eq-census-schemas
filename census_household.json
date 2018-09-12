@@ -107,7 +107,7 @@
                             "questions": [
                                 {
                                     "id": "proxy-question",
-                                    "title": "Are you <em>{{ [answers['first-name'][group_instance], answers['middle-names'][group_instance], answers['last-name'][group_instance]] | format_household_name }}<em>?",
+                                    "title": "Are you <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}<em>?",
                                     "type": "General",
                                     "answers": [
                                         {
