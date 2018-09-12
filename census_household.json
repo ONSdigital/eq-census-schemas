@@ -4628,7 +4628,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "main-employment-block-proxy"
+                                        "block": "main-employment-block"
                                     }
                                 }
                             ]
