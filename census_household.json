@@ -27,13 +27,13 @@
         }
     ],
     "sections": [
-         {
-            "id": "your-address-section",
-            "title": "Your address",
+        {
+            "id": "your-name-section",
+            "title": "Your name",
             "groups": [
                 {
-                    "id": "what-is-your-address-group",
-                    "title": "What is your address?",
+                    "id": "what-is-your-name-group",
+                    "title": "What is your name?",
                     "blocks": [
                         {
                             "type": "Introduction",
@@ -47,63 +47,36 @@
                                     "id": "what-is-your-address-question",
                                     "title": "What is your address?",
                                     "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "address-line-1",
-                                            "label": "Address Line 1 (Including your house name or number)",
-                                            "mandatory": true,
-                                            "type": "TextField",
-                                            "validation": {
-                                                "messages": {
-                                                    "MANDATORY_TEXTFIELD": "Enter an address to continue"
-                                                }
+                                    "answers": [{
+                                        "id": "first-name",
+                                        "label": "First name",
+                                        "mandatory": true,
+                                        "type": "TextField",
+                                        "validation": {
+                                            "messages": {
+                                                "MANDATORY_TEXTFIELD": "Please enter a name or remove the person to continue"
                                             }
-                                        },
-                                        {
-                                            "id": "address-line-2",
-                                            "label": "Address Line 2",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "address-line-3",
-                                            "label": "Address Line 3",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "town-city",
-                                            "label": "Town/City",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "county",
-                                            "label": "County",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "postcode",
-                                            "label": "Postcode",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "country",
-                                            "label": "Country",
-                                            "mandatory": false,
-                                            "type": "TextField"
                                         }
-                                    ]
+                                    },
+                                    {
+                                        "id": "last-name",
+                                        "label": "Last name",
+                                        "mandatory": true,
+                                        "type": "TextField",
+                                        "validation": {
+                                            "messages": {
+                                                "MANDATORY_TEXTFIELD": "Please enter a name or remove the person to continue"
+                                            }
+                                        }
+                                    }
+                                ]
                                 }
                             ]
                         }
                     ]
                 }
             ]
-        },
-        {
+        },{
             "id": "household-member-section",
             "title": "Household Member Details",
             "groups": [
@@ -121,10 +94,9 @@
                                 {
                                     "title": "Information you need",
                                     "list": [
-                                        "Personal details such as date of birth, country of birth, religion etc.",
-                                        "Second or holiday homes",
-                                        "Unpaid care and health",
-                                        "Languages"
+                                        "Personal details such as date of birth, country of birth, ethnic group",
+                                        "Education and qualifications",
+                                        "Employment"
                                     ]
                                 }
                             ]
