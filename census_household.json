@@ -718,22 +718,7 @@
                         {
                             "type": "Question",
                             "id": "responsibility",
-                            "skip_conditions": [
-                                {
-                                    "when": [
-                                        {
-                                            "id": "group-type-answer",
-                                            "condition": "not contains",
-                                            "value": "Armed Forces"
-                                        },
-                                        {
-                                            "id": "group-type-answer",
-                                            "condition": "not contains",
-                                            "value": "Education"
-                                        }
-                                    ]
-                                }
-                            ],
+                            
                             "questions": [
                                 {
                                     "id": "responsibility-question",
