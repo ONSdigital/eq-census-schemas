@@ -592,6 +592,45 @@
                         },
                         {
                             "type": "Question",
+                            "id": "education-group",
+                            "skip_conditions": [
+                                {
+                                    "when": [
+                                        {
+                                            "id": "group-type-answer",
+                                            "condition": "not contains",
+                                            "value": "Education"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "questions": [
+                                {
+                                    "id": "education-group-question",
+                                    "title": "Which groups of people in education does this establishment cater for?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "education-group-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "School children",
+                                                    "value": "School children"
+                                                },
+                                                {
+                                                    "label": "University and or college students",
+                                                    "value": "University and or college students"
+                                                }
+                                            ],
+                                            "type": "Checkbox"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
                             "id": "travel-temp-accomodation-group",
                             "skip_conditions": [
                                 {
