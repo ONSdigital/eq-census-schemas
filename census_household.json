@@ -3664,7 +3664,7 @@
                             "questions": [
                                 {
                                     "id": "sexual-identity-question",
-                                    "title": "Which of the following best describes your sexual orientation",
+                                    "title": "Which of the following best describes your sexual orientation?",
                                     "type": "General",
                                     "answers": [
                                         {
