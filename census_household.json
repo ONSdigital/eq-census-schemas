@@ -21,10 +21,80 @@
     ],
     "sections": [
         {
+            "id": "your-address-section",
+            "title": "Your address",
+            "groups": [
+                {
+                    "id": "what-is-your-address-group",
+                    "title": "What is your address?",
+                    "blocks": [
+                        {
+                            "type": "Introduction",
+                            "id": "introduction"
+                        },
+                        {
+                            "type": "Question",
+                            "id": "what-is-your-address",
+                            "questions": [
+                                {
+                                    "id": "what-is-your-address-question",
+                                    "title": "What is your address?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "address-line-1",
+                                            "label": "House name or number",
+                                            "mandatory": true,
+                                            "type": "TextField",
+                                            "validation": {
+                                                "messages": {
+                                                    "MANDATORY_TEXTFIELD": "Enter an address to continue"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "id": "address-line-2",
+                                            "label": "Street",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "address-line-3",
+                                            "label": "Town",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "county",
+                                            "label": "County",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "postcode",
+                                            "label": "Postcode",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "country",
+                                            "label": "Country",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "id": "default-section",
             "groups": [
                 {
-                    "id": "address-group",
+                    "id": "establishment-group",
                     "title": "",
                     "blocks": [
                         {
