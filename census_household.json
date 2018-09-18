@@ -754,7 +754,7 @@
                             "questions": [
                                 {
                                     "id": "other-establishment-group-question",
-                                    "title": "Which groups of people in ‘Other’ does this establishment cater for?",
+                                    "title": "Which other groups of people does this establishment cater for?",
                                     "type": "General",
                                     "answers": [
                                         {
