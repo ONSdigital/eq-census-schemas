@@ -125,12 +125,8 @@
                                                     "value": "Yes"
                                                 },
                                                 {
-                                                    "label": "No, this is a residential home",
-                                                    "value": "No, this ia a residential home"
-                                                },
-                                                {
-                                                    "label": "No, this is used for something else",
-                                                    "value": "No, this ia used for something else"
+                                                    "label": "No, this is a private or family home",
+                                                    "value": "No, this ia a private or family home"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -164,7 +160,7 @@
                             "questions": [
                                 {
                                     "id": "nature-establishment-question",
-                                    "title": "What is the nature of this establishment?",
+                                    "title": "What is the nature of {{answers['address-line-1']}}, {{answers['address-line-2']}}?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -288,7 +284,7 @@
                             "questions": [
                                 {
                                     "id": "medical-care-question",
-                                    "title": "What type of medical and care establishment is (pipe address)?",
+                                    "title": "What type of medical and care establishment is {{answers['address-line-1']}}, {{answers['address-line-2']}}?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -349,7 +345,7 @@
                             "questions": [
                                 {
                                     "id": "education-question",
-                                    "title": "What type of education establishment is (pipe address)?",
+                                    "title": "What type of education establishment is {{answers['address-line-1']}}, {{answers['address-line-2']}}?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -389,7 +385,7 @@
                             "questions": [
                                 {
                                     "id": "detention-question",
-                                    "title": "What type of detention establishment is (pipe address)?",
+                                    "title": "What type of detention establishment is {{answers['address-line-1']}}, {{answers['address-line-2']}}?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -432,7 +428,7 @@
                             "questions": [
                                 {
                                     "id": "travel-temp-accomodation-question",
-                                    "title": "What type of travel or temporary accomodation is (pipe address)?",
+                                    "title": "What type of travel or temporary accomodation is {{answers['address-line-1']}}, {{answers['address-line-2']}}?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -472,7 +468,7 @@
                             "questions": [
                                 {
                                     "id": "other-establishment-question",
-                                    "title": "What type of establishment is (pipe address)?",
+                                    "title": "What type of establishment is {{answers['address-line-1']}}, {{answers['address-line-2']}}?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -511,7 +507,7 @@
                             "questions": [
                                 {
                                     "id": "age-range-question",
-                                    "title": "Which age group does this establishment cater for?",
+                                    "title": "Which age group does {{answers['address-line-1']}}, {{answers['address-line-2']}} cater for?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -554,7 +550,7 @@
                             "questions": [
                                 {
                                     "id": "group-type-question",
-                                    "title": "Which groups does this establishment cater for?",
+                                    "title": "Which groups of people does {{answers['address-line-1']}}, {{answers['address-line-2']}} cater for?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -562,29 +558,32 @@
                                             "mandatory": true,
                                             "options": [
                                                 {
-                                                    "label": "Medical and care",
-                                                    "value": "Medical and care"
+                                                    "label": "People who need medical or care",
+                                                    "value": "People who need medical or care"
                                                 },
                                                 {
-                                                    "label": "Education",
-                                                    "value": "Education"
+                                                    "label": "Armed Forces personnel",
+                                                    "value": "Armed Forces personnel"
                                                 },
                                                 {
-                                                    "label": "Armed Forces",
-                                                    "value": "Armed Forces",
-                                                    "description": "Armed Forces personnel"
+                                                    "label": "Those in education",
+                                                    "value": "Those in education"
                                                 },
                                                 {
-                                                    "label": "Detention",
-                                                    "value": "Detention"
+                                                    "label": "Detainees",
+                                                    "value": "Detainees"
                                                 },
                                                 {
-                                                    "label": "Travel or temporary accommodation",
-                                                    "value": "Travel or temporary accommodation"
+                                                    "label": "Paying guests",
+                                                    "value": "Paying guests"
                                                 },
                                                 {
-                                                    "label": "Other",
-                                                    "value": "Other"
+                                                    "label": "Homeless people",
+                                                    "value": "Homeless people"
+                                                },
+                                                {
+                                                    "label": "Other people including staff",
+                                                    "value": "Other people including staff"
                                                 }
                                             ],
                                             "type": "Checkbox"
@@ -685,51 +684,12 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "School children",
-                                                    "value": "School children"
+                                                    "label": "Schoolchildren",
+                                                    "value": "Schoolchildren"
                                                 },
                                                 {
                                                     "label": "University and or college students",
                                                     "value": "University and or college students"
-                                                }
-                                            ],
-                                            "type": "Checkbox"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "travel-temp-accomodation-group",
-                            "skip_conditions": [
-                                {
-                                    "when": [
-                                        {
-                                            "id": "group-type-answer",
-                                            "condition": "not contains",
-                                            "value": "Travel or temporary accommodation"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "questions": [
-                                {
-                                    "id": "travel-temp-accomodation-group-question",
-                                    "title": "Which groups of people in travel or temporary accommodation does this establishment cater for?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "travel-temp-accomodation-group-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Paying guests",
-                                                    "value": "Paying guests"
-                                                },
-                                                {
-                                                    "label": "Homeless people",
-                                                    "value": "Homeless people"
                                                 }
                                             ],
                                             "type": "Checkbox"
