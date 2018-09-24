@@ -1043,7 +1043,7 @@
                                 {
                                     "id": "apprenticeship-question",
                                     "titles": [{
-                                            "value": "Has <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}<em> completed an apprenticeship?",
+                                            "value": "Has <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}</em> completed an apprenticeship?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -1096,7 +1096,7 @@
                                 {
                                     "id": "degree-question",
                                     "titles": [{
-                                            "value": "Has <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}<em> achieved a qualification at degree level or above?",
+                                            "value": "Has <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}</em> achieved a qualification at degree level or above?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -1162,7 +1162,7 @@
                                 {
                                     "id": "nvq-level-question",
                                     "titles": [{
-                                            "value": "Has <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}<em> achieved an NVQ or equivalent qualification?",
+                                            "value": "Has <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}</em> achieved an NVQ or equivalent qualification?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -1226,7 +1226,7 @@
                                 {
                                     "id": "a-level-question",
                                     "titles": [{
-                                            "value": "Has <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}<em> achieved an AS, A level or equivalent qualification?",
+                                            "value": "Has <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}</em> achieved an AS, A level or equivalent qualification?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -1294,7 +1294,7 @@
                                 {
                                     "id": "gcse-question",
                                     "titles": [{
-                                            "value": "Has <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}<em> achieved a GCSE or equivalent qualification?",
+                                            "value": "Has <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}</em> achieved a GCSE or equivalent qualification?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -1388,7 +1388,7 @@
                                 {
                                     "id": "other-qualifications-question",
                                     "titles": [{
-                                            "value": "Has <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}<em> achieved any formal qualifications?",
+                                            "value": "Has <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}</em> achieved any formal qualifications?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
