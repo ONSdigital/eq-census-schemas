@@ -313,10 +313,6 @@
                                                     "value": "Care home with nursing"
                                                 },
                                                 {
-                                                    "label": "Sheltered housing only",
-                                                    "value": "Sheltered housing only"
-                                                },
-                                                {
                                                     "label": "Children’s home",
                                                     "value": "Children’s home",
                                                     "description": "Including secure units"
