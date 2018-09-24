@@ -109,7 +109,7 @@
                                             "title": "What is a Communal Establishment?",
                                             "content": [
                                                 {
-                                                    "description": "A Communal Establishment is defined as an establishment providing managed residential accommodation. Managed means full-time or part-time supervision of the accommodation. Blah blah use nicer wording "
+                                                    "description": "A communal establishment is an establishment providing managed residential accommodation. ‘Managed’ in this context means full-time or part-time supervision of the accommodation."
                                                 }
                                             ]
                                         }
@@ -601,7 +601,7 @@
                                         {
                                             "id": "group-type-answer",
                                             "condition": "not contains",
-                                            "value": "Medical and care"
+                                            "value": "People who need medical or care"
                                         }
                                     ]
                                 }
@@ -668,7 +668,7 @@
                                         {
                                             "id": "group-type-answer",
                                             "condition": "not contains",
-                                            "value": "Education"
+                                            "value": "Those in education"
                                         }
                                     ]
                                 }
@@ -707,7 +707,7 @@
                                         {
                                             "id": "group-type-answer",
                                             "condition": "not contains",
-                                            "value": "Detention"
+                                            "value": "Detainees"
                                         }
                                     ]
                                 }
@@ -746,7 +746,7 @@
                                         {
                                             "id": "group-type-answer",
                                             "condition": "not contains",
-                                            "value": "Other"
+                                            "value": "Other people including staff"
                                         }
                                     ]
                                 }
