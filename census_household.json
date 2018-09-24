@@ -4537,6 +4537,415 @@
                             "routing_rules": [
                                 {
                                     "goto": {
+                                        "block": "qualifications"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Interstitial",
+                            "id": "qualifications",
+                            "title": "This next set of questions are about your qualifications",
+                            "description": "Include any formal qualifications you have ever achieved in England, Wales or elsewhere, even if you are not using them now.",
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "apprenticeship"
+                                        
+                                    }
+                                }
+                            ]
+                        },
+                         {
+                            "type": "Question",
+                            "id": "apprenticeship",
+                            "questions": [
+                                {
+                                    "id": "apprenticeship-question",
+                                    "titles": [{
+                                            "value": "Has <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}<em> completed an apprenticeship?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Have you completed an apprenticeship?"
+                                        }
+                                    ],
+                                    "type": "General",
+                                    "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Include equivalent apprenticeships completed anywhere outside England and Wales"
+                                            }
+                                        ]
+                                    },
+                                     "answers": [
+                                        {
+                                            "id": "apprenticeship-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Yes",
+                                                    "value": "Yes"
+                                                },
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "degree"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "degree",
+                            "questions": [
+                                {
+                                    "id": "degree-question",
+                                    "titles": [{
+                                            "value": "Has <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}<em> achieved a qualification at degree level or above?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Have you achieved a qualification at degree level or above?"
+                                        }
+                                    ],
+                                    "type": "General",
+                                    "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Include equivalent qualifications completed anywhere outside England and Wales"
+                                            }
+                                        ]
+                                    },
+                                     "answers": [
+                                        {
+                                            "id": "degree-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Yes",
+                                                    "value": "Yes",
+                                                    "description": "For example degree, foundation degree, HND or HNC, NVQ level 4 and above, teaching or nursing"
+                                                },
+                                                {
+                                                    "label": "No",
+                                                    "value": "No",
+                                                    "description": "Questions on NVQs, A levels, GCSEs and equivalents will follow"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "employment-status",
+                                        "when": [
+                                            {
+                                                "id": "degree-answer",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },{
+                                    "goto": {
+                                        "block": "nvq-level"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "nvq-level",
+                            "questions": [
+                                {
+                                    "id": "nvq-level-question",
+                                    "titles": [{
+                                            "value": "Has <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}<em> achieved an NVQ or equivalent qualification?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Have you achieved an NVQ or equivalent qualification?"
+                                        }
+                                    ],
+                                    "type": "General",
+                                    "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Include equivalent qualifications completed anywhere outside England and Wales"
+                                            }
+                                        ]
+                                    },
+                                     "answers": [
+                                        {
+                                            "id": "nvq-level-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "NVQ level 3 or equivalent",
+                                                    "value": "NVQ level 3 or equivalent",
+                                                    "description": "For example BTEC National, OND or ONC, City and Guilds Advanced Craft"
+                                                },
+                                                {
+                                                    "label": "NVQ level 2 or equivalent",
+                                                    "value": "NVQ level 2 or equivalent",
+                                                    "description": "For example BTEC General, City and Guilds Craft"
+                                                },
+                                                {
+                                                    "label": "NVQ level 1 or equivalent",
+                                                    "value": "NVQ level 1 or equivalent"
+                                                },
+                                                {
+                                                    "label": "None of these apply",
+                                                    "value": "None of these apply",
+                                                    "description": "Questions on A levels, GCSEs and equivalents will follow"
+                                                }
+                                            ],
+                                            "type": "MutuallyExclusiveCheckbox"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "a-level"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "a-level",
+                            "questions": [
+                                {
+                                    "id": "a-level-question",
+                                    "titles": [{
+                                            "value": "Has <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}<em> achieved an AS, A level or equivalent qualification?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Have you achieved an AS, A level or equivalent qualification?"
+                                        }
+                                    ],
+                                    "type": "General",
+                                    "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Include equivalent qualifications completed anywhere outside England and Wales"
+                                            }
+                                        ]
+                                    },
+                                     "answers": [
+                                        {
+                                            "id": "a-level-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "2 or more A levels",
+                                                    "value": "2 or more A levels",
+                                                    "description": "Include 4 or more AS levels"
+                                                },
+                                                {
+                                                    "label": "1 A level",
+                                                    "value": "1 A level",
+                                                    "description": "Include 2 to 3 AS levels"
+                                                },
+                                                {
+                                                    "label": "1 AS level",
+                                                    "value": "1 AS level"
+                                                },
+                                                {
+                                                    "label": "Advanced Welsh Baccalaureate",
+                                                    "value": "Advanced Welsh Baccalaureate"
+                                                },
+                                                {
+                                                    "label": "None of these apply",
+                                                    "value": "None of these apply",
+                                                    "description": "Questions on GCSEs and equivalents will follow"
+                                                }
+                                            ],
+                                            "type": "MutuallyExclusiveCheckbox"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "gcse"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "gcse",
+                            "questions": [
+                                {
+                                    "id": "gcse-question",
+                                    "titles": [{
+                                            "value": "Has <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}<em> achieved a GCSE or equivalent qualification?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Have you achieved a GCSE or equivalent qualification?"
+                                        }
+                                    ],
+                                    "type": "General",
+                                    "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Include equivalent qualifications completed anywhere outside England and Wales"
+                                            }
+                                        ]
+                                    },
+                                     "answers": [
+                                        {
+                                            "id": "gcse-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "5 or more GCSEs grades A* to C or 9 to 4",
+                                                    "value": "5 or more GCSEs",
+                                                    "description": "Include 5 or more O level passes or CSEs grades 1"
+                                                },
+                                                {
+                                                    "label": "Any other GCSEs",
+                                                    "value": "Any other GCSEs",
+                                                    "description": "Include any other O levels or CSEs at any grades"
+                                                },
+                                                {
+                                                    "label": "Basic skills",
+                                                    "value": "Basic skills",
+                                                    "description": "Skills for life, literacy, numeracy and language"
+                                                },
+                                                {
+                                                    "label": "National Welsh Baccalaureate",
+                                                    "value": "National Welsh Baccalaureate"
+                                                },
+                                                {
+                                                    "label": "Foundation Welsh Baccalaureate",
+                                                    "value": "Foundation Welsh Baccalaureate"
+                                                },
+                                                {
+                                                    "label": "None of these apply",
+                                                    "value": "None of these apply"
+                                                }
+                                            ],
+                                            "type": "MutuallyExclusiveCheckbox"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "other-qualifications",
+                                        "when": [{
+                                            "id": "gcse-answer",
+                                            "condition": "contains",
+                                            "value": "None of these apply"
+                                            
+                                        },
+                                        {
+                                                "id": "a-level-answer",
+                                                "condition": "contains",
+                                                "value": "None of these apply"
+                                            },
+                                         {
+                                                "id": "nvq-level-answer",
+                                                "condition": "contains",
+                                                "value": "None of these apply"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "employment-status"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "other-qualifications",
+                            "questions": [
+                                {
+                                    "id": "other-qualifications-question",
+                                    "titles": [{
+                                            "value": "Has <em>{{ [answers['first-name'], answers['last-name']] | format_household_name }}<em> achieved any formal qualifications?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Have you achieved any formal qualifications?"
+                                        }
+                                    ],
+                                    "type": "General",
+                                     "answers": [
+                                        {
+                                            "id": "other-qualifications-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Yes, in England or Wales",
+                                                    "value": "Yes, in England or Wales"
+                                                },
+                                                {
+                                                    "label": "Yes, anywhere outside of England and Wales",
+                                                    "value": "Yes, anywhere outside of England and Wales"
+                                                },
+                                                {
+                                                    "label": "No formal qualifications",
+                                                    "value": "No formal qualifications"
+                                                }
+                                            ],
+                                            "type": "MutuallyExclusiveCheckbox"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
                                         "block": "employment-status"
                                     }
                                 }
