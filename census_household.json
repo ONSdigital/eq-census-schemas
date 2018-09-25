@@ -162,13 +162,6 @@
                                     "id": "nature-establishment-question",
                                     "title": "What is the main function of <em>{{answers['address-line-1']}}, {{answers['address-line-2']}}</em>?",
                                     "type": "General",
-                                    "guidance": {
-                                        "content": [
-                                            {
-                                                "title": "Including staff accomodation"
-                                            }
-                                        ]
-                                    },
                                     "answers": [
                                         {
                                             "id": "nature-establishment-answer",
@@ -197,7 +190,8 @@
                                                 },
                                                 {
                                                     "label": "Other",
-                                                    "value": "Other"
+                                                    "value": "Other",
+                                                    "description": "Including staff accomodation"
                                                 }
                                             ],
                                             "type": "Radio"
