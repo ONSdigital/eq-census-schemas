@@ -4037,7 +4037,7 @@
                                                     "value": "None of the these"
                                                 }
                                             ],
-                                            "type": "Checkbox"
+                                            "type": "MutuallyExclusiveCheckbox"
                                         }
                                     ]
                                 }
