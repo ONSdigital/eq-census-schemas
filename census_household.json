@@ -103,7 +103,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-establishment-question",
-                                    "title": "Is this accomodation a ...basically confirm its a communal establishment?",
+                                    "title": "Is <em>{{answers['address-line-1']}}</em> a communal establishment?",
                                     "definitions": [
                                         {
                                             "title": "What is a Communal Establishment?",
@@ -160,7 +160,7 @@
                             "questions": [
                                 {
                                     "id": "nature-establishment-question",
-                                    "title": "What is the nature of <em>{{answers['address-line-1']}}, {{answers['address-line-2']}}</em>?",
+                                    "title": "What is the main function of <em>{{answers['address-line-1']}}, {{answers['address-line-2']}}</em>?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -546,7 +546,7 @@
                             "questions": [
                                 {
                                     "id": "group-type-question",
-                                    "title": "Which groups of people does <em>{{answers['address-line-1']}}, {{answers['address-line-2']}}</em> cater for?",
+                                    "title": "Which groups of people does <em>{{answers['address-line-1']}}, {{answers['address-line-2']}}</em> provide accomodation for?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -554,16 +554,16 @@
                                             "mandatory": true,
                                             "options": [
                                                 {
-                                                    "label": "People who need medical or care",
-                                                    "value": "People who need medical or care"
+                                                    "label": "People receiving care or medical treatment",
+                                                    "value": "People receiving care or medical treatment"
                                                 },
                                                 {
                                                     "label": "Armed Forces personnel",
                                                     "value": "Armed Forces personnel"
                                                 },
                                                 {
-                                                    "label": "Those in education",
-                                                    "value": "Those in education"
+                                                    "label": "People in education",
+                                                    "value": "People in education"
                                                 },
                                                 {
                                                     "label": "Detainees",
@@ -578,8 +578,8 @@
                                                     "value": "Homeless people"
                                                 },
                                                 {
-                                                    "label": "Other people including staff",
-                                                    "value": "Other people including staff"
+                                                    "label": "Other groups including staff",
+                                                    "value": "Other groups including staff"
                                                 }
                                             ],
                                             "type": "Checkbox"
@@ -750,7 +750,7 @@
                             "questions": [
                                 {
                                     "id": "other-establishment-group-question",
-                                    "title": "Which other groups of people does this establishment cater for?",
+                                    "title": "Which other groups of people does this accomodation provide accomodation for?",
                                     "type": "General",
                                     "answers": [
                                         {
