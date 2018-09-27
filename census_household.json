@@ -2525,7 +2525,7 @@
                                 {
                                     "id": "disability-question",
                                     "titles": [{
-                                            "value": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> have any physical or mental health conditions or illnesses lasting, or is expected to last 12 months or more?",
+                                            "value": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> have any physical or mental health conditions or illnesses lasting or expected to last 12 months or more?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -2533,7 +2533,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "Do you have any physical or mental health conditions or illnesses lasting, or is expected to last 12 months or more?"
+                                            "value": "Do you have any physical or mental health conditions or illnesses lasting or expected to last 12 months or more?"
                                         }
                                     ],
                                     "type": "General",
