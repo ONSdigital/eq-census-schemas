@@ -5116,8 +5116,9 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Retired (whether receiving a pension or not)",
-                                                    "value": "Retired (whether receiving a pension or not)"
+                                                    "label": "Retired",
+                                                    "value": "Retired",
+                                                    "description": "Whether receiving a pension or not",
                                                 },
                                                 {
                                                     "label": "Studying",
