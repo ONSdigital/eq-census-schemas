@@ -5118,7 +5118,7 @@
                                                 {
                                                     "label": "Retired",
                                                     "value": "Retired",
-                                                    "description": "Whether receiving a pension or not",
+                                                    "description": "Whether receiving a pension or not"
                                                 },
                                                 {
                                                     "label": "Studying",
