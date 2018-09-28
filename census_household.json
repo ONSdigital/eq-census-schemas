@@ -1217,7 +1217,7 @@
                                 {
                                     "id": "confirm-marriage-type",
                                      "titles": [{
-                                            "value": "On 13 July 2018, what is {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }} legal marital or registered civil partnership status?",
+                                            "value": "On 13 July 2018, what is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> legal marital or registered civil partnership status?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
