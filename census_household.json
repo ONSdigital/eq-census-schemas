@@ -1828,7 +1828,7 @@
                                 {
                                     "id": "in-education-over16-question",
                                     "titles": [{
-                                            "value": "Is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> in full-time education?",
+                                            "value": "Is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> a student in full-time education?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -1836,7 +1836,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "Are you in full-time education?"
+                                            "value": "Are you a student in full-time education?"
                                         }
                                     ],
                                     "type": "General",
