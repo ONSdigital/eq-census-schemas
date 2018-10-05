@@ -2529,8 +2529,18 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "carer"
+                                        "block": "carer-proxy",
+                                        "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
                                     }
+                                },
+                                {
+                                     "goto": {
+                                          "block": "carer"
+                                      }
                                 }
                             ]
                         },
