@@ -3139,7 +3139,7 @@
                                             "parent_answer_id": "white-ethnic-group-england-answer",
                                             "type": "TextField",
                                             "mandatory": false,
-                                            "label": "Please specify any other White background"
+                                            "label": "Please specify White background"
                                         }
                                     ],
                                     "skip_conditions": [
@@ -3203,7 +3203,7 @@
                                             "parent_answer_id": "white-ethnic-group-wales-answer",
                                             "type": "TextField",
                                             "mandatory": false,
-                                            "label": "Please specify any other White background"
+                                            "label": "Please specify White background"
                                         }
                                     ],
                                     "skip_conditions": [
@@ -3324,7 +3324,7 @@
                                             "parent_answer_id": "mixed-ethnic-group-answer",
                                             "type": "TextField",
                                             "mandatory": false,
-                                            "label": "Please specify any other Mixed or Multiple background"
+                                            "label": "Please specify Mixed or Multiple background"
                                         }
                                     ]
                                 }
@@ -3438,7 +3438,7 @@
                                             "parent_answer_id": "asian-ethnic-group-answer",
                                             "type": "TextField",
                                             "mandatory": false,
-                                            "label": "Please specify any other Asian background"
+                                            "label": "Please specify Asian background"
                                         }
                                     ]
                                 }
@@ -3544,7 +3544,7 @@
                                             "parent_answer_id": "black-ethnic-group-answer",
                                             "type": "TextField",
                                             "mandatory": false,
-                                            "label": "Please specify any other Black, African or Caribbean background"
+                                            "label": "Please specify Black, African or Caribbean background"
                                         }
                                     ]
                                 }
@@ -3646,7 +3646,7 @@
                                             "parent_answer_id": "other-ethnic-group-answer",
                                             "type": "TextField",
                                             "mandatory": false,
-                                            "label": "Please specify any other ethnic group"
+                                            "label": "Please specify other ethnic group"
                                         }
                                     ]
                                 }
