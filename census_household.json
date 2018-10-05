@@ -5420,8 +5420,8 @@
                                                     "value": "Yes, but not in the last 12 months"
                                                 },
                                                 {
-                                                    "label": "No, I have never worked",
-                                                    "value": "No, I have never worked"
+                                                    "label": "No, have never worked",
+                                                    "value": "No, have never worked"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -5437,7 +5437,7 @@
                                             {
                                                 "id": "ever-worked-answer",
                                                 "condition": "equals",
-                                                "value": "No, I have never worked"
+                                                "value": "No, have never worked"
                                             }
                                         ]
                                     }
