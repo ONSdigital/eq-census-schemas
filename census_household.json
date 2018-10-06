@@ -5692,6 +5692,22 @@
                             "routing_rules": [
                                  {
                                     "goto": {
+                                        "block": "business-name-proxy",
+                                        "when": [
+                                            {
+                                                "id": "self-employed-answer",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            },
+                                            {
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }
+                                        ]
+                                    }
+                                },{
+                                    "goto": {
                                         "block": "business-name",
                                         "when": [
                                             {
@@ -5790,6 +5806,34 @@
                                     "answers": [
                                         {
                                             "id": "business-name-answer",
+                                            "label": "Organisation or business name",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "job-title"
+                                    }
+                                }
+                            ]
+                        },
+                         {
+                            "type": "Question",
+                            "id": "business-name-proxy",
+                            "questions": [
+                                {
+                                    "id": "business-name-proxy-question",
+                                    "title":  "What is the name of the organisation or business <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> works for?",
+                                           
+                                    "description": "If {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}} are self-employed in their own business, give the business name.",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "business-name-proxy-answer",
                                             "label": "Organisation or business name",
                                             "mandatory": false,
                                             "type": "TextField"
