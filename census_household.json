@@ -6217,7 +6217,7 @@
                                 {
                                     "id": "employers-business-question",
                                     "title": "What is the main activity of <em>{{answers['business-name-answer']| format_household_name}}</em>?",
-                                    "description": "For example, clothing retail, primary education or general hospital.",
+                                    "description": "For example clothing retail, general hospital, primary education, food wholesale.",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -6250,7 +6250,7 @@
                                 {
                                     "id": "employers-business-past-question",
                                     "title": "What was the main activity of <em>{{answers['business-name-past-answer']| format_household_name}}</em>?",
-                                    "description": "For example, clothing retail, primary education or general hospital.",
+                                    "description": "For example clothing retail, general hospital, primary education, food wholesale.",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -6294,7 +6294,7 @@
                                             "value": "What is the main activity of your organisation, business or freelance work?"
                                         }
                                     ],
-                                    "description": "For example, clothing retail, primary education or general hospital.",
+                                    "description": "For example clothing retail, general hospital, primary education, food wholesale.",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -6338,7 +6338,7 @@
                                             "value": "What was the main activity of your organisation, business or freelance work?"
                                         }
                                     ],
-                                    "description": "For example, clothing retail, primary education or general hospital.",
+                                    "description": "For example clothing retail, general hospital, primary education, food wholesale.",
                                     "type": "General",
                                     "answers": [
                                         {
