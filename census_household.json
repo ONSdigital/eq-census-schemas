@@ -6966,8 +6966,11 @@
                                         "Date of birth",
                                         "Usual address",
                                         "Sex"
-                                    ],
-                                    "description": "We ask for visitor information to check that everyone is counted. This helps to produce accurate population estimates. Add any visitors, even if you think they may have ben counted elsewhere."
+                                    ]
+                                   
+                                },
+                                {
+                                     "description": "We ask for visitor information to check that everyone is counted. This helps to produce accurate population estimates. Add any visitors, even if you think they may have ben counted elsewhere."
                                 }
                             ]
                         }
