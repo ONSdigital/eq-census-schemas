@@ -264,7 +264,7 @@
                                         {
                                             "id": "last-name",
                                             "label": "Last name",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "type": "TextField"
                                         }
                                     ]
@@ -283,7 +283,7 @@
                                     "answers": [
                                         {
                                             "id": "everyone-at-address-confirmation-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Yes",
@@ -374,7 +374,7 @@
                                         {
                                             "id": "household-relationships-answer",
                                             "label": "%(other_person)s is %(current_person)s's",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Husband or wife",
@@ -486,7 +486,7 @@
                                     "answers": [
                                         {
                                             "id": "type-of-accommodation-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Whole house or bungalow",
@@ -550,7 +550,7 @@
                                     "answers": [
                                         {
                                             "id": "type-of-house-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Detached",
@@ -589,7 +589,7 @@
                                     "answers": [
                                         {
                                             "id": "type-of-flat-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "In a purpose-built block of flats or tenement",
@@ -621,7 +621,7 @@
                                     "answers": [
                                         {
                                             "id": "self-contained-accommodation-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Yes",
@@ -650,7 +650,7 @@
                                         {
                                             "id": "number-of-bedrooms-answer",
                                             "label": "Number of bedrooms",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "type": "Number"
                                         }
                                     ]
@@ -675,7 +675,7 @@
                                     "answers": [
                                         {
                                             "id": "central-heating-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Mains gas",
@@ -767,7 +767,7 @@
                                     "answers": [
                                         {
                                             "id": "own-or-rent-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Owns outright",
@@ -838,7 +838,7 @@
                                     "answers": [
                                         {
                                             "id": "landlord-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Housing association, housing co-operative, charitable trust, registered social landlord",
@@ -882,7 +882,7 @@
                                     "answers": [
                                         {
                                             "id": "number-of-vehicles-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "None",
@@ -1018,7 +1018,7 @@
                                     "answers": [
                                         {
                                             "id": "sex-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Male",
@@ -1100,7 +1100,7 @@
                                     "answers": [
                                         {
                                             "id": "confirm-date-of-birth-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Yes, I am {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old",
@@ -1160,7 +1160,7 @@
                                     "answers": [
                                         {
                                             "id": "confirm-date-of-birth-answer-proxy",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Yes, {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}} is {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old",
@@ -1232,7 +1232,7 @@
                                     "answers": [
                                         {
                                             "id": "confirm-marriage-type-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Never married and never registered a civil partnership",
@@ -1355,7 +1355,7 @@
                                     "answers": [
                                         {
                                             "id": "current-marriage-status-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Marriage to a partner of the opposite sex",
@@ -1390,7 +1390,7 @@
                                     "answers": [
                                         {
                                             "id": "previous-marriage-status-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Marriage to a partner of the opposite sex",
@@ -1437,7 +1437,7 @@
                                     "answers": [
                                         {
                                             "id": "another-address-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "No",
@@ -1555,7 +1555,7 @@
                                         {
                                             "id": "other-address-answer-building",
                                             "label": "Building",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "type": "TextField"
                                         },
                                         {
@@ -1604,7 +1604,7 @@
                                     "answers": [
                                         {
                                             "id": "address-type-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Armed forces base address",
@@ -1678,7 +1678,7 @@
                                     "answers": [
                                         {
                                             "id": "address-type-answer-non-uk1",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Armed forces base address",
@@ -1752,7 +1752,7 @@
                                     "answers": [
                                         {
                                             "id": "in-education-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Yes",
@@ -1843,7 +1843,7 @@
                                     "answers": [
                                         {
                                             "id": "in-education-over16-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Yes",
@@ -1934,7 +1934,7 @@
                                     "answers": [
                                         {
                                             "id": "term-time-location-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "{{answers['address-line-1']}}, {{answers['address-line-2']}}",
@@ -1993,7 +1993,7 @@
                                     "answers": [
                                         {
                                             "id": "term-time-location-answer-with-second-address",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "{{answers['address-line-1']}}, {{answers['address-line-2']}}",
@@ -2070,7 +2070,7 @@
                                     "answers": [
                                         {
                                             "id": "term-time-location-answer-with-second-address-non-uk",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "{{answers['address-line-1']}}, {{answers['address-line-2']}}",
@@ -2146,7 +2146,7 @@
                                     "answers": [
                                         {
                                             "id": "country-of-birth-england-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "England",
@@ -2214,7 +2214,7 @@
                                     "answers": [
                                         {
                                             "id": "country-of-birth-wales-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Wales",
@@ -2344,7 +2344,7 @@
                                     "answers": [
                                         {
                                             "id": "arrive-in-uk-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "type": "MonthYearDate"
                                         }
                                     ]
@@ -2394,7 +2394,7 @@
                                     "answers": [
                                         {
                                             "id": "length-of-stay-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Less than 12 months",
@@ -2440,7 +2440,7 @@
                                     "answers": [
                                         {
                                             "id": "health-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Very good",
@@ -2498,7 +2498,7 @@
                                     "answers": [
                                         {
                                             "id": "disability-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Yes",
@@ -2566,7 +2566,7 @@
                                     "answers": [
                                         {
                                             "id": "disability-limitation-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Yes, reduced a lot",
@@ -2622,7 +2622,7 @@
                                     "answers": [
                                         {
                                             "id": "carer-proxy-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "No",
@@ -2680,7 +2680,7 @@
                                     "answers": [
                                         {
                                             "id": "carer-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "No",
@@ -2750,7 +2750,7 @@
                                     "answers": [
                                         {
                                             "id": "national-identity-england-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "English",
@@ -2827,7 +2827,7 @@
                                         {
                                             "id": "national-identity-wales-answer",
                                             "label": "Select all that apply",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Welsh",
@@ -2908,7 +2908,7 @@
                                     "answers": [
                                         {
                                             "id": "ethnic-group-england-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "White",
@@ -2969,7 +2969,7 @@
                                     "answers": [
                                         {
                                             "id": "ethnic-group-wales-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "White",
@@ -3175,7 +3175,7 @@
                                     "answers": [
                                         {
                                             "id": "white-ethnic-group-england-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "English, Welsh, Scottish, Northern Irish or British",
@@ -3239,7 +3239,7 @@
                                     "answers": [
                                         {
                                             "id": "white-ethnic-group-wales-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Welsh, English, Scottish, Northern Irish or British",
@@ -3364,7 +3364,7 @@
                                     "answers": [
                                         {
                                             "id": "mixed-ethnic-group-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "White and Black Caribbean",
@@ -3474,7 +3474,7 @@
                                     "answers": [
                                         {
                                             "id": "asian-ethnic-group-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Indian",
@@ -3588,7 +3588,7 @@
                                     "answers": [
                                         {
                                             "id": "black-ethnic-group-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "African",
@@ -3694,7 +3694,7 @@
                                     "answers": [
                                         {
                                             "id": "other-ethnic-group-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Arab",
@@ -3785,7 +3785,7 @@
                                     "answers": [
                                         {
                                             "id": "sexual-identity-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Straight or Heterosexual",
@@ -3867,7 +3867,7 @@
                                     "answers": [
                                         {
                                             "id": "sexual-identity-answer-proxy",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Straight or Heterosexual",
@@ -3968,7 +3968,7 @@
                                      "answers": [
                                         {
                                             "id": "birth-gender-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "No",
@@ -4039,7 +4039,7 @@
                                     "answers": [
                                         {
                                             "id": "understand-welsh-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Understand spoken Welsh",
@@ -4098,7 +4098,7 @@
                                     "answers": [
                                         {
                                             "id": "language-england-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "English",
@@ -4159,7 +4159,7 @@
                                     "answers": [
                                         {
                                             "id": "language-welsh-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "English or Welsh",
@@ -4249,7 +4249,7 @@
                                     "answers": [
                                         {
                                             "id": "english-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Very well",
@@ -4385,7 +4385,7 @@
                                     "answers": [
                                         {
                                             "id": "past-usual-address-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "{{answers['address-line-1']}}, {{answers['address-line-2']}}",
@@ -4472,7 +4472,7 @@
                                         {
                                             "id": "last-year-address-answer-building",
                                             "label": "Building",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "type": "TextField"
                                         },
                                         {
@@ -4534,7 +4534,7 @@
                                     "answers": [
                                         {
                                             "id": "passports-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "United Kingdom",
@@ -4618,7 +4618,7 @@
                                     "answers": [
                                         {
                                             "id": "armed-forces-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "guidance": {
                                                 "show_guidance": "Why your answer is important",
                                                 "hide_guidance": "Why your answer is important",
@@ -4701,7 +4701,7 @@
                                      "answers": [
                                         {
                                             "id": "apprenticeship-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Yes",
@@ -4754,7 +4754,7 @@
                                      "answers": [
                                         {
                                             "id": "degree-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Yes",
@@ -4820,7 +4820,7 @@
                                      "answers": [
                                         {
                                             "id": "nvq-level-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "NVQ level 3 or equivalent",
@@ -4884,7 +4884,7 @@
                                      "answers": [
                                         {
                                             "id": "a-level-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "2 or more A levels",
@@ -4952,7 +4952,7 @@
                                      "answers": [
                                         {
                                             "id": "gcse-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "5 or more GCSEs grades A* to C or 9 to 4",
@@ -5039,7 +5039,7 @@
                                      "answers": [
                                         {
                                             "id": "other-qualifications-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Yes, in England or Wales",
@@ -5096,7 +5096,7 @@
                                     "answers": [
                                         {
                                             "id": "employment-status-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Working as an employee",
@@ -5180,7 +5180,7 @@
                                     "answers": [
                                         {
                                             "id": "employment-type-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Retired",
@@ -5247,7 +5247,7 @@
                                                  ]
                                             },
                                             "id": "jobseeker-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Yes",
@@ -5305,7 +5305,7 @@
                                     "answers": [
                                         {
                                             "id": "job-availability-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Yes",
@@ -5363,7 +5363,7 @@
                                     "answers": [
                                         {
                                             "id": "job-pending-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Yes",
@@ -5409,7 +5409,7 @@
                                     "answers": [
                                         {
                                             "id": "ever-worked-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Yes, in the last 12 months",
@@ -5548,7 +5548,7 @@
                                      "answers": [
                                         {
                                             "id": "main-job-type-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Employee",
@@ -5628,7 +5628,7 @@
                                     "answers": [
                                         {
                                             "id": "main-job-type-past-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Employee",
@@ -5707,7 +5707,7 @@
                                     "answers": [
                                         {
                                             "id": "self-employed-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Yes",
@@ -5781,7 +5781,7 @@
                                     "answers": [
                                         {
                                             "id": "self-employed-past-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Yes",
@@ -5847,7 +5847,7 @@
                                         {
                                             "id": "business-name-answer",
                                             "label": "Organisation or business name",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "type": "TextField"
                                         }
                                     ]
@@ -5875,7 +5875,7 @@
                                         {
                                             "id": "business-name-proxy-answer",
                                             "label": "Organisation or business name",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "type": "TextField"
                                         }
                                     ]
@@ -5902,7 +5902,7 @@
                                         {
                                             "id": "business-name-past-proxy-answer",
                                             "label": "Organisation or business name",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "type": "TextField"
                                         }
                                     ]
@@ -5940,7 +5940,7 @@
                                         {
                                             "id": "business-name-past-answer",
                                             "label": "Organisation or business name",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "type": "TextField"
                                         }
                                     ]
@@ -5977,7 +5977,7 @@
                                         {
                                             "id": "job-title-answer",
                                             "label": "Job title",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "type": "TextField"
                                         }
                                     ]
@@ -6014,7 +6014,7 @@
                                         {
                                             "id": "job-title-past-answer",
                                             "label": "Job title",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "type": "TextField"
                                         }
                                     ]
@@ -6051,7 +6051,7 @@
                                         {
                                             "id": "job-description-answer",
                                             "label": "Description",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "type": "TextArea",
                                             "max_length": 200,
                                             "validation": {
@@ -6142,7 +6142,7 @@
                                         {
                                             "id": "job-description-past-answer",
                                             "label": "Description",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "type": "TextArea",
                                             "max_length": 200,
                                             "validation": {
@@ -6223,7 +6223,7 @@
                                         {
                                             "id": "employers-business-answer",
                                             "label": "Description",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "type": "TextArea",
                                             "max_length": 200,
                                             "validation": {
@@ -6256,7 +6256,7 @@
                                         {
                                             "id": "employers-business-past-answer",
                                             "label": "Description",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "type": "TextArea",
                                             "max_length": 200,
                                             "validation": {
@@ -6300,7 +6300,7 @@
                                         {
                                             "id": "not-registered-business-answer",
                                             "label": "Description",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "type": "TextArea",
                                             "max_length": 200,
                                             "validation": {
@@ -6344,7 +6344,7 @@
                                         {
                                             "id": "not-registered-business-past-answer",
                                             "label": "Description",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "type": "TextArea",
                                             "max_length": 200,
                                             "validation": {
@@ -6386,7 +6386,7 @@
                                     "answers": [
                                         {
                                             "id": "professional-quals-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Yes",
@@ -6432,7 +6432,7 @@
                                     "answers": [
                                         {
                                             "id": "professional-quals-past-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Yes",
@@ -6478,7 +6478,7 @@
                                     "answers": [
                                         {
                                             "id": "supervise-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Yes",
@@ -6523,7 +6523,7 @@
                                     "answers": [
                                         {
                                             "id": "supervise-past-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Yes",
@@ -6576,7 +6576,7 @@
                                     "answers": [
                                         {
                                             "id": "hours-worked-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "0 to 15 hours",
@@ -6630,7 +6630,7 @@
                                     "answers": [
                                         {
                                             "id": "work-travel-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "Work mainly at or from home",
@@ -6712,7 +6712,7 @@
                                     "answers": [
                                         {
                                             "id": "employer-type-of-address-answer",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "options": [
                                                 {
                                                     "label": "At a workplace",
@@ -6818,7 +6818,7 @@
                                         {
                                             "id": "employer-address-answer-building",
                                             "label": "Building",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "type": "TextField"
                                         },
                                         {
@@ -6879,7 +6879,7 @@
                                         {
                                             "id": "no-business-name-employer-address-answer-building",
                                             "label": "Building",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "type": "TextField"
                                         },
                                         {
