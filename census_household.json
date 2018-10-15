@@ -5271,7 +5271,7 @@
                                                 "show_guidance": "Why do I need to answer if I am retired or long term sick or disabled?",
                                                 "hide_guidance": "Why do I need to answer if I am retired or long term sick or disabled",
                                                 "content": [{
-                                                   "description": "To get a true picture of the UK working population we ask this question to everyone. We ask people who are retired because the number of people continuing to work after retirement age is increasing. We ask people who are long-term sick or disabled because some intend to go back to work."
+                                                   "description": "To get a true picture of the UK working population, we ask this question to everyone who is not currently working. We ask people who are retired because the number of people continuing to work after retirement age is increasing. We ask people who are long-term sick or disabled because some intend to go back to work."
                                                     }
                                                  ]
                                             },
