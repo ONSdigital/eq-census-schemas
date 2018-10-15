@@ -2658,8 +2658,8 @@
                                                     "value": "No"
                                                 },
                                                 {
-                                                    "label": "Yes, 1 to 9 hours a week",
-                                                    "value": "Yes, 1 to 9 hours a week"
+                                                    "label": "Yes, less than 9 hours a week",
+                                                    "value": "Yes, less than 9 hours a week"
                                                 },
                                                 {
                                                     "label": "Yes, 10 to 19 hours a week",
@@ -2716,8 +2716,8 @@
                                                     "value": "No"
                                                 },
                                                 {
-                                                    "label": "Yes, 1 to 9 hours a week",
-                                                    "value": "Yes, 1 to 9 hours a week"
+                                                    "label": "Yes, less than 9 hours a week",
+                                                    "value": "Yes, less than 9 hours a week"
                                                 },
                                                 {
                                                     "label": "Yes, 10 to 19 hours a week",
