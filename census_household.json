@@ -690,8 +690,7 @@
                                                 },
                                                 {
                                                     "label": "Tank or bottled gas",
-                                                    "value": "Tank or bottled gas",
-                                                    "description": "Including Liquid Petroleum Gas and Biogas"
+                                                    "value": "Tank or bottled gas"
                                                 },
                                                 {
                                                     "label": "Electric",
@@ -714,11 +713,6 @@
                                                 {
                                                     "label": "Renewable energy",
                                                     "value": "Renewable energy",
-                                                    "description": "For example wood pellets or Biomass"
-                                                },
-                                                {
-                                                    "label": "Other renewable electric systems",
-                                                    "value": "Other renewable electric systems",
                                                     "description": "For example air heat pump systems or wood pellets"
                                                 },
                                                 {
