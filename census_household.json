@@ -764,6 +764,14 @@
                                     "id": "own-or-rent-question",
                                     "title": "Does the householder own or rent <em>{{answers['address-line-1']}}</em>?",
                                     "type": "General",
+                                     "definitions": [{
+                                        "title": "What is a householder",
+                                        "content": [
+                                            {
+                                                "description": "The householder is the person who lives, or is present, at this address who owns or rents (or jointly owns/rents) the accommodation; or is responsible (or jointly responsible) for paying the household bills and expenses."
+                                            }
+                                        ]
+                                    }],
                                     "answers": [
                                         {
                                             "id": "own-or-rent-answer",
@@ -778,8 +786,9 @@
                                                     "value": "Owns with a mortgage or loan"
                                                 },
                                                 {
-                                                    "label": "Part owns and part rents (shared ownership)",
-                                                    "value": "Part owns and part rents (shared ownership)"
+                                                    "label": "Part owns and part rents",
+                                                    "value": "Part owns and part rents",
+                                                    "description": "Shared ownership"
                                                 },
                                                 {
                                                     "label": "Rents with or without housing benefit",
