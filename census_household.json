@@ -1568,7 +1568,7 @@
                                 {
                                     "id": "other-address-question",
                                      "titles": [{
-                                            "value": "Enter details of the other UK address where <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> stay more than 30 days a year",
+                                            "value": "Enter details of the other UK address where <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> stays more than 30 days a year",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
