@@ -5737,7 +5737,6 @@
                                             "value": "In your main job, what was your employment status?"
                                         }
                                     ],
-                                    "description": "Answer the remaining questions for your last main job",
                                     "type": "General",
                                     "answers": [
                                         {
