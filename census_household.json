@@ -682,8 +682,8 @@
                                                     "value": "Mains gas"
                                                 },
                                                 {
-                                                    "label": "Other gas",
-                                                    "value": "Other gas",
+                                                    "label": "Tank or bottled gas",
+                                                    "value": "Tank or bottled gas",
                                                     "description": "Including Liquid Petroleum Gas and Biogas"
                                                 },
                                                 {
@@ -698,21 +698,25 @@
                                                 {
                                                     "label": "Solid Fuel",
                                                     "value": "Solid Fuel",
-                                                    "description": "For example wood, coal"
+                                                    "description": "Excluding wood"
                                                 },
                                                 {
-                                                    "label": "Renewable  heating systems",
-                                                    "value": "Wood or biomass",
+                                                    "label": "Wood",
+                                                    "value": "Wood"
+                                                },
+                                                {
+                                                    "label": "Renewable energy",
+                                                    "value": "Renewable energy",
                                                     "description": "For example wood pellets or Biomass"
                                                 },
                                                 {
                                                     "label": "Other renewable electric systems",
                                                     "value": "Other renewable electric systems",
-                                                    "description": "For example Air Heat or Ground source systems"
+                                                    "description": "For example air heat pump systems or wood pellets"
                                                 },
                                                 {
-                                                    "label": "Other central heating",
-                                                    "value": "Other central heating"
+                                                    "label": "Other",
+                                                    "value": "Other"
                                                 },
                                                 {
                                                     "label": "No central heating",
