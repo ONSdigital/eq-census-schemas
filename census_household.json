@@ -879,7 +879,13 @@
                                     "id": "number-of-vehicles-question",
                                     "title": "In total, how many cars or vans are owned, or available for use, by members of this household?",
                                     "type": "General",
-                                    "description": "Include any company car(s) or van(s) available for private use.",
+                                    "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Include any company car(s) or van(s) available for private use."
+                                            }
+                                        ]
+                                    },
                                     "answers": [
                                         {
                                             "id": "number-of-vehicles-answer",
