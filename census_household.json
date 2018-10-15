@@ -646,6 +646,13 @@
                                     "id": "number-of-bedrooms-question",
                                     "title": "How many bedrooms are available for use only by <em>{{answers['address-line-1']}}</em>?",
                                     "type": "General",
+                                     "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Include all rooms built or converted for use as bedrooms"
+                                            }
+                                        ]
+                                    },
                                     "answers": [
                                         {
                                             "id": "number-of-bedrooms-answer",
