@@ -1766,7 +1766,7 @@
                                 {
                                     "id": "in-education-question",
                                     "titles": [{
-                                            "value": "Is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> schoolchild or student in full-time education?",
+                                            "value": "Is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> a schoolchild or student in full-time education?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
