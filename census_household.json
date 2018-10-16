@@ -5446,7 +5446,7 @@
                             "questions": [
                                 {
                                     "id": "ever-worked-proxy-question",
-                                    "titles":  "Has <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> ever done any paid work?",
+                                    "title":  "Has <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> ever done any paid work?",
                                     "type": "General",
                                     "answers": [
                                         {
