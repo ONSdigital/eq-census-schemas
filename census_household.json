@@ -563,7 +563,7 @@
                                                 {
                                                     "label": "Terraced",
                                                     "value": "Terraced",
-                                                    "description": "including end-terrace"
+                                                    "description": "Including end-terrace"
                                                 }
                                             ],
                                             "type": "Radio"
