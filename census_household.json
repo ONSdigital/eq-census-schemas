@@ -770,13 +770,13 @@
                             "questions": [
                                 {
                                     "id": "own-or-rent-question",
-                                    "title": "Does the householder own or rent <em>{{answers['address-line-1']}}</em>?",
+                                    "title": "Does your household own or rent <em>{{answers['address-line-1']}}</em>?",
                                     "type": "General",
                                      "definitions": [{
-                                        "title": "What is a householder",
+                                        "title": "What is a household",
                                         "content": [
                                             {
-                                                "description": "The householder is the person who lives, or is present, at this address who owns or rents (or jointly owns/rents) the accommodation; or is responsible (or jointly responsible) for paying the household bills and expenses."
+                                                "description": "One person living alone; or a group of people (not necessarily related) living at the same address who share cooking facilities and share a living room or sitting room or dining area."
                                             }
                                         ]
                                     }],
