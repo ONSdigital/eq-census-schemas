@@ -561,8 +561,9 @@
                                                     "value": "Semi-detached"
                                                 },
                                                 {
-                                                    "label": "Terraced (including end-terrace)",
-                                                    "value": "Terraced"
+                                                    "label": "Terraced",
+                                                    "value": "Terraced",
+                                                    "description": "including end-terrace"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -596,12 +597,14 @@
                                                     "value": "In a purpose-built block of flats or tenement"
                                                 },
                                                 {
-                                                    "label": "Part of a converted or shared house (including bedsits)",
-                                                    "value": "Part of a converted or shared house (including bedsits)"
+                                                    "label": "Part of a converted or shared house",
+                                                    "value": "Part of a converted or shared house",
+                                                    "description": "Including bedsits"
                                                 },
                                                 {
-                                                    "label": "In a commercial building (for example, in an office building, hotel, or over a  shop).",
-                                                    "value": "In a commercial building (for example, in an office building, hotel, or over a  shop)."
+                                                    "label": "In a commercial building",
+                                                    "value": "In a commercial building",
+                                                    "description": "For example, in an office building, hotel, or over a  shop"
                                                 }
                                             ],
                                             "type": "Radio"
