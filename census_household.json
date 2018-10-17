@@ -1462,7 +1462,7 @@
                                         }
                                     ],
                                     "type": "General",
-                                    "description": "This could be 30 days in a row, or divided across the year",
+                                    
                                      "definitions": [{
                                         "title": "What do we mean by 'another address'",
                                         "content": [
@@ -1471,6 +1471,7 @@
                                             }
                                         ]
                                     }],
+                                    "description": "This could be 30 days in a row, or divided across the year",
                                     "answers": [
                                         {
                                             "id": "another-address-answer",
