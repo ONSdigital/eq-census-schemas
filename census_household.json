@@ -773,7 +773,7 @@
                                     "title": "Does your household own or rent <em>{{answers['address-line-1']}}</em>?",
                                     "type": "General",
                                      "definitions": [{
-                                        "title": "What is a household",
+                                        "title": "What is a household?",
                                         "content": [
                                             {
                                                 "description": "One person living alone; or a group of people (not necessarily related) living at the same address who share cooking facilities and share a living room or sitting room or dining area."
