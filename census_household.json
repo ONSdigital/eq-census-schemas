@@ -4580,11 +4580,12 @@
                                         }
                                     ],
                                     "description": "",
-                                    "type": "General",
-                                    "answers": [
-                                        {
+                                    "type": "MutuallyExclusive",
+                                    "mandatory": true,
+                                    "answers": [{
                                             "id": "passports-answer",
-                                            "mandatory": true,
+                                            "mandatory": false,
+                                            "type": "YearDate",
                                             "options": [
                                                 {
                                                     "label": "United Kingdom",
@@ -4598,20 +4599,18 @@
                                                     "label": "Other",
                                                     "value": "Other",
                                                     "child_answer_id": "passport-answer-other"
-                                                },
-                                                {
-                                                    "label": "None",
-                                                    "value": "None"
                                                 }
-                                            ],
-                                            "type": "MutuallyExclusiveCheckbox"
+                                                
+                                            ]
                                         },
                                         {
-                                            "id": "passport-answer-other",
-                                            "parent_answer_id": "passports-answer",
-                                            "type": "TextField",
+                                            "id": "passports-answer-exclusive",
+                                            "type": "Checkbox",
                                             "mandatory": false,
-                                            "label": "Please specify the passports held"
+                                            "options": [{
+                                                    "label": "None",
+                                                    "value": "None"
+                                            }]
                                         }
                                     ]
                                 }
