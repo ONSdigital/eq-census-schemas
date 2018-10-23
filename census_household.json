@@ -2610,12 +2610,12 @@
                                             "mandatory": true,
                                             "options": [
                                                 {
-                                                    "label": "Yes, reduced a lot",
-                                                    "value": "Yes, reduced a lot"
+                                                    "label": "Yes, a lot",
+                                                    "value": "Yes, a lot"
                                                 },
                                                 {
-                                                    "label": "Yes, reduced a little",
-                                                    "value": "Yes, reduced a little"
+                                                    "label": "Yes, a little",
+                                                    "value": "Yes, a little"
                                                 },
                                                 {
                                                     "label": "Not at all",
