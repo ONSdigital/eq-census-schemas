@@ -4080,12 +4080,12 @@
                                             "value": "Can you understand, speak, read or write Welsh?"
                                         }
                                     ],
+                                    "mandatory": true,
                                     "description": "Select all that apply",
-                                    "type": "General",
-                                    "answers": [
-                                        {
+                                    "type": "MutuallyExclusive",
+                                    "answers": [{
                                             "id": "understand-welsh-answer",
-                                            "mandatory": true,
+                                            "mandatory": false,
                                             "options": [
                                                 {
                                                     "label": "Understand spoken Welsh",
@@ -4102,13 +4102,17 @@
                                                 {
                                                     "label": "Write Welsh",
                                                     "value": "Write Welsh"
-                                                },
-                                                {
-                                                    "label": "None of the these",
-                                                    "value": "None of the these"
                                                 }
-                                            ],
-                                            "type": "MutuallyExclusiveCheckbox"
+                                             ]
+                                        },
+                                        {
+                                            "id": "understand-welsh-answer-exclusive",
+                                            "type": "Checkbox",
+                                            "mandatory": false,
+                                            "options": [{
+                                                "label": "None of the these",
+                                                "value": "None of the these"
+                                            }]
                                         }
                                     ]
                                 }
