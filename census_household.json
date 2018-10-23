@@ -55,8 +55,16 @@
                 {
                   "id": "another-address-question1",
                   "title": "Do you stay at another address for more than 30 days a year?",
-                  "description": "This could be 30 days in a row, or divided across the year.",
+                  "description": "This could be more than 30 days in a row, or divided across the year.",
                   "type": "General",
+                  "definitions": [{
+                                        "title": "What do we mean by 'another address'",
+                                        "content": [
+                                            {
+                                                "description": "Another address refers to a different address to the one at the start of this survey. This might be another parent or guardian’s address, a term-time address, an armed forces base, or a holiday home. 30 days could be in a row or divided across the year."
+                                            }
+                                        ]
+                                    }],
                   "answers": [
                     {
                       "id": "another-address-answer1",
