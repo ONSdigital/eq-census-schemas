@@ -4866,7 +4866,7 @@
                                             "value": "Have you achieved an NVQ or equivalent qualification?"
                                         }
                                     ],
-                                    "type": "General",
+                                    "type": "MutuallyExclusive",
                                     "guidance": {
                                         "content": [
                                             {
@@ -4874,10 +4874,12 @@
                                             }
                                         ]
                                     },
+                                    "mandatory": true,
                                      "answers": [
                                         {
                                             "id": "nvq-level-answer",
-                                            "mandatory": true,
+                                            "mandatory": false,
+                                            "type": "Checkbox",
                                             "options": [
                                                 {
                                                     "label": "NVQ level 3 or equivalent",
@@ -4892,14 +4894,18 @@
                                                 {
                                                     "label": "NVQ level 1 or equivalent",
                                                     "value": "NVQ level 1 or equivalent"
-                                                },
-                                                {
-                                                    "label": "None of these apply",
-                                                    "value": "None of these apply",
-                                                    "description": "Questions on A levels, GCSEs and equivalents will follow"
                                                 }
-                                            ],
-                                            "type": "MutuallyExclusiveCheckbox"
+                                            ]
+                                        },
+                                        {
+                                            "id": "nvq-level-answer-exclusive",
+                                            "type": "Checkbox",
+                                            "mandatory": false,
+                                            "options": [{
+                                                "label": "None of these apply",
+                                                "value": "None of these apply",
+                                                "description": "Questions on A levels, GCSEs and equivalents will follow"
+                                            }]
                                         }
                                     ]
                                 }
@@ -4930,7 +4936,6 @@
                                             "value": "Have you achieved an AS, A level or equivalent qualification?"
                                         }
                                     ],
-                                    "type": "General",
                                     "guidance": {
                                         "content": [
                                             {
@@ -4938,10 +4943,13 @@
                                             }
                                         ]
                                     },
+                                    "type": "MutuallyExclusive",
+                                    "mandatory": true,
                                      "answers": [
                                         {
                                             "id": "a-level-answer",
-                                            "mandatory": true,
+                                            "mandatory": false,
+                                            "type": "Checkbox",
                                             "options": [
                                                 {
                                                     "label": "2 or more A levels",
@@ -4960,14 +4968,18 @@
                                                 {
                                                     "label": "Advanced Welsh Baccalaureate",
                                                     "value": "Advanced Welsh Baccalaureate"
-                                                },
-                                                {
-                                                    "label": "None of these apply",
-                                                    "value": "None of these apply",
-                                                    "description": "Questions on GCSEs and equivalents will follow"
                                                 }
-                                            ],
-                                            "type": "MutuallyExclusiveCheckbox"
+                                            ]
+                                        },
+                                        {
+                                            "id": "a-level-answer-exclusive",
+                                            "type": "Checkbox",
+                                            "mandatory": false,
+                                            "options": [{
+                                                "label": "None of these apply",
+                                                "value": "None of these apply",
+                                                    "description": "Questions on GCSEs and equivalents will follow"
+                                            }]
                                         }
                                     ]
                                 }
@@ -4998,7 +5010,8 @@
                                             "value": "Have you achieved a GCSE or equivalent qualification?"
                                         }
                                     ],
-                                    "type": "General",
+                                    "type": "MutuallyExclusive",
+                                    "mandatory": true,
                                     "guidance": {
                                         "content": [
                                             {
@@ -5009,7 +5022,8 @@
                                      "answers": [
                                         {
                                             "id": "gcse-answer",
-                                            "mandatory": true,
+                                            "mandatory": false,
+                                            "type": "Checkbox",
                                             "options": [
                                                 {
                                                     "label": "5 or more GCSEs grades A* to C or 9 to 4",
@@ -5033,13 +5047,17 @@
                                                 {
                                                     "label": "Foundation Welsh Baccalaureate",
                                                     "value": "Foundation Welsh Baccalaureate"
-                                                },
-                                                {
-                                                    "label": "None of these apply",
-                                                    "value": "None of these apply"
                                                 }
-                                            ],
-                                            "type": "MutuallyExclusiveCheckbox"
+                                            ]
+                                        },
+                                        {
+                                            "id": "gcse-answer-exclusive",
+                                            "type": "Checkbox",
+                                            "mandatory": false,
+                                            "options": [{
+                                                "label": "None of these apply",
+                                                "value": "None of these apply"
+                                            }]
                                         }
                                     ]
                                 }
@@ -5049,18 +5067,18 @@
                                     "goto": {
                                         "block": "other-qualifications",
                                         "when": [{
-                                            "id": "gcse-answer",
+                                            "id": "gcse-answer-exclusive",
                                             "condition": "contains",
                                             "value": "None of these apply"
                                             
                                         },
                                         {
-                                                "id": "a-level-answer",
+                                                "id": "a-level-answer-exclusive",
                                                 "condition": "contains",
                                                 "value": "None of these apply"
                                             },
                                          {
-                                                "id": "nvq-level-answer",
+                                                "id": "nvq-level-answer-exclusive",
                                                 "condition": "contains",
                                                 "value": "None of these apply"
                                             }
@@ -5092,11 +5110,13 @@
                                             "value": "Have you achieved any formal qualifications?"
                                         }
                                     ],
-                                    "type": "General",
+                                    "type": "MutuallyExclusive",
+                                    "mandatory": true,
                                      "answers": [
                                         {
                                             "id": "other-qualifications-answer",
-                                            "mandatory": true,
+                                            "mandatory": false,
+                                            "type": "Checkbox",
                                             "options": [
                                                 {
                                                     "label": "Yes, in England or Wales",
@@ -5105,13 +5125,17 @@
                                                 {
                                                     "label": "Yes, anywhere outside of England and Wales",
                                                     "value": "Yes, anywhere outside of England and Wales"
-                                                },
-                                                {
-                                                    "label": "No formal qualifications",
-                                                    "value": "No formal qualifications"
                                                 }
-                                            ],
-                                            "type": "MutuallyExclusiveCheckbox"
+                                            ]
+                                        },
+                                        {
+                                            "id": "other-qualifications-answer-exclusive",
+                                            "type": "Checkbox",
+                                            "mandatory": false,
+                                            "options": [{
+                                                "label": "No formal qualifications",
+                                                "value": "No formal qualifications"
+                                            }]
                                         }
                                     ]
                                 }
