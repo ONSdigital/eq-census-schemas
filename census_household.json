@@ -674,7 +674,7 @@
                                 {
                                     "id": "central-heating-question",
                                     "title": "What type of central heating does <em>{{answers['address-line-1']}}</em> have?",
-                                    "type": "General",
+                                    "type": "MutuallyExclusive",
                                      "guidance": {
                                         "content": [
                                             {
@@ -682,10 +682,10 @@
                                             }
                                         ]
                                     },
-                                    "answers": [
-                                        {
+                                    "answers": [{
                                             "id": "central-heating-answer",
                                             "mandatory": true,
+                                            "type": "Checkbox",
                                             "options": [
                                                 {
                                                     "label": "Mains gas",
@@ -721,13 +721,17 @@
                                                 {
                                                     "label": "Other",
                                                     "value": "Other"
-                                                },
-                                                {
-                                                    "label": "No central heating",
-                                                    "value": "No central heating"
                                                 }
-                                            ],
-                                            "type": "MutuallyExclusiveCheckbox"
+                                             ]
+                                        },
+                                        {
+                                            "id": "central-heating-answer-exclusive",
+                                            "type": "Checkbox",
+                                            "mandatory": false,
+                                            "options": [{
+                                                "label": "No central heating",
+                                                "value": "No central heating"
+                                            }]
                                         }
                                     ]
                                 }
