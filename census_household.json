@@ -1244,7 +1244,7 @@
                                         }
                                     ],
                                     "mandatory": false,
-                                    "type": "Checkbox",
+                                    "type": "MutuallyExclusive",
                                     "guidance": {
                                         "content": [
                                             {
