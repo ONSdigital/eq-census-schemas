@@ -675,6 +675,7 @@
                                     "id": "central-heating-question",
                                     "title": "What type of central heating does <em>{{answers['address-line-1']}}</em> have?",
                                     "type": "MutuallyExclusive",
+                                    "mandatory": true,
                                      "guidance": {
                                         "content": [
                                             {
@@ -684,7 +685,7 @@
                                     },
                                     "answers": [{
                                             "id": "central-heating-answer",
-                                            "mandatory": true,
+                                            "mandatory": false,
                                             "type": "Checkbox",
                                             "options": [
                                                 {
