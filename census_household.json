@@ -4585,7 +4585,7 @@
                                     "answers": [{
                                             "id": "passports-answer",
                                             "mandatory": false,
-                                            "type": "YearDate",
+                                            "type": "Checkbox",
                                             "options": [
                                                 {
                                                     "label": "United Kingdom",
