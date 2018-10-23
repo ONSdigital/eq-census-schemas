@@ -5166,7 +5166,8 @@
                                             "value": "In the last seven days, were you doing any of the following?"
                                         }
                                     ],
-                                    "type": "General",
+                                    "type": "MutuallyExclusive",
+                                    "mandatory": true,
                                     "guidance": {
                                         "content": [
                                             {
@@ -5177,7 +5178,8 @@
                                     "answers": [
                                         {
                                             "id": "employment-status-answer",
-                                            "mandatory": true,
+                                            "mandatory": false,
+                                            "type": "Checkbox",
                                             "options": [
                                                 {
                                                     "label": "Working as an employee",
@@ -5198,13 +5200,17 @@
                                                 {
                                                     "label": "Doing any other kind of paid work",
                                                     "value": "Doing any other kind of paid work"
-                                                },
-                                                {
-                                                    "label": "None of these apply",
-                                                    "value": "None of these apply"
                                                 }
-                                            ],
-                                            "type": "MutuallyExclusiveCheckbox"
+                                            ]
+                                        },
+                                        {
+                                            "id": "employment-status-answer-exclusive",
+                                            "type": "Checkbox",
+                                            "mandatory": false,
+                                            "options": [{
+                                                "label": "None of these apply",
+                                                "value": "None of these apply"
+                                            }]
                                         }
                                     ]
                                 }
@@ -5215,7 +5221,7 @@
                                         "block": "employment-type",
                                         "when": [
                                             {
-                                                "id": "employment-status-answer",
+                                                "id": "employment-status-answer-exclusive",
                                                 "condition": "contains",
                                                 "value": "None of these apply"
                                             }
