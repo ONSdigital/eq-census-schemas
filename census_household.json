@@ -4086,6 +4086,7 @@
                                     "answers": [{
                                             "id": "understand-welsh-answer",
                                             "mandatory": false,
+                                            "type": "Checkbox",
                                             "options": [
                                                 {
                                                     "label": "Understand spoken Welsh",
