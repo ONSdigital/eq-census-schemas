@@ -4444,10 +4444,6 @@
                                                     "value": "householdaddress"
                                                 },
                                                 {
-                                                    "label": "Same address as person 1",
-                                                    "value": "same as person 1"
-                                                },
-                                                {
                                                     "label": "Student term time or boarding school address in the UK",
                                                     "value": "Student term time or boarding school address in the UK"
                                                 },
