@@ -4356,7 +4356,7 @@
                                         {
                                             "id": "religion-answer",
                                             "mandatory": false,
-                                            "label": "Select only one option",
+                                            "label": "Select one option only",
                                             "options": [
                                                 {
                                                     "label": "No religion",
