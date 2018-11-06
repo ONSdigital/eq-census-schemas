@@ -6014,23 +6014,13 @@
                                     "id": "business-name-question",
                                     "title": "What is the name of the organisation or business you work for?",
                                     "description": "If you are self-employed in your own business, give the business name.",
-                                    "type": "MutuallyExclusive",
-                                    "mandatory": true,
+                                    "type": "General",
                                     "answers": [
                                         {
                                             "id": "business-name-answer",
                                             "label": "Organisation or business name",
-                                            "mandatory": false,
+                                            "mandatory": true,
                                             "type": "TextField"
-                                        },
-                                        {
-                                            "id": "business-name-answer-exclusive",
-                                            "type": "Checkbox",
-                                            "mandatory": false,
-                                            "options": [{
-                                                "label": "I don't work for an organisation or I work for a private individual",
-                                                "value": "I don't work for an organisation or I work for a private individual"
-                                            }]
                                         }
                                     ]
                                 }
