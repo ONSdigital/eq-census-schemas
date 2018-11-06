@@ -1387,7 +1387,7 @@
                             "questions": [
                                 {
                                     "id": "currrent-marriage-status-question",
-                                    "title": "What type of partnership is this?",
+                                    "title": "Who is your legal marriage to",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1395,12 +1395,12 @@
                                             "mandatory": true,
                                             "options": [
                                                 {
-                                                    "label": "Marriage to a partner of the opposite sex",
-                                                    "value": "Marriage to a partner of the opposite sex"
+                                                    "label": "Someone of the opposite sex",
+                                                    "value": "Someone of the opposite sex"
                                                 },
                                                 {
-                                                    "label": "Marriage to a partner of the same sex",
-                                                    "value": "Marriage to a partner of the same sex"
+                                                    "label": "Someone of the same sex",
+                                                    "value": "Someone of the same sex"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -1422,7 +1422,7 @@
                             "questions": [
                                 {
                                     "id": "previous-marriage-status-question",
-                                    "title": "What type of partnership was this?",
+                                    "title": "Who was your legal marriage to?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1430,12 +1430,12 @@
                                             "mandatory": true,
                                             "options": [
                                                 {
-                                                    "label": "Marriage to a partner of the opposite sex",
-                                                    "value": "Marriage to a partner of the opposite sex"
+                                                    "label": "Someone of the opposite sex",
+                                                    "value": "Someone of the opposite sex"
                                                 },
                                                 {
-                                                    "label": "Marriage to a partner of the same sex",
-                                                    "value": "Marriage to a partner of the same sex"
+                                                    "label": "Someone of the same sex",
+                                                    "value": "Someone of the same sex"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -4139,7 +4139,7 @@
                                     ],
                                     "type": "General",
                                      "definitions": [{
-                                        "title": "What is main language?",
+                                        "title": "What do we mean by main language?",
                                          "content": [
                                             {
                                                 "description": "Main language is your first or preferred language."
