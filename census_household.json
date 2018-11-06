@@ -4356,6 +4356,7 @@
                                         {
                                             "id": "religion-answer",
                                             "mandatory": false,
+                                            "label": "Select only one option",
                                             "options": [
                                                 {
                                                     "label": "No religion",
@@ -4441,6 +4442,10 @@
                                                 {
                                                     "label": "{{answers['address-line-1']}}, {{answers['address-line-2']}}",
                                                     "value": "householdaddress"
+                                                },
+                                                {
+                                                    "label": "Same address as {{answers[first_name][0]}}",
+                                                    "value": "same as person 1"
                                                 },
                                                 {
                                                     "label": "Student term time or boarding school address in the UK",
