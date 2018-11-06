@@ -4719,8 +4719,8 @@
                         {
                             "type": "Interstitial",
                             "id": "qualifications",
-                            "title": "This next set of questions are about your qualifications",
-                            "description": "Include any formal qualifications you have ever achieved in England, Wales or elsewhere, even if you are not using them now.",
+                            "title": "This next section is about your qualifications",
+                            "description": "Include any qualifications you have ever achieved in England, Wales or elsewhere, even if you are not using them now.",
                             "routing_rules": [
                                 {
                                     "goto": {
@@ -4763,7 +4763,8 @@
                                             "options": [
                                                 {
                                                     "label": "Yes",
-                                                    "value": "Yes"
+                                                    "value": "Yes",
+                                                    "description": "For example trade, advanced, foundation or modern apprenticeships"
                                                 },
                                                 {
                                                     "label": "No",
@@ -4822,7 +4823,7 @@
                                                 {
                                                     "label": "No",
                                                     "value": "No",
-                                                    "description": "Questions on NVQs, A levels, GCSEs and equivalents will follow"
+                                                    "description": "Questions on other NVQs, A levels, GCSEs and equivalents will follow"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -5037,8 +5038,8 @@
                                                     "description": "Include any other O levels or CSEs at any grades"
                                                 },
                                                 {
-                                                    "label": "Basic skills",
-                                                    "value": "Basic skills",
+                                                    "label": "Basic skills course",
+                                                    "value": "Basic skills course",
                                                     "description": "Skills for life, literacy, numeracy and language"
                                                 },
                                                 {
@@ -5100,7 +5101,7 @@
                                 {
                                     "id": "other-qualifications-question",
                                     "titles": [{
-                                            "value": "Has <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> achieved any formal qualifications?",
+                                            "value": "Has <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> achieved any other qualifications?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -5108,7 +5109,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "Have you achieved any formal qualifications?"
+                                            "value": "Have you achieved any other qualifications?"
                                         }
                                     ],
                                     "type": "MutuallyExclusive",
@@ -5134,8 +5135,8 @@
                                             "type": "Checkbox",
                                             "mandatory": false,
                                             "options": [{
-                                                "label": "No formal qualifications",
-                                                "value": "No formal qualifications"
+                                                "label": "No qualifications",
+                                                "value": "No qualifications"
                                             }]
                                         }
                                     ]
