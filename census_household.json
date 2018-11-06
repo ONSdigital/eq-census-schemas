@@ -545,7 +545,7 @@
                             "questions": [
                                 {
                                     "id": "type-of-house-question",
-                                    "title": "Is your house or bungalow:",
+                                    "title": "Which of the following is your house or bungalow?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -585,7 +585,7 @@
                             "questions": [
                                 {
                                     "id": "type-of-flat-question",
-                                    "title": "Is your flat, maisonette or apartment:",
+                                    "title": "Where is your flat, maisonette or apartment?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -4680,7 +4680,7 @@
                                                 "show_guidance": "Why your answer is important",
                                                 "hide_guidance": "Why your answer is important",
                                                 "content": [{
-                                                   "description": "We are measuring the number of people who have served in the UK Armed Forces and now left. This data is needed to support central and local government commitments made under the Armed Forces Covenant."
+                                                   "description": "We are measuring the number of people who have served in the UK Armed Forces and now left. This data is needed to support central and local government commitments made under the Armed Forces Covenant. This is a promise by the nation ensuring that those who serve or who have served in the armed forces, and their families, are treated fairly."
                                                     }
                                                  ]
                                             },
