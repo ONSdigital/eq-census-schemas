@@ -1387,7 +1387,7 @@
                             "questions": [
                                 {
                                     "id": "currrent-marriage-status-question",
-                                    "title": "Who is your legal marriage to",
+                                    "title": "Who is your legal marriage to?",
                                     "type": "General",
                                     "answers": [
                                         {
