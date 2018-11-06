@@ -1304,8 +1304,8 @@
                                                     "value": "Widowed"
                                                 },
                                                 {
-                                                    "label": "Surviving partner from a civil partnership",
-                                                    "value": "Surviving partner from a civil partnership"
+                                                    "label": "Surviving partner from a registered civil partnership",
+                                                    "value": "Surviving partner from a registered civil partnership"
                                                 }
                                             ],
                                             "type": "Radio"
