@@ -4444,7 +4444,7 @@
                                                     "value": "householdaddress"
                                                 },
                                                 {
-                                                    "label": "Same address as {{answers[first_name][0]}}",
+                                                    "label": "Same address as person 1",
                                                     "value": "same as person 1"
                                                 },
                                                 {
