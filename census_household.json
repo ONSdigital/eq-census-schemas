@@ -699,7 +699,7 @@
                                                 {
                                                     "label": "Electric",
                                                     "value": "Electric",
-                                                    "description": "For example storage heaters"
+                                                    "description": "Including storage heaters"
                                                 },
                                                 {
                                                     "label": "Oil",
@@ -712,12 +712,13 @@
                                                 },
                                                 {
                                                     "label": "Wood",
-                                                    "value": "Wood"
+                                                    "value": "Wood",
+                                                    "description": "For example logs, waste wood or pellets"
                                                 },
                                                 {
                                                     "label": "Renewable energy",
                                                     "value": "Renewable energy",
-                                                    "description": "For example air heat pump systems or wood pellets"
+                                                    "description": "For example solar thermal or heat pumps"
                                                 },
                                                 {
                                                     "label": "Other",
