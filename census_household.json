@@ -716,6 +716,10 @@
                                                     "description": "For example logs, waste wood or pellets"
                                                 },
                                                 {
+                                                    "label": "Heat networks",
+                                                    "value": "Heat networks"
+                                                },
+                                                {
                                                     "label": "Renewable energy",
                                                     "value": "Renewable energy",
                                                     "description": "For example solar thermal or heat pumps"
