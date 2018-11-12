@@ -1392,7 +1392,18 @@
                             "questions": [
                                 {
                                     "id": "currrent-marriage-status-question",
-                                    "title": "Who is your legal marriage to?",
+                                    "titles": [{
+                                            "value": "Who is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> legal marriage to?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Who is your legal marriage to?"
+                                        }
+                                    ],
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1427,7 +1438,18 @@
                             "questions": [
                                 {
                                     "id": "previous-marriage-status-question",
-                                    "title": "Who was your legal marriage to?",
+                                     "titles": [{
+                                            "value": "Who was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> legal marriage to?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Who was your legal marriage to?"
+                                        }
+                                    ],
                                     "type": "General",
                                     "answers": [
                                         {
