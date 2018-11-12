@@ -1108,8 +1108,14 @@
                                         {
                                             "id": "date-of-birth-answer",
                                             "mandatory": true,
-                                            "type": "Date"
-                                        }
+                                            "type": "Date",
+                                            "maximum": {
+                                                "value": "now"
+                                            },
+                                            "minimum": {
+                                                "value": "1900-01-01"
+                                            }
+                                         }
                                     ]
                                 }
                             ],
