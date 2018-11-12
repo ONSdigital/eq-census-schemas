@@ -1149,7 +1149,7 @@
                                                     "value": "Yes"
                                                 },
                                                 {
-                                                    "label": "No, I need to change this date",
+                                                    "label": "No, I need to change my date of birth",
                                                     "value": "No"
                                                 }
                                             ],
@@ -1209,7 +1209,7 @@
                                                     "value": "Yes"
                                                 },
                                                 {
-                                                    "label": "No, I need to change this date",
+                                                    "label": "No, I need to change their date of birth",
                                                     "value": "No"
                                                 }
                                             ],
