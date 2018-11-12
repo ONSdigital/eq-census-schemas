@@ -2665,7 +2665,7 @@
                                     "guidance": {
                                         "content": [
                                             {
-                                                "title": "Do not count anything they do as part of your paid employment"
+                                                "title": "Exclude anything they do as part of your paid employment"
                                             }
                                         ]
                                     },
@@ -2680,8 +2680,8 @@
                                                     "value": "No"
                                                 },
                                                 {
-                                                    "label": "Yes, less than 9 hours a week",
-                                                    "value": "Yes, less than 9 hours a week"
+                                                    "label": "Yes, 9 hours a week or less",
+                                                    "value": "Yes, 9 hours a week or less"
                                                 },
                                                 {
                                                     "label": "Yes, 10 to 19 hours a week",
@@ -2723,7 +2723,7 @@
                                     "guidance": {
                                         "content": [
                                             {
-                                                "title": "Do not count anything you do as part of your paid employment"
+                                                "title": "Exclude anything you do as part of your paid employment"
                                             }
                                         ]
                                     },
@@ -2738,8 +2738,8 @@
                                                     "value": "No"
                                                 },
                                                 {
-                                                    "label": "Yes, less than 9 hours a week",
-                                                    "value": "Yes, less than 9 hours a week"
+                                                    "label": "Yes, 9 hours a week or less",
+                                                    "value": "Yes, 9 hours a week or less"
                                                 },
                                                 {
                                                     "label": "Yes, 10 to 19 hours a week",
