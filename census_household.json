@@ -4018,7 +4018,7 @@
                                 {
                                     "id": "birth-gender-question",
                                     "titles": [{
-                                            "value": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> consider themselves to be trans?",
+                                            "value": "Is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> gender the same as the sex they were registered at birth?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -4026,30 +4026,22 @@
                                             }]
                                         },
                                         {
-                                            "value": "Do you consider yourself to be trans?"
+                                            "value": "Is your gender the same as the sex you were registered at birth?"
                                         }
                                     ],
                                     "type": "General",
-                                     "definitions": [{
-                                        "title": "What is trans?",
-                                        "content": [
-                                            {
-                                                "description": "Here trans means your gender is different from the sex you were registered at birth."
-                                            }
-                                        ]
-                                     }],
                                      "answers": [
                                         {
                                             "id": "birth-gender-answer",
                                             "mandatory": true,
                                             "options": [
                                                 {
-                                                    "label": "No",
-                                                    "value": "No"
+                                                    "label": "Yes",
+                                                    "value": "Yes"
                                                 },
                                                 {
-                                                    "label": "Yes",
-                                                    "value": "Yes",
+                                                    "label": "No",
+                                                    "value": "No",
                                                     "child_answer_id": "birth-gender-answer-other"
                                                 },
                                                 {
