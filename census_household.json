@@ -1056,7 +1056,7 @@
                                             }
                                         ],
                                     "type": "General",
-                                    "description":"A question about gender will follow later if you are over 16",
+                                    "description":"A question about gender will follow later if you are 16 or over",
                                     "answers": [
                                         {
                                             "id": "sex-answer",
