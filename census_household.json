@@ -24,85 +24,37 @@
         {
             "name": "region_code",
             "validator": "string"
+        },
+        {
+            "name": "country",
+            "validator": "string"
+        },
+        {
+            "name": "address_line1",
+            "validator": "optional_string"
+        },
+        {
+            "name": "address_line2",
+            "validator": "optional_string"
+        },
+        {
+            "name": "locality",
+            "validator": "optional_string"
+        },
+        {
+            "name": "town_name",
+            "validator": "optional_string"
+        },
+        {
+            "name": "postcode",
+            "validator": "optional_string"
+        },
+        {
+            "name": "display_address",
+            "validator": "string"
         }
     ],
     "sections": [
-        {
-            "id": "your-address-section",
-            "title": "Your address",
-            "groups": [
-                {
-                    "id": "what-is-your-address-group",
-                    "title": "What is your address?",
-                    "blocks": [
-                        {
-                            "type": "Introduction",
-                            "id": "introduction"
-                        },
-                        {
-                            "type": "Question",
-                            "id": "what-is-your-address",
-                            "questions": [
-                                {
-                                    "id": "what-is-your-address-question",
-                                    "title": "What is your address?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "address-line-1",
-                                            "label": "Address Line 1 (Including your house name or number)",
-                                            "mandatory": true,
-                                            "type": "TextField",
-                                            "validation": {
-                                                "messages": {
-                                                    "MANDATORY_TEXTFIELD": "Enter an address to continue"
-                                                }
-                                            }
-                                        },
-                                        {
-                                            "id": "address-line-2",
-                                            "label": "Address Line 2",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "address-line-3",
-                                            "label": "Address Line 3",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "town-city",
-                                            "label": "Town/City",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "county",
-                                            "label": "County",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "postcode",
-                                            "label": "Postcode",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "country",
-                                            "label": "Country",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
         {
             "id": "who-lives-here-section",
             "title": "Who lives here?",
@@ -115,7 +67,7 @@
                             "type": "Interstitial",
                             "id": "who-lives-here-block",
                             "title": "People who live in the household",
-                            "description": "In this section, we’re going to ask you about the people that live at <em>{{answers['address-line-1']}}</em>.",
+                            "description": "In this section, we’re going to ask you about the people that live at <em>{{metadata['display_address']}}</em>.",
                             "content": [
                                 {
                                     "title": "Information you need",
@@ -132,7 +84,7 @@
                             "questions": [
                                 {
                                     "id": "permanent-or-family-home-question",
-                                    "title": "Does anyone live at <em>{{answers['address-line-1']}}</em> as their permanent or family home?",
+                                    "title": "Does anyone live at <em>{{metadata['display_address']}}</em> as their permanent or family home?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -241,7 +193,7 @@
                             "questions": [
                                 {
                                     "id": "household-composition-question",
-                                    "title": "What are the names of everyone who live at <em>{{answers['address-line-1']}}</em>?",
+                                    "title": "What are the names of everyone who live at <em>{{metadata['display_address']}}</em>?",
                                     "type": "RepeatingAnswer",
                                     "answers": [
                                         {
@@ -325,7 +277,7 @@
                             "questions": [
                                 {
                                     "id": "overnight-visitors-question",
-                                    "title": "How many visitors are staying overnight at <em>{{answers['address-line-1']}}</em> on 8th February 2018?",
+                                    "title": "How many visitors are staying overnight at <em>{{metadata['display_address']}}</em> on 8th February 2018?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -481,7 +433,7 @@
                             "questions": [
                                 {
                                     "id": "type-of-accommodation-question",
-                                    "title": "What type of accommodation is <em>{{answers['address-line-1']}}</em>?",
+                                    "title": "What type of accommodation is <em>{{metadata['display_address']}}</em>?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -619,7 +571,7 @@
                             "questions": [
                                 {
                                     "id": "self-contained-accommodation-question",
-                                    "title": "Are all the rooms in <em>{{answers['address-line-1']}}</em> behind a door that only this household can use?",
+                                    "title": "Are all the rooms in <em>{{metadata['display_address']}}</em> behind a door that only this household can use?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -647,7 +599,7 @@
                             "questions": [
                                 {
                                     "id": "number-of-bedrooms-question",
-                                    "title": "How many bedrooms are available for use only by <em>{{answers['address-line-1']}}</em>?",
+                                    "title": "How many bedrooms are available for use only by <em>{{metadata['display_address']}}</em>?",
                                     "type": "General",
                                      "guidance": {
                                         "content": [
@@ -673,7 +625,7 @@
                             "questions": [
                                 {
                                     "id": "central-heating-question",
-                                    "title": "What type of central heating does <em>{{answers['address-line-1']}}</em> have?",
+                                    "title": "What type of central heating does <em>{{metadata['display_address']}}</em> have?",
                                     "type": "MutuallyExclusive",
                                     "mandatory": true,
                                      "guidance": {
@@ -780,7 +732,7 @@
                             "questions": [
                                 {
                                     "id": "own-or-rent-question",
-                                    "title": "Does your household own or rent <em>{{answers['address-line-1']}}</em>?",
+                                    "title": "Does your household own or rent <em>{{metadata['display_address']}}</em>?",
                                     "type": "General",
                                      "definitions": [{
                                         "title": "What is a household?",
