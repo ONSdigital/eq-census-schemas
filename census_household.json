@@ -4582,7 +4582,7 @@
                                                     "value": "Student term time or boarding school address in the UK"
                                                 },
                                                 {
-                                                    "label": "Same address as {{answers['first-name'][0]}}",
+                                                    "label": "Same address as {{answers['first-name'][0]}} {{answers['last-name'][0]}}",
                                                     "value": "Same as person 1"
                                                 },
                                                 {
