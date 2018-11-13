@@ -4434,7 +4434,19 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "past-usual-address"
+                                        "block": "past-usual-address",
+                                        "when": [{
+                                            "answer_ids": [
+                                                "first-name"
+                                            ],
+                                            "type": "answer_count",
+                                            "condition": "less than",
+                                            "value": 2
+                                        }]
+                                    }
+                                }, {
+                                    "goto": {
+                                        "block": "past-usual-household-address"
                                     }
                                 }
                             ]
@@ -4570,7 +4582,7 @@
                                                     "value": "Student term time or boarding school address in the UK"
                                                 },
                                                 {
-                                                    "label": "Same address as {{answers['first-name][0]}}",
+                                                    "label": "Same address as {{answers['first-name'][0]}}",
                                                     "value": "Same as person 1"
                                                 },
                                                 {
