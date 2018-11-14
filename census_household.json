@@ -178,6 +178,11 @@
                                             }
                                         ]
                                     }
+                                } ,
+                                {
+                                    "goto": {
+                                        "block": "else-permanent-or-family-home"
+                                    }
                                 }
                             ]
                         },
@@ -231,6 +236,11 @@
                                                 "value": "No one lives here as their permanent home"
                                             }
                                         ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "overnight-visitors"
                                     }
                                 }
                             ]
