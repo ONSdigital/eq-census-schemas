@@ -5065,7 +5065,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "household-member-completed",
+                                        "group": "group-8",
                                         "when": [
                                             {
                                                 "id": "ever-worked-answer",
@@ -5077,7 +5077,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "household-member-completed",
+                                        "group": "group-8",
                                         "when": [
                                             {
                                                 "id": "ever-worked-answer",
@@ -6174,7 +6174,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "household-member-completed"
+                                        "group": "group-8"
                                     }
                                 }
                             ]
@@ -6433,7 +6433,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "household-member-completed"
+                                        "group": "group-8"
                                     }
                                 }
                             ]
@@ -6483,7 +6483,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "household-member-completed"
+                                        "group": "group-8"
                                     }
                                 }
                             ]
