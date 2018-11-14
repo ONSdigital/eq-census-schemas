@@ -105,28 +105,26 @@
         },
         
         {
-            "id": "household-member-section",
-            "title": "Household Member Details",
+            "id": "personal-section",
+            "title": "Personal Details",
             "groups": [
                 {
-                    "id": "household-member",
-                    "title": "Household Member Details",
+                    "id": "personal",
+                    "title": "Personal Details",
                     "blocks": [
                         {
                             "type": "Interstitial",
-                            "id": "household-member-begin-section",
+                            "id": "personal-begin-section",
                             "title": "About you",
                             "description": "In this section, we’re going to ask you questions about yourself",
                             "content": [
                                 {
                                     "title": "Information you need",
                                     "list": [
-                                        "Personal details such as date of birth, country of birth, religion etc.",
-                                        "Education and qualifications",
-                                        "Employment and travel to work",
-                                        "Second or holiday homes",
-                                        "Unpaid care and health",
-                                        "Languages"
+                                        "Date of birth",
+                                        "Marital status",
+                                        "Country of birth",
+                                        "Religion etc."
                                     ]
                                 }
                             ]
@@ -196,8 +194,456 @@
                                     ]
                                 }
                             ]
+                        },
+                         {
+                            "type": "Question",
+                            "id": "sex",
+                            "questions": [
+                                {
+                                    "id": "sex-question",
+                                     "titles": [{
+                                             "value": "What is <em>{{[answers['first-name'], answers['last-name']] | format_household_name_possessive }}</em> sex?",
+                                              "when": [{
+                                                    "id": "proxy-check-answer",
+                                                    "condition": "equals",
+                                                    "value": "proxy"
+                                                }]
+                                            },
+                                            {
+                                                "value": "What is your sex?"
+                                            }
+                                        ],
+                                    "type": "General",
+                                    "description":"A question about gender will follow later if you are 16 or over",
+                                    "answers": [
+                                        {
+                                            "id": "sex-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "Male",
+                                                    "value": "Male"
+                                                },
+                                                {
+                                                    "label": "Female",
+                                                    "value": "Female"
+                                                }
+                                                
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "date-of-birth"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "date-of-birth",
+                            "questions": [
+                                {
+                                    "id": "date-of-birth-question",
+                                    "titles": [{
+                                            "value": "What is <em>{{[answers['first-name'], answers['last-name']] | format_household_name_possessive }}</em> date of birth?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "What is your date of birth?"
+                                        }
+                                    ],
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "date-of-birth-answer",
+                                            "mandatory": true,
+                                            "type": "Date",
+                                            "maximum": {
+                                                "value": "now"
+                                            },
+                                            "minimum": {
+                                                "value": "1900-01-01"
+                                            }
+                                         }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                     "goto": {
+                                         "block": "confirm-dob-proxy",
+                                         "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                     }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "confirm-dob"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "ConfirmationQuestion",
+                            "id": "confirm-dob",
+                            "questions": [
+                                {
+                                    "id": "confirm-date-of-birth",
+                                    "title": "You are {{ calculate_years_difference (answers['date-of-birth-answer'], 'now') }} old. Is this correct?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "confirm-date-of-birth-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "Yes, I am {{ calculate_years_difference (answers['date-of-birth-answer'], 'now') }} old",
+                                                    "value": "Yes"
+                                                },
+                                                {
+                                                    "label": "No, I need to change my date of birth",
+                                                    "value": "No"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                               "routing_rules": [{
+                                   "goto": {
+                                        "block": "date-of-birth",
+                                        "when": [{
+                                            "id": "confirm-date-of-birth-answer",
+                                            "condition": "equals",
+                                            "value": "No"
+                                        }]
+                                   }
+                                },
+                                {                 
+                                   "goto": {
+                                        "block": "marriage-type",
+                                        "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
+                                            }
+                                        }]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "in-education"
+                                    }
+                                }
+                            ]
+                  
+                        },
+                        {
+                            "type": "ConfirmationQuestion",
+                            "id": "confirm-dob-proxy",
+                            "questions": [
+                                {
+                                    "id": "confirm-date-of-birth-proxy",
+                                    "title": "{{[answers['first-name'], answers['last-name']]  | format_household_name}} is {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old. Is this correct?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "confirm-date-of-birth-answer-proxy",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "Yes, {{[answers['first-name'], answers['last-name']] | format_household_name}} is {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old",
+                                                    "value": "Yes"
+                                                },
+                                                {
+                                                    "label": "No, I need to change their date of birth",
+                                                    "value": "No"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                               "routing_rules": [
+                                 {
+                                    "goto": {
+                                        "block": "date-of-birth",
+                                        "when": [{
+                                            "id": "confirm-date-of-birth-answer-proxy",
+                                            "condition": "equals",
+                                            "value": "No"
+                                        }]
+                                    }
+                                  },
+                                  {
+                                     "goto": {
+                                        "block": "marriage-type",
+                                        "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
+                                            }
+                                        }]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "in-education"
+                                    }
+                                }
+                            ]
+                  
+                        },
+                        {
+                            "type": "Question",
+                            "id": "marriage-type",
+                            "questions": [
+                                {
+                                    "id": "confirm-marriage-type",
+                                     "titles": [{
+                                            "value": "On 13 July 2018, what is <em>{{[answers['first-name'], answers['last-name']] | format_household_name_possessive }}</em> legal marital or registered civil partnership status?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "On 13 July 2018, what is your legal marital or registered civil partnership status?"
+                                        }
+                                    ],
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "confirm-marriage-type-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "Never married and never registered a civil partnership",
+                                                    "value": "Never"
+                                                },
+                                                {
+                                                    "label": "Married",
+                                                    "value": "Married"
+                                                },
+                                                 {
+                                                    "label": "In a registered civil partnership",
+                                                    "value": "In a registered civil partnership"
+                                                },
+                                                {
+                                                    "label": "Separated, but still legally married",
+                                                    "value": "Separated, but still legally married"
+                                                },
+                                                 {
+                                                    "label": "Separated, but still legally in a civil partnership",
+                                                    "value": "Separated, but still legally in a civil partnership"
+                                                },
+                                                {
+                                                    "label": "Divorced",
+                                                    "value": "Divorced"
+                                                },
+                                                {
+                                                    "label": "Formerly in a civil partnership which is now legally dissolved",
+                                                    "value": "Formerly in a civil partnership which is now legally dissolved"
+                                                },
+                                                {
+                                                    "label": "Widowed",
+                                                    "value": "Widowed"
+                                                },
+                                                {
+                                                    "label": "Surviving partner from a registered civil partnership",
+                                                    "value": "Surviving partner from a registered civil partnership"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "another-address",
+                                        "when": [
+                                            {
+                                                "id": "confirm-marriage-type-answer",
+                                                "condition": "equals",
+                                                "value": "Never"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "current-marriage-status",
+                                        "when": [
+                                            {
+                                                "id": "confirm-marriage-type-answer",
+                                                "condition": "equals",
+                                                "value": "Married"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "previous-marriage-status",
+                                        "when": [
+                                            {
+                                                "id": "confirm-marriage-type-answer",
+                                                "condition": "equals",
+                                                "value": "Divorced"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "previous-marriage-status",
+                                        "when": [
+                                            {
+                                                "id": "confirm-marriage-type-answer",
+                                                "condition": "equals",
+                                                "value": "Widowed"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "previous-marriage-status",
+                                        "when": [
+                                            {
+                                                "id": "confirm-marriage-type-answer",
+                                                "condition": "equals",
+                                                "value": "Separated, but still legally married"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "another-address"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "current-marriage-status",
+                            "questions": [
+                                {
+                                    "id": "currrent-marriage-status-question",
+                                    "titles": [{
+                                            "value": "Who is <em>{{[answers['first-name'], answers['last-name']] | format_household_name_possessive }}</em> legal marriage to?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Who is your legal marriage to?"
+                                        }
+                                    ],
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "current-marriage-status-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "Someone of the opposite sex",
+                                                    "value": "Someone of the opposite sex"
+                                                },
+                                                {
+                                                    "label": "Someone of the same sex",
+                                                    "value": "Someone of the same sex"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "another-address"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "previous-marriage-status",
+                            "questions": [
+                                {
+                                    "id": "previous-marriage-status-question",
+                                     "titles": [{
+                                            "value": "Who was <em>{{[answers['first-name'], answers['last-name']] | format_household_name_possessive }}</em> legal marriage to?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Who was your legal marriage to?"
+                                        }
+                                    ],
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "previous-marriage-status-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "Someone of the opposite sex",
+                                                    "value": "Someone of the opposite sex"
+                                                },
+                                                {
+                                                    "label": "Someone of the same sex",
+                                                    "value": "Someone of the same sex"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "another-address"
+                                    }
+                                }
+                            ]
                         }
-                        ]}
+                   ]
+                }
                       
             ]
         }, 
