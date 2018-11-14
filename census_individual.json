@@ -1713,6 +1713,12 @@
                                     ]
                                 }
                             ]
+                        }, 
+                        {
+                            "id": "household-member-completed",
+                            "title": "There are no more questions for {{ [answers['first-name'], answers['last-name']] | format_household_name }}",
+                            "description": "",
+                            "type": "Interstitial"
                         }
 
                        
@@ -1723,13 +1729,7 @@
                 
                       
             ]
-        }, 
-        {
-                            "id": "household-member-completed",
-                            "title": "There are no more questions for {{ [answers['first-name'], answers['last-name']] | format_household_name }}",
-                            "description": "",
-                            "type": "Interstitial"
-                        },
+        },
         {
             "id": "submit-answers-section",
             "title": "Submit answers",
