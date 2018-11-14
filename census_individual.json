@@ -106,22 +106,10 @@
         
         {
             "id": "household-member-section",
-            "title_from_answers": [
-                "first-name",
-                "last-name"
-            ],
             "groups": [
                 {
                     "id": "household-member",
                     "title": "Household Member Details",
-                    "routing_rules": [
-                        {
-                            "repeat": {
-                                "type": "answer_count",
-                                "answer_id": "first-name"
-                            }
-                        }
-                    ],
                     "blocks": [
                         {
                             "type": "Interstitial",
