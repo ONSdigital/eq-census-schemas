@@ -4578,7 +4578,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "comments"
+                                        "group": "group-8"
                                     }
                                 }
                             ]
