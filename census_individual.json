@@ -1198,7 +1198,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "comments",
+                                        "group": "group-8",
                                         "when": [
                                             {
                                                 "id": "term-time-location-answer",
@@ -1261,7 +1261,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "comments",
+                                        "group": "group-8",
                                         "when": [
                                             {
                                                 "id": "term-time-location-answer-with-second-address",
@@ -1274,7 +1274,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "comments",
+                                        "group": "group-8",
                                         "when": [
                                             {
                                                 "id": "term-time-location-answer-with-second-address",
@@ -1338,7 +1338,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "comments",
+                                        "group": "group-8",
                                         "when": [
                                             {
                                                 "id": "term-time-location-answer-with-second-address-non-uk",
@@ -1351,7 +1351,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "comments",
+                                        "group": "group-8",
                                         "when": [
                                             {
                                                 "id": "term-time-location-answer-with-second-address-non-uk",
@@ -4048,7 +4048,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "comments",
+                                        "group": "group-8",
                                          "when": [{
                                             "id": "date-of-birth-answer",
                                             "condition": "greater than",
@@ -4267,7 +4267,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "comments",
+                                        "group": "group-8",
                                         "when": [
                                             {
                                                 "id": "degree-answer",
@@ -4522,7 +4522,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "comments"
+                                        "group": "group-8"
                                     }
                                 }
                             ]
