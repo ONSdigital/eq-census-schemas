@@ -1198,7 +1198,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "submit-answers-section",
+                                        "block": "comments",
                                         "when": [
                                             {
                                                 "id": "term-time-location-answer",
@@ -1261,7 +1261,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "submit-answers-section",
+                                        "block": "comments",
                                         "when": [
                                             {
                                                 "id": "term-time-location-answer-with-second-address",
@@ -1274,7 +1274,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "submit-answers-section",
+                                        "block": "comments",
                                         "when": [
                                             {
                                                 "id": "term-time-location-answer-with-second-address",
@@ -1338,7 +1338,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "submit-answers-section",
+                                        "block": "comments",
                                         "when": [
                                             {
                                                 "id": "term-time-location-answer-with-second-address-non-uk",
@@ -1351,7 +1351,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "submit-answers-section",
+                                        "block": "comments",
                                         "when": [
                                             {
                                                 "id": "term-time-location-answer-with-second-address-non-uk",
@@ -4048,7 +4048,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "submit-answers-section",
+                                        "block": "comments",
                                          "when": [{
                                             "id": "date-of-birth-answer",
                                             "condition": "greater than",
@@ -4267,7 +4267,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "submit-answers-section",
+                                        "block": "comments",
                                         "when": [
                                             {
                                                 "id": "degree-answer",
@@ -4522,7 +4522,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "submit-answers-section"
+                                        "block": "comments"
                                     }
                                 }
                             ]
@@ -4578,7 +4578,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "submit-answers-section"
+                                        "block": "comments"
                                     }
                                 }
                             ]
@@ -4587,6 +4587,30 @@
                 }
             ]
         },
+         {
+        "id": "comments",
+        "title": "Comments",
+        "groups": [{
+            "blocks": [{
+                "type": "Question",
+                "id": "comments-block-74",
+                "questions": [{
+                    "type": "General",
+                    "id": "comments-question-74",
+                    "title": "Thanks you are done!",
+                    "answers": [{
+                        "id": "comments-answer-74",
+                        "type": "TextArea",
+                        "mandatory": false,
+                        "label": "Comments"
+                    }],
+                    "description": ""
+                }]
+            }],
+            "id": "group-8",
+            "title": "Comments"
+        }]
+    }, 
         {
             "id": "submit-answers-section",
             "title": "Submit answers",
