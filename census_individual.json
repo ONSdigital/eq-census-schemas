@@ -369,7 +369,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-date-of-birth-proxy",
-                                    "title": "{{[answers['first-name'], answers['last-name']]  | format_household_name}} is {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old. Is this correct?",
+                                    "title": "{{[answers['first-name'], answers['last-name']]  | format_household_name}} is {{ calculate_years_difference (answers['date-of-birth-answer'], 'now') }} old. Is this correct?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -377,7 +377,7 @@
                                             "mandatory": true,
                                             "options": [
                                                 {
-                                                    "label": "Yes, {{[answers['first-name'], answers['last-name']] | format_household_name}} is {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old",
+                                                    "label": "Yes, {{[answers['first-name'], answers['last-name']] | format_household_name}} is {{ calculate_years_difference (answers['date-of-birth-answer'], 'now') }} old",
                                                     "value": "Yes"
                                                 },
                                                 {
@@ -1021,7 +1021,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-date-of-birth-proxy",
-                                    "title": "{{[answers['first-name'], answers['last-name']]  | format_household_name}} is {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old. Is this correct?",
+                                    "title": "{{[answers['first-name'], answers['last-name']]  | format_household_name}} is {{ calculate_years_difference (answers['date-of-birth-answer'], 'now') }} old. Is this correct?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1029,7 +1029,7 @@
                                             "mandatory": true,
                                             "options": [
                                                 {
-                                                    "label": "Yes, {{[answers['first-name'], answers['last-name']] | format_household_name}} is {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old",
+                                                    "label": "Yes, {{[answers['first-name'], answers['last-name']] | format_household_name}} is {{ calculate_years_difference (answers['date-of-birth-answer'], 'now') }} old",
                                                     "value": "Yes"
                                                 },
                                                 {
@@ -1311,7 +1311,7 @@
                                 {
                                     "id": "another-address-question",
                                     "titles": [{
-                                            "value": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> stay at another address for more than 30 days a year?",
+                                            "value": "Does <em>{{[answers['first-name'], answers['last-name']] | format_household_name}}</em> stay at another address for more than 30 days a year?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -1438,7 +1438,7 @@
                                 {
                                     "id": "other-address-question",
                                      "titles": [{
-                                            "value": "Enter details of the other UK address where <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> stays more than 30 days a year",
+                                            "value": "Enter details of the other UK address where <em>{{[answers['first-name'], answers['last-name']] | format_household_name}}</em> stays more than 30 days a year",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -1498,7 +1498,7 @@
                             "questions": [
                                 {
                                     "id": "address-type-question",
-                                    "title": "What type of address is <em>{{answers['other-address-answer-building'][group_instance]}}, {{answers['other-address-answer-street'][group_instance]}}</em>?",
+                                    "title": "What type of address is <em>{{answers['other-address-answer-building']}}, {{answers['other-address-answer-street']}}</em>?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1562,7 +1562,7 @@
                                 {
                                     "id": "address-type-question-non-uk",
                                      "titles": [{
-                                            "value": "What type of address is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> address in {{answers['another-address-answer-other']| format_household_name}}?",
+                                            "value": "What type of address is <em>{{[answers['first-name'], answers['last-name']] | format_household_name_possessive}}</em> address in {{answers['another-address-answer-other']| format_household_name}}?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -1636,7 +1636,7 @@
                                 {
                                     "id": "in-education-question",
                                     "titles": [{
-                                            "value": "Is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> a schoolchild or student in full-time education?",
+                                            "value": "Is <em>{{[answers['first-name'], answers['last-name']] | format_household_name}}</em> a schoolchild or student in full-time education?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -1727,7 +1727,7 @@
                                 {
                                     "id": "in-education-over16-question",
                                     "titles": [{
-                                            "value": "Is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> a student in full-time education?",
+                                            "value": "Is <em>{{[answers['first-name'], answers['last-name']] | format_household_name}}</em> a student in full-time education?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -1818,7 +1818,7 @@
                                 {
                                     "id": "term-time-location-question",
                                      "titles": [{
-                                            "value": "During term time, where does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> usually live?",
+                                            "value": "During term time, where does <em>{{[answers['first-name'], answers['last-name']] | format_household_name}}</em> usually live?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -1877,7 +1877,7 @@
                                 {
                                     "id": "term-time-location-question-with-second-address",
                                     "titles": [{
-                                            "value": "During term time, where does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> usually live?",
+                                            "value": "During term time, where does <em>{{[answers['first-name'], answers['last-name']] | format_household_name}}</em> usually live?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -1899,7 +1899,7 @@
                                                     "value": "household-address"
                                                 },
                                                 {
-                                                    "label": "{{answers['other-address-answer-building'][group_instance]}}, {{answers['other-address-answer-street'][group_instance]}}",
+                                                    "label": "{{answers['other-address-answer-building']}}, {{answers['other-address-answer-street']}}",
                                                     "value": "30-day-address"
                                                 },
                                                 {
@@ -1954,7 +1954,7 @@
                                 {
                                     "id": "term-time-location-question-with-second-address-non-uk",
                                      "titles": [{
-                                            "value": "During term time, where does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> usually live?",
+                                            "value": "During term time, where does <em>{{[answers['first-name'], answers['last-name']] | format_household_name}}</em> usually live?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -2030,7 +2030,7 @@
                                 {
                                     "id": "country-of-birth-england-question",
                                      "titles": [{
-                                            "value": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> country of birth?",
+                                            "value": "What is <em>{{[answers['first-name'], answers['last-name']] | format_household_name_possessive}}</em> country of birth?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -2098,7 +2098,7 @@
                                 {
                                     "id": "country-of-birth-wales-question",
                                      "titles": [{
-                                            "value": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> country of birth?",
+                                            "value": "What is <em>{{[answers['first-name'], answers['last-name']] | format_household_name_possessive}}</em> country of birth?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -2227,7 +2227,7 @@
                                 {
                                     "id": "arrive-in-uk-question",
                                     "titles": [{
-                                            "value": "When did <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> most recently arrive to live in the United Kingdom?",
+                                            "value": "When did <em>{{[answers['first-name'], answers['last-name']] | format_household_name}}</em> most recently arrive to live in the United Kingdom?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -2278,7 +2278,7 @@
                                 {
                                     "id": "length-of-stay-question",
                                     "titles": [{
-                                            "value": "Including the time already spent here, how long does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> intend to stay in the United Kingdom?",
+                                            "value": "Including the time already spent here, how long does <em>{{[answers['first-name'], answers['last-name']] | format_household_name}}</em> intend to stay in the United Kingdom?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -2324,7 +2324,7 @@
                                 {
                                     "id": "health-question",
                                     "titles": [{
-                                            "value": "How is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> health in general?",
+                                            "value": "How is <em>{{[answers['first-name'], answers['last-name']] | format_household_name_possessive}}</em> health in general?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
