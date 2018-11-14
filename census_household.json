@@ -4444,10 +4444,10 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "past-usual-address",
+                                        "block": "past-usual-household-address-first-person",
                                         "when": [{
                                             "answer_ids": [
-                                                "first-name"
+                                                "carer-answer"
                                             ],
                                             "type": "answer_count",
                                             "condition": "less than",
@@ -4457,120 +4457,20 @@
                                     }
                                 }, {
                                     "goto": {
-                                        "block": "past-usual-household-address-first-person",
+                                        "block": "past-usual-household-address",
                                         "when": [{
                                             "answer_ids": [
-                                                "past-usual-address-household-first-person-answer"
+                                                "carer-answer"
                                             ],
                                             "type": "answer_count",
-                                            "condition": "less than",
+                                            "condition": "greater than",
                                             "value": 1
                                         }
                                         ]
                                     }
                                 }, {
                                     "goto": {
-                                        "block": "past-usual-household-address",
-                                        "when": [{
-                                            "answer_ids": [
-                                                "past-usual-address-household-first-person-answer"
-                                            ],
-                                            "type": "answer_count",
-                                            "condition": "greater than",
-                                            "value": 0
-                                        }
-                                        ]
-                                    }
-                                }, {
-                                    "goto": {
-                                        "block": "past-usual-address"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "past-usual-address",
-                            "questions": [
-                                {
-                                    "id": "past-usual-address-question",
-                                    "titles": [{
-                                            "value": "One year ago, what was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> usual address?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "One year ago, what was your usual address?"
-                                        }
-                                    ],
-                                    "type": "General",
-                                    "description": "If they had no usual address one year ago, state the address where they were staying",
-                                    "answers": [
-                                        {
-                                            "id": "past-usual-address-answer",
-                                            "mandatory": true,
-                                            "options": [
-                                                {
-                                                    "label": "{{answers['address-line-1']}}, {{answers['address-line-2']}}",
-                                                    "value": "householdaddress"
-                                                },
-                                                {
-                                                    "label": "Student term time or boarding school address in the UK",
-                                                    "value": "Student term time or boarding school address in the UK"
-                                                },
-                                                {
-                                                    "label": "Another address in the UK",
-                                                    "value": "Another address in the UK"
-                                                },
-                                                {
-                                                    "label": "An address outside the UK",
-                                                    "value": "Other",
-                                                    "child_answer_id": "past-usual-address-answer-other"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        },
-                                        {
-                                            "id": "past-usual-address-answer-other",
-                                            "parent_answer_id": "past-usual-address-answer",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please enter the country"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "last-year-address",
-                                        "when": [
-                                            {
-                                                "id": "past-usual-address-answer",
-                                                "condition": "equals",
-                                                "value": "Student term time or boarding school address in the UK"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "last-year-address",
-                                        "when": [
-                                            {
-                                                "id": "past-usual-address-answer",
-                                                "condition": "equals",
-                                                "value": "Another address in the UK"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "passports"
+                                        "block": "past-usual-address-first-person"
                                     }
                                 }
                             ]
