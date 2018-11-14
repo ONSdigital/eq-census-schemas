@@ -4993,7 +4993,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "household-member-completed",
+                                        "group": "group-8",
                                         "when": [
                                             {
                                                 "id": "ever-worked-proxy-answer",
@@ -5005,7 +5005,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "household-member-completed",
+                                        "group": "group-8",
                                         "when": [
                                             {
                                                 "id": "ever-worked-proxy-answer",
