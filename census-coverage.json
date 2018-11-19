@@ -2059,7 +2059,7 @@
                                 {
                                     "id": "past-usual-address-question",
                                     "titles": [{
-                                            "value": "One year ago, on 13 October 2018, what was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> usual address?",
+                                            "value": "One year ago, on 13 October 2018, what was <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['student-household-member-first-name'], group_instances[group_instance_id]['student-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['student-household-member-first-name-no-primary'], group_instances[group_instance_id]['student-household-member-last-name-no-primary']] | format_household_name_possessive}}</em> usual address?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
