@@ -189,15 +189,95 @@
                                  "description": "A household, which is one person living alone or a group of people (not necessarily related) living at the same address who share cooking facilities and share a living room or sitting room or dining area."
                               }
                           ],
-                         "guidance": {
-                                        "content": [
-                                            {
-                                                "title": "Show card 1"
-                                            }
-                                        ]
-                                    },
                           "type": "Interstitial"
-                }
+                },
+                {
+                    "id": "current-address-group",
+                    "title": "Your Details",
+                    "blocks": [{
+                        "type": "Question",
+                        "id": "current-ddress-check-block",
+                        "questions": [{
+                            "id": "current-address-check-question",
+                            "title": "Were you, or anybody in your current household usually living at {{[answers['address-line-1'], answers['address-line-2']]}} on 13 October 2019",
+                           "type": "General",
+                            "answers": [{
+                                "id": "primary-household-member-address-check-answer",
+                                "mandatory": true,
+                                "options": [{
+                                        "label": "Yes",
+                                        "value": "Yes"
+                                    },
+                                    {
+                                        "label": "No",
+                                        "value": "No"
+                                    }
+                                ],
+                                "type": "Radio"
+                            }]
+                        }]
+                    }]
+                },
+                {
+                            "type": "Question",
+                            "id": "census-day-address",
+                            "questions": [
+                                {
+                                    "id": "census-day-address-question",
+                                    "title": "On 13 October 2019 what was your household's usual address?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "address-line-1",
+                                            "label": "Address Line 1 (Including your house name or number)",
+                                            "mandatory": true,
+                                            "type": "TextField",
+                                            "validation": {
+                                                "messages": {
+                                                    "MANDATORY_TEXTFIELD": "Enter an address to continue"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "id": "address-line-2",
+                                            "label": "Address Line 2",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "address-line-3",
+                                            "label": "Address Line 3",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "town-city",
+                                            "label": "Town/City",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "county",
+                                            "label": "County",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "postcode",
+                                            "label": "Postcode",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "country",
+                                            "label": "Country",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
               
             ]
         }
