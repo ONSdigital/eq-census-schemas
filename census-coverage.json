@@ -2330,6 +2330,138 @@
                                 }
                             ]
                         },
+                     {
+                            "type": "Question",
+                            "id": "elsewhere-address-check",
+                            "questions": [
+                                {
+                                    "id": "elsewhere-address-check-question",
+                                    "titles": [{
+                                            "value": "Is there another address where <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['student-household-member-first-name'], group_instances[group_instance_id]['student-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['student-household-member-first-name-no-primary'], group_instances[group_instance_id]['student-household-member-last-name-no-primary']] | format_household_name_possessive}}</em> may have been included on a Census questionnaire because you were staying overnight there on 13 October 2019?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Is there another address where you may have been included on a Census questionanire because you were staying overnight there on 13 October 2019?"
+                                        }
+                                    ],
+                                    "type": "MutuallyExclusive",
+                                     "mandatory": false,
+                                    "answers": [
+                                        {
+                                            "id": "elsewhere-address-check-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Previous home (moved since 13 October 2019",
+                                                    "value": "Previous home"
+                                                },
+                                                {
+                                                    "label": "Armed forces base address",
+                                                    "value": "Armed forces base address"
+                                                },
+                                                {
+                                                    "label": "Armed forces base address",
+                                                    "value": "Armed forces base address"
+                                                }
+                                            ],
+                                            "type": "Checkbox"
+                                        },
+                                        {
+                                            "id": "elsewhere-address-check-answer-exclusive",
+                                            "type": "Checkbox",
+                                            "mandatory": false,
+                                             "options": [{
+                                                "label": "No, there is no other address",
+                                                "value": "No, there is no other address"
+                                            }]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "elsewhere-address",
+                                        "when": [
+                                            {
+                                                "id": "elsewhere-address-check-answer-exclusive",
+                                                "condition": "set"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "household-member-completed"
+                                    }
+                                }
+                            ]
+                        },
+                    {
+                            "type": "Question",
+                            "id": "elsewhere-address",
+                            "questions": [
+                                {
+                                    "id": "elsewhere-address-question",
+                                    "titles": [{
+                                            "value": "Enter details of their address one year ago",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Enter details of your address one year ago"
+                                        }
+                                    ],
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "elsewhere-address-answer-building",
+                                            "label": "Building",
+                                            "mandatory": true,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "elsewhere-address-answer-street",
+                                            "label": "Street",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "elsewhere-address-answer-city",
+                                            "label": "Town or city",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "elsewhere-address-answer-county",
+                                            "label": "County (optional)",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "elsewhere-address-answer-postcode",
+                                            "label": "Postcode",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "household-member-completed"
+                                    }
+                                }
+                            ]
+                        },
                     {
                         "id": "household-member-completed",
                         "title": "There are no more questions for {{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['student-household-member-first-name'], group_instances[group_instance_id]['student-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['student-household-member-first-name-no-primary'], group_instances[group_instance_id]['student-household-member-last-name-no-primary']] | format_household_name}}",
