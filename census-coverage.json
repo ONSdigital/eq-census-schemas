@@ -171,55 +171,6 @@
                             }]
                         }]
                     }]
-                },
-                {
-                    "id": "household-definition-group",
-                    "title": "",
-                    "blocks": [
-                     {
-                          "id": "household-definition-introduction",
-                          "title": "Household",
-                          "content": [
-                            {
-                              "description": "All the questions are about the people in your household on Sunday 13 October 2019"
-                            },
-                           
-                            {
-                                "title": "Definition of a household",
-                                 "description": "A household, which is one person living alone or a group of people (not necessarily related) living at the same address who share cooking facilities and share a living room or sitting room or dining area."
-                              }
-                          ],
-                          "type": "Interstitial"
-                       
-                        }
-                    ]
-                },
-                {
-                    "id": "current-address-group",
-                    "title": "Your Details",
-                    "blocks": [{
-                        "type": "Question",
-                        "id": "current-ddress-check-block",
-                        "questions": [{
-                            "id": "current-address-check-question",
-                            "title": "Were you, or anybody in your current household usually living at {{[answers['address-line-1'], answers['address-line-2']]}} on 13 October 2019",
-                           "type": "General",
-                            "answers": [{
-                                "id": "primary-household-member-address-check-answer",
-                                "mandatory": true,
-                                "options": [{
-                                        "label": "Yes",
-                                        "value": "Yes"
-                                    },
-                                    {
-                                        "label": "No",
-                                        "value": "No"
-                                    }
-                                ],
-                                "type": "Radio"
-                            }]
-                        }]
-                    }]
                 }
         
        
