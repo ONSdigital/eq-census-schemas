@@ -254,8 +254,21 @@
                             "questions": [{
                                 "type": "General",
                                 "id": "student-household-member-anyone-else-question",
-                                "title": "Apart from anyone already added, is there anyone you need to add, including people who live in a student halls of residence?",
+                                "title": "Apart from anyone already added, is there anyone you need to add?",
                                 "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['other-household-member-first-name'], answers['other-household-member-last-name']], [answers['student-household-member-first-name'], answers['student-household-member-last-name']]] | format_repeating_summary }}",
+                                "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "These include:",
+                                                "list": [
+                                                    "People who usually lived here on 13 October 2019 but have sinced moved out",
+                                                    "People from outside the UK who were staying in the UK for 3 months or more",
+                                                    "People who worked away from home within the UK, or members of the armed forces, if the household's address on the 13 October 2019 was their permanent or family home",
+                                                    "......"
+                                                ]
+                                            }
+                                        ]
+                                    },
                                 "answers": [{
                                     "type": "Radio",
                                     "id": "student-household-member-anyone-else",
@@ -614,161 +627,8 @@
         {
             "id": "household-section-share",
             "title": "About the household",
-            "groups": [{
-                    "id": "share-group",
-                    "title": "",
-                    "skip_conditions": [{
-                            "when": [{
-                                "id": "primary-household-member-address-check-answer",
-                                "condition": "equals",
-                                "value": "No"
-                            }]
-                        },
-                        {
-                            "when": [{
-                                "id": "primary-household-member-address-check-answer",
-                                "condition": "not set"
-                            }]
-                        }, {
-                            "when": [{
-                                "answer_ids": [
-                                    "primary-household-member-first-name",
-                                    "other-household-member-first-name",
-                                    "student-household-member-first-name"
-                                ],
-                                "type": "answer_count",
-                                "condition": "less than",
-                                "value": 2
-                            }]
-                        }
-                    ],
-                    "blocks": [{
-                            "type": "Question",
-                            "id": "share-cooking-block",
-                            "questions": [{
-                                "id": "share-cooking-question",
-                                "title": "Do all of these people share cooking facilities?",
-                                "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['other-household-member-first-name'], answers['other-household-member-last-name']], [answers['student-household-member-first-name'], answers['student-household-member-last-name']]] | format_repeating_summary }}",
-                                "type": "General",
-                                "answers": [{
-                                    "id": "share-cooking-answer",
-                                    "mandatory": false,
-                                    "options": [{
-                                            "label": "Yes",
-                                            "value": "Yes"
-                                        },
-                                        {
-                                            "label": "No",
-                                            "value": "No"
-                                        }
-                                    ],
-                                    "type": "Radio"
-                                }]
-                            }]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "share-living-block",
-                            "questions": [{
-                                "id": "share-living-question",
-                                "title": "Do all of these people share a living room or dining room?",
-                                "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['other-household-member-first-name'], answers['other-household-member-last-name']], [answers['student-household-member-first-name'], answers['student-household-member-last-name']]] | format_repeating_summary }}",
-                                "type": "General",
-                                "answers": [{
-                                    "id": "share-living-answer",
-                                    "mandatory": false,
-                                    "options": [{
-                                            "label": "Yes",
-                                            "value": "Yes"
-                                        },
-                                        {
-                                            "label": "No",
-                                            "value": "No"
-                                        }
-                                    ],
-                                    "type": "Radio"
-                                }]
-                            }]
-                        }
-                    ]
-                },
-                {
-                    "id": "share-group-no-primary",
-                    "title": "",
-                    "skip_conditions": [{
-                            "when": [{
-                                "id": "primary-household-member-address-check-answer",
-                                "condition": "equals",
-                                "value": "Yes"
-                            }]
-                        },
-                        {
-                            "when": [{
-                                "id": "primary-household-member-address-check-answer",
-                                "condition": "not set"
-                            }]
-                        }, {
-                            "when": [{
-                                "answer_ids": [
-                                    "other-household-member-first-name-no-primary",
-                                    "student-household-member-first-name-no-primary"
-                                ],
-                                "type": "answer_count",
-                                "condition": "less than",
-                                "value": 2
-                            }]
-                        }
-                    ],
-                    "blocks": [{
-                            "type": "Question",
-                            "id": "share-cooking-block-no-primary",
-                            "questions": [{
-                                "id": "share-cooking-question-no-primary",
-                                "title": "Do all of these people share cooking facilities?",
-                                "description": "{{ [[answers['other-household-member-first-name-no-primary'], answers['other-household-member-last-name-no-primary']], [answers['student-household-member-first-name-no-primary'], answers['student-household-member-last-name-no-primary']]] | format_repeating_summary }}",
-                                "type": "General",
-                                "answers": [{
-                                    "id": "share-cooking-answer-no-primary",
-                                    "mandatory": false,
-                                    "options": [{
-                                            "label": "Yes",
-                                            "value": "Yes"
-                                        },
-                                        {
-                                            "label": "No",
-                                            "value": "No"
-                                        }
-                                    ],
-                                    "type": "Radio"
-                                }]
-                            }]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "share-living-block-no-primary",
-                            "questions": [{
-                                "id": "share-living-question-no-primary",
-                                "title": "Do all of these people share a living room or dining room?",
-                                "description": "{{ [[answers['other-household-member-first-name-no-primary'], answers['other-household-member-last-name-no-primary']], [answers['student-household-member-first-name-no-primary'], answers['student-household-member-last-name-no-primary']]] | format_repeating_summary }}",
-                                "type": "General",
-                                "answers": [{
-                                    "id": "share-living-answer-no-primary",
-                                    "mandatory": false,
-                                    "options": [{
-                                            "label": "Yes",
-                                            "value": "Yes"
-                                        },
-                                        {
-                                            "label": "No",
-                                            "value": "No"
-                                        }
-                                    ],
-                                    "type": "Radio"
-                                }]
-                            }]
-                        }
-                    ]
-                },
+            "groups": [
+                
                 {
                     "id": "household-relationships-group-no-primary",
                     "title": "Relationships",
