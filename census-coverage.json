@@ -122,7 +122,7 @@
                         "questions": [{
                             "id": "address-check-question",
                             "title": "Is this address your main residence?",
-                            "description": "{{ format_address_list ([address['address-line-1'], address['address-line-2'], address['address-line-3'], metadata['town-city'], address['postcode']]) }}",
+                            "description": "{{ format_address_list ([address['address-line-1'], address['address-line-2'], address['address-line-3'], address['town-city'], address['postcode']]) }}",
                             "type": "General",
                             "answers": [{
                                 "id": "primary-household-member-address-check-answer",
