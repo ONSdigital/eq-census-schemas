@@ -1070,8 +1070,7 @@
                                         "when": [
                                             {
                                                 "id": "date-of-birth-answer-exclusive",
-                                                "condition": "equals",
-                                                "value": "Date of birth is not known"
+                                                "condition": "set"
                                             }
                                         ]
                                     }
