@@ -70,7 +70,7 @@
                     "title": "Your address",
                     "blocks": [{
                             "type": "Interstitial",
-                            "id": "introduction-block",
+                            "id": "address-confirmation-block",
                             "title": "Can I confirm your address",
                              "description": "{{ format_address_list ([metadata['address_line1'], metadata['address_line2'], metadata['locality'], metadata['town_name'], metadata['postcode']]) }}"
                            
