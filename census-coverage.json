@@ -1027,6 +1027,7 @@
                     {
                         "type": "Question",
                         "id": "date-of-birth",
+                        "mandatory": false,
                         "questions": [{
                             "id": "date-of-birth-question",
                             "titles": [{
@@ -1085,6 +1086,7 @@
                     {
                         "type": "Question",
                         "id": "age",
+                        "mandatory": false,
                         "questions": [{
                             "id": "age-question",
                             "titles": [{
