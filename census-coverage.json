@@ -193,6 +193,33 @@
                        
                         }
                     ]
+                },
+                {
+                    "id": "current-address-group",
+                    "title": "Your Details",
+                    "blocks": [{
+                        "type": "Question",
+                        "id": "current-address-check-block",
+                        "questions": [{
+                            "id": "current-address-check-question",
+                            "title": "Were you, or anybody in your current household usually living at {{[answers['address-line-1'], answers['address-line-2']]}} on 13 October 2019",
+                           "type": "General",
+                            "answers": [{
+                                "id": "current-address-check-answer",
+                                "mandatory": true,
+                                "options": [{
+                                        "label": "Yes",
+                                        "value": "Yes"
+                                    },
+                                    {
+                                        "label": "No",
+                                        "value": "No"
+                                    }
+                                ],
+                                "type": "Radio"
+                            }]
+                        }]
+                    }]
                 }
         
        
