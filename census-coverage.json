@@ -1041,7 +1041,7 @@
                                     "value": "What is your date of birth?"
                                 }
                             ],
-                            "type": "General",
+                            "type": "MutuallyExclusive",
                             "answers": [{
                                 "id": "date-of-birth-answer",
                                 "mandatory": false,
@@ -1052,14 +1052,91 @@
                                 "minimum": {
                                     "value": "1900-01-01"
                                 }
-                            }]
+                            },
+                            {
+                                "id": "date-of-birth-answer-exclusive",
+                                "type": "Checkbox",
+                                "mandatory": false,
+                                "options": [{
+                                       "label": "Date of birth is not known",
+                                       "value": "Date of birth is not known"
+                                 }]
+                             }]
                         }],
                         "routing_rules": [
                             {
-                                "goto": {
-                                    "block": "confirm-dob"
-                                }
+                                    "goto": {
+                                        "block": "age",
+                                        "when": [
+                                            {
+                                                "id": "date-of-birth-answer-exclusive",
+                                                "condition": "equals",
+                                                "value": "Date of birth is not known"
+                                            }
+                                        ]
+                                    }
+                                },
+                               {
+                                    "goto": {
+                                        "block": "confirm-dob"
+                                    }
                             }
+                        ]
+                    },
+                    {
+                        "type": "Question",
+                        "id": "age",
+                        "questions": [{
+                            "id": "age-question",
+                            "titles": [{
+                                    "value": "What was <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['student-household-member-first-name'], group_instances[group_instance_id]['student-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['student-household-member-first-name-no-primary'], group_instances[group_instance_id]['student-household-member-last-name-no-primary']] | format_household_name_possessive}}</em> age on their last birthday?",
+                                    "when": [{
+                                        "id": "proxy-check-answer",
+                                        "condition": "equals",
+                                        "value": "proxy"
+                                    }]
+                                },
+                                {
+                                    "value": "What was your age on your last birthday?"
+                                }
+                            ],
+                            "type": "MutuallyExclusive",
+                            "answers": [{
+                                "id": "age-answer",
+                                "mandatory": false,
+                                "type": "Number"
+                            },
+                            {
+                                "id": "age-answer-exclusive",
+                                "type": "Checkbox",
+                                "mandatory": false,
+                                "options": [{
+                                       "label": "Interviewers own estimate",
+                                       "value": "Interviewers own estimate"
+                                 }]
+                             }]
+                        }],
+                        "routing_rules": [
+                            {                 
+                                   "goto": {
+                                        "block": "marital-status",
+                                        "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
+                                            }
+                                        }]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "marital-status"
+                                    }
+                                }
                         ]
                     },
                     {
