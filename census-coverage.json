@@ -114,35 +114,7 @@
                 "type": "Interstitial"
             },
             
-                {
-                    "id": "primary-household-member-group",
-                    "title": "Your Details",
-                    "blocks": [{
-                        "type": "Question",
-                        "id": "primary-household-member-block",
-                        "questions": [{
-                            "description": "",
-                            "id": "primary-household-member-question",
-                            "title": "What is your name?",
-                            "type": "General",
-                            "answers": [{
-                                    "id": "primary-household-member-first-name",
-                                    "description": "",
-                                    "label": "My first or given name",
-                                    "mandatory": true,
-                                    "type": "TextField"
-                                },
-                                {
-                                    "id": "primary-household-member-last-name",
-                                    "description": "",
-                                    "label": "My surname or family name",
-                                    "mandatory": true,
-                                    "type": "TextField"
-                                }
-                            ]
-                        }]
-                    }]
-                },
+              
             {
               "type": "Summary",
               "id": "household-summary"
