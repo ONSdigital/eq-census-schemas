@@ -1,0 +1,126 @@
+{
+  "mime_type": "application/json/ons/eq",
+  "schema_version": "0.0.1",
+  "data_version": "0.0.2",
+  "survey_id": "census",
+  "title": "2018 Census Test",
+  "description": "Census England Household Schema",
+  "theme": "census",
+  "legal_basis": "Voluntary",
+  "eq_id": "census",
+  "form_type": "household",
+  "metadata": [
+    {
+        "name": "user_id",
+        "validator": "string"
+    },
+    {
+        "name": "period_id",
+        "validator": "string"
+    }
+  ],
+  "sections": [
+     {
+            "id": "your-address-section",
+            "title": "Your address",
+            "groups": [
+                {
+                    "id": "what-is-your-address-group",
+                    "title": "What is your address?",
+                    "blocks": [
+                        {
+                            "type": "Introduction",
+                            "id": "introduction"
+                        },
+                        {
+                            "type": "Question",
+                            "id": "what-is-your-address",
+                            "questions": [
+                                {
+                                    "id": "what-is-your-address-question",
+                                    "title": "What is your address?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "address-line-1",
+                                            "label": "Address Line 1 (Including your house name or number)",
+                                            "mandatory": true,
+                                            "type": "TextField",
+                                            "validation": {
+                                                "messages": {
+                                                    "MANDATORY_TEXTFIELD": "Enter an address to continue"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "id": "address-line-2",
+                                            "label": "Address Line 2",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "address-line-3",
+                                            "label": "Address Line 3",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "town-city",
+                                            "label": "Town/City",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "county",
+                                            "label": "County",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "postcode",
+                                            "label": "Postcode",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "country",
+                                            "label": "Country",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+      "id": "default-section",
+      "groups": [
+        {
+          "id": "address-group",
+          "title": "",
+          "blocks": [
+            {
+              "id": "person-introduction",
+              "title": "Introduction",
+              "content": [
+                {
+                  "description": "Hello my name is [ ] from the Office for National Statistics. I delivered a card to say we are carrying out a Census Coverage Survey in your area. Could you please spare a little time for a short interview?"
+                }
+              ],
+              "type": "Interstitial"
+            },
+            
+            {
+              "type": "Summary",
+              "id": "household-summary"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
