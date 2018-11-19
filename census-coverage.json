@@ -1042,7 +1042,7 @@
                                 }
                             ],
                             "type": "MutuallyExclusive",
-                            "mandatory": false,
+                            "mandatory": true,
                             "answers": [{
                                 "id": "date-of-birth-answer",
                                 "mandatory": false,
@@ -1103,11 +1103,11 @@
                             "type": "General",
                             "answers": [{
                                 "id": "age-answer",
-                                "mandatory": false,
+                                "mandatory": true,
                                 "type": "Number"
                             },
                             {
-                                "id": "age-answer-exclusive",
+                                "id": "age-estimate-answer",
                                 "type": "Checkbox",
                                 "mandatory": false,
                                 "options": [{
@@ -1248,6 +1248,17 @@
                                         }]
                                     }
                                 },
+                                 {
+                                    "goto": {
+                                        "block": "marital-status",
+                                        "when": [{
+                                            "id": "age-answer",
+                                            "condition": "less than",
+                                            "value": 16
+                                        }]
+                                    }
+                                },
+
                                 {
                                     "goto": {
                                         "block": "in-education"
@@ -1529,7 +1540,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "country-of-birth"
+                                        "block": "ethnic-group"
                                     }
                                 }
                             ]
@@ -2063,7 +2074,7 @@
                                     "description": "If they had no usual address one year ago, state the address where they were staying",
                                     "answers": [
                                         {
-                                            "id": "past-usual-address-household-answer",
+                                            "id": "past-usual-address-answer",
                                             "mandatory": true,
                                             "options": [
                                                 {
