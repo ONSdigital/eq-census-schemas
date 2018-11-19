@@ -2,13 +2,13 @@
     "mime_type": "application/json/ons/eq",
     "schema_version": "0.0.1",
     "data_version": "0.0.2",
-    "survey_id": "lms",
-    "title": "Online Household Study",
-    "description": "Online Household Study Schema",
-    "theme": "social",
+    "survey_id": "coverage",
+    "title": "Census Coverage Survey",
+    "description": "Census Coverage Schema",
+    "theme": "census",
     "legal_basis": "Voluntary",
-    "eq_id": "lms",
-    "form_type": "1",
+    "eq_id": "coverage",
+    "form_type": "coverage",
     "navigation": {
         "visible": true
     },
@@ -2364,8 +2364,8 @@
                                                     "value": "Armed forces base address"
                                                 },
                                                 {
-                                                    "label": "Armed forces base address",
-                                                    "value": "Armed forces base address"
+                                                    "label": "Another address when working away from home",
+                                                    "value": "Another address when working away from home"
                                                 }
                                             ],
                                             "type": "Checkbox"
@@ -2408,7 +2408,7 @@
                                 {
                                     "id": "elsewhere-address-question",
                                     "titles": [{
-                                            "value": "Enter details of their address one year ago",
+                                            "value": "What is the other address where <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['student-household-member-first-name'], group_instances[group_instance_id]['student-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['student-household-member-first-name-no-primary'], group_instances[group_instance_id]['student-household-member-last-name-no-primary']] | format_household_name}}</em> may have been included on a Census questionanire?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -2416,7 +2416,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "Enter details of your address one year ago"
+                                            "value": "What is the other address you may have been included on a Census questionnaire"
                                         }
                                     ],
                                     "type": "General",
