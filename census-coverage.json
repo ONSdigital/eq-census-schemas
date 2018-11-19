@@ -1644,7 +1644,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "household-member-completed",
+                                        "block": "elsewhere-address-check",
                                         "when": [
                                             {
                                                 "id": "term-time-location-answer",
@@ -2266,7 +2266,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "household-member-completed"
+                                        "block": "elsewhere-address-check"
                                     }
                                 }
                             ]
@@ -2325,7 +2325,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "household-member-completed"
+                                        "block": "elsewhere-address-check"
                                     }
                                 }
                             ]
