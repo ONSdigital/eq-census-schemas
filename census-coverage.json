@@ -960,7 +960,6 @@
                     {
                         "type": "Question",
                         "id": "proxy-check",
-                        "mandatory": false,
                         "questions": [{
                             "id": "proxy-check-question",
                             "title": "Are they answering the questions on behalf of themself or for someone else?",
