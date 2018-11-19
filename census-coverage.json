@@ -144,6 +144,34 @@
                             ]
                         }]
                     }]
+                },{
+                    "id": "primary-household-member-address-group",
+                    "title": "Your Details",
+                    "blocks": [{
+                        "type": "Question",
+                        "id": "address-check-block",
+                        "questions": [{
+                            "id": "address-check-question",
+                            "title": "Is this address your main residence?",
+                            "type": "General",
+                            "answers": [{
+                                "id": "primary-household-member-address-check-answer",
+                                "mandatory": true,
+                                "options": [{
+                                        "label": "Yes",
+                                        "value": "Yes",
+                                        "description": "This is my main residence"
+                                    },
+                                    {
+                                        "label": "No",
+                                        "value": "No",
+                                        "description": "This address is not my main residence. For example it is my old address, second home, holiday home, business address or is not familiar to me"
+                                    }
+                                ],
+                                "type": "Radio"
+                            }]
+                        }]
+                    }]
                 }
         
        
