@@ -65,37 +65,18 @@
                         }
                         ]
                     },
-                
                 {
-                    "id": "primary-household-member-address-group",
-                    "title": "Your Details",
+                    "id": "address-confirmation-group",
+                    "title": "Your address",
                     "blocks": [{
-                        "type": "Question",
-                        "id": "address-check-block",
-                        "questions": [{
-                            "id": "address-check-question",
-                            "title": "Can I confirm your address?",
-                            "description": "{{ format_address_list ([metadata['address_line1'], metadata['address_line2'], metadata['locality'], metadata['town_name'], metadata['postcode']]) }}",
-                            "type": "General",
-                            "answers": [{
-                                "id": "primary-household-member-address-check-answer",
-                                "mandatory": true,
-                                "options": [{
-                                        "label": "Yes",
-                                        "value": "Yes",
-                                        "description": "This is my main residence"
-                                    },
-                                    {
-                                        "label": "No",
-                                        "value": "No",
-                                        "description": "This address is not my main residence. For example it is my old address, second home, holiday home, business address or is not familiar to me"
-                                    }
-                                ],
-                                "type": "Radio"
-                            }]
-                        }]
-                    }]
-                },
+                            "type": "Interstitial",
+                            "id": "introduction-block",
+                            "title": "Can I confirm your address",
+                             "description": "{{ format_address_list ([metadata['address_line1'], metadata['address_line2'], metadata['locality'], metadata['town_name'], metadata['postcode']]) }}"
+                           
+                        }
+                        ]
+                    },
                 {
                     "id": "household-definition-group",
                     "title": "Your Details",
@@ -142,6 +123,34 @@
                         }]
                     }]
                 },
+                {
+                    "id": "primary-household-member-address-group",
+                    "title": "Your Details",
+                    "blocks": [{
+                        "type": "Question",
+                        "id": "address-check-block",
+                        "questions": [{
+                            "id": "address-check-question",
+                            "title": "Were you, or anybody in your current household usually living at {{ metadata['display_address'] }} on 13 October 2019?",
+                            "type": "General",
+                            "answers": [{
+                                "id": "primary-household-member-address-check-answer",
+                                "mandatory": true,
+                                "options": [{
+                                        "label": "Yes",
+                                        "value": "Yes"
+                                    },
+                                    {
+                                        "label": "No",
+                                        "value": "No"
+                                    }
+                                ],
+                                "type": "Radio"
+                            }]
+                        }]
+                    }]
+                },
+                
                 {
                     "id": "other-household-member-group",
                     "title": "Other Household Members",
