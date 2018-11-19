@@ -1323,7 +1323,7 @@
                                         "block": "in-education-over16",
                                         "when": [
                                             {
-                                                "id": "confirm-marriage-type-answer",
+                                                "id": "marital-status-answer",
                                                 "condition": "equals",
                                                 "value": "Never married and never registered a civil partnership"
                                             }
@@ -1335,7 +1335,7 @@
                                         "block": "current-marriage-status",
                                         "when": [
                                             {
-                                                "id": "confirm-marriage-type-answer",
+                                                "id": "marital-status-answer",
                                                 "condition": "equals",
                                                 "value": "Married"
                                             }
@@ -1347,7 +1347,7 @@
                                         "block": "previous-marriage-status",
                                         "when": [
                                             {
-                                                "id": "confirm-marriage-type-answer",
+                                                "id": "marital-status-answer",
                                                 "condition": "equals",
                                                 "value": "Divorced"
                                             }
@@ -1359,7 +1359,7 @@
                                         "block": "previous-marriage-status",
                                         "when": [
                                             {
-                                                "id": "confirm-marriage-type-answer",
+                                                "id": "marital-status-answer",
                                                 "condition": "equals",
                                                 "value": "Widowed"
                                             }
@@ -1371,7 +1371,7 @@
                                         "block": "previous-marriage-status",
                                         "when": [
                                             {
-                                                "id": "confirm-marriage-type-answer",
+                                                "id": "marital-status-answer",
                                                 "condition": "equals",
                                                 "value": "Separated, but still legally married"
                                             }
