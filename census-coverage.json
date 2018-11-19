@@ -96,13 +96,33 @@
                 }
             ]
         },
+     {
+        "id": "introduction-section",
+        "groups": [
+          {
+            "id": "introduction-group",
+            "title": "",
+            "blocks": [
+             {
+                  "id": "person-introduction",
+                  "title": "Introduction",
+                  "content": [
+                    {
+                      "description": "Hello my name is [ ] from the Office for National Statistics. I delivered a card to say we are carrying out a Census Coverage Survey in your area. Could you please spare a little time for a short interview?"
+                    }
+                  ],
+                  "type": "Interstitial"
+              }
+            ]
+        },
         {
             "id": "household-section",
             "title": "Who lives here",
             "groups": [{
                     "id": "primary-household-member-group",
                     "title": "Your Details",
-                    "blocks": [{
+                    "blocks": [
+                      {
                         "type": "Question",
                         "id": "primary-household-member-block",
                         "questions": [{
@@ -129,32 +149,8 @@
                     }]
                 }
               ]
-         },
-        {
-      "id": "household-section",
-      "groups": [
-        {
-          "id": "household-group",
-          "title": "",
-          "blocks": [
-           {
-                "id": "person-introduction",
-                "title": "Introduction",
-                "content": [
-                  {
-                    "description": "Hello my name is [ ] from the Office for National Statistics. I delivered a card to say we are carrying out a Census Coverage Survey in your area. Could you please spare a little time for a short interview?"
-                  }
-                ],
-                "type": "Interstitial"
-            },
-            
-              
-            {
-              "type": "Summary",
-              "id": "household-summary"
-            }
-          ]
-        }
+         }
+       
       ]
     }
   ]
