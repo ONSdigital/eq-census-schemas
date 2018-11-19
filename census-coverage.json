@@ -1100,8 +1100,7 @@
                                     "value": "What was your age on your last birthday?"
                                 }
                             ],
-                            "type": "MutuallyExclusive",
-                            "mandatory": false,
+                            "type": "General",
                             "answers": [{
                                 "id": "age-answer",
                                 "mandatory": false,
