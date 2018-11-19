@@ -1220,6 +1220,8 @@
                             ],
                             "type": "General",
                             "answers": [{
+                                "id": "born-uk-answer",
+                                "mandatory": false,
                                 "options": [
                                       {
                                           "label": "Yes",
