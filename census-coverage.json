@@ -97,23 +97,81 @@
             ]
         },
         {
-      "id": "default-section",
+      "id": "household-section",
       "groups": [
         {
-          "id": "address-group",
+          "id": "household-group",
           "title": "",
           "blocks": [
-            {
-              "id": "person-introduction",
-              "title": "Introduction",
-              "content": [
-                {
-                  "description": "Hello my name is [ ] from the Office for National Statistics. I delivered a card to say we are carrying out a Census Coverage Survey in your area. Could you please spare a little time for a short interview?"
-                }
-              ],
-              "type": "Interstitial"
+           {
+                "id": "person-introduction",
+                "title": "Introduction",
+                "content": [
+                  {
+                    "description": "Hello my name is [ ] from the Office for National Statistics. I delivered a card to say we are carrying out a Census Coverage Survey in your area. Could you please spare a little time for a short interview?"
+                  }
+                ],
+                "type": "Interstitial"
             },
-            
+            {
+                    "id": "address-check",
+                    "title": "Your Details",
+                    "blocks": [{
+                        "type": "Question",
+                        "id": "address-check-block",
+                        "questions": [{
+                            "id": "address-check-question",
+                            "title": "Is this address your main residence?",
+                            "description": "{{ format_address_list ([metadata['address_line1'], metadata['address_line2'], metadata['locality'], metadata['town_name'], metadata['postcode']]) }}",
+                            "type": "General",
+                            "answers": [{
+                                "id": "primary-household-member-address-check-answer",
+                                "mandatory": true,
+                                "options": [{
+                                        "label": "Yes",
+                                        "value": "Yes",
+                                        "description": "This is my main residence"
+                                    },
+                                    {
+                                        "label": "No",
+                                        "value": "No",
+                                        "description": "This address is not my main residence. For example it is my old address, second home, holiday home, business address or is not familiar to me"
+                                    }
+                                ],
+                                "type": "Radio"
+                            }]
+                        }]
+                    }]
+                },
+                {
+                    "id": "primary-household-member-group",
+                    "title": "Your Details",
+                    "blocks": [{
+                        "type": "Question",
+                        "id": "primary-household-member-block",
+                        "questions": [{
+                            "description": "",
+                            "id": "primary-household-member-question",
+                            "title": "What is your name?",
+                            "type": "General",
+                            "answers": [{
+                                    "id": "primary-household-member-first-name",
+                                    "description": "",
+                                    "label": "My first or given name",
+                                    "mandatory": true,
+                                    "type": "TextField"
+                                },
+                                {
+                                    "id": "primary-household-member-last-name",
+                                    "description": "",
+                                    "label": "My surname or family name",
+                                    "mandatory": true,
+                                    "type": "TextField"
+                                }
+                            ]
+                        }]
+                    }]
+                },
             {
               "type": "Summary",
               "id": "household-summary"
