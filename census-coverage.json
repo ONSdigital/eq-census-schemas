@@ -171,6 +171,28 @@
                             }]
                         }]
                     }]
+                },
+                {
+                    "id": "household-definition-group",
+                    "title": "Your details",
+                    "blocks": [
+                     {
+                          "id": "household-definition-introduction",
+                          "title": "Household",
+                          "content": [
+                            {
+                              "description": "All the questions are about the people in your household on Sunday 13 October 2019"
+                            },
+                           
+                            {
+                                "title": "Definition of a household",
+                                 "description": "A household, which is one person living alone or a group of people (not necessarily related) living at the same address who share cooking facilities and share a living room or sitting room or dining area."
+                              }
+                          ],
+                          "type": "Interstitial"
+                       
+                        }
+                    ]
                 }
         
        
