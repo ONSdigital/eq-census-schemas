@@ -879,7 +879,348 @@
                                     }
                                 }
                             ]
+                        }, {
+                            "type": "Question",
+                            "id": "type-of-house",
+                            "questions": [
+                                {
+                                    "id": "type-of-house-question",
+                                    "title": "Which of the following is your house or bungalow?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "type-of-house-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "Detached",
+                                                    "value": "Detached"
+                                                },
+                                                {
+                                                    "label": "Semi-detached",
+                                                    "value": "Semi-detached"
+                                                },
+                                                {
+                                                    "label": "Terraced",
+                                                    "value": "Terraced",
+                                                    "description": "Including end-terrace"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "self-contained-accommodation"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "type-of-flat",
+                            "questions": [
+                                {
+                                    "id": "type-of-flat-question",
+                                    "title": "Where is your flat, maisonette or apartment?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "type-of-flat-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "In a purpose-built block of flats or tenement",
+                                                    "value": "In a purpose-built block of flats or tenement"
+                                                },
+                                                {
+                                                    "label": "Part of a converted or shared house",
+                                                    "value": "Part of a converted or shared house",
+                                                    "description": "Including bedsits"
+                                                },
+                                                {
+                                                    "label": "In a commercial building",
+                                                    "value": "In a commercial building",
+                                                    "description": "For example, in an office building, hotel, or over a  shop"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "self-contained-accommodation",
+                            "questions": [
+                                {
+                                    "id": "self-contained-accommodation-question",
+                                    "title": "Are all the rooms at <em>{{metadata['display_address']}}</em> behind a door that only this household can use?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "self-contained-accommodation-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "Yes",
+                                                    "value": "Yes"
+                                                },
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "own-or-rent",
+                            "questions": [
+                                {
+                                    "id": "own-or-rent-question",
+                                    "title": "Does your household own or rent <em>{{metadata['display-address']}}</em>?",
+                                    "type": "General",
+                                     "definitions": [{
+                                        "title": "What is a household?",
+                                        "content": [
+                                            {
+                                                "description": "One person living alone; or a group of people (not necessarily related) living at the same address who share cooking facilities and share a living room or sitting room or dining area."
+                                            }
+                                        ]
+                                    }],
+                                    "answers": [
+                                        {
+                                            "id": "own-or-rent-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "Owns outright",
+                                                    "value": "Owns outright"
+                                                },
+                                                {
+                                                    "label": "Owns with a mortgage or loan",
+                                                    "value": "Owns with a mortgage or loan"
+                                                },
+                                                {
+                                                    "label": "Part owns and part rents",
+                                                    "value": "Part owns and part rents",
+                                                    "description": "Including shared ownership"
+                                                },
+                                                {
+                                                    "label": "Rents with or without housing benefit",
+                                                    "value": "Rents with or without housing benefit"
+                                                },
+                                                {
+                                                    "label": "Lives here rent free",
+                                                    "value": "Lives here rent free"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "internet",
+                                        "when": [
+                                            {
+                                                "id": "own-or-rent-answer",
+                                                "condition": "equals",
+                                                "value": "Owns outright"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "internet",
+                                        "when": [
+                                            {
+                                                "id": "own-or-rent-answer",
+                                                "condition": "equals",
+                                                "value": "Owns with a mortgage or loan"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "landlord"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "landlord",
+                            "questions": [
+                                {
+                                    "id": "landlord-question",
+                                    "title": "Who is your landlord?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "landlord-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "Housing association, housing co-operative, charitable trust, registered social landlord",
+                                                    "value": "Housing association, housing co-operative, charitable trust, registered social landlord"
+                                                },
+                                                {
+                                                    "label": "Council (local authority)",
+                                                    "value": "Council (local authority)"
+                                                },
+                                                {
+                                                    "label": "Private landlord or letting agency",
+                                                    "value": "Private landlord or letting agency"
+                                                },
+                                                {
+                                                    "label": "Employer of a household member",
+                                                    "value": "Employer of a household member"
+                                                },
+                                                {
+                                                    "label": "Relative or friend of a household member",
+                                                    "value": "Relative or friend of a household member"
+                                                },
+                                                {
+                                                    "label": "Other",
+                                                    "value": "Other"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "internet",
+                            "questions": [
+                                {
+                                    "id": "internet-question",
+                                    "title": "When at home, how do you and the people in your household connect to the internet?",
+                                    "type": "MutuallyExclusive",
+                                    "mandatory": false,
+                                    "answers": [
+                                        {
+                                            "id": "internet-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "WiFi or broadband",
+                                                    "value": "WiFi or broadband"
+                                                },
+                                                {
+                                                    "label": "A mobile phone network such as 3G or 4G",
+                                                    "value": "A mobile phone network such as 3G or 4G"
+                                                },
+                                                {
+                                                    "label": "In some other way",
+                                                    "value": "In some other way",
+                                                    "child_answer_id": "internet-answer-other"
+                                                }
+                                            ],
+                                            "type": "Checkbox"
+                                        },
+                                         {
+                                            "id": "internet-answer-other",
+                                            "parent_answer_id": "internet-answer",
+                                            "type": "TextField",
+                                            "mandatory": false,
+                                            "label": "Please specify how you connect to the internet"
+                                        },
+                                        {
+                                            "id": "internet-answer-exclusive",
+                                            "type": "Checkbox",
+                                            "mandatory": false,
+                                            "options": [{
+                                                "label": "Unable to access the internet at home",
+                                                "value": "Unable to access the internet at home"
+                                            }]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "internet-usage",
+                                        "when": [
+                                            {
+                                                "id": "internet-answer-exclusive",
+                                                "condition": "not set"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },  
+                        {
+                            "type": "Question",
+                            "id": "internet-usage",
+                            "questions": [
+                                {
+                                    "id": "internet-usage-question",
+                                    "title": "In the last 12 months has anyone in your household interacted with or contacted public organisations over the internet for personal use for any of these reasons?",
+                                    "definitions": [{
+                                        "title": "What do we mean by 'public organisations'?",
+                                        "content": [
+                                            {
+                                                "description": "some blurb to explain"
+                                            }
+                                        ]
+                                    }],"type": "MutuallyExclusive",
+                                    "mandatory": false,
+                                    "answers": [
+                                        {
+                                            "id": "internet-usage-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Obtaining information from websites or 'apps'",
+                                                    "value": "Obtaining information from websites or 'apps'"
+                                                },
+                                                {
+                                                    "label": "Downloading or printing forms",
+                                                    "value": "Downloading or printing forms"
+                                                },
+                                                {
+                                                    "label": "Submitting completed forms online",
+                                                    "value": "Submitting completed forms online"
+                                                }
+                                            ],
+                                            "type": "Checkbox"
+                                        },
+                                        {
+                                            "id": "internet-usuage-answer-exclusive",
+                                            "type": "Checkbox",
+                                            "mandatory": false,
+                                            "options": [{
+                                                "label": "None of these or not known",
+                                                "value": "None of these or not known"
+                                            }]
+                                        }
+                                    ]
+                                }
+                            ]
                         }
+                          
+                               
+                               
+                               
                     ]
                 }
             ]
