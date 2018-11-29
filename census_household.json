@@ -6165,13 +6165,20 @@
                                     "id": "business-name-question",
                                     "title": "What is the name of the organisation or business you work for?",
                                     "description": "If you are self-employed in your own business, give the business name.",
-                                    "type": "General",
+                                    "type": "MutuallyExclusive",
+                                    "mandatory": true,
                                     "answers": [
                                         {
                                             "id": "business-name-answer",
                                             "label": "Organisation or business name",
-                                            "mandatory": true,
+                                            "mandatory": false,
                                             "type": "TextField"
+                                        },
+                                        {
+                                            "id": "no-business-name-answer",
+                                            "label": "No organsiation or work for a private individual",
+                                            "mandatory": false,
+                                            "type": "Checkbox"
                                         }
                                     ]
                                 }
