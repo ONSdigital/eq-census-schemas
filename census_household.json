@@ -6176,9 +6176,14 @@
                                         },
                                         {
                                             "id": "no-business-name-answer",
-                                            "label": "No organsiation or work for a private individual",
                                             "mandatory": false,
-                                            "type": "Checkbox"
+                                            "type": "Checkbox",
+                                             "options": [
+                                                {
+                                                    "label": "No organsiation or work for a private individual",
+                                                    "value": "No organsiation or work for a private individual"
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
