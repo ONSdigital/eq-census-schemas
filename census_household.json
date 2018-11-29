@@ -6387,18 +6387,6 @@
                                 }
                             ],
                             "routing_rules": [
-                                 {
-                                    "goto": {
-                                        "block": "not-registered-business",
-                                        "when": [
-                                            {
-                                                "id": "business-name-answer",
-                                                "condition": "equals",
-                                                "value": ""
-                                            }
-                                        ]
-                                    }
-                                },
                                 {
                                     "goto": {
                                         "block": "employers-business",
@@ -6425,7 +6413,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "not-registered-business",
+                                        "block": "employers-business",
                                         "when": [
                                             {
                                                 "id": "self-employed-answer",
@@ -6480,17 +6468,6 @@
                             "routing_rules": [
                                   {
                                     "goto": {
-                                        "block": "not-registered-business-past",
-                                        "when": [
-                                            {
-                                                "id": "business-name-answer",
-                                                "condition": "equals",
-                                                "value": ""
-                                            }
-                                        ]
-                                    }
-                                },{
-                                    "goto": {
                                         "block": "employers-business-past",
                                         "when": [
                                             {
@@ -6515,7 +6492,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "not-registered-business-past",
+                                        "block": "employers-business-past",
                                         "when": [
                                             {
                                                 "id": "self-employed-past-answer",
@@ -6539,8 +6516,8 @@
                             "questions": [
                                 {
                                     "id": "employers-business-question",
-                                    "title": "What is the main activity of <em>{{answers['business-name-answer']| format_household_name}}</em>?",
-                                    "description": "For example clothing retail, general hospital, primary education, food wholesale.",
+                                    "title": "What is the main activity of your organisation, business or freelance work?",
+                                    "description": "For example clothing retail, general hospital, primary education, food wholesale, government, local government planning.",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -6572,100 +6549,12 @@
                             "questions": [
                                 {
                                     "id": "employers-business-past-question",
-                                    "title": "What was the main activity of <em>{{answers['business-name-past-answer']| format_household_name}}</em>?",
+                                    "title": "What was the main activity of your organisation, business or freelance work",
                                     "description": "For example clothing retail, general hospital, primary education, food wholesale.",
                                     "type": "General",
                                     "answers": [
                                         {
                                             "id": "employers-business-past-answer",
-                                            "label": "Description",
-                                            "mandatory": true,
-                                            "type": "TextArea",
-                                            "max_length": 200,
-                                            "validation": {
-                                                "messages": {
-                                                    "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
-                                                }
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "professional-quals-past"
-                                    }
-                                }
-                            ]
-                        },
-                         {
-                            "type": "Question",
-                            "id": "not-registered-business",
-                            "questions": [
-                                {
-                                    "id": "not-registered-business-question",
-                                    "titles": [{
-                                            "value": "What is the main activity of <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> organisation, business or freelance work?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "What is the main activity of your organisation, business or freelance work?"
-                                        }
-                                    ],
-                                    "description": "For example clothing retail, general hospital, primary education, food wholesale.",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "not-registered-business-answer",
-                                            "label": "Description",
-                                            "mandatory": true,
-                                            "type": "TextArea",
-                                            "max_length": 200,
-                                            "validation": {
-                                                "messages": {
-                                                    "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
-                                                }
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "professional-quals"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "not-registered-business-past",
-                            "questions": [
-                                {
-                                    "id": "not-registered-business-past-question",
-                                    "titles": [{
-                                            "value": "What was the main activity of <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> organisation, business or freelance work?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "What was the main activity of your organisation, business or freelance work?"
-                                        }
-                                    ],
-                                    "description": "For example clothing retail, general hospital, primary education, food wholesale.",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "not-registered-business-past-answer",
                                             "label": "Description",
                                             "mandatory": true,
                                             "type": "TextArea",
