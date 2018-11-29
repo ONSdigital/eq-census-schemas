@@ -629,7 +629,7 @@
                             "questions": [
                                 {
                                     "id": "self-contained-accommodation-question",
-                                    "title": "Are all the rooms in <em>{{answers['address-line-1']}}</em> behind a door that only this household can use?",
+                                    "title": "Are all the rooms in <em>{{answers['address-line-1']}}</em>, including the kitchen, bathroom and toilet, behind a door that only this household can use?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -641,7 +641,7 @@
                                                     "value": "Yes"
                                                 },
                                                 {
-                                                    "label": "No",
+                                                    "label": "No, one or more rooms are shared with another household",
                                                     "value": "No"
                                                 }
                                             ],
@@ -657,7 +657,7 @@
                             "questions": [
                                 {
                                     "id": "number-of-bedrooms-question",
-                                    "title": "How many bedrooms are available for use only by <em>{{answers['address-line-1']}}</em>?",
+                                    "title": "How many bedrooms are available for use only by this household?",
                                     "type": "General",
                                      "guidance": {
                                         "content": [
@@ -882,8 +882,8 @@
                                                     "value": "Housing association, housing co-operative, charitable trust, registered social landlord"
                                                 },
                                                 {
-                                                    "label": "Council (local authority)",
-                                                    "value": "Council (local authority)"
+                                                    "label": "Council or local authority",
+                                                    "value": "Council or local authority"
                                                 },
                                                 {
                                                     "label": "Private landlord or letting agency",
@@ -919,7 +919,7 @@
                                     "guidance": {
                                         "content": [
                                             {
-                                                "title": "Include any company car(s) or van(s) available for private use."
+                                                "title": "Include any company cars or vans available for private use."
                                             }
                                         ]
                                     },
@@ -1245,24 +1245,9 @@
                                         }]
                                     }
                                   },
-                                  {
-                                     "goto": {
-                                        "block": "marriage-type",
-                                        "when": [{
-                                            "id": "date-of-birth-answer",
-                                            "condition": "less than",
-                                            "date_comparison": {
-                                                "value": "now",
-                                                "offset_by": {
-                                                    "years": -16
-                                                }
-                                            }
-                                        }]
-                                    }
-                                },
                                 {
                                     "goto": {
-                                        "block": "in-education"
+                                        "block": "marriage-type"
                                     }
                                 }
                             ]
@@ -2699,7 +2684,7 @@
                             "questions": [
                                 {
                                     "id": "carer-proxy-question",
-                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> look after, or give any help or support to anyone because they have long-term physical or mental health conditions or illnesses, or problems related to old age?",
+                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> look after, or give any help or support to, anyone because they have long-term physical or mental health conditions or illnesses, or problems related to old age?",
                                     "guidance": {
                                         "content": [
                                             {
@@ -2757,7 +2742,7 @@
                             "questions": [
                                 {
                                     "id": "carer-question",
-                                    "title": "Do you look after, or give any help or support to anyone because they have long-term physical or mental health conditions or illnesses, or problems related to old age?",     
+                                    "title": "Do you look after, or give any help or support to, anyone because they have long-term physical or mental health conditions or illnesses, or problems related to old age?",     
                                     "guidance": {
                                         "content": [
                                             {
