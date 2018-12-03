@@ -7166,7 +7166,7 @@
                                 {
                                     "id": "employer-type-of-address-question",
                                     "titles": [{
-                                            "value": "Where does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> work?",
+                                            "value": "Where does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> mainly work?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -7174,7 +7174,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "Where do you work?"
+                                            "value": "Where do you mainly work?"
                                         }
                                     ],
                                     "type": "General",
@@ -7192,8 +7192,8 @@
                                                     "value": "Report to a depot"
                                                 },
                                                 {
-                                                    "label": "Mainly at or from home",
-                                                    "value": "Mainly at or from home"
+                                                    "label": "At or from home",
+                                                    "value": "At or from home"
                                                 },
                                                 {
                                                     "label": "An offshore installation",
