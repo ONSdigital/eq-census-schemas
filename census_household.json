@@ -6416,7 +6416,7 @@
                                             "type": "TextField"
                                         },
                                         {
-                                            "id": "no-business-name-past-proxy-answer",
+                                            "id": "no-business-name-past-answer",
                                             "mandatory": false,
                                             "type": "Checkbox",
                                              "options": [
