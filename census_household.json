@@ -6844,9 +6844,9 @@
                             "questions": [
                                 {
                                     
-                                    "title" : "How does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> usuallly travel to work?",
+                                    "title" : "How does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> usually travel to work?",
                                     "id": "work-travel-proxy-question",
-                                    "description": "Answer for the longest part, by distance of their usual journey to work ",
+                                    "description": "Answer for the longest part, by distance, of their usual journey to work ",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -6916,10 +6916,10 @@
                             "id": "work-travel",
                             "questions": [
                                 {
-                                    "title" : "How do you usuallly travel to work?",
+                                    "title" : "How do you usually travel to work?",
                                     
                                     "id": "work-travel-question",
-                                     "description": "Answer for the longest part, by distance of their usual journey to work ",
+                                     "description": "Answer for the longest part, by distance, of your usual journey to work ",
                                     "type": "General",
                                     "answers": [
                                         {
