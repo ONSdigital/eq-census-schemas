@@ -2103,7 +2103,7 @@
                                 {
                                     "id": "term-time-address-details-question",
                                      "titles": [{
-                                            "value": "Enter details of the UK address where <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> stay during term time",
+                                            "value": "Enter details of the UK address where <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> usually stays during term time",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -2111,7 +2111,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "Enter details of the UK address where you stay during term time"
+                                            "value": "Enter details of the UK address where you usually stay during term time"
                                         }
                                     ],
                                     "type": "General",
