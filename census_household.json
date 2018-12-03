@@ -1066,7 +1066,7 @@
                                             }
                                         ],
                                     "type": "General",
-                                    "description":"A question about gender will follow later if you are 16 or over",
+                                    "description":"A question about gender will follow",
                                     "answers": [
                                         {
                                             "id": "sex-answer",
@@ -1260,7 +1260,7 @@
                                 {
                                     "id": "confirm-marriage-type",
                                      "titles": [{
-                                            "value": "On 13 July 2018, what is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> legal marital or registered civil partnership status?",
+                                            "value": "On 30 November 2018, what is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> legal marital or registered civil partnership status?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -1268,7 +1268,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "On 13 July 2018, what is your legal marital or registered civil partnership status?"
+                                            "value": "On 30 November 2018, what is your legal marital or registered civil partnership status?"
                                         }
                                     ],
                                     "type": "General",
@@ -2565,7 +2565,7 @@
                                 {
                                     "id": "when-arrive-in-uk-question",
                                     "titles": [{
-                                            "value": "Did <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> arrive in the UK, on or after [day of Census] March 2020??",
+                                            "value": "Did <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> arrive in the UK, on or after 30 November 2017?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -2573,7 +2573,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "Did you arrive in the UK, on or after [day of Census] March 2020??"
+                                            "value": "Did you arrive in the UK, on or after 30 November 2017?"
                                         }
                                     ],
                                     "type": "General",
