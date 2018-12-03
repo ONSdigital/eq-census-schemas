@@ -629,7 +629,7 @@
                             "questions": [
                                 {
                                     "id": "self-contained-accommodation-question",
-                                    "title": "Are all the rooms in <em>{{answers['address-line-1']}}</em>, including the kitchen, bathroom and toilet, behind a door that only this household can use?",
+                                    "title": "Are all the rooms in this accomodation, including the kitchen, bathroom and toilet, behind a door that only this household can use?",
                                     "type": "General",
                                     "answers": [
                                         {
