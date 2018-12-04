@@ -819,8 +819,9 @@
                                                     "description": "Including shared ownership"
                                                 },
                                                 {
-                                                    "label": "Rents with or without housing benefit",
-                                                    "value": "Rents with or without housing benefit"
+                                                    "label": "Rents",
+                                                    "value": "Rents",
+                                                    "description": "With or without housing benefit""
                                                 },
                                                 {
                                                     "label": "Lives here rent free",
