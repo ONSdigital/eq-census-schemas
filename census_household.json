@@ -1610,7 +1610,7 @@
                                 {
                                     "id": "other-address-question",
                                      "titles": [{
-                                            "value": "Enter details of the other UK address where <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> stays more than 30 days a year",
+                                            "value": "Enter details of the other UK address where <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> stays for more than 30 days a year",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -1618,7 +1618,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "Enter details of the other UK address where you stay more than 30 days a year"
+                                            "value": "Enter details of the other UK address where you stay more for than 30 days a year"
                                         }
                                     ],
                                     "type": "General",
@@ -1760,8 +1760,8 @@
                                                     "value": "Student’s home address"
                                                 },
                                                 {
-                                                    "label": "Student’s term time address",
-                                                    "value": "Student’s term time address"
+                                                    "label": "Student’s term-time address",
+                                                    "value": "Student’s term-time address"
                                                 },
                                                 {
                                                     "label": "Another parent or guardian’s address",
