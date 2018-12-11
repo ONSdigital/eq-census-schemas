@@ -1525,17 +1525,15 @@
                                                 {
                                                     "label": "Yes, an address outside the UK",
                                                     "value": "Other",
-                                                    "child_answer_id": "another-address-answer-other"
+                                                    "detail_answer": {
+                                                        "id": "another-address-detail-answer",
+                                                        "type": "TextField",
+                                                        "mandatory": false,
+                                                        "label": "Please specify a country"
+                                                    }
                                                 }
                                             ],
                                             "type": "Radio"
-                                        },
-                                        {
-                                            "id": "another-address-answer-other",
-                                            "parent_answer_id": "another-address-answer",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please specify a country"
                                         }
                                     ]
                                 }
