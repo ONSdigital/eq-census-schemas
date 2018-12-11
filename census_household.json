@@ -4290,18 +4290,7 @@
                             "questions": [
                                 {
                                     "id": "language-england-question",
-                                     "titles": [{
-                                            "value": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> main language?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "What is your main language?"
-                                        }
-                                    ],
+                                    "title":  "What is your main language?",
                                     "type": "General",
                                      "definitions": [{
                                         "title": "What do we mean by 'main language'?",
@@ -4349,18 +4338,7 @@
                                 },
                                 {
                                    "id": "language-welsh-question",
-                                   "titles": [{
-                                            "value": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> main language?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "What is your main language?"
-                                        }
-                                    ],
+                                   "title": "What is your main language?",
                                     "type": "General",
                                      "definitions": [{
                                         "title": "What is main language?",
@@ -4426,6 +4404,139 @@
                                         "when": [
                                             {
                                                 "id": "language-welsh-answer",
+                                                "condition": "equals",
+                                                "value": "English or Welsh"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "english"
+                                    }
+                                }
+                            ]
+                        },
+                         {
+                            "type": "Question",
+                            "id": "language-proxy",
+                            "questions": [
+                                {
+                                    "id": "language-england-proxy-question",
+                                    "title": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> main language?",
+                                    "type": "General",
+                                     "definitions": [{
+                                        "title": "What do we mean by 'main language'?",
+                                         "content": [
+                                            {
+                                                "description": "Main language is their first or preferred language."
+                                            }
+                                        ]
+                                    }],
+                                    "answers": [
+                                        {
+                                            "id": "language-england-proxy-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "English",
+                                                    "value": "English"
+                                                },
+                                                {
+                                                    "label": "Other",
+                                                    "value": "Other",
+                                                    "description": "Including British Sign Language",
+                                                    "detail_answer": {
+                                                        "id": "language-england-proxy-answer-other",
+                                                        "type": "TextField",
+                                                        "mandatory": false,
+                                                        "label": "Please specify main language"
+                                                    }
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ],
+                                    "skip_conditions": [
+                                        {
+                                            "when": [
+                                                {
+                                                    "meta": "region_code",
+                                                    "condition": "equals",
+                                                    "value": "GB-WLS"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                   "id": "language-welsh-proxy-question",
+                                   "title": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> main language?",
+                                    "type": "General",
+                                     "definitions": [{
+                                        "title": "What is main language?",
+                                        "content": [
+                                            {
+                                                "description": "Main language is their first or preferred language."
+                                            }
+                                        ]
+                                    }],
+                                    "answers": [
+                                        {
+                                            "id": "language-welsh-proxy-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "English or Welsh",
+                                                    "value": "English or Welsh"
+                                                },
+                                                {
+                                                    "label": "Other",
+                                                    "value": "Other",
+                                                    "description": "Including British Sign Language",
+                                                    "detail_answer": {
+                                                        "id": "language-welsh-proxy-answer-other",
+                                                        "type": "TextField",
+                                                        "mandatory": false,
+                                                        "label": "Please specify main language"
+                                                    }
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ],
+                                    "skip_conditions": [
+                                        {
+                                            "when": [
+                                                {
+                                                    "meta": "region_code",
+                                                    "condition": "not equals",
+                                                    "value": "GB-WLS"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "religion",
+                                        "when": [
+                                            {
+                                                "id": "language-england-proxy-answer",
+                                                "condition": "equals",
+                                                "value": "English"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "religion",
+                                        "when": [
+                                            {
+                                                "id": "language-welsh-proxy-answer",
                                                 "condition": "equals",
                                                 "value": "English or Welsh"
                                             }
