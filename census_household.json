@@ -6458,19 +6458,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "business-name",
-                                        "when": [
-                                            {
-                                                "id": "main-job-type-answer",
-                                                "condition": "equals",
-                                                "value": "Employee"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "self-employed"
+                                        "block": "business-name"
                                     }
                                 }
                             ]
@@ -6537,172 +6525,12 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "business-name-past",
-                                        "when": [
-                                            {
-                                                "id": "main-job-type-past-answer",
-                                                "condition": "equals",
-                                                "value": "Employee"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "self-employed-past"
+                                        "block": "business-name-past"
                                     }
                                 }
                             ]
                         },
-                        {
-                            "type": "Question",
-                            "id": "self-employed",
-                            "questions": [
-                                {
-                                    "id": "self-employed-question",
-                                     "titles": [{
-                                            "value": "Is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> self-employed in their own registered business?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "Are you self-employed in your own registered business?"
-                                        }
-                                    ],
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "self-employed-answer",
-                                            "mandatory": true,
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                 {
-                                    "goto": {
-                                        "block": "business-name-proxy",
-                                        "when": [
-                                            {
-                                                "id": "self-employed-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            },
-                                            {
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }
-                                        ]
-                                    }
-                                },{
-                                    "goto": {
-                                        "block": "business-name",
-                                        "when": [
-                                            {
-                                                "id": "self-employed-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "job-title"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "self-employed-past",
-                            "questions": [
-                                {
-                                    "id": "self-employed-past-question",
-                                    "titles": [{
-                                            "value": "Was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> self-employed in their own registered business?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "Were you self-employed in your own registered business?"
-                                        }
-                                    ],
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "self-employed-past-answer",
-                                            "mandatory": true,
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                 {
-                                    "goto": {
-                                        "block": "business-name-past-proxy",
-                                        "when": [
-                                            {
-                                                "id": "self-employed-past-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            },
-                                            {
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "business-name-past",
-                                        "when": [
-                                            {
-                                                "id": "self-employed-past-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "job-title-past"
-                                    }
-                                }
-                            ]
-                        },
+                       
                         {
                             "type": "Question",
                             "id": "business-name",
