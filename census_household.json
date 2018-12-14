@@ -2267,7 +2267,7 @@
                                                     "label": "Other religion",
                                                     "value": "Other religion",
                                                     "detail_answer": {
-                                                        "id": "ethnic-group-answer-other",
+                                                        "id": "religion-answer-other",
                                                         "type": "TextField",
                                                         "mandatory": false,
                                                         "label": "Please specify religion"
@@ -2703,16 +2703,27 @@
                                 }
                             ]
                         },
-                        {
+                         {
                             "type": "Question",
                             "id": "language",
                             "questions": [
                                 {
-                                    "id": "language-england-question",
-                                    "title":  "What is your main language?",
+                                    "id": "language-question",
+                                    "titles": [{
+                                            "value": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> main language?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "What is your main language?"
+                                        }
+                                    ], 
                                     "type": "General",
                                      "definitions": [{
-                                        "title": "What do we mean by 'main language'?",
+                                        "title": "What is main language?",
                                          "content": [
                                             {
                                                 "description": "Main language is your first or preferred language."
@@ -2721,8 +2732,8 @@
                                     }],
                                     "answers": [
                                         {
-                                            "id": "language-england-answer",
-                                            "mandatory": true,
+                                            "id": "language-answer",
+                                            "mandatory": false,
                                             "options": [
                                                 {
                                                     "label": "English",
@@ -2733,7 +2744,7 @@
                                                     "value": "Other",
                                                     "description": "Including British Sign Language",
                                                     "detail_answer": {
-                                                        "id": "language-england-answer-other",
+                                                        "id": "language-answer-other",
                                                         "type": "TextField",
                                                         "mandatory": false,
                                                         "label": "Please specify main language"
@@ -2741,65 +2752,6 @@
                                                 }
                                             ],
                                             "type": "Radio"
-                                        }
-                                    ],
-                                    "skip_conditions": [
-                                        {
-                                            "when": [
-                                                {
-                                                    "meta": "region_code",
-                                                    "condition": "equals",
-                                                    "value": "GB-WLS"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                   "id": "language-welsh-question",
-                                   "title": "What is your main language?",
-                                    "type": "General",
-                                     "definitions": [{
-                                        "title": "What is main language?",
-                                        "content": [
-                                            {
-                                                "description": "Main language is your first or preferred language."
-                                            }
-                                        ]
-                                    }],
-                                    "answers": [
-                                        {
-                                            "id": "language-welsh-answer",
-                                            "mandatory": true,
-                                            "options": [
-                                                {
-                                                    "label": "English or Welsh",
-                                                    "value": "English or Welsh"
-                                                },
-                                                {
-                                                    "label": "Other",
-                                                    "value": "Other",
-                                                    "description": "Including British Sign Language",
-                                                    "detail_answer": {
-                                                        "id": "language-welsh-answer-other",
-                                                        "type": "TextField",
-                                                        "mandatory": false,
-                                                        "label": "Please specify main language"
-                                                    }
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ],
-                                    "skip_conditions": [
-                                        {
-                                            "when": [
-                                                {
-                                                    "meta": "region_code",
-                                                    "condition": "not equals",
-                                                    "value": "GB-WLS"
-                                                }
-                                            ]
                                         }
                                     ]
                                 }
@@ -2807,157 +2759,12 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "religion",
+                                        "block": "understand-irish",
                                         "when": [
                                             {
-                                                "id": "language-england-answer",
+                                                "id": "language-answer",
                                                 "condition": "equals",
                                                 "value": "English"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "religion",
-                                        "when": [
-                                            {
-                                                "id": "language-welsh-answer",
-                                                "condition": "equals",
-                                                "value": "English or Welsh"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "english"
-                                    }
-                                }
-                            ]
-                        },
-                         {
-                            "type": "Question",
-                            "id": "language-proxy",
-                            "questions": [
-                                {
-                                    "id": "language-england-proxy-question",
-                                    "title": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> main language?",
-                                    "type": "General",
-                                     "definitions": [{
-                                        "title": "What do we mean by 'main language'?",
-                                         "content": [
-                                            {
-                                                "description": "Main language is their first or preferred language."
-                                            }
-                                        ]
-                                    }],
-                                    "answers": [
-                                        {
-                                            "id": "language-england-proxy-answer",
-                                            "mandatory": true,
-                                            "options": [
-                                                {
-                                                    "label": "English",
-                                                    "value": "English"
-                                                },
-                                                {
-                                                    "label": "Other",
-                                                    "value": "Other",
-                                                    "description": "Including British Sign Language",
-                                                    "detail_answer": {
-                                                        "id": "language-england-proxy-answer-other",
-                                                        "type": "TextField",
-                                                        "mandatory": false,
-                                                        "label": "Please specify main language"
-                                                    }
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ],
-                                    "skip_conditions": [
-                                        {
-                                            "when": [
-                                                {
-                                                    "meta": "region_code",
-                                                    "condition": "equals",
-                                                    "value": "GB-WLS"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                   "id": "language-welsh-proxy-question",
-                                   "title": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> main language?",
-                                    "type": "General",
-                                     "definitions": [{
-                                        "title": "What is main language?",
-                                        "content": [
-                                            {
-                                                "description": "Main language is their first or preferred language."
-                                            }
-                                        ]
-                                    }],
-                                    "answers": [
-                                        {
-                                            "id": "language-welsh-proxy-answer",
-                                            "mandatory": true,
-                                            "options": [
-                                                {
-                                                    "label": "English or Welsh",
-                                                    "value": "English or Welsh"
-                                                },
-                                                {
-                                                    "label": "Other",
-                                                    "value": "Other",
-                                                    "description": "Including British Sign Language",
-                                                    "detail_answer": {
-                                                        "id": "language-welsh-proxy-answer-other",
-                                                        "type": "TextField",
-                                                        "mandatory": false,
-                                                        "label": "Please specify main language"
-                                                    }
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ],
-                                    "skip_conditions": [
-                                        {
-                                            "when": [
-                                                {
-                                                    "meta": "region_code",
-                                                    "condition": "not equals",
-                                                    "value": "GB-WLS"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "religion",
-                                        "when": [
-                                            {
-                                                "id": "language-england-proxy-answer",
-                                                "condition": "equals",
-                                                "value": "English"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "religion",
-                                        "when": [
-                                            {
-                                                "id": "language-welsh-proxy-answer",
-                                                "condition": "equals",
-                                                "value": "English or Welsh"
                                             }
                                         ]
                                     }
@@ -2975,7 +2782,7 @@
                             "questions": [
                                 {
                                     "id": "english-question",
-                                    "titles": [{
+                                     "titles": [{
                                             "value": "How well can <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> speak English?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
@@ -2986,12 +2793,12 @@
                                         {
                                             "value": "How well can you speak English?"
                                         }
-                                    ],
+                                    ], 
                                     "type": "General",
                                     "answers": [
                                         {
                                             "id": "english-answer",
-                                            "mandatory": true,
+                                            "mandatory": false,
                                             "options": [
                                                 {
                                                     "label": "Very well",
@@ -3018,19 +2825,19 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "religion"
+                                        "block": "understand-irish"
                                     }
                                 }
                             ]
                         },
-                        {
+                         {
                             "type": "Question",
-                            "id": "religion",
+                            "id": "understand-irish",
                             "questions": [
                                 {
-                                    "id": "religion-question",
+                                    "id": "understand-irish-question",
                                     "titles": [{
-                                            "value": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> religion?",
+                                            "value": "Can <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> understand, speak, read or write Irish",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -3038,97 +2845,250 @@
                                             }]
                                         },
                                         {
-                                            "value": "What is your religion?"
+                                            "value": "Can you understand, speak, read or write Irish?"
                                         }
-                                    ],
-                                    "description": "This question is voluntary",
-                                    "type": "General",
+                                    ], 
+                                    "type": "MutuallyExclusive",
+                                    "mandatory": true,
                                     "answers": [
                                         {
-                                            "id": "religion-answer",
+                                            "id": "understand-irish-answer",
                                             "mandatory": false,
-                                            "label": "Select one option only",
                                             "options": [
                                                 {
-                                                    "label": "No religion",
-                                                    "value": "No religion"
+                                                    "label": "Understand spoken Irish",
+                                                    "value": "Understand spoken Irish"
                                                 },
                                                 {
-                                                    "label": "Christian",
-                                                    "value": "Christian",
-                                                    "description": "Including Church of England, Catholic, Protestant and all other Christian denominations"
+                                                    "label": "Speak Irish",
+                                                    "value": "Speak Irish"
                                                 },
                                                 {
-                                                    "label": "Buddhist",
-                                                    "value": "Buddhist"
+                                                    "label": "Read Irish",
+                                                    "value": "Read Irish"
                                                 },
                                                 {
-                                                    "label": "Hindu",
-                                                    "value": "Hindu"
-                                                },
-                                                {
-                                                    "label": "Jewish",
-                                                    "value": "Jewish"
-                                                },
-                                                {
-                                                    "label": "Muslim",
-                                                    "value": "Muslim"
-                                                },
-                                                {
-                                                    "label": "Sikh",
-                                                    "value": "Sikh"
-                                                },
-                                                {
-                                                    "label": "Any other religion",
-                                                    "value": "Other",
-                                                    "detail_answer": {
-                                                        "id": "religion-answer-other",
-                                                        "type": "TextField",
-                                                        "mandatory": false,
-                                                        "label": "Please specify other religion"
-                                                    }
+                                                    "label": "Write Irish",
+                                                    "value": "Write Irish"
                                                 }
-                                               
                                             ],
                                             "type": "Checkbox"
+                                        },
+                                        {
+                                            "id": "understand-irish-answer-exclusive",
+                                            "type": "Checkbox",
+                                            "mandatory": false,
+                                            "options": [{
+                                                    "label": "No ability",
+                                                    "value": "No ability"
+                                            }]
                                         }
                                     ]
                                 }
                             ],
-                            "routing_rules": [
+                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "past-usual-household-address-first-person",
-                                        "when": [{
-                                            "answer_ids": [
-                                                "carer-answer"
-                                            ],
-                                            "type": "answer_count",
-                                            "condition": "less than",
-                                            "value": 2
-                                        }
+                                        "block": "frequency-irish",
+                                        "when": [
+                                            {
+                                                "id": "understand-irish-answer",
+                                                "condition": "contains",
+                                                "value": "Speak Irish"
+                                            }
                                         ]
                                     }
-                                }, {
+                                },
+                                 {
                                     "goto": {
-                                        "block": "past-usual-household-address",
-                                        "when": [{
-                                            "answer_ids": [
-                                                "carer-answer"
-                                            ],
-                                            "type": "answer_count",
-                                            "condition": "greater than",
-                                            "value": 1
-                                        }
-                                        ]
-                                    }
-                                }, {
-                                    "goto": {
-                                        "block": "past-usual-address-first-person"
+                                        "block": "understand-ulster-scots"
+                                        
                                     }
                                 }
                             ]
                         },
+                        {
+                            "type": "Question",
+                            "id": "frequency-irish",
+                            "questions": [
+                                {
+                                    "id": "frequency-irish-question",
+                                    "titles": [{
+                                            "value": "How often does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> speak Irish",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "How often do you speak Irish?"
+                                        }
+                                    ], 
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "frequency-irish-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Daily",
+                                                    "value": "Daily"
+                                                },
+                                                {
+                                                    "label": "Weekly",
+                                                    "value": "Weekly"
+                                                },
+                                                {
+                                                    "label": "Less often",
+                                                    "value": "Less often"
+                                                },
+                                                {
+                                                    "label": "Never",
+                                                    "value": "Never"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                             "routing_rules": [
+                                 {
+                                    "goto": {
+                                        "block": "understand-ulster-scots"
+                                        
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "understand-ulster-scots",
+                            "questions": [
+                                {
+                                    "id": "understand-ulster-scots-question",
+                                    "titles": [{
+                                            "value": "Can <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> understand, speak, read or write Ulster Scots",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Can you understand, speak, read or write Ulster Scots?"
+                                        }
+                                    ], 
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "understand-ulster-scots-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Understand spoken Ulster Scots",
+                                                    "value": "Understand spoken Ulster Scots"
+                                                },
+                                                {
+                                                    "label": "Speak Ulster Scots",
+                                                    "value": "Speak Ulster Scots"
+                                                },
+                                                {
+                                                    "label": "Read Ulster Scots",
+                                                    "value": "Read Ulster Scots"
+                                                },
+                                                {
+                                                    "label": "Write Ulster Scots",
+                                                    "value": "Write Ulster Scots"
+                                                },
+                                                {
+                                                    "label": "No ability",
+                                                    "value": "No ability"
+                                                }
+                                            ],
+                                            "type": "MutuallyExclusiveCheckbox"
+                                        }
+                                    ]
+                                }
+                            ],
+                             "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "frequency-ulster-scots",
+                                        "when": [
+                                            {
+                                                "id": "understand-ulster-scots-answer",
+                                                "condition": "contains",
+                                                "value": "Speak Ulster Scots"
+                                            }
+                                        ]
+                                    }
+                                },
+                                 {
+                                    "goto": {
+                                        "block": "disability"
+                                        
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "frequency-ulster-scots",
+                            "questions": [
+                                {
+                                    "id": "frequency-ulster-scots-question",
+                                    "titles": [{
+                                            "value": "How often does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> speak Ulster Scots",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "How often do you speak Ulster Scots?"
+                                        }
+                                    ], 
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "frequency-ulster-scots-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Daily",
+                                                    "value": "Daily"
+                                                },
+                                                {
+                                                    "label": "Weekly",
+                                                    "value": "Weekly"
+                                                },
+                                                {
+                                                    "label": "Less often",
+                                                    "value": "Less often"
+                                                },
+                                                {
+                                                    "label": "Never",
+                                                    "value": "Never"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                             "routing_rules": [
+                                 {
+                                    "goto": {
+                                        "block": "disability"
+                                        
+                                    }
+                                }
+                            ]
+                        },
+                        
                       
                         {
                             "type": "Question",
