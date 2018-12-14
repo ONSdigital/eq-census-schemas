@@ -2241,8 +2241,7 @@
                                             "value": "What religion, religious denomination or body do you belong to?"
                                         }
                                     ],
-                                    "type": "MutuallyExclusive",
-                                    "mandatory": true,
+                                    "type": "General",
                                     "answers": [
                                         {
                                             "id": "religion-answer",
@@ -2273,16 +2272,13 @@
                                                         "mandatory": false,
                                                         "label": "Please specify religion"
                                                     }
+                                                },
+                                                {
+                                                    "label": "None",
+                                                    "value": "None"
                                                 }
                                             ],
                                             "type": "Radio"
-                                        },
-                                        {
-                                            "id": "religion-answer-exclusive",
-                                            "type": "checkbox",
-                                            "mandatory": false,
-                                            "label": "None",
-                                            "value": "None"
                                         }
                                     ]
                                 }
@@ -2325,8 +2321,7 @@
                                             "value": "What religion, religious denomination or body were you brought up in?"
                                         }
                                     ],
-                                    "type": "MutuallyExclusive",
-                                    "mandatory": true,
+                                    "type": "General",
                                     "answers": [
                                         {
                                             "id": "religion-brought-up-answer",
@@ -2357,18 +2352,14 @@
                                                         "mandatory": false,
                                                         "label": "Please specify religion"
                                                     }
+                                                },
+                                                {
+                                                    "label": "None",
+                                                     "value": "None"
                                                 }
                                                
                                             ],
                                             "type": "Radio"
-                                        },
-                                        {
-                                            "id": "religion-brought-up-answer-exclusive",
-                                            "type": "checkbox",
-                                            "mandatory": false,
-                                            "label": "None",
-                                            "value": "None"
-                                        
                                         }
                                     ]
                                 }
