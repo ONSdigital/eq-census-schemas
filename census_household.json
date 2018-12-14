@@ -636,7 +636,7 @@
                             "questions": [
                                 {
                                     "id": "adaptation-question",
-                                    "title": "Has <em>ADD</em> been designed or adapted for any of the following?",
+                                    "title": "Has <em>{{answers['address-line-1']}}</em> been designed or adapted for any of the following?",
                                     "type": "MutuallyExclusive",
                                     "mandatory": true,
                                     "answers": [
