@@ -811,7 +811,8 @@
                                 {
                                     "id": "renewable-energy-question",
                                     "title": "Which of the following renewable energy systems does <em>{{answers['address-line-1']}}</em> have?",
-                                    "type": "General",
+                                    "type": "MutuallyExclusive",
+                                    "mandatory": true,
                                     "answers": [
                                         {
                                             "id": "renewable-energy-answer",
@@ -840,7 +841,7 @@
                                                     "value": "No renewable energy systems"
                                                 }
                                             ],
-                                            "type": "MutuallyExclusiveCheckbox"
+                                            "type": "Checkbox"
                                         },
                                         {
                                             "id": "renewable-energy-answer-other",
