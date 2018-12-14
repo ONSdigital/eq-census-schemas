@@ -4,7 +4,7 @@
     "data_version": "0.0.2",
     "survey_id": "census",
     "title": "2017 Census Test",
-    "description": "Census England Household Schema",
+    "description": "Census Northern Ireland Household Schema",
     "theme": "census",
     "legal_basis": "Voluntary",
     "eq_id": "census",
@@ -544,7 +544,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "self-contained-accommodation"
+                                        "block": "adaptation"
                                     }
                                 }
                             ]
@@ -584,7 +584,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "self-contained-accommodation"
+                                        "block": "adaptation"
                                     }
                                 }
                             ]
@@ -621,93 +621,104 @@
                                         }
                                     ]
                                 }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "adaptation"
+                                    }
+                                }
                             ]
                         },
                         {
                             "type": "Question",
-                            "id": "self-contained-accommodation",
+                            "id": "adaptation",
                             "questions": [
                                 {
-                                    "id": "self-contained-accommodation-question",
-                                    "title": "Are all the rooms in this accommodation, including the kitchen, bathroom and toilet, behind a door that only this household can use?",
+                                    "id": "adaptation-question",
+                                    "title": "Has <em>{{{answers['address-line-1']}}</em> been designed or adapted for any of the following?",
                                     "type": "General",
-                                     "definitions": [{
-                                        "title": "What is a household?",
-                                        "content": [
-                                            {
-                                                "description": "One person living alone; or a group of people (not necessarily related) living at the same address who share cooking facilities and share a living room or sitting room or dining area."
-                                            }
-                                        ]
-                                    }],
                                     "answers": [
                                         {
-                                            "id": "self-contained-accommodation-answer",
-                                            "mandatory": true,
+                                            "id": "adaptation-answer",
+                                            "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
+                                                    "label": "Internal wheelchair usage",
+                                                    "value": "Internal wheelchair usage",
+                                                    "description": "For example downstairs bathroom"
                                                 },
                                                 {
-                                                    "label": "No, one or more rooms are shared with another household",
-                                                    "value": "No"
+                                                    "label": "External wheelchair usage",
+                                                    "value": "External wheelchair usage",
+                                                    "description": "For example a ramp"
+                                                },
+                                                {
+                                                    "label": "Other physical or mobility difficulties",
+                                                    "value": "Other physical or mobility difficulties"
+                                                },
+                                                {
+                                                    "label": "Visual difficulties",
+                                                    "value": "Visual difficulties"
+                                                },
+                                                {
+                                                    "label": "Hearing difficulties",
+                                                    "value": "Hearing difficulties"
+                                                },
+                                                {
+                                                    "label": "Other",
+                                                    "value": "Other",
+                                                    "detail_answer": {
+                                                        "id": "adaptation-answer-other",
+                                                        "type": "TextField",
+                                                        "mandatory": false,
+                                                        "label": "Please specify any other reasons"
+                                                    }
+                                                },
+                                                {
+                                                    "label": "None of these",
+                                                    "value": "None of these"
                                                 }
                                             ],
-                                            "type": "Radio"
+                                            "type": "MutuallyExclusiveCheckbox"
                                         }
                                     ]
                                 }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "number-of-bedrooms",
-                            "questions": [
+                            ],
+                            "routing_rules": [
                                 {
-                                    "id": "number-of-bedrooms-question",
-                                    "title": "How many bedrooms are available for use only by this household?",
-                                    "type": "General",
-                                     "guidance": {
-                                        "content": [
-                                            {
-                                                "title": "Include all rooms built or converted for use as bedrooms"
-                                            }
-                                        ]
-                                    },
-                                    "answers": [
-                                        {
-                                            "id": "number-of-bedrooms-answer",
-                                            "label": "Number of bedrooms",
-                                            "mandatory": true,
-                                            "type": "Number"
-                                        }
-                                    ]
+                                    "goto": {
+                                        "block": "central-heating"
+                                    }
                                 }
                             ]
                         },
+                        
                         {
                             "type": "Question",
                             "id": "central-heating",
                             "questions": [
                                 {
                                     "id": "central-heating-question",
-                                    "title": "What type of central heating does <em>{{answers['address-line-1']}}</em> have?",
-                                    "type": "General",
-                                     "guidance": {
+                                    "title": "What type of central heating does <em>{{answers['address-line-1']}} {{answers['address-line-2']}}</em> have?",
+                                    "type": "MutuallyExclusive",
+                                    "mandatory": true,
+                                     "definitions": [{
+                                        "title": "What do we mean by central heating?",
                                         "content": [
                                             {
-                                                "title": "Include central heating systems that generate heat for multiple rooms whether or not you use them"
+                                                "description": "Central heating is a central system that generates heat for multiple rooms."
                                             }
                                         ]
-                                    },
+                                    }],
                                     "answers": [{
                                             "id": "central-heating-answer",
                                             "mandatory": false,
                                             "type": "Checkbox",
                                             "options": [
-                                                {
-                                                    "label": "No central heating",
-                                                    "value": "No central heating"
+                                                 {
+                                                    "label": "Oil",
+                                                    "value": "Oil"
                                                 },
                                                 {
                                                     "label": "Mains gas",
@@ -723,34 +734,34 @@
                                                     "description": "Including storage heaters"
                                                 },
                                                 {
-                                                    "label": "Oil",
-                                                    "value": "Oil"
+                                                    "label": "Wood",
+                                                    "value": "Wood"
                                                 },
                                                 {
                                                     "label": "Solid Fuel",
                                                     "value": "Solid Fuel",
-                                                    "description": "Excluding wood"
-                                                },
-                                                {
-                                                    "label": "Wood",
-                                                    "value": "Wood",
-                                                    "description": "For example logs, waste wood or pellets"
-                                                },
-                                                {
-                                                    "label": "Renewable energy",
-                                                    "value": "Renewable energy",
-                                                    "description": "For example solar thermal or heat pumps"
-                                                },
-                                                {
-                                                    "label": "District or communal heat networks",
-                                                    "value": "District or communal heat networks"
+                                                    "description": "Including coal"
                                                 },
                                                 
                                                 {
-                                                    "label": "Other",
+                                                    "label": "Renewable heating systems",
+                                                    "value": "Renewable heating systems",
+                                                    "description": "For example wood pellets, Biomass, air or ground heat source systems"
+                                                },
+                                                {
+                                                    "label": "Other central heating",
                                                     "value": "Other"
                                                 }
                                              ]
+                                        },
+                                        {
+                                            "id": "central-heating-answer-exclusive",
+                                            "type": "Checkbox",
+                                            "mandatory": false,
+                                            "options": [{
+                                                "label": "No central heating",
+                                                "value": "No central heating"
+                                            }]
                                         }
                                     ]
                                 }
