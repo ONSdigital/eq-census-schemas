@@ -665,6 +665,16 @@
                                                 {
                                                     "label": "Hearing difficulties",
                                                     "value": "Hearing difficulties"
+                                                },
+                                                {
+                                                    "label": "Other",
+                                                    "value": "Other",
+                                                    "detail_answer": {
+                                                        "id": "adaptation-answer-other",
+                                                        "type": "TextField",
+                                                        "mandatory": false,
+                                                        "label": "Please specify any other reasons"
+                                                    }
                                                 }
                                             ],
                                             "type": "Checkbox"
