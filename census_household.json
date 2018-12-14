@@ -3730,7 +3730,7 @@
                                 {
                                     "id": "mixed-ethnic-group-question",
                                     "titles": [{
-                                            "value": "Which one best describes <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> Mixed, Multiple ethnic group or background?",
+                                            "value": "Which one best describes <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> Mixed or Multiple ethnic group or background?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
