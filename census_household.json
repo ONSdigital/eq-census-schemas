@@ -637,7 +637,8 @@
                                 {
                                     "id": "adaptation-question",
                                     "title": "Has <em>{{{answers['address-line-1']}}</em> been designed or adapted for any of the following?",
-                                    "type": "General",
+                                    "type": "MutuallyExclusive",
+                                    "mandatory": true,
                                     "answers": [
                                         {
                                             "id": "adaptation-answer",
@@ -680,7 +681,7 @@
                                                     "value": "None of these"
                                                 }
                                             ],
-                                            "type": "MutuallyExclusiveCheckbox"
+                                            "type": "Checkbox"
                                         }
                                     ]
                                 }
