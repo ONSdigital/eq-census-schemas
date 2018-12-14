@@ -3292,7 +3292,7 @@
                                                 {
                                                     "label": "Black, Black British, Caribbean or African",
                                                     "value": "Black, Black British, Caribbean or African",
-                                                    "description": "Includes any Black, Black British, Caribbean or African background"
+                                                    "description": "Includes any Black British, Caribbean, African or any other Black background"
                                                 },
                                                 {
                                                     "label": "Other ethnic group",
@@ -3353,7 +3353,7 @@
                                                 {
                                                     "label": "Black, Black British, Caribbean or African",
                                                     "value": "Black, Black British, Caribbean or African",
-                                                    "description": "Includes any Black, Black British, Caribbean or African background"
+                                                    "description": "Includes any Black British, Caribbean, African or any other Black background"
                                                 },
                                                 {
                                                     "label": "Other ethnic group",
@@ -4002,13 +4002,13 @@
                                                     }
                                                 },
                                                 {
-                                                    "label": "Any other Black, African or Caribbean background",
+                                                    "label": "Any other Black, Black British or Caribbean background",
                                                     "value": "Other",
                                                     "detail_answer": {
                                                         "id": "black-ethnic-group-answer-other",
                                                         "type": "TextField",
                                                         "mandatory": false,
-                                                        "label": "Please specify Black, African or Caribbean background"
+                                                        "label": "Please specify any other Black, Black British, or Caribbean background"
                                                     }
                                                 }
                                             ],
