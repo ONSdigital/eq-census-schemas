@@ -1373,7 +1373,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "in-education"
+                                        "block": "in-education-over16"
                                     }
                                 }
                             ]
