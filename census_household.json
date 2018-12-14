@@ -675,13 +675,18 @@
                                                         "mandatory": false,
                                                         "label": "Please specify any other reasons"
                                                     }
-                                                },
-                                                {
-                                                    "label": "None of these",
-                                                    "value": "None of these"
                                                 }
                                             ],
                                             "type": "Checkbox"
+                                        },
+                                        {
+                                            "id": "adaptation-answer-exclusive",
+                                            "type": "Checkbox",
+                                            "mandatory": false,
+                                            "options": [{
+                                                "label": "None of these",
+                                                "value": "None of these"
+                                            }]
                                         }
                                     ]
                                 }
