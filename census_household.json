@@ -835,20 +835,18 @@
                                                         "mandatory": false,
                                                         "label": "Please specify renewable energy system"
                                                     }
-                                                },
-                                                {
-                                                    "label": "No renewable energy systems",
-                                                    "value": "No renewable energy systems"
                                                 }
                                             ],
                                             "type": "Checkbox"
                                         },
                                         {
-                                            "id": "renewable-energy-answer-other",
-                                            "parent_answer_id": "renewable-energy-answer",
-                                            "type": "TextField",
+                                            "id": "renewable-energy-answer-exclusive",
+                                            "type": "Checkbox",
                                             "mandatory": false,
-                                            "label": "Please specify other renewable energy system"
+                                            "options": [{
+                                                "label": "No renewable energy systems",
+                                                "value": "No renewable energy systems"
+                                            }]
                                         }
                                     ]
                                 }
