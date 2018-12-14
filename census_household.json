@@ -636,7 +636,7 @@
                             "questions": [
                                 {
                                     "id": "adaptation-question",
-                                    "title": "Has <em>{{{answers['address-line-1']}}</em> been designed or adapted for any of the following?",
+                                    "title": "Has <em>ADD</em> been designed or adapted for any of the following?",
                                     "type": "MutuallyExclusive",
                                     "mandatory": true,
                                     "answers": [
@@ -665,16 +665,6 @@
                                                 {
                                                     "label": "Hearing difficulties",
                                                     "value": "Hearing difficulties"
-                                                },
-                                                {
-                                                    "label": "Other",
-                                                    "value": "Other",
-                                                    "detail_answer": {
-                                                        "id": "adaptation-answer-other",
-                                                        "type": "TextField",
-                                                        "mandatory": false,
-                                                        "label": "Please specify any other reasons"
-                                                    }
                                                 }
                                             ],
                                             "type": "Checkbox"
