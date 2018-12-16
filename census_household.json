@@ -2380,10 +2380,11 @@
                                     "id": "sexual-identity-question",
                                     "title": "Which of the following best describes your sexual orientation?",
                                     "type": "General",
+                                    "mandatory": false,
                                     "answers": [
                                         {
                                             "id": "sexual-identity-answer",
-                                            "mandatory": true,
+                                            "mandatory": false,
                                             "options": [
                                                 {
                                                     "label": "Straight or Heterosexual",
