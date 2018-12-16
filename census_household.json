@@ -4159,9 +4159,9 @@
                                         "block": "study-address",
                                         "when": [
                                             {
-                                                "id": "ever-worked-answer",
+                                                "id": "ever-worked-proxy-answer",
                                                 "condition": "equals",
-                                                "value": "No, I have never worked"
+                                                "value": "No, has never worked"
                                             },
                                             { 
                                                "id": "in-education-answer",
@@ -4176,9 +4176,9 @@
                                         "block": "study-address",
                                         "when": [
                                             {
-                                                "id": "ever-worked-answer",
+                                                "id": "ever-worked-proxy-answer",
                                                 "condition": "equals",
-                                                "value": "No, I have never worked"
+                                                "value": "No, has never never worked"
                                             },
                                             { 
                                                "id": "employment-type-answer",
@@ -4249,8 +4249,8 @@
                                                     "value": "Yes, but not in the last 12 months"
                                                 },
                                                 {
-                                                    "label": "No, have never worked",
-                                                    "value": "No, have never worked"
+                                                    "label": "No, I have never worked",
+                                                    "value": "No, I have never worked"
                                                 }
                                             ],
                                             "type": "Radio"
