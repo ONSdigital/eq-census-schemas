@@ -2980,7 +2980,8 @@
                                             "value": "Can you understand, speak, read or write Ulster Scots?"
                                         }
                                     ], 
-                                    "type": "General",
+                                    "type": "MutuallyExclusive",
+                                    "mandatory": false,
                                     "answers": [
                                         {
                                             "id": "understand-ulster-scots-answer",
@@ -3007,7 +3008,16 @@
                                                     "value": "No ability"
                                                 }
                                             ],
-                                            "type": "MutuallyExclusiveCheckbox"
+                                            "type": "Checkbox"
+                                        },
+                                         {
+                                            "id": "understand-ulster-scots-answer-exclusive",
+                                            "type": "Checkbox",
+                                            "mandatory": false,
+                                            "options": [{
+                                                    "label": "No ability",
+                                                    "value": "No ability"
+                                            }]
                                         }
                                     ]
                                 }
@@ -3027,7 +3037,7 @@
                                 },
                                  {
                                     "goto": {
-                                        "block": "disability"
+                                        "block": "health"
                                         
                                     }
                                 }
@@ -3082,22 +3092,20 @@
                              "routing_rules": [
                                  {
                                     "goto": {
-                                        "block": "disability"
+                                        "block": "health"
                                         
                                     }
                                 }
                             ]
                         },
-                        
-                      
                         {
                             "type": "Question",
-                            "id": "armed-forces",
+                            "id": "health",
                             "questions": [
                                 {
-                                    "id": "armed-forces-question",
+                                    "id": "health-question",
                                     "titles": [{
-                                            "value": "Has <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> ever served in the UK Armed Forces?",
+                                            "value": "How is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> health in general?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -3105,48 +3113,37 @@
                                             }]
                                         },
                                         {
-                                            "value": "Have you ever served in the UK Armed Forces?"
+                                            "value": "How is your health in general?"
                                         }
                                     ],
-                                    "guidance": {
-                                        "content": [
-                                            {
-                                                "title": "Include National Service"
-                                            }
-                                        ]
-                                    },
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "armed-forces-answer",
+                                            "id": "health-answer",
                                             "mandatory": true,
-                                            "guidance": {
-                                                "show_guidance": "Why your answer is important",
-                                                "hide_guidance": "Why your answer is important",
-                                                "content": [{
-                                                   "description": "We are measuring the number of people who have served in the UK Armed Forces and now left. This data is needed to support central and local government commitments made under the Armed Forces Covenant. This is a promise by the nation ensuring that those who serve or who have served in the armed forces, and their families, are treated fairly."
-                                                    }
-                                                 ]
-                                            },
                                             "options": [
                                                 {
-                                                    "label": "No",
-                                                    "value": "No"
+                                                    "label": "Very good",
+                                                    "value": "Very good"
                                                 },
                                                 {
-                                                    "label": "Yes, currently serving",
-                                                    "value": "Yes, currently serving"
+                                                    "label": "Good",
+                                                    "value": "Good"
                                                 },
                                                 {
-                                                    "label": "Yes, previously served in Regular Armed Forces",
-                                                    "value": "Yes, previously served in Regular Armed Forces"
+                                                    "label": "Fair",
+                                                    "value": "Fair"
                                                 },
                                                 {
-                                                    "label": "Yes, previously served in Reserve Armed Forces",
-                                                    "value": "Yes, previously served in Reserve Armed Forces"
+                                                    "label": "Bad",
+                                                    "value": "Bad"
+                                                },
+                                                {
+                                                    "label": "Very bad",
+                                                    "value": "Very bad"
                                                 }
                                             ],
-                                            "type": "Checkbox"
+                                            "type": "Radio"
                                         }
                                     ]
                                 }
@@ -3154,11 +3151,317 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "qualifications"
+                                        "block": "disability-limitation"
                                     }
                                 }
                             ]
                         },
+                         {
+                            "type": "Question",
+                            "id": "disability-limitation",
+                            "questions": [
+                                {
+                                    "id": "disability-limitation-question",
+                                    "titles": [{
+                                            "value": "Are <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> day-to-day activities limited because of a health problem, or disability which has lasted, or is expected to last, at least 12 months?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Are your day-to-day activities limited because of a health problem, or disability which has lasted, or is expected to last, at least 12 months?"
+                                        }
+                                    ],
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "disability-limitation-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                },
+                                                {
+                                                    "label": "Yes, limited a little",
+                                                    "value": "Yes, limited a little"
+                                                },
+                                                {
+                                                    "label": "Yes, limited a lot",
+                                                    "value": "Yes, limited a lot"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                     "goto": {
+                                          "block": "disability"
+                                      }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "disability",
+                            "questions": [
+                                {
+                                    "id": "disability-question",
+                                    "titles": [{
+                                            "value": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> have any physical or mental health conditions or illnesses lasting or expected to last 12 months or more?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Do you have any physical or mental health conditions or illnesses lasting or expected to last 12 months or more?"
+                                        }
+                                    ],
+                                    "type": "MutuallyExclusive",
+                                    "answers": [
+                                        {
+                                            "id": "disability-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                 {
+                                                    "label": "Deafness or partial hearing loss",
+                                                    "value": "Deafness or partial hearing loss"
+                                                },
+                                                {
+                                                    "label": "Blindness or partial sight loss",
+                                                    "value": "Blindness or partial sight loss"
+                                                },
+                                                {
+                                                    "label": "A mobility or dexterity difficulty that substantially limits one or more basic physical activities",
+                                                    "value": "slight mobility",
+                                                    "description": "For example walking, climbing stairs, lifting or carrying"
+                                                },
+                                                {
+                                                    "label": "A mobility or dexterity difficulty which requires the use of a wheelchair in the home",
+                                                    "value": "full mobility"
+                                                },
+                                                {
+                                                    "label": "A learning difficulty",
+                                                    "value": "A learning difficulty",
+                                                    "description": "For example, dyslexia or ADHD"
+                                                },
+                                                {
+                                                    "label": "An intellectual or learning difficulty",
+                                                    "value": "An intellectual or learning difficulty",
+                                                    "description": "For example, Down syndrome"
+                                                },
+                                                {
+                                                    "label": "Autism or Asperger syndrome",
+                                                    "value": "Autism or Asperger syndrome"
+                                                },
+                                                {
+                                                    "label": "An emotional, psychological or mental health condition",
+                                                    "value": "An emotional, psychological or mental health condition",
+                                                    "description": "For example depression or schizophrenia"
+                                                },
+                                                {
+                                                    "label": "Long-term pain or discomfort",
+                                                    "value": "Long-term pain or discomfort"
+                                                },
+                                                {
+                                                    "label": "Shortness of breath or difficulty breathing",
+                                                    "value": "Shortness of breath or difficulty breathing"
+                                                },
+                                                {
+                                                    "label": "Frequent periods of confusion or memory loss",
+                                                    "value": "Frequent periods of confusion or memory loss",
+                                                    "description": "For example dementia"
+                                                },
+                                                {
+                                                    "label": "A physical health condition",
+                                                    "value": "A physical health condition",
+                                                    "description": "For example cancer, HIV, diabetes, heart disease or epilepsy"
+                                                },
+                                                {
+                                                    "label": "Other condition",
+                                                    "value": "Other condition"
+                                                }
+                                            ],
+                                            "type": "Checkbox"
+                                        },
+                                        {
+                                            "id": "disability-answer-exclusive",
+                                            "type": "Checkbox",
+                                            "mandatory": false,
+                                            "options": [{
+                                                    "label": "No ability",
+                                                    "value": "No ability"
+                                            }]
+                                        }
+                                        
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                     "goto": {
+                                          "block": "carer-proxy",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                      }
+                                },
+                                {
+                                     "goto": {
+                                          "block": "carer"
+                                     }
+                                }
+                                         
+                            ]
+                        },
+                       
+                        {
+                            "type": "Question",
+                            "id": "carer-proxy",
+                            "questions": [
+                                {
+                                    "id": "carer-proxy-question",
+                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> look after, or give any help or support to, anyone because they have long-term physical or mental health conditions or illnesses, or problems related to old age?",
+                                    "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Exclude anything they do as part of their paid employment"
+                                            }
+                                        ]
+                                    },
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "carer-proxy-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                },
+                                                {
+                                                    "label": "Yes, 9 hours a week or less",
+                                                    "value": "Yes, 9 hours a week or less"
+                                                },
+                                                {
+                                                    "label": "Yes, 10 to 19 hours a week",
+                                                    "value": "Yes, 10 to 19 hours a week"
+                                                },
+                                                {
+                                                    "label": "Yes, 20 to 34 hours a week",
+                                                    "value": "Yes, 20 to 34 hours a week"
+                                                },
+                                                {
+                                                    "label": "Yes, 35 to 49 hours a week",
+                                                    "value": "Yes, 35 to 49 hours a week"
+                                                },
+                                                {
+                                                    "label": "Yes, 50 or more hours a week",
+                                                    "value": "Yes, 50 or more hours a week"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "national-identity-proxy",
+                                        "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "national-identity"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "carer",
+                            "questions": [
+                                {
+                                    "id": "carer-question",
+                                    "title": "Do you look after, or give any help or support to, anyone because they have long-term physical or mental health conditions or illnesses, or problems related to old age?",     
+                                    "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Exclude anything you do as part of your paid employment"
+                                            }
+                                        ]
+                                    },
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "carer-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                },
+                                                {
+                                                    "label": "Yes, 9 hours a week or less",
+                                                    "value": "Yes, 9 hours a week or less"
+                                                },
+                                                {
+                                                    "label": "Yes, 10 to 19 hours a week",
+                                                    "value": "Yes, 10 to 19 hours a week"
+                                                },
+                                                {
+                                                    "label": "Yes, 20 to 34 hours a week",
+                                                    "value": "Yes, 20 to 34 hours a week"
+                                                },
+                                                {
+                                                    "label": "Yes, 35 to 49 hours a week",
+                                                    "value": "Yes, 35 to 49 hours a week"
+                                                },
+                                                {
+                                                    "label": "Yes, 50 or more hours a week",
+                                                    "value": "Yes, 50 or more hours a week"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "national-identity-proxy",
+                                        "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "national-identity"
+                                    }
+                                }
+                            ]
+                        },
+                      
+                        
                         {
                             "type": "Interstitial",
                             "id": "qualifications",
