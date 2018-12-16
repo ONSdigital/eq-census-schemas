@@ -2709,24 +2709,13 @@
                             "questions": [
                                 {
                                     "id": "language-question",
-                                    "titles": [{
-                                            "value": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> main language?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "What is your main language?"
-                                        }
-                                    ], 
+                                    "title":  "What is your main language?"
                                     "type": "General",
                                      "definitions": [{
                                         "title": "What is main language?",
                                          "content": [
                                             {
-                                                "description": "Main language is your first or preferred language."
+                                                "description": "Main language is your first or preferred language.",
                                             }
                                         ]
                                     }],
@@ -2763,6 +2752,68 @@
                                         "when": [
                                             {
                                                 "id": "language-answer",
+                                                "condition": "equals",
+                                                "value": "English"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "english"
+                                    }
+                                }
+                            ]
+                        },
+                         {
+                            "type": "Question",
+                            "id": "language-proxy",
+                            "questions": [
+                                {
+                                    "id": "language-proxy-question",
+                                    "title": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> main language?",
+                                    "type": "General",
+                                     "definitions": [{
+                                        "title": "What is main language?",
+                                         "content": [
+                                            {
+                                                "description": "Main language is their first or preferred language."
+                                            }
+                                        ]
+                                    }],
+                                    "answers": [
+                                        {
+                                            "id": "language-proxy-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "English",
+                                                    "value": "English"
+                                                },
+                                                {
+                                                    "label": "Other",
+                                                    "value": "Other",
+                                                    "description": "Including British Sign Language",
+                                                    "detail_answer": {
+                                                        "id": "language-proxy-answer-other",
+                                                        "type": "TextField",
+                                                        "mandatory": false,
+                                                        "label": "Please specify main language"
+                                                    }
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "understand-irish",
+                                        "when": [
+                                            {
+                                                "id": "language-proxy-answer",
                                                 "condition": "equals",
                                                 "value": "English"
                                             }
@@ -3378,17 +3429,22 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "national-identity-proxy",
+                                        "block": "sexual-identity",
                                         "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
+                                            }
+                                        }]
                                     }
                                 },
                                 {
                                     "goto": {
-                                        "block": "national-identity"
+                                        "block": "household-member-completed"
                                     }
                                 }
                             ]
@@ -3446,23 +3502,92 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "national-identity-proxy",
+                                        "block": "sexual-identity",
                                         "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
+                                            }
+                                        }]
                                     }
                                 },
                                 {
                                     "goto": {
-                                        "block": "national-identity"
+                                        "block": "household-member-completed"
                                     }
                                 }
                             ]
                         },
-                      
-                        
+                      {
+                            "type": "Question",
+                            "id": "sexual-identity",
+                            "questions": [
+                                {
+                                    "id": "sexual-identity-question",
+                                    "title": "Which of the following best describes your sexual orientation?",
+                                    "titles": [{
+                                            "value": "Which of the following best describes <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> sexual orientation?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Which of the following best describes your sexual orientation"
+                                        }
+                                    ],
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "sexual-identity-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "Straight or Heterosexual",
+                                                    "value": "Straight or Heterosexual"
+                                                },
+                                                {
+                                                    "label": "Gay or Lesbian",
+                                                    "value": "Gay or Lesbian"
+                                                },
+                                                {
+                                                    "label": "Bisexual",
+                                                    "value": "Bisexual"
+                                                },
+                                                {
+                                                    "label": "Other sexual orientation",
+                                                    "value": "Other sexual orientation",
+                                                    "detail_answer": {
+                                                        "id": "sexual-identity-answer-other",
+                                                        "type": "TextField",
+                                                        "mandatory": false,
+                                                        "label": "Please specify sexual orientation"
+                                                    }
+                                                },
+                                                {
+                                                    "label": "Prefer not to say",
+                                                    "value": "Prefer not to say"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "qualifications"
+                                    }
+                                }
+                            ]
+                        },
+                       
                         {
                             "type": "Interstitial",
                             "id": "qualifications",
