@@ -3225,10 +3225,11 @@
                                         }
                                     ],
                                     "type": "MutuallyExclusive",
+                                    "mandatory": true,
                                     "answers": [
                                         {
                                             "id": "disability-answer",
-                                            "mandatory": true,
+                                            "mandatory": false,
                                             "options": [
                                                  {
                                                     "label": "Deafness or partial hearing loss",
