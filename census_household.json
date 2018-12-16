@@ -3198,7 +3198,6 @@
                             "questions": [
                                 {
                                     "id": "sexual-identity-question",
-                                    "title": "Which of the following best describes your sexual orientation?",
                                     "titles": [{
                                             "value": "Which of the following best describes <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> sexual orientation?",
                                             "when": [{
