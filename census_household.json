@@ -582,8 +582,8 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "In a purpose-built block of flats or tenement",
-                                                    "value": "In a purpose-built block of flats or tenement"
+                                                    "label": "In a purpose-built block of flats",
+                                                    "value": "In a purpose-built block of flats"
                                                 },
                                                 {
                                                     "label": "Part of a converted or shared house (including bedsits)",
@@ -626,8 +626,8 @@
                                                     "description": "For example downstairs bathroom"
                                                 },
                                                 {
-                                                    "label": "External wheelchair usage",
-                                                    "value": "External wheelchair usage",
+                                                    "label": "External wheelchair access",
+                                                    "value": "External wheelchair access",
                                                     "description": "For example a ramp"
                                                 },
                                                 {
@@ -691,6 +691,7 @@
                                         {
                                             "id": "central-heating-answer",
                                             "mandatory": false,
+                                             "label": "Select all that apply, whether or not you use it",
                                             "options": [
                                                 {
                                                     "label": "Oil",
