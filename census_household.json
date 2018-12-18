@@ -603,8 +603,8 @@
                                             "mandatory": true,
                                             "options": [
                                                 {
-                                                    "label": "In a purpose-built block of flats or tenement",
-                                                    "value": "In a purpose-built block of flats or tenement"
+                                                    "label": "In a purpose-built block of flats",
+                                                    "value": "In a purpose-built block of flats"
                                                 },
                                                 {
                                                     "label": "Part of a converted or shared house",
@@ -650,8 +650,8 @@
                                                     "description": "For example downstairs bathroom"
                                                 },
                                                 {
-                                                    "label": "External wheelchair usage",
-                                                    "value": "External wheelchair usage",
+                                                    "label": "External wheelchair access",
+                                                    "value": "External wheelchair access",
                                                     "description": "For example a ramp"
                                                 },
                                                 {
@@ -721,6 +721,7 @@
                                             "id": "central-heating-answer",
                                             "mandatory": false,
                                             "type": "Checkbox",
+                                            "label": "Select all that apply, whether or not you use it",
                                             "options": [
                                                  {
                                                     "label": "Oil",
@@ -827,6 +828,10 @@
                                                     "value": "Solar panels for heating water"
                                                 },
                                                 {
+                                                    "label": "Wind Turbine",
+                                                    "value": "Wind Turbine"
+                                                },
+                                                {
                                                     "label": "Other",
                                                     "value": "Other",
                                                     "detail_answer": {
@@ -866,6 +871,14 @@
                                 {
                                     "id": "own-or-rent-question",
                                     "title": "Does your household own or rent <em>{{answers['address-line-1']}}</em>?",
+                                      "definitions": [{
+                                        "title": "What is a household?",
+                                        "content": [
+                                            {
+                                                "description": "One person living alone; or a group of people (not necessarily related) living at the same address who share cooking facilities and share a living room or sitting room or dining area."
+                                            }
+                                        ]
+                                    }],
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1311,7 +1324,7 @@
                                 {
                                     "id": "confirm-marriage-type",
                                      "titles": [{
-                                            "value": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> legal marital or same-sex civil partnership status?",
+                                            "value": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> marital or same-sex civil partnership status?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -1319,7 +1332,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "What is your legal marital or same-sex civil partnership status?"
+                                            "value": "What is your marital or same-sex civil partnership status?"
                                         }
                                     ],
                                     "type": "General",
@@ -1329,7 +1342,7 @@
                                             "mandatory": true,
                                             "options": [
                                                 {
-                                                    "label": "Never married and never in a same-sex civil partnership",
+                                                    "label": "Single, never married and never in a same-sex civil partnership",
                                                     "value": "Never"
                                                 },
                                                 {
@@ -1524,8 +1537,8 @@
                                                     "value": "household-address"
                                                 },
                                                 {
-                                                    "label": "Another address",
-                                                    "value": "Another address"
+                                                    "label": "At another address",
+                                                    "value": "At another address"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -1679,7 +1692,7 @@
                                 {
                                     "id": "arrive-to-live-question",
                                     "titles": [{
-                                            "value": "When did <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> most recently come here to live?",
+                                            "value": "When did <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> most recently come to Northern Ireland to live?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -1687,7 +1700,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "When did you most recently come here to live?"
+                                            "value": "When did you most recently come to Northern Ireland to live?"
                                         }
                                     ],
                                     "type": "General",
@@ -1775,8 +1788,8 @@
                                                     "value": "householdaddress"
                                                 },
                                                 {
-                                                    "label": "Student term time or boarding school address in the UK",
-                                                    "value": "Student term time or boarding school address in the UK"
+                                                    "label": "Student term time address in the UK",
+                                                    "value": "Student term time address in the UK"
                                                 },
                                                 {
                                                     "label": "Same address as {{answers['first-name'][0]}}",
@@ -1867,8 +1880,8 @@
                                                     "value": "householdaddress"
                                                 },
                                                 {
-                                                    "label": "Student term time or boarding school address in the UK",
-                                                    "value": "Student term time or boarding school address in the UK"
+                                                    "label": "Student term time in the UK",
+                                                    "value": "Student term time in the UK"
                                                 },
                                                 {
                                                     "label": "Another address in the UK",
@@ -1929,7 +1942,7 @@
                                 {
                                     "id": "last-year-address-question",
                                     "titles": [{
-                                            "value": "Enter details of their address one year ago",
+                                            "value": "What is their address one year ago?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -1937,14 +1950,14 @@
                                             }]
                                         },
                                         {
-                                            "value": "Enter details of your address one year ago"
+                                            "value": "What is your address one year ago?"
                                         }
                                     ],
                                     "type": "General",
                                     "answers": [
                                         {
                                             "id": "last-year-address-answer-building",
-                                            "label": "Building",
+                                            "label": "House name or number",
                                             "mandatory": true,
                                             "type": "TextField"
                                         },
@@ -2070,14 +2083,6 @@
                                         }
                                     ],
                                     "type": "General",
-                                    "definitions": [{
-                                        "title": "What is a national identity?",
-                                        "content": [
-                                            {
-                                                "description": "National Identity is not dependent on your ethnic group or citizenship. This could be about the country or countries where you feel you belong, or think of as home."
-                                            }
-                                        ]
-                                    }],
                                     "answers": [
                                         {
                                             "id": "national-identity-answer",
@@ -2264,13 +2269,13 @@
                                                     "value": "Methodist Church in Ireland"
                                                 },
                                                 {
-                                                    "label": "Other religion",
-                                                    "value": "Other religion",
+                                                    "label": "Other",
+                                                    "value": "Other",
                                                     "detail_answer": {
                                                         "id": "religion-answer-other",
                                                         "type": "TextField",
                                                         "mandatory": false,
-                                                        "label": "Please specify religion"
+                                                        "label": "Please specify religion, religious denomination or body"
                                                     }
                                                 },
                                                 {
@@ -2310,7 +2315,7 @@
                                 {
                                     "id": "religion-brought-up-question",
                                     "titles": [{
-                                            "value": "What religion, religious denomination or body was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> brought up in?",
+                                            "value": "What religion, religious denomination or body was {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}} <em>brought up</em> in?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -2318,7 +2323,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "What religion, religious denomination or body were you brought up in?"
+                                            "value": "What religion, religious denomination or body were you <em>brought up</em> in?"
                                         }
                                     ],
                                     "type": "General",
@@ -2344,13 +2349,13 @@
                                                     "value": "Methodist Church in Ireland"
                                                 },
                                                  {
-                                                    "label": "Other religion",
-                                                    "value": "Other religion",
+                                                    "label": "Other",
+                                                    "value": "Other",
                                                     "detail_answer": {
                                                         "id": "religion-brought-up-answer-other",
                                                         "type": "TextField",
                                                         "mandatory": false,
-                                                        "label": "Please specify religion"
+                                                        "label": "Please specify religion, religious denomination or body"
                                                     }
                                                 },
                                                 {
@@ -2401,7 +2406,7 @@
                                                 {
                                                     "label": "Other",
                                                     "value": "Other",
-                                                    "description": "Including British Sign Language",
+                                                    "description": "Including British or Irish Sign Language",
                                                     "detail_answer": {
                                                         "id": "language-answer-other",
                                                         "type": "TextField",
@@ -2463,7 +2468,7 @@
                                                 {
                                                     "label": "Other",
                                                     "value": "Other",
-                                                    "description": "Including British Sign Language",
+                                                    "description": "Including British or Irish Sign Language",
                                                     "detail_answer": {
                                                         "id": "language-proxy-answer-other",
                                                         "type": "TextField",
@@ -2573,6 +2578,15 @@
                                     "mandatory": true,
                                     "answers": [
                                         {
+                                            "id": "understand-irish-answer-exclusive",
+                                            "type": "Checkbox",
+                                            "mandatory": false,
+                                            "options": [{
+                                                    "label": "No ability",
+                                                    "value": "No ability"
+                                            }]
+                                        },
+                                        {
                                             "id": "understand-irish-answer",
                                             "mandatory": false,
                                             "options": [
@@ -2594,16 +2608,8 @@
                                                 }
                                             ],
                                             "type": "Checkbox"
-                                        },
-                                        {
-                                            "id": "understand-irish-answer-exclusive",
-                                            "type": "Checkbox",
-                                            "mandatory": false,
-                                            "options": [{
-                                                    "label": "No ability",
-                                                    "value": "No ability"
-                                            }]
                                         }
+                                        
                                     ]
                                 }
                             ],
@@ -2690,7 +2696,7 @@
                                 {
                                     "id": "understand-ulster-scots-question",
                                     "titles": [{
-                                            "value": "Can <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> understand, speak, read or write Ulster Scots",
+                                            "value": "Can <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> understand, speak, read or write Ulster-Scots",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -2698,40 +2704,13 @@
                                             }]
                                         },
                                         {
-                                            "value": "Can you understand, speak, read or write Ulster Scots?"
+                                            "value": "Can you understand, speak, read or write Ulster-Scots?"
                                         }
                                     ], 
                                     "type": "MutuallyExclusive",
                                     "mandatory": false,
                                     "answers": [
                                         {
-                                            "id": "understand-ulster-scots-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Understand spoken Ulster Scots",
-                                                    "value": "Understand spoken Ulster Scots"
-                                                },
-                                                {
-                                                    "label": "Speak Ulster Scots",
-                                                    "value": "Speak Ulster Scots"
-                                                },
-                                                {
-                                                    "label": "Read Ulster Scots",
-                                                    "value": "Read Ulster Scots"
-                                                },
-                                                {
-                                                    "label": "Write Ulster Scots",
-                                                    "value": "Write Ulster Scots"
-                                                },
-                                                {
-                                                    "label": "No ability",
-                                                    "value": "No ability"
-                                                }
-                                            ],
-                                            "type": "Checkbox"
-                                        },
-                                         {
                                             "id": "understand-ulster-scots-answer-exclusive",
                                             "type": "Checkbox",
                                             "mandatory": false,
@@ -2739,7 +2718,32 @@
                                                     "label": "No ability",
                                                     "value": "No ability"
                                             }]
+                                        },
+                                        {
+                                            "id": "understand-ulster-scots-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Understand spoken Ulster-Scots",
+                                                    "value": "Understand spoken Ulster-Scots"
+                                                },
+                                                {
+                                                    "label": "Speak Ulster-Scots",
+                                                    "value": "Speak Ulster-Scots"
+                                                },
+                                                {
+                                                    "label": "Read Ulster-Scots",
+                                                    "value": "Read Ulster-Scots"
+                                                },
+                                                {
+                                                    "label": "Write Ulster-Scots",
+                                                    "value": "Write Ulster-Scots"
+                                                }
+                                                
+                                            ],
+                                            "type": "Checkbox"
                                         }
+                                         
                                     ]
                                 }
                             ],
@@ -2895,6 +2899,13 @@
                                             "value": "Are your day-to-day activities limited because of a health problem, or disability which has lasted, or is expected to last, at least 12 months?"
                                         }
                                     ],
+                                    "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Include problems relating to old age"
+                                            }
+                                        ]
+                                    },
                                     "type": "General",
                                     "answers": [
                                         {
@@ -3018,8 +3029,8 @@
                                             "type": "Checkbox",
                                             "mandatory": false,
                                             "options": [{
-                                                    "label": "No ability",
-                                                    "value": "No ability"
+                                                    "label": "No condition",
+                                                    "value": "No condition"
                                             }]
                                         }
                                         
@@ -3056,7 +3067,7 @@
                                     "guidance": {
                                         "content": [
                                             {
-                                                "title": "Exclude anything they do as part of their paid employment"
+                                                "title": "Exclude anything they do in paid employment"
                                             }
                                         ]
                                     },
@@ -3129,7 +3140,7 @@
                                     "guidance": {
                                         "content": [
                                             {
-                                                "title": "Exclude anything you do as part of your paid employment"
+                                                "title": "Exclude anything you do in paid employment"
                                             }
                                         ]
                                     },
@@ -3207,7 +3218,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "Which of the following best describes your sexual orientation"
+                                            "value": "Which of the following best describes your sexual orientation?"
                                         }
                                     ],
                                     "type": "General",
@@ -3271,7 +3282,7 @@
                             "type": "Interstitial",
                             "id": "qualifications",
                             "title": "This next section is about your qualifications",
-                            "description": "Include any qualifications you have ever achieved in England, Wales or elsewhere, even if you are not using them now.",
+                            "description": "Include any qualifications you have ever achieved in Northern Ireland or elsewhere, even if you are not using them now.",
                             "routing_rules": [
                                 {
                                     "goto": {
@@ -3285,7 +3296,7 @@
                             "type": "Interstitial",
                             "id": "qualifications-proxy",
                             "title": "This next section is about {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}} qualifications",
-                            "description": "Include any qualifications they have ever achieved in England, Wales or elsewhere, even if they are not using them now.",
+                            "description": "Include any qualifications they have ever achieved in Northern Ireland or elsewhere, even if they are not using them now.",
                             "routing_rules": [
                                 {
                                     "goto": {
@@ -3317,7 +3328,7 @@
                                     "guidance": {
                                         "content": [
                                             {
-                                                "title": "Include equivalent apprenticeships completed anywhere outside England and Wales"
+                                                "title": "Include equivalent apprenticeships completed anywhere outside Northern Ireland"
                                             }
                                         ]
                                     },
@@ -3371,7 +3382,7 @@
                                     "guidance": {
                                         "content": [
                                             {
-                                                "title": "Include equivalent qualifications achieved anywhere outside England and Wales"
+                                                "title": "Include equivalent qualifications achieved anywhere outside Northern Ireland"
                                             }
                                         ]
                                     },
@@ -3399,7 +3410,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "employment-status",
+                                        "block": "armed-forces",
                                         "when": [
                                             {
                                                 "id": "degree-answer",
@@ -3437,7 +3448,7 @@
                                     "guidance": {
                                         "content": [
                                             {
-                                                "title": "Include equivalent qualifications achieved anywhere outside England and Wales"
+                                                "title": "Include equivalent qualifications achieved anywhere outside Northern Ireland"
                                             }
                                         ]
                                     },
@@ -3506,7 +3517,7 @@
                                     "guidance": {
                                         "content": [
                                             {
-                                                "title": "Include equivalent qualifications achieved anywhere outside England and Wales"
+                                                "title": "Include equivalent qualifications achieved anywhere outside Northern Ireland"
                                             }
                                         ]
                                     },
@@ -3578,7 +3589,7 @@
                                     "guidance": {
                                         "content": [
                                             {
-                                                "title": "Include equivalent qualifications achieved anywhere outside England and Wales"
+                                                "title": "Include equivalent qualifications achieved anywhere outside Northern Ireland"
                                             }
                                         ]
                                     },
@@ -3674,12 +3685,12 @@
                                             "type": "Checkbox",
                                             "options": [
                                                 {
-                                                    "label": "Yes, in England or Wales",
-                                                    "value": "Yes, in England or Wales"
+                                                    "label": "Yes, in Northern Ireland",
+                                                    "value": "Yes, in Northern Ireland"
                                                 },
                                                 {
-                                                    "label": "Yes, anywhere outside of England and Wales",
-                                                    "value": "Yes, anywhere outside of England and Wales"
+                                                    "label": "Yes, anywhere outside of Northern Ireland",
+                                                    "value": "Yes, anywhere outside of Northern Ireland"
                                                 }
                                             ]
                                         },
@@ -3710,7 +3721,7 @@
                                 {
                                     "id": "armed-forces-question",
                                     "titles": [{
-                                            "value": "Has <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> ever served in the UK Armed Forces?",
+                                            "value": "Has <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> previously served in the UK Armed Forces?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -3718,13 +3729,13 @@
                                             }]
                                         },
                                         {
-                                            "value": "Have you ever served in the UK Armed Forces?"
+                                            "value": "Have you previously served in the UK Armed Forces?"
                                         }
                                     ],
                                     "guidance": {
                                         "content": [
                                             {
-                                                "title": "Include National Service"
+                                                "title": "Current serving members should select 'No'"
                                             }
                                         ]
                                     },
@@ -3745,10 +3756,6 @@
                                                 {
                                                     "label": "No",
                                                     "value": "No"
-                                                },
-                                                {
-                                                    "label": "Yes, currently serving",
-                                                    "value": "Yes, currently serving"
                                                 },
                                                 {
                                                     "label": "Yes, previously served in Regular Armed Forces",
@@ -4626,8 +4633,8 @@
                                             "type": "Checkbox",
                                              "options": [
                                                 {
-                                                    "label": "No organsiation or worked for a private individual",
-                                                    "value": "No organsiation or worked for a private individual"
+                                                    "label": "No organisation or worked for a private individual",
+                                                    "value": "No organisation or worked for a private individual"
                                                 }
                                             ]
                                         }
@@ -4676,8 +4683,8 @@
                                             "type": "Checkbox",
                                              "options": [
                                                 {
-                                                    "label": "No organsiation or worked for a private individual",
-                                                    "value": "No organsiation or worked for a private individual"
+                                                    "label": "No organisation or worked for a private individual",
+                                                    "value": "No organisation or worked for a private individual"
                                                 }
                                             ]
                                         }
@@ -4868,7 +4875,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "What is the main activity of your organisation, business or freelance work"
+                                            "value": "What is the main activity of your organisation, business or freelance work?"
                                         }
                                     ],
                                     "description": "For example clothing retail, general hospital, primary education, food wholesale, government, local government planning.",
@@ -4876,15 +4883,9 @@
                                     "answers": [
                                         {
                                             "id": "employers-business-answer",
-                                            "label": "Description",
+                                            "label": "Main activity of organisation, business or freelance work",
                                             "mandatory": true,
-                                            "type": "TextArea",
-                                            "max_length": 200,
-                                            "validation": {
-                                                "messages": {
-                                                    "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
-                                                }
-                                            }
+                                            "type": "TextField"
                                         }
                                     ]
                                 }
@@ -4912,7 +4913,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "What was the main activity of your organisation, business or freelance work"
+                                            "value": "What was the main activity of your organisation, business or freelance work?"
                                         }
                                     ],
                                     "description": "For example clothing retail, general hospital, primary education, food wholesale.",
@@ -4920,15 +4921,9 @@
                                     "answers": [
                                         {
                                             "id": "employers-business-past-answer",
-                                            "label": "Description",
+                                            "label": "Main activity of organisation, business or freelance work",
                                             "mandatory": true,
-                                            "type": "TextArea",
-                                            "max_length": 200,
-                                            "validation": {
-                                                "messages": {
-                                                    "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
-                                                }
-                                            }
+                                            "type": "TextField"
                                         }
                                     ]
                                 }
@@ -5027,7 +5022,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "household-member-completed"
+                                        "block": "hours-worked-past"
                                     }
                                 }
                             ]
@@ -5088,17 +5083,68 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "work-travel-proxy",
-                                         "when": [{
+                                        "block": "employer-type-of-address"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "hours-worked-past",
+                            "questions": [
+                                {
+                                    "titles": [{
+                                            "value": "In <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> main job, how many hours a week did they usually work?",
+                                            "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
                                                 "value": "proxy"
                                             }]
-                                    }
-                                },
+                                        },
+                                        {
+                                            "value": "In your main job, how many hours a week did you usually work?"
+                                        }
+                                    ],
+                                    "id": "hours-worked-past-question",
+                                    "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Include paid and unpaid overtime"
+                                            }
+                                        ]
+                                    },
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "hours-worked-past-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "15 hours or less",
+                                                    "value": "15 hours or less"
+                                                },
+                                                {
+                                                    "label": "16 to 30 hours",
+                                                    "value": "16 to 30 hours"
+                                                },
+                                                {
+                                                    "label": "31 to 48 hours",
+                                                    "value": "31 to 48 hours"
+                                                },
+                                                {
+                                                    "label": "49 hours or more",
+                                                    "value": "49 hours or more "
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "work-travel"
+                                        "block": "household-member-completed"
                                     }
                                 }
                             ]
@@ -5176,80 +5222,7 @@
                                 }
                             ]
                         },
-                        {
-                            "type": "Question",
-                            "id": "work-travel",
-                            "questions": [
-                                {
-                                    "title" : "How do you usually travel to work?",
-                                    
-                                    "id": "work-travel-question",
-                                     "description": "Answer for the longest part, by distance, of your usual journey to work ",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "work-travel-answer",
-                                            "mandatory": true,
-                                            "options": [
-                                                 {
-                                                    "label": "Work mainly at or from home",
-                                                    "value": "Work mainly at or from home"
-                                                },
-                                                {
-                                                    "label": "Driving a car or van",
-                                                    "value": "Driving a car or van"
-                                                },
-                                                {
-                                                    "label": "Passenger in a car or van",
-                                                    "value": "Passenger in a car or van"
-                                                },
-                                                {
-                                                    "label": "Car or van pool, sharing driving",
-                                                    "value": "Car or van pool, sharing driving"
-                                                },
-                                                {
-                                                    "label": "Bus, minibus or coach",
-                                                    "value": "Bus, minibus or coach "
-                                                },
-                                                {
-                                                    "label": "Taxi",
-                                                    "value": "Taxi "
-                                                },
-                                                {
-                                                    "label": "Train",
-                                                    "value": "Train"
-                                                },
-                                                {
-                                                    "label": "Motorcycle, scooter or moped",
-                                                    "value": "Motorcycle, scooter or moped"
-                                                },
-                                                {
-                                                    "label": "Bicycle",
-                                                    "value": "Bicycle"
-                                                },
-                                                {
-                                                    "label": "On foot",
-                                                    "value": "On foot"
-                                                },
-                                                {
-                                                    "label": "Other",
-                                                    "value": "Other"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "employer-type-of-address"
-                                    }
-                                }
-                            ]
-                        },
-                        {
+                         {
                             "type": "Question",
                             "id": "employer-type-of-address",
                             "questions": [
@@ -5284,10 +5257,6 @@
                                                 {
                                                     "label": "At or from home",
                                                     "value": "At or from home"
-                                                },
-                                                {
-                                                    "label": "An offshore installation",
-                                                    "value": "An offshore installation"
                                                 },
                                                 {
                                                     "label": "No fixed place",
@@ -5437,7 +5406,7 @@
                                     "answers": [
                                         {
                                             "id": "no-business-name-employer-address-answer-building",
-                                            "label": "Building",
+                                            "label": "Building name or number",
                                             "mandatory": true,
                                             "type": "TextField"
                                         },
@@ -5478,6 +5447,86 @@
                         },
                         {
                             "type": "Question",
+                            "id": "work-travel",
+                            "questions": [
+                                {
+                                    "titles": [{
+                                            "value": "How does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> usually travel your main place of work?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "How do you usually travel your main place of work?"
+                                        }
+                                    ],
+                                    "id": "work-travel-question",
+                                     "description": "Answer for the longest part, by distance, of your usual journey to work ",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "work-travel-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "Driving a car or van",
+                                                    "value": "Driving a car or van"
+                                                },
+                                                {
+                                                    "label": "Passenger in a car or van",
+                                                    "value": "Passenger in a car or van"
+                                                },
+                                                {
+                                                    "label": "Car or van pool, sharing driving",
+                                                    "value": "Car or van pool, sharing driving"
+                                                },
+                                                {
+                                                    "label": "Bus, minibus or coach",
+                                                    "value": "Bus, minibus or coach "
+                                                },
+                                                {
+                                                    "label": "Taxi",
+                                                    "value": "Taxi "
+                                                },
+                                                {
+                                                    "label": "Train",
+                                                    "value": "Train"
+                                                },
+                                                {
+                                                    "label": "Motorcycle, scooter or moped",
+                                                    "value": "Motorcycle, scooter or moped"
+                                                },
+                                                {
+                                                    "label": "Bicycle",
+                                                    "value": "Bicycle"
+                                                },
+                                                {
+                                                    "label": "On foot",
+                                                    "value": "On foot"
+                                                },
+                                                {
+                                                    "label": "Other",
+                                                    "value": "Other"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "household-member-completed"
+                                    }
+                                }
+                            ]
+                        },
+                       
+                        {
+                            "type": "Question",
                             "id": "study-address",
                             "questions": [
                                 {
@@ -5498,7 +5547,7 @@
                                     "answers": [
                                         {
                                             "id": "study-address-answer-building",
-                                            "label": "Building",
+                                            "label": "Building name or number",
                                             "mandatory": false,
                                             "type": "TextField"
                                         },
