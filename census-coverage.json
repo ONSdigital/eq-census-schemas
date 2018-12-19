@@ -71,7 +71,7 @@
                     "blocks": [{
                             "type": "Interstitial",
                             "id": "address-confirmation-block",
-                            "title": "Can I confirm your address",
+                            "title": "Can I confirm your address?",
                              "description": "{{ format_address_list ([metadata['address_line1'], metadata['address_line2'], metadata['locality'], metadata['town_name'], metadata['postcode']]) }}"
                            
                         }
@@ -108,14 +108,14 @@
                             "answers": [{
                                     "id": "primary-household-member-first-name",
                                     "description": "",
-                                    "label": "My first or given name",
+                                    "label": "First name",
                                     "mandatory": true,
                                     "type": "TextField"
                                 },
                                 {
                                     "id": "primary-household-member-last-name",
                                     "description": "",
-                                    "label": "My surname or family name",
+                                    "label": "Last name",
                                     "mandatory": true,
                                     "type": "TextField"
                                 }
@@ -743,80 +743,35 @@
                                 "student-household-member-first-name-no-primary"
                             ]
                         }
-                    }],
-                    "blocks": [{
-                        "type": "Question",
-                        "id": "household-relationships-block",
-                        "questions": [{
-                            "id": "relationship-question",
-                            "title": "How is <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['student-household-member-first-name'], group_instances[group_instance_id]['student-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['student-household-member-first-name-no-primary'], group_instances[group_instance_id]['student-household-member-last-name-no-primary']] | format_household_name}}</em> related to the people below?",
-                            "type": "Relationship",
-                            "member_label": "answers['primary-household-member-first-name'] | default(answers['other-household-member-first-name']) | default(answers['student-household-member-first-name']) | default(answers['other-household-member-first-name-no-primary']) | default(answers['student-household-member-first-name-no-primary'])",
-                            "answers": [{
-                                "id": "who-is-related",
-                                "label": "%(current_person)s is the &hellip; of %(other_person)s",
-                                "mandatory": true,
-                                "type": "Relationship",
-                                "options": [{
-                                        "label": "Husband, wife or same sex civil partner",
-                                        "value": "Husband, wife or same sex civil partner"
-                                    },
-                                    {
-                                        "label": "Partner",
-                                        "value": "Partner"
-                                    },
-                                    {
-                                        "label": "Parent, including adoptive parent",
-                                        "value": "Parent, including adoptive parent"
-                                    },
-                                    {
-                                        "label": "Stepparent",
-                                        "value": "Stepparent"
-                                    },
-                                    {
-                                        "label": "Parent-in-law",
-                                        "value": "Parent-in-law"
-                                    },
-                                    {
-                                        "label": "Son or daughter, including adopted son or daughter",
-                                        "value": "Son or daughter, including adopted son or daughter"
-                                    },
-                                    {
-                                        "label": "Stepson or stepdaughter",
-                                        "value": "Stepson or stepdaughter"
-                                    },
-                                    {
-                                        "label": "Son-in-law or daughter-in-law",
-                                        "value": "Son-in-law or daughter-in-law"
-                                    },
-                                    {
-                                        "label": "Brother or sister",
-                                        "value": "Brother or sister"
-                                    },
-                                    {
-                                        "label": "Stepbrother or stepsister",
-                                        "value": "Stepbrother or stepsister"
-                                    },
-                                    {
-                                        "label": "Grandparent",
-                                        "value": "Grandparent"
-                                    },
-                                    {
-                                        "label": "Grandchild",
-                                        "value": "Grandchild"
-                                    },
-                                    {
-                                        "label": "Other relative",
-                                        "value": "Other relative"
-                                    },
-                                    {
-                                        "label": "Other non-relative, including foster child or foster parent",
-                                        "value": "Other non-relative, including foster child or foster parent"
-                                    }
-                                ]
-                            }]
-                        }]
-                    },{
+                    }]
+                    
+                }
+            ]
+        },
+        {
+            "id": "household-and-accommodation-section",
+            "title": "Household and Accommodation",
+            "groups": [
+                {
+                    "id": "household-and-accommodation",
+                    "title": "Household and Accommodation",
+                    "blocks": [
+                        {
+                            "type": "Interstitial",
+                            "id": "household-and-accommodation-block",
+                            "title": "Household and accommodation",
+                            "description": "In this section, we’re going to ask you about the household and accommodation you live in.",
+                            "content": [
+                                {
+                                    "title": "Information you need",
+                                    "list": [
+                                        "Type of property, and if it’s owned or rented",
+                                        "Type of landlord, if the property is rented"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
                             "type": "Question",
                             "id": "type-of-accommodation",
                             "questions": [
@@ -1167,7 +1122,7 @@
                                     }
                                 }
                             ]
-                        },  
+                        },
                         {
                             "type": "Question",
                             "id": "internet-usage",
@@ -1217,10 +1172,6 @@
                                 }
                             ]
                         }
-                          
-                               
-                               
-                               
                     ]
                 }
             ]
