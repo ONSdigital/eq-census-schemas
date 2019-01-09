@@ -5104,6 +5104,16 @@
                                         ]
                                     }
                                 },
+                                 {
+                                    "goto": {
+                                        "block": "passports-proxy",
+                                        "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                    }
+                                },
                                 {
                                     "goto": {
                                         "block": "passports"
@@ -5192,6 +5202,16 @@
                                         ]
                                     }
                                 },
+                                 {
+                                    "goto": {
+                                        "block": "passports-proxy",
+                                        "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                    }
+                                },
                                 {
                                     "goto": {
                                         "block": "passports"
@@ -5255,6 +5275,16 @@
                             "routing_rules": [
                                 {
                                     "goto": {
+                                        "block": "passports-proxy",
+                                        "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                    }
+                                },
+                                {
+                                    "goto": {
                                         "block": "passports"
                                     }
                                 }
@@ -5267,18 +5297,7 @@
                             "questions": [
                                 {
                                     "id": "passports-question",
-                                    "titles": [{
-                                            "value": "What passports does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> hold?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "What passports do you hold?"
-                                        }
-                                    ],
+                                    "title":  "What passports do you hold?",
                                     "description": "",
                                     "type": "MutuallyExclusive",
                                     "mandatory": true,
@@ -5302,7 +5321,7 @@
                                                         "id": "passport-answer-other",
                                                         "type": "TextField",
                                                         "mandatory": false,
-                                                        "label": "Please specify the passports held"
+                                                        "label": "Please specify the passports you hold"
                                                     }
                                                 }
                                                 
@@ -5310,6 +5329,77 @@
                                         },
                                         {
                                             "id": "passports-answer-exclusive",
+                                            "type": "Checkbox",
+                                            "mandatory": false,
+                                            "options": [{
+                                                    "label": "None",
+                                                    "value": "None"
+                                            }]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "household-member-completed",
+                                         "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "greater than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
+                                            }
+                                        }]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "armed-forces"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "passports-proxy",
+                            "questions": [
+                                {
+                                    "id": "passports-proxy-question",
+                                    "title": "What passports does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> hold?",       
+                                    "description": "",
+                                    "type": "MutuallyExclusive",
+                                    "mandatory": true,
+                                    "answers": [{
+                                            "id": "passports-proxy-answer",
+                                            "mandatory": false,
+                                            "type": "Checkbox",
+                                            "options": [
+                                                {
+                                                    "label": "United Kingdom",
+                                                    "value": "United Kingdom"
+                                                },
+                                                {
+                                                    "label": "Ireland",
+                                                    "value": "Ireland"
+                                                },
+                                                {
+                                                    "label": "Other",
+                                                    "value": "Other",
+                                                    "detail_answer": {
+                                                        "id": "passport-proxy-answer-other",
+                                                        "type": "TextField",
+                                                        "mandatory": false,
+                                                        "label": "Please specify the passports held"
+                                                    }
+                                                }
+                                                
+                                            ]
+                                        },
+                                        {
+                                            "id": "passports-proxy-answer-exclusive",
                                             "type": "Checkbox",
                                             "mandatory": false,
                                             "options": [{
