@@ -298,6 +298,7 @@
                                 }]
                             }]
                         },
+                               
                         {
                             "type": "Question",
                             "id": "student-household-member-name-block",
@@ -333,9 +334,59 @@
                                     "value": "Yes"
                                 }]
                             }]
-                        }
+                        },
+                        {
+                            "type": "Question",
+                            "id": "share-facilities-block",
+                            "questions": [{
+                                "id": "share-facilities-question",
+                                "title": "Thinking about the people in your household at {{ metadata['display_address'] }} on 13 October 2019, were you all sharing cooking facilities and a living room or sitting room or dining area?",
+                                "type": "General",
+                                "answers": [{
+                                    "type": "Radio",
+                                    "id": "share-facilities-answer",
+                                    "mandatory": true,
+                                    "options": [{
+                                            "label": "Yes",
+                                            "value": "Yes"
+                                        },
+                                        {
+                                            "label": "No",
+                                            "value": "No"
+                                        }
+                                    ]
+                                }]
+                            }]
+
+                        },
+                         {
+                            "type": "Question",
+                            "id": "relationship-block",
+                            "questions": [{
+                                "id": "relationship-question",
+                                "title": "Are any of these people related to each other?",
+                                "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['other-household-member-first-name'], answers['other-household-member-last-name']], [answers['student-household-member-first-name'], answers['student-household-member-last-name']]] | format_repeating_summary }}",
+                                "type": "General",
+                                "answers": [{
+                                    "type": "Radio",
+                                    "id": "share-facilities-answer",
+                                    "mandatory": true,
+                                    "options": [{
+                                            "label": "Yes",
+                                            "value": "Yes"
+                                        },
+                                        {
+                                            "label": "No, all household members are unrelated",
+                                            "value": "No"
+                                        }
+                                    ]
+                                }]
+                            }]
+
+                         }
                     ]
                 },
+                
                 {
                     "id": "address-type-group-no-primary",
                     "title": "",
