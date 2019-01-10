@@ -114,7 +114,7 @@
                                 },{
                                         "id": "primary-household-member-middle-name",
                                         "label": "Middle name",
-                                        "mandatory": true,
+                                        "mandatory": false,
                                         "type": "TextField"
                                     },  
                                 {
@@ -218,7 +218,7 @@
                                             {
                                         "id": "other-household-member-middle-name",
                                         "label": "Middle name",
-                                        "mandatory": true,
+                                        "mandatory": false,
                                         "type": "TextField"
                                     },  
                                     {
@@ -315,7 +315,7 @@
                                      {
                                         "id": "student-household-member-middle-name",
                                         "label": "Middle name",
-                                        "mandatory": true,
+                                        "mandatory": false,
                                         "type": "TextField"
                                     },       
                                     {
@@ -330,7 +330,7 @@
                                 "when": [{
                                     "id": "student-household-member-anyone-else",
                                     "condition": "equals",
-                                    "value": "No"
+                                    "value": "Yes"
                                 }]
                             }]
                         }
@@ -440,183 +440,7 @@
                         }
                     ]
                 },
-                {
-                    "id": "other-household-member-group-no-primary",
-                    "title": "Other Household Members",
-                    "skip_conditions": [{
-                        "when": [{
-                            "id": "primary-household-member-address-check-answer",
-                            "condition": "equals",
-                            "value": "Yes"
-                        }]
-                    }],
-                    "routing_rules": [{
-                        "repeat": {
-                            "type": "until",
-                            "when": [{
-                                "id": "other-household-member-anyone-else-no-primary",
-                                "condition": "equals",
-                                "value": "No"
-                            }]
-                        }
-                    }],
-                    "blocks": [{
-                            "type": "Question",
-                            "id": "other-household-member-name-block-no-primary",
-                            "questions": [{
-                                "id": "other-household-member-name-question-no-primary",
-                                "title": "Who do you need to add to {{ metadata['display_address'] }}",
-                                "description": "{{ [[answers['other-household-member-first-name-no-primary'], answers['other-household-member-last-name-no-primary']], [answers['student-household-member-first-name-no-primary'], answers['student-household-member-last-name-no-primary']]] | format_repeating_summary }}",
-                                "type": "General",
-                                "answers": [{
-                                        "id": "other-household-member-first-name-no-primary",
-                                        "label": "First or given name",
-                                        "mandatory": true,
-                                        "type": "TextField"
-                                    },
-                                    {
-                                        "id": "other-household-member-last-name-no-primary",
-                                        "label": "Surname or family name",
-                                        "mandatory": true,
-                                        "type": "TextField"
-                                    }
-                                ]
-                            }]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "other-household-member-anyone-else-block-no-primary",
-                            "questions": [{
-                                "type": "General",
-                                "id": "other-household-member-anyone-else-question-no-primary",
-                                "title": "Does anyone else live at {{ metadata['display_address'] }}?",
-                                "description": "{{ [[answers['other-household-member-first-name-no-primary'], answers['other-household-member-last-name-no-primary']], [answers['student-household-member-first-name-no-primary'], answers['student-household-member-last-name-no-primary']]] | format_repeating_summary }}",
-                                "answers": [{
-                                    "type": "Radio",
-                                    "id": "other-household-member-anyone-else-no-primary",
-                                    "mandatory": true,
-                                    "options": [{
-                                            "label": "Yes, I need to add another person",
-                                            "value": "Yes",
-                                            "description": "Include other adults, children, babies, even if they are currently away for a continuous period of up to 6 months"
-                                        },
-                                        {
-                                            "label": "No, this is not the main residence of any other adults, children or babies",
-                                            "value": "No"
-                                        }
-                                    ]
-                                }]
-                            }]
-                        }
-                    ]
-                },
-                {
-                    "id": "student-household-member-group-no-primary",
-                    "title": "Student Household Members",
-                    "skip_conditions": [{
-                            "when": [{
-                                "id": "primary-household-member-address-check-answer",
-                                "condition": "equals",
-                                "value": "Yes"
-                            }]
-                        },
-                        {
-                            "when": [{
-                                "id": "address-type-answer-no-primary",
-                                "condition": "equals",
-                                "value": "Student accommodation rented through a private landlord"
-                            }]
-                        }
-                    ],
-                    "routing_rules": [{
-                        "repeat": {
-                            "type": "until",
-                            "when": [{
-                                "id": "student-household-member-anyone-else-no-primary",
-                                "condition": "equals",
-                                "value": "No"
-                            }]
-                        }
-                    }],
-                    "blocks": [{
-                            "type": "Question",
-                            "id": "student-household-member-anyone-else-block-no-primary",
-                            "questions": [{
-                                "type": "General",
-                                "id": "student-household-member-anyone-else-question-no-primary",
-                                "title": "Apart from anyone already added, is there anyone you need to add, including people who live in a student halls of residence?",
-                                "description": "{{ [[answers['other-household-member-first-name-no-primary'], answers['other-household-member-last-name-no-primary']], [answers['student-household-member-first-name-no-primary'], answers['student-household-member-last-name-no-primary']]] | format_repeating_summary }}",
-                                "answers": [{
-                                    "type": "Radio",
-                                    "id": "student-household-member-anyone-else-no-primary",
-                                    "mandatory": true,
-                                    "options": [{
-                                            "label": "Yes, I need to add someone else",
-                                            "value": "Yes"
-                                        },
-                                        {
-                                            "label": "No, this is everyone",
-                                            "value": "No"
-                                        }
-                                    ]
-                                }]
-                            }]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "student-household-member-name-block-no-primary",
-                            "questions": [{
-                                "id": "student-household-member-name-question-no-primary",
-                                "title": "Who do you need to add to {{ metadata['display_address'] }}",
-                                "description": "{{ [[answers['other-household-member-first-name-no-primary'], answers['other-household-member-last-name-no-primary']], [answers['student-household-member-first-name-no-primary'], answers['student-household-member-last-name-no-primary']]] | format_repeating_summary }}",
-                                "type": "General",
-                                "answers": [{
-                                        "id": "student-household-member-first-name-no-primary",
-                                        "label": "First or given name",
-                                        "mandatory": true,
-                                        "type": "TextField"
-                                    },
-                                    {
-                                        "id": "student-household-member-last-name-no-primary",
-                                        "label": "Surname or family name",
-                                        "mandatory": true,
-                                        "type": "TextField"
-                                    }
-                                ]
-                            }],
-                            "skip_conditions": [{
-                                "when": [{
-                                    "id": "student-household-member-anyone-else-no-primary",
-                                    "condition": "equals",
-                                    "value": "No"
-                                }]
-                            }]
-                        }
-                    ]
-                },
-                {
-                    "id": "household-summary-group-no-primary",
-                    "title": "",
-                    "skip_conditions": [{
-                        "when": [{
-                            "id": "primary-household-member-address-check-answer",
-                            "condition": "equals",
-                            "value": "Yes"
-                        }]
-                    }],
-                    "blocks": [{
-                        "type": "AnswerSummary",
-                        "id": "household-summary-no-primary",
-                        "title": "People who live here",
-                        "label": "Household members",
-                        "icon": "person",
-                        "answer_ids": [
-                            "other-household-member-first-name-no-primary",
-                            "student-household-member-first-name-no-primary"
-                        ],
-                        "answer_label": "[answers['other-household-member-first-name-no-primary'], answers['other-household-member-last-name-no-primary'], answers['student-household-member-first-name-no-primary'], answers['student-household-member-last-name-no-primary']] | format_household_name"
-                    }]
-                },
+                
                 {
                     "id": "household-summary-group",
                     "title": "",
