@@ -369,7 +369,7 @@
                                 "type": "General",
                                 "answers": [{
                                     "type": "Radio",
-                                    "id": "share-facilities-answer",
+                                    "id": "relationship-answer",
                                     "mandatory": true,
                                     "options": [{
                                             "label": "Yes",
