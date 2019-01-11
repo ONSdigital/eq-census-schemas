@@ -548,7 +548,7 @@
                             "questions": [
                                 {
                                     "id": "type-of-accommodation-question",
-                                    "title": "What type of accommodation is <em>{{metadata['display_address']}}</em>?",
+                                    "title": "What kind of accommodation is <em>{{metadata['display_address']}}</em>?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -562,7 +562,7 @@
                                                 {
                                                     "label": "Flat, maisonette or apartment",
                                                     "value": "Flat, maisonette or apartment",
-                                                    "description": "Including purpose-built flats and flats within converted and shared houses"
+                                                    "description": "Including bedsits"
                                                 },
                                                 {
                                                     "label": "Caravan or other mobile or temporary structure",
@@ -713,7 +713,7 @@
                             "questions": [
                                 {
                                     "id": "own-or-rent-question",
-                                    "title": "Does your household own or rent <em>{{metadata['display-address']}}</em>?",
+                                    "title": "Does the householder own or rent <em>{{metadata['display-address']}}</em>?",
                                     "type": "General",
                                      "definitions": [{
                                         "title": "What is a household?",
@@ -883,13 +883,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "internet-usage",
-                                        "when": [
-                                            {
-                                                "id": "internet-answer-exclusive",
-                                                "condition": "not set"
-                                            }
-                                        ]
+                                        "block": "internet-usage"
                                     }
                                 }
                             ]
@@ -938,6 +932,35 @@
                                                 "label": "None of these or not known",
                                                 "value": "None of these or not known"
                                             }]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }, 
+                        {
+                            "type": "Question",
+                            "id": "other-living-accommodation",
+                            "questions": [
+                                {
+                                    "id": "other-living-accommodation-question",
+                                    "title": "Is there any other living accomodation at  <em>{{metadata['display_address']}}</em>?",
+                                    "description": "For example bedsits, annexes, etc.",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "other-living-accommodation-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "Yes",
+                                                    "value": "Yes"
+                                                },
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                }
+                                            ],
+                                            "type": "Radio"
                                         }
                                     ]
                                 }
@@ -2072,11 +2095,25 @@
                             ]
                         }],
                         "routing_rules": [
-                            {
-                                "goto": {
-                                    "block": "past-usual-address"
+                            {                 
+                                   "goto": {
+                                        "block": "past-usual-address",
+                                        "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -1
+                                                }
+                                            }
+                                        }]
+                                    }
+                                },{
+                                    "goto": {
+                                        "block": "elsewhere-address-check"
+                                    }
                                 }
-                            }
                         ]
                     },
                     {
@@ -2114,18 +2151,10 @@
                                                 },
                                                 {
                                                     "label": "An address outside the UK",
-                                                    "value": "Other",
-                                                    "child_answer_id": "past-usual-address-answer-other"
+                                                    "value": "Other"
                                                 }
                                             ],
                                             "type": "Radio"
-                                        },
-                                        {
-                                            "id": "past-usual-address-answer-other",
-                                            "parent_answer_id": "past-usual-address-answer",
-                                            "type": "TextField",
-                                            "mandatory": false,
-                                            "label": "Please enter the country"
                                         }
                                     ]
                                 }
@@ -2133,12 +2162,12 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "last-year-address",
+                                        "block": "length-of-stay",
                                         "when": [
                                             {
                                                 "id": "past-usual-address-answer",
                                                 "condition": "equals",
-                                                "value": "Another address in the UK"
+                                                "value": "Other"
                                             }
                                         ]
                                     }
@@ -2150,14 +2179,14 @@
                                 }
                             ]
                         },
-                    {
+                   {
                             "type": "Question",
-                            "id": "last-year-address",
+                            "id": "length-of-stay",
                             "questions": [
                                 {
-                                    "id": "last-year-address-question",
+                                    "id": "length-of-stay-question",
                                     "titles": [{
-                                            "value": "Enter details of their address one year ago",
+                                            "value": "Including the time already spent here, how long does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> intend to stay in the United Kingdom?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -2165,48 +2194,47 @@
                                             }]
                                         },
                                         {
-                                            "value": "Enter details of your address one year ago"
+                                            "value": "Including the time already spent here, how long do you intend to stay in the United Kingdom?"
                                         }
                                     ],
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "last-year-address-answer-building",
-                                            "label": "Building",
+                                            "id": "length-of-stay-answer",
                                             "mandatory": true,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "last-year-address-answer-street",
-                                            "label": "Street",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "last-year-address-answer-city",
-                                            "label": "Town or city",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "last-year-address-answer-county",
-                                            "label": "County (optional)",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "last-year-address-answer-postcode",
-                                            "label": "Postcode",
-                                            "mandatory": false,
-                                            "type": "TextField"
+                                            "options": [
+                                                {
+                                                    "label": "Less than 12 months",
+                                                    "value": "Less than 12 months"
+                                                },
+                                                {
+                                                    "label": "12 months or more",
+                                                    "value": "12 months or more"
+                                                }
+                                            ],
+                                            "type": "Radio"
                                         }
                                     ]
                                 }
                             ],
                             "routing_rules": [
-                                {
+                                {                 
+                                   "goto": {
+                                        "block": "employment-status",
+                                        "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
+                                            }
+                                        }]
+                                    }
+                                },{
                                     "goto": {
-                                        "block": "employment-status"
+                                        "block": "elsewhere-address-check"
                                     }
                                 }
                             ]
