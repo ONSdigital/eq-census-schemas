@@ -2569,7 +2569,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "group": "questionnaire-completed"
+                                        "group": "questionnaire-completed",
                                         "when": [
                                             {
                                                 "id": "num-visitors-answer",
@@ -2581,7 +2581,7 @@
                                 },
                                  {
                                     "goto": {
-                                        "group": "questionnaire-completed"
+                                        "group": "questionnaire-completed",
                                         "when": [
                                             {
                                                 "id": "num-visitors-answer",
