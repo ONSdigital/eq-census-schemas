@@ -241,8 +241,8 @@
                     ]
                 },
                 {
-                    "id": "student-household-member-group",
-                    "title": "Student Household Members",
+                    "id": "temp-household-member-group",
+                    "title": "Temporarily away or staying Household Members",
                     "skip_conditions": [{
                         "when": [{
                             "id": "primary-household-member-address-check-answer",
@@ -254,7 +254,7 @@
                         "repeat": {
                             "type": "until",
                             "when": [{
-                                "id": "student-household-member-anyone-else",
+                                "id": "temp-household-member-anyone-else",
                                 "condition": "equals",
                                 "value": "No"
                             }]
@@ -262,12 +262,12 @@
                     }],
                     "blocks": [{
                             "type": "Question",
-                            "id": "student-household-member-anyone-else-block",
+                            "id": "temp-household-member-anyone-else-block",
                             "questions": [{
                                 "type": "General",
-                                "id": "student-household-member-anyone-else-question",
-                                "title": "Have you added everyone who lives here, who is temporarily staying or away?",
-                                "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['other-household-member-first-name'], answers['other-household-member-last-name']], [answers['student-household-member-first-name'], answers['student-household-member-last-name']]] | format_repeating_summary }}",
+                                "id": "temp-household-member-anyone-else-question",
+                                "title": "Have you added everyone who lives here, anyone who is temporarily staying or away?",
+                                "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['other-household-member-first-name'], answers['other-household-member-last-name']], [answers['temp-household-member-first-name'], answers['temp-household-member-last-name']]] | format_repeating_summary }}",
                                 "guidance": {
                                         "content": [
                                             {
@@ -285,7 +285,7 @@
                                     },            
                                 "answers": [{
                                     "type": "Radio",
-                                    "id": "student-household-member-anyone-else",
+                                    "id": "temp-household-member-anyone-else",
                                     "mandatory": true,
                                     "options": [{
                                             "label": "Yes, this is everyone",
@@ -302,26 +302,26 @@
                                
                         {
                             "type": "Question",
-                            "id": "student-household-member-name-block",
+                            "id": "temp-household-member-name-block",
                             "questions": [{
-                                "id": "student-household-member-name-question",
+                                "id": "temp-household-member-name-question",
                                 "title": "Who do you need to add to {{ metadata['display_address'] }}",
-                                "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['other-household-member-first-name'], answers['other-household-member-last-name']], [answers['student-household-member-first-name'], answers['student-household-member-last-name']]] | format_repeating_summary }}",
+                                "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['other-household-member-first-name'], answers['other-household-member-last-name']], [answers['temp-household-member-first-name'], answers['temp-household-member-last-name']]] | format_repeating_summary }}",
                                 "type": "General",
                                 "answers": [{
-                                        "id": "student-household-member-first-name",
+                                        "id": "temp-household-member-first-name",
                                         "label": "First name",
                                         "mandatory": true,
                                         "type": "TextField"
                                     },
                                      {
-                                        "id": "student-household-member-middle-name",
+                                        "id": "temp-household-member-middle-name",
                                         "label": "Middle name",
                                         "mandatory": false,
                                         "type": "TextField"
                                     },       
                                     {
-                                        "id": "student-household-member-last-name",
+                                        "id": "temp-household-member-last-name",
                                         "label": "Last name",
                                         "mandatory": true,
                                         "type": "TextField"
@@ -330,7 +330,7 @@
                             }],
                             "skip_conditions": [{
                                 "when": [{
-                                    "id": "student-household-member-anyone-else",
+                                    "id": "temp-household-member-anyone-else",
                                     "condition": "equals",
                                     "value": "Yes"
                                 }]
@@ -512,9 +512,9 @@
                         "answer_ids": [
                             "primary-household-member-first-name",
                             "other-household-member-first-name",
-                            "student-household-member-first-name"
+                            "temp-household-member-first-name"
                         ],
-                        "answer_label": "[answers['primary-household-member-first-name'], answers['primary-household-member-last-name'], answers['other-household-member-first-name'], answers['other-household-member-last-name'], answers['student-household-member-first-name'], answers['student-household-member-last-name']] | format_household_name"
+                        "answer_label": "[answers['primary-household-member-first-name'], answers['primary-household-member-last-name'], answers['other-household-member-first-name'], answers['other-household-member-last-name'], answers['temp-household-member-first-name'], answers['temp-household-member-last-name']] | format_household_name"
                     }]
                 }
             ]
@@ -716,11 +716,11 @@
                                     "id": "own-or-rent-question",
                                     "title": "Does the householder own or rent <em>{{metadata['display-address']}}</em>?",
                                     "type": "General",
-                                     "definitions": [{
-                                        "title": "What is a household?",
+                                     "guidance": [{
+                                        "title": "What is a householder?",
                                         "content": [
                                             {
-                                                "description": "One person living alone; or a group of people (not necessarily related) living at the same address who share cooking facilities and share a living room or sitting room or dining area."
+                                                "description": ""
                                             }
                                         ]
                                     }],
