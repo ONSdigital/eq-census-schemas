@@ -716,14 +716,14 @@
                                     "id": "own-or-rent-question",
                                     "title": "Does the householder own or rent <em>{{metadata['display-address']}}</em>?",
                                     "type": "General",
-                                     "guidance": [{
-                                        "title": "What is a householder?",
+                                   "guidance": {
                                         "content": [
                                             {
-                                                "description": ""
+                                                "title": "What is a householder?",
+                                                "description": "The householder is the person who lives, or is present, at this address who owns or rents (or jointly owns or rents) the accomodation and or is responsible or jointly responsible for paying the household bills and expenses"
                                             }
                                         ]
-                                    }],
+                                    },
                                     "answers": [
                                         {
                                             "id": "own-or-rent-answer",
