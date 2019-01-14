@@ -485,7 +485,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "group": "household-relationships-group"
+                                        "group": "household-summary-group"
                                     }
                                 }
                             ]
