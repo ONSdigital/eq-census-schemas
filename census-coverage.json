@@ -2569,7 +2569,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "submit-answers",
+                                        "block": "feedback-block",
                                         "when": [
                                             {
                                                 "id": "num-visitors-answer",
@@ -2581,7 +2581,7 @@
                                 },
                                  {
                                     "goto": {
-                                        "block": "submit-answers",
+                                        "block": "feedback-block",
                                         "when": [
                                             {
                                                 "id": "num-visitors-answer",
@@ -2827,7 +2827,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "submit-answers"
+                                        "block": "feedback-block"
                                     }
                                 }
                             ]
