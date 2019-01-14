@@ -184,7 +184,7 @@
                                 "type": "General",
                                 "id": "other-household-member-anyone-else-question",
                                 "title": "Does anyone else live at {{ metadata['display_address'] }}?",
-                                "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['other-household-member-first-name'], answers['other-household-member-last-name']], [answers['student-household-member-first-name'], answers['student-household-member-last-name']]] | format_repeating_summary }}",
+                                "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['other-household-member-first-name'], answers['other-household-member-last-name']], [answers['temp-household-member-first-name'], answers['temp-household-member-last-name']]] | format_repeating_summary }}",
                                 "answers": [{
                                     "type": "Radio",
                                     "id": "other-household-member-anyone-else",
@@ -208,7 +208,7 @@
                             "questions": [{
                                 "id": "other-household-member-name-question",
                                 "title": "Who do you need to add to {{ metadata['display_address'] }}",
-                                "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['other-household-member-first-name'], answers['other-household-member-last-name']], [answers['student-household-member-first-name'], answers['student-household-member-last-name']]] | format_repeating_summary }}",
+                                "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['other-household-member-first-name'], answers['other-household-member-last-name']], [answers['temp-household-member-first-name'], answers['temp-household-member-last-name']]] | format_repeating_summary }}",
                                 "type": "General",
                                 "answers": [{
                                         "id": "other-household-member-first-name",
@@ -366,7 +366,7 @@
                             "questions": [{
                                 "id": "relationship-question",
                                 "title": "Are any of these people related to each other?",
-                                "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['other-household-member-first-name'], answers['other-household-member-last-name']], [answers['student-household-member-first-name'], answers['student-household-member-last-name']]] | format_repeating_summary }}",
+                                "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['other-household-member-first-name'], answers['other-household-member-last-name']], [answers['temp-household-member-first-name'], answers['temp-household-member-last-name']]] | format_repeating_summary }}",
                                 "type": "General",
                                 "answers": [{
                                     "type": "Radio",
