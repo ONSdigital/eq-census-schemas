@@ -2827,7 +2827,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "feedback-block"
+                                        "group": "questionnaire-completed"
                                     }
                                 }
                             ]
@@ -2873,13 +2873,6 @@
                                             "type": "TextField"
                                         }
                                     ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "address-type"
-                                    }
                                 }
                             ]
                         }
