@@ -1233,20 +1233,27 @@
                                             }
                                         ],
                                     "type": "General",
-                                    "description":"A question about gender will follow",
+                                     "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "A question about gender will follow"
+                                            }
+                                        ]
+                                    },   
                                     "answers": [
                                         {
                                             "id": "sex-over16-answer",
                                             "mandatory": true,
                                             "options": [
+                                               {
+                                                    "label": "Female",
+                                                    "value": "Female"
+                                                }, 
                                                 {
                                                     "label": "Male",
                                                     "value": "Male"
-                                                },
-                                                {
-                                                    "label": "Female",
-                                                    "value": "Female"
                                                 }
+                                                
                                                 
                                             ],
                                             "type": "Radio"
@@ -1287,14 +1294,13 @@
                                             "mandatory": true,
                                             "options": [
                                                 {
-                                                    "label": "Male",
-                                                    "value": "Male"
-                                                },
-                                                {
                                                     "label": "Female",
                                                     "value": "Female"
+                                                },
+                                                {
+                                                    "label": "Male",
+                                                    "value": "Male"
                                                 }
-                                                
                                             ],
                                             "type": "Radio"
                                         }
