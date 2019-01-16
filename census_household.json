@@ -6657,8 +6657,8 @@
                                             "type": "Checkbox",
                                              "options": [
                                                 {
-                                                    "label": "No organsiation or work for a private individual",
-                                                    "value": "No organsiation or work for a private individual"
+                                                    "label": "No organisation or work for a private individual",
+                                                    "value": "No organisation or work for a private individual"
                                                 }
                                             ]
                                         }
@@ -6681,7 +6681,7 @@
                                     "id": "business-name-proxy-question",
                                     "title":  "What is the name of the organisation or business <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> works for?",
                                            
-                                    "description": "If {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}} is self-employed in their own business, give the business name.",
+                                    "description": "If they are self-employed in their own business, give the business name.",
                                     "type": "MutuallyExclusive",
                                     "mandatory": true,
                                     "answers": [
@@ -6697,8 +6697,8 @@
                                             "type": "Checkbox",
                                              "options": [
                                                 {
-                                                    "label": "No organsiation or works for a private individual",
-                                                    "value": "No organsiation or works for a private individual"
+                                                    "label": "No organisation or works for a private individual",
+                                                    "value": "No organisation or works for a private individual"
                                                 }
                                             ]
                                         }
@@ -6720,7 +6720,7 @@
                                 {
                                     "id": "business-name-past-proxy-question",
                                     "title": "What was the name of the organisation or business <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> worked for?",                          
-                                    "description": "If {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}} was self-employed in their own business, give the business name.",
+                                    "description": "If they were self-employed in their own business, give the business name.",
                                     "type": "MutuallyExclusive",
                                     "mandatory": true,
                                     "answers": [
@@ -6736,8 +6736,8 @@
                                             "type": "Checkbox",
                                              "options": [
                                                 {
-                                                    "label": "No organsiation or worked for a private individual",
-                                                    "value": "No organsiation or worked for a private individual"
+                                                    "label": "No organisation or worked for a private individual",
+                                                    "value": "No organisation or worked for a private individual"
                                                 }
                                             ]
                                         }
@@ -6758,18 +6758,7 @@
                             "questions": [
                                 {
                                     "id": "business-name-past-question",
-                                    "titles": [{
-                                            "value": "What was the name of the organisation or business <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> worked for?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "What was the name of the organisation or business you worked for?"
-                                        }
-                                    ],
+                                    "title": "What was the name of the organisation or business you worked for?",
                                     "description": "If you were self-employed in your own business, give the business name.",
                                     "type": "MutuallyExclusive",
                                      "mandatory": true,
@@ -6786,8 +6775,8 @@
                                             "type": "Checkbox",
                                              "options": [
                                                 {
-                                                    "label": "No organsiation or worked for a private individual",
-                                                    "value": "No organsiation or worked for a private individual"
+                                                    "label": "No organisation or worked for a private individual",
+                                                    "value": "No organisation or worked for a private individual"
                                                 }
                                             ]
                                         }
