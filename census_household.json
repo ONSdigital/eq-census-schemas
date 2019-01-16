@@ -7490,43 +7490,10 @@
                                 }
                             ],
                             "routing_rules": [
+                                
                                 {
                                     "goto": {
-                                        "block": "no-business-name-employer-address",
-                                        "when": [
-                                            {
-                                                "id": "business-name-answer",
-                                                "condition": "equals",
-                                                "value": ""
-                                            },
-                                            {
-                                                "id": "employer-type-of-address-answer",
-                                                "condition": "equals",
-                                                "value": "At a workplace"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                     "goto": {
-                                        "block": "no-business-name-employer-address",
-                                        "when": [
-                                            {
-                                                "id": "business-name-answer",
-                                                "condition": "equals",
-                                                "value": ""
-                                            },
-                                            {
-                                                "id": "employer-type-of-address-answer",
-                                                "condition": "equals",
-                                                "value": "Report to a depot"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "employer-address",
+                                        "block": "employer-address-workplace",
                                         "when": [
                                             {
                                                 "id": "employer-type-of-address-answer",
@@ -7538,7 +7505,7 @@
                                 },
                                 {
                                      "goto": {
-                                        "block": "employer-address",
+                                        "block": "employer-address-depot",
                                         "when": [
                                             {
                                                 "id": "employer-type-of-address-answer",
@@ -7557,39 +7524,50 @@
                         },
                         {
                             "type": "Question",
-                            "id": "employer-address",
+                            "id": "employer-address-workplace",
                             "questions": [
                                 {
-                                    "id": "employer-address-question",
-                                    "title": "What is the address of <em>{{answers['business-name-answer']| format_household_name}}</em>?",
+                                    "id": "employer-address-workplace-question",
+                                     "titles": [{
+                                            "value": "What is the address of <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> workplace?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "What is the address of your workplace?"
+                                        }
+                                    ],
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "employer-address-answer-building",
+                                            "id": "employer-address-workplace-answer-building",
                                             "label": "Building",
                                             "mandatory": true,
                                             "type": "TextField"
                                         },
                                         {
-                                            "id": "employer-address-answer-street",
+                                            "id": "employer-address-workplace-answer-street",
                                             "label": "Street",
                                             "mandatory": false,
                                             "type": "TextField"
                                         },
                                         {
-                                            "id": "employer-address-answer-city",
+                                            "id": "employer-address-workplace-answer-city",
                                             "label": "Town or city",
                                             "mandatory": false,
                                             "type": "TextField"
                                         },
                                         {
-                                            "id": "employer-address-answer-county",
+                                            "id": "employer-address-workplace-answer-county",
                                             "label": "County (optional)",
                                             "mandatory": false,
                                             "type": "TextField"
                                         },
                                         {
-                                            "id": "employer-adress-answer-postcode",
+                                            "id": "employer-adress-workplace-answer-postcode",
                                             "label": "Postcode",
                                             "mandatory": false,
                                             "type": "TextField"
@@ -7605,14 +7583,14 @@
                                 }
                             ]
                         },
-                         {
+                        {
                             "type": "Question",
-                            "id": "no-business-name-employer-address",
+                            "id": "employer-address-depot",
                             "questions": [
                                 {
-                                    "id": "no-business-name-employer-address-question",
-                                    "titles": [{
-                                            "value": "What is the address of their workplace or depot?",
+                                    "id": "employer-address-depot-question",
+                                     "titles": [{
+                                            "value": "What is the address of <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> depot?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -7620,37 +7598,37 @@
                                             }]
                                         },
                                         {
-                                            "value": "What is the address of your workplace or depot?"
+                                            "value": "What is the address of your depot?"
                                         }
                                     ],
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "no-business-name-employer-address-answer-building",
+                                            "id": "employer-address-depot-answer-building",
                                             "label": "Building",
                                             "mandatory": true,
                                             "type": "TextField"
                                         },
                                         {
-                                            "id": "no-business-name-employer-address-answer-street",
+                                            "id": "employer-address-depot-answer-street",
                                             "label": "Street",
                                             "mandatory": false,
                                             "type": "TextField"
                                         },
                                         {
-                                            "id": "no-business-name-employer-address-answer-city",
+                                            "id": "employer-address-depot-answer-city",
                                             "label": "Town or city",
                                             "mandatory": false,
                                             "type": "TextField"
                                         },
                                         {
-                                            "id": "no-business-name-employer-address-answer-county",
+                                            "id": "employer-address-depot-answer-county",
                                             "label": "County (optional)",
                                             "mandatory": false,
                                             "type": "TextField"
                                         },
                                         {
-                                            "id": "no-business-name-employer-adress-answer-postcode",
+                                            "id": "employer-adress-depot-answer-postcode",
                                             "label": "Postcode",
                                             "mandatory": false,
                                             "type": "TextField"
