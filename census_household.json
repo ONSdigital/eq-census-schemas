@@ -727,15 +727,16 @@
                                                     "value": "Oil"
                                                 },
                                                 {
-                                                    "label": "Solid Fuel",
-                                                    "value": "Solid Fuel",
-                                                    "description": "Excluding wood"
-                                                },
-                                                {
                                                     "label": "Wood",
                                                     "value": "Wood",
                                                     "description": "For example logs, waste wood or pellets"
                                                 },
+                                                {
+                                                    "label": "Solid Fuel",
+                                                    "value": "Solid Fuel",
+                                                    "description": "For example coal"
+                                                },
+                                                
                                                 {
                                                     "label": "Renewable energy",
                                                     "value": "Renewable energy",
