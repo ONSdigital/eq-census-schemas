@@ -1559,7 +1559,7 @@
                                         "title": "What do we mean by 'another address'?",
                                         "content": [
                                             {
-                                                "description": "Another address refers to a different address to the one at the start of this survey. This might be another parent or guardian’s address, a term-time address, an armed forces base, or a holiday home."
+                                                "description": "Another address refers to a different address to the one at the start of this survey. This might be another parent or guardian’s address, a term-time address, a partner's address, or a holiday home."
                                             }
                                         ]
                                     }],
@@ -1667,7 +1667,7 @@
                                 {
                                     "id": "other-address-question",
                                      "titles": [{
-                                            "value": "Enter details of the other UK address where <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> stays for more than 30 days a year",
+                                            "value": "What is the UK address where <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> stays for more than 30 days a year?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -1675,7 +1675,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "Enter details of the other UK address where you stay for more than 30 days a year"
+                                            "value": "What is the UK address where you stay for more than 30 days a year?"
                                         }
                                     ],
                                     "type": "General",
@@ -1727,7 +1727,7 @@
                             "questions": [
                                 {
                                     "id": "address-type-question",
-                                    "title": "What type of address is <em>{{answers['other-address-answer-building'][group_instance]}}, {{answers['other-address-answer-street'][group_instance]}}</em>?",
+                                    "title": "What type of address is <em>{{answers['other-address-answer-building'][group_instance]}} {{answers['other-address-answer-street'][group_instance]}}</em>?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1825,12 +1825,8 @@
                                                     "value": "Another parent or guardian’s address"
                                                 },
                                                 {
-                                                    "label": "Partners address",
-                                                    "value": "Partners address"
-                                                },
-                                                {
-                                                    "label": "Another relative's address",
-                                                    "value": "Another relative's address"
+                                                    "label": "Partner's address",
+                                                    "value": "Partner's address"
                                                 },
                                                 {
                                                     "label": "Holiday home",
