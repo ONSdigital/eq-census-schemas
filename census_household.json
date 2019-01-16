@@ -5497,6 +5497,15 @@
                             "routing_rules": [
                                 {
                                     "goto": {
+                                        "block": "qualifications-proxy",
+                                        "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                    }
+                                }, {
+                                    "goto": {
                                         "block": "qualifications"
                                     }
                                 }
@@ -5505,8 +5514,22 @@
                         {
                             "type": "Interstitial",
                             "id": "qualifications",
-                            "title": "This next section is about your qualifications",
-                            "description": "Include any qualifications you have ever achieved in England, Wales or elsewhere, even if you are not using them now.",
+                            "title": "The next set of questions is about your qualifications",
+                            "description": "Record any qualifications you have ever achieved in England, Wales or worldwide, including equivalents, even if you are not using them now.",
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "apprenticeship"
+                                        
+                                    }
+                                }
+                            ]
+                        },
+                         {
+                            "type": "Interstitial",
+                            "id": "qualifications-proxy",
+                            "title": "The next set of questions is about your qualifications",
+                            "description": "Record any qualifications they have ever achieved in England, Wales or worldwide, including equivalents, even if they are not using them now.",
                             "routing_rules": [
                                 {
                                     "goto": {
