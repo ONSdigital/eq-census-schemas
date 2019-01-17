@@ -3044,7 +3044,7 @@
                                     "title": "How would you describe your national identity?",
                                     "type": "General",
                                     "definitions": [{
-                                        "title": "What do we mean by national identity?",
+                                        "title": "What do we mean by 'national identity'?",
                                         "content": [
                                             {
                                                 "description": "National Identity is not dependent on your ethnic group or citizenship. This could be about the country or countries where you feel you belong, or think of as home."
@@ -3107,7 +3107,7 @@
                                      "title": "How would you describe your national identity?",
                                     "type": "General",
                                     "definitions": [{
-                                        "title": "What is a national identity?",
+                                        "title": "What is a 'national identity'?",
                                         "content": [
                                             {
                                                 "description": "National Identity is not dependent on your ethnic group or citizenship. This could be about the country or countries where you feel you belong, or think of as home."
@@ -3184,7 +3184,7 @@
                                      "title": "How would <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> describe their national identity?",
                                     "type": "General",
                                     "definitions": [{
-                                        "title": "What do we mean by national identity?",
+                                        "title": "What do we mean by 'national identity'?",
                                         "content": [
                                             {
                                                 "description": "National Identity is not dependent on their ethnic group or citizenship. This could be about the country or countries where they feel they belong, or think of as home."
@@ -3223,7 +3223,7 @@
                                                         "id": "national-identity-england-proxy-answer-other",
                                                         "type": "TextField",
                                                         "mandatory": false,
-                                                        "label": "Please describe your national identity"
+                                                        "label": "Please describe their national identity"
                                                     }
                                                 }
                                             ],
@@ -3247,7 +3247,7 @@
                                      "title": "How would <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> describe their national identity?",
                                     "type": "General",
                                     "definitions": [{
-                                        "title": "What is a national identity?",
+                                        "title": "What is a 'national identity'?",
                                         "content": [
                                             {
                                                 "description": "National Identity is not dependent on their ethnic group or citizenship. This could be about the country or countries where they feel they belong, or think of as home."
@@ -3287,7 +3287,7 @@
                                                         "id": "national-identity-wales-answer-proxy-other",
                                                         "type": "TextField",
                                                         "mandatory": false,
-                                                        "label": "Please describe your national identity"
+                                                        "label": "Please describe their national identity"
                                                     }
                                                 }
                                             ],
