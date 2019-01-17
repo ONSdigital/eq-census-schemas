@@ -1674,7 +1674,7 @@
                                 {
                                     "id": "other-address-question",
                                      "titles": [{
-                                            "value": "What is the UK address where <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> stays for more than 30 days a year?",
+                                            "value": "Enter details of the other UK address where <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> stays for more than 30 days a year?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -1682,7 +1682,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "What is the UK address where you stay for more than 30 days a year?"
+                                            "value": "Enter details of the other UK address where you stay for more than 30 days a year"
                                         }
                                     ],
                                     "type": "General",
