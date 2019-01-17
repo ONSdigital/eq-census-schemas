@@ -3336,6 +3336,14 @@
                                     "type": "General",
                                     "answers": [
                                         {
+                                             "guidance": {
+                                                "show_guidance": "Why your answer is important",
+                                                "hide_guidance": "Why your answer is important",
+                                                "content": [{
+                                                   "description": "Your answer will help the government and other organisations to provide appropriate services and make decisions to support equality and fairness in your community."
+                                                    }
+                                                 ]
+                                            },
                                             "id": "ethnic-group-england-answer",
                                             "mandatory": true,
                                             "options": [
@@ -3397,6 +3405,14 @@
                                     "type": "General",
                                     "answers": [
                                         {
+                                            "guidance": {
+                                                "show_guidance": "Why your answer is important",
+                                                "hide_guidance": "Why your answer is important",
+                                                "content": [{
+                                                   "description": "Your answer will help the government and other organisations to provide appropriate services and make decisions to support equality and fairness in your community."
+                                                    }
+                                                 ]
+                                            },
                                             "id": "ethnic-group-wales-answer",
                                             "mandatory": true,
                                             "options": [
@@ -3614,6 +3630,14 @@
                                     "type": "General",
                                     "answers": [
                                         {
+                                             "guidance": {
+                                                "show_guidance": "Why your answer is important",
+                                                "hide_guidance": "Why your answer is important",
+                                                "content": [{
+                                                   "description": "How you define your ethnic group is up to you. Sharing this information enables the government and other organisations to provide appropriate resources and policies around housing, education, health and criminal justice."
+                                                    }
+                                                 ]
+                                            },
                                             "id": "white-ethnic-group-england-answer",
                                             "mandatory": true,
                                             "options": [
@@ -3676,6 +3700,14 @@
                                     "type": "General",
                                     "answers": [
                                         {
+                                             "guidance": {
+                                                "show_guidance": "Why your answer is important",
+                                                "hide_guidance": "Why your answer is important",
+                                                "content": [{
+                                                   "description": "How you define your ethnic group is up to you. Sharing this information enables the government and other organisations to provide appropriate resources and policies around housing, education, health and criminal justice."
+                                                    }
+                                                 ]
+                                            },
                                             "id": "white-ethnic-group-wales-answer",
                                             "mandatory": true,
                                             "options": [
@@ -3809,6 +3841,14 @@
                                     "type": "General",
                                     "answers": [
                                         {
+                                             "guidance": {
+                                                "show_guidance": "Why your answer is important",
+                                                "hide_guidance": "Why your answer is important",
+                                                "content": [{
+                                                   "description": "How you define your ethnic group is up to you. Sharing this information enables the government and other organisations to provide appropriate resources and policies around housing, education, health and criminal justice."
+                                                    }
+                                                 ]
+                                            },
                                             "id": "mixed-ethnic-group-answer",
                                             "mandatory": true,
                                             "options": [
@@ -3927,6 +3967,14 @@
                                     "type": "General",
                                     "answers": [
                                         {
+                                             "guidance": {
+                                                "show_guidance": "Why your answer is important",
+                                                "hide_guidance": "Why your answer is important",
+                                                "content": [{
+                                                   "description": "How you define your ethnic group is up to you. Sharing this information enables the government and other organisations to provide appropriate resources and policies around housing, education, health and criminal justice."
+                                                    }
+                                                 ]
+                                            },
                                             "id": "asian-ethnic-group-answer",
                                             "mandatory": true,
                                             "options": [
@@ -4049,6 +4097,14 @@
                                     "type": "General",
                                     "answers": [
                                         {
+                                             "guidance": {
+                                                "show_guidance": "Why your answer is important",
+                                                "hide_guidance": "Why your answer is important",
+                                                "content": [{
+                                                   "description": "How you define your ethnic group is up to you. Sharing this information enables the government and other organisations to provide appropriate resources and policies around housing, education, health and criminal justice."
+                                                    }
+                                                 ]
+                                            },
                                             "id": "black-ethnic-group-answer",
                                             "mandatory": true,
                                             "options": [
@@ -4169,6 +4225,14 @@
                                     "type": "General",
                                     "answers": [
                                         {
+                                             "guidance": {
+                                                "show_guidance": "Why your answer is important",
+                                                "hide_guidance": "Why your answer is important",
+                                                "content": [{
+                                                   "description": "How you define your ethnic group is up to you. Sharing this information enables the government and other organisations to provide appropriate resources and policies around housing, education, health and criminal justice."
+                                                    }
+                                                 ]
+                                            },
                                             "id": "other-ethnic-group-answer",
                                             "mandatory": true,
                                             "options": [
