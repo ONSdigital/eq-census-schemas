@@ -4129,7 +4129,7 @@
                                                         "id": "black-ethnic-group-answer-other",
                                                         "type": "TextField",
                                                         "mandatory": false,
-                                                        "label": "Please specify any other Black, Black British, or Caribbean background"
+                                                        "label": "Please specify any Black, Black British, or Caribbean background"
                                                     }
                                                 }
                                             ],
@@ -6403,7 +6403,7 @@
                                             {
                                                 "id": "ever-worked-proxy-answer",
                                                 "condition": "equals",
-                                                "value": "No, have never worked"
+                                                "value": "No, has never worked"
                                             }
                                         ]
                                     }
