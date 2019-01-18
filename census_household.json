@@ -2793,12 +2793,13 @@
                                         "title": "What do we mean by physical and mental health conditions or illness?",
                                         "content": [
                                             {
-                                                "list": [
-                                                "Physical and mental health conditions or illnesses may also be described as disabilities.",
-                                                "For example sensory impairments such as sight or hearing loss, developmental conditions such as autism or Asperger’s syndrome, and learning impairment such as Down’s syndrome or dyslexia."
-                                            ]
+                                                "description": "Physical and mental health conditions or illnesses may also be described as disabilities."
+                                            },
+                                            {
+                                                "description": "For example sensory impairments such as sight or hearing loss, developmental conditions such as autism or Asperger’s syndrome, and learning impairment such as Down’s syndrome or dyslexia."
                                             }
-                                        ]
+                                         ]
+                                           
                                     }],
                                     "type": "General",
                                     "answers": [
@@ -2868,6 +2869,21 @@
                                             "value": "Do any of your conditions or illnesses reduce your ability to carry out day-to-day activities?"
                                         }
                                     ],
+                                   "definitions": [{
+                                        "title": "What do we mean by reduce your ability?",
+                                        "content": [
+                                            {
+                                                "description": "This question is asking whether your health condition or illness currently affects your ability to carry-out normal daily activities."
+                                            },
+                                            {
+                                                "description": "You should consider whether you are still affected whilst receiving any treatment, medication or using any devices for your condition or illness. For example, if you require a hearing aid and by using the device, you experience no restriction in carrying out your day-to-day activities, then you should select ‘Not at all’."
+                                            },
+                                            {
+                                                "description": "‘Yes, a lot’, should be selected if you usually need some level of support of family members, friends or personal social services for most normal daily activities."
+                                            }
+                                         ]
+                                           
+                                    }],
                                     "type": "General",
                                     "answers": [
                                         {
