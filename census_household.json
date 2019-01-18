@@ -3144,7 +3144,6 @@
                                     "answers": [
                                         {
                                             "id": "national-identity-wales-answer",
-                                            "label": "Select all that apply",
                                             "mandatory": true,
                                             "options": [
                                                 {
@@ -3284,7 +3283,6 @@
                                     "answers": [
                                         {
                                             "id": "national-identity-wales-proxy-answer",
-                                            "label": "Select all that apply",
                                             "mandatory": true,
                                             "options": [
                                                 {
@@ -4626,7 +4624,6 @@
                                         }
                                     ],
                                     "mandatory": true,
-                                    "description": "Select all that apply",
                                     "type": "MutuallyExclusive",
                                     "answers": [{
                                             "id": "understand-welsh-answer",
