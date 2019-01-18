@@ -7071,14 +7071,14 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "professional-quals"
+                                        "block": "supervise"
                                     }
                                 }
                             ]
                         },
                         {
                             "type": "Question",
-                            "id": "employers-business-past",
+                            "id": "employers-business-past", 
                             "questions": [
                                 {
                                     "id": "employers-business-past-question",
@@ -7108,99 +7108,6 @@
                                                     "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
                                                 }
                                             }
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "professional-quals-past"
-                                    }
-                                }
-                            ]
-                        },
-                        
-                        {
-                            "type": "Question",
-                            "id": "professional-quals",
-                            "questions": [
-                                {
-                                    "id": "professional-quals-question",
-                                    "titles": [{
-                                            "value": "For their main job, does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> hold a qualification awarded or accredited by a professional body?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "For your main job, do you hold a qualification awarded or accredited by a professional body?"
-                                        }
-                                    ],
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "professional-quals-answer",
-                                            "mandatory": true,
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "supervise"
-                                    }
-                                }
-                            ]
-                        },
-                         {
-                            "type": "Question",
-                            "id": "professional-quals-past",
-                            "questions": [
-                                {
-                                    "id": "professional-quals-past-question",
-                                    "titles": [{
-                                            "value": "For their main job, did <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> hold a qualification awarded or accredited by a professional body?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "For your main job, did you hold a qualification awarded or accredited by a professional body?"
-                                        }
-                                    ],
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "professional-quals-past-answer",
-                                            "mandatory": true,
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                }
-                                            ],
-                                            "type": "Radio"
                                         }
                                     ]
                                 }
@@ -7695,14 +7602,6 @@
                                     "answers": [
                                         
                                         {
-                                            "guidance": {
-                                                "show_guidance": "Why your answer is important",
-                                                "hide_guidance": "Why your answer is important",
-                                                "content": [{
-                                                   "description": "Workplace address and method of travel to work information is used to inform planning and modelling for transport services and policies. The information helps in the assessment of local public transport needs."
-                                                    }
-                                                 ]
-                                            },
                                             "id": "employer-address-depot-answer-building",
                                             "label": "Building",
                                             "mandatory": true,
@@ -7730,7 +7629,15 @@
                                             "id": "employer-adress-depot-answer-postcode",
                                             "label": "Postcode",
                                             "mandatory": false,
-                                            "type": "TextField"
+                                            "type": "TextField",
+                                            "guidance": {
+                                                "show_guidance": "Why your answer is important",
+                                                "hide_guidance": "Why your answer is important",
+                                                "content": [{
+                                                   "description": "Workplace address and method of travel to work information is used to inform planning and modelling for transport services and policies. The information helps in the assessment of local public transport needs."
+                                                    }
+                                                 ]
+                                            }
                                         }
                                     ]
                                 }
