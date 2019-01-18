@@ -2789,6 +2789,15 @@
                                             "value": "Do you have any physical or mental health conditions or illnesses lasting or expected to last 12 months or more?"
                                         }
                                     ],
+                                    "content": [
+                                        {
+                                            "title": "What do we mean by physical and mental health conditions or illness?",
+                                            "list": [
+                                                "Physical and mental health conditions or illnesses may also be described as disabilities.",
+                                                "For example sensory impairments such as sight or hearing loss, developmental conditions such as autism or Asperger’s syndrome, and learning impairment such as Down’s syndrome or dyslexia."
+                                            ]
+                                        }
+                                    ], 
                                     "type": "General",
                                     "answers": [
                                         {
