@@ -5830,10 +5830,6 @@
                                                 {
                                                     "label": "1 AS level",
                                                     "value": "1 AS level"
-                                                },
-                                                {
-                                                    "label": "Advanced Welsh Baccalaureate",
-                                                    "value": "Advanced Welsh Baccalaureate"
                                                 }
                                             ]
                                         },
@@ -5905,14 +5901,6 @@
                                                     "label": "Basic skills course",
                                                     "value": "Basic skills course",
                                                     "description": "Skills for life, literacy, numeracy and language"
-                                                },
-                                                {
-                                                    "label": "National Welsh Baccalaureate",
-                                                    "value": "National Welsh Baccalaureate"
-                                                },
-                                                {
-                                                    "label": "Foundation Welsh Baccalaureate",
-                                                    "value": "Foundation Welsh Baccalaureate"
                                                 }
                                             ]
                                         },
