@@ -1137,6 +1137,7 @@
                                     "id": "age-estimate-answer",
                                     "type": "Checkbox",
                                     "mandatory": false,
+                                    "label": "",
                                     "options": [{
                                         "label": "Interviewers own estimate",
                                         "value": "Interviewers own estimate"
@@ -1147,7 +1148,7 @@
                         "routing_rules": [{
                             "goto": {
                                 "block": "born-uk"
-                            }
+                            } 
                         }]
                     },
                     {
