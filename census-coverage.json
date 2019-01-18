@@ -2081,7 +2081,7 @@
                         "questions": [{
                             "id": "length-of-stay-question",
                             "titles": [{
-                                    "value": "Including the time already spent here, how long does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> intend to stay in the United Kingdom?",
+                                    "value": "Including the time already spent here, how long does <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name}}</em> intend to stay in the United Kingdom?",
                                     "when": [{
                                         "id": "proxy-check-answer",
                                         "condition": "equals",
