@@ -2481,7 +2481,7 @@
                         "id": "visitor-sex",
                         "questions": [{
                             "id": "visitor-sex-question",
-                            "title": "What is <em>{{answers['visitor-first-name']}} {{answers['visitor-last-name']}} sex?</em>?",
+                            "title": "What is <em>{{answers['visitor-first-name']}} {{answers['visitor-last-name']}}</em> sex?",
                             "type": "General",
                             "answers": [{
                                 "id": "visitor-sex-answer",
@@ -2585,13 +2585,13 @@
                         "id": "visitor-confirm-dob",
                         "questions": [{
                             "id": "visitor-confirm-date-of-birth-proxy",
-                            "title": "{{answers['visitor-first-name']}} {{answers['visitor-last-name']}} is {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old. Is this correct?",
+                            "title": "{{answers['visitor-first-name']}} {{answers['visitor-last-name']}} is {{ calculate_years_difference (answers['visitor-date-of-birth-answer'][group_instance], 'now') }} old. Is this correct?",
                             "type": "General",
                             "answers": [{
                                 "id": "visitor-confirm-date-of-birth-answer",
                                 "mandatory": true,
                                 "options": [{
-                                        "label": "Yes, {{answers['visitor-first-name']}} {{answers['visitor-last-name']}} is {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old",
+                                        "label": "Yes, {{answers['visitor-first-name']}} {{answers['visitor-last-name']}} is {{ calculate_years_difference (answers['visitor-date-of-birth-answer'][group_instance], 'now') }} old",
                                         "value": "Yes"
                                     },
                                     {
