@@ -2287,6 +2287,14 @@
                                             "label": "Previous home (moved since 13 October 2019",
                                             "value": "Previous home"
                                         },
+                                         {
+                                            "label": "Student's family address",
+                                            "value": "Student's family address"
+                                        },
+                                        {
+                                            "label": "Student's term time address",
+                                            "value": "Student's term time address"
+                                        },
                                         {
                                             "label": "Armed forces base address",
                                             "value": "Armed forces base address"
@@ -2294,6 +2302,26 @@
                                         {
                                             "label": "Another address when working away from home",
                                             "value": "Another address when working away from home"
+                                        },
+                                        {
+                                            "label": "Another parent or guardian's address",
+                                            "value": "Another parent or guardian's address"
+                                        },
+                                        {
+                                            "label": "Holiday in the UK",
+                                            "value": "Holiday in the UK"
+                                        },
+                                        {
+                                            "label": "A famliy or friend's address",
+                                            "value": "A famliy or friend's address"
+                                        },
+                                        {
+                                            "label": "A hotel or second home",
+                                            "value": "A hotel or second home"
+                                        },
+                                        {
+                                            "label": "Other",
+                                            "value": "Other"
                                         }
                                     ],
                                     "type": "Checkbox"
@@ -2311,7 +2339,7 @@
                         }],
                         "routing_rules": [{
                                 "goto": {
-                                    "block": "elsewhere-address",
+                                    "block": "household-member-completed",
                                     "when": [{
                                         "id": "elsewhere-address-check-answer-exclusive",
                                         "condition": "set"
@@ -2320,7 +2348,7 @@
                             },
                             {
                                 "goto": {
-                                    "block": "household-member-completed"
+                                    "block": "elsewhere-address"
                                 }
                             }
                         ]
