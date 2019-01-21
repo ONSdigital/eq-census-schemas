@@ -874,12 +874,12 @@
                         "questions": [{
                             "id": "internet-usage-question",
                             "title": "In the last 12 months has anyone in your household interacted with or contacted public organisations over the internet for personal use for any of these reasons?",
-                            "definitions": [{
-                                "title": "What do we mean by 'public organisations'?",
-                                "content": [{
-                                    "description": "some blurb to explain"
-                                }]
-                            }],
+                            "guidance": {
+                                    "content": [{
+                                        "title": "What do we mean by 'public organisations'?",
+                                        "description": "some blurb to explain"
+                                    }]
+                                },
                             "type": "MutuallyExclusive",
                             "mandatory": false,
                             "answers": [{
