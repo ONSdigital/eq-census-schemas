@@ -5143,8 +5143,8 @@
                                                     "value": "householdaddress"
                                                 },
                                                 {
-                                                    "label": "Student term time or boarding school address in the UK",
-                                                    "value": "Student term time or boarding school address in the UK"
+                                                    "label": "Student term-time or boarding school address in the UK",
+                                                    "value": "Student term-time or boarding school address in the UK"
                                                 },
                                                 {
                                                     "label": "Same address as {{answers['first-name'][0]}}",
@@ -5178,7 +5178,7 @@
                                             {
                                                 "id": "past-usual-address-household-answer",
                                                 "condition": "equals",
-                                                "value": "Student term time or boarding school address in the UK"
+                                                "value": "Student term-time or boarding school address in the UK"
                                             }
                                         ]
                                     }
@@ -5245,8 +5245,8 @@
                                                     "value": "householdaddress"
                                                 },
                                                 {
-                                                    "label": "Student term time or boarding school address in the UK",
-                                                    "value": "Student term time or boarding school address in the UK"
+                                                    "label": "Student term-time or boarding school address in the UK",
+                                                    "value": "Student term-time or boarding school address in the UK"
                                                 },
                                                 {
                                                     "label": "Another address in the UK",
@@ -5276,7 +5276,7 @@
                                             {
                                                 "id": "past-usual-address-household-first-person-answer",
                                                 "condition": "equals",
-                                                "value": "Student term time or boarding school address in the UK"
+                                                "value": "Student term-time or boarding school address in the UK"
                                             }
                                         ]
                                     }
