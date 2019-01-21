@@ -5019,7 +5019,7 @@
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "religion-answer",
+                                            "id": "religion-england-answer",
                                             "mandatory": false,
                                             "label": "Select one option only",
                                             "options": [
@@ -5056,7 +5056,7 @@
                                                     "label": "Any other religion",
                                                     "value": "Other",
                                                     "detail_answer": {
-                                                        "id": "religion-answer-other",
+                                                        "id": "religion-england-answer-other",
                                                         "type": "TextField",
                                                         "mandatory": false,
                                                         "label": "Please specify other religion"
@@ -5065,6 +5065,95 @@
                                                
                                             ],
                                             "type": "Checkbox"
+                                        }
+                                    ],
+                                 "skip_conditions": [
+                                        {
+                                            "when": [
+                                                {
+                                                    "meta": "region_code",
+                                                    "condition": "equals",
+                                                    "value": "GB-WLS"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "religion-wales-question",
+                                    "titles": [{
+                                            "value": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> religion?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "What is your religion?"
+                                        }
+                                    ],
+                                    "description": "This question is voluntary",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "religion-wales-answer",
+                                            "mandatory": false,
+                                            "label": "Select one option only",
+                                            "options": [
+                                                {
+                                                    "label": "No religion",
+                                                    "value": "No religion"
+                                                },
+                                                {
+                                                    "label": "Christian",
+                                                    "value": "Christian",
+                                                    "description": "All denominations"
+                                                },
+                                                {
+                                                    "label": "Buddhist",
+                                                    "value": "Buddhist"
+                                                },
+                                                {
+                                                    "label": "Hindu",
+                                                    "value": "Hindu"
+                                                },
+                                                {
+                                                    "label": "Jewish",
+                                                    "value": "Jewish"
+                                                },
+                                                {
+                                                    "label": "Muslim",
+                                                    "value": "Muslim"
+                                                },
+                                                {
+                                                    "label": "Sikh",
+                                                    "value": "Sikh"
+                                                },
+                                                {
+                                                    "label": "Any other religion",
+                                                    "value": "Other",
+                                                    "detail_answer": {
+                                                        "id": "religion-wales-answer-other",
+                                                        "type": "TextField",
+                                                        "mandatory": false,
+                                                        "label": "Please specify other religion"
+                                                    }
+                                                }
+                                               
+                                            ],
+                                            "type": "Checkbox"
+                                        }
+                                    ],
+                                    "skip_conditions": [
+                                        {
+                                            "when": [
+                                                {
+                                                    "meta": "region_code",
+                                                    "condition": "not equals",
+                                                    "value": "GB-WLS"
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
