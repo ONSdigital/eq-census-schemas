@@ -7047,7 +7047,7 @@
                                             "value": "What is the main activity of your organisation, business or freelance work"
                                         }
                                     ],
-                                    "description": "For example clothing retail, general hospital, primary education, food wholesale, civil service, local government housing.",
+                                    "description": "For example clothing retail, general hospital, primary education, food wholesale, civil service DWP, local government housing.",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -7091,7 +7091,7 @@
                                             "value": "What was the main activity of your organisation, business or freelance work"
                                         }
                                     ],
-                                    "description": "For example clothing retail, general hospital, primary education, food wholesale, civil service, local government housing.",
+                                    "description": "For example clothing retail, general hospital, primary education, food wholesale, civil service DWP, local government housing.",
                                     "type": "General",
                                     "answers": [
                                         {
