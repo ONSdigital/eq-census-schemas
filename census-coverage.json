@@ -2373,7 +2373,7 @@
                             "type": "General",
                             "answers": [{
                                     "id": "elsewhere-address-answer-building",
-                                    "label": "Building",
+                                    "label": "House name or number",
                                     "mandatory": true,
                                     "type": "TextField"
                                 },
