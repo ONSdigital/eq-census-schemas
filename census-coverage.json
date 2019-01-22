@@ -1920,7 +1920,7 @@
                                         "label": "African",
                                         "value": "African",
                                         "detail_answer": {
-                                            "id": "black-ethnic-group-answer-other",
+                                            "id": "african-ethnic-group-answer-other",
                                             "type": "TextField",
                                             "mandatory": false,
                                             "label": "Please enter African background"
