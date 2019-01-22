@@ -541,7 +541,7 @@
                             "questions": [{
                                 "id": "household-check-question-no-primary",
                                 "title": "Does anyone else live at <em>{{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}</em>?",
-                               "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name'], [answers['household-member-first-name-no-primary'], answers['household-member-last-name-no-primary']] | format_repeating_summary }}",
+                                "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['household-member-first-name-no-primary'], answers['household-member-last-name-no-primary']]] | format_repeating_summary }}",
                                 "type": "General",
                                 "answers": [{
                                     "id": "household-check-answer-no-primary",
