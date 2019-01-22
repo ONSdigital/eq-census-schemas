@@ -292,7 +292,7 @@
                             "when": [{
                                 "id": "temp-household-member-anyone-else",
                                 "condition": "equals",
-                                "value": "Yes"
+                                "value": "No"
                             }]
                         }
                     }],
@@ -331,11 +331,11 @@
                                     "id": "temp-household-member-anyone-else",
                                     "mandatory": true,
                                     "options": [{
-                                            "label": "Yes, this is everyone",
+                                            "label": "Yes, I need to add someone",
                                             "value": "Yes"
                                         },
                                         {
-                                            "label": "No, I need to add someone",
+                                            "label": "No, this is everyone",
                                             "value": "No"
                                         }
                                     ]
@@ -374,7 +374,7 @@
                                 "when": [{
                                     "id": "temp-household-member-anyone-else",
                                     "condition": "equals",
-                                    "value": "Yes"
+                                    "value": "No"
                                 }]
                             }]
                         }
