@@ -566,8 +566,8 @@
                             "questions": [{
                                 "id": "household-member-name-question-no-primary",
                                 "title": "Who do you need to add?",
-                                "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name'], [answers['household-member-first-name-no-primary'], answers['household-member-last-name-no-primary']]] | format_repeating_summary }}",
-                                "type": "General",
+                                 "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['household-member-first-name-no-primary'], answers['household-member-last-name-no-primary']]] | format_repeating_summary }}",
+                               "type": "General",
                                 "answers": [{
                                         "id": "household-member-first-name-no-primary",
                                         "label": "First name",
