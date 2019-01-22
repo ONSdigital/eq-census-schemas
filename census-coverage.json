@@ -82,7 +82,7 @@
                         "description": "All the questions are about the people in your household on Sunday 13 October 2019.",
                         "content": [{
                             "title": "What is a Household?",
-                            "description": "A household, which is one person living along or a group or people (not necassarily related) living at the same address who share cooking facilities and share a living room or sitting room or dining area."
+                            "description": "A household, is one person living alone or a group of people (not necessarily related) living at the same address who share cooking facilities and share a living room or sitting room or dining area."
                         }]
                     }]
                 },
@@ -397,52 +397,43 @@
                     }],
                     "blocks": [{
                         "type": "Question",
-                        "id": "address-type-block-no-primary",
+                        "id": "previous-address-type-block-no-primary",
                         "questions": [{
-                            "id": "address-type-question-no-primary",
-                            "title": "You said that {{ metadata['display_address'] }} is not your main residence. What type of address is it?",
+                            "id": "previous-address-type-question-no-primary",
+                            "title": "On 13 October 2019 what was your household's usual address?",
                             "type": "General",
-                            "answers": [{
-                                "id": "address-type-answer-no-primary",
-                                "mandatory": true,
-                                "type": "Radio",
-                                "options": [{
-                                        "label": "A previous address from which mail has been redirected",
-                                        "value": "A previous address from which mail has been redirected"
-                                    },
-                                    {
-                                        "label": "Student accommodation rented through a private landlord",
-                                        "value": "Student accommodation rented through a private landlord"
-                                    },
-                                    {
-                                        "label": "My second home",
-                                        "value": "My second home",
-                                        "description": "For example, somewhere you stay whilst on holiday or traveling, either in the UK or abroad"
-                                    },
-                                    {
-                                        "label": "A business or non-residential address",
-                                        "value": "A business or non-residential address"
-                                    },
-                                    {
-                                        "label": "A communal establishment",
-                                        "value": "A communal establishment"
-                                    },
-                                    {
-                                        "label": "This address is not familiar to me",
-                                        "value": "This address is not familiar to me"
-                                    },
-                                    {
-                                        "label": "Other",
-                                        "value": "Other, please describe",
-                                        "detail_answer": {
-                                            "id": "address-type-answer-other-no-primary",
+                             "answers": [
+                                        {
+                                            "id": "previous-address-answer-building",
+                                            "label": "Building",
+                                            "mandatory": true,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "previous-address-answer-street",
+                                            "label": "Street",
                                             "mandatory": false,
-                                            "type": "TextField",
-                                            "label": "Please describe"
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "previous-address-answer-city",
+                                            "label": "Town or city",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "previous-address-answer-county",
+                                            "label": "County (optional)",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "other-address-answer-postcode",
+                                            "label": "Postcode",
+                                            "mandatory": false,
+                                            "type": "TextField"
                                         }
-                                    }
-                                ]
-                            }]
+                                    ]
                         }]
                     }]
                 },
