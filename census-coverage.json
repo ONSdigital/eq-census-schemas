@@ -763,7 +763,18 @@
                         "id": "self-contained-accommodation",
                         "questions": [{
                             "id": "self-contained-accommodation-question",
-                            "title": "Are all the rooms at <em>{{metadata['display_address']}}</em> behind a door that only this household can use?",
+                            "titles": [{
+                                            "value": "Were all the rooms at <em>{{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}</em>, including the kitchen, bathroom and toilet, behind a door that only this household can use?",
+                                            "when": [{
+                                                "id": "primary-household-member-address-check-answer",
+                                                "condition": "equals",
+                                                "value": "No"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Are all the rooms at <em>{{metadata['display_address']}}</em>, including the kitchen, bathroom and toilet, behind a door that only this household can use?"
+                                        }
+                                    ],
                             "type": "General",
                             "answers": [{
                                 "id": "self-contained-accommodation-answer",
