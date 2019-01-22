@@ -283,20 +283,29 @@
                             "questions": [{
                                 "type": "General",
                                 "id": "temp-household-member-anyone-else-question",
-                                "title": "Have you added everyone who lives here, anyone who is temporarily staying or away?",
+                                "title": "Apart from the people already included, is there anyone else who is temporarily away or staying you need to add?",
                                 "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['other-household-member-first-name'], answers['other-household-member-last-name']], [answers['temp-household-member-first-name'], answers['temp-household-member-last-name']]] | format_repeating_summary }}",
                                 "guidance": {
-                                    "content": [{
-                                        "title": "Include people who are temporarily away or staying",
-                                        "list": [
-                                            "People who work away from home within the UK",
-                                            "Members of the armed forces",
-                                            "People who are away from the UK for less than 12 months",
-                                            "Other people who usually live here but are temporarily away",
-                                            "People staying temporarily who usually live in the UK but do not have another UK address",
-                                            "People who usualy live outside the UK who are staing in the UK for 3 months or more"
-                                        ]
-                                    }]
+                                    "content": [
+                                        {
+                                             "description": "Include people who are temporarily away",
+                                                "list": [
+                                                     "People who work away from home within the UK", 
+                                                     "Members of the armed forces", 
+                                                     "People who are away from the UK for less than 12 months", 
+                                                     "Other people who usually live here but are temporarily away"
+                                               ]
+                                          }, {
+                                                "description": "Include people who are temporarily staying",
+                                                "list": [
+                                                    "People staying temporarily who usually live in the UK but do not have another UK address",
+                                                    "People who usually live outside the UK who are staying in the UK for 3 months or more"
+                                                 ]
+                                           },
+                                           {
+                                                "description": "Include people who usually lived with your household on 13 October 2019 but have since moved out"
+                                           } 
+                                    ]
                                 },
                                 "answers": [{
                                     "type": "Radio",
@@ -372,6 +381,30 @@
                                 "answers": [{
                                     "type": "Radio",
                                     "id": "share-facilities-answer",
+                                    "mandatory": true,
+                                    "options": [{
+                                            "label": "Yes",
+                                            "value": "Yes"
+                                        },
+                                        {
+                                            "label": "No",
+                                            "value": "No"
+                                        }
+                                    ]
+                                }]
+                            }]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "move-out-block",
+                            "questions": [{
+                                "id": "move-out-question",
+                                "title": "Did any of these people move into {{ metadata['display_address'] }} after 13 October 2019?",
+                                "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['other-household-member-first-name'], answers['other-household-member-last-name']], [answers['temp-household-member-first-name'], answers['temp-household-member-last-name']]] | format_repeating_summary }}",
+                                "type": "General",
+                                "answers": [{
+                                    "type": "Radio",
+                                    "id": "move-out-answer",
                                     "mandatory": true,
                                     "options": [{
                                             "label": "Yes",
