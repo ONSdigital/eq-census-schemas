@@ -158,6 +158,11 @@
                                             }
                                         ]
                                     }
+                                },
+                                {
+                                    "goto": { 
+                                        "group": "other-household-member-group"
+                                    }
                                 }
                             ]
                     },{
