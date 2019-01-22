@@ -445,6 +445,23 @@
                                 "title": "Are any of these people related to each other?",
                                 "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['other-household-member-first-name'], answers['other-household-member-last-name']], [answers['temp-household-member-first-name'], answers['temp-household-member-last-name']]] | format_repeating_summary }}",
                                 "type": "General",
+                                "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Relationships include",
+                                                "list": [
+                                                    "Husband or wife", 
+                                                    "Partner or civil partner", 
+                                                    "Son or Daughter", 
+                                                    "Brother or Sister", 
+                                                    "Mother or father",
+                                                    "Step child or step brother or step sister", 
+                                                    "Grandparent",
+                                                    "Grandchild"
+                                                  ]
+                                            }
+                                        ]
+                                    },
                                 "answers": [{
                                     "type": "Radio",
                                     "id": "relationship-answer",
@@ -2262,6 +2279,22 @@
                                 },
                                 {
                                     "value": "Is there another address where you may have been included on a Census questionanire because you were a usual resident, or staying overnight there on 13 October 2019?"
+                                }
+                            ],
+                            "content": [
+                                {
+                                    "title": "Reasons why you may have been included elsewhere",
+                                    "list": [
+                                        "Visiting overnight with family and friend",
+                                        "Staying overnight in a hotel or a second home",
+                                        "Working away from home",
+                                        "Staying atanother parent or guardian’s address",
+                                        "On holiday in the UK",
+                                        "A student with a term-time address and a family address",
+                                        "Living on an armed forces base",
+                                        "Living at your previous address on 13 October 2019"
+                                    ]
+                                   
                                 }
                             ],
                             "type": "MutuallyExclusive",
