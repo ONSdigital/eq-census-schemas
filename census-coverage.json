@@ -647,7 +647,6 @@
                         "id": "type-of-accommodation",
                         "questions": [{
                             "id": "type-of-accommodation-question",
-                            "title": "What kind of accommodation is <em>{{metadata['display_address']}}</em>?",
                             "titles": [{
                                             "value": "What kind of accommodation is <em>{{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}</em>?",
                                             "when": [{
