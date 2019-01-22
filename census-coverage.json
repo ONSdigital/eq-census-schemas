@@ -219,7 +219,7 @@
                             "questions": [{
                                 "type": "General",
                                 "id": "other-household-member-anyone-else-question",
-                                "title": "Does anyone else live at {{ metadata['display_address'] }}?",
+                                "title": "Does anyone else live at <em>{{ metadata['display_address'] }}</em>?",
                                 "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['other-household-member-first-name'], answers['other-household-member-last-name']], [answers['temp-household-member-first-name'], answers['temp-household-member-last-name']]] | format_repeating_summary }}",
                                 "answers": [{
                                     "type": "Radio",
@@ -243,7 +243,7 @@
                             "id": "other-household-member-name-block",
                             "questions": [{
                                 "id": "other-household-member-name-question",
-                                "title": "Who do you need to add to {{ metadata['display_address'] }}",
+                                "title": "Who do you need to add?",
                                 "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['other-household-member-first-name'], answers['other-household-member-last-name']], [answers['temp-household-member-first-name'], answers['temp-household-member-last-name']]] | format_repeating_summary }}",
                                 "type": "General",
                                 "answers": [{
@@ -347,7 +347,7 @@
                             "id": "temp-household-member-name-block",
                             "questions": [{
                                 "id": "temp-household-member-name-question",
-                                "title": "Who do you need to add to {{ metadata['display_address'] }}",
+                                "title": "Who do you need to add?",
                                 "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['other-household-member-first-name'], answers['other-household-member-last-name']], [answers['temp-household-member-first-name'], answers['temp-household-member-last-name']]] | format_repeating_summary }}",
                                 "type": "General",
                                 "answers": [{
@@ -418,7 +418,7 @@
                             "id": "move-out-block",
                             "questions": [{
                                 "id": "move-out-question",
-                                "title": "Did any of these people move into {{ metadata['display_address'] }} after 13 October 2019?",
+                                "title": "Did any of these people move into <em>{{ metadata['display_address'] }}</em> after 13 October 2019?",
                                 "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['other-household-member-first-name'], answers['other-household-member-last-name']], [answers['temp-household-member-first-name'], answers['temp-household-member-last-name']]] | format_repeating_summary }}",
                                 "type": "General",
                                 "answers": [{
@@ -540,7 +540,7 @@
                             "id": "household-check-block-no-primary",
                             "questions": [{
                                 "id": "household-check-question-no-primary",
-                                "title": "Does anyone else live at {{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}?",
+                                "title": "Does anyone else live at <em>{{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}</em>?",
                                 "type": "General",
                                 "answers": [{
                                     "id": "household-check-answer-no-primary",
@@ -564,7 +564,7 @@
                             "id": "household-member-name-block-no-primary",
                             "questions": [{
                                 "id": "household-member-name-question-no-primary",
-                                "title": "Who do you need to add to {{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}?",
+                                "title": "Who do you need to add?",
                                 "description": "{{ [[answers['household-member-first-name-no-primary'], answers['household-member-last-name-no-primary']]] | format_repeating_summary }}",
                                 "type": "General",
                                 "answers": [{
