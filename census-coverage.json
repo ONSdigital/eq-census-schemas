@@ -454,7 +454,7 @@
                                             "type": "TextField"
                                         },
                                         {
-                                            "id": "other-address-answer-postcode",
+                                            "id": "previous-address-answer-postcode",
                                             "label": "Postcode",
                                             "mandatory": false,
                                             "type": "TextField"
@@ -488,7 +488,7 @@
                             "id": "household-check-block-no-primary",
                             "questions": [{
                                 "id": "household-check-question-no-primary",
-                                "title": "Is there anyone else who classes {{ metadata['display_address'] }} as their main residence?",
+                                "title": "Does anyone else live at {{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}?",
                                 "type": "General",
                                 "answers": [{
                                     "id": "household-check-answer-no-primary",
@@ -497,7 +497,7 @@
                                     "options": [{
                                             "label": "Yes, I need to add another person",
                                             "value": "Yes",
-                                            "description": "Include other adults,children, babies, even if they are currently away for a continuous period of upto 6 months"
+                                            "description": "Include other adults, children, babies, even if they are currently away for a continuous period of up to 6 months"
                                         },
                                         {
                                             "label": "No, this is not the main residence of any other adults, children or babies",
@@ -512,7 +512,7 @@
                             "id": "household-member-name-block-no-primary",
                             "questions": [{
                                 "id": "household-member-name-question-no-primary",
-                                "title": "Who do you need to add to {{ metadata['display_address'] }}",
+                                "title": "Who do you need to add to {{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}?",
                                 "description": "{{ [[answers['household-member-first-name-no-primary'], answers['household-member-last-name-no-primary']]] | format_repeating_summary }}",
                                 "type": "General",
                                 "answers": [{
