@@ -2425,7 +2425,18 @@
                         "id": "num-visitors",
                         "questions": [{
                             "id": "num-visitors-question",
-                            "title": "How many visitors were staying with your household overnight at <em>{{metadata['display_address']}} on 13 October 2019?</em>?",
+                            "titles": [{
+                                            "value": "How many visitors were staying with your household overnight at <em>{{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}</em> on 13 October 2019?",
+                                            "when": [{
+                                                "id": "primary-household-member-address-check-answer",
+                                                "condition": "equals",
+                                                "value": "No"
+                                            }]
+                                        },
+                                        {
+                                            "value": "How many visitors were staying with your household overnight at <em>{{metadata['display_address']}}</em> on 13 October 2019?"
+                                        }
+                                    ],
                             "type": "General",
                             "answers": [{
                                 "id": "num-visitors-answer",
@@ -2492,19 +2503,21 @@
                         "id": "visitor-sex",
                         "questions": [{
                             "id": "visitor-sex-question",
-                            "title": "What is <em>{{answers['visitor-first-name'], answers['visitor-last-name'] | format_household_name_possessive }}</em> sex?",
+                            "title": "What is <em>{{answers['visitor-first-name'], answers['visitor-last-name'] }}'s</em> sex?",
                             "type": "General",
                             "answers": [{
                                 "id": "visitor-sex-answer",
                                 "mandatory": true,
-                                "options": [{
-                                        "label": "Male",
-                                        "value": "Male"
-                                    },
+                                "options": [
                                     {
                                         "label": "Female",
                                         "value": "Female"
+                                    },
+                                    {
+                                        "label": "Male",
+                                        "value": "Male"
                                     }
+                                    
                                 ],
                                 "type": "Radio"
                             }]
@@ -2520,7 +2533,7 @@
                         "id": "visitor-date-of-birth",
                         "questions": [{
                             "id": "visitor-date-of-birth-question",
-                            "title": "What is <em>{{answers['visitor-first-name']}} {{answers['visitor-last-name']}}</em> date of birth?",
+                            "title": "What is <em>{{answers['visitor-first-name']}} {{answers['visitor-last-name']}}'s</em> date of birth?",
                             "type": "MutuallyExclusive",
                             "mandatory": true,
                             "answers": [{
@@ -2566,7 +2579,7 @@
                         "id": "visitor-age",
                         "questions": [{
                             "id": "visitor-age-question",
-                            "title": "What was <em>{{answers['visitor-first-name']}} {{answers['visitor-last-name']}}</em> age on their last birthday?",
+                            "title": "What was <em>{{answers['visitor-first-name']}} {{answers['visitor-last-name']}}'s</em> age on their last birthday?",
                             "type": "General",
                             "answers": [{
                                     "id": "visitor-age-answer",
@@ -2669,7 +2682,7 @@
                         "id": "visitor-address",
                         "questions": [{
                             "id": "visitor-address-question",
-                            "title": "What is <em>{{answers['visitor-first-name']}} {{answers['visitor-last-name']}}</em> usual UK address",
+                            "title": "What is <em>{{answers['visitor-first-name']}} {{answers['visitor-last-name']}}'s11</em> usual UK address",
                             "type": "General",
                             "answers": [{
                                     "id": "visitor-address-answer-building",
