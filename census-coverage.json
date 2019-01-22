@@ -648,6 +648,18 @@
                         "questions": [{
                             "id": "type-of-accommodation-question",
                             "title": "What kind of accommodation is <em>{{metadata['display_address']}}</em>?",
+                            "titles": [{
+                                            "value": "What kind of accommodation is <em>{{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}</em>?",
+                                            "when": [{
+                                                "id": "primary-household-member-address-check-answer",
+                                                "condition": "equals",
+                                                "value": "No"
+                                            }]
+                                        },
+                                        {
+                                            "value": "What kind of accommodation is <em>{{metadata['display_address']}}</em>?"
+                                        }
+                                    ],
                             "type": "General",
                             "answers": [{
                                 "id": "type-of-accommodation-answer",
@@ -797,7 +809,18 @@
                         "id": "own-or-rent",
                         "questions": [{
                             "id": "own-or-rent-question",
-                            "title": "Does the householder own or rent <em>{{metadata['display_address']}}</em>?",
+                            "titles": [{
+                                            "value": "Did the householder own or rent <em>{{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}</em>, including the kitchen, bathroom and toilet, behind a door that only this household can use?",
+                                            "when": [{
+                                                "id": "primary-household-member-address-check-answer",
+                                                "condition": "equals",
+                                                "value": "No"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Does the householder own or rent <em>{{metadata['display_address']}}</em>, including the kitchen, bathroom and toilet, behind a door that only this household can use?"
+                                        }
+                                    ],
                             "type": "General",
                             "guidance": {
                                 "content": [{
@@ -875,8 +898,8 @@
                                         "value": "Housing association, housing co-operative, charitable trust, registered social landlord"
                                     },
                                     {
-                                        "label": "Council (local authority)",
-                                        "value": "Council (local authority)"
+                                        "label": "Council or local authority",
+                                        "value": "Council or local authority"
                                     },
                                     {
                                         "label": "Private landlord or letting agency",
@@ -997,7 +1020,7 @@
                         "id": "other-living-accommodation",
                         "questions": [{
                             "id": "other-living-accommodation-question",
-                            "title": "Is there any other living accomodation at  <em>{{metadata['display_address']}}</em>?",
+                            "title": "Is there any other living accommodation at <em>{{metadata['display_address']}}</em>?",
                             "description": "For example bedsits, annexes, etc.",
                             "type": "General",
                             "answers": [{
@@ -1060,18 +1083,18 @@
                         "id": "proxy-check",
                         "questions": [{
                             "id": "proxy-check-question",
-                            "title": "Are they answering the questions on behalf of themself or for someone else?",
+                            "title": "Are they answering the questions for themselves or on someone else's behalf?",
                             "type": "General",
                             "answers": [{
                                 "id": "proxy-check-answer",
                                 "mandatory": false,
                                 "type": "Radio",
                                 "options": [{
-                                        "label": "Yes, they are answering for themself",
+                                        "label": "Yes, they are answering for themselves",
                                         "value": "no proxy"
                                     },
                                     {
-                                        "label": "No, they are answering on their behalf",
+                                        "label": "No, they are answering on someone else's behalf",
                                         "value": "proxy"
                                     }
                                 ]
@@ -1105,13 +1128,13 @@
                                 "id": "sex-answer",
                                 "mandatory": true,
                                 "type": "Radio",
-                                "options": [{
-                                        "label": "Male",
-                                        "value": "Male"
-                                    },
+                                "options": [
                                     {
                                         "label": "Female",
                                         "value": "Female"
+                                    },{
+                                        "label": "Male",
+                                        "value": "Male"
                                     }
                                 ]
                             }]
@@ -1316,7 +1339,7 @@
                         "questions": [{
                             "id": "born-uk-question",
                             "titles": [{
-                                    "value": "Was <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name_possessive}}</em> born in the UK ?",
+                                    "value": "Was <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name}}</em> born in the UK ?",
                                     "when": [{
                                         "id": "proxy-check-answer",
                                         "condition": "equals",
@@ -1389,7 +1412,7 @@
                                     }]
                                 },
                                 {
-                                    "value": "On 13 October 2019, what was you legal marital or registered civil partnership status?"
+                                    "value": "On 13 October 2019, what was your legal marital or registered civil partnership status?"
                                 }
                             ],
                             "type": "General",
@@ -1430,62 +1453,13 @@
                                         "value": "Widowed"
                                     },
                                     {
-                                        "label": "Surviving member of a civil partnership",
-                                        "value": "Surviving member of a civil partnership"
+                                        "label": "Surviving member from a civil partnership",
+                                        "value": "Surviving member from a civil partnership"
                                     }
                                 ]
                             }]
                         }],
-                        "routing_rules": [{
-                                "goto": {
-                                    "block": "in-education-over16",
-                                    "when": [{
-                                        "id": "marital-status-answer",
-                                        "condition": "equals",
-                                        "value": "Never married and never registered a civil partnership"
-                                    }]
-                                }
-                            },
-                            {
-                                "goto": {
-                                    "block": "current-marriage-status",
-                                    "when": [{
-                                        "id": "marital-status-answer",
-                                        "condition": "equals",
-                                        "value": "Married"
-                                    }]
-                                }
-                            },
-                            {
-                                "goto": {
-                                    "block": "previous-marriage-status",
-                                    "when": [{
-                                        "id": "marital-status-answer",
-                                        "condition": "equals",
-                                        "value": "Divorced"
-                                    }]
-                                }
-                            },
-                            {
-                                "goto": {
-                                    "block": "previous-marriage-status",
-                                    "when": [{
-                                        "id": "marital-status-answer",
-                                        "condition": "equals",
-                                        "value": "Widowed"
-                                    }]
-                                }
-                            },
-                            {
-                                "goto": {
-                                    "block": "previous-marriage-status",
-                                    "when": [{
-                                        "id": "marital-status-answer",
-                                        "condition": "equals",
-                                        "value": "Separated, but still legally married"
-                                    }]
-                                }
-                            },
+                        "routing_rules": [
                             {
                                 "goto": {
                                     "block": "in-education-over16"
@@ -1495,89 +1469,11 @@
                     },
                     {
                         "type": "Question",
-                        "id": "current-marriage-status",
-                        "questions": [{
-                            "id": "currrent-marriage-status-question",
-                            "titles": [{
-                                    "value": "Who is <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name_possessive}}</em> legal marriage to?",
-                                    "when": [{
-                                        "id": "proxy-check-answer",
-                                        "condition": "equals",
-                                        "value": "proxy"
-                                    }]
-                                },
-                                {
-                                    "value": "Who is your legal marriage to?"
-                                }
-                            ],
-                            "type": "General",
-                            "answers": [{
-                                "id": "current-marriage-status-answer",
-                                "mandatory": true,
-                                "options": [{
-                                        "label": "Someone of the opposite sex",
-                                        "value": "Someone of the opposite sex"
-                                    },
-                                    {
-                                        "label": "Someone of the same sex",
-                                        "value": "Someone of the same sex"
-                                    }
-                                ],
-                                "type": "Radio"
-                            }]
-                        }],
-                        "routing_rules": [{
-                            "goto": {
-                                "block": "in-education-over16"
-                            }
-                        }]
-                    },
-                    {
-                        "type": "Question",
-                        "id": "previous-marriage-status",
-                        "questions": [{
-                            "id": "previous-marriage-status-question",
-                            "titles": [{
-                                    "value": "Who was <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name_possessive}}</em> legal marriage to?",
-                                    "when": [{
-                                        "id": "proxy-check-answer",
-                                        "condition": "equals",
-                                        "value": "proxy"
-                                    }]
-                                },
-                                {
-                                    "value": "Who was your legal marriage to?"
-                                }
-                            ],
-                            "type": "General",
-                            "answers": [{
-                                "id": "previous-marriage-status-answer",
-                                "mandatory": true,
-                                "options": [{
-                                        "label": "Someone of the opposite sex",
-                                        "value": "Someone of the opposite sex"
-                                    },
-                                    {
-                                        "label": "Someone of the same sex",
-                                        "value": "Someone of the same sex"
-                                    }
-                                ],
-                                "type": "Radio"
-                            }]
-                        }],
-                        "routing_rules": [{
-                            "goto": {
-                                "block": "in-education-over16"
-                            }
-                        }]
-                    },
-                    {
-                        "type": "Question",
                         "id": "in-education",
                         "questions": [{
                             "id": "in-education-question",
                             "titles": [{
-                                    "value": "On the 13 October 2019, was <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name}}</em> a schoolchild or student in full-time education?",
+                                    "value": "On 13 October 2019, was <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name}}</em> a schoolchild or student in full-time education?",
                                     "when": [{
                                         "id": "proxy-check-answer",
                                         "condition": "equals",
@@ -1585,7 +1481,7 @@
                                     }]
                                 },
                                 {
-                                    "value": "On the 13 October 2019, were you a schoolchild or student in full-time education?"
+                                    "value": "On 13 October 2019, were you a schoolchild or student in full-time education?"
                                 }
                             ],
                             "type": "General",
@@ -1627,7 +1523,7 @@
                         "questions": [{
                             "id": "in-education-over16-question",
                             "titles": [{
-                                    "value": "On the 13 October 2019, was <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name}}</em> a student in full-time education?",
+                                    "value": "On 13 October 2019, was <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name}}</em> a student in full-time education?",
                                     "when": [{
                                         "id": "proxy-check-answer",
                                         "condition": "equals",
@@ -1635,7 +1531,7 @@
                                     }]
                                 },
                                 {
-                                    "value": "On the 13 October 2019, were you a student in full-time education?"
+                                    "value": "On 13 October 2019, were you a student in full-time education?"
                                 }
                             ],
                             "type": "General",
@@ -1751,7 +1647,7 @@
                                     {
                                         "label": "Mixed or Multiple ethnic groups",
                                         "value": "Mixed or Multiple ethnic groups",
-                                        "description": "Includes White and Black Caribbean, White and Black African, White and Asian or any other Mixed ethnic group"
+                                        "description": "Includes White and Black Caribbean, White and Black African, White and Asian or any other Mixed or Multiple background"
                                     },
                                     {
                                         "label": "Asian or Asian British",
@@ -1759,9 +1655,9 @@
                                         "description": "Includes Indian, Pakistani, Bangladeshi, Chinese or any other Asian background"
                                     },
                                     {
-                                        "label": "Black, African, Caribbean or Black British",
-                                        "value": "Black, African, Caribbean or Black British",
-                                        "description": "Includes African, Caribbean or any other Black background"
+                                        "label": "Black, Black British, Caribbean or African",
+                                        "value": "Black, Black British, Caribbean or African",
+                                        "description": "Includes Black British, Caribbean or African or any other Black background"
                                     },
                                     {
                                         "label": "Other",
@@ -1807,7 +1703,7 @@
                                     "when": [{
                                         "id": "ethnic-group-answer",
                                         "condition": "equals",
-                                        "value": "Black, African, Caribbean or Black British"
+                                        "value": "Black, Black British, Caribbean or African"
                                     }]
                                 }
                             },
@@ -1860,6 +1756,10 @@
                                     {
                                         "label": "Gypsy or Irish Traveller",
                                         "value": "Gypsy or Irish Traveller"
+                                    },
+                                    {
+                                        "label": "Roma",
+                                        "value": "Roma"
                                     },
                                     {
                                         "label": "Any other White background",
@@ -1915,7 +1815,7 @@
                                         "value": "White and Asian"
                                     },
                                     {
-                                        "label": "Any other Mixed or Multiple ethnic background",
+                                        "label": "Any other Mixed or Multiple background",
                                         "value": "Other",
                                         "detail_answer": {
                                             "id": "mixed-ethnic-group-answer-other",
@@ -2005,23 +1905,30 @@
                                     }]
                                 },
                                 {
-                                    "value": "Which one best describes your Black, African, Caribbean or Black British ethnic group or background?"
+                                    "value": "Which one best describes your Black, Black British, Caribbean or African ethnic group or background?"
                                 }
                             ],
                             "type": "General",
                             "answers": [{
                                 "id": "black-ethnic-group-answer",
                                 "mandatory": false,
-                                "options": [{
-                                        "label": "African",
-                                        "value": "African"
-                                    },
+                                "options": [
                                     {
                                         "label": "Caribbean",
                                         "value": "Caribbean"
                                     },
                                     {
-                                        "label": "Any other Black, African or Caribbean background",
+                                        "label": "African",
+                                        "value": "African",
+                                        "detail_answer": {
+                                            "id": "black-ethnic-group-answer-other",
+                                            "type": "TextField",
+                                            "mandatory": false,
+                                            "label": "Please enter African background"
+                                        }
+                                    },
+                                    {
+                                        "label": "Any other Black, Black British or Caribbean background",
                                         "value": "Other",
                                         "detail_answer": {
                                             "id": "black-ethnic-group-answer-other",
@@ -2119,7 +2026,7 @@
                                 }
                             ],
                             "type": "General",
-                            "description": "If they had no usual address one year ago, state the address where they were staying",
+                            "description": "If they had no usual address one year ago, state the address where you were staying",
                             "answers": [{
                                 "id": "past-usual-address-answer",
                                 "mandatory": true,
@@ -2355,7 +2262,7 @@
                                     }]
                                 },
                                 {
-                                    "value": "Is there another address where you may have been included on a Census questionanire because you were staying overnight there on 13 October 2019?"
+                                    "value": "Is there another address where you may have been included on a Census questionanire because you were a usual resident, or staying overnight there on 13 October 2019?"
                                 }
                             ],
                             "type": "MutuallyExclusive",
@@ -2364,12 +2271,12 @@
                                     "id": "elsewhere-address-check-answer",
                                     "mandatory": false,
                                     "options": [{
-                                            "label": "Previous home (moved since 13 October 2019",
+                                            "label": "Previous home (moved since 13 October 2019)",
                                             "value": "Previous home"
                                         },
                                          {
-                                            "label": "Student's family address",
-                                            "value": "Student's family address"
+                                            "label": "Student's home address",
+                                            "value": "Student's home address"
                                         },
                                         {
                                             "label": "Student's term time address",
@@ -2388,20 +2295,17 @@
                                             "value": "Another parent or guardian's address"
                                         },
                                         {
+                                            "label": "Partner's address",
+                                            "value": "Partner's address"
+                                        },
+                                        {
                                             "label": "Holiday in the UK",
                                             "value": "Holiday in the UK"
                                         },
                                         {
-                                            "label": "A famliy or friend's address",
-                                            "value": "A famliy or friend's address"
-                                        },
-                                        {
-                                            "label": "A hotel or second home",
-                                            "value": "A hotel or second home"
-                                        },
-                                        {
                                             "label": "Other",
-                                            "value": "Other"
+                                            "value": "Other",
+                                            "description": "Including a friend's address, a hotel or second home"
                                         }
                                     ],
                                     "type": "Checkbox"
@@ -2447,7 +2351,7 @@
                                     }]
                                 },
                                 {
-                                    "value": "What is the other address you may have been included on a Census questionnaire"
+                                    "value": "What is the other address where you may have been included on a Census questionnaire"
                                 }
                             ],
                             "type": "General",
@@ -2508,12 +2412,12 @@
                         "type": "Interstitial",
                         "id": "visitors-block",
                         "title": "Visitors",
-                        "description": "In this section, we’re going to ask you about ay visitors you had staying on 13 Ocotober 2019.",
+                        "description": "In this section, we’re going to ask you about any visitors you had staying on 13 October 2019.",
                         "content": [{
                             "title": "Information you need",
                             "list": [
                                 "Number of visitors",
-                                "Name, Sex and address of each visitor staying"
+                                "Name, sex, date of birth or age and address of each visitor staying"
                             ]
                         }]
                     },
@@ -2562,7 +2466,7 @@
                         "id": "visitors-name",
                         "questions": [{
                             "id": "visitors-name-question",
-                            "title": "What is the name of the visitor?",
+                            "title": "What is the name of the visitor 1?",
                             "type": "General",
                             "answers": [{
                                     "id": "visitor-first-name",
@@ -2589,7 +2493,7 @@
                         "id": "visitor-sex",
                         "questions": [{
                             "id": "visitor-sex-question",
-                            "title": "What is <em>{{answers['visitor-first-name']}} {{answers['visitor-last-name']}}</em> sex?",
+                            "title": "What is <em>{{answers['visitor-first-name'], answers['visitor-last-name'] | format_household_name_possessive }}</em> sex?",
                             "type": "General",
                             "answers": [{
                                 "id": "visitor-sex-answer",
