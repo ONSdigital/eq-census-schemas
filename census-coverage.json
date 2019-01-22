@@ -168,7 +168,33 @@
                             }]
                         }
                     }],
-                    "blocks": [{
+                    "blocks": [
+                        {
+                            "type": "Question",
+                            "id": "count-other-household-member-anyone-else-block",
+                            "questions": [{
+                                "type": "General",
+                                "id": "count-other-household-member-anyone-else-question",
+                                "title": "How many people usually lived at {{ metadata['display_address'] }} on Sunday 13 October 2019?",
+                                 "guidance": {
+                                        "content": [
+                                            {
+                                                "description": "Include",
+                                                "list": ["Partners", "Children", "Babies born on or before Sunday 13 October 2019", "Housemates", "Tenants and lodgers", "Students and schoolchildren who live away from home during term time"]
+                                            }, {
+                                                "description": "Exclude",
+                                                "list": ["People who have moved in after Sunday 13 October 2019"]
+                                            }
+                                        ]
+                                    },
+                                "answers": [{
+                                    "type": "Number",
+                                    "id": "count-other-household-member-anyone-else",
+                                    "mandatory": true,
+                                    "label": "Number of people who usually lived here on Sunday 13 Ocobter 2019"
+                                }]
+                            }]
+                        },{
                             "type": "Question",
                             "id": "other-household-member-anyone-else-block",
                             "questions": [{
@@ -405,7 +431,7 @@
                              "answers": [
                                         {
                                             "id": "previous-address-answer-building",
-                                            "label": "Building",
+                                            "label": "House name or number",
                                             "mandatory": true,
                                             "type": "TextField"
                                         },
