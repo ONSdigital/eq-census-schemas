@@ -161,7 +161,7 @@
                                 },
                                 {
                                     "goto": { 
-                                        "group": "other-household-member-group"
+                                        "group": "address-type-group-no-primary"
                                     }
                                 }
                             ]
