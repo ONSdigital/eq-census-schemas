@@ -143,8 +143,8 @@
                     "blocks": [{
                         "type": "Interstitial",
                         "id": "address-confirmation-block",
-                        "title": "Can I confirm your address?",
-                        "description": "{{ format_address_list ([metadata['address_line1'], metadata['address_line2'], metadata['locality'], metadata['town_name'], metadata['postcode']]) }}"
+                        "title": "Can I confirm your address?", 
+                        "description": "{{ format_address_list ([answers['address_line1'], answers['address_line2'], answers['town-city'], answers['county'], answers['postcode']]) }}"
                     }]
                 },
                 {
@@ -204,7 +204,7 @@
                         "id": "address-check-block",
                         "questions": [{
                             "id": "address-check-question",
-                            "title": "Were you, or anybody in your current household usually living at {{ metadata['display_address'] }} on 13 October 2019?",
+                            "title": "Were you, or anybody in your current household usually living at {{ answers['address-line-1'] }} {{ answers['address-line-2'] }} on 13 October 2019?",
                             "type": "General",
                             "answers": [{
                                 "id": "primary-household-member-address-check-answer",
@@ -246,7 +246,7 @@
                             "questions": [{
                                 "type": "General",
                                 "id": "count-other-household-member-anyone-else-question",
-                                "title": "How many people usually lived at {{ metadata['display_address'] }} on Sunday 13 October 2019?",
+                                "title": "How many people usually lived at  {{ answers['address-line-1'] }} {{ answers['address-line-2'] }} on Sunday 13 October 2019?",
                                  "guidance": {
                                         "content": [
                                             {
@@ -294,7 +294,7 @@
                             "questions": [{
                                 "type": "General",
                                 "id": "other-household-member-anyone-else-question",
-                                "title": "Does anyone else live at <em>{{ metadata['display_address'] }}</em>?",
+                                "title": "Does anyone else live at <em> {{ answers['address-line-1'] }} {{ answers['address-line-2'] }}</em>?",
                                 "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['other-household-member-first-name'], answers['other-household-member-last-name']], [answers['temp-household-member-first-name'], answers['temp-household-member-last-name']]] | format_repeating_summary }}",
                                 "answers": [{
                                     "type": "Radio",
@@ -470,7 +470,7 @@
                             "id": "share-facilities-block",
                             "questions": [{
                                 "id": "share-facilities-question",
-                                "title": "Thinking about the people in your household at {{ metadata['display_address'] }} on 13 October 2019, were you all sharing cooking facilities and a living room or sitting room or dining area?",
+                                "title": "Thinking about the people in your household at  {{ answers['address-line-1'] }} {{ answers['address-line-2'] }} on 13 October 2019, were you all sharing cooking facilities and a living room or sitting room or dining area?",
                                 "type": "General",
                                 "answers": [{
                                     "type": "Radio",
@@ -493,7 +493,7 @@
                             "id": "move-out-block",
                             "questions": [{
                                 "id": "move-out-question",
-                                "title": "Did any of these people move into <em>{{ metadata['display_address'] }}</em> after 13 October 2019?",
+                                "title": "Did any of these people move into <em>{{ answers['address-line-1'] }} {{ answers['address-line-2'] }}</em> after 13 October 2019?",
                                 "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['other-household-member-first-name'], answers['other-household-member-last-name']], [answers['temp-household-member-first-name'], answers['temp-household-member-last-name']]] | format_repeating_summary }}",
                                 "type": "General",
                                 "answers": [{
@@ -748,7 +748,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "What kind of accommodation is <em>{{metadata['display_address']}}</em>?"
+                                            "value": "What kind of accommodation is <em>{{ answers['address-line-1'] }} {{ answers['address-line-2'] }}</em>?"
                                         }
                                     ],
                             "type": "General",
@@ -875,7 +875,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "Are all the rooms at <em>{{metadata['display_address']}}</em>, including the kitchen, bathroom and toilet, behind a door that only this household can use?"
+                                            "value": "Are all the rooms at <em>{{ answers['address-line-1'] }} {{ answers['address-line-2'] }}</em>, including the kitchen, bathroom and toilet, behind a door that only this household can use?"
                                         }
                                     ],
                             "type": "General",
@@ -909,7 +909,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "Does the householder own or rent <em>{{metadata['display_address']}}</em>, including the kitchen, bathroom and toilet, behind a door that only this household can use?"
+                                            "value": "Does the householder own or rent <em>{{ answers['address-line-1'] }} {{ answers['address-line-2'] }}</em>, including the kitchen, bathroom and toilet, behind a door that only this household can use?"
                                         }
                                     ],
                             "type": "General",
@@ -1111,7 +1111,7 @@
                         "id": "other-living-accommodation",
                         "questions": [{
                             "id": "other-living-accommodation-question",
-                            "title": "Is there any other living accommodation at <em>{{metadata['display_address']}}</em>?",
+                            "title": "Is there any other living accommodation at <em>{{ answers['address-line-1'] }} {{ answers['address-line-2'] }}</em>?",
                             "description": "For example bedsits, annexes, etc.",
                             "type": "General",
                             "answers": [{
@@ -1680,7 +1680,7 @@
                                 "id": "term-time-location-answer",
                                 "mandatory": true,
                                 "options": [{
-                                        "label": "{{ metadata['display_address'] }}",
+                                        "label": "{{ answers['address-line-1'] }} {{ answers['address-line-2'] }}",
                                         "value": "household-address"
                                     },
                                     {
@@ -2122,7 +2122,7 @@
                                 "id": "past-usual-address-answer",
                                 "mandatory": true,
                                 "options": [{
-                                        "label": "{{ metadata['display_address'] }}",
+                                        "label": "{{ answers['address-line-1'] }} {{ answers['address-line-2'] }}",
                                         "value": "householdaddress"
                                     },
                                     {
@@ -2542,7 +2542,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "How many visitors were staying with your household overnight at <em>{{metadata['display_address']}}</em> on 13 October 2019?"
+                                            "value": "How many visitors were staying with your household overnight at <em>{{ answers['address-line-1'] }} {{ answers['address-line-2'] }}</em> on 13 October 2019?"
                                         }
                                     ],
                             "type": "General",
