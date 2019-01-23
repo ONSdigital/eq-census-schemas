@@ -140,7 +140,7 @@
                         "type": "Interstitial",
                         "id": "address-confirmation-block",
                         "title": "Can I confirm your address?", 
-                        "description": "{{ format_address_list ([answers['address_line1'], answers['address_line2'], answers['town-city'], answers['county'], answers['postcode']]) }}"
+                        "description": "{{ format_address_list ([answers['address_line-1'], answers['address_line-2'], answers['town-city'], answers['county'], answers['postcode']]) }}"
                     }]
                 },
                 {
