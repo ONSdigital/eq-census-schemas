@@ -58,10 +58,6 @@
                     "title": "What is your address?",
                     "blocks": [
                         {
-                            "type": "Introduction",
-                            "id": "introduction"
-                        },
-                        {
                             "type": "Question",
                             "id": "what-is-your-address",
                             "questions": [
