@@ -149,11 +149,10 @@
                     "blocks": [{
                         "type": "Interstitial",
                         "id": "household-definition-block",
-                        "title": "Household section",
                         "description": "All the questions are about the people in your household on Sunday 13 October 2019.",
                         "content": [{
                             "title": "What is a Household?",
-                            "description": "A household, is one person living alone or a group of people (not necessarily related) living at the same address who share cooking facilities and share a living room or sitting room or dining area."
+                            "description": "A household is one person living alone or a group of people (not necessarily related) living at the same address who share cooking facilities and share a living room or sitting room or dining area."
                         }]
                     }]
                 },
@@ -373,22 +372,22 @@
                             "questions": [{
                                 "type": "General",
                                 "id": "temp-household-member-anyone-else-question",
-                                "title": "Apart from the people already included, is there anyone else who is temporarily away or staying you need to add?",
+                                "title": "Apart from the people already included, is there anyone else who was temporarily away or staying you need to add?",
                                 "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['other-household-member-first-name'], answers['other-household-member-last-name']], [answers['temp-household-member-first-name'], answers['temp-household-member-last-name']]] | format_repeating_summary }}",
                                 "guidance": {
                                     "content": [
                                         {
                                              "title": "Include people who are temporarily away",
                                                 "list": [
-                                                     "People who work away from home within the UK", 
-                                                     "Members of the armed forces", 
-                                                     "People who are away from the UK for less than 12 months", 
-                                                     "Other people who usually live here but are temporarily away"
+                                                     "People who work away from home within the UK, if the household's address on 13 October 2019 was their permanent or family home", 
+                                                     "Members of the armed forces, the household's address on 13 October 2019 was their permanent or family home", 
+                                                     "People who, on 13 October 2019, were temporarily outside the UK for less than 12 months", 
+                                                     "Other people who usually lived with your household on 13 October 2019, including anyone temporarily away from home"
                                                ]
                                           }, {
                                                 "title": "Include people who are temporarily staying",
                                                 "list": [
-                                                    "People staying temporarily who usually live in the UK but do not have another UK address",
+                                                    "People staying temporarily who usually lived in the UK but do not have another UK address, for example, relatives, friends",
                                                     "People who usually live outside the UK who are staying in the UK for 3 months or more"
                                                  ]
                                            },
@@ -522,13 +521,15 @@
                                                 "title": "Relationships include",
                                                 "list": [
                                                     "Husband or wife", 
-                                                    "Partner or civil partner", 
+                                                    "Legally registered civil partner", 
+                                                    "Partner",
                                                     "Son or Daughter", 
                                                     "Brother or Sister", 
                                                     "Mother or father",
                                                     "Step child or step brother or step sister", 
                                                     "Grandparent",
-                                                    "Grandchild"
+                                                    "Grandchild",
+                                                    "Other relation exclulding foster child"
                                                   ]
                                             }
                                         ]
@@ -628,7 +629,7 @@
                             "id": "household-check-block-no-primary",
                             "questions": [{
                                 "id": "household-check-question-no-primary",
-                                "title": "Does anyone else live at <em>{{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}</em>?",
+                                "title": "Did anyone else live at <em>{{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}</em>?",
                                 "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['household-member-first-name-no-primary'], answers['household-member-last-name-no-primary']]] | format_repeating_summary }}",
                                 "type": "General",
                                 "answers": [{
@@ -638,10 +639,10 @@
                                     "options": [{
                                             "label": "Yes, I need to add another person",
                                             "value": "Yes",
-                                            "description": "Include other adults, children, babies, even if they are currently away for a continuous period of up to 6 months"
+                                            "description": "Include partners, children, babies born on or after 13 October 2019, housemates, tenants and schoolchildren who live away from home during term time"
                                         },
                                         {
-                                            "label": "No, this is not the main residence of any other adults, children or babies",
+                                            "label": "No, this is everyone",
                                             "value": "No"
                                         }
                                     ]
@@ -1744,7 +1745,7 @@
                                     {
                                         "label": "Black, Black British, Caribbean or African",
                                         "value": "Black, Black British, Caribbean or African",
-                                        "description": "Includes Black British, Caribbean or African or any other Black background"
+                                        "description": "Includes Black British, Caribbean, African or any other Black background"
                                     },
                                     {
                                         "label": "Other",
@@ -1984,7 +1985,7 @@
                         "questions": [{
                             "id": "black-ethnic-group-question",
                             "titles": [{
-                                    "value": "Which one best describes <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name_possessive}}</em> Black, African, Caribbean or Black British ethnic group or background?",
+                                    "value": "Which one best describes <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name_possessive}}</em> Black, Black British, Caribbean or African ethnic group or background?",
                                     "when": [{
                                         "id": "proxy-check-answer",
                                         "condition": "equals",
@@ -2073,7 +2074,27 @@
                                 "type": "Radio"
                             }]
                         }],
-                        "routing_rules": [{
+                        "routing_rules": [
+                            {
+                                "goto": {
+                                    "block": "past-usual-address-proxy",
+                                    "when": [{
+                                        "id": "date-of-birth-answer",
+                                        "condition": "less than",
+                                        "date_comparison": {
+                                            "value": "now",
+                                            "offset_by": {
+                                                "years": -1
+                                            }
+                                        }
+                                    },{
+                                        "id": "proxy-check-answer",
+                                        "condition": "equals",
+                                        "value": "proxy"
+                                    }
+                                    ]
+                                }
+                            },{
                                 "goto": {
                                     "block": "past-usual-address",
                                     "when": [{
@@ -2097,6 +2118,61 @@
                     },
                     {
                         "type": "Question",
+                        "id": "past-usual-address-proxy",
+                        "questions": [{
+                            "id": "past-usual-address-question-proxy",
+                            "titles": [{
+                                    "value": "One year ago, on 13 October 2018, what was <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name_possessive}}</em> usual address?",
+                                    "when": [{
+                                        "id": "proxy-check-answer",
+                                        "condition": "equals",
+                                        "value": "proxy"
+                                    }]
+                                },
+                                {
+                                    "value": "One year ago, on 13 October 2018, what was your usual address?"
+                                }
+                            ],
+                            "type": "General",
+                            "description": "If they had no usual address one year ago, state the address where they were staying",
+                            "answers": [{
+                                "id": "past-usual-address-answer-proxy",
+                                "mandatory": true,
+                                "options": [{
+                                        "label": "{{ answers['address-line-1'] }} {{ answers['address-line-2'] }}",
+                                        "value": "householdaddress"
+                                    },
+                                    {
+                                        "label": "Another address in the UK",
+                                        "value": "Another address in the UK"
+                                    },
+                                    {
+                                        "label": "An address outside the UK",
+                                        "value": "Other"
+                                    }
+                                ],
+                                "type": "Radio"
+                            }]
+                        }],
+                        "routing_rules": [{
+                                "goto": {
+                                    "block": "length-of-stay",
+                                    "when": [{
+                                        "id": "past-usual-address-answer",
+                                        "condition": "equals",
+                                        "value": "Other"
+                                    }]
+                                }
+                            },
+                            {
+                                "goto": {
+                                    "block": "employment-status"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Question",
                         "id": "past-usual-address",
                         "questions": [{
                             "id": "past-usual-address-question",
@@ -2113,7 +2189,7 @@
                                 }
                             ],
                             "type": "General",
-                            "description": "If they had no usual address one year ago, state the address where you were staying",
+                            "description": "If you had no usual address one year ago, state the address where you were staying",
                             "answers": [{
                                 "id": "past-usual-address-answer",
                                 "mandatory": true,
