@@ -4576,7 +4576,7 @@
                                                     "value": "Prefer not to say"
                                                 }
                                             ],
-                                            "type": "Radio"
+                                            "type": "Checkbox"
                                         }
                                     ]
                                 }
