@@ -5712,7 +5712,7 @@
                                 {
                                     "id": "armed-forces-question",
                                     "titles": [{
-                                            "value": "Has <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> ever served in the UK Armed Forces?",
+                                            "value": "Has <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> previously served in the UK Armed Forces?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -5720,16 +5720,10 @@
                                             }]
                                         },
                                         {
-                                            "value": "Have you ever served in the UK Armed Forces?"
+                                            "value": "Have you previously served in the UK Armed Forces?"
                                         }
                                     ],
-                                    "guidance": {
-                                        "content": [
-                                            {
-                                                "title": "Include National Service"
-                                            }
-                                        ]
-                                    },
+                                    "description": "Current serving members should select 'No'",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -5747,10 +5741,6 @@
                                                 {
                                                     "label": "No",
                                                     "value": "No"
-                                                },
-                                                {
-                                                    "label": "Yes, currently serving",
-                                                    "value": "Yes, currently serving"
                                                 },
                                                 {
                                                     "label": "Yes, previously served in Regular Armed Forces",
