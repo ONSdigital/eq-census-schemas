@@ -7357,7 +7357,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "What is the main activity of your organisation, business or freelance work"
+                                            "value": "What is the main activity of your organisation, business or freelance work?"
                                         }
                                     ],
                                     "description": "For example clothing retail, general hospital, primary education, food wholesale, civil service DWP, local government housing.",
@@ -7401,7 +7401,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "What was the main activity of your organisation, business or freelance work"
+                                            "value": "What was the main activity of your organisation, business or freelance work?"
                                         }
                                     ],
                                     "description": "For example clothing retail, general hospital, primary education, food wholesale, civil service DWP, local government housing.",
