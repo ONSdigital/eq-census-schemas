@@ -1743,7 +1743,7 @@
                                             "options": [
                                                 {
                                                     "label": "Armed forces base address",
-                                                    "value": "Armed forces base address"
+                                                    "value": "Armed forces base address" 
                                                 },
                                                 {
                                                     "label": "Another address when working away from home",
@@ -4355,10 +4355,12 @@
                                     "id": "sexual-identity-question",
                                     "title": "Which of the following best describes your sexual orientation?",
                                     "type": "General",
+                                    "description": "This question is voluntary",
                                     "answers": [
                                         {
                                             "id": "sexual-identity-answer",
                                             "mandatory": true,
+                                            "label": "Select one option only",
                                             "options": [
                                                 {
                                                     "label": "Straight or Heterosexual",
@@ -4387,7 +4389,7 @@
                                                     "value": "Prefer not to say"
                                                 }
                                             ],
-                                            "type": "Radio"
+                                            "type": "Checkbox"
                                         }
                                     ]
                                 }
@@ -4445,10 +4447,12 @@
                                     "id": "sexual-identity-question-proxy",
                                     "title": "Which of the following best describes <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> sexual orientation?",
                                     "type": "General",
+                                    "description": "This question is voluntary",
                                     "answers": [
                                         {
                                             "id": "sexual-identity-answer-proxy",
                                             "mandatory": true,
+                                            "label": "Select one option only",
                                             "options": [
                                                 {
                                                     "label": "Straight or Heterosexual",
