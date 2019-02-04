@@ -4550,10 +4550,12 @@
                                         }
                                     ],
                                     "type": "General",
+                                     "description": "This question is voluntary",
                                      "answers": [
                                         {
                                             "id": "birth-gender-answer",
                                             "mandatory": true,
+                                            "label": "Select one option only",
                                             "options": [
                                                 {
                                                     "label": "Yes",
