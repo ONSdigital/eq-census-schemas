@@ -4294,7 +4294,7 @@
                                                         "id": "black-ethnic-group-answer-other",
                                                         "type": "TextField",
                                                         "mandatory": false,
-                                                        "label": "Please specify any Black, Black British, or Caribbean background"
+                                                        "label": "Please specify Black, Black British, or Caribbean background"
                                                     }
                                                 }
                                             ],
