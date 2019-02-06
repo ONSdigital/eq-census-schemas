@@ -1311,7 +1311,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "in-education"
+                                        "block": "another-address"
                                     }
                                 }
                             ]
@@ -1743,6 +1743,27 @@
                             "routing_rules": [
                                 {
                                     "goto": {
+                                        "block": "in-education",
+                                        "when": [
+                                            {
+                                                "id": "another-address-answer",
+                                                "condition": "equals",
+                                                "value": "No"
+                                            },{
+                                                "id": "date-of-birth-answer",
+                                                "condition": "less than",
+                                                "date_comparison": {
+                                                    "value": "now",
+                                                    "offset_by": {
+                                                        "years": -16
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
                                         "block": "in-education-over16",
                                         "when": [
                                             {
@@ -1773,17 +1794,6 @@
                                                 "id": "another-address-answer",
                                                 "condition": "equals",
                                                 "value": "Other"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "in-education-over16",
-                                        "when": [
-                                            {
-                                                "id": "another-address-answer",
-                                                "condition": "not set"
                                             }
                                         ]
                                     }
@@ -4523,10 +4533,6 @@
                                                         "mandatory": false,
                                                         "label": "Please specify your sexual orientation"
                                                     }
-                                                },
-                                                {
-                                                    "label": "Prefer not to say",
-                                                    "value": "Prefer not to say"
                                                 }
                                             ],
                                             "type": "Checkbox"
@@ -4615,10 +4621,6 @@
                                                         "mandatory": false,
                                                         "label": "Please specify their sexual orientation"
                                                     }
-                                                },
-                                                {
-                                                    "label": "Prefer not to say",
-                                                    "value": "Prefer not to say"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -4710,10 +4712,6 @@
                                                         "mandatory": false,
                                                         "label": "Please specify gender"
                                                     }
-                                                },
-                                                {
-                                                    "label": "Prefer not to say",
-                                                    "value": "Prefer not to say"
                                                 }
                                             ],
                                             "type": "Checkbox"
@@ -5865,7 +5863,13 @@
                                             "value": "Have you previously served in the UK Armed Forces?"
                                         }
                                     ],
-                                    "description": "Current serving members should select 'No'",
+                                     "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Current serving members should select 'No'"
+                                            }
+                                        ]
+                                    },
                                     "type": "General",
                                     "answers": [
                                         {
