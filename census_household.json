@@ -2732,6 +2732,18 @@
                                 },
                                 {
                                     "goto": {
+                                        "block": "understand-welsh",
+                                        "when": [
+                                            {
+                                                "meta": "region_code",
+                                                "condition": "equals",
+                                                "value": "GB-WLS"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
                                         "block": "language"
                                     }
                                 }
@@ -2781,7 +2793,20 @@
                                             }
                                         }]
                                     }
-                                },{
+                                },
+                                {
+                                    "goto": {
+                                        "block": "understand-welsh",
+                                        "when": [
+                                            {
+                                                "meta": "region_code",
+                                                "condition": "equals",
+                                                "value": "GB-WLS"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
                                     "goto": {
                                         "block": "language"
                                     }
@@ -2841,6 +2866,18 @@
                                 },
                                 {
                                     "goto": {
+                                        "block": "understand-welsh",
+                                        "when": [
+                                            {
+                                                "meta": "region_code",
+                                                "condition": "equals",
+                                                "value": "GB-WLS"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
                                         "block": "language"
                                     }
                                 }
@@ -2885,6 +2922,89 @@
                                 }
                             ],
                             "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "understand-welsh",
+                                        "when": [
+                                            {
+                                                "meta": "region_code",
+                                                "condition": "equals",
+                                                "value": "GB-WLS"
+                                            }
+                                        ]
+                                    }
+                                },{
+                                    "goto": {
+                                        "block": "language"
+                                    }
+                                }
+                            ]
+                        },
+                         {
+                            "type": "Question",
+                            "id": "understand-welsh",
+                            "questions": [
+                                {
+                                    "id": "understand-welsh-question",
+                                     "titles": [{
+                                            "value": "Can <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> understand, speak, read or write Welsh?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Can you understand, speak, read or write Welsh?"
+                                        }
+                                    ],
+                                    "mandatory": true,
+                                    "type": "MutuallyExclusive",
+                                    "answers": [{
+                                            "id": "understand-welsh-answer",
+                                            "mandatory": false,
+                                            "type": "Checkbox",
+                                            "options": [
+                                                {
+                                                    "label": "Understand spoken Welsh",
+                                                    "value": "Understand spoken Welsh"
+                                                },
+                                                {
+                                                    "label": "Speak Welsh",
+                                                    "value": "Speak Welsh"
+                                                },
+                                                {
+                                                    "label": "Read Welsh",
+                                                    "value": "Read Welsh"
+                                                },
+                                                {
+                                                    "label": "Write Welsh",
+                                                    "value": "Write Welsh"
+                                                }
+                                             ]
+                                        },
+                                        {
+                                            "id": "understand-welsh-answer-exclusive",
+                                            "type": "Checkbox",
+                                            "mandatory": false,
+                                            "options": [{
+                                                "label": "None of the these",
+                                                "value": "None of the these"
+                                            }]
+                                        }
+                                    ]
+                                }
+                            ], "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "language-proxy",
+                                        "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                    }
+                                },
                                 {
                                     "goto": {
                                         "block": "language"
@@ -2994,21 +3114,20 @@
                                 }
                             ],
                             "routing_rules": [
-                                {
+                                 {
                                     "goto": {
-                                        "block": "religion",
+                                        "block": "national-identity",
                                         "when": [
                                             {
                                                 "id": "language-england-answer",
                                                 "condition": "equals",
                                                 "value": "English"
-                                            }
-                                        ]
+                                            }]
                                     }
                                 },
                                 {
                                     "goto": {
-                                        "block": "religion",
+                                        "block": "national-identity",
                                         "when": [
                                             {
                                                 "id": "language-welsh-answer",
@@ -3129,19 +3248,18 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "religion",
+                                        "block": "national-identity-proxy",
                                         "when": [
                                             {
                                                 "id": "language-england-proxy-answer",
                                                 "condition": "equals",
                                                 "value": "English"
-                                            }
-                                        ]
+                                            }]
                                     }
                                 },
                                 {
                                     "goto": {
-                                        "block": "religion",
+                                        "block": "national-identity-proxy",
                                         "when": [
                                             {
                                                 "id": "language-welsh-proxy-answer",
@@ -3766,29 +3884,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "understand-welsh",
-                                        "when": [
-                                            {
-                                                "meta": "region_code",
-                                                "condition": "equals",
-                                                "value": "GB-WLS"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "language-proxy",
-                                        "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "language"
+                                        "block": "religion"
                                     }
                                 }
                                 
@@ -3942,65 +4038,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "sexual-identity-proxy",
-                                        "when": [{
-                                            "id": "date-of-birth-answer",
-                                            "condition": "less than",
-                                            "date_comparison": {
-                                                "value": "now",
-                                                "offset_by": {
-                                                    "years": -16
-                                                }
-                                            }
-                                        },
-                                        {
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "sexual-identity",
-                                       "when": [{
-                                            "id": "date-of-birth-answer",
-                                            "condition": "less than",
-                                            "date_comparison": {
-                                                "value": "now",
-                                                "offset_by": {
-                                                    "years": -16
-                                                }
-                                            }
-                                        }]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "understand-welsh",
-                                        "when": [
-                                            {
-                                                "meta": "region_code",
-                                                "condition": "equals",
-                                                "value": "GB-WLS"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "language-proxy",
-                                        "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "language"
+                                        "block": "religion"
                                     }
                                 }
                             ]
@@ -4068,65 +4106,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "sexual-identity-proxy",
-                                        "when": [{
-                                            "id": "date-of-birth-answer",
-                                            "condition": "less than",
-                                            "date_comparison": {
-                                                "value": "now",
-                                                "offset_by": {
-                                                    "years": -16
-                                                }
-                                            }
-                                        },
-                                        {
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "sexual-identity",
-                                        "when": [{
-                                            "id": "date-of-birth-answer",
-                                            "condition": "less than",
-                                            "date_comparison": {
-                                                "value": "now",
-                                                "offset_by": {
-                                                    "years": -16
-                                                }
-                                            }
-                                        }]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "understand-welsh",
-                                        "when": [
-                                            {
-                                                "meta": "region_code",
-                                                "condition": "equals",
-                                                "value": "GB-WLS"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "language-proxy",
-                                        "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "language"
+                                        "block": "religion"
                                     }
                                 }
                             ]
@@ -4198,65 +4178,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "sexual-identity-proxy",
-                                        "when": [{
-                                            "id": "date-of-birth-answer",
-                                            "condition": "less than",
-                                            "date_comparison": {
-                                                "value": "now",
-                                                "offset_by": {
-                                                    "years": -16
-                                                }
-                                            }
-                                        },
-                                        {
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "sexual-identity",
-                                        "when": [{
-                                            "id": "date-of-birth-answer",
-                                            "condition": "less than",
-                                            "date_comparison": {
-                                                "value": "now",
-                                                "offset_by": {
-                                                    "years": -16
-                                                }
-                                            }
-                                        }]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "understand-welsh",
-                                        "when": [
-                                            {
-                                                "meta": "region_code",
-                                                "condition": "equals",
-                                                "value": "GB-WLS"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "language-proxy",
-                                        "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "language"
+                                        "block": "religion"
                                     }
                                 }
                             ]
@@ -4324,67 +4246,10 @@
                                 }
                             ],
                             "routing_rules": [
+                               
                                 {
                                     "goto": {
-                                        "block": "sexual-identity-proxy",
-                                        "when": [{
-                                            "id": "date-of-birth-answer",
-                                            "condition": "less than",
-                                            "date_comparison": {
-                                                "value": "now",
-                                                "offset_by": {
-                                                    "years": -16
-                                                }
-                                            }
-                                        },
-                                        {
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "sexual-identity",
-                                        "when": [{
-                                            "id": "date-of-birth-answer",
-                                            "condition": "less than",
-                                            "date_comparison": {
-                                                "value": "now",
-                                                "offset_by": {
-                                                    "years": -16
-                                                }
-                                            }
-                                        }]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "understand-welsh",
-                                        "when": [
-                                            {
-                                                "meta": "region_code",
-                                                "condition": "equals",
-                                                "value": "GB-WLS"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "language-proxy",
-                                        "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "language"
+                                        "block": "religion"
                                     }
                                 }
                             ]
@@ -4444,744 +4309,11 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "sexual-identity-proxy",
-                                        "when": [{
-                                            "id": "date-of-birth-answer",
-                                            "condition": "less than",
-                                            "date_comparison": {
-                                                "value": "now",
-                                                "offset_by": {
-                                                    "years": -16
-                                                }
-                                            }
-                                        },
-                                        {
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "sexual-identity",
-                                        "when": [{
-                                            "id": "date-of-birth-answer",
-                                            "condition": "less than",
-                                            "date_comparison": {
-                                                "value": "now",
-                                                "offset_by": {
-                                                    "years": -16
-                                                }
-                                            }
-                                        }]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "understand-welsh",
-                                        "when": [
-                                            {
-                                                "meta": "region_code",
-                                                "condition": "equals",
-                                                "value": "GB-WLS"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "language-proxy",
-                                        "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "language"
+                                        "block": "religion"
                                     }
                                 }
                             ]
                         },
-                        {
-                            "type": "Question",
-                            "id": "health",
-                            "questions": [
-                                {
-                                    "id": "health-question",
-                                    "titles": [{
-                                            "value": "How is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> health in general?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "How is your health in general?"
-                                        }
-                                    ],
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "health-answer",
-                                            "mandatory": true,
-                                            "options": [
-                                                {
-                                                    "label": "Very good",
-                                                    "value": "Very good"
-                                                },
-                                                {
-                                                    "label": "Good",
-                                                    "value": "Good"
-                                                },
-                                                {
-                                                    "label": "Fair",
-                                                    "value": "Fair"
-                                                },
-                                                {
-                                                    "label": "Bad",
-                                                    "value": "Bad"
-                                                },
-                                                {
-                                                    "label": "Very bad",
-                                                    "value": "Very bad"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "disability"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "disability",
-                            "questions": [
-                                {
-                                    "id": "disability-question",
-                                    "titles": [{
-                                            "value": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> have any physical or mental health conditions or illnesses lasting or expected to last 12 months or more?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "Do you have any physical or mental health conditions or illnesses lasting or expected to last 12 months or more?"
-                                        }
-                                    ],
-                                    "definitions": [{
-                                        "title": "What do we mean by physical and mental health conditions or illness?",
-                                        "content": [
-                                            {
-                                                "description": "Physical and mental health conditions or illnesses may also be described as disabilities."
-                                            },
-                                            {
-                                                "description": "For example sensory impairments such as sight or hearing loss, developmental conditions such as autism or Asperger’s syndrome, and learning impairment such as Down’s syndrome or dyslexia."
-                                            }
-                                         ]
-                                           
-                                    }],
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "disability-answer",
-                                            "mandatory": true,
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "disability-limitation",
-                                        "when": [
-                                            {
-                                                "id": "disability-answer",
-                                                "condition": "equals",
-                                                "value": "Yes"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "carer-proxy",
-                                        "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                    }
-                                },
-                                {
-                                     "goto": {
-                                          "block": "carer"
-                                      }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "disability-limitation",
-                            "questions": [
-                                {
-                                    "id": "disability-limitation-question",
-                                    "titles": [{
-                                            "value": "Does any of <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> conditions or illnesses reduce their ability to carry out day-to-day activities?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "Do any of your conditions or illnesses reduce your ability to carry out day-to-day activities?"
-                                        }
-                                    ],
-                                   "definitions": [{
-                                        "title": "What do we mean by reduce your ability?",
-                                        "content": [
-                                            {
-                                                "description": "This question is asking whether your health condition or illness currently affects your ability to carry-out normal daily activities."
-                                            },
-                                            {
-                                                "description": "You should consider whether you are still affected whilst receiving any treatment, medication or using any devices for your condition or illness. For example, if you require a hearing aid and by using the device, you experience no restriction in carrying out your day-to-day activities, then you should select ‘Not at all’."
-                                            },
-                                            {
-                                                "description": "‘Yes, a lot’, should be selected if you usually need some level of support of family members, friends or personal social services for most normal daily activities."
-                                            }
-                                         ]
-                                           
-                                    }],
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "disability-limitation-answer",
-                                            "mandatory": true,
-                                            "options": [
-                                                {
-                                                    "label": "Yes, a lot",
-                                                    "value": "Yes, a lot"
-                                                },
-                                                {
-                                                    "label": "Yes, a little",
-                                                    "value": "Yes, a little"
-                                                },
-                                                {
-                                                    "label": "Not at all",
-                                                    "value": "Not at all"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "carer-proxy",
-                                        "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                    }
-                                },
-                                {
-                                     "goto": {
-                                          "block": "carer"
-                                      }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "carer-proxy",
-                            "questions": [
-                                {
-                                    "id": "carer-proxy-question",
-                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> look after, or give any help or support to, anyone because they have long-term physical or mental health conditions or illnesses, or problems related to old age?",
-                                    "guidance": {
-                                        "content": [
-                                            {
-                                                "title": "Exclude anything they do as part of their paid employment"
-                                            }
-                                        ]
-                                    },
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "carer-proxy-answer",
-                                            "mandatory": true,
-                                            "options": [
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                },
-                                                {
-                                                    "label": "Yes, 9 hours a week or less",
-                                                    "value": "Yes, 9 hours a week or less"
-                                                },
-                                                {
-                                                    "label": "Yes, 10 to 19 hours a week",
-                                                    "value": "Yes, 10 to 19 hours a week"
-                                                },
-                                                {
-                                                    "label": "Yes, 20 to 34 hours a week",
-                                                    "value": "Yes, 20 to 34 hours a week"
-                                                },
-                                                {
-                                                    "label": "Yes, 35 to 49 hours a week",
-                                                    "value": "Yes, 35 to 49 hours a week"
-                                                },
-                                                {
-                                                    "label": "Yes, 50 or more hours a week",
-                                                    "value": "Yes, 50 or more hours a week"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "national-identity-proxy",
-                                        "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "national-identity"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "carer",
-                            "questions": [
-                                {
-                                    "id": "carer-question",
-                                    "title": "Do you look after, or give any help or support to, anyone because they have long-term physical or mental health conditions or illnesses, or problems related to old age?",     
-                                    "guidance": {
-                                        "content": [
-                                            {
-                                                "title": "Exclude anything you do as part of your paid employment"
-                                            }
-                                        ]
-                                    },
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "carer-answer",
-                                            "mandatory": true,
-                                            "options": [
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                },
-                                                {
-                                                    "label": "Yes, 9 hours a week or less",
-                                                    "value": "Yes, 9 hours a week or less"
-                                                },
-                                                {
-                                                    "label": "Yes, 10 to 19 hours a week",
-                                                    "value": "Yes, 10 to 19 hours a week"
-                                                },
-                                                {
-                                                    "label": "Yes, 20 to 34 hours a week",
-                                                    "value": "Yes, 20 to 34 hours a week"
-                                                },
-                                                {
-                                                    "label": "Yes, 35 to 49 hours a week",
-                                                    "value": "Yes, 35 to 49 hours a week"
-                                                },
-                                                {
-                                                    "label": "Yes, 50 or more hours a week",
-                                                    "value": "Yes, 50 or more hours a week"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "national-identity-proxy",
-                                        "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "national-identity"
-                                    }
-                                }
-                            ]
-                        },
-                        
-                        {
-                            "type": "Question",
-                            "id": "sexual-identity",
-                            "questions": [
-                                {
-                                    "id": "sexual-identity-question",
-                                    "title": "Which of the following best describes your sexual orientation?",
-                                    "type": "General",
-                                    "description": "This question is voluntary",
-                                    "answers": [
-                                        {
-                                            "id": "sexual-identity-answer",
-                                            "mandatory": true,
-                                            "label": "Select one option only",
-                                            "options": [
-                                                {
-                                                    "label": "Straight or Heterosexual",
-                                                    "value": "Straight or Heterosexual"
-                                                },
-                                                {
-                                                    "label": "Gay or Lesbian",
-                                                    "value": "Gay or Lesbian"
-                                                },
-                                                {
-                                                    "label": "Bisexual",
-                                                    "value": "Bisexual"
-                                                },
-                                                {
-                                                    "label": "Other sexual orientation",
-                                                    "value": "Other sexual orientation",
-                                                    "detail_answer": {
-                                                        "id": "sexual-identity-answer-other",
-                                                        "type": "TextField",
-                                                        "mandatory": false,
-                                                        "label": "Please specify your sexual orientation"
-                                                    }
-                                                }
-                                            ],
-                                            "type": "Checkbox"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                 {
-                                    "goto": {
-                                        "block": "birth-gender",
-                                        "when": [{
-                                            "id": "date-of-birth-answer",
-                                            "condition": "less than",
-                                            "date_comparison": {
-                                                "value": "now",
-                                                "offset_by": {
-                                                    "years": -16
-                                                }
-                                            }
-                                        }]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "understand-welsh",
-                                        "when": [
-                                            {
-                                                "meta": "region_code",
-                                                "condition": "equals",
-                                                "value": "GB-WLS"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "language-proxy",
-                                        "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "language"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "sexual-identity-proxy",
-                            "questions": [
-                                {
-                                    "id": "sexual-identity-question-proxy",
-                                    "title": "Which of the following best describes <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> sexual orientation?",
-                                    "type": "General",
-                                    "description": "This question is voluntary",
-                                    "answers": [
-                                        {
-                                            "id": "sexual-identity-answer-proxy",
-                                            "mandatory": true,
-                                            "label": "Select one option only",
-                                            "options": [
-                                                {
-                                                    "label": "Straight or Heterosexual",
-                                                    "value": "Straight or Heterosexual"
-                                                },
-                                                {
-                                                    "label": "Gay or Lesbian",
-                                                    "value": "Gay or Lesbian"
-                                                },
-                                                {
-                                                    "label": "Bisexual",
-                                                    "value": "Bisexual"
-                                                },
-                                                {
-                                                    "label": "Other sexual orientation",
-                                                    "value": "Other sexual orientation",
-                                                    "detail_answer": {
-                                                        "id": "sexual-identity-answer-other-proxy",
-                                                        "type": "TextField",
-                                                        "mandatory": false,
-                                                        "label": "Please specify their sexual orientation"
-                                                    }
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                 {
-                                    "goto": {
-                                        "block": "birth-gender",
-                                        "when": [{
-                                            "id": "date-of-birth-answer",
-                                            "condition": "less than",
-                                            "date_comparison": {
-                                                "value": "now",
-                                                "offset_by": {
-                                                    "years": -16
-                                                }
-                                            }
-                                        }]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "understand-welsh",
-                                        "when": [
-                                            {
-                                                "meta": "region_code",
-                                                "condition": "equals",
-                                                "value": "GB-WLS"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "language-proxy",
-                                        "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "language"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "birth-gender",
-                            "questions": [
-                                {
-                                    "id": "birth-gender-question",
-                                    "titles": [{
-                                            "value": "Is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> gender the same as the sex they were registered at birth?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "Is your gender the same as the sex you were registered at birth?"
-                                        }
-                                    ],
-                                    "type": "General",
-                                     "description": "This question is voluntary",
-                                     "answers": [
-                                        {
-                                            "id": "birth-gender-answer",
-                                            "mandatory": true,
-                                            "label": "Select one option only",
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No",
-                                                    "detail_answer": {
-                                                        "id": "birth-gender-answer-other",
-                                                        "type": "TextField",
-                                                        "mandatory": false,
-                                                        "label": "Please specify gender"
-                                                    }
-                                                }
-                                            ],
-                                            "type": "Checkbox"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                 {
-                                    "goto": {
-                                        "block": "understand-welsh",
-                                        "when": [
-                                            {
-                                                "meta": "region_code",
-                                                "condition": "equals",
-                                                "value": "GB-WLS"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "language-proxy",
-                                        "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "language"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "understand-welsh",
-                            "questions": [
-                                {
-                                    "id": "understand-welsh-question",
-                                     "titles": [{
-                                            "value": "Can <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> understand, speak, read or write Welsh?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "Can you understand, speak, read or write Welsh?"
-                                        }
-                                    ],
-                                    "mandatory": true,
-                                    "type": "MutuallyExclusive",
-                                    "answers": [{
-                                            "id": "understand-welsh-answer",
-                                            "mandatory": false,
-                                            "type": "Checkbox",
-                                            "options": [
-                                                {
-                                                    "label": "Understand spoken Welsh",
-                                                    "value": "Understand spoken Welsh"
-                                                },
-                                                {
-                                                    "label": "Speak Welsh",
-                                                    "value": "Speak Welsh"
-                                                },
-                                                {
-                                                    "label": "Read Welsh",
-                                                    "value": "Read Welsh"
-                                                },
-                                                {
-                                                    "label": "Write Welsh",
-                                                    "value": "Write Welsh"
-                                                }
-                                             ]
-                                        },
-                                        {
-                                            "id": "understand-welsh-answer-exclusive",
-                                            "type": "Checkbox",
-                                            "mandatory": false,
-                                            "options": [{
-                                                "label": "None of the these",
-                                                "value": "None of the these"
-                                            }]
-                                        }
-                                    ]
-                                }
-                            ], "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "language-proxy",
-                                        "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "language"
-                                    }
-                                }
-                            ]
-                        },
-                       
                         {
                             "type": "Question",
                             "id": "religion",
@@ -5349,7 +4481,7 @@
                                         "block": "past-usual-household-address-first-person-proxy",
                                         "when": [{
                                             "answer_ids": [
-                                                "carer-answer"
+                                                "another-address-answer"
                                             ],
                                             "type": "answer_count",
                                             "condition": "less than",
@@ -5367,7 +4499,7 @@
                                         "block": "past-usual-household-address-first-person",
                                         "when": [{
                                             "answer_ids": [
-                                                "carer-answer"
+                                                "another-address-answer"
                                             ],
                                             "type": "answer_count",
                                             "condition": "less than",
@@ -5380,7 +4512,7 @@
                                         "block": "past-usual-household-address",
                                         "when": [{
                                             "answer_ids": [
-                                                "carer-answer"
+                                                "another-address-answer"
                                             ],
                                             "type": "answer_count",
                                             "condition": "greater than",
@@ -5795,22 +4927,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "household-member-completed",
-                                         "when": [{
-                                            "id": "date-of-birth-answer",
-                                            "condition": "greater than",
-                                            "date_comparison": {
-                                                "value": "now",
-                                                "offset_by": {
-                                                    "years": -16
-                                                }
-                                            }
-                                        }]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "armed-forces"
+                                        "block": "health"
                                     }
                                 }
                             ]
@@ -5864,12 +4981,284 @@
                                 }
                             ],
                             "routing_rules": [
+                                
                                 {
                                     "goto": {
-                                        "block": "household-member-completed",
-                                         "when": [{
+                                        "block": "health"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "health",
+                            "questions": [
+                                {
+                                    "id": "health-question",
+                                    "titles": [{
+                                            "value": "How is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> health in general?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "How is your health in general?"
+                                        }
+                                    ],
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "health-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "Very good",
+                                                    "value": "Very good"
+                                                },
+                                                {
+                                                    "label": "Good",
+                                                    "value": "Good"
+                                                },
+                                                {
+                                                    "label": "Fair",
+                                                    "value": "Fair"
+                                                },
+                                                {
+                                                    "label": "Bad",
+                                                    "value": "Bad"
+                                                },
+                                                {
+                                                    "label": "Very bad",
+                                                    "value": "Very bad"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "disability"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "disability",
+                            "questions": [
+                                {
+                                    "id": "disability-question",
+                                    "titles": [{
+                                            "value": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> have any physical or mental health conditions or illnesses lasting or expected to last 12 months or more?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Do you have any physical or mental health conditions or illnesses lasting or expected to last 12 months or more?"
+                                        }
+                                    ],
+                                    "definitions": [{
+                                        "title": "What do we mean by physical and mental health conditions or illness?",
+                                        "content": [
+                                            {
+                                                "description": "Physical and mental health conditions or illnesses may also be described as disabilities."
+                                            },
+                                            {
+                                                "description": "For example sensory impairments such as sight or hearing loss, developmental conditions such as autism or Asperger’s syndrome, and learning impairment such as Down’s syndrome or dyslexia."
+                                            }
+                                         ]
+                                           
+                                    }],
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "disability-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "Yes",
+                                                    "value": "Yes"
+                                                },
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "disability-limitation",
+                                        "when": [
+                                            {
+                                                "id": "disability-answer",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "carer-proxy",
+                                        "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                    }
+                                },
+                                {
+                                     "goto": {
+                                          "block": "carer"
+                                      }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "disability-limitation",
+                            "questions": [
+                                {
+                                    "id": "disability-limitation-question",
+                                    "titles": [{
+                                            "value": "Does any of <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> conditions or illnesses reduce their ability to carry out day-to-day activities?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Do any of your conditions or illnesses reduce your ability to carry out day-to-day activities?"
+                                        }
+                                    ],
+                                   "definitions": [{
+                                        "title": "What do we mean by reduce your ability?",
+                                        "content": [
+                                            {
+                                                "description": "This question is asking whether your health condition or illness currently affects your ability to carry-out normal daily activities."
+                                            },
+                                            {
+                                                "description": "You should consider whether you are still affected whilst receiving any treatment, medication or using any devices for your condition or illness. For example, if you require a hearing aid and by using the device, you experience no restriction in carrying out your day-to-day activities, then you should select ‘Not at all’."
+                                            },
+                                            {
+                                                "description": "‘Yes, a lot’, should be selected if you usually need some level of support of family members, friends or personal social services for most normal daily activities."
+                                            }
+                                         ]
+                                           
+                                    }],
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "disability-limitation-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "Yes, a lot",
+                                                    "value": "Yes, a lot"
+                                                },
+                                                {
+                                                    "label": "Yes, a little",
+                                                    "value": "Yes, a little"
+                                                },
+                                                {
+                                                    "label": "Not at all",
+                                                    "value": "Not at all"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "carer-proxy",
+                                        "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                    }
+                                },
+                                {
+                                     "goto": {
+                                          "block": "carer"
+                                      }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "carer-proxy",
+                            "questions": [
+                                {
+                                    "id": "carer-proxy-question",
+                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> look after, or give any help or support to, anyone because they have long-term physical or mental health conditions or illnesses, or problems related to old age?",
+                                    "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Exclude anything they do as part of their paid employment"
+                                            }
+                                        ]
+                                    },
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "carer-proxy-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                },
+                                                {
+                                                    "label": "Yes, 9 hours a week or less",
+                                                    "value": "Yes, 9 hours a week or less"
+                                                },
+                                                {
+                                                    "label": "Yes, 10 to 19 hours a week",
+                                                    "value": "Yes, 10 to 19 hours a week"
+                                                },
+                                                {
+                                                    "label": "Yes, 20 to 34 hours a week",
+                                                    "value": "Yes, 20 to 34 hours a week"
+                                                },
+                                                {
+                                                    "label": "Yes, 35 to 49 hours a week",
+                                                    "value": "Yes, 35 to 49 hours a week"
+                                                },
+                                                {
+                                                    "label": "Yes, 50 or more hours a week",
+                                                    "value": "Yes, 50 or more hours a week"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                 {                 
+                                   "goto": {
+                                        "block": "sexual-identity",
+                                        "when": [{
                                             "id": "date-of-birth-answer",
-                                            "condition": "greater than",
+                                            "condition": "less than",
                                             "date_comparison": {
                                                 "value": "now",
                                                 "offset_by": {
@@ -5881,19 +5270,196 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "armed-forces"
+                                        "block": "household-member-completed"
                                     }
                                 }
                             ]
                         },
                         {
                             "type": "Question",
-                            "id": "armed-forces",
+                            "id": "carer",
                             "questions": [
                                 {
-                                    "id": "armed-forces-question",
+                                    "id": "carer-question",
+                                    "title": "Do you look after, or give any help or support to, anyone because they have long-term physical or mental health conditions or illnesses, or problems related to old age?",     
+                                    "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Exclude anything you do as part of your paid employment"
+                                            }
+                                        ]
+                                    },
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "carer-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                },
+                                                {
+                                                    "label": "Yes, 9 hours a week or less",
+                                                    "value": "Yes, 9 hours a week or less"
+                                                },
+                                                {
+                                                    "label": "Yes, 10 to 19 hours a week",
+                                                    "value": "Yes, 10 to 19 hours a week"
+                                                },
+                                                {
+                                                    "label": "Yes, 20 to 34 hours a week",
+                                                    "value": "Yes, 20 to 34 hours a week"
+                                                },
+                                                {
+                                                    "label": "Yes, 35 to 49 hours a week",
+                                                    "value": "Yes, 35 to 49 hours a week"
+                                                },
+                                                {
+                                                    "label": "Yes, 50 or more hours a week",
+                                                    "value": "Yes, 50 or more hours a week"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {                 
+                                   "goto": {
+                                        "block": "sexual-identity",
+                                        "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
+                                            }
+                                        }]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "household-member-completed"
+                                    }
+                                }
+                            ]
+                        },
+                        
+                        {
+                            "type": "Question",
+                            "id": "sexual-identity",
+                            "questions": [
+                                {
+                                    "id": "sexual-identity-question",
+                                    "title": "Which of the following best describes your sexual orientation?",
+                                    "type": "General",
+                                    "description": "This question is voluntary",
+                                    "answers": [
+                                        {
+                                            "id": "sexual-identity-answer",
+                                            "mandatory": true,
+                                            "label": "Select one option only",
+                                            "options": [
+                                                {
+                                                    "label": "Straight or Heterosexual",
+                                                    "value": "Straight or Heterosexual"
+                                                },
+                                                {
+                                                    "label": "Gay or Lesbian",
+                                                    "value": "Gay or Lesbian"
+                                                },
+                                                {
+                                                    "label": "Bisexual",
+                                                    "value": "Bisexual"
+                                                },
+                                                {
+                                                    "label": "Other sexual orientation",
+                                                    "value": "Other sexual orientation",
+                                                    "detail_answer": {
+                                                        "id": "sexual-identity-answer-other",
+                                                        "type": "TextField",
+                                                        "mandatory": false,
+                                                        "label": "Please specify your sexual orientation"
+                                                    }
+                                                }
+                                            ],
+                                            "type": "Checkbox"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                 
+                                {
+                                    "goto": {
+                                        "block": "birth-gender"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "sexual-identity-proxy",
+                            "questions": [
+                                {
+                                    "id": "sexual-identity-question-proxy",
+                                    "title": "Which of the following best describes <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> sexual orientation?",
+                                    "type": "General",
+                                    "description": "This question is voluntary",
+                                    "answers": [
+                                        {
+                                            "id": "sexual-identity-answer-proxy",
+                                            "mandatory": true,
+                                            "label": "Select one option only",
+                                            "options": [
+                                                {
+                                                    "label": "Straight or Heterosexual",
+                                                    "value": "Straight or Heterosexual"
+                                                },
+                                                {
+                                                    "label": "Gay or Lesbian",
+                                                    "value": "Gay or Lesbian"
+                                                },
+                                                {
+                                                    "label": "Bisexual",
+                                                    "value": "Bisexual"
+                                                },
+                                                {
+                                                    "label": "Other sexual orientation",
+                                                    "value": "Other sexual orientation",
+                                                    "detail_answer": {
+                                                        "id": "sexual-identity-answer-other-proxy",
+                                                        "type": "TextField",
+                                                        "mandatory": false,
+                                                        "label": "Please specify their sexual orientation"
+                                                    }
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "birth-gender"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "birth-gender",
+                            "questions": [
+                                {
+                                    "id": "birth-gender-question",
                                     "titles": [{
-                                            "value": "Has <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> previously served in the UK Armed Forces?",
+                                            "value": "Is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> gender the same as the sex they were registered at birth?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -5901,41 +5467,30 @@
                                             }]
                                         },
                                         {
-                                            "value": "Have you previously served in the UK Armed Forces?"
+                                            "value": "Is your gender the same as the sex you were registered at birth?"
                                         }
                                     ],
-                                     "guidance": {
-                                        "content": [
-                                            {
-                                                "title": "Current serving members should select 'No'"
-                                            }
-                                        ]
-                                    },
                                     "type": "General",
-                                    "answers": [
+                                     "description": "This question is voluntary",
+                                     "answers": [
                                         {
-                                            "id": "armed-forces-answer",
+                                            "id": "birth-gender-answer",
                                             "mandatory": true,
-                                            "guidance": {
-                                                "show_guidance": "Why your answer is important",
-                                                "hide_guidance": "Why your answer is important",
-                                                "content": [{
-                                                   "description": "We are measuring the number of people who have served in the UK Armed Forces and now left. This data is needed to support central and local government commitments made under the Armed Forces Covenant. This is a promise by the nation ensuring that those who serve or who have served in the armed forces, and their families, are treated fairly."
-                                                    }
-                                                 ]
-                                            },
+                                            "label": "Select one option only",
                                             "options": [
                                                 {
+                                                    "label": "Yes",
+                                                    "value": "Yes"
+                                                },
+                                                {
                                                     "label": "No",
-                                                    "value": "No"
-                                                },
-                                                {
-                                                    "label": "Yes, previously served in Regular Armed Forces",
-                                                    "value": "Yes, previously served in Regular Armed Forces"
-                                                },
-                                                {
-                                                    "label": "Yes, previously served in Reserve Armed Forces",
-                                                    "value": "Yes, previously served in Reserve Armed Forces"
+                                                    "value": "No",
+                                                    "detail_answer": {
+                                                        "id": "birth-gender-answer-other",
+                                                        "type": "TextField",
+                                                        "mandatory": false,
+                                                        "label": "Please specify gender"
+                                                    }
                                                 }
                                             ],
                                             "type": "Checkbox"
@@ -5953,13 +5508,15 @@
                                                 "value": "proxy"
                                             }]
                                     }
-                                }, {
+                                }, 
+                                {
                                     "goto": {
                                         "block": "qualifications"
                                     }
                                 }
                             ]
                         },
+                        
                         {
                             "type": "Interstitial",
                             "id": "qualifications",
@@ -6323,7 +5880,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "employment-status"
+                                        "block": "armed-forces"
                                     }
                                 }
                             ]
@@ -6379,7 +5936,81 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "employment-status"
+                                        "block": "armed-forces"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "armed-forces",
+                            "questions": [
+                                {
+                                    "id": "armed-forces-question",
+                                    "titles": [{
+                                            "value": "Has <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> previously served in the UK Armed Forces?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Have you previously served in the UK Armed Forces?"
+                                        }
+                                    ],
+                                     "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Current serving members should select 'No'"
+                                            }
+                                        ]
+                                    },
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "armed-forces-answer",
+                                            "mandatory": true,
+                                            "guidance": {
+                                                "show_guidance": "Why your answer is important",
+                                                "hide_guidance": "Why your answer is important",
+                                                "content": [{
+                                                   "description": "We are measuring the number of people who have served in the UK Armed Forces and now left. This data is needed to support central and local government commitments made under the Armed Forces Covenant. This is a promise by the nation ensuring that those who serve or who have served in the armed forces, and their families, are treated fairly."
+                                                    }
+                                                 ]
+                                            },
+                                            "options": [
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                },
+                                                {
+                                                    "label": "Yes, previously served in Regular Armed Forces",
+                                                    "value": "Yes, previously served in Regular Armed Forces"
+                                                },
+                                                {
+                                                    "label": "Yes, previously served in Reserve Armed Forces",
+                                                    "value": "Yes, previously served in Reserve Armed Forces"
+                                                }
+                                            ],
+                                            "type": "Checkbox"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "qualifications-proxy",
+                                        "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                    }
+                                }, {
+                                    "goto": {
+                                        "block": "qualifications"
                                     }
                                 }
                             ]
