@@ -95,6 +95,7 @@
                                             "mandatory": false,
                                             "type": "TextField"
                                         }
+                                        
                                     ]
                                 }
                             ]
@@ -2351,7 +2352,7 @@
                                     "answers": [
                                         {
                                             "id": "term-time-address-details-answer-building",
-                                            "label": "Building",
+                                            "label": "House name or number",
                                             "mandatory": true,
                                             "type": "TextField"
                                         },
