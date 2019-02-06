@@ -1743,7 +1743,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "in-education",
+                                        "block": "in-education-over16",
                                         "when": [
                                             {
                                                 "id": "another-address-answer",
@@ -1764,7 +1764,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "in-education-over16",
+                                        "block": "in-education",
                                         "when": [
                                             {
                                                 "id": "another-address-answer",
