@@ -2732,7 +2732,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "health"
+                                        "block": "language"
                                     }
                                 }
                             ]
@@ -2783,7 +2783,7 @@
                                     }
                                 },{
                                     "goto": {
-                                        "block": "health"
+                                        "block": "language"
                                     }
                                 }
                             ]
@@ -2841,7 +2841,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "health"
+                                        "block": "language"
                                     }
                                 }
                             ]
@@ -2887,115 +2887,108 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "health"
+                                        "block": "language"
                                     }
                                 }
                             ]
                         },
-                        {
+                         {
                             "type": "Question",
-                            "id": "health",
+                            "id": "language",
                             "questions": [
                                 {
-                                    "id": "health-question",
-                                    "titles": [{
-                                            "value": "How is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> health in general?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "How is your health in general?"
-                                        }
-                                    ],
+                                    "id": "language-england-question",
+                                    "title":  "What is your main language?",
                                     "type": "General",
+                                     "definitions": [{
+                                        "title": "What do we mean by 'main language'?",
+                                         "content": [
+                                            {
+                                                "description": "Main language is your first or preferred language."
+                                            }
+                                        ]
+                                    }],
                                     "answers": [
                                         {
-                                            "id": "health-answer",
+                                            "id": "language-england-answer",
                                             "mandatory": true,
                                             "options": [
                                                 {
-                                                    "label": "Very good",
-                                                    "value": "Very good"
+                                                    "label": "English",
+                                                    "value": "English"
                                                 },
                                                 {
-                                                    "label": "Good",
-                                                    "value": "Good"
-                                                },
-                                                {
-                                                    "label": "Fair",
-                                                    "value": "Fair"
-                                                },
-                                                {
-                                                    "label": "Bad",
-                                                    "value": "Bad"
-                                                },
-                                                {
-                                                    "label": "Very bad",
-                                                    "value": "Very bad"
+                                                    "label": "Other",
+                                                    "value": "Other",
+                                                    "description": "Including British Sign Language",
+                                                    "detail_answer": {
+                                                        "id": "language-england-answer-other",
+                                                        "type": "TextField",
+                                                        "mandatory": false,
+                                                        "label": "Please specify main language"
+                                                    }
                                                 }
                                             ],
                                             "type": "Radio"
                                         }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "disability"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "disability",
-                            "questions": [
-                                {
-                                    "id": "disability-question",
-                                    "titles": [{
-                                            "value": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> have any physical or mental health conditions or illnesses lasting or expected to last 12 months or more?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "Do you have any physical or mental health conditions or illnesses lasting or expected to last 12 months or more?"
-                                        }
                                     ],
-                                    "definitions": [{
-                                        "title": "What do we mean by physical and mental health conditions or illness?",
+                                    "skip_conditions": [
+                                        {
+                                            "when": [
+                                                {
+                                                    "meta": "region_code",
+                                                    "condition": "equals",
+                                                    "value": "GB-WLS"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                   "id": "language-welsh-question",
+                                   "title": "What is your main language?",
+                                    "type": "General",
+                                     "definitions": [{
+                                        "title": "What is main language?",
                                         "content": [
                                             {
-                                                "description": "Physical and mental health conditions or illnesses may also be described as disabilities."
-                                            },
-                                            {
-                                                "description": "For example sensory impairments such as sight or hearing loss, developmental conditions such as autism or Asperger’s syndrome, and learning impairment such as Down’s syndrome or dyslexia."
+                                                "description": "Main language is your first or preferred language."
                                             }
-                                         ]
-                                           
+                                        ]
                                     }],
-                                    "type": "General",
                                     "answers": [
                                         {
-                                            "id": "disability-answer",
+                                            "id": "language-welsh-answer",
                                             "mandatory": true,
                                             "options": [
                                                 {
-                                                    "label": "Yes",
-                                                    "value": "Yes"
+                                                    "label": "English or Welsh",
+                                                    "value": "English or Welsh"
                                                 },
                                                 {
-                                                    "label": "No",
-                                                    "value": "No"
+                                                    "label": "Other",
+                                                    "value": "Other",
+                                                    "description": "Including British Sign Language",
+                                                    "detail_answer": {
+                                                        "id": "language-welsh-answer-other",
+                                                        "type": "TextField",
+                                                        "mandatory": false,
+                                                        "label": "Please specify main language"
+                                                    }
                                                 }
                                             ],
                                             "type": "Radio"
+                                        }
+                                    ],
+                                    "skip_conditions": [
+                                        {
+                                            "when": [
+                                                {
+                                                    "meta": "region_code",
+                                                    "condition": "not equals",
+                                                    "value": "GB-WLS"
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
@@ -3003,41 +2996,176 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "disability-limitation",
+                                        "block": "religion",
                                         "when": [
                                             {
-                                                "id": "disability-answer",
+                                                "id": "language-england-answer",
                                                 "condition": "equals",
-                                                "value": "Yes"
+                                                "value": "English"
                                             }
                                         ]
                                     }
                                 },
                                 {
                                     "goto": {
-                                        "block": "carer-proxy",
-                                        "when": [{
-                                                "id": "proxy-check-answer",
+                                        "block": "religion",
+                                        "when": [
+                                            {
+                                                "id": "language-welsh-answer",
                                                 "condition": "equals",
-                                                "value": "proxy"
-                                            }]
+                                                "value": "English or Welsh"
+                                            }
+                                        ]
                                     }
                                 },
                                 {
-                                     "goto": {
-                                          "block": "carer"
-                                      }
+                                    "goto": {
+                                        "block": "english"
+                                    }
+                                }
+                            ]
+                        },
+                         {
+                            "type": "Question",
+                            "id": "language-proxy",
+                            "questions": [
+                                {
+                                    "id": "language-england-proxy-question",
+                                    "title": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> main language?",
+                                    "type": "General",
+                                     "definitions": [{
+                                        "title": "What do we mean by 'main language'?",
+                                         "content": [
+                                            {
+                                                "description": "Main language is their first or preferred language."
+                                            }
+                                        ]
+                                    }],
+                                    "answers": [
+                                        {
+                                            "id": "language-england-proxy-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "English",
+                                                    "value": "English"
+                                                },
+                                                {
+                                                    "label": "Other",
+                                                    "value": "Other",
+                                                    "description": "Including British Sign Language",
+                                                    "detail_answer": {
+                                                        "id": "language-england-proxy-answer-other",
+                                                        "type": "TextField",
+                                                        "mandatory": false,
+                                                        "label": "Please specify main language"
+                                                    }
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ],
+                                    "skip_conditions": [
+                                        {
+                                            "when": [
+                                                {
+                                                    "meta": "region_code",
+                                                    "condition": "equals",
+                                                    "value": "GB-WLS"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                   "id": "language-welsh-proxy-question",
+                                   "title": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> main language?",
+                                    "type": "General",
+                                     "definitions": [{
+                                        "title": "What is main language?",
+                                        "content": [
+                                            {
+                                                "description": "Main language is their first or preferred language."
+                                            }
+                                        ]
+                                    }],
+                                    "answers": [
+                                        {
+                                            "id": "language-welsh-proxy-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "English or Welsh",
+                                                    "value": "English or Welsh"
+                                                },
+                                                {
+                                                    "label": "Other",
+                                                    "value": "Other",
+                                                    "description": "Including British Sign Language",
+                                                    "detail_answer": {
+                                                        "id": "language-welsh-proxy-answer-other",
+                                                        "type": "TextField",
+                                                        "mandatory": false,
+                                                        "label": "Please specify main language"
+                                                    }
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ],
+                                    "skip_conditions": [
+                                        {
+                                            "when": [
+                                                {
+                                                    "meta": "region_code",
+                                                    "condition": "not equals",
+                                                    "value": "GB-WLS"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "religion",
+                                        "when": [
+                                            {
+                                                "id": "language-england-proxy-answer",
+                                                "condition": "equals",
+                                                "value": "English"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "religion",
+                                        "when": [
+                                            {
+                                                "id": "language-welsh-proxy-answer",
+                                                "condition": "equals",
+                                                "value": "English or Welsh"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "english"
+                                    }
                                 }
                             ]
                         },
                         {
                             "type": "Question",
-                            "id": "disability-limitation",
+                            "id": "english",
                             "questions": [
                                 {
-                                    "id": "disability-limitation-question",
+                                    "id": "english-question",
                                     "titles": [{
-                                            "value": "Does any of <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> conditions or illnesses reduce their ability to carry out day-to-day activities?",
+                                            "value": "How well can <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> speak English?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -3045,177 +3173,30 @@
                                             }]
                                         },
                                         {
-                                            "value": "Do any of your conditions or illnesses reduce your ability to carry out day-to-day activities?"
+                                            "value": "How well can you speak English?"
                                         }
                                     ],
-                                   "definitions": [{
-                                        "title": "What do we mean by reduce your ability?",
-                                        "content": [
-                                            {
-                                                "description": "This question is asking whether your health condition or illness currently affects your ability to carry-out normal daily activities."
-                                            },
-                                            {
-                                                "description": "You should consider whether you are still affected whilst receiving any treatment, medication or using any devices for your condition or illness. For example, if you require a hearing aid and by using the device, you experience no restriction in carrying out your day-to-day activities, then you should select ‘Not at all’."
-                                            },
-                                            {
-                                                "description": "‘Yes, a lot’, should be selected if you usually need some level of support of family members, friends or personal social services for most normal daily activities."
-                                            }
-                                         ]
-                                           
-                                    }],
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "disability-limitation-answer",
+                                            "id": "english-answer",
                                             "mandatory": true,
                                             "options": [
                                                 {
-                                                    "label": "Yes, a lot",
-                                                    "value": "Yes, a lot"
+                                                    "label": "Very well",
+                                                    "value": "Very well"
                                                 },
                                                 {
-                                                    "label": "Yes, a little",
-                                                    "value": "Yes, a little"
+                                                    "label": "Well",
+                                                    "value": "Well"
+                                                },
+                                                {
+                                                    "label": "Not well",
+                                                    "value": "Not well"
                                                 },
                                                 {
                                                     "label": "Not at all",
                                                     "value": "Not at all"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "carer-proxy",
-                                        "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                    }
-                                },
-                                {
-                                     "goto": {
-                                          "block": "carer"
-                                      }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "carer-proxy",
-                            "questions": [
-                                {
-                                    "id": "carer-proxy-question",
-                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> look after, or give any help or support to, anyone because they have long-term physical or mental health conditions or illnesses, or problems related to old age?",
-                                    "guidance": {
-                                        "content": [
-                                            {
-                                                "title": "Exclude anything they do as part of their paid employment"
-                                            }
-                                        ]
-                                    },
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "carer-proxy-answer",
-                                            "mandatory": true,
-                                            "options": [
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                },
-                                                {
-                                                    "label": "Yes, 9 hours a week or less",
-                                                    "value": "Yes, 9 hours a week or less"
-                                                },
-                                                {
-                                                    "label": "Yes, 10 to 19 hours a week",
-                                                    "value": "Yes, 10 to 19 hours a week"
-                                                },
-                                                {
-                                                    "label": "Yes, 20 to 34 hours a week",
-                                                    "value": "Yes, 20 to 34 hours a week"
-                                                },
-                                                {
-                                                    "label": "Yes, 35 to 49 hours a week",
-                                                    "value": "Yes, 35 to 49 hours a week"
-                                                },
-                                                {
-                                                    "label": "Yes, 50 or more hours a week",
-                                                    "value": "Yes, 50 or more hours a week"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "national-identity-proxy",
-                                        "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "national-identity"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "carer",
-                            "questions": [
-                                {
-                                    "id": "carer-question",
-                                    "title": "Do you look after, or give any help or support to, anyone because they have long-term physical or mental health conditions or illnesses, or problems related to old age?",     
-                                    "guidance": {
-                                        "content": [
-                                            {
-                                                "title": "Exclude anything you do as part of your paid employment"
-                                            }
-                                        ]
-                                    },
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "carer-answer",
-                                            "mandatory": true,
-                                            "options": [
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                },
-                                                {
-                                                    "label": "Yes, 9 hours a week or less",
-                                                    "value": "Yes, 9 hours a week or less"
-                                                },
-                                                {
-                                                    "label": "Yes, 10 to 19 hours a week",
-                                                    "value": "Yes, 10 to 19 hours a week"
-                                                },
-                                                {
-                                                    "label": "Yes, 20 to 34 hours a week",
-                                                    "value": "Yes, 20 to 34 hours a week"
-                                                },
-                                                {
-                                                    "label": "Yes, 35 to 49 hours a week",
-                                                    "value": "Yes, 35 to 49 hours a week"
-                                                },
-                                                {
-                                                    "label": "Yes, 50 or more hours a week",
-                                                    "value": "Yes, 50 or more hours a week"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -4528,6 +4509,356 @@
                         },
                         {
                             "type": "Question",
+                            "id": "health",
+                            "questions": [
+                                {
+                                    "id": "health-question",
+                                    "titles": [{
+                                            "value": "How is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> health in general?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "How is your health in general?"
+                                        }
+                                    ],
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "health-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "Very good",
+                                                    "value": "Very good"
+                                                },
+                                                {
+                                                    "label": "Good",
+                                                    "value": "Good"
+                                                },
+                                                {
+                                                    "label": "Fair",
+                                                    "value": "Fair"
+                                                },
+                                                {
+                                                    "label": "Bad",
+                                                    "value": "Bad"
+                                                },
+                                                {
+                                                    "label": "Very bad",
+                                                    "value": "Very bad"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "disability"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "disability",
+                            "questions": [
+                                {
+                                    "id": "disability-question",
+                                    "titles": [{
+                                            "value": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> have any physical or mental health conditions or illnesses lasting or expected to last 12 months or more?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Do you have any physical or mental health conditions or illnesses lasting or expected to last 12 months or more?"
+                                        }
+                                    ],
+                                    "definitions": [{
+                                        "title": "What do we mean by physical and mental health conditions or illness?",
+                                        "content": [
+                                            {
+                                                "description": "Physical and mental health conditions or illnesses may also be described as disabilities."
+                                            },
+                                            {
+                                                "description": "For example sensory impairments such as sight or hearing loss, developmental conditions such as autism or Asperger’s syndrome, and learning impairment such as Down’s syndrome or dyslexia."
+                                            }
+                                         ]
+                                           
+                                    }],
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "disability-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "Yes",
+                                                    "value": "Yes"
+                                                },
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "disability-limitation",
+                                        "when": [
+                                            {
+                                                "id": "disability-answer",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "carer-proxy",
+                                        "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                    }
+                                },
+                                {
+                                     "goto": {
+                                          "block": "carer"
+                                      }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "disability-limitation",
+                            "questions": [
+                                {
+                                    "id": "disability-limitation-question",
+                                    "titles": [{
+                                            "value": "Does any of <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> conditions or illnesses reduce their ability to carry out day-to-day activities?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Do any of your conditions or illnesses reduce your ability to carry out day-to-day activities?"
+                                        }
+                                    ],
+                                   "definitions": [{
+                                        "title": "What do we mean by reduce your ability?",
+                                        "content": [
+                                            {
+                                                "description": "This question is asking whether your health condition or illness currently affects your ability to carry-out normal daily activities."
+                                            },
+                                            {
+                                                "description": "You should consider whether you are still affected whilst receiving any treatment, medication or using any devices for your condition or illness. For example, if you require a hearing aid and by using the device, you experience no restriction in carrying out your day-to-day activities, then you should select ‘Not at all’."
+                                            },
+                                            {
+                                                "description": "‘Yes, a lot’, should be selected if you usually need some level of support of family members, friends or personal social services for most normal daily activities."
+                                            }
+                                         ]
+                                           
+                                    }],
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "disability-limitation-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "Yes, a lot",
+                                                    "value": "Yes, a lot"
+                                                },
+                                                {
+                                                    "label": "Yes, a little",
+                                                    "value": "Yes, a little"
+                                                },
+                                                {
+                                                    "label": "Not at all",
+                                                    "value": "Not at all"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "carer-proxy",
+                                        "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                    }
+                                },
+                                {
+                                     "goto": {
+                                          "block": "carer"
+                                      }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "carer-proxy",
+                            "questions": [
+                                {
+                                    "id": "carer-proxy-question",
+                                    "title": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> look after, or give any help or support to, anyone because they have long-term physical or mental health conditions or illnesses, or problems related to old age?",
+                                    "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Exclude anything they do as part of their paid employment"
+                                            }
+                                        ]
+                                    },
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "carer-proxy-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                },
+                                                {
+                                                    "label": "Yes, 9 hours a week or less",
+                                                    "value": "Yes, 9 hours a week or less"
+                                                },
+                                                {
+                                                    "label": "Yes, 10 to 19 hours a week",
+                                                    "value": "Yes, 10 to 19 hours a week"
+                                                },
+                                                {
+                                                    "label": "Yes, 20 to 34 hours a week",
+                                                    "value": "Yes, 20 to 34 hours a week"
+                                                },
+                                                {
+                                                    "label": "Yes, 35 to 49 hours a week",
+                                                    "value": "Yes, 35 to 49 hours a week"
+                                                },
+                                                {
+                                                    "label": "Yes, 50 or more hours a week",
+                                                    "value": "Yes, 50 or more hours a week"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "national-identity-proxy",
+                                        "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "national-identity"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "carer",
+                            "questions": [
+                                {
+                                    "id": "carer-question",
+                                    "title": "Do you look after, or give any help or support to, anyone because they have long-term physical or mental health conditions or illnesses, or problems related to old age?",     
+                                    "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Exclude anything you do as part of your paid employment"
+                                            }
+                                        ]
+                                    },
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "carer-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                },
+                                                {
+                                                    "label": "Yes, 9 hours a week or less",
+                                                    "value": "Yes, 9 hours a week or less"
+                                                },
+                                                {
+                                                    "label": "Yes, 10 to 19 hours a week",
+                                                    "value": "Yes, 10 to 19 hours a week"
+                                                },
+                                                {
+                                                    "label": "Yes, 20 to 34 hours a week",
+                                                    "value": "Yes, 20 to 34 hours a week"
+                                                },
+                                                {
+                                                    "label": "Yes, 35 to 49 hours a week",
+                                                    "value": "Yes, 35 to 49 hours a week"
+                                                },
+                                                {
+                                                    "label": "Yes, 50 or more hours a week",
+                                                    "value": "Yes, 50 or more hours a week"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "national-identity-proxy",
+                                        "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "national-identity"
+                                    }
+                                }
+                            ]
+                        },
+                        
+                        {
+                            "type": "Question",
                             "id": "sexual-identity",
                             "questions": [
                                 {
@@ -4850,326 +5181,7 @@
                                 }
                             ]
                         },
-                        {
-                            "type": "Question",
-                            "id": "language",
-                            "questions": [
-                                {
-                                    "id": "language-england-question",
-                                    "title":  "What is your main language?",
-                                    "type": "General",
-                                     "definitions": [{
-                                        "title": "What do we mean by 'main language'?",
-                                         "content": [
-                                            {
-                                                "description": "Main language is your first or preferred language."
-                                            }
-                                        ]
-                                    }],
-                                    "answers": [
-                                        {
-                                            "id": "language-england-answer",
-                                            "mandatory": true,
-                                            "options": [
-                                                {
-                                                    "label": "English",
-                                                    "value": "English"
-                                                },
-                                                {
-                                                    "label": "Other",
-                                                    "value": "Other",
-                                                    "description": "Including British Sign Language",
-                                                    "detail_answer": {
-                                                        "id": "language-england-answer-other",
-                                                        "type": "TextField",
-                                                        "mandatory": false,
-                                                        "label": "Please specify main language"
-                                                    }
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ],
-                                    "skip_conditions": [
-                                        {
-                                            "when": [
-                                                {
-                                                    "meta": "region_code",
-                                                    "condition": "equals",
-                                                    "value": "GB-WLS"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                   "id": "language-welsh-question",
-                                   "title": "What is your main language?",
-                                    "type": "General",
-                                     "definitions": [{
-                                        "title": "What is main language?",
-                                        "content": [
-                                            {
-                                                "description": "Main language is your first or preferred language."
-                                            }
-                                        ]
-                                    }],
-                                    "answers": [
-                                        {
-                                            "id": "language-welsh-answer",
-                                            "mandatory": true,
-                                            "options": [
-                                                {
-                                                    "label": "English or Welsh",
-                                                    "value": "English or Welsh"
-                                                },
-                                                {
-                                                    "label": "Other",
-                                                    "value": "Other",
-                                                    "description": "Including British Sign Language",
-                                                    "detail_answer": {
-                                                        "id": "language-welsh-answer-other",
-                                                        "type": "TextField",
-                                                        "mandatory": false,
-                                                        "label": "Please specify main language"
-                                                    }
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ],
-                                    "skip_conditions": [
-                                        {
-                                            "when": [
-                                                {
-                                                    "meta": "region_code",
-                                                    "condition": "not equals",
-                                                    "value": "GB-WLS"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "religion",
-                                        "when": [
-                                            {
-                                                "id": "language-england-answer",
-                                                "condition": "equals",
-                                                "value": "English"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "religion",
-                                        "when": [
-                                            {
-                                                "id": "language-welsh-answer",
-                                                "condition": "equals",
-                                                "value": "English or Welsh"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "english"
-                                    }
-                                }
-                            ]
-                        },
-                         {
-                            "type": "Question",
-                            "id": "language-proxy",
-                            "questions": [
-                                {
-                                    "id": "language-england-proxy-question",
-                                    "title": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> main language?",
-                                    "type": "General",
-                                     "definitions": [{
-                                        "title": "What do we mean by 'main language'?",
-                                         "content": [
-                                            {
-                                                "description": "Main language is their first or preferred language."
-                                            }
-                                        ]
-                                    }],
-                                    "answers": [
-                                        {
-                                            "id": "language-england-proxy-answer",
-                                            "mandatory": true,
-                                            "options": [
-                                                {
-                                                    "label": "English",
-                                                    "value": "English"
-                                                },
-                                                {
-                                                    "label": "Other",
-                                                    "value": "Other",
-                                                    "description": "Including British Sign Language",
-                                                    "detail_answer": {
-                                                        "id": "language-england-proxy-answer-other",
-                                                        "type": "TextField",
-                                                        "mandatory": false,
-                                                        "label": "Please specify main language"
-                                                    }
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ],
-                                    "skip_conditions": [
-                                        {
-                                            "when": [
-                                                {
-                                                    "meta": "region_code",
-                                                    "condition": "equals",
-                                                    "value": "GB-WLS"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                   "id": "language-welsh-proxy-question",
-                                   "title": "What is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> main language?",
-                                    "type": "General",
-                                     "definitions": [{
-                                        "title": "What is main language?",
-                                        "content": [
-                                            {
-                                                "description": "Main language is their first or preferred language."
-                                            }
-                                        ]
-                                    }],
-                                    "answers": [
-                                        {
-                                            "id": "language-welsh-proxy-answer",
-                                            "mandatory": true,
-                                            "options": [
-                                                {
-                                                    "label": "English or Welsh",
-                                                    "value": "English or Welsh"
-                                                },
-                                                {
-                                                    "label": "Other",
-                                                    "value": "Other",
-                                                    "description": "Including British Sign Language",
-                                                    "detail_answer": {
-                                                        "id": "language-welsh-proxy-answer-other",
-                                                        "type": "TextField",
-                                                        "mandatory": false,
-                                                        "label": "Please specify main language"
-                                                    }
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ],
-                                    "skip_conditions": [
-                                        {
-                                            "when": [
-                                                {
-                                                    "meta": "region_code",
-                                                    "condition": "not equals",
-                                                    "value": "GB-WLS"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "religion",
-                                        "when": [
-                                            {
-                                                "id": "language-england-proxy-answer",
-                                                "condition": "equals",
-                                                "value": "English"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "religion",
-                                        "when": [
-                                            {
-                                                "id": "language-welsh-proxy-answer",
-                                                "condition": "equals",
-                                                "value": "English or Welsh"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "english"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "english",
-                            "questions": [
-                                {
-                                    "id": "english-question",
-                                    "titles": [{
-                                            "value": "How well can <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> speak English?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "How well can you speak English?"
-                                        }
-                                    ],
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "english-answer",
-                                            "mandatory": true,
-                                            "options": [
-                                                {
-                                                    "label": "Very well",
-                                                    "value": "Very well"
-                                                },
-                                                {
-                                                    "label": "Well",
-                                                    "value": "Well"
-                                                },
-                                                {
-                                                    "label": "Not well",
-                                                    "value": "Not well"
-                                                },
-                                                {
-                                                    "label": "Not at all",
-                                                    "value": "Not at all"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "religion"
-                                    }
-                                }
-                            ]
-                        },
+                       
                         {
                             "type": "Question",
                             "id": "religion",
