@@ -6001,16 +6001,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "qualifications-proxy",
-                                        "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                    }
-                                }, {
-                                    "goto": {
-                                        "block": "qualifications"
+                                        "block": "employment-status"
                                     }
                                 }
                             ]
