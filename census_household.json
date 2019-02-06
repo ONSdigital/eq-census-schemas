@@ -1840,7 +1840,7 @@
                                     "answers": [
                                         {
                                             "id": "other-address-answer-building",
-                                            "label": "Building",
+                                            "label": "House name or number",
                                             "mandatory": true,
                                             "type": "TextField"
                                         },
@@ -4826,7 +4826,7 @@
                                     "answers": [
                                         {
                                             "id": "last-year-address-answer-building",
-                                            "label": "Building",
+                                            "label": "House name or number",
                                             "mandatory": true,
                                             "type": "TextField"
                                         },
