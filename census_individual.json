@@ -198,11 +198,239 @@
 
                                         {
                                             "goto": {
-                                                "block": "sex"
+                                                "block": "date-of-birth"
                                             }
                                         }
                                     ]
                          },
+                                                {
+                            "type": "Question",
+                            "id": "date-of-birth",
+                            "questions": [
+                                {
+                                    "id": "date-of-birth-question",
+                                    "titles": [{
+                                            "value": "What is <em>{{[answers['first-name'], answers['last-name']] | format_household_name_possessive }}</em> date of birth?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "What is your date of birth?"
+                                        }
+                                    ],
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "date-of-birth-answer",
+                                            "mandatory": true,
+                                            "type": "Date",
+                                            "maximum": {
+                                                "value": "now"
+                                            },
+                                            "minimum": {
+                                                "value": "1900-01-01"
+                                            }
+                                         }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                     "goto": {
+                                         "block": "confirm-dob-proxy",
+                                         "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                     }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "confirm-dob"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "ConfirmationQuestion",
+                            "id": "confirm-dob",
+                            "questions": [
+                                {
+                                    "id": "confirm-date-of-birth",
+                                    "title": "You are {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old. Is this correct?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "confirm-date-of-birth-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "Yes, I am {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old",
+                                                    "value": "Yes"
+                                                },
+                                                {
+                                                    "label": "No, I need to change my date of birth",
+                                                    "value": "No"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                               "routing_rules": [{
+                                   "goto": {
+                                        "block": "date-of-birth",
+                                        "when": [{
+                                            "id": "confirm-date-of-birth-answer",
+                                            "condition": "equals",
+                                            "value": "No"
+                                        }]
+                                   }
+                                },
+                                {                 
+                                   "goto": {
+                                        "block": "sex-over16",
+                                        "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
+                                            }
+                                        }]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "sex"
+                                    }
+                                }
+                            ]
+                  
+                        },
+                        {
+                            "type": "ConfirmationQuestion",
+                            "id": "confirm-dob-proxy",
+                            "questions": [
+                                {
+                                    "id": "confirm-date-of-birth-proxy",
+                                    "title": "{{[answers['first-name'], answers['last-name']] | format_household_name}} is {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old. Is this correct?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "confirm-date-of-birth-answer-proxy",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "Yes, {{[answers['first-name'], answers['last-name']] | format_household_name}} is {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old",
+                                                    "value": "Yes"
+                                                },
+                                                {
+                                                    "label": "No, I need to change their date of birth",
+                                                    "value": "No"
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                               "routing_rules": [
+                                 {
+                                    "goto": {
+                                        "block": "date-of-birth",
+                                        "when": [{
+                                            "id": "confirm-date-of-birth-answer-proxy",
+                                            "condition": "equals",
+                                            "value": "No"
+                                        }]
+                                    }
+                                  },
+                                {                 
+                                   "goto": {
+                                        "block": "sex-over16",
+                                        "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -16
+                                                }
+                                            }
+                                        }]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "sex"
+                                    }
+                                }
+                            ]
+                  
+                        },
+                        {
+                            "type": "Question",
+                            "id": "sex-over16",
+                            "questions": [
+                                {
+                                    "id": "sex-over16-question",
+                                     "titles": [{
+                                             "value": "What is <em>{{[answers['first-name'], answers['last-name']] | format_household_name_possessive }}</em> sex?",
+                                              "when": [{
+                                                    "id": "proxy-check-answer",
+                                                    "condition": "equals",
+                                                    "value": "proxy"
+                                                }]
+                                            },
+                                            {
+                                                "value": "What is your sex?"
+                                            }
+                                        ],
+                                    "type": "General",
+                                     "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "A question about gender will follow"
+                                            }
+                                        ]
+                                    },   
+                                    "answers": [
+                                        {
+                                            "id": "sex-over16-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                               {
+                                                    "label": "Female",
+                                                    "value": "Female"
+                                                }, 
+                                                {
+                                                    "label": "Male",
+                                                    "value": "Male"
+                                                }
+                                                
+                                                
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "marriage-type"
+                                    }
+                                }
+                            ]
+                        },
                          {
                             "type": "Question",
                             "id": "sex",
