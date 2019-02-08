@@ -267,7 +267,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-date-of-birth",
-                                    "title": "You are {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old. Is this correct?",
+                                    "title": "You are {{ calculate_years_difference (answers['date-of-birth-answer'], 'now') }} old. Is this correct?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -275,7 +275,7 @@
                                             "mandatory": true,
                                             "options": [
                                                 {
-                                                    "label": "Yes, I am {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old",
+                                                    "label": "Yes, I am {{ calculate_years_difference (answers['date-of-birth-answer'], 'now') }} old",
                                                     "value": "Yes"
                                                 },
                                                 {
@@ -327,7 +327,7 @@
                             "questions": [
                                 {
                                     "id": "confirm-date-of-birth-proxy",
-                                    "title": "{{[answers['first-name'], answers['last-name']] | format_household_name}} is {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old. Is this correct?",
+                                    "title": "{{[answers['first-name'], answers['last-name']] | format_household_name}} is {{ calculate_years_difference (answers['date-of-birth-answer'], 'now') }} old. Is this correct?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -335,7 +335,7 @@
                                             "mandatory": true,
                                             "options": [
                                                 {
-                                                    "label": "Yes, {{[answers['first-name'], answers['last-name']] | format_household_name}} is {{ calculate_years_difference (answers['date-of-birth-answer'][group_instance], 'now') }} old",
+                                                    "label": "Yes, {{[answers['first-name'], answers['last-name']] | format_household_name}} is {{ calculate_years_difference (answers['date-of-birth-answer'], 'now') }} old",
                                                     "value": "Yes"
                                                 },
                                                 {
