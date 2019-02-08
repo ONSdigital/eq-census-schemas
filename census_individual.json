@@ -150,6 +150,12 @@
                                             }
                                         },
                                         {
+                                            "id": "middle-names",
+                                            "label": "Middle names",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
                                             "id": "last-name",
                                             "label": "Last name",
                                             "mandatory": false,
