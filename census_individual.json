@@ -10,7 +10,7 @@
     "eq_id": "census",
     "form_type": "household",
     "navigation": {
-        "visible": true
+        "visible": false
     },
     "metadata": [
         {
