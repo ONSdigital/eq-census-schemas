@@ -24,6 +24,10 @@
         {
             "name": "region_code",
             "validator": "string"
+        },
+        {
+            "name": "type",
+            "validator": "string"
         }
     ],
     "sections": [
@@ -116,7 +120,47 @@
                                     ]
                                 }
                             ]
-                        }
+                        },
+                        {
+                            "type": "Question",
+                            "id": "accommodation-type",
+                            "questions": [
+                                {
+                                    "id": "accommodation-type-question",
+                                    "title": "What type of accommodation is <em>{{ [answers['address-line-1'], answers['address-line-2']] | format_household_name }}<em>?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "accommodation-type-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "A communal establishment",
+                                                    "value": "A communal establishment",
+                                                    "description": "For example, student hall of residence, boarding school, armed forces base, hospital, care home, prison"
+                                                },
+                                                {
+                                                    "label": "A private or family household ",
+                                                    "value": "A private or family household "
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                                "skip_conditions": [{
+                                    "when": [{
+                                        "meta": "type",
+                                        "condition": "not equals",
+                                        "value": "H"
+                                    },{
+                                        "meta": "type",
+                                        "condition": "not equals",
+                                        "value": "C"
+                                    }]
+                                }]
+                         }
                     ]
                 }
             ]
