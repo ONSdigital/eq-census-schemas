@@ -41,7 +41,7 @@
                             "questions": [
                                 {
                                     "id": "census-date-question",
-                                    "title":  "What is Census day?",
+                                    "title":  "When is Census day?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -508,7 +508,7 @@
                                 {
                                     "id": "confirm-marriage-type",
                                      "titles": [{
-                                            "value": "On 30 November 2018, what is <em>{{[answers['first-name'], answers['last-name']] | format_household_name_possessive }}</em> legal marital or registered civil partnership status?",
+                                            "value": "On {{[answers['census-date-answer']}}, what is <em>{{[answers['first-name'], answers['last-name']] | format_household_name_possessive }}</em> legal marital or registered civil partnership status?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -516,7 +516,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "On 30 November 2018, what is your legal marital or registered civil partnership status?"
+                                            "value": "On {{[answers['census-date-answer']}}, what is your legal marital or registered civil partnership status?"
                                         }
                                     ],
                                     "type": "General",
