@@ -508,7 +508,7 @@
                                 {
                                     "id": "confirm-marriage-type",
                                      "titles": [{
-                                            "value": "On {{[answers['census-date-answer']|format_date}}, what is <em>{{[answers['first-name'], answers['last-name']] | format_household_name_possessive }}</em> legal marital or registered civil partnership status?",
+                                            "value": "On {{ answers['census-date-answer']|format_date }}, what is <em>{{[answers['first-name'], answers['last-name']] | format_household_name_possessive }}</em> legal marital or registered civil partnership status?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -516,7 +516,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "On {{[answers['census-date-answer']|format_date}}, what is your legal marital or registered civil partnership status?"
+                                            "value": "On {{ answers['census-date-answer']|format_date }}, what is your legal marital or registered civil partnership status?"
                                         }
                                     ],
                                     "type": "General",
