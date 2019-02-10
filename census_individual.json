@@ -24,10 +24,6 @@
         {
             "name": "region_code",
             "validator": "string"
-        },
-        {
-            "name": "type",
-            "validator": "string"
         }
     ],
     "sections": [
@@ -53,6 +49,34 @@
                                             "mandatory": true,
                                             "type": "Date"
                                          }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "census-type",
+                            "questions": [
+                                {
+                                    "id": "census-type-question",
+                                    "title":  "When type of census?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "census-type-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "Communal establishment",
+                                                    "value": "Communal establishment"
+                                                },
+                                                {
+                                                    "label": "Household ",
+                                                    "value": "Household "
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
                                     ]
                                 }
                             ]
@@ -151,13 +175,13 @@
                             ],
                                 "skip_conditions": [{
                                     "when": [{
-                                        "meta": "type",
+                                        "id": "census-type-answer",
                                         "condition": "not equals",
-                                        "value": "H"
+                                        "value": "Household"
                                     },{
-                                        "meta": "type",
+                                        "id": "census-type-answer",
                                         "condition": "not equals",
-                                        "value": "C"
+                                        "value": "Communal establishment"
                                     }]
                                 }]
                          }
