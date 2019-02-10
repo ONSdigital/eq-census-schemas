@@ -147,7 +147,27 @@
                                         }
                                     ]
                                 }
-                            ]
+                            ],
+                                "routing_rules": [{
+                                    "goto": {
+                                        "group": "personal-section",
+                                        "when": [{
+                                            "id": "census-type-answer",
+                                            "condition": "equals",
+                                            "value": "Household"
+                                        },{
+                                            "id": "census-type-answer",
+                                            "condition": "equals",
+                                            "value": "Communal establishment"
+                                        }]
+                                    }
+                                 },
+                                 {
+                                    "goto": {
+                                        "block": "accommodation-type"
+                                    }
+                                 }
+                             ]
                         },
                         {
                             "type": "Question",
@@ -176,18 +196,7 @@
                                         }
                                     ]
                                 }
-                            ],
-                                "skip_conditions": [{
-                                    "when": [{
-                                        "id": "census-type-answer",
-                                        "condition": "equals",
-                                        "value": "Household"
-                                    },{
-                                        "id": "census-type-answer",
-                                        "condition": "equals",
-                                        "value": "Communal establishment"
-                                    }]
-                                }]
+                            ]
                          }
                     ]
                 }
