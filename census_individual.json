@@ -71,8 +71,12 @@
                                                     "value": "Communal establishment"
                                                 },
                                                 {
-                                                    "label": "Household ",
-                                                    "value": "Household "
+                                                    "label": "Household",
+                                                    "value": "Household"
+                                                },
+                                                {
+                                                    "label": "Neither",
+                                                    "value": "Neither"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -176,11 +180,11 @@
                                 "skip_conditions": [{
                                     "when": [{
                                         "id": "census-type-answer",
-                                        "condition": "not equals",
+                                        "condition": "equals",
                                         "value": "Household"
                                     },{
                                         "id": "census-type-answer",
-                                        "condition": "not equals",
+                                        "condition": "equals",
                                         "value": "Communal establishment"
                                     }]
                                 }]
