@@ -299,6 +299,76 @@
                                     ]
                                 }
                             ],
+                            "routing_rules": [
+                                 {
+                                        "goto": {
+                                            "block": "date-of-birth",
+                                            "when": [{
+                                                "id": "census-type-answer",
+                                                "condition": "equals",
+                                                "value": "Household"
+                                            },{
+                                                "id": "census-type-answer",
+                                                "condition": "equals",
+                                                "value": "Communal establishment"
+                                            }]
+                                        }
+                                     },
+                                     {
+                                        "goto": {
+                                            "block": "establishment-position"
+                                        }
+                                     }
+                             ]
+                         },
+                        {
+                            "type": "Question",
+                            "id": "establishment-position",
+                            "questions": [
+                                {
+                                    "id": "establishment-position-question",
+                                     "titles": [{
+                                             "value": "What is <em>{{[answers['first-name'], answers['last-name']] | format_household_name_possessive }}</em> position in this establishment?",
+                                              "when": [{
+                                                    "id": "proxy-check-answer",
+                                                    "condition": "equals",
+                                                    "value": "proxy"
+                                                }]
+                                            },
+                                            {
+                                                "value": "What is your position in this establishment?"
+                                            }
+                                        ],
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "establishment-position-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "Resident",
+                                                    "value": "Resident",
+                                                    "description": "For example, student, member of Armed Forces, patient, detainee"
+                                                },
+                                                {
+                                                    "label": "Staff or owner",
+                                                    "value": "Staff or owner"
+                                                },
+                                                {
+                                                    "label": "Family member or partner of staff or owner",
+                                                    "value": "Family member or partner of staff or owner"
+                                                },
+                                                {
+                                                    "label": "Visitor with no usual UK address",
+                                                    "value": "Visitor with no usual UK address"
+                                                }
+                                                
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
                                     "routing_rules": [
 
                                         {
@@ -308,7 +378,7 @@
                                         }
                                     ]
                          },
-                                                {
+                         {
                             "type": "Question",
                             "id": "date-of-birth",
                             "questions": [
