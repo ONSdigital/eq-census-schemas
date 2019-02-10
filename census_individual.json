@@ -310,7 +310,7 @@
                                             },{
                                                 "id": "census-type-answer",
                                                 "condition": "equals",
-                                                "value": "Communal establishment"
+                                                "value": "Neither"
                                             }]
                                         }
                                      },
