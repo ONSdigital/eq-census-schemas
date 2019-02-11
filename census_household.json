@@ -2808,16 +2808,29 @@
                             ],
                             "routing_rules": [
                                 {
-                                    "goto": {
+                                    "goto": { 
                                         "block": "length-of-stay",
+                                        "when": [{
+                                            "id": "arrive-in-uk-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "offset_by": {
+                                                    "months": 1
+                                                },
+                                                "value": "census-date-answer"
+                                            }
+                                        }]
+                                    }
+                                },
+                                {
+                                    "goto": { 
+                                        "block": "when-arrive-in-uk",
                                        "when": [{
                                             "id": "arrive-in-uk-answer",
-                                            "condition": "greater than",
+                                            "condition": "equals",
                                             "date_comparison": {
-                                                "value": "now",
-                                                "offset_by": {
-                                                    "years": -1
-                                                }
+                                                
+                                                "value": "census-date-answer"
                                             }
                                         }]
                                     }
