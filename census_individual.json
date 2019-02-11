@@ -5205,6 +5205,16 @@
                                     "goto": {
                                         "block": "other-qualifications",
                                         "when": [{
+                                            "id": "apprenticeship-answer",
+                                            "condition": "equals",
+                                            "value": "No"
+                                            
+                                        },{
+                                            "id": "degree-answer",
+                                            "condition": "equals",
+                                            "value": "No"
+                                            
+                                        },{
                                             "id": "gcse-answer-exclusive",
                                             "condition": "contains",
                                             "value": "None of these apply"
