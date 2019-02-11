@@ -317,9 +317,9 @@
                                         "block": "date-of-birth",
                                         "when": [
                                             {
-                                                "id": "census-type-answer",
+                                                "id": "accommodation-type-answer",
                                                 "condition": "equals",
-                                                "value": "Neither"
+                                                "value": "Household"
                                             }
                                         ]
                                     }
