@@ -47,7 +47,7 @@
                                         {
                                             "id": "census-date-answer",
                                             "mandatory": true,
-                                            "type": "Date"
+                                            "type": "MonthYearDate"
                                          }
                                     ]
                                 }
