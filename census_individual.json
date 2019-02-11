@@ -150,7 +150,7 @@
                             ],
                                 "routing_rules": [{
                                     "goto": {
-                                        "group": "personal-section",
+                                        "group": "personal",
                                         "when": [{
                                             "id": "census-type-answer",
                                             "condition": "equals",
