@@ -5932,12 +5932,12 @@
                                         "block": "other-qualifications",
                                         "when": [{
                                             "id": "apprenticeship-answer",
-                                            "condition": "contains",
+                                            "condition": "equals",
                                             "value": "No"
                                             
                                         },{
                                             "id": "degree-answer",
-                                            "condition": "contains",
+                                            "condition": "equals",
                                             "value": "No"
                                             
                                         },{
