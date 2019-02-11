@@ -5432,7 +5432,7 @@
                                     "answers": [
                                         {
                                             "id": "sexual-identity-answer",
-                                            "mandatory": true,
+                                            "mandatory": false,
                                             "label": "Select one option only",
                                             "options": [
                                                 {
@@ -5484,7 +5484,7 @@
                                     "answers": [
                                         {
                                             "id": "sexual-identity-answer-proxy",
-                                            "mandatory": true,
+                                            "mandatory": false,
                                             "label": "Select one option only",
                                             "options": [
                                                 {
@@ -5546,7 +5546,7 @@
                                      "answers": [
                                         {
                                             "id": "birth-gender-answer",
-                                            "mandatory": true,
+                                            "mandatory": false,
                                             "label": "Select one option only",
                                             "options": [
                                                 {
