@@ -148,38 +148,32 @@
                                     ]
                                 }
                             ],
-                                "routing_rules": [{
-                                   "goto": {
-                                        "group": "personal",
-                                        "when": [{
-                                                "id": "census-type-answer",
-                                                "condition": "equals",
-                                                "value": "Household"
-                                            }
-                                        ]
+                                "routing_rules": [
+                                    {
+                                        "goto": {
+                                            "block": "accommodation-type"
+                                        }
                                     }
-                                },
-                                {
-                                    "goto": {
-                                        "group": "personal",
-                                        "when": [{
-                                                "id": "census-type-answer",
-                                                "condition": "equals",
-                                                "value": "Communal establishment"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "accommodation-type"
-                                    }
-                                }
                              ]
                         },
                         {
                             "type": "Question",
                             "id": "accommodation-type",
+                            "skip_conditions": [{
+                                    "when": [{
+                                        "id": "census-type-answer",
+                                        "condition": "equals",
+                                        "value": "Household"
+                                    }]
+                                },
+                                {
+                                    "when": [{
+                                        "id": "census-type-answer",
+                                        "condition": "equals",
+                                        "value": "Communal establishment"
+                                    }]
+                                }
+                            ],
                             "questions": [
                                 {
                                     "id": "accommodation-type-question",
@@ -315,7 +309,13 @@
                                                 "id": "census-type-answer",
                                                 "condition": "equals",
                                                 "value": "Household"
-                                            },
+                                            }
+                                        ]
+                                    }
+                                },{
+                                    "goto": {
+                                        "block": "date-of-birth",
+                                        "when": [
                                             {
                                                 "id": "census-type-answer",
                                                 "condition": "equals",
@@ -323,7 +323,7 @@
                                             }
                                         ]
                                     }
-                                },
+                                },            
                                 {
                                     "goto": {
                                         "block": "establishment-position"
