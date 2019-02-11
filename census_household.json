@@ -35,6 +35,24 @@
                     "id": "what-is-your-address-group",
                     "title": "What is your address?",
                     "blocks": [
+                         {
+                            "type": "Question",
+                            "id": "census-date",
+                            "questions": [
+                                {
+                                    "id": "census-date-question",
+                                    "title":  "When is Census day?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "census-date-answer",
+                                            "mandatory": true,
+                                            "type": "Date"
+                                         }
+                                    ]
+                                }
+                            ]
+                        },
                         {
                             "type": "Introduction",
                             "id": "introduction"
