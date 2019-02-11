@@ -5926,11 +5926,21 @@
                                     ]
                                 }
                             ],
-                            "routing_rules": [
+                            "routing_rules": [ 
                                 {
                                     "goto": {
                                         "block": "other-qualifications",
                                         "when": [{
+                                            "id": "apprenticeship-answer",
+                                            "condition": "contains",
+                                            "value": "No"
+                                            
+                                        },{
+                                            "id": "degree-answer",
+                                            "condition": "contains",
+                                            "value": "No"
+                                            
+                                        },{
                                             "id": "gcse-answer-exclusive",
                                             "condition": "contains",
                                             "value": "None of these apply"
