@@ -1016,11 +1016,11 @@
                                     "title": "Information you need",
                                     "list": [
                                         "Personal details such as date of birth, country of birth, religion etc.",
-                                        "Education and qualifications",
-                                        "Employment and travel to work",
                                         "Second or holiday homes",
+                                        "Languages",
                                         "Unpaid care and health",
-                                        "Languages"
+                                        "Education and qualifications",
+                                        "Employment and travel to work"
                                     ]
                                 }
                             ]
