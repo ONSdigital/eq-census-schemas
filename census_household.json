@@ -487,13 +487,13 @@
             "groups": [
                 {
                     "id": "household-and-accommodation",
-                    "title": "Household and Accommodation",
+                    "title": "Household accommodation",
                     "blocks": [
                         {
                             "type": "Interstitial",
                             "id": "household-and-accommodation-block",
-                            "title": "Household and accommodation",
-                            "description": "In this section, we’re going to ask you about the household and accommodation you live in.",
+                            "title": "Household accommodation",
+                            "description": "In this section, we’re going to ask you about the accommodation you live in.",
                             "content": [
                                 {
                                     "title": "Information you need",
