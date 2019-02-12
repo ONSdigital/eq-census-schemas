@@ -2877,7 +2877,7 @@
                                 {
                                     "id": "when-arrive-in-uk-question",
                                     "titles": [{
-                                            "value": "Did <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> arrive in the UK, on or after 30 November 2017?",
+                                            "value": "Did <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> arrive in the UK, on or after March 2020?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -2885,7 +2885,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "Did you arrive in the UK, on or after 30 November 2017?"
+                                            "value": "Did you arrive in the UK, on or after March 2020?"
                                         }
                                     ],
                                     "type": "General",
