@@ -2808,31 +2808,37 @@
                             ],
                             "routing_rules": [
                                 {
-                                    "goto": { 
+                                    "goto": {
                                         "block": "length-of-stay",
-                                        "when": [{
-                                            "id": "arrive-in-uk-answer",
-                                            "condition": "less than",
-                                            "date_comparison": {
-                                                "offset_by": {
-                                                    "months": 1
-                                                },
-                                                "value": "census-date-answer"
+                                        "when": [
+                                            {
+                                                "id": "arrive-in-uk-answer",
+                                                "condition": "greater than",
+                                                "date_comparison": {
+                                                    "offset_by": {
+                                                        "years": -1
+                                                    },
+                                                    "id": "census-date-answer"
+                                                }
                                             }
-                                        }]
+                                        ]
                                     }
                                 },
                                 {
-                                    "goto": { 
+                                    "goto": {
                                         "block": "when-arrive-in-uk",
-                                       "when": [{
-                                            "id": "arrive-in-uk-answer",
-                                            "condition": "equals",
-                                            "date_comparison": {
-                                                
-                                                "value": "census-date-answer"
+                                        "when": [
+                                            {
+                                                "id": "arrive-in-uk-answer",
+                                                "condition": "equals",
+                                                "date_comparison": {
+                                                    "id": "census-date-answer",
+                                                    "offset_by": {
+                                                        "years": -1
+                                                    }
+                                                }
                                             }
-                                        }]
+                                        ]
                                     }
                                 },
                                 {
