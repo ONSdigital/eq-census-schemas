@@ -1285,7 +1285,7 @@
                             }
                         }]
                     },
-                    {
+                     {
                         "type": "Question",
                         "id": "internet-usage",
                         "questions": [{
@@ -1298,23 +1298,27 @@
                                     }]
                                 },
                             "type": "General",
-                            "mandatory": false,
                             "answers": [{
-                                    "id": "internet-usage-answer",
-                                    "mandatory": false,
-                                    "options": [{
-                                            "label": "Obtaining information from websites or 'apps'",
+                                "id": "internet-usage-answer",
+                                "mandatory": true,
+                                "options": [{
+                                        "label": "Retired",
+                                        "value": "Retired",
+                                        "description": "Whether receiving a pension or not"
+                                    },
+                                    {
+                                           "label": "Obtaining information from websites or 'apps'",
                                             "value": "Obtaining information from websites or 'apps'"
-                                        },
-                                        {
-                                            "label": "Downloading or printing forms",
-                                            "value": "Downloading or printing forms"
-                                        },
-                                        {
-                                            "label": "Submitting completed forms online",
+                                    },
+                                    {
+                                          "label": "Downloading or printing forms",
+                                          "value": "Downloading or printing forms"
+                                    },
+                                    {
+                                        "label": "Submitting completed forms online",
                                             "value": "Submitting completed forms online"
-                                        },
-                                        {
+                                    },
+                                    {
                                             "label": "None of these",
                                             "value": "None of these"
                                         },
@@ -1322,12 +1326,12 @@
                                             "label": "Not known",
                                             "value": "Not known"
                                         }
-                                    ],
-                                    "type": "Checkbox"
-                                }
-                            ]
+                                ],
+                                "type": "Checkbox"
+                            }]
                         }]
                     },
+                    
                     {
                         "type": "Question",
                         "id": "other-living-accommodation",
