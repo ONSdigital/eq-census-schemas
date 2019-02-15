@@ -1014,6 +1014,16 @@
                         "routing_rules": [
                             {
                                 "goto": {
+                                    "block": "own-or-rent-past",
+                                     "when": [{
+                                                "id": "primary-household-member-address-check-answer",
+                                                "condition": "equals",
+                                                "value": "No"
+                                     }]
+                                }
+                            },
+                            {
+                                "goto": {
                                     "block": "own-or-rent"
                                 }
                             }
@@ -1040,32 +1050,22 @@
                                 ],
                                 "type": "Radio"
                             }]
-                        }]
+                        }],
+                        "routing_rules": [
+                            {
+                                "goto": {
+                                    "block": "own-or-rent"
+                                }
+                            }
+                        ]
                     },
                     {
                         "type": "Question",
                         "id": "own-or-rent",
                         "questions": [{
                             "id": "own-or-rent-question",
-                            "titles": [{
-                                            "value": "Did the householder own or rent <em>{{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}</em>, including the kitchen, bathroom and toilet, behind a door that only this household can use?",
-                                            "when": [{
-                                                "id": "primary-household-member-address-check-answer",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }]
-                                        },
-                                        {
-                                            "value": "Does the householder own or rent <em>{{ answers['address-line-1'] }} {{ answers['address-line-2'] }}</em>, including the kitchen, bathroom and toilet, behind a door that only this household can use?"
-                                        }
-                                    ],
+                            "title":  "Does your household own or rent <em>{{ answers['address-line-1'] }} {{ answers['address-line-2'] }}</em>?",
                             "type": "General",
-                            "guidance": {
-                                "content": [{
-                                    "title": "What is a householder?",
-                                    "description": "The householder is the person who lives, or is present, at this address who owns or rents (or jointly owns or rents) the accomodation and or is responsible or jointly responsible for paying the household bills and expenses"
-                                }]
-                            },
                             "answers": [{
                                 "id": "own-or-rent-answer",
                                 "mandatory": true,
@@ -1111,6 +1111,70 @@
                                         "id": "own-or-rent-answer",
                                         "condition": "equals",
                                         "value": "Owns with a mortgage or loan"
+                                    }]
+                                }
+                            },
+                            {
+                                "goto": {
+                                    "block": "landlord"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Question",
+                        "id": "own-or-rent-past",
+                        "questions": [{
+                            "id": "own-or-rent-past-question",
+                           
+                            "title": "Did your household own or rent <em>{{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}</em>?",
+                            "type": "General",
+                            
+                            "answers": [{
+                                "id": "own-or-rent-past-answer",
+                                "mandatory": true,
+                                "options": [{
+                                        "label": "Owned outright",
+                                        "value": "Owned outright"
+                                    },
+                                    {
+                                        "label": "Owned with a mortgage or loan",
+                                        "value": "Owned with a mortgage or loan"
+                                    },
+                                    {
+                                        "label": "Part owned and part rented",
+                                        "value": "Part owned and part rented",
+                                        "description": "Including shared ownership"
+                                    },
+                                    {
+                                        "label": "Rented with or without housing benefit",
+                                        "value": "Rented with or without housing benefit"
+                                    },
+                                    {
+                                        "label": "Lived here rent free",
+                                        "value": "Lived here rent free"
+                                    }
+                                ],
+                                "type": "Radio"
+                            }]
+                        }],
+                        "routing_rules": [{
+                                "goto": {
+                                    "block": "internet",
+                                    "when": [{
+                                        "id": "own-or-rent-answer",
+                                        "condition": "equals",
+                                        "value": "Owned outright"
+                                    }]
+                                }
+                            },
+                            {
+                                "goto": {
+                                    "block": "internet",
+                                    "when": [{
+                                        "id": "own-or-rent-answer",
+                                        "condition": "equals",
+                                        "value": "Owned with a mortgage or loan"
                                     }]
                                 }
                             },
