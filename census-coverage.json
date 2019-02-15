@@ -976,10 +976,10 @@
                                 "goto": {
                                     "block": "self-contained-accommodation-past",
                                      "when": [{
-                                                "id": "primary-household-member-address-check-answer",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }]
+                                        "id": "primary-household-member-address-check-answer",
+                                        "condition": "equals",
+                                        "value": "No"
+                                    }]
                                 }
                             },
                             {
@@ -994,7 +994,7 @@
                         "id": "self-contained-accommodation",
                         "questions": [{
                             "id": "self-contained-accommodation-question",
-                            "title": "Are all the rooms at <em>{{ answers['address-line-1'] }} {{ answers['address-line-2'] }}</em>, including the kitchen, bathroom and toilet, behind a door that only this household can use?",            
+                            "title": "Are all the rooms at <em>{{ answers['address-line-1'] }} {{ answers['address-line-2'] }}</em>, including the kitchen, bathroom and toilet, behind a door that only this household can use?",             
                             "type": "General",
                             "answers": [{
                                 "id": "self-contained-accommodation-answer",
@@ -1010,7 +1010,14 @@
                                 ],
                                 "type": "Radio"
                             }]
-                        }]
+                        }],
+                        "routing_rules": [
+                            {
+                                "goto": {
+                                    "block": "own-or-rent"
+                                }
+                            }
+                        ]
                     },
                      {
                         "type": "Question",
