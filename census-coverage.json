@@ -248,14 +248,14 @@
                                 },
                                 {
                                     "goto": { 
-                                        "group": "anyone-living-block"
+                                        "group": "anyone-living"
                                     }
                                 }
                             ]
                     },
                     {
                         "type": "Question",
-                        "id": "anyone-living-block",
+                        "id": "anyone-living",
                         "questions": [{
                             "id": "anyone-living-question",
                             "title": "Was anybody in your current household usually living at {{ answers['address-line-1'] }} {{ answers['address-line-2'] }} on {{answers['census-date-answer']|format_date_custom('EEEE d MMMM YYYY')}}?",
