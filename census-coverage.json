@@ -2568,7 +2568,7 @@
                                 "goto": {
                                     "block": "length-of-stay",
                                     "when": [{
-                                        "id": "past-usual-address-answer",
+                                        "id": "past-usual-address-answer-proxy",
                                         "condition": "equals",
                                         "value": "Other"
                                     }]
