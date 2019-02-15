@@ -216,7 +216,7 @@
                         "id": "address-check-block",
                         "questions": [{
                             "id": "address-check-question",
-                            "title": "Were you usually living at {{ answers['address-line-1'] }} {{ answers['address-line-2'] }} on 13 October 2019?",
+                            "title": "Were you usually living at {{ answers['address-line-1'] }} {{ answers['address-line-2'] }} on {{answers['census-date-answer']|format_date_custom('EEEE d MMMM YYYY')}}?",
                             "type": "General",
                             "answers": [{
                                 "id": "primary-household-member-address-check-answer",
@@ -248,6 +248,48 @@
                                 },
                                 {
                                     "goto": { 
+                                        "group": "anyone-living-block"
+                                    }
+                                }
+                            ]
+                    },
+                    {
+                        "type": "Question",
+                        "id": "anyone-living-block",
+                        "questions": [{
+                            "id": "anyone-living-question",
+                            "title": "Was anybody in your current household usually living at {{ answers['address-line-1'] }} {{ answers['address-line-2'] }} on {{answers['census-date-answer']|format_date_custom('EEEE d MMMM YYYY')}}?",
+                            "type": "General",
+                            "answers": [{
+                                "id": "anyone-living-answer",
+                                "mandatory": true,
+                                "options": [{
+                                        "label": "Yes",
+                                        "value": "Yes"
+                                    },
+                                    {
+                                        "label": "No",
+                                        "value": "No"
+                                    }
+                                ],
+                                "type": "Radio"
+                            }]
+                        }],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "count-other-household-member-anyone-else-block",
+                                        "when": [
+                                            {
+                                                "id": "anyone-living-answer",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": { 
                                         "group": "address-type-group-no-primary"
                                     }
                                 }
@@ -259,15 +301,15 @@
                             "questions": [{
                                 "type": "General",
                                 "id": "count-other-household-member-anyone-else-question",
-                                "title": "How many people usually lived at  {{ answers['address-line-1'] }} {{ answers['address-line-2'] }} on Sunday 13 October 2019?",
+                                "title": "How many people usually lived at  {{ answers['address-line-1'] }} {{ answers['address-line-2'] }} on {{answers['census-date-answer']|format_date_custom('EEEE d MMMM YYYY')}}?",
                                  "guidance": {
                                         "content": [
                                             {
                                                 "title": "Include",
-                                                "list": ["Partners", "Children", "Babies born on or before Sunday 13 October 2019", "Housemates", "Tenants and lodgers", "Students and schoolchildren who lived away from home during term time"]
+                                                "list": ["Partners", "Children", "Babies born on or before {{answers['census-date-answer']|format_date_custom('EEEE d MMMM YYYY')}}", "Housemates", "Tenants and lodgers", "Students and schoolchildren who lived away from home during term time"]
                                             }, {
                                                 "title": "Exclude",
-                                                "list": ["People who have moved in after Sunday 13 October 2019"]
+                                                "list": ["People who have moved in after {{answers['census-date-answer']|format_date_custom('EEEE d MMMM YYYY')}}"]
                                             }
                                         ]
                                     },
@@ -275,7 +317,7 @@
                                     "type": "Number",
                                     "id": "count-other-household-member-anyone-else",
                                     "mandatory": true,
-                                    "label": "Number of people who usually lived here on Sunday 13 Ocobter 2019"
+                                    "label": "Number of people who usually lived here on {{answers['census-date-answer']|format_date_custom('EEEE d MMMM YYYY')}}"
                                 }]
                             }]
                         }]
@@ -397,10 +439,10 @@
                                         {
                                              "title": "Include people who are temporarily away",
                                                 "list": [
-                                                     "People who work away from home within the UK, if the household's address on 13 October 2019 was their permanent or family home", 
-                                                     "Members of the armed forces, the household's address on 13 October 2019 was their permanent or family home", 
+                                                     "People who work away from home within the UK, if the household's address on {{answers['census-date-answer']|format_date_custom('EEEE d MMMM YYYY')}} was their permanent or family home", 
+                                                     "Members of the armed forces, the household's address on {{answers['census-date-answer']|format_date_custom('EEEE d MMMM YYYY')}} was their permanent or family home", 
                                                      "People who, on 13 October 2019, were temporarily outside the UK for less than 12 months", 
-                                                     "Other people who usually lived with your household on 13 October 2019, including anyone temporarily away from home"
+                                                     "Other people who usually lived with your household on {{answers['census-date-answer']|format_date_custom('EEEE d MMMM YYYY')}}, including anyone temporarily away from home"
                                                ]
                                           }, {
                                                 "title": "Include people who are temporarily staying",
@@ -410,7 +452,7 @@
                                                  ]
                                            },
                                            {
-                                                "title": "Include people who usually lived with your household on 13 October 2019 but have since moved out"
+                                                "title": "Include people who usually lived with your household on {{answers['census-date-answer']|format_date_custom('EEEE d MMMM YYYY')}} but have since moved out"
                                            } 
                                     ]
                                 },
@@ -483,7 +525,7 @@
                             "id": "share-facilities-block",
                             "questions": [{
                                 "id": "share-facilities-question",
-                                "title": "Thinking about the people in your household at  {{ answers['address-line-1'] }} {{ answers['address-line-2'] }} on 13 October 2019, were you all sharing cooking facilities and a living room or sitting room or dining area?",
+                                "title": "Thinking about the people in your household at  {{ answers['address-line-1'] }} {{ answers['address-line-2'] }} on {{answers['census-date-answer']|format_date_custom('EEEE d MMMM YYYY')}}, were you all sharing cooking facilities and a living room or sitting room or dining area?",
                                 "type": "General",
                                 "answers": [{
                                     "type": "Radio",
@@ -506,7 +548,7 @@
                             "id": "move-out-block",
                             "questions": [{
                                 "id": "move-out-question",
-                                "title": "Did any of these people move into <em>{{ answers['address-line-1'] }} {{ answers['address-line-2'] }}</em> after 13 October 2019?",
+                                "title": "Did any of these people move into <em>{{ answers['address-line-1'] }} {{ answers['address-line-2'] }}</em> after {{answers['census-date-answer']|format_date_custom('EEEE d MMMM YYYY')}}?",
                                 "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['other-household-member-first-name'], answers['other-household-member-last-name']], [answers['temp-household-member-first-name'], answers['temp-household-member-last-name']]] | format_repeating_summary }}",
                                 "type": "General",
                                 "answers": [{
@@ -585,7 +627,7 @@
                         "id": "previous-address-type-block-no-primary",
                         "questions": [{
                             "id": "previous-address-type-question-no-primary",
-                            "title": "On 13 October 2019 what was your household's usual address?",
+                            "title": "On {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}} what was your household's usual address?",
                             "type": "General",
                              "answers": [
                                         {
@@ -657,7 +699,7 @@
                                     "options": [{
                                             "label": "Yes, I need to add another person",
                                             "value": "Yes",
-                                            "description": "Include partners, children, babies born on or after 13 October 2019, housemates, tenants and schoolchildren who live away from home during term time"
+                                            "description": "Include partners, children, babies born on or after {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}}, housemates, tenants and schoolchildren who live away from home during term time"
                                         },
                                         {
                                             "label": "No, this is everyone",
@@ -1510,7 +1552,7 @@
                         "questions": [{
                             "id": "marital-status-question",
                             "titles": [{
-                                    "value": "On 13 October 2019, what was <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name_possessive}}</em> legal marital or registered civil partnership status?",
+                                    "value": "On {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}}, what was <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name_possessive}}</em> legal marital or registered civil partnership status?",
                                     "when": [{
                                         "id": "proxy-check-answer",
                                         "condition": "equals",
@@ -1518,7 +1560,7 @@
                                     }]
                                 },
                                 {
-                                    "value": "On 13 October 2019, what was your legal marital or registered civil partnership status?"
+                                    "value": "On {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}}, what was your legal marital or registered civil partnership status?"
                                 }
                             ],
                             "type": "General",
