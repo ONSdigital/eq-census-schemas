@@ -248,7 +248,7 @@
                                 },
                                 {
                                     "goto": { 
-                                        "group": "anyone-living"
+                                        "id": "anyone-living"
                                     }
                                 }
                             ]
