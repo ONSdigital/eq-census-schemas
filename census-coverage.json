@@ -2813,7 +2813,7 @@
                         "questions": [{
                             "id": "employment-type-question",
                             "titles": [{
-                                    "value": "Which of the following describes what <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name}}</em> was doing during the week {{answers[7day-census-date-answer]}} to {{answers['past-census-date-answer']|format_date_custom('d MMMM YYYY')}}?",
+                                    "value": "Which of the following describes what <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name}}</em> was doing during the week {{answers['7day-census-date-answer']}} to {{answers['past-census-date-answer']|format_date_custom('d MMMM YYYY')}}?",
                                     "when": [{
                                         "id": "proxy-check-answer",
                                         "condition": "equals",
@@ -2821,7 +2821,7 @@
                                     }]
                                 },
                                 {
-                                    "value": "Which of the following describes what you were doing during the week {{answers[7day-census-date-answer]}} to {{answers['past-census-date-answer']|format_date_custom('d MMMM YYYY')}}?"
+                                    "value": "Which of the following describes what you were doing during the week {{answers['7day-census-date-answer']}} to {{answers['past-census-date-answer']|format_date_custom('d MMMM YYYY')}}?"
                                 }
                             ],
                             "type": "General",
