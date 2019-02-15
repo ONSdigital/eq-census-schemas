@@ -57,7 +57,24 @@
                     "id": "what-is-your-address-group",
                     "title": "What is your address?",
                     "blocks": [
-                        {
+                         {
+                            "type": "Question",
+                            "id": "census-date",
+                            "questions": [
+                                {
+                                    "id": "census-date-question",
+                                    "title":  "When is Census day?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "census-date-answer",
+                                            "mandatory": true,
+                                            "type": "Date"
+                                         }
+                                    ]
+                                }
+                            ]
+                        },{
                             "type": "Question",
                             "id": "what-is-your-address",
                             "questions": [
@@ -149,10 +166,10 @@
                     "blocks": [{
                         "type": "Interstitial",
                         "id": "household-definition-block",
-                        "description": "All the questions are about the people in your household on Sunday 13 October 2019.",
+                        "description": "All the questions are about the people in your household on {{answers['census-date']|format_date_custom('EEEE d MMMM YYYY')}}.",
                         "content": [{
                             "title": "What is a Household?",
-                            "description": "A household is one person living alone or a group of people (not necessarily related) living at the same address who share cooking facilities and share a living room or sitting room or dining area."
+                            "description": "A household is one person living alone, or a group of people (not necessarily related) who share cooking facilities and share a living room or sitting room or dining area."
                         }]
                     }]
                 },
@@ -197,6 +214,48 @@
                     "blocks": [{
                         "type": "Question",
                         "id": "address-check-block",
+                        "questions": [{
+                            "id": "address-check-question",
+                            "title": "Were you usually living at {{ answers['address-line-1'] }} {{ answers['address-line-2'] }} on 13 October 2019?",
+                            "type": "General",
+                            "answers": [{
+                                "id": "primary-household-member-address-check-answer",
+                                "mandatory": true,
+                                "options": [{
+                                        "label": "Yes",
+                                        "value": "Yes"
+                                    },
+                                    {
+                                        "label": "No",
+                                        "value": "No"
+                                    }
+                                ],
+                                "type": "Radio"
+                            }]
+                        }],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "count-other-household-member-anyone-else-block",
+                                        "when": [
+                                            {
+                                                "id": "primary-household-member-address-check-answer",
+                                                "condition": "equals",
+                                                "value": "Yes"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": { 
+                                        "group": "address-type-group-no-primary"
+                                    }
+                                }
+                            ]
+                    },
+                    {
+                        "type": "Question",
+                        "id": "anyone-living-block",
                         "questions": [{
                             "id": "address-check-question",
                             "title": "Were you, or anybody in your current household usually living at {{ answers['address-line-1'] }} {{ answers['address-line-2'] }} on 13 October 2019?",
