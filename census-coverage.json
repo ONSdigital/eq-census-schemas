@@ -972,14 +972,15 @@
                                 "type": "Radio"
                             }]
                         }],
-                        "routing_rules": [{
+                        "routing_rules": [
+                            {
                                 "goto": {
                                     "block": "self-contained-accommodation-past",
                                      "when": [{
-                                        "id": "primary-household-member-address-check-answer",
-                                        "condition": "equals",
-                                        "value": "No"
-                                    }]
+                                                "id": "primary-household-member-address-check-answer",
+                                                "condition": "equals",
+                                                "value": "No"
+                                     }]
                                 }
                             },
                             {
@@ -1190,7 +1191,18 @@
                         "id": "landlord",
                         "questions": [{
                             "id": "landlord-question",
-                            "title": "Who is your landlord?",
+                             "titles": [{
+                                            "value": "Who was your landlord?",
+                                            "when": [{
+                                                "id": "primary-household-member-address-check-answer",
+                                                "condition": "equals",
+                                                "value": "No"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Who is your landlord?"
+                                        }
+                                    ],
                             "type": "General",
                             "answers": [{
                                 "id": "landlord-answer",
@@ -1278,14 +1290,14 @@
                         "id": "internet-usage",
                         "questions": [{
                             "id": "internet-usage-question",
-                            "title": "In the last 12 months has anyone in your household interacted with or contacted public organisations over the internet for personal use for any of these reasons?",
+                            "title": "In the last 12 months has anyone in your household interacted with or contacted government organisations over the internet for personal use for any of these reasons?",
                             "guidance": {
                                     "content": [{
-                                        "title": "What do we mean by 'public organisations'?",
+                                        "title": "What do we mean by 'government organisations'?",
                                         "description": "some blurb to explain"
                                     }]
                                 },
-                            "type": "MutuallyExclusive",
+                            "type": "General",
                             "mandatory": false,
                             "answers": [{
                                     "id": "internet-usage-answer",
@@ -1301,18 +1313,17 @@
                                         {
                                             "label": "Submitting completed forms online",
                                             "value": "Submitting completed forms online"
+                                        },
+                                        {
+                                            "label": "None of these",
+                                            "value": "None of these"
+                                        },
+                                        {
+                                            "label": "Not known",
+                                            "value": "Not known"
                                         }
                                     ],
                                     "type": "Checkbox"
-                                },
-                                {
-                                    "id": "internet-usuage-answer-exclusive",
-                                    "type": "Checkbox",
-                                    "mandatory": false,
-                                    "options": [{
-                                        "label": "None of these or not known",
-                                        "value": "None of these or not known"
-                                    }]
                                 }
                             ]
                         }]
@@ -1322,8 +1333,19 @@
                         "id": "other-living-accommodation",
                         "questions": [{
                             "id": "other-living-accommodation-question",
-                            "title": "Is there any other living accommodation at <em>{{ answers['address-line-1'] }} {{ answers['address-line-2'] }}</em>?",
-                            "description": "For example bedsits, annexes, etc.",
+                            "titles": [{
+                                            "value": "Is there any other living accommodation at <em>{{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}</em>?",
+                                            "when": [{
+                                                "id": "primary-household-member-address-check-answer",
+                                                "condition": "equals",
+                                                "value": "No"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Is there any other living accommodation at <em>{{ answers['address-line-1'] }} {{ answers['address-line-2'] }}</em>?"
+                                        }
+                                    ],
+                            "description": "For example separate bedsits, annexes, sheds etc.",
                             "type": "General",
                             "answers": [{
                                 "id": "other-living-accommodation-answer",
@@ -1544,8 +1566,8 @@
                                     "mandatory": false,
                                     "label": "",
                                     "options": [{
-                                        "label": "Interviewers own estimate",
-                                        "value": "Interviewers own estimate"
+                                        "label": "Estimate",
+                                        "value": "Estimate"
                                     }]
                                 }
                             ]
