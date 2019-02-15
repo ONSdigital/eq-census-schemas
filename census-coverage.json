@@ -68,9 +68,23 @@
                                     "answers": [
                                         {
                                             "id": "census-date-answer",
+                                             "label": "Census day ",
+                                            "mandatory": true,
+                                            "type": "Date"
+                                         },
+                                        {
+                                            "id": "past-census-date-answer",
+                                            "label": "Census day minus 1 year",
+                                            "mandatory": true,
+                                            "type": "Date"
+                                         },
+                                        {
+                                            "id": "7day-census-date-answer",
+                                            "label": "Census day minus 7 days for employment questions",
                                             "mandatory": true,
                                             "type": "Date"
                                          }
+                                        
                                     ]
                                 }
                             ]
@@ -1825,7 +1839,7 @@
                         "questions": [{
                             "id": "in-education-question",
                             "titles": [{
-                                    "value": "On 13 October 2019, was <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name}}</em> a schoolchild or student in full-time education?",
+                                    "value": "On {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}}, was <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name}}</em> a schoolchild or student in full-time education?",
                                     "when": [{
                                         "id": "proxy-check-answer",
                                         "condition": "equals",
@@ -1833,7 +1847,7 @@
                                     }]
                                 },
                                 {
-                                    "value": "On 13 October 2019, were you a schoolchild or student in full-time education?"
+                                    "value": "On {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}}, were you a schoolchild or student in full-time education?"
                                 }
                             ],
                             "type": "General",
@@ -1875,7 +1889,7 @@
                         "questions": [{
                             "id": "in-education-over16-question",
                             "titles": [{
-                                    "value": "On 13 October 2019, was <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name}}</em> a student in full-time education?",
+                                    "value": "On {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}}, was <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name}}</em> a student in full-time education?",
                                     "when": [{
                                         "id": "proxy-check-answer",
                                         "condition": "equals",
@@ -1883,7 +1897,7 @@
                                     }]
                                 },
                                 {
-                                    "value": "On 13 October 2019, were you a student in full-time education?"
+                                    "value": "On {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}}, were you a student in full-time education?"
                                 }
                             ],
                             "type": "General",
@@ -2556,7 +2570,7 @@
                         "questions": [{
                             "id": "past-usual-address-question-proxy",
                             "titles": [{
-                                    "value": "One year ago, on 13 October 2018, what was <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name_possessive}}</em> usual address?",
+                                    "value": "One year ago, on {{answers['past-census-date-answer']|format_date_custom('d MMMM YYYY')}}, what was <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name_possessive}}</em> usual address?",
                                     "when": [{
                                         "id": "proxy-check-answer",
                                         "condition": "equals",
@@ -2564,7 +2578,7 @@
                                     }]
                                 },
                                 {
-                                    "value": "One year ago, on 13 October 2018, what was your usual address?"
+                                    "value": "One year ago, on {{answers['past-census-date-answer']|format_date_custom('d MMMM YYYY')}}, what was your usual address?"
                                 }
                             ],
                             "type": "General",
@@ -2611,7 +2625,7 @@
                         "questions": [{
                             "id": "past-usual-address-question",
                             "titles": [{
-                                    "value": "One year ago, on 13 October 2018, what was <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name_possessive}}</em> usual address?",
+                                    "value": "One year ago, on {{answers['past-census-date-answer']|format_date_custom('d MMMM YYYY')}}, what was <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name_possessive}}</em> usual address?",
                                     "when": [{
                                         "id": "proxy-check-answer",
                                         "condition": "equals",
@@ -2619,7 +2633,7 @@
                                     }]
                                 },
                                 {
-                                    "value": "One year ago, on 13 October 2018, what was your usual address?"
+                                    "value": "One year ago, on {{answers['past-census-date-answer']|format_date_custom('d MMMM YYYY')}}, what was your usual address?"
                                 }
                             ],
                             "type": "General",
@@ -2851,7 +2865,7 @@
                         "questions": [{
                             "id": "elsewhere-address-check-question",
                             "titles": [{
-                                    "value": "Is there another address where <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name}}</em> may have been included on a Census questionnaire because you were staying overnight there on 13 October 2019?",
+                                    "value": "Is there another address where <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name}}</em> may have been included on a Census questionnaire because they were a usual resident, or staying overnight there on 13 October 2019?",
                                     "when": [{
                                         "id": "proxy-check-answer",
                                         "condition": "equals",
@@ -2873,7 +2887,7 @@
                                         "On holiday in the UK",
                                         "A student with a term-time address and a family address",
                                         "Living on an armed forces base",
-                                        "Living at your previous address on 13 October 2019"
+                                        "Living at your previous address on {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}}"
                                     ]
                                    
                                 }
@@ -2884,7 +2898,7 @@
                                     "id": "elsewhere-address-check-answer",
                                     "mandatory": false,
                                     "options": [{
-                                            "label": "Previous home (moved since 13 October 2019)",
+                                            "label": "Previous home (moved since {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}})",
                                             "value": "Previous home"
                                         },
                                          {
@@ -2956,7 +2970,7 @@
                         "questions": [{
                             "id": "elsewhere-address-question",
                             "titles": [{
-                                    "value": "What is the other address where <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name}}</em> may have been included on a Census questionannire?",
+                                    "value": "What is the other address where <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name}}</em> may have been included on a Census questionnaire?",
                                     "when": [{
                                         "id": "proxy-check-answer",
                                         "condition": "equals",
@@ -3025,7 +3039,7 @@
                         "type": "Interstitial",
                         "id": "visitors-block",
                         "title": "Visitors",
-                        "description": "In this section, we’re going to ask you about any visitors you had staying on 13 October 2019.",
+                        "description": "In this section, we’re going to ask you about any visitors you had staying on {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}}.",
                         "content": [{
                             "title": "Information you need",
                             "list": [
@@ -3054,7 +3068,7 @@
                             "type": "General",
                             "answers": [{
                                 "id": "num-visitors-answer",
-                                "label": "Number of visitors staying on 13 October 2019",
+                                "label": "Number of visitors staying on {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}}",
                                 "mandatory": false,
                                 "type": "Number"
                             }]
@@ -3206,8 +3220,8 @@
                                     "type": "Checkbox",
                                     "mandatory": false,
                                     "options": [{
-                                        "label": "Interviewers own estimate",
-                                        "value": "Interviewers own estimate"
+                                        "label": "Estimate",
+                                        "value": "Estimate"
                                     }]
                                 }
                             ]
@@ -3296,7 +3310,7 @@
                         "id": "visitor-address",
                         "questions": [{
                             "id": "visitor-address-question",
-                            "title": "What is <em>{{answers['visitor-first-name']}} {{answers['visitor-last-name']}}'s</em> usual UK address",
+                            "title": "What is <em>{{answers['visitor-first-name']}} {{answers['visitor-last-name']}}'s</em> usual UK address?",
                             "type": "General",
                             "answers": [{
                                     "id": "visitor-address-answer-building",
@@ -3346,7 +3360,7 @@
                         "questions": [{
                             "id": "feedback-question",
                             "titles": [{
-                                    "value": "Household has said they have other living accomodation. Ensure the accomodation is recorded on the Property Listing Sheet and interview household separately",
+                                    "value": "Household has said they have other living accommodation. Ensure the accommodation is recorded on the Property Listing Sheet and interview household separately",
                                     "when": [{
                                         "id": "other-living-accommodation-answer",
                                         "condition": "equals",
