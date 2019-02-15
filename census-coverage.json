@@ -882,6 +882,16 @@
                                     }]
                                 }
                             },
+                             {
+                                "goto": {
+                                    "block": "self-contained-accommodation-past",
+                                     "when": [{
+                                                "id": "primary-household-member-address-check-answer",
+                                                "condition": "equals",
+                                                "value": "No"
+                                     }]
+                                }
+                            },
                             {
                                 "goto": {
                                     "block": "self-contained-accommodation"
@@ -927,11 +937,22 @@
                                 "type": "Radio"
                             }]
                         }],
-                        "routing_rules": [{
-                            "goto": {
-                                "block": "self-contained-accommodation"
+                        "routing_rules": [ {
+                                "goto": {
+                                    "block": "self-contained-accommodation-past",
+                                     "when": [{
+                                                "id": "primary-household-member-address-check-answer",
+                                                "condition": "equals",
+                                                "value": "No"
+                                     }]
+                                }
+                            },
+                            {
+                                "goto": {
+                                    "block": "self-contained-accommodation"
+                                }
                             }
-                        }]
+                        ]
                     },
                     {
                         "type": "Question",
@@ -1291,12 +1312,15 @@
                         "questions": [{
                             "id": "internet-usage-question",
                             "title": "In the last 12 months has anyone in your household interacted with or contacted government organisations over the internet for personal use for any of these reasons?",
-                            "guidance": {
-                                    "content": [{
+                           
+                            "definitions": [{
                                         "title": "What do we mean by 'government organisations'?",
-                                        "description": "some blurb to explain"
-                                    }]
-                                },
+                                        "content": [
+                                            {
+                                                "description": "add definition"
+                                            }
+                                        ]
+                                    }],
                             "type": "General",
                             "answers": [{
                                 "id": "internet-usage-answer",
@@ -2568,7 +2592,7 @@
                                 "goto": {
                                     "block": "length-of-stay",
                                     "when": [{
-                                        "id": "past-usual-address-answer-proxy",
+                                        "id": "past-usual-address-answer",
                                         "condition": "equals",
                                         "value": "Other"
                                     }]
