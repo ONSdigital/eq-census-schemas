@@ -2735,7 +2735,7 @@
                         "questions": [{
                             "id": "employment-status-question",
                             "titles": [{
-                                    "value": "During the week {{answers[7day-census-date-answer]}} to {{answers['past-census-date-answer']|format_date_custom('d MMMM YYYY')}}, was <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name}}</em> doing any of the following?",
+                                    "value": "During the week  to {{answers['past-census-date-answer']|format_date_custom('d MMMM YYYY')}}, was <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name}}</em> doing any of the following?",
                                     "when": [{
                                         "id": "proxy-check-answer",
                                         "condition": "equals",
@@ -2743,7 +2743,7 @@
                                     }]
                                 },
                                 {
-                                    "value": "During the week {{answers[7day-census-date-answer]}} to {{answers['past-census-date-answer']|format_date_custom('d MMMM YYYY')}}, were you doing any of the following?"
+                                    "value": "During the week  to {{answers['past-census-date-answer']|format_date_custom('d MMMM YYYY')}}, were you doing any of the following?"
                                 }
                             ],
                             "type": "MutuallyExclusive",
