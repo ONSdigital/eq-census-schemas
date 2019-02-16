@@ -898,17 +898,17 @@
                             },
                              {
                                 "goto": {
-                                    "block": "self-contained-accommodation-past",
+                                    "block": "self-contained-accommodation",
                                      "when": [{
                                                 "id": "primary-household-member-address-check-answer",
                                                 "condition": "equals",
-                                                "value": "No"
+                                                "value": "Yes"
                                      }]
                                 }
                             },
                             {
                                 "goto": {
-                                    "block": "self-contained-accommodation"
+                                    "block": "self-contained-accommodation-past"
                                 }
                             }
                         ]
