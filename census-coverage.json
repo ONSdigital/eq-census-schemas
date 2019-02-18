@@ -73,12 +73,6 @@
                                             "type": "Date"
                                          },
                                         {
-                                            "id": "past-census-date-answer",
-                                            "label": "Census day minus 1 year",
-                                            "mandatory": true,
-                                            "type": "Date"
-                                         },
-                                        {
                                             "id": "7day-census-date-answer",
                                             "label": "Census day minus 7 days for employment questions",
                                             "mandatory": true,
@@ -2724,7 +2718,7 @@
                         "questions": [{
                             "id": "employment-status-question",
                             "titles": [{
-                                    "value": "During the week {{answers['7day-census-date-answer']}} to {{answers['past-census-date-answer']|format_date_custom('d MMMM YYYY')}}, was <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name}}</em> doing any of the following?",
+                                    "value": "During the week {{answers['7day-census-date-answer']}} to {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}}, was <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name}}</em> doing any of the following?",
                                     "when": [{
                                         "id": "proxy-check-answer",
                                         "condition": "equals",
@@ -2732,7 +2726,7 @@
                                     }]
                                 },
                                 {
-                                    "value": "During the week  {{answers['7day-census-date-answer']}} to {{answers['past-census-date-answer']|format_date_custom('d MMMM YYYY')}}, were you doing any of the following?"
+                                    "value": "During the week  {{answers['7day-census-date-answer']}} to {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}}, were you doing any of the following?"
                                 }
                             ],
                             "type": "MutuallyExclusive",
@@ -2802,7 +2796,7 @@
                         "questions": [{
                             "id": "employment-type-question",
                             "titles": [{
-                                    "value": "Which of the following describes what <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name}}</em> was doing during the week {{answers['7day-census-date-answer']}} to {{answers['past-census-date-answer']|format_date_custom('d MMMM YYYY')}}?",
+                                    "value": "Which of the following describes what <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name}}</em> was doing during the week {{answers['7day-census-date-answer']}} to {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}}?",
                                     "when": [{
                                         "id": "proxy-check-answer",
                                         "condition": "equals",
@@ -2810,7 +2804,7 @@
                                     }]
                                 },
                                 {
-                                    "value": "Which of the following describes what you were doing during the week {{answers['7day-census-date-answer']}} to {{answers['past-census-date-answer']|format_date_custom('d MMMM YYYY')}}?"
+                                    "value": "Which of the following describes what you were doing during the week {{answers['7day-census-date-answer']}} to {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}}?"
                                 }
                             ],
                             "type": "General",
@@ -2854,7 +2848,7 @@
                         "questions": [{
                             "id": "elsewhere-address-check-question",
                             "titles": [{
-                                    "value": "Is there another address where <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name}}</em> may have been included on a Census questionnaire because they were a usual resident, or staying overnight there on {{answers['past-census-date-answer']|format_date_custom('d MMMM YYYY')}}?",
+                                    "value": "Is there another address where <em>{{[group_instances[group_instance_id]['primary-household-member-first-name'], group_instances[group_instance_id]['primary-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name'], group_instances[group_instance_id]['other-household-member-last-name'], group_instances[group_instance_id]['temp-household-member-first-name'], group_instances[group_instance_id]['temp-household-member-last-name'], group_instances[group_instance_id]['other-household-member-first-name-no-primary'], group_instances[group_instance_id]['other-household-member-last-name-no-primary'], group_instances[group_instance_id]['temp-household-member-first-name-no-primary'], group_instances[group_instance_id]['temp-household-member-last-name-no-primary']] | format_household_name}}</em> may have been included on a Census questionnaire because they were a usual resident, or staying overnight there on {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}}?",
                                     "when": [{
                                         "id": "proxy-check-answer",
                                         "condition": "equals",
@@ -2862,7 +2856,7 @@
                                     }]
                                 },
                                 {
-                                    "value": "Is there another address where you may have been included on a Census questionnaire because you were a usual resident, or staying overnight there on {{answers['past-census-date-answer']|format_date_custom('d MMMM YYYY')}}?"
+                                    "value": "Is there another address where you may have been included on a Census questionnaire because you were a usual resident, or staying overnight there on {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}}?"
                                 }
                             ],
                             "content": [
@@ -3043,7 +3037,7 @@
                         "questions": [{
                             "id": "num-visitors-question",
                             "titles": [{
-                                            "value": "How many visitors were staying with your household overnight at <em>{{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}</em> on {{answers['past-census-date-answer']|format_date_custom('d MMMM YYYY')}}?",
+                                            "value": "How many visitors were staying with your household overnight at <em>{{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}</em> on {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}}?",
                                             "when": [{
                                                 "id": "primary-household-member-address-check-answer",
                                                 "condition": "equals",
@@ -3051,7 +3045,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "How many visitors were staying with your household overnight at <em>{{ answers['address-line-1'] }} {{ answers['address-line-2'] }}</em> on {{answers['past-census-date-answer']|format_date_custom('d MMMM YYYY')}}?"
+                                            "value": "How many visitors were staying with your household overnight at <em>{{ answers['address-line-1'] }} {{ answers['address-line-2'] }}</em> on {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}}?"
                                         }
                                     ],
                             "type": "General",
