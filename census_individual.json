@@ -190,8 +190,8 @@
                                                     "description": "For example, student hall of residence, boarding school, armed forces base, hospital, care home, prison"
                                                 },
                                                 {
-                                                    "label": "A private or family household ",
-                                                    "value": "A private or family household "
+                                                    "label": "A private or family household",
+                                                    "value": "A private or family household"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -305,7 +305,7 @@
                                             {
                                                 "id": "accommodation-type-answer",
                                                 "condition": "equals",
-                                                "value": "Household"
+                                                "value": "A private or family household"
                                             }
                                         ]
                                     }
