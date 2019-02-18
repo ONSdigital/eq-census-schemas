@@ -3057,7 +3057,7 @@
                             "type": "General",
                             "answers": [{
                                 "id": "num-visitors-answer",
-                                "label": "Number of visitors staying on {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}}",
+                                "label": "Number of visitors",
                                 "mandatory": false,
                                 "type": "Number"
                             }]
