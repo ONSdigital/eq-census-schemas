@@ -77,6 +77,12 @@
                                             "label": "Census day minus 7 days for employment questions",
                                             "mandatory": true,
                                             "type": "Number"
+                                         },
+                                        {
+                                            "id": "past-census-date-answer",
+                                             "label": "Census day 1 year ago ",
+                                            "mandatory": true,
+                                            "type": "Date"
                                          }
                                         
                                     ]
