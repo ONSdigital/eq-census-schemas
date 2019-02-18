@@ -487,8 +487,8 @@
                                                     "value": "Age 25 to 64 years"
                                                 },
                                                 {
-                                                    "label": "Age 65 years and above",
-                                                    "value": "Age 65 years and above"
+                                                    "label": "Age 65 years and over",
+                                                    "value": "Age 65 years and over"
                                                 }
                                             ],
                                             "type": "Checkbox"
