@@ -499,248 +499,8 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "group-type"
+                                        "block": "responsibility"
                                     }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "group-type",
-                            "questions": [
-                                {
-                                    "id": "group-type-question",
-                                    "title": "Which groups of people does <em>{{answers['address-line-1']}}, {{answers['address-line-2']}}</em> provide accomodation for?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "group-type-answer",
-                                            "mandatory": true,
-                                            "options": [
-                                                {
-                                                    "label": "People receiving care or medical treatment",
-                                                    "value": "People receiving care or medical treatment"
-                                                },
-                                                {
-                                                    "label": "Armed Forces personnel",
-                                                    "value": "Armed Forces personnel"
-                                                },
-                                                {
-                                                    "label": "People in education",
-                                                    "value": "People in education"
-                                                },
-                                                {
-                                                    "label": "Detainees",
-                                                    "value": "Detainees"
-                                                },
-                                                {
-                                                    "label": "Paying guests",
-                                                    "value": "Paying guests"
-                                                },
-                                                {
-                                                    "label": "Homeless people",
-                                                    "value": "Homeless people"
-                                                },
-                                                {
-                                                    "label": "Other groups including staff",
-                                                    "value": "Other groups including staff"
-                                                }
-                                            ],
-                                            "type": "Checkbox"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "medical-care-group",
-                            "skip_conditions": [
-                                {
-                                    "when": [
-                                        {
-                                            "id": "group-type-answer",
-                                            "condition": "not contains",
-                                            "value": "People who need medical or care"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "questions": [
-                                {
-                                    "id": "medical-care-group-question",
-                                    "title": "Which groups of people in medical and care does this establishment cater for?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "medical-care-group-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Physical disability",
-                                                    "value": "Physical disability"
-                                                },
-                                                {
-                                                    "label": "Learning disability",
-                                                    "value": "Learning disability"
-                                                },
-                                                {
-                                                    "label": "Mental illness",
-                                                    "value": "Mental illness"
-                                                },
-                                                {
-                                                    "label": "Intermediate care",
-                                                    "value": "Intermediate care"
-                                                },
-                                                {
-                                                    "label": "Substance misuse",
-                                                    "value": "Substance misuse"
-                                                },
-                                                {
-                                                    "label": "End of life care",
-                                                    "value": "End of life care"
-                                                },
-                                                {
-                                                    "label": "Respite care",
-                                                    "value": "Respite care"
-                                                },
-                                                {
-                                                    "label": "Chronic illness care",
-                                                    "value": "Chronic illness care"
-                                                },
-                                                {
-                                                    "label": "Older people",
-                                                    "value": "Older people"
-                                                }
-                                            ],
-                                            "type": "Checkbox"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "education-group",
-                            "skip_conditions": [
-                                {
-                                    "when": [
-                                        {
-                                            "id": "group-type-answer",
-                                            "condition": "not contains",
-                                            "value": "Those in education"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "questions": [
-                                {
-                                    "id": "education-group-question",
-                                    "title": "Which groups of people in education does this establishment cater for?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "education-group-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Schoolchildren",
-                                                    "value": "Schoolchildren"
-                                                },
-                                                {
-                                                    "label": "University and or college students",
-                                                    "value": "University and or college students"
-                                                }
-                                            ],
-                                            "type": "Checkbox"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "detention-group",
-                            "skip_conditions": [
-                                {
-                                    "when": [
-                                        {
-                                            "id": "group-type-answer",
-                                            "condition": "not contains",
-                                            "value": "Detainees"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "questions": [
-                                {
-                                    "id": "detention-group-question",
-                                    "title": "Which groups of people in ‘Detention’ does this establishment cater for?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "detention-group-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Prisoner or offenders",
-                                                    "value": "Prisoner or offenders"
-                                                },
-                                                {
-                                                    "label": "Asylum seekers",
-                                                    "value": "Asylum seekers"
-                                                }
-                                            ],
-                                            "type": "Checkbox"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "other-establishment-group",
-                            "skip_conditions": [
-                                {
-                                    "when": [
-                                        {
-                                            "id": "group-type-answer",
-                                            "condition": "not contains",
-                                            "value": "Other people including staff"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "questions": [
-                                {
-                                    "id": "other-establishment-group-question",
-                                    "title": "Which other groups of people does this accomodation provide accomodation for?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "other-establishment-group-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Nurses and doctors",
-                                                    "value": "Nurses and doctors"
-                                                },
-                                                {
-                                                    "label": "Staff",
-                                                    "value": "Staff"
-                                                },
-                                                {
-                                                    "label": "Seasonal or temporary workers",
-                                                    "value": "Seasonal or temporary workers"
-                                                },
-                                                {
-                                                    "label": "Other",
-                                                    "value": "Other"
-                                                }
-                                            ],
-                                            "type": "Checkbox"
-                                        }
-                                    ]
                                 }
                             ]
                         },
@@ -784,7 +544,13 @@
                                                 },
                                                 {
                                                     "label": "Other",
-                                                    "value": "Other"
+                                                    "value": "Other",
+                                                    "detail_answer": {
+                                                        "id": "responsibility-answer-other",
+                                                        "type": "TextField",
+                                                        "mandatory": false,
+                                                        "label": "Please specify responsibility"
+                                                    }
                                                 }
                                             ],
                                             "type": "Checkbox"
@@ -799,7 +565,7 @@
                             "questions": [
                                 {
                                     "id": "number-of-individuals-question",
-                                    "title": "How many people do you currently have staying in this establishment?",
+                                    "title": "How many residents usually live at <em>{{answers['address-line-1']}}, {{answers['address-line-2']}}</em>?",
                                     "description": "This enables us to send the correct number of individual census forms to this establishment",
                                     "type": "General",
                                     "answers": [
