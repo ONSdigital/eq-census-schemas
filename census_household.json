@@ -169,7 +169,8 @@
                                             "options": [
                                                 {
                                                     "label": "Medical and care",
-                                                    "value": "Medical and care"
+                                                    "value": "Medical and care", 
+                                                    "description": "For example, hospitals, care homes or children’s homes"
                                                 },
                                                 {
                                                     "label": "Education",
@@ -187,6 +188,14 @@
                                                 {
                                                     "label": "Travel or temporary accommodation",
                                                     "value": "Travel or temporary accommodation"
+                                                },
+                                                {
+                                                   "label": "Religious establishments",
+                                                    "value": "Religious establishments" 
+                                                },
+                                                {
+                                                   "label": "Staff or worker accommodation only",
+                                                    "value": "Staff or worker accommodation only" 
                                                 },
                                                 {
                                                     "label": "Other",
@@ -262,19 +271,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "other-establishment",
-                                        "when": [
-                                            {
-                                                "id": "nature-establishment-answer",
-                                                "condition": "equals",
-                                                "value": "Other"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "household-summary"
+                                        "block": "age-range"
                                     }
                                 }
                             ]
@@ -394,8 +391,9 @@
                                                     "value": "Prison Service establishment"
                                                 },
                                                 {
-                                                    "label": "Approved premises (probation or bail hostel)",
-                                                    "value": "Approved premises (probation or bail hostel)"
+                                                    "label": "Approved premises",
+                                                    "value": "Approved premises",
+                                                    "description": "Probation or bail hostel"
                                                 },
                                                 {
                                                     "label": "Detention centre",
@@ -442,47 +440,12 @@
                                                     "description": "For example holiday parks"
                                                 },
                                                 {
-                                                    "label": "Hostel or temporary accommodation",
-                                                    "value": "Hostel or temporary accommodation"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "age-range"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "other-establishment",
-                            "questions": [
-                                {
-                                    "id": "other-establishment-question",
-                                    "title": "What type of establishment is <em>{{answers['address-line-1']}}, {{answers['address-line-2']}}</em>?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "other-establishment-answer",
-                                            "mandatory": false,
-                                            "options": [
-                                                {
-                                                    "label": "Religious establishment",
-                                                    "value": "Religious establishment"
+                                                    "label": "Hostel or temporary accommodation for homeless people",
+                                                    "value": "Hostel or temporary accommodation for homeless people"
                                                 },
                                                 {
-                                                    "label": "Staff or worker accommodation only",
-                                                    "value": "Staff or worker accommodation only"
-                                                },
-                                                {
-                                                    "label": "Other establishment",
-                                                    "value": "Other establishment"
+                                                    "label": "Other travel or temporary accommodation",
+                                                    "value": "Other travel or temporary accommodation"
                                                 }
                                             ],
                                             "type": "Radio"
