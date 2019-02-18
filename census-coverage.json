@@ -183,7 +183,7 @@
                         "description": "All the questions are about the people in your household on {{answers['census-date-answer']|format_date_custom('EEEE d MMMM YYYY')}}.",
                         "content": [{
                             "title": "What is a Household?",
-                            "description": "A household is one person living alone, or a group of people (not necessarily related) who share cooking facilities and share a living room or sitting room or dining area."
+                            "description": "A household is one person living alone, or a group of people (not necessarily related), who share cooking facilities, and share a living room, or sitting room, or dining area."
                         }]
                     }]
                 },
@@ -374,7 +374,7 @@
                                             "value": "Yes"
                                         },
                                         {
-                                            "label": "No, this is not the main residence of any other adults, children or babies",
+                                            "label": "No, this was not the main residence of any other adults, children or babies",
                                             "value": "No"
                                         }
                                     ]
@@ -445,12 +445,12 @@
                             "questions": [{
                                 "type": "General",
                                 "id": "temp-household-member-anyone-else-question",
-                                "title": "Apart from the people already included, is there anyone else who was temporarily away or staying you need to add?",
+                                "title": "Apart from the people already included, is there anyone else who was temporarily away or staying that you need to add?",
                                 "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['other-household-member-first-name'], answers['other-household-member-last-name']], [answers['temp-household-member-first-name'], answers['temp-household-member-last-name']]] | format_repeating_summary }}",
                                 "guidance": {
                                     "content": [
                                         {
-                                             "title": "Include people who are temporarily away",
+                                             "title": "Include people who were temporarily away",
                                                 "list": [
                                                      "People who worked away from home within the UK", 
                                                      "Members of the armed forces", 
@@ -704,14 +704,7 @@
                                 "id": "household-check-question-no-primary",
                                 "title": "Did anyone else live at <em>{{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}</em>?",
                                 "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['household-member-first-name-no-primary'], answers['household-member-last-name-no-primary']]] | format_repeating_summary }}",
-                                "guidance": {
-                                        "content": [
-                                            {
-                                                "title": "Include",
-                                                "list": ["Partners", "Children", "Babies born on or before {{answers['census-date-answer']|format_date_custom('EEEE d MMMM YYYY')}}", "Housemates", "Tenants and lodgers", "Students and schoolchildren who lived away from home during term time"]
-                                            }
-                                        ]
-                                    },
+                                
                                 "type": "General",
                                 "answers": [{
                                     "id": "household-check-answer-no-primary",
@@ -722,7 +715,7 @@
                                             "value": "Yes"
                                         },
                                         {
-                                            "label": "No, this is everyone",
+                                            "label": "No, this was not the main residence of any other adults, children or babies",
                                             "value": "No"
                                         }
                                     ]
@@ -844,7 +837,7 @@
                         "questions": [{
                             "id": "type-of-accommodation-question",
                             "titles": [{
-                                            "value": "What kind of accommodation was <em>{{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}</em>?",
+                                            "value": "What type of accommodation was <em>{{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}</em>?",
                                             "when": [{
                                                 "id": "primary-household-member-address-check-answer",
                                                 "condition": "equals",
@@ -852,7 +845,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "What kind of accommodation is <em>{{ answers['address-line-1'] }} {{ answers['address-line-2'] }}</em>?"
+                                            "value": "What type of accommodation is <em>{{ answers['address-line-1'] }} {{ answers['address-line-2'] }}</em>?"
                                         }
                                     ],
                             "type": "General",
@@ -1030,7 +1023,7 @@
                         "id": "self-contained-accommodation",
                         "questions": [{
                             "id": "self-contained-accommodation-question",
-                            "title": "Are all the rooms at <em>{{ answers['address-line-1'] }} {{ answers['address-line-2'] }}</em>, including the kitchen, bathroom and toilet, behind a door that only this household can use?",             
+                            "title": "Are all the rooms at <em>{{ answers['address-line-1'] }} {{ answers['address-line-2'] }}</em>, including the kitchen, bathroom and toilet, behind a door that only this household could use?",             
                             "type": "General",
                             "answers": [{
                                 "id": "self-contained-accommodation-answer",
@@ -1100,7 +1093,18 @@
                         "id": "own-or-rent",
                         "questions": [{
                             "id": "own-or-rent-question",
-                            "title":  "Does your household own or rent <em>{{ answers['address-line-1'] }} {{ answers['address-line-2'] }}</em>?",
+                            "titles": [{
+                                            "value": "Does your household own or rent <em>{{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}</em>?",
+                                            "when": [{
+                                                "id": "primary-household-member-address-check-answer",
+                                                "condition": "equals",
+                                                "value": "No"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Does your household own or rent <em>{{ answers['address-line-1'] }} {{ answers['address-line-2'] }}</em>?"
+                                        }
+                                    ],
                             "type": "General",
                             "answers": [{
                                 "id": "own-or-rent-answer",
@@ -1339,11 +1343,7 @@
                             "answers": [{
                                 "id": "internet-usage-answer",
                                 "mandatory": true,
-                                "options": [{
-                                        "label": "Retired",
-                                        "value": "Retired",
-                                        "description": "Whether receiving a pension or not"
-                                    },
+                                "options": [
                                     {
                                            "label": "Obtaining information from websites or 'apps'",
                                             "value": "Obtaining information from websites or 'apps'"
@@ -1375,18 +1375,7 @@
                         "id": "other-living-accommodation",
                         "questions": [{
                             "id": "other-living-accommodation-question",
-                            "titles": [{
-                                            "value": "Is there any other living accommodation at <em>{{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}</em>?",
-                                            "when": [{
-                                                "id": "primary-household-member-address-check-answer",
-                                                "condition": "equals",
-                                                "value": "No"
-                                            }]
-                                        },
-                                        {
-                                            "value": "Is there any other living accommodation at <em>{{ answers['address-line-1'] }} {{ answers['address-line-2'] }}</em>?"
-                                        }
-                                    ],
+                            "title": "Is there any other living accommodation at <em>{{ answers['address-line-1'] }} {{ answers['address-line-2'] }}</em>?",
                             "description": "For example separate bedsits, annexes, sheds etc.",
                             "type": "General",
                             "answers": [{
@@ -2606,7 +2595,7 @@
                                 "goto": {
                                     "block": "length-of-stay",
                                     "when": [{
-                                        "id": "past-usual-address-answer",
+                                        "id": "past-usual-address-answer-proxy",
                                         "condition": "equals",
                                         "value": "Other"
                                     }]
