@@ -28,9 +28,23 @@
                     "id": "what-is-your-address-group",
                     "title": "What is your address?",
                     "blocks": [
-                        {
-                            "type": "Introduction",
-                            "id": "introduction"
+                         {
+                            "type": "Question",
+                            "id": "census-date",
+                            "questions": [
+                                {
+                                    "id": "census-date-question",
+                                    "title":  "When is Census day?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "census-date-answer",
+                                            "mandatory": true,
+                                            "type": "MonthYearDate"
+                                         }
+                                    ]
+                                }
+                            ]
                         },
                         {
                             "type": "Question",
@@ -38,7 +52,7 @@
                             "questions": [
                                 {
                                     "id": "what-is-your-address-question",
-                                    "title": "What is your address?",
+                                    "title": "What is the address of CE?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -85,6 +99,9 @@
                                     ]
                                 }
                             ]
+                        },{
+                            "type": "Introduction",
+                            "id": "introduction"
                         }
                     ]
                 }
@@ -566,7 +583,25 @@
                                 {
                                     "id": "number-of-individuals-question",
                                     "title": "How many residents usually live at <em>{{answers['address-line-1']}}, {{answers['address-line-2']}}</em>?",
-                                    "description": "This enables us to send the correct number of individual census forms to this establishment",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "number-of-individuals-answer",
+                                            "label": "Number of individuals staying",
+                                            "mandatory": true,
+                                            "type": "Number"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                         {
+                            "type": "Question",
+                            "id": "number-of-visitors",
+                            "questions": [
+                                {
+                                    "id": "number-of-visitors-question",
+                                    "title": "How many visitors are staying overnight at <em>{{answers['address-line-1']}}, {{answers['address-line-2']}} on {{answers['census-date']}}? </em>?",
                                     "type": "General",
                                     "answers": [
                                         {
