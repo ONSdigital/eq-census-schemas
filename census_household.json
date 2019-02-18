@@ -7761,8 +7761,8 @@
                                     "title": "Information you need about your visitor",
                                     "list": [
                                         "Date of birth",
-                                        "Usual address",
-                                        "Sex"
+                                        "Sex",
+                                        "Usual address"
                                     ]
                                    
                                 },
