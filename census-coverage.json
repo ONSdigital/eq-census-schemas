@@ -1063,7 +1063,7 @@
                         "id": "self-contained-accommodation-past",
                         "questions": [{
                             "id": "self-contained-accommodation-past-question",
-                            "title": "Were all the rooms at <em>{{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}</em>, including the kitchen, bathroom and toilet, behind a door that only this household can use?",
+                            "title": "Were all the rooms at <em>{{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}</em>, including the kitchen, bathroom and toilet, behind a door that only this household could use?",
                             "type": "General",
                             "answers": [{
                                 "id": "self-contained-accommodation-past-answer",
