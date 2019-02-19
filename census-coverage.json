@@ -1094,7 +1094,7 @@
                         "questions": [{
                             "id": "own-or-rent-question",
                             "titles": [{
-                                            "value": "Does your household own or rent <em>{{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}</em>?",
+                                            "value": "Did your household own or rent <em>{{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}</em>?",
                                             "when": [{
                                                 "id": "primary-household-member-address-check-answer",
                                                 "condition": "equals",
