@@ -702,7 +702,7 @@
                             "id": "household-check-block-no-primary",
                             "questions": [{
                                 "id": "household-check-question-no-primary",
-                                "title": "Did anyone else live at <em>{{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}</em>?",
+                                "title": "Did anyone else live at <em>{{answers['previous-address-answer-building']}} {{answers['previous-address-answer-street']}}</em> on {{answers['census-date-answer']|format_date_custom('EEEE d MMMM YYYY')}}?",
                                 "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['household-member-first-name-no-primary'], answers['household-member-last-name-no-primary']]] | format_repeating_summary }}",
                                 
                                 "type": "General",
