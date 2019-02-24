@@ -154,7 +154,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "nature-establishment",
+                                        "block": "number-of-individuals",
                                         "when": [
                                             {
                                                 "id": "confirm-establishment-answer",
@@ -168,6 +168,58 @@
                                     "goto": {
                                         "block": "household-summary"
                                     }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "number-of-individuals",
+                            "questions": [
+                                {
+                                    "id": "number-of-individuals-question",
+                                    "title": "How many residents usually live at <em>{{answers['address-line-1']}}, {{answers['address-line-2']}}</em>?",
+                                    "type": "General",
+                                     "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Include:",
+                                                "list": [
+                                                    "Anyone who has already spent, or is expected to spend, six months or more in this establishment, even if they are away on {{answers['census-date-answer']}}",
+                                                    "UK residents who are staying in this establishment on {{answers['census-date-answer']}} and have no other usual UK address",
+                                                    "Anyone from overseas who has stayed, or intends to stay, in the UK longer than three months who does not have another UK address, even if all their time won’t be spent at this establishment",
+                                                    "Students or schoolchildren who stay in this establishment during term time",
+                                                    "Yourself, your family, staff, or any others who live at this establishment"
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "answers": [
+                                        {
+                                            "id": "number-of-individuals-answer",
+                                            "label": "Number of residents",
+                                            "mandatory": true,
+                                            "type": "Number"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                         {
+                            "type": "Question",
+                            "id": "number-of-visitors",
+                            "questions": [
+                                {
+                                    "id": "number-of-visitors-question",
+                                    "title": "How many visitors are staying overnight at <em>{{answers['address-line-1']}}, {{answers['address-line-2']}}</em> on {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}}?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "number-of-individuals-answer",
+                                            "label": "Number of visitors",
+                                            "mandatory": true,
+                                            "type": "Number"
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -571,44 +623,6 @@
                                                 }
                                             ],
                                             "type": "Checkbox"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "number-of-individuals",
-                            "questions": [
-                                {
-                                    "id": "number-of-individuals-question",
-                                    "title": "How many residents usually live at <em>{{answers['address-line-1']}}, {{answers['address-line-2']}}</em>?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "number-of-individuals-answer",
-                                            "label": "Number of residents",
-                                            "mandatory": true,
-                                            "type": "Number"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                         {
-                            "type": "Question",
-                            "id": "number-of-visitors",
-                            "questions": [
-                                {
-                                    "id": "number-of-visitors-question",
-                                    "title": "How many visitors are staying overnight at <em>{{answers['address-line-1']}}, {{answers['address-line-2']}}</em> on {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}}?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "number-of-individuals-answer",
-                                            "label": "Number of visitors",
-                                            "mandatory": true,
-                                            "type": "Number"
                                         }
                                     ]
                                 }
