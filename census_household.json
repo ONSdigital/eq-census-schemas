@@ -212,6 +212,17 @@
                                     "id": "number-of-visitors-question",
                                     "title": "How many visitors are staying overnight at <em>{{answers['address-line-1']}}, {{answers['address-line-2']}}</em> on {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}}?",
                                     "type": "General",
+                                     "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Include:",
+                                                "list": [
+                                                    "Anyone with another usual address in the UK who has spent or expects to spend less than six months in this establishment",
+                                                    "Anyone from outside the UK who intends to stay in the UK for less than three months"       
+                                                ]
+                                            }
+                                        ]
+                                    },
                                     "answers": [
                                         {
                                             "id": "number-of-individuals-answer",
@@ -229,7 +240,7 @@
                             "questions": [
                                 {
                                     "id": "nature-establishment-question",
-                                    "title": "What is the main function of <em>{{answers['address-line-1']}}, {{answers['address-line-2']}}</em>?",
+                                    "title": "What is the nature of this establishment?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -237,13 +248,14 @@
                                             "mandatory": true,
                                             "options": [
                                                 {
-                                                    "label": "Medical and care",
-                                                    "value": "Medical and care", 
+                                                    "label": "Medical or care",
+                                                    "value": "Medical or care", 
                                                     "description": "For example, hospitals, care homes or children’s homes"
                                                 },
                                                 {
                                                     "label": "Education",
-                                                    "value": "Education"
+                                                    "value": "Education",
+                                                    "description": "Including halls of residence"
                                                 },
                                                 {
                                                     "label": "Armed Forces",
@@ -256,7 +268,8 @@
                                                 },
                                                 {
                                                     "label": "Travel or temporary accommodation",
-                                                    "value": "Travel or temporary accommodation"
+                                                    "value": "Travel or temporary accommodation",
+                                                    "description": "Including shelters for homeless people"
                                                 },
                                                 {
                                                    "label": "Religious establishments",
@@ -267,9 +280,8 @@
                                                     "value": "Staff or worker accommodation only" 
                                                 },
                                                 {
-                                                    "label": "Other",
-                                                    "value": "Other",
-                                                    "description": "Including staff accomodation"
+                                                    "label": "Other establishment",
+                                                    "value": "Other establishment"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -351,7 +363,7 @@
                             "questions": [
                                 {
                                     "id": "medical-care-question",
-                                    "title": "What type of medical and care establishment is <em>{{answers['address-line-1']}}, {{answers['address-line-2']}}</em>?",
+                                    "title": "What type of medical or care establishment is <em>{{answers['address-line-1']}}, {{answers['address-line-2']}}</em>?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -372,12 +384,12 @@
                                                     "value": "Other hospital"
                                                 },
                                                 {
-                                                    "label": "Care home without nursing",
-                                                    "value": "Care home without nursing"
-                                                },
-                                                {
                                                     "label": "Care home with nursing",
                                                     "value": "Care home with nursing"
+                                                },
+                                                {
+                                                    "label": "Care home without nursing",
+                                                    "value": "Care home without nursing"
                                                 },
                                                 {
                                                     "label": "Children’s home",
@@ -385,7 +397,7 @@
                                                     "description": "Including secure units"
                                                 },
                                                 {
-                                                    "label": "Other medical and care establishment",
+                                                    "label": "Other medical or care establishment",
                                                     "value": "Other"
                                                 }
                                             ],
@@ -422,11 +434,11 @@
                                                 {
                                                     "label": "University",
                                                     "value": "University",
-                                                    "description": "For example halls of residence"
+                                                    "description": "For example, halls of residence"
                                                 },
                                                 {
-                                                    "label": "Other educational establishment",
-                                                    "value": "Other educational establishment"
+                                                    "label": "Other education establishment",
+                                                    "value": "Other education establishment"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -457,7 +469,8 @@
                                             "options": [
                                                 {
                                                     "label": "Prison Service establishment",
-                                                    "value": "Prison Service establishment"
+                                                    "value": "Prison Service establishment",
+                                                    "description": "Including young offender institutions"
                                                 },
                                                 {
                                                     "label": "Approved premises",
@@ -492,7 +505,7 @@
                             "questions": [
                                 {
                                     "id": "travel-temp-accomodation-question",
-                                    "title": "What type of travel or temporary accomodation is <em>{{answers['address-line-1']}}, {{answers['address-line-2']}}</em>?",
+                                    "title": "What type of travel or temporary accommodation is <em>{{answers['address-line-1']}}, {{answers['address-line-2']}}</em>?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -501,16 +514,17 @@
                                             "options": [
                                                 {
                                                     "label": "Hotel, guest house, B&B or youth hostel",
-                                                    "value": "Hotel, guest house, B&B or youth hostel"
+                                                    "value": "Hotel, guest house, B&B or youth hostel",
+                                                    "description": "Including inns and pubs"
                                                 },
                                                 {
                                                     "label": "Holiday accommodation",
                                                     "value": "Holiday accommodation",
-                                                    "description": "For example holiday parks"
+                                                    "description": "For example, holiday parks"
                                                 },
                                                 {
-                                                    "label": "Hostel or temporary accommodation for homeless people",
-                                                    "value": "Hostel or temporary accommodation for homeless people"
+                                                    "label": "Hostel or temporary shelter for homeless people",
+                                                    "value": "Hostel or temporary shelter for homeless people"
                                                 },
                                                 {
                                                     "label": "Other travel or temporary accommodation",
@@ -536,7 +550,7 @@
                             "questions": [
                                 {
                                     "id": "age-range-question",
-                                    "title": "Which age group does <em>{{answers['address-line-1']}}, {{answers['address-line-2']}}</em> cater for?",
+                                    "title": "Which age groups does <em>{{answers['address-line-1']}}, {{answers['address-line-2']}}</em> cater for?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -544,20 +558,20 @@
                                             "mandatory": false,
                                             "options": [
                                                 {
-                                                    "label": "Age 0 to 17 years",
-                                                    "value": "Age 0 to 17 years"
+                                                    "label": "Aged 0 to 17 years",
+                                                    "value": "Aged 0 to 17 years"
                                                 },
                                                 {
-                                                    "label": "Age 18 to 24 years",
-                                                    "value": "Age 18 to 24 years"
+                                                    "label": "Aged 18 to 24 years",
+                                                    "value": "Aged 18 to 24 years"
                                                 },
                                                 {
-                                                    "label": "Age 25 to 64 years",
-                                                    "value": "Age 25 to 64 years"
+                                                    "label": "Aged 25 to 64 years",
+                                                    "value": "Aged 25 to 64 years"
                                                 },
                                                 {
-                                                    "label": "Age 65 years and over",
-                                                    "value": "Age 65 years and over"
+                                                    "label": "Aged 65 years or over",
+                                                    "value": "Aged 65 years or over"
                                                 }
                                             ],
                                             "type": "Checkbox"
@@ -613,16 +627,10 @@
                                                 },
                                                 {
                                                     "label": "Other",
-                                                    "value": "Other",
-                                                    "detail_answer": {
-                                                        "id": "responsibility-answer-other",
-                                                        "type": "TextField",
-                                                        "mandatory": false,
-                                                        "label": "Please specify responsibility"
-                                                    }
+                                                    "value": "Other"
                                                 }
                                             ],
-                                            "type": "Checkbox"
+                                            "type": "Radio"
                                         }
                                     ]
                                 }
