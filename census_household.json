@@ -184,8 +184,8 @@
                                             {
                                                 "title": "Include:",
                                                 "list": [
-                                                    "Anyone who has already spent, or is expected to spend, six months or more in this establishment, even if they are away on {{answers['census-date-answer']}}",
-                                                    "UK residents who are staying in this establishment on {{answers['census-date-answer']}} and have no other usual UK address",
+                                                    "Anyone who has already spent, or is expected to spend, six months or more in this establishment, even if they are away on {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}}",
+                                                    "UK residents who are staying in this establishment on {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}} and have no other usual UK address",
                                                     "Anyone from overseas who has stayed, or intends to stay, in the UK longer than three months who does not have another UK address, even if all their time won’t be spent at this establishment",
                                                     "Students or schoolchildren who stay in this establishment during term time",
                                                     "Yourself, your family, staff, or any others who live at this establishment"
