@@ -297,7 +297,7 @@
                                             {
                                                 "id": "nature-establishment-answer",
                                                 "condition": "equals",
-                                                "value": "Medical and care"
+                                                "value": "Medical or care"
                                             }
                                         ]
                                     }
