@@ -1324,7 +1324,28 @@
                                         ],
                                         "type": "Radio"
                                     }]
-                                }]
+                                }],
+                                 "routing_rules": [
+                                     {                 
+                                       "goto": {
+                                            "block": "marriage-type",
+                                            "when": [{
+                                                "id": "date-of-birth-answer",
+                                                "condition": "less than",
+                                                "date_comparison": {
+                                                    "value": "now",
+                                                    "offset_by": {
+                                                        "years": -16
+                                                    }
+                                                }
+                                            }]
+                                        }
+                                    },{
+                                        "goto": {
+                                            "block": "in-education"
+                                        }
+                                    }
+                                ]
                         },
                         {
                             "type": "Question",
