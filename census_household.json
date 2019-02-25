@@ -1324,8 +1324,7 @@
                                         ],
                                         "type": "Radio"
                                     }]
-                                }]
-                            },
+                                }],
                              "routing_rules": [
                                  {                 
                                    "goto": {
@@ -1347,6 +1346,7 @@
                                     }
                                 }
                             ]
+                        },
                         {
                             "type": "Question",
                             "id": "marriage-type",
