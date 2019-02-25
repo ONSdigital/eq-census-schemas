@@ -2320,7 +2320,7 @@
                                             "date_comparison": {
                                                 "value": "now",
                                                 "offset_by": {
-                                                    "years": 3
+                                                    "years": -3
                                                 }
                                             }
                                         }]
