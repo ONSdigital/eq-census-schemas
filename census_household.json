@@ -2417,7 +2417,22 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "language"
+                                        "block": "language",
+                                        "when": [{
+                                            "id": "date-of-birth-answer",
+                                            "condition": "less than",
+                                            "date_comparison": {
+                                                "value": "now",
+                                                "offset_by": {
+                                                    "years": -3
+                                                }
+                                            }
+                                        }]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "health"
                                     }
                                 }
                             ]
@@ -2800,7 +2815,7 @@
                                             {
                                                 "id": "understand-ulster-scots-answer",
                                                 "condition": "contains",
-                                                "value": "Speak Ulster Scots"
+                                                "value": "Speak Ulster-Scots"
                                             }
                                         ]
                                     }
@@ -2990,7 +3005,7 @@
                                 {
                                     "id": "disability-question",
                                     "titles": [{
-                                            "value": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> have any physical or mental health conditions or illnesses lasting or expected to last 12 months or more?",
+                                            "value": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> have any of the following physical or mental health conditions or illnesses lasting or expected to last 12 months or more?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -2998,7 +3013,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "Do you have any physical or mental health conditions or illnesses lasting or expected to last 12 months or more?"
+                                            "value": "Do you have any of the following physical or mental health conditions or illnesses lasting or expected to last 12 months or more?"
                                         }
                                     ],
                                     "type": "MutuallyExclusive",
@@ -3017,23 +3032,78 @@
                                                     "value": "Blindness or partial sight loss"
                                                 },
                                                 {
-                                                    "label": "A mobility or dexterity difficulty that substantially limits one or more basic physical activities",
-                                                    "value": "slight mobility",
-                                                    "description": "For example walking, climbing stairs, lifting or carrying"
+                                                    "label": "A mobility or dexterity difficulty that limits basic physical activities",
+                                                    "value": "Slight mobility",
+                                                    "description": "For example walking or dressing"
                                                 },
                                                 {
-                                                    "label": "A mobility or dexterity difficulty which requires the use of a wheelchair in the home",
-                                                    "value": "full mobility"
+                                                    "label": "A mobility or dexterity difficulty, which requires the use of a wheelchair in the home",
+                                                    "value": "Full mobility"
+                                                },
+                                                {
+                                                    "label": "Shortness of breath or difficulty breathing",
+                                                    "value": "Shortness of breath or difficulty breathing",
+                                                    "description": "For example Asthma"
+                                                }
+                                            ],
+                                            "type": "Checkbox"
+                                        },
+                                        {
+                                            "id": "disability-answer-exclusive",
+                                            "type": "Checkbox",
+                                            "mandatory": false,
+                                            "options": [{
+                                                    "label": "None of these conditions",
+                                                    "value": "None of these conditions"
+                                            }]
+                                        }
+                                        
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                     "goto": {
+                                          "block": "disability-part2"
+                                     }
+                                }
+                                         
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "disability-part2",
+                            "questions": [
+                                {
+                                    "id": "disability-part2-question",
+                                    "titles": [{
+                                            "value": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> have any of the following other physical or mental health conditions or illnesses lasting or expected to last 12 months or more?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Do you have any of the following other physical or mental health conditions or illnesses lasting or expected to last 12 months or more?"
+                                        }
+                                    ],
+                                    "type": "MutuallyExclusive",
+                                    "mandatory": true,
+                                    "answers": [
+                                        {
+                                            "id": "disability-part2-answer",
+                                            "mandatory": false,
+                                            "options": [
+                                                 {
+                                                    "label": "An intellectual or learning disability",
+                                                    "value": "An intellectual or learning disability",
+                                                    "description": "For example, Down syndrome"
                                                 },
                                                 {
                                                     "label": "A learning difficulty",
                                                     "value": "A learning difficulty",
-                                                    "description": "For example, dyslexia or ADHD"
-                                                },
-                                                {
-                                                    "label": "An intellectual or learning difficulty",
-                                                    "value": "An intellectual or learning difficulty",
-                                                    "description": "For example, Down syndrome"
+                                                    "description": "For example, dyslexia"
                                                 },
                                                 {
                                                     "label": "Autism or Asperger syndrome",
@@ -3045,37 +3115,29 @@
                                                     "description": "For example depression or schizophrenia"
                                                 },
                                                 {
-                                                    "label": "Long-term pain or discomfort",
-                                                    "value": "Long-term pain or discomfort"
-                                                },
-                                                {
-                                                    "label": "Shortness of breath or difficulty breathing",
-                                                    "value": "Shortness of breath or difficulty breathing"
-                                                },
-                                                {
                                                     "label": "Frequent periods of confusion or memory loss",
                                                     "value": "Frequent periods of confusion or memory loss",
                                                     "description": "For example dementia"
                                                 },
                                                 {
-                                                    "label": "A physical health condition",
-                                                    "value": "A physical health condition",
-                                                    "description": "For example cancer, HIV, diabetes, heart disease or epilepsy"
+                                                    "label": "Long-term pain or discomfort",
+                                                    "value": "Long-term pain or discomfort"
                                                 },
                                                 {
-                                                    "label": "Other condition",
-                                                    "value": "Other condition"
+                                                    "label": "An other condition",
+                                                    "value": "An other condition",
+                                                    "description": "For example cancer, diabetes, heart disease"
                                                 }
                                             ],
                                             "type": "Checkbox"
                                         },
                                         {
-                                            "id": "disability-answer-exclusive",
+                                            "id": "disability-part2-answer-exclusive",
                                             "type": "Checkbox",
                                             "mandatory": false,
                                             "options": [{
-                                                    "label": "No condition",
-                                                    "value": "No condition"
+                                                    "label": "None of these conditions",
+                                                    "value": "None of these conditions"
                                             }]
                                         }
                                         
@@ -3331,7 +3393,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "apprenticeship"
+                                        "block": "degree"
                                         
                                     }
                                 }
@@ -3345,66 +3407,13 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "apprenticeship"
+                                        "block": "degree"
                                         
                                     }
                                 }
                             ]
                         },
-                         {
-                            "type": "Question",
-                            "id": "apprenticeship",
-                            "questions": [
-                                {
-                                    "id": "apprenticeship-question",
-                                    "titles": [{
-                                            "value": "Has <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> completed an apprenticeship?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "Have you completed an apprenticeship?"
-                                        }
-                                    ],
-                                    "type": "General",
-                                    "guidance": {
-                                        "content": [
-                                            {
-                                                "title": "Include equivalent apprenticeships completed anywhere outside Northern Ireland"
-                                            }
-                                        ]
-                                    },
-                                     "answers": [
-                                        {
-                                            "id": "apprenticeship-answer",
-                                            "mandatory": true,
-                                            "options": [
-                                                {
-                                                    "label": "Yes",
-                                                    "value": "Yes",
-                                                    "description": "For example trade, advanced, foundation or modern apprenticeships"
-                                                },
-                                                {
-                                                    "label": "No",
-                                                    "value": "No"
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "degree"
-                                    }
-                                }
-                            ]
-                        },
+                         
                         {
                             "type": "Question",
                             "id": "degree",
@@ -3455,7 +3464,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "armed-forces",
+                                        "block": "apprenticeship",
                                         "when": [
                                             {
                                                 "id": "degree-answer",
@@ -3698,7 +3707,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "armed-forces"
+                                        "block": "apprenticeship"
                                     }
                                 }
                             ]
@@ -3747,6 +3756,60 @@
                                                 "label": "No qualifications",
                                                 "value": "No qualifications"
                                             }]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "apprenticeship"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
+                            "id": "apprenticeship",
+                            "questions": [
+                                {
+                                    "id": "apprenticeship-question",
+                                    "titles": [{
+                                            "value": "Has <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> completed an apprenticeship?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "Have you completed an apprenticeship?"
+                                        }
+                                    ],
+                                    "type": "General",
+                                    "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Include equivalent apprenticeships completed anywhere outside Northern Ireland"
+                                            }
+                                        ]
+                                    },
+                                     "answers": [
+                                        {
+                                            "id": "apprenticeship-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "Yes",
+                                                    "value": "Yes",
+                                                    "description": "For example trade, advanced, foundation or modern apprenticeships"
+                                                },
+                                                {
+                                                    "label": "No",
+                                                    "value": "No"
+                                                }
+                                            ],
+                                            "type": "Radio"
                                         }
                                     ]
                                 }
