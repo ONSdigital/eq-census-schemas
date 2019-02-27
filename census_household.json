@@ -3379,7 +3379,7 @@
                                 },
                                 {
                                     "goto": {
-                                        "block": "qualifications-proxy"
+                                        "block": "qualifications"
                                     }
                                 }
                             ]
@@ -5130,7 +5130,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "hours-worked-past"
+                                        "block": "household-member-completed"
                                     }
                                 }
                             ]
@@ -5167,8 +5167,8 @@
                                             "mandatory": true,
                                             "options": [
                                                 {
-                                                    "label": "15 hours or less",
-                                                    "value": "15 hours or less"
+                                                    "label": "0 to 15 hours",
+                                                    "value": "0 to 15 hours"
                                                 },
                                                 {
                                                     "label": "16 to 30 hours",
@@ -5181,6 +5181,85 @@
                                                 {
                                                     "label": "49 hours or more",
                                                     "value": "49 hours or more "
+                                                }
+                                            ],
+                                            "type": "Radio"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "routing_rules": [
+                                {
+                                    "goto": {
+                                        "block": "work-travel-proxy",
+                                         "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "work-travel"
+                                    }
+                                }
+
+                            ]
+                        },
+                         {
+                            "type": "Question",
+                            "id": "work-travel",
+                            "questions": [
+                                {
+                                    "title": "How do you usually travel your main place of work?",
+                                    "id": "work-travel-question",
+                                     "description": "Answer for the longest part, by distance, of your usual journey to work ",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "work-travel-answer",
+                                            "mandatory": true,
+                                            "options": [
+                                                {
+                                                    "label": "Driving a car or van",
+                                                    "value": "Driving a car or van"
+                                                },
+                                                {
+                                                    "label": "Passenger in a car or van",
+                                                    "value": "Passenger in a car or van"
+                                                },
+                                                {
+                                                    "label": "Car or van pool, sharing driving",
+                                                    "value": "Car or van pool, sharing driving"
+                                                },
+                                                {
+                                                    "label": "Bus, minibus or coach",
+                                                    "value": "Bus, minibus or coach "
+                                                },
+                                                {
+                                                    "label": "Taxi",
+                                                    "value": "Taxi "
+                                                },
+                                                {
+                                                    "label": "Train",
+                                                    "value": "Train"
+                                                },
+                                                {
+                                                    "label": "Motorcycle, scooter or moped",
+                                                    "value": "Motorcycle, scooter or moped"
+                                                },
+                                                {
+                                                    "label": "Bicycle",
+                                                    "value": "Bicycle"
+                                                },
+                                                {
+                                                    "label": "On foot",
+                                                    "value": "On foot"
+                                                },
+                                                {
+                                                    "label": "Other",
+                                                    "value": "Other"
                                                 }
                                             ],
                                             "type": "Radio"
@@ -5192,67 +5271,6 @@
                                 {
                                     "goto": {
                                         "block": "employer-type-of-address"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "hours-worked-past",
-                            "questions": [
-                                {
-                                    "titles": [{
-                                            "value": "In <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> main job, how many hours a week did they usually work?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "In your main job, how many hours a week did you usually work?"
-                                        }
-                                    ],
-                                    "id": "hours-worked-past-question",
-                                    "guidance": {
-                                        "content": [
-                                            {
-                                                "title": "Include paid and unpaid overtime"
-                                            }
-                                        ]
-                                    },
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "hours-worked-past-answer",
-                                            "mandatory": true,
-                                            "options": [
-                                                {
-                                                    "label": "15 hours or less",
-                                                    "value": "15 hours or less"
-                                                },
-                                                {
-                                                    "label": "16 to 30 hours",
-                                                    "value": "16 to 30 hours"
-                                                },
-                                                {
-                                                    "label": "31 to 48 hours",
-                                                    "value": "31 to 48 hours"
-                                                },
-                                                {
-                                                    "label": "49 hours or more",
-                                                    "value": "49 hours or more "
-                                                }
-                                            ],
-                                            "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "household-member-completed"
                                     }
                                 }
                             ]
@@ -5379,41 +5397,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "no-business-name-employer-address",
-                                        "when": [
-                                            {
-                                                "id": "business-name-answer",
-                                                "condition": "equals",
-                                                "value": ""
-                                            },
-                                            {
-                                                "id": "employer-type-of-address-answer",
-                                                "condition": "equals",
-                                                "value": "At a workplace"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                     "goto": {
-                                        "block": "no-business-name-employer-address",
-                                        "when": [
-                                            {
-                                                "id": "business-name-answer",
-                                                "condition": "equals",
-                                                "value": ""
-                                            },
-                                            {
-                                                "id": "employer-type-of-address-answer",
-                                                "condition": "equals",
-                                                "value": "Report to a depot"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "goto": {
-                                        "block": "employer-address",
+                                        "block": "employer-address-workplace",
                                         "when": [
                                             {
                                                 "id": "employer-type-of-address-answer",
@@ -5425,7 +5409,7 @@
                                 },
                                 {
                                      "goto": {
-                                        "block": "employer-address",
+                                        "block": "employer-address-depot",
                                         "when": [
                                             {
                                                 "id": "employer-type-of-address-answer",
@@ -5444,103 +5428,61 @@
                         },
                         {
                             "type": "Question",
-                            "id": "employer-address",
+                            "id": "employer-address-workplace",
                             "questions": [
                                 {
-                                    "id": "employer-address-question",
-                                    "title": "What is the address of <em>{{answers['business-name-answer']| format_household_name}}</em>?",
+                                    "id": "employer-address-workplace-question",
+                                     "titles": [{
+                                            "value": "What is the address of <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> workplace?",
+                                            "when": [{
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }]
+                                        },
+                                        {
+                                            "value": "What is the address of your workplace?"
+                                        }
+                                    ],
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "employer-address-answer-building",
+                                            "id": "employer-address-workplace-answer-building",
                                             "label": "Building",
                                             "mandatory": true,
                                             "type": "TextField"
                                         },
                                         {
-                                            "id": "employer-address-answer-street",
+                                            "id": "employer-address-workplace-answer-street",
                                             "label": "Street",
                                             "mandatory": false,
                                             "type": "TextField"
                                         },
                                         {
-                                            "id": "employer-address-answer-city",
+                                            "id": "employer-address-workplace-answer-city",
                                             "label": "Town or city",
                                             "mandatory": false,
                                             "type": "TextField"
                                         },
                                         {
-                                            "id": "employer-address-answer-county",
+                                            "id": "employer-address-workplace-answer-county",
                                             "label": "County (optional)",
                                             "mandatory": false,
                                             "type": "TextField"
                                         },
                                         {
-                                            "id": "employer-adress-answer-postcode",
+                                            "id": "employer-adress-workplace-answer-postcode",
                                             "label": "Postcode",
                                             "mandatory": false,
-                                            "type": "TextField"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "routing_rules": [
-                                {
-                                    "goto": {
-                                        "block": "household-member-completed"
-                                    }
-                                }
-                            ]
-                        },
-                         {
-                            "type": "Question",
-                            "id": "no-business-name-employer-address",
-                            "questions": [
-                                {
-                                    "id": "no-business-name-employer-address-question",
-                                    "titles": [{
-                                            "value": "What is the address of their workplace or depot?",
-                                            "when": [{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                            }]
-                                        },
-                                        {
-                                            "value": "What is the address of your workplace or depot?"
-                                        }
-                                    ],
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "no-business-name-employer-address-answer-building",
-                                            "label": "Building name or number",
-                                            "mandatory": true,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "no-business-name-employer-address-answer-street",
-                                            "label": "Street",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "no-business-name-employer-address-answer-city",
-                                            "label": "Town or city",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "no-business-name-employer-address-answer-county",
-                                            "label": "County (optional)",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "no-business-name-employer-adress-answer-postcode",
-                                            "label": "Postcode",
-                                            "mandatory": false,
-                                            "type": "TextField"
+                                            "type": "TextField",
+                                            "guidance": {
+                                                "show_guidance": "Why your answer is important",
+                                                "hide_guidance": "Why your answer is important",
+                                                "content": [{
+                                                   "description": "Workplace address and method of travel to work information is used to inform planning and modelling for transport services and policies. The information helps in the assessment of local public transport needs."
+                                                    }
+                                                 ]
+                                            }
                                         }
                                     ]
                                 }
@@ -5555,11 +5497,12 @@
                         },
                         {
                             "type": "Question",
-                            "id": "work-travel",
+                            "id": "employer-address-depot",
                             "questions": [
                                 {
-                                    "titles": [{
-                                            "value": "How does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> usually travel your main place of work?",
+                                    "id": "employer-address-depot-question",
+                                     "titles": [{
+                                            "value": "What is the address of <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> depot?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -5567,59 +5510,49 @@
                                             }]
                                         },
                                         {
-                                            "value": "How do you usually travel your main place of work?"
+                                            "value": "What is the address of your depot?"
                                         }
                                     ],
-                                    "id": "work-travel-question",
-                                     "description": "Answer for the longest part, by distance, of your usual journey to work ",
                                     "type": "General",
                                     "answers": [
+                                        
                                         {
-                                            "id": "work-travel-answer",
+                                            "id": "employer-address-depot-answer-building",
+                                            "label": "Building",
                                             "mandatory": true,
-                                            "options": [
-                                                {
-                                                    "label": "Driving a car or van",
-                                                    "value": "Driving a car or van"
-                                                },
-                                                {
-                                                    "label": "Passenger in a car or van",
-                                                    "value": "Passenger in a car or van"
-                                                },
-                                                {
-                                                    "label": "Car or van pool, sharing driving",
-                                                    "value": "Car or van pool, sharing driving"
-                                                },
-                                                {
-                                                    "label": "Bus, minibus or coach",
-                                                    "value": "Bus, minibus or coach "
-                                                },
-                                                {
-                                                    "label": "Taxi",
-                                                    "value": "Taxi "
-                                                },
-                                                {
-                                                    "label": "Train",
-                                                    "value": "Train"
-                                                },
-                                                {
-                                                    "label": "Motorcycle, scooter or moped",
-                                                    "value": "Motorcycle, scooter or moped"
-                                                },
-                                                {
-                                                    "label": "Bicycle",
-                                                    "value": "Bicycle"
-                                                },
-                                                {
-                                                    "label": "On foot",
-                                                    "value": "On foot"
-                                                },
-                                                {
-                                                    "label": "Other",
-                                                    "value": "Other"
-                                                }
-                                            ],
-                                            "type": "Radio"
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "employer-address-depot-answer-street",
+                                            "label": "Street",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "employer-address-depot-answer-city",
+                                            "label": "Town or city",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "employer-address-depot-answer-county",
+                                            "label": "County (optional)",
+                                            "mandatory": false,
+                                            "type": "TextField"
+                                        },
+                                        {
+                                            "id": "employer-adress-depot-answer-postcode",
+                                            "label": "Postcode",
+                                            "mandatory": false,
+                                            "type": "TextField",
+                                            "guidance": {
+                                                "show_guidance": "Why your answer is important",
+                                                "hide_guidance": "Why your answer is important",
+                                                "content": [{
+                                                   "description": "Workplace address and method of travel to work information is used to inform planning and modelling for transport services and policies. The information helps in the assessment of local public transport needs."
+                                                    }
+                                                 ]
+                                            }
                                         }
                                     ]
                                 }
@@ -5632,7 +5565,6 @@
                                 }
                             ]
                         },
-                       
                         {
                             "type": "Question",
                             "id": "study-address",
