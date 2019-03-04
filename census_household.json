@@ -5393,7 +5393,7 @@
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
                                                 "value": "proxy"
-                                      ]
+                                        }]
                                     }
                                 },{                 
                                    "goto": {
