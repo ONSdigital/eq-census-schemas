@@ -4614,7 +4614,7 @@
                                             "mandatory": true,
                                             "options": [
                                                 {
-                                                    "label": "{{answers['address-line-1']}}, {{answers['address-line-2']}}",
+                                                    "label": "{{metadata['display_address']}}",
                                                     "value": "householdaddress"
                                                 },
                                                 {
@@ -4702,7 +4702,7 @@
                                             "mandatory": true,
                                             "options": [
                                                 {
-                                                    "label": "{{answers['address-line-1']}}, {{answers['address-line-2']}}",
+                                                    "label": "{{metadata['display_address']}}",
                                                     "value": "householdaddress"
                                                 },
                                                 {
@@ -4786,7 +4786,7 @@
                                             "mandatory": true,
                                             "options": [
                                                 {
-                                                    "label": "{{answers['address-line-1']}}, {{answers['address-line-2']}}",
+                                                    "label": "{{metadata['display_address']}}",
                                                     "value": "householdaddress"
                                                 },
                                                 {
@@ -7835,7 +7835,7 @@
                             "type": "Interstitial",
                             "id": "visitor-begin-section",
                             "title": "Visitors",
-                            "description": "In this section, we’re going to ask you about any visitors that were staying overnight at <em>{{answers['address-line-1']}}</em> on {{answers['census-date-answer']|format_date_custom('EEEE d MMMM YYYY')}}.",
+                            "description": "In this section, we’re going to ask you about any visitors that were staying overnight at <em>{{metadata['display_address']}}</em> on {{answers['census-date-answer']|format_date_custom('EEEE d MMMM YYYY')}}.",
                             "content": [
                                 {
                                     "title": "Information you need about your visitor",
