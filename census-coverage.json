@@ -250,7 +250,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "count-other-household-member-anyone-else-block",
+                                        "block": "other-household-member-anyone-else-block",
                                         "when": [
                                             {
                                                 "id": "primary-household-member-address-check-answer",
