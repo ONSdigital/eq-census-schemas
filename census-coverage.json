@@ -10,7 +10,7 @@
     "eq_id": "coverage",
     "form_type": "coverage",
     "navigation": {
-        "visible": false
+        "visible": true
     },
     "metadata": [{
             "name": "user_id",
