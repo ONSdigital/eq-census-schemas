@@ -292,7 +292,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "count-other-household-member-anyone-else-block",
+                                        "block": "other-household-member-anyone-else-block",
                                         "when": [
                                             {
                                                 "id": "anyone-living-answer",
@@ -308,33 +308,8 @@
                                     }
                                 }
                             ]
-                    },
-                   {
-                            "type": "Question",
-                            "id": "count-other-household-member-anyone-else-block",
-                            "questions": [{
-                                "type": "General",
-                                "id": "count-other-household-member-anyone-else-question",
-                                "title": "How many people usually lived at  {{ answers['address-line-1'] }} {{ answers['address-line-2'] }} on {{answers['census-date-answer']|format_date_custom('EEEE d MMMM YYYY')}}?",
-                                 "guidance": {
-                                        "content": [
-                                            {
-                                                "title": "Include",
-                                                "list": ["Partners", "Children", "Babies born on or before {{answers['census-date-answer']|format_date_custom('EEEE d MMMM YYYY')}}", "Housemates", "Tenants and lodgers", "Students and schoolchildren who lived away from home during term time"]
-                                            }, {
-                                                "title": "Exclude",
-                                                "list": ["People who have moved in after {{answers['census-date-answer']|format_date_custom('EEEE d MMMM YYYY')}}"]
-                                            }
-                                        ]
-                                    },
-                                "answers": [{
-                                    "type": "Number",
-                                    "id": "count-other-household-member-anyone-else",
-                                    "mandatory": true,
-                                    "label": "Number of people who usually lived here on {{answers['census-date-answer']|format_date_custom('EEEE d MMMM YYYY')}}"
-                                }]
-                            }]
-                        }]
+                    }
+                  ]
                 },
                 {
                     "id": "other-household-member-group",
@@ -406,7 +381,18 @@
                                         "label": "Last name",
                                         "mandatory": true,
                                         "type": "TextField"
-                                    }
+                                    }, 
+                                     {
+                                            "id": "other-household-member-name-unknown",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Name unknown, enter 'x' into missing name field",
+                                                    "value": "unknown"
+                                                }
+                                            ],
+                                            "type": "Checkbox"
+                                        }
                                 ]
                             }],
                             "skip_conditions": [{
@@ -510,7 +496,18 @@
                                         "label": "Last name",
                                         "mandatory": true,
                                         "type": "TextField"
-                                    }
+                                    }, 
+                                     {
+                                            "id": "temp-household-member-name-unknown",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Name unknown, enter 'x' into missing name field",
+                                                    "value": "unknown"
+                                                }
+                                            ],
+                                            "type": "Checkbox"
+                                        }
                                 ]
                             }],
                             "skip_conditions": [{
@@ -746,7 +743,18 @@
                                         "label": "Last name",
                                         "mandatory": true,
                                         "type": "TextField"
-                                    }
+                                    }, 
+                                     {
+                                            "id": "household-member-name-no-primary-unknown",
+                                            "mandatory": false,
+                                            "options": [
+                                                {
+                                                    "label": "Name unknown, enter 'x' into missing name field",
+                                                    "value": "unknown"
+                                                }
+                                            ],
+                                            "type": "Checkbox"
+                                        }
                                 ]
                             }],
                             "skip_conditions": [{
