@@ -24,6 +24,26 @@
         {
             "name": "region_code",
             "validator": "string"
+        },
+        {
+            "name": "country",
+            "validator": "string"
+        },
+        {
+            "name": "locality",
+            "validator": "optional_string"
+        },
+        {
+            "name": "town_name",
+            "validator": "optional_string"
+        },
+        {
+            "name": "postcode",
+            "validator": "optional_string"
+        },
+        {
+            "name": "display_address",
+            "validator": "string"
         }
     ],
     "sections": [
@@ -48,7 +68,14 @@
                                             "id": "census-date-answer",
                                             "mandatory": true,
                                             "type": "MonthYearDate"
+                                         },
+                                        {
+                                            "id": "census-date-answer",
+                                            "mandatory": true,
+                                            "label": "full date",
+                                            "type": "Date"
                                          }
+                                        
                                     ]
                                 }
                             ]
@@ -56,67 +83,6 @@
                         {
                             "type": "Introduction",
                             "id": "introduction"
-                        },
-                        {
-                            "type": "Question",
-                            "id": "what-is-your-address",
-                            "questions": [
-                                {
-                                    "id": "what-is-your-address-question",
-                                    "title": "What is your address?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "address-line-1",
-                                            "label": "Address Line 1 (Including your house name or number)",
-                                            "mandatory": true,
-                                            "type": "TextField",
-                                            "validation": {
-                                                "messages": {
-                                                    "MANDATORY_TEXTFIELD": "Enter an address to continue"
-                                                }
-                                            }
-                                        },
-                                        {
-                                            "id": "address-line-2",
-                                            "label": "Address Line 2",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "address-line-3",
-                                            "label": "Address Line 3",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "town-city",
-                                            "label": "Town/City",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "county",
-                                            "label": "County",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "postcode",
-                                            "label": "Postcode",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        },
-                                        {
-                                            "id": "country",
-                                            "label": "Country",
-                                            "mandatory": false,
-                                            "type": "TextField"
-                                        }
-                                        
-                                    ]
-                                }
-                            ]
                         }
                     ]
                 }
