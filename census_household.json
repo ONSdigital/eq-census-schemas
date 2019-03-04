@@ -65,14 +65,15 @@
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "census-date-answer",
+                                            "id": "partial-census-date-answer",
                                             "mandatory": true,
+                                            "label": "census day used in validation",
                                             "type": "MonthYearDate"
                                          },
-                                        {
+                                         {
                                             "id": "census-date-answer",
                                             "mandatory": true,
-                                            "label": "full date",
+                                            "label": "full census day",
                                             "type": "Date"
                                          }
                                         
@@ -100,13 +101,13 @@
                             "type": "Interstitial",
                             "id": "who-lives-here-block",
                             "title": "People who live in the household",
-                            "description": "In this section, we’re going to ask you about the people that live at <em>{{answers['address-line-1']}}</em>.",
+                            "description": "In this section, we’re going to ask you about the people that live at <em>{{metadata['display_address']}}</em>.",
                             "content": [
                                 {
                                     "title": "Information you need",
                                     "list": [
                                         "Names of the people living in household and how they are related",
-                                        "The number of visitors staying in the household on {{ get_current_date() }}"
+                                        "The number of visitors staying in the household on {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}}"
                                     ]
                                 }
                             ]
@@ -117,7 +118,7 @@
                             "questions": [
                                 {
                                     "id": "permanent-or-family-home-question",
-                                    "title": "Does anyone live at <em>{{answers['address-line-1']}}</em> as their permanent or family home?",
+                                    "title": "Does anyone live at <em>{{metadata['display_address']}}</em> as their permanent or family home?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -236,7 +237,7 @@
                             "questions": [
                                 {
                                     "id": "household-composition-question",
-                                    "title": "What are the names of everyone who live at <em>{{answers['address-line-1']}}</em>?",
+                                    "title": "What are the names of everyone who live at <em>{{metadata['display_address']}}</em>?",
                                     "type": "RepeatingAnswer",
                                     "answers": [
                                         {
@@ -320,7 +321,7 @@
                             "questions": [
                                 {
                                     "id": "overnight-visitors-question",
-                                    "title": "How many visitors are staying overnight at <em>{{answers['address-line-1']}}</em> on 8th February 2018?",
+                                    "title": "How many visitors are staying overnight at <em>{{metadata['display_address']}}</em> on 8th February 2018?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -476,7 +477,7 @@
                             "questions": [
                                 {
                                     "id": "type-of-accommodation-question",
-                                    "title": "What type of accommodation is <em>{{answers['address-line-1']}}</em>?",
+                                    "title": "What type of accommodation is <em>{{metadata['display_address']}}</em>?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -676,7 +677,7 @@
                             "questions": [
                                 {
                                     "id": "central-heating-question",
-                                    "title": "What type of central heating does <em>{{answers['address-line-1']}}</em> have?",
+                                    "title": "What type of central heating does <em>{{metadata['display_address']}}</em> have?",
                                     "type": "General",
                                      "guidance": {
                                         "content": [
@@ -779,7 +780,7 @@
                             "questions": [
                                 {
                                     "id": "own-or-rent-question",
-                                    "title": "Does your household own or rent <em>{{answers['address-line-1']}}</em>?",
+                                    "title": "Does your household own or rent <em>{{metadata['display_address']}}</em>?",
                                     "type": "General",
                                     "answers": [
                                         {
@@ -1308,7 +1309,7 @@
                                 {
                                     "id": "confirm-marriage-type",
                                      "titles": [{
-                                            "value": "On 30 November 2018, what is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> legal marital or registered civil partnership status?",
+                                            "value": "On {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}}, what is <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive }}</em> legal marital or registered civil partnership status?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -1316,7 +1317,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "On 30 November 2018, what is your legal marital or registered civil partnership status?"
+                                            "value": "On {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}}, what is your legal marital or registered civil partnership status?"
                                         }
                                     ],
                                     "type": "General",
@@ -2227,7 +2228,7 @@
                                             "mandatory": true,
                                             "options": [
                                                 {
-                                                    "label": "{{answers['address-line-1']}}, {{answers['address-line-2']}}",
+                                                    "label": "{{metadata['display_address']}}",
                                                     "value": "household-address"
                                                 },
                                                 {
@@ -2400,7 +2401,7 @@
                                             "mandatory": true,
                                             "options": [
                                                 {
-                                                    "label": "{{answers['address-line-1']}}, {{answers['address-line-2']}}",
+                                                    "label": "{{metadata['display_address']}}",
                                                     "value": "household-address"
                                                 },
                                                 {
@@ -2477,7 +2478,7 @@
                                             "mandatory": true,
                                             "options": [
                                                 {
-                                                    "label": "{{answers['address-line-1']}}, {{answers['address-line-2']}}",
+                                                    "label": "{{metadata['display_address']}}",
                                                     "value": "household-address"
                                                 },
                                                 {                          
@@ -2784,7 +2785,7 @@
                                                     "offset_by": {
                                                         "years": -1
                                                     },
-                                                    "id": "census-date-answer"
+                                                    "id": "partial-census-date-answer"
                                                 }
                                             }
                                         ]
@@ -2798,7 +2799,7 @@
                                                 "id": "arrive-in-uk-answer",
                                                 "condition": "equals",
                                                 "date_comparison": {
-                                                    "id": "census-date-answer",
+                                                    "id": "partial-census-date-answer",
                                                     "offset_by": {
                                                         "years": -1
                                                     }
@@ -2843,7 +2844,7 @@
                                 {
                                     "id": "when-arrive-in-uk-question",
                                     "titles": [{
-                                            "value": "Did <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> arrive in the UK, on or after March 2020?",
+                                            "value": "Did <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> arrive in the UK, on or after {{answers['partial-census-date-answer']|format_date_custom('MMMM YYYY')}}?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -2851,7 +2852,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "Did you arrive in the UK, on or after March 2020?"
+                                            "value": "Did you arrive in the UK, on or after {{answers['partial-census-date-answer']|format_date_custom('MMMM YYYY')}}?"
                                         }
                                     ],
                                     "type": "General",
@@ -7834,7 +7835,7 @@
                             "type": "Interstitial",
                             "id": "visitor-begin-section",
                             "title": "Visitors",
-                            "description": "In this section, we’re going to ask you about any visitors that were staying overnight at <em>{{answers['address-line-1']}}</em> on 10 September 2018.",
+                            "description": "In this section, we’re going to ask you about any visitors that were staying overnight at <em>{{answers['address-line-1']}}</em> on {{answers['census-date-answer']|format_date_custom('EEEE d MMMM YYYY')}}.",
                             "content": [
                                 {
                                     "title": "Information you need about your visitor",
@@ -8083,8 +8084,8 @@
                         {
                             "type": "Confirmation",
                             "id": "confirmation",
-                            "title": "You’re ready to submit your 2017 Census Test",
-                            "description": "<p>Thank you for taking part in the 2017 Census Test.</p>",
+                            "title": "You’re ready to submit your 2019 Census Test",
+                            "description": "<p>Thank you for taking part in the 2019 Census Test.</p>",
                             "questions": [
                                 {
                                     
@@ -8097,7 +8098,7 @@
                                                 "title": "Please note:",
                                                 "list": [
                                                     "by submitting your responses, you are declaring that you have completed to the best of your knowledge and belief.",
-                                                    "if you do not submit, your responses will be automatically submitted when the Census 2017 Test closes.",
+                                                    "if you do not submit, your responses will be automatically submitted when the Census 2019 Test closes.",
                                                     "after submission you will have an opportunity to provide feedback on your experience."
                                                 ]
                                             }
