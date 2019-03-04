@@ -48,12 +48,12 @@
     ],
     "sections": [
         {
-            "id": "your-address-section",
-            "title": "Your address",
+            "id": "census-day-section",
+            "title": "Census Day",
             "groups": [
                 {
-                    "id": "what-is-your-address-group",
-                    "title": "What is your address?",
+                    "id": "census-day-group",
+                    "title": "When is Census day?",
                     "blocks": [
                          {
                             "type": "Question",
@@ -80,10 +80,6 @@
                                     ]
                                 }
                             ]
-                        },
-                        {
-                            "type": "Introduction",
-                            "id": "introduction"
                         }
                     ]
                 }
