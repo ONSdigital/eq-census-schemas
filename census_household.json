@@ -5339,7 +5339,7 @@
                             "routing_rules": [
                                  {                 
                                    "goto": {
-                                        "block": "sexual-identity",
+                                        "block": "sexual-identity-proxy",
                                         "when": [{
                                             "id": "date-of-birth-answer",
                                             "condition": "less than",
