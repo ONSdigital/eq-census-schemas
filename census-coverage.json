@@ -292,7 +292,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "other-household-member-anyone-else-block",
+                                        "group": "other-household-member-group",
                                         "when": [
                                             {
                                                 "id": "anyone-living-answer",
