@@ -5302,7 +5302,7 @@
                             "routing_rules": [
                                  {                 
                                    "goto": {
-                                        "block": "sexual-identity",
+                                        "block": "sexual-identity-proxy",
                                         "when": [{
                                             "id": "date-of-birth-answer",
                                             "condition": "less than",
@@ -5373,25 +5373,7 @@
                                 }
                             ],
                             "routing_rules": [
-                                {                 
-                                   "goto": {
-                                        "block": "sexual-identity-proxy",
-                                        "when": [{
-                                            "id": "date-of-birth-answer",
-                                            "condition": "less than",
-                                            "date_comparison": {
-                                                "value": "now",
-                                                "offset_by": {
-                                                    "years": -16
-                                                }
-                                            }
-                                        },{
-                                                "id": "proxy-check-answer",
-                                                "condition": "equals",
-                                                "value": "proxy"
-                                        }]
-                                    }
-                                },{                 
+                               {                 
                                    "goto": {
                                         "block": "sexual-identity",
                                         "when": [{
