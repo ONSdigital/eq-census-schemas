@@ -10,7 +10,7 @@
     "eq_id": "coverage",
     "form_type": "coverage",
     "navigation": {
-        "visible": true
+        "visible": false
     },
     "metadata": [{
             "name": "user_id",
@@ -385,9 +385,10 @@
                                      {
                                             "id": "other-household-member-name-unknown",
                                             "mandatory": false,
+                                             "label": "Enter 'x' into missing name field",
                                             "options": [
                                                 {
-                                                    "label": "Name unknown, enter 'x' into missing name field",
+                                                    "label": "Name unknown",
                                                     "value": "unknown"
                                                 }
                                             ],
@@ -500,9 +501,10 @@
                                      {
                                             "id": "temp-household-member-name-unknown",
                                             "mandatory": false,
+                                             "label": "Enter 'x' into missing name field",
                                             "options": [
                                                 {
-                                                    "label": "Name unknown, enter 'x' into missing name field",
+                                                    "label": "Name unknown",
                                                     "value": "unknown"
                                                 }
                                             ],
@@ -747,9 +749,10 @@
                                      {
                                             "id": "household-member-name-no-primary-unknown",
                                             "mandatory": false,
+                                            "label": "Enter 'x' into missing name field",
                                             "options": [
                                                 {
-                                                    "label": "Name unknown, enter 'x' into missing name field",
+                                                    "label": "Name unknown",
                                                     "value": "unknown"
                                                 }
                                             ],
