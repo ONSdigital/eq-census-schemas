@@ -100,8 +100,32 @@
                                 }
                             ]
                         },{
-                            "type": "Introduction",
-                            "id": "introduction"
+                            "type": "Question",
+                            "id": "introduction-page",
+                            "questions": [
+                                {
+                                    "id": "introduction-question",
+                                    "title": "Welcome to the Census test",
+                                    "description": "Fill it in as soon as possible, but answer it about 19 March 2019. The information helps councils and the government plan and fund services in your community - services like GPs, hospitals, schools and public transport.",
+                                    "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "Start or continue to fill in the Census",
+                                                "description": "Enter your 12 digit unique access code"
+                                            }
+                                        ]
+                                    },
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "introduction-answer",
+                                            "mandatory": false,
+                                            "label": "You can find your unique access code on your invitation letter.",
+                                            "type": "TextField"
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }
@@ -264,7 +288,8 @@
                                                 },
                                                 {
                                                     "label": "Detention",
-                                                    "value": "Detention"
+                                                    "value": "Detention",
+                                                    "description": "For example, prisons or approved premises"
                                                 },
                                                 {
                                                     "label": "Travel or temporary accommodation",
