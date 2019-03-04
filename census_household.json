@@ -106,7 +106,7 @@
                                 {
                                     "id": "introduction-question",
                                     "title": "Welcome to the Census test",
-                                    "description": "Fill it in as soon as possible, but answer it about 19 March 2019. The information helps councils and the government plan and fund services in your community - services like GPs, hospitals, schools and public transport.",
+                                    "description": "Fill it in as soon as possible, but answer it about {{answers['census-date-answer']|format_date_custom('d MMMM YYYY')}}. The information helps councils and the government plan and fund services in your community - services like GPs, hospitals, schools and public transport.",
                                     "guidance": {
                                         "content": [
                                             {
