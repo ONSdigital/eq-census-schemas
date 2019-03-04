@@ -1972,7 +1972,7 @@
                                 {
                                     "id": "last-year-address-question",
                                     "titles": [{
-                                            "value": "What is their address one year ago?",
+                                            "value": "What was <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> address one year ago?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -1980,7 +1980,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "What is your address one year ago?"
+                                            "value": "What was your address one year ago?"
                                         }
                                     ],
                                     "type": "General",
@@ -2637,15 +2637,7 @@
                                     "type": "MutuallyExclusive",
                                     "mandatory": true,
                                     "answers": [
-                                        {
-                                            "id": "understand-irish-answer-exclusive",
-                                            "type": "Checkbox",
-                                            "mandatory": false,
-                                            "options": [{
-                                                    "label": "No ability",
-                                                    "value": "No ability"
-                                            }]
-                                        },
+                                        
                                         {
                                             "id": "understand-irish-answer",
                                             "mandatory": false,
@@ -2668,6 +2660,14 @@
                                                 }
                                             ],
                                             "type": "Checkbox"
+                                        },{
+                                            "id": "understand-irish-answer-exclusive",
+                                            "type": "Checkbox",
+                                            "mandatory": false,
+                                            "options": [{
+                                                    "label": "No ability",
+                                                    "value": "No ability"
+                                            }]
                                         }
                                         
                                     ]
@@ -2770,15 +2770,7 @@
                                     "type": "MutuallyExclusive",
                                     "mandatory": false,
                                     "answers": [
-                                        {
-                                            "id": "understand-ulster-scots-answer-exclusive",
-                                            "type": "Checkbox",
-                                            "mandatory": false,
-                                            "options": [{
-                                                    "label": "No ability",
-                                                    "value": "No ability"
-                                            }]
-                                        },
+                                        
                                         {
                                             "id": "understand-ulster-scots-answer",
                                             "mandatory": false,
@@ -2802,6 +2794,14 @@
                                                 
                                             ],
                                             "type": "Checkbox"
+                                        },{
+                                            "id": "understand-ulster-scots-answer-exclusive",
+                                            "type": "Checkbox",
+                                            "mandatory": false,
+                                            "options": [{
+                                                    "label": "No ability",
+                                                    "value": "No ability"
+                                            }]
                                         }
                                          
                                     ]
