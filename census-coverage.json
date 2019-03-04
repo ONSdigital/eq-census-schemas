@@ -537,7 +537,9 @@
                             "id": "share-facilities-block",
                             "questions": [{
                                 "id": "share-facilities-question",
-                                "title": "Thinking about the people in your household at  {{ answers['address-line-1'] }} {{ answers['address-line-2'] }} on {{answers['census-date-answer']|format_date_custom('EEEE d MMMM YYYY')}}, were you all sharing cooking facilities and a living room or sitting room or dining area?",
+                                "title": "Do you all sharing cooking facilities and a living room or sitting room or dining area?",
+                               "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['other-household-member-first-name'], answers['other-household-member-last-name']], [answers['temp-household-member-first-name'], answers['temp-household-member-last-name']]] | format_repeating_summary }}",
+                                
                                 "type": "General",
                                 "answers": [{
                                     "type": "Radio",
