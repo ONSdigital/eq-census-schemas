@@ -249,7 +249,7 @@
                                     },
                                     "answers": [
                                         {
-                                            "id": "number-of-individuals-answer",
+                                            "id": "number-of-visitors-answer",
                                             "label": "Number of visitors",
                                             "mandatory": true,
                                             "type": "Number"
