@@ -3362,7 +3362,7 @@
                         "questions": [{
                             "id": "feedback-question",
                             "titles": [{
-                                    "value": "Household has said they have other living accommodation. Ensure the accommodation is recorded on the Property Listing Sheet and interview household separately",
+                                    "value": "Household has said they have other living accommodation. Ensure the accommodation is recorded on the Property Listing Sheet and arrange to interview the  household separately",
                                     "when": [{
                                         "id": "other-living-accommodation-answer",
                                         "condition": "equals",
