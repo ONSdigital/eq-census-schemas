@@ -3517,7 +3517,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "apprenticeship",
+                                        "block": "armed-forces",
                                         "when": [
                                             {
                                                 "id": "degree-answer",
