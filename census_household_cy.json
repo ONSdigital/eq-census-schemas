@@ -36,6 +36,24 @@
                     "title": "What is your address?",
                     "blocks": [
                         {
+                            "type": "Question",
+                            "id": "census-date",
+                            "questions": [
+                                {
+                                    "id": "census-date-question",
+                                    "title": "When is Census day?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "census-date-answer",
+                                            "mandatory": true,
+                                            "type": "MonthYearDate"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
                             "type": "Introduction",
                             "id": "introduction"
                         },
@@ -465,17 +483,17 @@
         },
         {
             "id": "household-and-accommodation-section",
-            "title": "Household and Accommodation",
+            "title": "Household accommodation",
             "groups": [
                 {
                     "id": "household-and-accommodation",
-                    "title": "Household and Accommodation",
+                    "title": "Household accommodation",
                     "blocks": [
                         {
                             "type": "Interstitial",
                             "id": "household-and-accommodation-block",
-                            "title": "Household and accommodation",
-                            "description": "In this section, we\u2019re going to ask you about the household and accommodation you live in.",
+                            "title": "Household accommodation",
+                            "description": "In this section, we\u2019re going to ask you about the accommodation you live in.",
                             "content": [
                                 {
                                     "title": "Gwybodaeth y bydd ei hangen arnoch",
@@ -637,7 +655,7 @@
                                             "title": "What is a household?",
                                             "content": [
                                                 {
-                                                    "description": "One person living alone; or a group of people (not necessarily related) living at the same address who share cooking facilities and share a living room or sitting room or dining area."
+                                                    "description": "One person living alone; or a group of people who are not necessarily related, living at the same address who share cooking facilities and share a living room or sitting room or dining area."
                                                 }
                                             ]
                                         }
@@ -999,11 +1017,11 @@
                                     "title": "Gwybodaeth y bydd ei hangen arnoch",
                                     "list": [
                                         "Personal details such as date of birth, country of birth, religion etc.",
-                                        "Education and qualifications",
-                                        "Employment and travel to work",
                                         "Second or holiday homes",
+                                        "Languages",
                                         "Unpaid care and health",
-                                        "Languages"
+                                        "Education and qualifications",
+                                        "Employment and travel to work"
                                     ]
                                 }
                             ]
@@ -2812,6 +2830,18 @@
                                 },
                                 {
                                     "goto": {
+                                        "block": "language-proxy",
+                                        "when": [
+                                            {
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
                                         "block": "language"
                                     }
                                 }
@@ -2858,7 +2888,24 @@
                                                 "id": "arrive-in-uk-answer",
                                                 "condition": "greater than",
                                                 "date_comparison": {
-                                                    "value": "now",
+                                                    "offset_by": {
+                                                        "years": -1
+                                                    },
+                                                    "id": "census-date-answer"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "when-arrive-in-uk",
+                                        "when": [
+                                            {
+                                                "id": "arrive-in-uk-answer",
+                                                "condition": "equals",
+                                                "date_comparison": {
+                                                    "id": "census-date-answer",
                                                     "offset_by": {
                                                         "years": -1
                                                     }
@@ -2881,6 +2928,18 @@
                                 },
                                 {
                                     "goto": {
+                                        "block": "language-proxy",
+                                        "when": [
+                                            {
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
                                         "block": "language"
                                     }
                                 }
@@ -2894,7 +2953,7 @@
                                     "id": "when-arrive-in-uk-question",
                                     "titles": [
                                         {
-                                            "value": "Wnaeth <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> ddod i\u2019r Deyrnas Unedig ar [rehearsal or census day] neu ar \u00f4l hynny?",
+                                            "value": "Did <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> arrive in the UK, on or after March 2020?",
                                             "when": [
                                                 {
                                                     "id": "proxy-check-answer",
@@ -2904,7 +2963,7 @@
                                             ]
                                         },
                                         {
-                                            "value": "Wnaethoch chi ddod i\u2019r Deyrnas Unedig ar [Rehearsal/ Census date] neu ar \u00f4l hynny?"
+                                            "value": "Did you arrive in the UK, on or after March 2020?"
                                         }
                                     ],
                                     "type": "General",
@@ -2948,6 +3007,18 @@
                                                 "meta": "region_code",
                                                 "condition": "equals",
                                                 "value": "GB-WLS"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
+                                        "block": "language-proxy",
+                                        "when": [
+                                            {
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
                                             }
                                         ]
                                     }
@@ -3015,6 +3086,18 @@
                                 },
                                 {
                                     "goto": {
+                                        "block": "language-proxy",
+                                        "when": [
+                                            {
+                                                "id": "proxy-check-answer",
+                                                "condition": "equals",
+                                                "value": "proxy"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "goto": {
                                         "block": "language"
                                     }
                                 }
@@ -3041,6 +3124,13 @@
                                             "value": "Ydych chi\u2019n gallu deall, siarad, darllen neu ysgrifennu Cymraeg?"
                                         }
                                     ],
+                                    "guidance": {
+                                        "content": [
+                                            {
+                                                "title": "A question about national identity, including Welsh, will follow"
+                                            }
+                                        ]
+                                    },
                                     "mandatory": true,
                                     "type": "MutuallyExclusive",
                                     "answers": [
@@ -3161,7 +3251,7 @@
                                     "type": "General",
                                     "definitions": [
                                         {
-                                            "title": "What is main language?",
+                                            "title": "What do we mean by \u2018main language\u2019?",
                                             "content": [
                                                 {
                                                     "description": "Main language is your first or preferred language."
@@ -3519,7 +3609,7 @@
                                     "type": "General",
                                     "definitions": [
                                         {
-                                            "title": "What is a 'national identity'?",
+                                            "title": "What do we mean by 'national identity'?",
                                             "content": [
                                                 {
                                                     "description": "National Identity is not dependent on your ethnic group or citizenship. This could be about the country or countries where you feel you belong, or think of as home."
@@ -3842,7 +3932,7 @@
                                                 {
                                                     "label": "Gwyn",
                                                     "value": "White",
-                                                    "description": "Yn cynnwys Cymreig, Prydeinig, Roma neu unrhyw gefndir Gwyn arall"
+                                                    "description": "Includes Welsh, British, Northern Irish, Irish, Gypsy, Irish Traveller, Roma or any other White background"
                                                 },
                                                 {
                                                     "label": "Grwpiau Cymysg neu Aml-ethnig",
@@ -5442,7 +5532,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "sexual-identity",
+                                        "block": "sexual-identity-proxy",
                                         "when": [
                                             {
                                                 "id": "date-of-birth-answer",
@@ -5551,7 +5641,7 @@
                                     "answers": [
                                         {
                                             "id": "sexual-identity-answer",
-                                            "mandatory": true,
+                                            "mandatory": false,
                                             "label": "Dewiswch un opsiwn yn unig",
                                             "options": [
                                                 {
@@ -5602,7 +5692,7 @@
                                     "answers": [
                                         {
                                             "id": "sexual-identity-answer-proxy",
-                                            "mandatory": true,
+                                            "mandatory": false,
                                             "label": "Dewiswch un opsiwn yn unig",
                                             "options": [
                                                 {
@@ -5667,7 +5757,7 @@
                                     "answers": [
                                         {
                                             "id": "birth-gender-answer",
-                                            "mandatory": true,
+                                            "mandatory": false,
                                             "label": "Dewiswch un opsiwn yn unig",
                                             "options": [
                                                 {
@@ -6073,6 +6163,16 @@
                                     "goto": {
                                         "block": "other-qualifications",
                                         "when": [
+                                            {
+                                                "id": "apprenticeship-answer",
+                                                "condition": "equals",
+                                                "value": "No"
+                                            },
+                                            {
+                                                "id": "degree-answer",
+                                                "condition": "equals",
+                                                "value": "No"
+                                            },
                                             {
                                                 "id": "gcse-answer-exclusive",
                                                 "condition": "contains",
@@ -7276,7 +7376,7 @@
                             "id": "employers-business",
                             "questions": [
                                 {
-                                    "id": "employers-business-question",
+                                    "id": "employers-business-england-question",
                                     "titles": [
                                         {
                                             "value": "Beth yw prif weithgarwch sefydliad, busnes neu waith <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> ar ei liwt ei hun?",
@@ -7296,7 +7396,7 @@
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "employers-business-answer",
+                                            "id": "employers-business-england-answer",
                                             "label": "Description",
                                             "mandatory": true,
                                             "type": "TextArea",
@@ -7306,6 +7406,62 @@
                                                     "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
                                                 }
                                             }
+                                        }
+                                    ],
+                                    "skip_conditions": [
+                                        {
+                                            "when": [
+                                                {
+                                                    "meta": "region_code",
+                                                    "condition": "equals",
+                                                    "value": "GB-WLS"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "employers-business-wales-question",
+                                    "titles": [
+                                        {
+                                            "value": "Beth yw prif weithgarwch sefydliad, busnes neu waith <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> ar ei liwt ei hun?",
+                                            "when": [
+                                                {
+                                                    "id": "proxy-check-answer",
+                                                    "condition": "equals",
+                                                    "value": "proxy"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "value": "Beth yw prif weithgarwch eich sefydliad, busnes neu\u2019ch gwaith ar eich liwt eich hun?"
+                                        }
+                                    ],
+                                    "description": "For example clothing retail, general hospital, primary education, food wholesale, civil service DVLA, local government housing.",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "employers-business-wales-answer",
+                                            "label": "Description",
+                                            "mandatory": true,
+                                            "type": "TextArea",
+                                            "max_length": 200,
+                                            "validation": {
+                                                "messages": {
+                                                    "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "skip_conditions": [
+                                        {
+                                            "when": [
+                                                {
+                                                    "meta": "region_code",
+                                                    "condition": "not equals",
+                                                    "value": "GB-WLS"
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
@@ -7323,7 +7479,7 @@
                             "id": "employers-business-past",
                             "questions": [
                                 {
-                                    "id": "employers-business-past-question",
+                                    "id": "employers-business-past-england-question",
                                     "titles": [
                                         {
                                             "value": "Beth oedd prif weithgarwch sefydliad, busnes neu waith <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> ar ei liwt ei hun?",
@@ -7343,7 +7499,7 @@
                                     "type": "General",
                                     "answers": [
                                         {
-                                            "id": "employers-business-past-answer",
+                                            "id": "employers-business-past-england-answer",
                                             "label": "Description",
                                             "mandatory": true,
                                             "type": "TextArea",
@@ -7354,13 +7510,69 @@
                                                 }
                                             }
                                         }
+                                    ],
+                                    "skip_conditions": [
+                                        {
+                                            "when": [
+                                                {
+                                                    "meta": "region_code",
+                                                    "condition": "equals",
+                                                    "value": "GB-WLS"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "employers-business-past-wales-question",
+                                    "titles": [
+                                        {
+                                            "value": "Beth oedd prif weithgarwch sefydliad, busnes neu waith <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}}</em> ar ei liwt ei hun?",
+                                            "when": [
+                                                {
+                                                    "id": "proxy-check-answer",
+                                                    "condition": "equals",
+                                                    "value": "proxy"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "value": "Beth oedd prif weithgarwch eich sefydliad, busnes neu\u2019ch gwaith ar eich liwt eich hun?"
+                                        }
+                                    ],
+                                    "description": "For example clothing retail, general hospital, primary education, food wholesale, civil service DVLA, local government housing.",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "employers-business-past-wales-answer",
+                                            "label": "Description",
+                                            "mandatory": true,
+                                            "type": "TextArea",
+                                            "max_length": 200,
+                                            "validation": {
+                                                "messages": {
+                                                    "MAX_LENGTH_EXCEEDED": "Your answer has to be less than %(max)d characters long"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "skip_conditions": [
+                                        {
+                                            "when": [
+                                                {
+                                                    "meta": "region_code",
+                                                    "condition": "not equals",
+                                                    "value": "GB-WLS"
+                                                }
+                                            ]
+                                        }
                                     ]
                                 }
                             ],
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "supervise-past"
+                                        "block": "supervise"
                                     }
                                 }
                             ]
@@ -7961,12 +8173,12 @@
                                     "title": "Information you need about your visitor",
                                     "list": [
                                         "Date of birth",
-                                        "Usual address",
-                                        "Sex"
+                                        "Sex",
+                                        "Usual address"
                                     ]
                                 },
                                 {
-                                    "description": "We ask for visitor information to check that everyone is counted. This helps to produce accurate population estimates. Add any visitors, even if you think they may have been counted elsewhere."
+                                    "description": "We ask for visitor information to ensure that everyone is counted. This helps to produce accurate population estimates. Add any visitors, even if you think they may have been included on a census form at another address."
                                 }
                             ]
                         }
