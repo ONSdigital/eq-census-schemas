@@ -385,7 +385,7 @@
                                      {
                                             "id": "other-household-member-name-unknown",
                                             "mandatory": false,
-                                             "label": "Enter 'x' into missing name field",
+                                             "label": "Enter 'xxx' into missing name field",
                                             "options": [
                                                 {
                                                     "label": "Name unknown",
@@ -501,7 +501,7 @@
                                      {
                                             "id": "temp-household-member-name-unknown",
                                             "mandatory": false,
-                                             "label": "Enter 'x' into missing name field",
+                                             "label": "Enter 'xxx' into missing name field",
                                             "options": [
                                                 {
                                                     "label": "Name unknown",
@@ -751,7 +751,7 @@
                                      {
                                             "id": "household-member-name-no-primary-unknown",
                                             "mandatory": false,
-                                            "label": "Enter 'x' into missing name field",
+                                            "label": "Enter 'xxx' into missing name field",
                                             "options": [
                                                 {
                                                     "label": "Name unknown",
