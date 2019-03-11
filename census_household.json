@@ -7291,7 +7291,7 @@
                             "routing_rules": [
                                 {
                                     "goto": {
-                                        "block": "supervise"
+                                        "block": "supervise-past"
                                     }
                                 }
                             ]
