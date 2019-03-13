@@ -537,7 +537,7 @@
                             "id": "share-facilities-block",
                             "questions": [{
                                 "id": "share-facilities-question",
-                                "title": "Do you all sharing cooking facilities and a living room or sitting room or dining area?",
+                                "title": "Were you all sharing cooking facilities and a living room or sitting room or dining area?",
                                "description": "{{ [[answers['primary-household-member-first-name'], answers['primary-household-member-last-name']], [answers['other-household-member-first-name'], answers['other-household-member-last-name']], [answers['temp-household-member-first-name'], answers['temp-household-member-last-name']]] | format_repeating_summary }}",
                                 
                                 "type": "General",
@@ -1293,23 +1293,27 @@
                         "id": "internet",
                         "questions": [{
                             "id": "internet-question",
-                            "title": "When at home, how do you and the people in your household connect to the internet?",
+                            "title": "How do you and the people in your household connect to the internet at home?",
                             "type": "MutuallyExclusive",
                             "mandatory": false,
                             "answers": [{
                                     "id": "internet-answer",
                                     "mandatory": false,
                                     "options": [{
-                                            "label": "WiFi or broadband",
-                                            "value": "WiFi or broadband"
+                                            "label": "WiFi",
+                                            "value": "WiFi"
+                                        },
+                                        {
+                                            "label": "Broadband",
+                                            "value": "Broadband"
                                         },
                                         {
                                             "label": "A mobile phone network such as 3G or 4G",
                                             "value": "A mobile phone network such as 3G or 4G"
                                         },
                                         {
-                                            "label": "In some other way",
-                                            "value": "In some other way",
+                                            "label": "Other",
+                                            "value": "Other",
                                             "detail_answer": {
                                                 "id": "internet-answer-other",
                                                 "type": "TextField",
@@ -1342,7 +1346,7 @@
                         "id": "internet-usage",
                         "questions": [{
                             "id": "internet-usage-question",
-                            "title": "In the last 12 months has anyone in your household interacted with or contacted government organisations over the internet for personal use for any of these reasons?",
+                            "title": "In the last 12 months, has anyone in your household interacted with government organisations online for personal use for any of these reasons?",
                            
                             "definitions": [{
                                         "title": "What do we mean by 'government organisations'?",
@@ -1358,8 +1362,8 @@
                                 "mandatory": true,
                                 "options": [
                                     {
-                                           "label": "Obtaining information from websites or 'apps'",
-                                            "value": "Obtaining information from websites or 'apps'"
+                                           "label": "Obtaining information from websites or apps",
+                                            "value": "Obtaining information from websites or apps"
                                     },
                                     {
                                           "label": "Downloading or printing forms",
@@ -1374,8 +1378,8 @@
                                             "value": "None of these"
                                         },
                                         {
-                                            "label": "Not known",
-                                            "value": "Not known"
+                                            "label": "Unsure",
+                                            "value": "Unsure"
                                         }
                                 ],
                                 "type": "Checkbox"
@@ -1821,8 +1825,8 @@
                                         "value": "Widowed"
                                     },
                                     {
-                                        "label": "Surviving member from a civil partnership",
-                                        "value": "Surviving member from a civil partnership"
+                                        "label": "Surviving partner from a civil partnership",
+                                        "value": "Surviving partner from a civil partnership"
                                     }
                                 ]
                             }]
@@ -3362,7 +3366,7 @@
                         "questions": [{
                             "id": "feedback-question",
                             "titles": [{
-                                    "value": "Household has said they have other living accommodation. Ensure the accommodation is recorded on the Property Listing Sheet and arrange to interview the  household separately",
+                                    "value": "Household has said they have other living accommodation. You need to create a new address in FWMT and arrange to interview the  household separately",
                                     "when": [{
                                         "id": "other-living-accommodation-answer",
                                         "condition": "equals",
