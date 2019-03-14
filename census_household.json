@@ -748,18 +748,18 @@
                                                 {
                                                     "label": "Wood",
                                                     "value": "Wood",
-                                                    "description": "For example logs, waste wood or pellets"
+                                                    "description": "For example, logs, waste wood or pellets"
                                                 },
                                                 {
-                                                    "label": "Solid Fuel",
-                                                    "value": "Solid Fuel",
+                                                    "label": "Solid fuel",
+                                                    "value": "Solid fuel",
                                                     "description": "For example coal"
                                                 },
                                                 
                                                 {
                                                     "label": "Renewable energy",
                                                     "value": "Renewable energy",
-                                                    "description": "For example solar thermal or heat pumps"
+                                                    "description": "For example, solar thermal or heat pumps"
                                                 },
                                                 {
                                                     "label": "District or communal heat networks",
