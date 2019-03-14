@@ -1346,44 +1346,57 @@
                         "id": "internet-usage",
                         "questions": [{
                             "id": "internet-usage-question",
-                            "title": "In the last 12 months, has anyone in your household interacted with government organisations online for personal use for any of these reasons?",
+                            "title": "In the last year, how have you or your household used online government services?",
                            
                             "definitions": [{
                                         "title": "What do we mean by 'government organisations'?",
                                         "content": [
                                             {
-                                                "description": "add definition"
+                                                "description": "This refers to any interaction you might have with public authorities online, such as submitting a tax return, registering to vote, applying for a passport, a driving licence or other official documents, or applying for school places."
                                             }
                                         ]
                                     }],
-                            "type": "General",
+                            "type": "MutuallyExclusive",
                             "answers": [{
                                 "id": "internet-usage-answer",
                                 "mandatory": true,
                                 "options": [
                                     {
-                                           "label": "Obtaining information from websites or apps",
-                                            "value": "Obtaining information from websites or apps"
+                                           "label": "Completing forms online",
+                                            "value": "Completing forms online",
+                                            "description": "For example taxing a car, registering to vote"
                                     },
                                     {
-                                          "label": "Downloading or printing forms",
-                                          "value": "Downloading or printing forms"
+                                          "label": "Applying for official documents",
+                                          "value": "Applying for official documents",
+                                          "description": "For example passports, visas"
                                     },
                                     {
-                                        "label": "Submitting completed forms online",
-                                            "value": "Submitting completed forms online"
+                                           "label": "Other",
+                                           "value": "Other",
+                                           "detail_answer": {
+                                                "id": "number-of-vehicles-answer-other",
+                                                 "type": "TextField",
+                                                 "mandatory": false,
+                                                 "label": "Please specify internet services used"
+                                            }
                                     },
                                     {
-                                            "label": "None of these",
-                                            "value": "None of these"
-                                        },
-                                        {
-                                            "label": "Unsure",
-                                            "value": "Unsure"
-                                        }
+                                            "label": "Used paper based services",
+                                            "value": "Used paper based services"
+                                     }
                                 ],
                                 "type": "Checkbox"
-                            }]
+                            },
+                                {
+                                    "id": "internet-usage-answer-exclusive",
+                                    "type": "Checkbox",
+                                    "mandatory": false,
+                                    "options": [{
+                                        "label": "Did not use Government services",
+                                        "value": "Did not use Government services"
+                                    }]
+                                }]
                         }]
                     },
                     
@@ -1825,8 +1838,8 @@
                                         "value": "Widowed"
                                     },
                                     {
-                                        "label": "Surviving partner from a civil partnership",
-                                        "value": "Surviving partner from a civil partnership"
+                                        "label": "Surviving partner from a registered civil partnership",
+                                        "value": "Surviving partner from a registered civil partnership"
                                     }
                                 ]
                             }]
