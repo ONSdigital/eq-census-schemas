@@ -179,6 +179,16 @@
                                     "id": "accommodation-type-question",
                                     "title": "What type of accommodation is <em>{{ [answers['address-line-1'], answers['address-line-2']] | format_household_name }}<em>?",
                                     "type": "General",
+                                    "definitions": [
+                                        {
+                                            "title": "What is a communal establishment?",
+                                            "content": [
+                                                {
+                                                    "description": "A communal establishment is an establishment providing managed residential accommodation. ‘Managed’ in this context means full-time or part-time supervision of the accommodation. Examples of communal establishments include student halls of residence, boarding schools, armed forces bases, hospitals, care homes and prisons"
+                                                }
+                                            ]
+                                        }
+                                    ],
                                     "answers": [
                                         {
                                             "id": "accommodation-type-answer",
@@ -325,7 +335,7 @@
                                 {
                                     "id": "establishment-position-question",
                                      "titles": [{
-                                             "value": "What is <em>{{[answers['first-name'], answers['last-name']] | format_household_name_possessive }}</em> position in this establishment?",
+                                             "value": "What is <em>{{[answers['first-name'], answers['last-name']] | format_household_name_possessive }}</em> position in this communal establishment?",
                                               "when": [{
                                                     "id": "proxy-check-answer",
                                                     "condition": "equals",
@@ -333,15 +343,15 @@
                                                 }]
                                             },
                                             {
-                                                "value": "What is your position in this establishment?"
+                                                "value": "What is your position in this communal establishment?"
                                             }
                                         ],
                                     "definitions": [
                                         {
-                                            "title": "What do we mean by 'establishment'?",
+                                            "title": "What is a communal establishment?",
                                             "content": [
                                                 {
-                                                    "description": "An establishment provides managed residential accommodation. ‘Managed’ in this context means full-time or part-time supervision of the accommodation. For example, student hall of residence, boarding school, armed forces base, hospital, care home, prison"
+                                                    "description": "A communal establishment is an establishment providing managed residential accommodation. ‘Managed’ in this context means full-time or part-time supervision of the accommodation. Examples of communal establishments include student halls of residence, boarding schools, armed forces bases, hospitals, care homes and prisons"
                                                 }
                                             ]
                                         }
