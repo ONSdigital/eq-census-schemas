@@ -1357,6 +1357,7 @@
                                         ]
                                     }],
                             "type": "MutuallyExclusive",
+                            "mandatory": false,
                             "answers": [{
                                 "id": "internet-usage-answer",
                                 "mandatory": false,
