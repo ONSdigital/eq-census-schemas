@@ -1359,7 +1359,7 @@
                             "type": "MutuallyExclusive",
                             "answers": [{
                                 "id": "internet-usage-answer",
-                                "mandatory": true,
+                                "mandatory": false,
                                 "options": [
                                     {
                                            "label": "Completing forms online",
