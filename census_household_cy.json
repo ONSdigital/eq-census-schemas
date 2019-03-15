@@ -5,7 +5,7 @@
     "survey_id": "census",
     "title": "2017 Census Test",
     "description": "Census England Household Schema",
-    "theme": "social",
+    "theme": "census",
     "legal_basis": "Voluntary",
     "eq_id": "census",
     "form_type": "household",
