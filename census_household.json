@@ -409,12 +409,12 @@
                                                     "value": "Other hospital"
                                                 },
                                                 {
-                                                    "label": "Care home with nursing",
-                                                    "value": "Care home with nursing"
-                                                },
-                                                {
                                                     "label": "Care home without nursing",
                                                     "value": "Care home without nursing"
+                                                },
+                                                {
+                                                    "label": "Care home with nursing",
+                                                    "value": "Care home with nursing"
                                                 },
                                                 {
                                                     "label": "Children’s home",
@@ -530,7 +530,7 @@
                             "questions": [
                                 {
                                     "id": "travel-temp-accomodation-question",
-                                    "title": "What type of travel or temporary accommodation is <em>{{answers['address-line-1']}}, {{answers['address-line-2']}}</em>?",
+                                    "title": "What type of travel or temporary accommodation establishment is <em>{{answers['address-line-1']}}, {{answers['address-line-2']}}</em>?",
                                     "type": "General",
                                     "answers": [
                                         {
