@@ -4608,7 +4608,7 @@
                                     }
                                 }, {
                                     "goto": {
-                                        "block": "past-usual-address-first-person"
+                                        "block": "past-usual-household-address-first-person"
                                     }
                                 }
                             ]
