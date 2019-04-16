@@ -132,11 +132,11 @@
                         {
                             "type": "Interstitial",
                             "id": "who-lives-here-block",
-                            "title": "People who live in the household",
+                            "title": "People who live here",
                             "description": "In this section, we’re going to ask you about the people that live at <em>{{answers['address-line-1']}}</em>.",
                             "content": [
                                 {
-                                    "title": "Information you need",
+                                    "title": "For this section you will need to know",
                                     "list": [
                                         "Names of the people living in household and how they are related",
                                         "The number of visitors staying in the household on {{ get_current_date() }}"
@@ -495,10 +495,11 @@
                             "description": "In this section, we’re going to ask you about the household accommodation you live in.",
                             "content": [
                                 {
-                                    "title": "Information you need",
+                                    "title": "For this section you will need to know",
                                     "list": [
                                         "Type of property, and if it’s owned or rented",
-                                        "Type of landlord, if the property is rented"
+                                        "Type of landlord if rented, for example housing association, council or private",
+                                        "Type of central heating"
                                     ]
                                 }
                             ]
@@ -1101,14 +1102,15 @@
                             "description": "In this section, we’re going to ask you questions about <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em>.",
                             "content": [
                                 {
-                                    "title": "Information you need",
+                                    "title": "For this section you will need to know",
                                     "list": [
-                                        "Personal details such as date of birth, country of birth, religion etc.",
+                                        "Personal details such as date of birth, country of birth, religion",
                                         "Second or holiday homes",
-                                        "Languages",
-                                        "Unpaid care and health",
-                                        "Education and qualifications",
-                                        "Employment and travel to work"
+                                        "Main language",
+                                        "Health",
+                                        "Unpaid care provided",
+                                        "Qualifications",
+                                        "Employment details"
                                     ]
                                 }
                             ]
@@ -3389,8 +3391,8 @@
                         {
                             "type": "Interstitial",
                             "id": "qualifications",
-                            "title": "This next section is about your qualifications",
-                            "description": "Include any qualifications you have ever achieved in Northern Ireland or elsewhere, even if you are not using them now.",
+                            "title": "Qualifications",
+                            "description": "The next set of questions is about the qualifications you have ever acheived in Northern Ireland or worldwide, even if you are not using them now.",
                             "routing_rules": [
                                 {
                                     "goto": {
@@ -3404,7 +3406,7 @@
                             "type": "Interstitial",
                             "id": "qualifications-proxy",
                             "title": "This next section is about {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}} qualifications",
-                            "description": "Include any qualifications they have ever achieved in Northern Ireland or elsewhere, even if they are not using them now.",
+                            "description": "The next set of questions is about the qualifications {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}} has ever acheived in Northern Ireland or worldwide, even if they are not using them now.",
                             "routing_rules": [
                                 {
                                     "goto": {
@@ -4445,8 +4447,8 @@
                         {
                             "type": "Interstitial",
                             "id": "past-main-employment-block",
-                            "title": "Answer the next set of questions for your last main job",
-                            "description": "Your main job is the job in which you usually worked the most hours",
+                            "title": "Your last main job",
+                            "description": "The next set of questions is about your main job. Your main job is the job in which you usually worked the most hours",
                             "routing_rules": [
                                 {
                                     "goto": {
@@ -4459,8 +4461,8 @@
                         {
                             "type": "Interstitial",
                             "id": "past-main-employment-block-proxy",
-                            "title": "Answer the next set of questions for {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}} last main job",
-                            "description": "Their main job is the job in which they usually worked the most hours",
+                            "title": "{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}} last main job",
+                            "description": "The next set of questions is about {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}} last main job. Their main job is the job in which they usually worked the most hours",
                             "routing_rules": [
                                 {
                                     "goto": {
@@ -4473,8 +4475,8 @@
                         {
                             "type": "Interstitial",
                             "id": "main-employment-block",
-                            "title": "Answer the next set of questions for your main job",
-                            "description": "Your main job is the job in which you usually work the most hours",
+                            "title": "Your main job",
+                            "description": "The next set of questions is about your main job. Your main job is the job in which you usually work the most hours",
                             "routing_rules": [
                                 {
                                     "goto": {
@@ -4487,8 +4489,8 @@
                         {
                             "type": "Interstitial",
                             "id": "main-employment-block-proxy",
-                            "title": "Answer the next set of questions for {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}} main job",
-                            "description": "Their main job is the job in which they usually work the most hours",
+                            "title": "{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}} main job",
+                            "description": "The next set of questions is about {{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name_possessive}} main job. Their main job is the job in which they usually work the most hours",
                             "routing_rules": [
                                 {
                                     "goto": {
@@ -5740,19 +5742,17 @@
                             "type": "Interstitial",
                             "id": "visitor-begin-section",
                             "title": "Visitors",
-                            "description": "In this section, we’re going to ask you about any visitors that were staying overnight at <em>{{answers['address-line-1']}}</em> on 10 September 2018.",
+                            "description": "In this section, we’re going to ask you about any visitors that were staying overnight at <em>{{answers['address-line-1']}}</em> on 10 September 2018. Add any visitors, even if you think they may have been included on a census form at another address",
                             "content": [
                                 {
-                                    "title": "Information you need about your visitor",
+                                    "title": "For this section you will need to know their:",
                                     "list": [
                                         "Date of birth",
-                                        "Usual address",
-                                        "Sex"
+                                        "Sex",
+                                        "Usual address"
+                                        
                                     ]
                                    
-                                },
-                                {
-                                     "description": "We ask for visitor information to check that everyone is counted. This helps to produce accurate population estimates. Add any visitors, even if you think they may have been counted elsewhere."
                                 }
                             ]
                         }
