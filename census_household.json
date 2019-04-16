@@ -753,7 +753,7 @@
                                                 {
                                                     "label": "Solid fuel",
                                                     "value": "Solid fuel",
-                                                    "description": "For example coal"
+                                                    "description": "For example, coal"
                                                 },
                                                 
                                                 {
@@ -7162,7 +7162,7 @@
                                             "value": "What is the main activity of your organisation, business or freelance work?"
                                         }
                                     ],
-                                    "description": "For example clothing retail, general hospital, primary education, food wholesale, civil service DVLA, local government housing.",
+                                    "description": "For example clothing retail, general hospital, primary education, food wholesale, civil service (Welsh Government), local government housing.",
                                     "type": "General",
                                     "answers": [
                                         {
