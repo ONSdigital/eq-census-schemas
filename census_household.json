@@ -1696,7 +1696,7 @@
                                     }
                                 }, {
                                     "goto": {
-                                        "block": "past-usual-address-first-person",
+                                        "block": "past-usual-household-address-first-person",
                                         "when": [
                                             {
                                                 "id": "country-of-birth-answer",
@@ -1773,7 +1773,7 @@
                                     }
                                 }, {
                                     "goto": {
-                                        "block": "past-usual-address-first-person"
+                                        "block": "past-usual-household-address-first-person"
                                       
                                     }
                                 }
