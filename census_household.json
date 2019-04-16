@@ -3006,7 +3006,7 @@
                                 {
                                     "id": "disability-question",
                                     "titles": [{
-                                            "value": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> have any of the following physical or mental health conditions or illnesses lasting or expected to last 12 months or more?",
+                                            "value": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> have any of the following physical health conditions or illnesses lasting or expected to last 12 months or more?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -3014,7 +3014,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "Do you have any of the following physical or mental health conditions or illnesses lasting or expected to last 12 months or more?"
+                                            "value": "Do you have any of the following physical health conditions or illnesses lasting or expected to last 12 months or more?"
                                         }
                                     ],
                                     "type": "MutuallyExclusive",
@@ -3078,7 +3078,7 @@
                                 {
                                     "id": "disability-part2-question",
                                     "titles": [{
-                                            "value": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> have any of the following other physical or mental health conditions or illnesses lasting or expected to last 12 months or more?",
+                                            "value": "Does <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name }}</em> have any of the following other health conditions or illnesses lasting or expected to last 12 months or more?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -3086,7 +3086,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "Do you have any of the following other physical or mental health conditions or illnesses lasting or expected to last 12 months or more?"
+                                            "value": "Do you have any of the following other health conditions or illnesses lasting or expected to last 12 months or more?"
                                         }
                                     ],
                                     "type": "MutuallyExclusive",
@@ -3491,7 +3491,7 @@
                                     "guidance": {
                                         "content": [
                                             {
-                                                "title": "Include equivalent qualifications achieved anywhere outside England and Wales"
+                                                "title": "Include equivalent qualifications achieved anywhere outside Northern Ireland"
                                             }
                                         ]
                                     },
@@ -3560,7 +3560,7 @@
                                     "guidance": {
                                         "content": [
                                             {
-                                                "title": "Include equivalent qualifications achieved anywhere outside England and Wales"
+                                                "title": "Include equivalent qualifications achieved anywhere outside Northern Ireland"
                                             }
                                         ]
                                     },
@@ -3632,7 +3632,7 @@
                                     "guidance": {
                                         "content": [
                                             {
-                                                "title": "Include equivalent qualifications achieved anywhere outside England and Wales"
+                                                "title": "Include equivalent qualifications achieved anywhere outside Northern Ireland"
                                             }
                                         ]
                                     },
@@ -3713,7 +3713,7 @@
                                 {
                                     "id": "other-qualifications-question",
                                     "titles": [{
-                                            "value": "Has <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> achieved any other qualifications?",
+                                            "value": "Has <em>{{[answers['first-name'][group_instance], answers['last-name'][group_instance]] | format_household_name}}</em> achieved any other qualifications, either within or outside of Northern Ireland?",
                                             "when": [{
                                                 "id": "proxy-check-answer",
                                                 "condition": "equals",
@@ -3721,7 +3721,7 @@
                                             }]
                                         },
                                         {
-                                            "value": "Have you achieved any other qualifications?"
+                                            "value": "Have you achieved any other qualifications, either within or outside of Northern Ireland?"
                                         }
                                     ],
                                     "type": "MutuallyExclusive",
@@ -5797,6 +5797,24 @@
                         },
                         {
                             "type": "Question",
+                            "id": "visitor-date-of-birth",
+                            "questions": [
+                                {
+                                    "id": "visitor-date-of-birth-question",
+                                    "title": "What is this person’s date of birth?",
+                                    "type": "General",
+                                    "answers": [
+                                        {
+                                            "id": "visitor-date-of-birth-answer",
+                                            "mandatory": false,
+                                            "type": "Date"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Question",
                             "id": "visitor-sex",
                             "questions": [
                                 {
@@ -5818,24 +5836,6 @@
                                                 }
                                             ],
                                             "type": "Radio"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Question",
-                            "id": "visitor-date-of-birth",
-                            "questions": [
-                                {
-                                    "id": "visitor-date-of-birth-question",
-                                    "title": "What is this person’s date of birth?",
-                                    "type": "General",
-                                    "answers": [
-                                        {
-                                            "id": "visitor-date-of-birth-answer",
-                                            "mandatory": false,
-                                            "type": "Date"
                                         }
                                     ]
                                 }
